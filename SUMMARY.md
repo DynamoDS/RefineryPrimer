@@ -1,10 +1,4 @@
-# Table of contents
-
-* [The Generative Design Primer](README.md)
-* [Introduction](introduction.md)
-* [What is Generative Design?](what-is-generative-design.md)
-
-# Summary
+# Table of Contents
 
 * [Part I](The Generative Design Primer/README.md)
 * [Part II](Introduction/README.md)
