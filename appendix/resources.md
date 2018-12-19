@@ -1,6 +1,6 @@
 ## Resources
 
-**GitHub*
+**GitHub**
 
 This gitbook is intended for learning about the concepts behind Generative Design and its application within the AEC industry. 
 
