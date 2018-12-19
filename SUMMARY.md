@@ -4,7 +4,7 @@
 * [Introduction](01_Introduction/1_introduction.md)
   * [What is Generative Design?](01_Introduction/1-1_what_is_generative_design.md)
   * [What is Computational Design?](01_Introduction/1-2_what_is_computational_design.md)
-  * [Current tools](01_Introduction/1-3_current_tools.md)
+  * [Current Tools](01_Introduction/1-3_current_tools.md)
   * [What is Dynamo?](01_Introduction/1-4_what_is_dynamo.md)
   * [What is Refinery?](01_Introduction/1-5_what_is_refinery.md)
 * [Getting Started](02_Getting_Started/2_getting_started.md)
