@@ -1,14 +1,15 @@
-# Summary
+# Table of contents
 
 * [About](README.md)
-* [Introduction](01_Introduction/1_introduction.md)
-  * [What is Generative Design?](01_Introduction/1-1_what_is_generative_design.md)
-  * [What is Computational Design?](01_Introduction/1-2_what_is_computational_design.md)
-  * [Current Tools](01_Introduction/1-3_current_tools.md)
-  * [What is Dynamo?](01_Introduction/1-4_what_is_dynamo.md)
-  * [What is Refinery?](01_Introduction/1-5_what_is_refinery.md)
-* [Getting Started](02_Getting_Started/2_getting_started.md)
-  * [Using Within Design Processes](02_Getting_Started/2-1_using_within_design_processes.md)
-* [Appendix](Appendix/A_appendix.md)
-  * [Resources](Appendix/A-1_resources.md)
-  * [Glossary](Appendix/A-2_glossary.md)
+* [Introduction](introduction/README.md)
+  * [What is Generative Design?](introduction/what-is-generative-design.md)
+  * [What is Computational Design?](introduction/what-is-computational-design.md)
+  * [Current Tools](introduction/current-tools.md)
+  * [What is Dynamo?](introduction/what-is-dynamo.md)
+  * [What is Refinery?](introduction/what-is-refinery.md)
+* [Getting Started](getting-started/README.md)
+  * [Using Within Design Processes](getting-started/using-within-design-processes.md)
+* [Appendix](appendix/README.md)
+  * [Resources](appendix/resources.md)
+  * [Glossary](appendix/glossary.md)
+
