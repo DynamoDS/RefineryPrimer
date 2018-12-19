@@ -1,4 +1,4 @@
-# The Generative Design Primer
+# Introduction
 
 ## Introduction
 
