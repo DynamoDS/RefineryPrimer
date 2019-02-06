@@ -7,7 +7,7 @@ Let’s look at several examples that illustrate how generative design can help 
 
 Classic example of MaRS needed.
 
-[Image of MaRs]
+<img src="images/mars.jpg">
 
 
 ### Product Design
@@ -24,6 +24,6 @@ In the generative approach, the designer would instead specify:
 
 The designer would then use the computer to help him/her generate a series of designs falling within the specified range. Some designs will be short and wide, others will be tall and thin, but each will be consistent with the user-defined parameters. This is key, dozens of designs can be generated in an instant, much more than any human could feasible examine, so that the best ones can easily be identified.
 
-[Image of tables]
+<img src="images/tables.PNG">
 
 As you can see, this describes a fairly generic process, which is why there are so many possible applications of Generative Design, in areas as diverse as aviation, automotive and building design, manufacturing, and product design. 
