@@ -16,7 +16,7 @@ These technologies require new skills and new ways to think about design, so we 
 
 designtech.io was commissioned to kick-start the development of this primer, we thank them for all their efforts in establishing this valuable resource.
 
-[<img src="images/designtech_logo.png">](http://designtech.io)
+[<img src="images/designtech-logo.png">](http://designtech.io)
 
 ---
 
