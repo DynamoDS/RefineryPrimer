@@ -3,7 +3,7 @@
 Let’s say you’re looking to fly from London to New York, so you go to your favourite flight-comparison website and ask it to find you the cheapest direct flight. 
 
 
-[<img src="images/skyscanner.png">]
+[<img src="images/skyscanner.PNG">]
  
  
 What happened in the background is the system: 
