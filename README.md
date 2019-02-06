@@ -7,24 +7,6 @@ Welcome to the Generative Design Primer, which aims to introduce AEC practioners
 * **Explore** how these techniques can be used to solve practical challenges in AEC design projects
 * **Learn** how to use Autodesk's newest generative design tools such as Refinery, through practical workflows
 
-
-In the midst of this activity and exciting opportunity for working with Dynamo, we need a document of the same caliber, the Dynamo Primer.
-
-This Primer includes chapters developed with Mode Lab. These chapters focus on the essentials you will need to get up and running developing your own visual programs with Dynamo and key insights on how to take Dynamo further. Here's what you can expect to learn from the primer:
-
-* **Context** - What exactly is "Visual Programming" and what are the concepts I need to understand to dive in to Dynamo?
-* **Getting Started** - How do I get Dynamo and create my first program?
-* **What's in a Program** - What are the functional parts of Dynamo and how do I use them?
-* **Building Blocks** - What is "Data" and what are some fundamental types I can start using in my programs?
-* **Geometry for Design** - How do I work with geometric elements in Dynamo?
-* **Lists, Lists, Lists** - How to do I manage and coordinate my data structures?
-* **Code in Nodes** - How can I start extending Dynamo with my own code?
-* **Computational BIM** - How can I use Dynamo with a Revit model?
-* **Custom Nodes** - How can I create my own nodes?
-* **Packages** - How can I share my tools with the community?
-
-This is an exciting time to be learning about, working with, and developing for Dynamo. Let's get started!
-
 ---
 
 ### Why make a generative design primer?
@@ -59,7 +41,7 @@ link
 
 **Contact** Let us know about any issues with this document.
 
-Dynamo@autodesk.com
+generativedesign@autodesk.com (tbc)
 
 ### License
 Copyright 2018 Autodesk
