@@ -13,4 +13,5 @@ noun
 **Generative design**
 / gen·er·a·tive de·sign /
 noun
-A system that produces design studies (alternatives), evaluates them against quantiﬁable goals, improves studies by learning from previous, and ranks results based on their distance from the goals. The project is kept as a system, with affordances to choose one or a small subset of alternatives as a ﬁnal set of project data and geometry.
+
+> A system that produces design studies (alternatives), evaluates them against quantiﬁable goals, improves studies by learning from previous, and ranks results based on their distance from the goals. The project is kept as a system, with affordances to choose one or a small subset of alternatives as a ﬁnal set of project data and geometry.
