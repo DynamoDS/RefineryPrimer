@@ -12,8 +12,7 @@ noun
 >A system that produces design studies (alternatives), evaluates them against quantiﬁable goals, improves studies by using results from previous ones, and ranks results based on how well they achieve the set goals.
 
 
-[INSERT IMAGE]
-
+<img src="images/genDes.jpg">
 
 Generative design can then be described a specific application of the Computational Design approach, with a few distinctions that:
 
