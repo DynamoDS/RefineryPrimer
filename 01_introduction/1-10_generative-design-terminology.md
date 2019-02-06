@@ -1,4 +1,4 @@
-# Generative Design? Terminology
+# Generative Design Terminology
 
 [Insert text]
 
