@@ -6,4 +6,4 @@ Dynamo can be used as a stand-alone product (Sandbox) or can plug into other pro
 
 For more information on Dynamo please refer to the [Dynamo Primer]( http://primer.dynamobim.org/). 
 
-[<img src="images/dynamo_logo_dark-trim.png">](http://dynamobim.org)
+[<img src="GenerativeDesignPrimer/images/dynamo_logo_dark-trim.png">](http://dynamobim.org)
