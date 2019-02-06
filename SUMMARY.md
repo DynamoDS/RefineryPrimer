@@ -1,8 +1,8 @@
 # Table of contents
 
 * [About](README.md)
-* [Introduction](1-0_introduction/README.md)
-  * [What is Computational Design?](1-1_introduction/what-is-computational-design.md)
+* [Introduction](introduction/1-0_introduction.md)
+  * [What is Computational Design?](introduction/1-1_what-is-computational-design.md)
   * [What is Generative Design?](1-2_introduction/what-is-generative-design.md)
   * [Why Should I Use Generative Design?](1-3_introduction/why-should-i-use-generative-design.md)
   * [What goes into a Generative Design Process?](1-4_introduction/what-goes-into-a-generative-design-process.md)
