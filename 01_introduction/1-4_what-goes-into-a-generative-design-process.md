@@ -4,7 +4,7 @@ As we saw above, a generative design approach involves several distinct steps. T
 
 
 | Step | Algorithm Type |
-| --- | --- |
+| :--- | :--- |
 | generation of new design studies | generators |
 | evaluation of each study | evaluators |
 | ranking & solution achieves goal | solvers |
