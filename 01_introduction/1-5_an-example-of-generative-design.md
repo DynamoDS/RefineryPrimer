@@ -5,7 +5,7 @@ Let’s look at several examples that illustrate how generative design can help 
 
 ### Building Design
 
-Classic example of MaRS needed.
+[Add text]
 
 <img src="images/mars.jpg">
 
