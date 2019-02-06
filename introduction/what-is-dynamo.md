@@ -4,6 +4,6 @@ Dynamo is a visual programming application from Autodesk that “aims to be acce
 
 Dynamo can be used as a stand-alone product (Sandbox) or can plug into other products such as Revit (Dynamo for Revit).
 
-For more information on Dynamo please refer to [the Dynamo Primer]( http://primer.dynamobim.org/). 
+For more information on Dynamo please refer to the [Dynamo Primer]( http://primer.dynamobim.org/). 
 
 [<img src="images/dynamo_logo_dark-trim.png">](http://dynamobim.org)
