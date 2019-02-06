@@ -12,7 +12,7 @@
   * [What is Dynamo?](01_introduction/1-8_what-is-dynamo.md)
   * [What is Refinery?](01_introduction/1-9_what-is-refinery.md)
   * [Generative Design Terminology](01_introduction/1-10_generative-design-terminology.md)
-  * [Generative Design Terminology](01_introduction/1-11_references.md)
+  * [References](01_introduction/1-11_references.md)
 * [Getting Started](getting-started/README.md)
   * [Using Generative Techniques in your Design Processes](getting-started/using-generative-techniques-in-your-design-processes.md)
   * [Where to start?](getting-started/where-to-start.md)
