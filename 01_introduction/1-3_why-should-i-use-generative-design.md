@@ -1,10 +1,10 @@
-# Why Should I use Generative Design?
+# Why should I use Generative Design?
 
 In a nutshell, generative design is a goal-driven approach to design that uses automation so that designers and engineers 
 * have better insight  
 * can make faster & more informed design decisions  
 
-## Faster
+### Faster
 Generative Design aims to help a designer find “better” designs for his or her project faster. This is done by exploiting algorithms and other computer-based techniques that enable a machine to quickly generate and evaluate a huge number of design variants on the fly.
 
 ## More Variation
