@@ -13,7 +13,7 @@
   * [What is Refinery?](01_introduction/1-09_what-is-refinery.md)
   * [Generative Design Terminology](01_introduction/1-10_generative-design-terminology.md)
   * [References](01_introduction/1-11_references.md)
-* [Getting Started](02_getting-started/2-01_getting-started.md)
+* [Getting Started with Generative Techniques in your Design Process](02_getting-started/2-01_getting-started.md)
   * [Where to start?](02_getting-started/2-02_where-to-start.md)
   * [Anatomy of a Good Generative Design Process](getting-started/anatomy-of-a-good-generative-design-process.md)
   * [Getting Started with Project Refinery](getting-started/getting-started-with-project-refinery.md)
