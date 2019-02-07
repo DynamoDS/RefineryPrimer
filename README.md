@@ -1,18 +1,19 @@
 # The Generative Design Primer
 
 ## About
-Welcome to the Generative Design Primer, which aims to introduce AEC practioners of all experience levels to the exciting field. This primer will help you:
+Welcome to the Generative Design Primer, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design. This primer will help you:
 
-* **Understand** what generative design is by defining the base concepts and terminology you need to know
-* **Explore** how these techniques can be used to solve practical challenges in AEC design projects
-* **Learn** how to use Autodesk's newest generative design tools such as Refinery, through practical workflows
+* **Understand** what generative design is by defining the base concepts and terminology you need to know 
+* **Explore** how these techniques can be used to solve practical challenges commonly found in AEC design projects
+* **Learn** how to use Autodesk’s newest Generative Design tools such as Refinery, through practical workflows 
 
 ---
 
 ### Why make a generative design primer?
-Autodesk is working to democratise technologies that can help designers in the AEC industry automate design option creation and optimise those designs to achieve better outcomes. 
+Autodesk is working to democratise technologies that can help designers in the AEC industry
+automate the creation of design options and  optimise those designs to achieve better outcomes.
 
-These technologies require new skills and new ways to think about design, so we identified a primer would help explain new generative design terms, ideas and methods, and inspire users to explore them with Autodesk tools. 
+Using these technologies requires new skills and new ways to think about design. We created this generative design primer to explain  the terminology, ideas and methods you will need to understand to  begin using the Autodesk tools that support this new approach to design.
 
 designtech.io was commissioned to kick-start the development of this primer, we thank them for all their efforts in establishing this valuable resource.
 
@@ -21,9 +22,9 @@ designtech.io was commissioned to kick-start the development of this primer, we 
 ---
 
 ### Open-Source
-This Primer is an open source project initiated by the Generative Design teams at Autodesk and we’re dedicated to providing high-quality content on generative design through this primer.  
+This primer is an open source project initiated by the AEC Generative Design Team at Autodesk and we’re dedicated to providing high-quality content on generative design through this primer. 
 
-Contributions are of course welcomed and can take many shapes: 
+Contributions are of course welcomed. You can contribute to the primer in the following ways:
 
 * you can report any issue you may have found on our [issues page]( https://github.com/DynamoDS/GenerativePrimer/issues) 
 
@@ -32,12 +33,6 @@ Contributions are of course welcomed and can take many shapes:
 * have an example workflow of generative design ? Head over to [our contribution guidelines (https://github.com/DynamoDS/GenerativePrimer/CONTRIBUTING.md) and see how you can add it to the Community examples section
 
 ---
-
-### Additional Resources
-
-**Autodesk Generative Design E-Book** 
-
-link
 
 **Contact** Let us know about any issues with this document.
 
