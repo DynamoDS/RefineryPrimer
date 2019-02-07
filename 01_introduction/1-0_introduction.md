@@ -2,8 +2,8 @@
 
 In this chapter, we’ll look at:
 
-* the fundamental concepts we need to understand when talking about generative design
 * a definition of generative design
+* the fundamental concepts needed to understand generative design
 * examples of using generative design to solve a design problem
 * a glossary of terms 
 * related concepts and tools
