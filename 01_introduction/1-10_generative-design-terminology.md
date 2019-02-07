@@ -35,14 +35,14 @@ noun
 / e·val·u·ate / 
 verb 
 
-> tbc 
+> To judge the quality of something based on how well it performs in one or more objective functions. 
 
  
 **Evolve** 
 / e·vol·ve / 
 verb 
 
-> tbc 
+> To gradually make something better over generations. 
 
  
 **Explore** 
@@ -56,7 +56,7 @@ verb
 / solv·er / 
 nounthanks 
 
-> tbc
+> An algorithm specifically designed to find the solution to a precisely defined problem.  
 
 
 **Seed** 
@@ -84,28 +84,28 @@ noun
 / it·er·a·tive / 
 verb 
 
-> tbc 
+> Doing something repeatedly, often to make it better. 
 
 
 **Multi-objective** 
 / mul·ti ob·ject·ive / 
 adjective 
 
-> tbc 
+> Using two or more objectives when optimising a solution. 
 
 
 **Optioneering** 
 / op·tion·eer·ing / 
 verb 
 
-> tbc 
+> Describe a goal, define constraints and make the computer generate all possible solutions.  
 
  
 **Optimisation** 
 / op·ti·mi·sa·tion / 
 verb 
 
-> tbc 
+> Maximising or minimising some mathematical function to arrive at the best possible solution to a problem. 
 
  
 **Permutation** 
@@ -126,11 +126,11 @@ verb
 / lo·cal op·ti·mum / 
 verb 
 
-> tbc 
+> The best solution within a neighbourhood of solutions that are slightly different, but still worse than the global optimum.   
 
  
 **Global optimum** 
 / glo·bal op·ti·mum / 
 verb 
 
-> tbc 
+> The most optimal solution out of all the possible solutions. 
