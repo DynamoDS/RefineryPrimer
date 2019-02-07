@@ -22,8 +22,8 @@ In the generative approach, the designer would instead specify:
 * a series of available materials and their properties (such as cost) 
 * a set of goals that measure how successful a table design is 
 
-The designer would then use the computer to help him/her generate a series of designs falling within the specified range. Some designs will be short and wide, others will be tall and thin, but each will be consistent with the user-defined parameters. This is key, dozens of designs can be generated in an instant, much more than any human could feasible examine, so that the best ones can easily be identified.
+The designer would then use the computer to help him/her generate a series of designs falling within the specified range. Some designs will be short and wide, others will be tall and thin, but each will be consistent with the user-defined parameters. This is key, dozens of designs can be generated in an instant, much more than any human could feasibily examine, so that the best ones can easily be identified.
 
 <img src="images/tables.PNG">
 
-As you can see, this describes a fairly generic process, which is why there are so many possible applications of Generative Design, in areas as diverse as aviation, automotive and building design, manufacturing, and product design. 
+As you can see, this describes a fairly generic process, which is why there are so many possible applications of generative design, in areas as diverse as aviation, automotive and building design, manufacturing, and product design. 
