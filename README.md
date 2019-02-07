@@ -6,7 +6,7 @@ Welcome to the Generative Design Primer, which aims to introduce AEC practitione
 * **Understand** what generative design is by defining the base concepts and terminology you need to know 
 * **Explore** how these techniques can be used to solve practical challenges commonly found in AEC design projects
 * **Learn** how to use Autodesk’s newest Generative Design tools such as Refinery, through practical workflows 
-
+<br/>
 ---
 
 ### Why make a generative design primer?
@@ -34,7 +34,8 @@ Contributions are of course welcomed. You can contribute to the primer in the fo
 
 ---
 
-**Contact** Let us know about any issues with this document.
+### Contact
+Let us know about any issues with this document.
 
 generativedesign@autodesk.com (tbc)
 
