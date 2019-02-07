@@ -7,6 +7,7 @@ The first thing to do is to have a clear understanding of what you want to achie
 *	What must not be present in a final design?
 *	What makes the design a success or a failure?
 *	What would you like to maximise or minimise?
+
 Answering these questions not only clarifies the problem at hand in the designer’s mind, but also helps break the problem into smaller components that will serve as inputs into the generative design process. The more precisely a user can answer these questions, the more relevant the outputs of a generative process will be.
 
 Example
