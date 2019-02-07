@@ -1,23 +1,21 @@
 # What is Generative Design?
 
-In the past, the term generative design may have been used in the context of generating permutations of designs, creating geometry from some simple inputs or even just building computational graphs using Dynamo or Grasshopper. 
+The term generative design has been used in the context of producing design permutations, creating geometry from some simple inputs or even just building computational graphs using Dynamo or Grasshopper.
 
- 
-
-We would argue that an accurate definition of generative design would be:
+We see generative design as:
 
 **/ gen·er·a·tive de·sign /**
 noun 
 
->A system that produces design studies (alternatives), evaluates them against quantiﬁable goals, improves studies by using results from previous ones, and ranks results based on how well they achieve the set goals.
+>collaborative process between humans and machines. During this process, the designer defines the design parameters and the computer produces design studies (alternatives), evaluates them against quantiﬁable goals set by the designer, improves the studies by using results from previous ones and feedback from the designer, and ranks the results based on how well they achieve the designer’s original goals.
 
 
 <img src="images/genDes.jpg">
 
-Generative design can then be described a specific application of the Computational Design approach, with a few distinctions that:
+Generative design is a specific application of the computational design approach, with  the following distinctions:
 
-* the designer defines goals to achieve (rather than the exact steps to achieve a design) 
+* the designer defines goals to achieve a design (rather than the exact steps)
 
-* the computer generates many designs (not just one) 
+* the computer generates many designs (not just one)
 
-* it finds the optimal solution satisfying multiple competing goals, amongst all generated designs
+* the computer finds the optimal solution that satisfies the designer’s multiple competing goals, amongst all generated designs
