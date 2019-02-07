@@ -1,7 +1,7 @@
 # Table of contents
 
 * [About](README.md)
-* [Introduction](01_introduction/1-0_introduction.md)
+* [Introduction](01_introduction/1-00_introduction.md)
   * [What is Computational Design?](01_introduction/1-01_what-is-computational-design.md)
   * [What is Generative Design?](01_introduction/1-02_what-is-generative-design.md)
   * [Why Should I Use Generative Design?](01_introduction/1-03_why-should-i-use-generative-design.md)
@@ -13,8 +13,8 @@
   * [What is Refinery?](01_introduction/1-09_what-is-refinery.md)
   * [Generative Design Terminology](01_introduction/1-10_generative-design-terminology.md)
   * [References](01_introduction/1-11_references.md)
-* [Getting Started](02_getting-started/README.md)
-  * [Using Generative Techniques in your Design Processes](02_getting-started/2-01_using-generative-techniques-in-your-design-processes.md)
+* [Getting Started](02_getting-started/2-01_getting-started.md)
+  * [Using Generative Techniques in your Design Processes](02_getting-started/2-01_where-to-start.md)
   * [Where to start?](getting-started/where-to-start.md)
   * [Anatomy of a Good Generative Design Process](getting-started/anatomy-of-a-good-generative-design-process.md)
   * [Getting Started with Project Refinery](getting-started/getting-started-with-project-refinery.md)
