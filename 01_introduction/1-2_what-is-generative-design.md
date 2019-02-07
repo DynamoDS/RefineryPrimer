@@ -12,6 +12,9 @@ noun
 
 <img src="images/genDes.jpg">
 
+[Update image to include Define(human), Explore (machine), Evaluate (human/machine), optimise (machine)
+or Generate, Analyse, Rank, Evolve, Explore, Integrate]
+
 Generative design is a specific application of the computational design approach, with  the following distinctions:
 
 * the designer defines goals to achieve a design (rather than the exact steps)
