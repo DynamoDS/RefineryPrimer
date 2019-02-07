@@ -15,3 +15,122 @@ noun
 noun
 
 > A system that produces design studies (alternatives), evaluates them against quantiﬁable goals, improves studies by learning from previous, and ranks results based on their distance from the goals. The project is kept as a system, with affordances to choose one or a small subset of alternatives as a ﬁnal set of project data and geometry.
+
+
+**Generate** 
+/ gen·er·ate / 
+verb 
+
+> To produce or create a design. Requires 1 or more input parameters which are combined in an algorithm to produce a design study. The resulting model or data is not necessarily a viable design.
+
+
+**Goal** 
+/ goal / 
+noun 
+
+> A quantiﬁable target value or range for a project or feature of a project.
+
+
+**Evaluate** 
+/ e·val·u·ate / 
+verb 
+
+> tbc 
+
+ 
+**Evolve** 
+/ e·vol·ve / 
+verb 
+
+> tbc 
+
+ 
+**Explore** 
+/ ex·plore / 
+verb 
+
+> Different ways to interpret results and rankings.  
+
+ 
+**Solver** 
+/ solv·er / 
+nounthanks 
+
+> tbc
+
+
+**Seed** 
+/ seed / 
+noun 
+
+> tbc 
+
+
+**Genetic** 
+/ ge·net·ic / 
+noun 
+
+> tbc 
+
+ 
+**Algorithm** 
+/ al·go·rithm / 
+noun 
+
+> tbc 
+ 
+
+**Iterative** 
+/ it·er·a·tive / 
+verb 
+
+> tbc 
+
+
+**Multi-objective** 
+/ mul·ti ob·ject·ive / 
+adjective 
+
+> tbc 
+
+
+**Optioneering** 
+/ op·tion·eer·ing / 
+verb 
+
+> tbc 
+
+ 
+**Optimisation** 
+/ op·ti·mi·sa·tion / 
+verb 
+
+> tbc 
+
+ 
+**Permutation** 
+/ per·mu·ta·tion / 
+verb 
+
+> tbc 
+
+ 
+**Cross-product** 
+/ cross pro·duct / 
+verb 
+
+> tbc 
+
+ 
+**Local optimum** 
+/ lo·cal op·ti·mum / 
+verb 
+
+> tbc 
+
+ 
+**Global optimum** 
+/ glo·bal op·ti·mum / 
+verb 
+
+> tbc 
