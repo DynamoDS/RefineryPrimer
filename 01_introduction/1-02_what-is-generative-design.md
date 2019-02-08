@@ -2,6 +2,8 @@
 
 The term generative design has been used in the context of producing design permutations, creating geometry from some simple inputs or even just building computational graphs using Dynamo or Grasshopper.
 
+<br/>
+
 We see generative design as:
 
 **/ gen·er·a·tive de·sign /**
