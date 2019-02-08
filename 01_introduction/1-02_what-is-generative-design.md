@@ -9,11 +9,11 @@ noun
 
 >a collaborative process between humans and machines. During this process, the designer defines the design parameters and the computer produces design studies (alternatives), evaluates them against quantiﬁable goals set by the designer, improves the studies by using results from previous ones and feedback from the designer, and ranks the results based on how well they achieve the designer’s original goals.
 
+<br/>
 
 <img src="images/genDes.jpg">
 
-[Update image to include Define(human), Explore (machine), Evaluate (human/machine), optimise (machine)
-or Generate, Analyse, Rank, Evolve, Explore, Integrate]
+<br/>
 
 Generative design is a specific application of the computational design approach, with  the following distinctions:
 
