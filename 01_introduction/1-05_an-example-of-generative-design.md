@@ -14,7 +14,7 @@ Let’s look at several examples that illustrate how generative design can help 
 
 Consider the example of designing a typical, four-legged table. Using a standard approach, a designer would manually define the height, width, depth & material of the table, and the resultant output would be a single, physical object with a fixed, immutable form. Perhaps the designer tests several distinct sets of dimensions & material combinations and ends up with three or four table prototypes.
 
-[Image of designer and table]
+<img src="images/table.png">
 
 In the generative approach, the designer would instead specify: 
 
