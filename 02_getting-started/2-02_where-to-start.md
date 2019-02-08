@@ -1,4 +1,4 @@
-# Where do you start?
+# Where to start?
 
 The first thing to do is to have a clear understanding of what you want to achieve:
 *	What do you want to design?
