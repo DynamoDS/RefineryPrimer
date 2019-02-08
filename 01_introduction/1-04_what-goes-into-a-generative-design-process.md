@@ -12,3 +12,7 @@ Each of these steps is broken down into *define*, *select*, *run*.
 
 Looking in more detail at the generate stage:
 
+<img src="images/genProcess3.png">
+
+
+<img src="images/genProcess2.png">
