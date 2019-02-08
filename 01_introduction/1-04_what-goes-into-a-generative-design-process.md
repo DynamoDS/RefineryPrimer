@@ -8,7 +8,7 @@ As previously discussed, generative design allows for a more integrated workflow
 
 <br/>
 
-Each of these steps is broken down into *define* and *run* with the first step the responsibility of the designer and the last step being performed by the machine. Bearing this in mind if we look in more detail at the generate stage as an example:
+Each of these steps is broken down into *define* and *run* with the first step the responsibility of the designer and the last step being performed by the machine. With this in mind, if we look in more detail at the generate stage as an example:
 
 <br/>
 
