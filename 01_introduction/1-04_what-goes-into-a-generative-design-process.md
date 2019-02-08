@@ -1,4 +1,6 @@
 # What goes into a Generative Design Process?
 
-As we saw before, a generative design approach involves several distinct steps. The types of methods used in each step are very different to each other, so we generally categorise them as follows : 
+Within any generative design process there are a series of steps taken by both human and machine. These can be categorised into the following steps:
+
+
 
