@@ -9,3 +9,6 @@ With all generative design processes there are a series of steps taken by both h
 <br/>
 
 Each of these steps is broken down into *define*, *select*, *run*.
+
+Looking in more detail at the generate stage:
+
