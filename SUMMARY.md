@@ -17,7 +17,7 @@
   * [Where to start?](02_getting-started/2-02_where-to-start.md)
   * [Anatomy of a Good Generative Design Process](02_getting-started/2-03_anatomy-of-a-good-generative-design-process.md)
   * [Getting Started with Project Refinery](02_getting-started/2-04_getting-started-with-project-refinery.md)
-  * [Applying Generative Design to Practical Challenges](02_getting-started/2-05_applying-generative-design-to-practical-examples.md)
+  * [Applying Generative Design to Practical Challenges](02_getting-started/2-05_applying-generative-design-to-practical-challenges.md)
 * [Optioneering](03_optioneering/3-00_optioneering.md)
   * [What is Optioneering?](optioneering/what-is-optioneering.md)
 * [Optimisation](optimisation/README.md)
