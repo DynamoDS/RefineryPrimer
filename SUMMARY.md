@@ -22,3 +22,7 @@
   * [What is Optioneering?](optioneering/what-is-optioneering.md)
 * [Optimisation](optimisation/README.md)
   * [What is Optimisation?](optimisation/what-is-optimisation.md)
+* [Algorithms](05_algorithms/5-01_what-are-algoritms.md)
+  * [Generators](05_algorithms/5-02_generators.md)
+  * [Evaluators](05_algorithms/5-03_evaluators.md)
+  * [Solvers](05_algorithms/5-04_solvers.md)
