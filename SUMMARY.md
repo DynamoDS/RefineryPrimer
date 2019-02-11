@@ -11,8 +11,6 @@
   * [What is Visual Programming?](01_introduction/1-07_what-is-visual-programming.md)
   * [What is Dynamo?](01_introduction/1-08_what-is-dynamo.md)
   * [What is Refinery?](01_introduction/1-09_what-is-refinery.md)
-  * [Generative Design Terminology](01_introduction/1-10_generative-design-terminology.md)
-  * [References](01_introduction/1-11_references.md)
 * [Getting Started with Generative Techniques in your Design Process](02_getting-started/2-01_getting-started.md)
   * [Where to start?](02_getting-started/2-02_where-to-start.md)
   * [Anatomy of a Good Generative Design Process](02_getting-started/2-03_anatomy-of-a-good-generative-design-process.md)
