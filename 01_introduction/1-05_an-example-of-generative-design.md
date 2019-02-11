@@ -17,10 +17,11 @@ To begin the process data was collected from employees and managers about work s
 *	views to the outside
 
 A geometric system was then created by the designer that allowed the exploration of multiple configurations of work neighborhoods, amenities and circulation. The computer used this algorithm to automatically produce thousands of design options and scored the outputs against the predefined goals. 
+<br/>
 
 <img src="images/mars.jpg">
 
-
+<br/>
 ### Product Design
 
 Looking at a simpler example, if you consider the process of designing a typical, four-legged table. Using a standard approach, a designer would manually define the height, width, depth & material of the table, and the resultant output would be a single, physical object with a fixed, immutable form. Perhaps the designer tests several distinct sets of dimensions & material combinations and ends up with three or four table prototypes.
