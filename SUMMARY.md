@@ -26,3 +26,7 @@
   * [Generators](05_algorithms/5-02_generators.md)
   * [Evaluators](05_algorithms/5-03_evaluators.md)
   * [Solvers](05_algorithms/5-04_solvers.md)
+* [Appendix](10_appendix/10-01_appendix.md)
+  * [Glossary](10_appendix/10-02_glossary.md)  
+  * [References](10_appendix/10-03_references.md)
+  * [Additional Material](10_appendix/10-05_additional-material.md)
