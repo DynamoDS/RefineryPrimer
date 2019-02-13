@@ -15,7 +15,7 @@
   * [Anatomy of a Good Generative Design Process](02_getting-started/2-02_anatomy-of-a-good-generative-design-process.md)
   * [Getting Started with Project Refinery](02_getting-started/2-03_getting-started-with-project-refinery.md)
   * [Setting up a Graph for Refinery](02_getting-started/2-04_refinery-setup.md)
-  * [Refinery Processes](02_getting-started/2-05_refinery-processes.md)
+  * [Running Refinery](02_getting-started/2-05_refinery-processes.md)
   * [Visualising Results in Refinery](02_getting-started/2-06_viewing-refinery-results.md)
   * [Applying Generative Design to Practical Challenges](02_getting-started/2-07_applying-generative-design-to-practical-challenges.md)
 * [Optioneering](03_optioneering/3-00_optioneering.md)
