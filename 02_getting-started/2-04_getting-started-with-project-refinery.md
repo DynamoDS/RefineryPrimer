@@ -63,12 +63,29 @@ To run an optimisation process in Refinery, follow these steps:
 [screenshots]
 
 ## Visualise results in Refinery
-After Refinery has run the generative process, the results are displayed in both geometric form and through a series of charts.  
+After Refinery has run the generative process, the results are displayed in both geometric form and through a series of charts. All of the resulting views are interlinked and selecting an option in one view will highlight it in the other view currently displayed. If Dynamo is running in automatic mode in the background, selecting an option will also update the graph to show this design. 
+
+### Design Grid
+The design grid shows each option as a 3d geometrical thumbnail that can be individually rotated, zoomed and panned to explore the design in more detail. The order of the thumbnails can be sorted based on the inputs or outputs of the Dynamo script, with a toggle for both ascending and descending values.  
+
+[designgrid image]
+
+### Design Table
+The design table replaces the design grid if chosen and lists each option in a table form with each column representing the values for the inputs and outputs. 
+
+[designtable image]
 
 ### Scatterplot 
-By default, the first chart Refinery uses is a scatterplot. A scatterplot is a type of mathematical diagram that uses cartesian coordinates to display values across a set of data. Refinery allows you to select what values are displayed along both the X and Y axis as well as through size and colour in a 4-dimensional view. These can be chosen from the inputs or outputs of the Dynamo graph. Selecting a circle from the graph space will highlight the chose option in the geometry thumbnails. If Dynamo is running in automatic mode in the background, selecting an option will also update the graph to show this design. 
+The first chart Refinery uses is a scatterplot. A scatterplot is a type of mathematical diagram that uses cartesian coordinates to display values across a set of data. Refinery allows you to select what values are displayed along both the X and Y axis as well as through size and colour in a 4-dimensional view. These can be chosen from the inputs or outputs of the Dynamo graph. Selecting a circle from the graph space will highlight the chose option in the design grid or design table. 
 
 [scatterplot image]
 
 ### Parallel Coordinates
+The other chart available in Refinery is a parallel coordinates graph. This chart show a set of vertical parralel lines, equally spaced, that represent the inputs and outputs. Each design option is represented as a polyline whose vertices sit on each parralel axis. The position of the polylines vertices on the axis corresponds to the value of the input or output. The graph can be filtered by dragging the selection on each vertical axis.  
+
+[parralel image]
+
+
+
+
 
