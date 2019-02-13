@@ -16,7 +16,11 @@ To begin the process data was collected from employees and managers about work s
 *	daylight
 *	views to the outside
 
-A geometric system was then created by the designer that allowed the exploration of multiple configurations of work neighborhoods, amenities and circulation. The computer used this algorithm to automatically produce thousands of design options and scored the outputs against the predefined goals. 
+A geometric system was then created by the designer that allowed the exploration of multiple configurations of work neighborhoods, amenities and circulation. The designer also creates an algorithm to measure how different floor plans can be measured against the stated goals above. 
+
+The computer used this algorithm to flex the model producing thousands of design options and scoring the outputs against the predefined goals. 
+
+The designer then evaluated the best options that were returned to make a decision on the design.
 
 <br/>
 
