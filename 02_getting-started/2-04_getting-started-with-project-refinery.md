@@ -83,9 +83,9 @@ The first chart Refinery uses is a scatterplot. A scatterplot is a type of mathe
 ### Parallel Coordinates
 The other chart available in Refinery is a parallel coordinates graph. This chart show a set of vertical parralel lines, equally spaced, that represent the inputs and outputs. Each design option is represented as a polyline whose vertices sit on each parralel axis. The position of the polylines vertices on the axis corresponds to the value of the input or output. The graph can be filtered by dragging the selection on each vertical axis.  
 
-[parralel image]
+[parallel image]
 
-
+The kind of visualization you choose for your project may vary depending on what kind of process you are running. If you are running an optioneering process it can be beneficial to visualise it using a parallel coordinates chart as it will be easier to filter options, while running a multi objective optimisation using a scatterplot chart will make it easier to find the best trade-off between two objectives.
 
 
 
