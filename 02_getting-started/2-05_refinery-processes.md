@@ -1,4 +1,4 @@
-# Refinery Processes
+# Running Refinery
 
 ## How to run an optioneering process using Refinery
 An optioneering process lets you explore all possible solutions that the graph can produce. Refinery will generate the solutions based on the constraints that were defined in the Dynamo graph. 
