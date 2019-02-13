@@ -28,9 +28,9 @@ Contributions are of course welcomed. You can contribute to the primer in the fo
 
 * you can report any issue you may have found on our [issues page]( https://github.com/DynamoDS/GenerativePrimer/issues) 
 
-* if you’d like to add or edit sections of the Primer itself, please head over to [our Github repository (https://github.com/DynamoDS/GenerativePrimer) 
+* if you’d like to add or edit sections of the Primer itself, please head over to [our Github repository] (https://github.com/DynamoDS/GenerativePrimer)
 
-* have an example workflow of generative design ? Head over to [our contribution guidelines (https://github.com/DynamoDS/GenerativePrimer/CONTRIBUTING.md) and see how you can add it to the Community examples section
+* have an example workflow of generative design ? Head over to [our contribution guidelines] (https://github.com/DynamoDS/GenerativePrimer/CONTRIBUTING.md) and see how you can add it to the Community examples section
 
 ---
 
