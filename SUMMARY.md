@@ -29,4 +29,5 @@
 * [Appendix](10_appendix/10-01_appendix.md)
   * [Glossary](10_appendix/10-02_glossary.md)  
   * [References](10_appendix/10-03_references.md)
-  * [Additional Material](10_appendix/10-05_additional-material.md)
+  * [Additional Material](10_appendix/10-04_additional-material.md)
+  * [Community Examples](10_appendix/10-05_community-examples.md)
