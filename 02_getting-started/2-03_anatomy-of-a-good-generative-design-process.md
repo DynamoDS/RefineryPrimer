@@ -1,6 +1,6 @@
 # Anatomy of a good Generative Design Process
 
-# Where to start?
+## Where to start?
 The first thing to do is to have a clear understanding of what you want to achieve:
 *	What do you want to design?
 *	What are the design parameters?
