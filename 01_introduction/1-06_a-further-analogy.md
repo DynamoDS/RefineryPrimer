@@ -8,7 +8,7 @@ Let’s say you’re looking to fly from London to New York, so you go to your f
  
 What happened in the background is the system: 
 
-* person  sets goals: direct flights only & lowest cost
+* person sets goals: direct flights only & lowest cost
 * computer generates a list of all possible routes from London to New York (it already knows scheduled flights of every airline)
 * computer evaluates each of the identified routes based on your goals
 * computer attempts to solve your goals and returns the list of flights, with most suitable ones first
