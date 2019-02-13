@@ -15,12 +15,15 @@ Example
 > Imagine you’ve been engaged by a client to design a school. You’d want to nail down precisely the site restrictions, number of students, total budget, and any other mission-critical requirements as soon as possible. Only through a thorough accounting of project objectives can the brief be fully defined. This is critically important in the present case, since a generative process cannot consider any goals that is has not been instructed to consider
 
 ## Define your problem, sketch it out
+[How to approach designing a problem in Dynamo - overview, start from the end etc?]
+
 *	Can you write down your design steps? Generally, if you can define concrete steps it is easier to create a computational model
 *	Are you generating geometry? [Generators could be whole chapter]
 *	Are you measuring or analyzing something? [Evaluators could be whole chapter]
 *	What key result do you want out? What kind of decision will you be trying to make?
 
 ## Define inputs & outputs
+[dont need to define all inputs immediately] etc
 *	what are the constants and variables in your problem?
 *	what are you trying to measure?
 
