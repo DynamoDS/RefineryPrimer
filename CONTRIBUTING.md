@@ -9,10 +9,11 @@ When filing an issue, please make sure to
 - use one of the provided issue templates
 - answer all questions contained in the issue templates
 
-**Improvement & corrections issue template**
+[**Improvement & corrections issue template**](.github/ISSUE_TEMPLATE/improvement.md)
+      
 Use this issue template when you have identified a potential improvement or correction needed to the content of the Primer. Changes discussed or proposed in these issues will not include new content beyond text edits required in existing files.
 
-**Addition issue template**
+[**Addition issue template**](.github/ISSUE_TEMPLATE/addition.md)
 Use this issue template when you have identified the Primer is missing content and would like to discuss how to add it. Note that additions are very carefully reviewed to make sure they do not contradict or otherwise mismatch existing content, or restrict future content in any way.
 
 ## Contributing content
@@ -31,7 +32,7 @@ To help decide which one, answer the following questions:
 - Does your PR only change wording in one section to make it clearer?
 - Does your PR only affect 1-2 files ?
 
-====> If yes to any of the above, use the **The improvement PR template**
+====> If yes to any of the above, use the [**The improvement PR template**](.github/PULL_REQUEST_TEMPLATE/improvement-pr.md)
 
 - Does your PR perform a global refactoring?
 - Does your PR touch many (5+) files?
@@ -40,7 +41,7 @@ To help decide which one, answer the following questions:
 - Does your PR add a new external reference?
 - Does your PR break backwards compatibility or affect the Gitbook setup?
 
-====> If yes to any of the above, use the **The addition PR template**
+====> If yes to any of the above, use the [**The addition PR template**](.github/PULL_REQUEST_TEMPLATE/additions-pr.md)
 
 
 ### Notes on the PR process
