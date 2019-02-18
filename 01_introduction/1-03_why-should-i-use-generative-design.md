@@ -9,7 +9,7 @@ In a nutshell, generative design is a goal-driven approach to design that uses a
 
 
 ### Faster
-Generative design aims to help a designer find “better” designs for his or her project faster. This is done by exploiting algorithms and other computer-based techniques that enable a machine to quickly generate and evaluate a huge number of design variants on the fly. 
+Generative design aims to help a designer find “better” designs for his or her project faster. This is done by leveraging algorithms and other computer-based techniques that enable a machine to quickly generate and evaluate a huge number of design variants on the fly. 
 
 ### More Variation
 Your specific design parameters are defined to generate many—even thousands —of potential solutions in only a fraction of the time it would take an individual designer.
