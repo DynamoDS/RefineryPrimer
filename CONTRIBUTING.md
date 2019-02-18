@@ -1,71 +1,88 @@
-# Contributing to Dynamo
+# Contributing to the Generative Design Primer
 
-Dynamo is an open source project.
+`GenerativePrimer` is an open source project and the work of many contributors. We appreciate your help!
 
-It is the work of many contributors. We appreciate your help!
-
-Please Note:
-
-1. Before submitting the PR, please review this page for guidelines
-2. Dynamo Team will meet 1x a month to review PRs found on Github (Issues will be handled separately)
-3. PRs will be reviewed from oldest to newest
-4. If a reviewed PR requires changes by the owner, the owner of the PR has 30 days to respond. If the PR has seen no activity by the next session, it will be either closed by the team or depending on its utility will be taken over by someone on the team
-5. PRs should use either Dynamo's default PR template or [one of these other template options](https://github.com/DynamoDS/Dynamo/wiki/Choosing-a-Pull-Request-Template) in order to be considered for review.
-6. PRs that do not have one of the Dynamo PR templates completely filled out with all declarations satisfied will not be reviewed by the Dynamo team.
-7. PRs made to the `DynamoRevit` repo will need to be cherry-picked into all the DynamoRevit Release branches that Dynamo supports. Contributors will be responsible for cherry-picking their reviewed commits to the other branches after a `LGTM` label is added to the PR.
 
 ## Filing issues
 
-When filing an issue, make sure to answer these five questions:
+When filing an issue, please make sure to
+- use one of the provided issue templates
+- answer all questions contained in the issue templates
 
-1. Which version of Dynamo are you using (check the About box)?
-2. Which operating system are you using?
-3. What did you do?
-4. What did you expect to see?
-5. What did you see instead?
+**Improvement & corrections issue template**
+Use this issue template when you have identified a potential improvement or correction needed to the content of the Primer. Changes discussed or proposed in these issues will not include new content beyond text edits required in existing files.
 
-General questions about using Dynamo should be submitted to [the forum at dynamobim.org](http://dynamobim.org/forums/forum/dyn/)
+**Addition issue template**
+Use this issue template when you have identified the Primer is missing content and would like to discuss how to add it. Note that additions are very carefully reviewed to make sure they do not contradict or otherwise mismatch existing content, or restrict future content in any way.
 
-## Contributing code
+## Contributing content
 
-Please see the [Pull request template guide](https://github.com/DynamoDS/Dynamo/wiki/Choosing-a-Pull-Request-Template)
-before submitting a pull request.
+Before submitting a pull request, please review 
+- all the content on this page
+- the templates guidance below to help you choose the right PR template
 
-Unless otherwise noted, the Dynamo source files are distributed under
-the Apache 2.0 License.
+#### PR templates
+
+Want to send us a Pull Request (PR)? Excellent. Please use our default PR template or copy and paste one of these templates - that'll help us review it as quickly as possible.
+
+To help decide which one, answer the following questions:
+
+- Does your PR only correct some spelling mistakes?
+- Does your PR only change wording in one section to make it clearer?
+- Does your PR only affect 1-2 files ?
+
+====> If yes to any of the above, use the **The improvement PR template**
+
+- Does your PR perform a global refactoring?
+- Does your PR touch many (5+) files?
+- Does your PR result in a change to how the Primer is organised?
+- Does your PR add new sections or chapters?
+- Does your PR add a new external reference?
+- Does your PR break backwards compatibility or affect the Gitbook setup?
+
+====> If yes to any of the above, use the **The addition PR template**
+
+
+### Notes on the PR process
+
+1. The Autodesk Generative Design Team will meet 1x a month to review PRs found on Github (Issues will be handled separately)
+2. PRs will be reviewed from oldest to newest
+3. If a reviewed PR requires changes by the owner, the owner of the PR has 30 days to respond. If the PR has seen no activity by the next session, it will be either closed by the team or depending on its utility will be taken over by someone on the team
+4. PRs should use one of the two PR templates described above in order to be considered for review.
+5. PRs that do not have one of the PR templates completely filled out with all declarations satisfied will not be reviewed.
+6. The repository owners can ask a PR author to re-submit or change to another PR template once initially reviewed.
+
 
 Contribution "Bar"
 ------------------
 
-The Dynamo team will merge changes that make it easier for customers to use Dynamo.
+The Autodesk Generative Design Team will merge changes that make it easier for AEC practitioners to get started with generative design.
 
-The Dynamo team will not merge changes that have narrowly-defined benefits. Contributions must also satisfy the other published guidelines defined in this document.
+The Autodesk Generative Design Team will not merge changes that
+- have narrowly-defined benefits
+- include copyrighted external material that the PR author does not have rights to
+- simply reference external material (such as blog posts) by the PR author
+
+Contributions must also satisfy the other published guidelines defined in this document.
 
 DOs and DON'Ts
 --------------
 
 Please do:
 
-* **DO** follow our [coding standards](https://github.com/DynamoDS/Dynamo/wiki/Coding-Standards) and [naming standards](https://github.com/DynamoDS/Dynamo/wiki/Naming-Standards)
-* **DO** include unit tests when adding new features. When fixing bugs, start with
-  adding a test that highlights how the current behavior is broken.
+* **DO** follow similar language & tone of voice
+* **DO** try to keep material accessible to a wide audience
+* **DO** use British English spelling
 * **DO** keep the discussions focused. When a new or related topic comes up
-  it's often better to create new issue than to side track the discussion.
+  it's often better to create new issue than to side-track the discussion.
 * **DO** blog and tweet (or whatever) about your contributions, frequently!
 
 Please do not:
 
-* **DON'T** surprise us with big pull requests. Instead, file an issue and start
-  a discussion so we can agree on a direction before you invest a large amount
-  of time.
-* **DON'T** commit code that you didn't write. If you find code that you think is a good fit to add to Dynamo, file an issue and start a discussion before proceeding.
-* **DON'T** submit PRs that alter licensing related files or headers. If you believe there's a problem with them, file an issue and we'll be happy to discuss it.
-* **DON'T** add API additions without filing an issue and discussing with us first.
-
-Managed Code Compatibility
---------------------------
-
-Contributions must maintain API backwards compatibility following semantic versioning. Contributions that include breaking changes will be rejected. Please file an issue to discuss your idea or change if you believe that it may affect managed code compatibility.
+* **DON'T** surprise us with big pull requests. Instead, file an issue and start a discussion so we can agree on a direction before you invest a large amount of time.
+* **DON'T** commit something you didn't write. If you find content that you think is a good fit to add to the Primer, file an issue and start a discussion before proceeding.
+* **DON'T** submit PRs that alter licensing related files or Gitbook setup. If you believe there's a problem with them, file an issue and we'll be happy to discuss it.
+* **DON'T** make PRs that add chapters or sections without filing an issue and discussing with us first.
 
 Commit Messages
 ---------------
@@ -89,5 +106,5 @@ Also do your best to factor commits appropriately, not too large with unrelated 
 
 Notes
 ---------------
-This guide was based off of [DotNet Core Contributing Guide](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/contributing.md)
+This guide was based on the [Dynamo contributing guide](https://github.com/DynamoDS/Dynamo/blob/master/CONTRIBUTING.md).
 
