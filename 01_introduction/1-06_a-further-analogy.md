@@ -21,13 +21,13 @@ To help illustrate this analogy, let's make a table comparing the expected activ
 
 ### Alternate goals
 
-It's important to note that because the system knows about multiple modes of transport (walk, cycle, bus, train, etc), it can combine them to best achieve the defined goal. This means the goal has a big impact in the routes generated. For example, we could set the goal to be shortest distance if travelling by car or step-free access and the resulting routes could be completely different.
+It's important to note that because the system knows about multiple modes of transport (walk, cycle, bus, train, etc), it can combine them to best achieve the defined goal. This means the goal we set can greatly impact the routes generated. For example, we could set the goal to be shortest distance if travelling by car or step-free access and the resulting routes could be completely different.
 
 <br/>
 <img src="images/citymapper-alternate-goals.jpg">
 
 *above: Citymapper website showing routes that have step-free access*
 
-The selected route takes longer than in the first example, but better satisfies the goal of having `step-free access`.
+We can see the routes identified generally take longer than in the first example, as the new goal is having `step-free access` instead of `quickest` commute.
 
-Though stretching the analogy a bit (computer doesn't `generate` new transport modes, just new routes using existing modes), this example demonstrates similar steps found in a generative design workflow.
+Though stretching the imagination a bit (computer doesn't `generate` new transport modes, just new routes using existing modes), this analogy demonstrates similar steps as those found in a generative design workflow.
