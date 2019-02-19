@@ -3,7 +3,7 @@
 Let’s now look at generative design through the lens of something most of us do on a daily basis: find the quickest commute route. Say you’re looking to go from `Brooklyn` to `Manhattan`, so you go to your favourite route-comparison website and ask it to find you the quickest route.
 
 <br/>
-<img src="images/citymapper-brooklyn-to-manhattan.PNG">
+<img src="images/citymapper-brooklyn-to-manhattan.jpg">
 *Citymapper website showing possible routes, considering multiple modes of transportation*
 <br/>
 
@@ -24,7 +24,7 @@ Below is a table comparing the expected activities and their equivalent in a gen
 It's important to note that because the system knows about multiple modes of transport (walk, cycle, bus, train, etc), it can combine them to best achieve the defined goal. This means the goal has a big impact in the routes generated. For example, we could set the goal to be shortest distance if travelling by car or step-free access and the resulting routes could be completely different.
 
 <br/>
-<img src="images/citymapper-alternate-goals.PNG">
+<img src="images/citymapper-alternate-goals.jpg">
 *Citymapper website showing routes that have step-free access*
 <br/>
 
