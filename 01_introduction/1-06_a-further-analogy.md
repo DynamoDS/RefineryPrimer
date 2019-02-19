@@ -7,7 +7,7 @@ Let’s now look at generative design through the lens of something most of us d
 *Citymapper website showing possible routes, considering multiple modes of transportation*
 <br/>
 
-Below is a table comparing the expected activities and their equivalent in a generative design process.
+To help illustrate this analogy, let's make a table comparing the expected activities when searching for the quickest commute route and what their equivalent would be in a generative design process.
 
 | activity  | equivalent in generative design process   |
 |-----------------------------------------------------------------------------------------------------------------------------------------  |--------------------------------------------------------   |
