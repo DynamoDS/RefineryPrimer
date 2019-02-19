@@ -1,21 +1,33 @@
 # A Further Analogy
 
-Let’s now look at generative design through the lens of something most of us have done before : book a flight. Say you’re looking to fly from London to New York, so you go to your favourite flight-comparison website and ask it to find you the cheapest direct flight.
+Let’s now look at generative design through the lens of something most of us do on a daily basis: find the quickest commute route. Say you’re looking to go from `Brooklyn` to `Manhattan`, so you go to your favourite route-comparison website and ask it to find you the quickest route.
 
 <br/>
-<img src="images/skyscanner.PNG">
+<img src="images/citymapper-brooklyn-to-manhattan.PNG">
+*Citymapper website showing possible routes, considering multiple modes of transportation*
 <br/>
 
 Below is a table comparing the expected activities and their equivalent in a generative design process.
 
 | activity  | equivalent in generative design process   |
 |-----------------------------------------------------------------------------------------------------------------------------------------  |--------------------------------------------------------   |
-| `person` (you) sets first parameter: fly from London to New York  | stage: Generate<br> step: set generation parameters   |
-| `computer` generates a list of all possible routes from London to New York<br>(it already knows scheduled flights of every airline)   | stage: Generate<br> step: run generation algorithm    |
-| `person` sets goals: direct flights only & lowest cost    | stage: Rank<br> step: define ranking objectives   |
+| `person` (you) sets first parameter: go from Brooklyn to Manhattan  | stage: Generate<br> step: set generation parameters   |
+| `computer` generates possible routes from Brooklyn to Manhattan, taking into consideration all the available transportation modes, their operating status & set routes.   | stage: Generate<br> step: run generation algorithm    |
+| `person` sets goals: quickest route    | stage: Rank<br> step: define ranking objectives   |
 | `computer` evaluates each of the identified routes based on your goals    | stage: Rank<br> step: run ranking     |
-| `computer` attempts to solve your goals and returns the list of flights, with most suitable ones first    | stage: Evolve<br> step: run evolution     |
+| `computer` attempts to solve your goals and returns the list of routes, with most suitable ones first    | stage: Evolve<br> step: run evolution     |
 | `person` evaluates the list of best options and makes a choice (faster and better than if they had to do all of this work on their own)   | stage: Explore<br> step:      |
-| `person` chooses preferred flight and goes to booking site    | stage: Integrate<br>  step: integrate preferred option    |
+| `person` chooses preferred route and sends travel instructions to their phone    | stage: Integrate<br>  step: integrate preferred option    |
 
-Though stretching the analogy a bit (computer doesn't `generate` new flights, just new routes) , this example exhibits the steps found in a generative design workflow.
+### Alternate goals
+
+It's important to note that because the system knows about multiple modes of transport (walk, cycle, bus, train, etc), it can combine them to best achieve the defined goal. This means the goal has a big impact in the routes generated. For example, we could set the goal to be shortest distance if travelling by car or step-free access and the resulting routes could be completely different.
+
+<br/>
+<img src="images/citymapper-alternate-goals.PNG">
+*Citymapper website showing routes that have step-free access*
+<br/>
+
+The selected route takes longer than in the first example, but better satisfies the goal of having `step-free access`.
+
+Though stretching the analogy a bit (computer doesn't `generate` new transport modes, just new routes using existing modes), this example demonstrates similar steps found in a generative design workflow.
