@@ -4,8 +4,8 @@ Let’s now look at generative design through the lens of something most of us d
 
 <br/>
 <img src="images/citymapper-brooklyn-to-manhattan.jpg">
-*Citymapper website showing possible routes, considering multiple modes of transportation*
-<br/>
+
+*above: Citymapper website showing possible routes, considering multiple modes of transportation*
 
 To help illustrate this analogy, let's make a table comparing the expected activities when searching for the quickest commute route and what their equivalent would be in a generative design process.
 
@@ -25,8 +25,8 @@ It's important to note that because the system knows about multiple modes of tra
 
 <br/>
 <img src="images/citymapper-alternate-goals.jpg">
-*Citymapper website showing routes that have step-free access*
-<br/>
+
+*above: Citymapper website showing routes that have step-free access*
 
 The selected route takes longer than in the first example, but better satisfies the goal of having `step-free access`.
 
