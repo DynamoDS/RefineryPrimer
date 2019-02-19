@@ -5,32 +5,39 @@ Let’s look at several examples that illustrate how generative design can help 
 
 ### Building Design
 
-For the design of the new office and research space in the MaRs Innovation District of Toronto, Autodesk leveraged generative design for architecture. We started with high-level goals and constraints and then used the power of computation to generate, evaluate, and evolve thousands of design options. The result is a high-performing and novel work environment for Autodesk that would not have been possible to create without this approach.
+For the design of the new office and research space in the MaRs Innovation District of Toronto, Autodesk leveraged generative design for architecture. Starting with high-level goals & constraints and then used the power of computation to generate, evaluate, and evolve thousands of design options. The result is a high-performing and novel work environment for Autodesk that would not have been possible to create without this approach.
 
-To begin the process data was collected from employees and managers about work styles and location preferences. Based on this information six primary and measurable goals were defined:
+**Generate**
 
-*	work style preference
-*	adjacency preference
-*	low distraction
-*	interconnectivity
-*	daylight
-*	views to the outside
+A geometric system was created by the designers that allowed the exploration of multiple configurations of work neighbourhoods, amenity spaces and circulation zones - this represents the `define` step of the `generate` phase as defined previously.
 
-A geometric system was then created by the designer that allowed the exploration of multiple configurations of work neighborhoods, amenities and circulation. The designer also creates an algorithm to measure how different floor plans can be measured against the stated goals above. 
+The computer used this algorithm, varying its parameters to produce thousands of design options. 
 
-The computer used this algorithm to flex the model producing thousands of design options and scoring the outputs against the predefined goals. 
+**Evaluate**
+To begin with, information was collected from employees and managers about work styles and location preferences. Based on this data, six primary and measurable goals were defined:
 
-The designer then evaluated the best options that were returned to make a decision on the design.
+*   work style preference
+*   adjacency preference
+*   low distraction
+*   interconnectivity
+*   daylight
+*   views to the outside
+
+The designers then created an algorithm to measure how any given floor plan can be measured against each of the stated goals above. Known as `evaluators`, these algorithms represents the `analyse` & `rank` stages of the generative process.
+
+After they were formulated, the computer used these algorithms to evaluate each of the designs generated in the previous stage against the defined goals.
+
+**Explore**
+Once designs have been evaluated, the designers then explored what is often called the `solution space` : the generated designs together with their evaluation results. Taking into account each defined goal, they identified the design that best balanced their defined goals.
 
 <br/>
-
-<img src="images/mars.jpg">
+<img src="images/autodesk-project-mars.jpg">
 <br/>
 
 
 ### Product Design
 
-Looking at a simpler example, if you consider the process of designing a typical, four-legged table. Using a standard approach, a designer would manually define the height, width, depth & material of the table, and the resultant output would be a single, physical object with a fixed, immutable form. Perhaps the designer tests several distinct sets of dimensions & material combinations and ends up with three or four table prototypes.
+Looking at a simpler example, let's consider the process of designing a typical, four-legged table. Using a standard approach, a designer would manually define the height, width, depth & material of the table, and the resultant output would be a single, physical object with a fixed, immutable form. Perhaps the designer tests several distinct sets of dimensions & material combinations and ends up with three or four table prototypes.
 
 <img src="images/table.PNG">
 
