@@ -13,13 +13,13 @@ The `08-EvaluateSurface.dyn` graph in the Refinery examples, uses a single objec
 U and V values are used to move the sphere across the surface. Since these values are the driving inputs, they need to be marked as *Is Input* for Refinery to pick them up. 
 
 <br/>
-<img src="images/GenerativeDesign_Inputs_SineWave.png">
+<img src="images/GenerativeDesign_Inputs_SineWave.png" style="display: block; width:300px; margin-left: auto; margin-right: auto;">
 <br/>
 
 In order to know when the sphere is at the highest peak, a measure of the Z-value is made every time the sphere moves, this represents the *fitness* value.
 
 <br/>
-<img src="images/GenerativeDesign_Outputs_SineWave.png">
+<img src="images/GenerativeDesign_Outputs_SineWave.png"  style="display: block; width:300px; margin-left: auto; margin-right: auto;>
 <br/>
 
 When running this graph in Refinery:
@@ -57,12 +57,12 @@ We say these two goals are competing because when considering one cuboid, the bi
 Please make sure all the nodes controlling the size & location of the cuboids are set as *Is Input* in the Dynamo graph.
 
 <br/>
-<img src="images/GenerativeDesign_3BoxesSurfaceVolume_Inputs.png">
+<img src="images/GenerativeDesign_3BoxesSurfaceVolume_Inputs.png" style="display: block; width:300px; margin-left: auto; margin-right: auto;">
 <br/>
 
 Whenever an input parameter is changed the option's volume and total surface area will be re-calculated. These two values are the *fitness* values and need to be set as *Is Output* in the Dynamo graph.
 
-<img src="images/GenerativeDesign_3BoxesSurfaceVolume_Outputs.png">
+<img src="images/GenerativeDesign_3BoxesSurfaceVolume_Outputs.png" style="display: block; width:300px; margin-left: auto; margin-right: auto;">
 <br/>
 
 When running this graph in Refinery:
