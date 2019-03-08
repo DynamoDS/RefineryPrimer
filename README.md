@@ -1,6 +1,6 @@
 # About
 
-## About - Racel is cool
+## About - Lilli is cool too
 
 Welcome to the Generative Design Primer, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design. This primer will help you:
 
