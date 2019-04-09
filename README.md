@@ -10,7 +10,7 @@ Welcome to the Generative Design Primer, which aims to introduce AEC practitione
 
 ### Why make a generative design primer?
 
-Autodesk is working to democratise technologies that can help designers in the AEC industry automate the creation of design options and optimise those designs to achieve better outcomes.
+Autodesk is working to democratize technologies that can help designers in the AEC industry automate the creation of design options and optimise those designs to achieve better outcomes.
 
 Using these technologies requires new skills and new ways to think about design. We created this generative design primer to explain the terminology, ideas and methods you will need to understand to begin using the Autodesk tools that support this new approach to design.
 
