@@ -1,6 +1,6 @@
 # Introduction
 
-In this chapter, we’ll look at:
+In this chapter, we will look at:
 
 * a definition of generative design
 * the fundamental concepts needed to understand generative design
