@@ -1,2 +1,2 @@
-# What is Optimisation?
+# What is Optimization?
 

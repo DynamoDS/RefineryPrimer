@@ -1,14 +1,14 @@
 # An Example of Generative Design
 
-Let’s look at several examples that illustrate how generative design can help you achieve your design challenges.
+Let’s look at several examples that illustrate how generative design can help you achieve your design goals.
 
 ## Building Design
 
-For the design of the new office and research space in the MaRs Innovation District of Toronto, Autodesk leveraged generative design for architecture. Starting with high-level goals & constraints and then used the power of computation to generate, evaluate, and evolve thousands of design options. The result is a high-performing and novel work environment for Autodesk that would not have been possible to create without this approach.
+For the design of the new office and research space in the MaRs Innovation District of Toronto, Autodesk leveraged generative design processes. Starting with high-level goals & constraints and then used the power of computation to generate, evaluate, and evolve thousands of design options. The result is a high-performing and novel work environment for Autodesk that would not have been possible to create without this approach.
 
 ### Generate
 
-A geometric system was created by the designers that allowed the exploration of multiple configurations of work neighbourhoods, amenity spaces and circulation zones - this represents the `define` step of the `generate` phase as defined previously.
+A geometric system was created by the designers that allowed the exploration of multiple configurations of work neighborhoods, amenity spaces and circulation zones - this represents the `define` step of the `generate` phase as defined previously.
 
 The computer used this algorithm, varying its parameters to produce thousands of design options.
 
@@ -29,11 +29,11 @@ After they were formulated, the computer used these algorithms to evaluate each 
 
 ### Explore
 
-Once designs have been evaluated, the designers then explored what is often called the `solution space` : the generated designs together with their evaluation results. Taking into account each defined goal, they identified the design that best balanced their defined goals.
+Once designs have been evaluated, the designers then explored what is often called the `solution space` : the generated designs together with their evaluation results. Taking into account each defined goal, they identified the design that best achieved the defined goals.
 
 ![](../.gitbook/assets/autodesk-project-mars.jpg)
 
-## Product Design
+## Furniture Design
 
 Looking at a simpler example, let's consider the process of designing a typical, four-legged table.
 
@@ -51,7 +51,7 @@ In a generative design approach, the designer would instead specify:
 
 The designer would use the computer to help him/her generate a series of designs falling within the specified range. Some designs will be short and wide, others will be tall and thin, but each will satisfy the user-defined constraints. This is key, as many designs can be generated very quickly, much more than any human could feasibily examine.
 
-> Let's imagine the computer looked at 20 different values for each of : length, width, height, table/leg material combinations. The resulting solution space would be 20  _20_  20 \* 20 = 160,000 designs, which is way too many options for a person to reasonably evaluate.
+> Let's imagine the computer looked at 20 different values for each of : length, width, height, table/leg material combinations. The resulting solution space would be 20 _20_ 20 \* 20 = 160,000 designs, which is way too many options for a person to reasonably evaluate.
 
 ![](../.gitbook/assets/tables-multiobjective.png)
 
@@ -82,7 +82,7 @@ This second example is a good illustration of using generative design to design 
 
 ![](../.gitbook/assets/tables-multiobjective_colour.png)
 
-_Above: visualising evaluator function results as a colour range_
+_Above: visualizing evaluator function results as a color range_
 
 As you can see, both of these examples follow the same fairly generic process, which is why there are so many possible applications of generative design, in areas as diverse as aviation, automotive and building design, manufacturing, and product design.
 
