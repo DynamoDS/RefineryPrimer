@@ -28,7 +28,7 @@
 
 > Different ways to interpret results and rankings.
 
-**Solver** / solv·er / nounthanks
+**Solver** / solv·er / noun
 
 > An algorithm specifically designed to find the solution to a precisely defined problem.
 
