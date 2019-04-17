@@ -1,6 +1,8 @@
 # Workflow 1 : Building mass generator
 
-*gif of the generated towers*
+<p align="center">
+  <img src="https://media.giphy.com/media/Ze2mIugKGllYHDF6o0/giphy.gif">
+</p>
 
 ## Description
 
