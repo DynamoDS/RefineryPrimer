@@ -1,7 +1,7 @@
-# How do I define goals and objective criteria? ?
+# How do I define goals and objective criteria?
 Know your design parameters inside and out!  
 
-Every good Generative Design project starts with a clear and precise understanding of the design brief. Algorithms are great at churning through thousands of design options very quickly, but they don’t perform nearly as well when given vague or imprecise instructions. You must be able to define your brief in a mathematical way (i.e., with some sort of number that be used to discriminate between good and bad outcomes). 
+Every good Generative Design project starts with a clear and precise understanding of the design brief. Algorithms are great at churning through thousands of design options very quickly, but they don’t perform nearly as well when given vague or imprecise instructions. You must be able to define your brief in a mathematical way (i.e. with some sort of number that can be used to discriminate between good and bad outcomes). 
 
 Some good questions to ask when formulating design goals are: 
 
