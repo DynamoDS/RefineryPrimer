@@ -19,6 +19,6 @@ Imagine having to optimize a structural design, we want the structure to be as l
 
 For a design to be in the pareto optimal set it cannot be dominated by another solution. If a solution is worse than another solution on all objectives, then it is dominated and not in the pareto optimal set. 
 
-<img src="Images/4-01_what-is-optimisation/4-01_ExampleOfParetoFrontier.png>
+<br/>
           
 <img src="Images/4-01_what-is-optimisation//4-01_ExampleOfParetoFrontier.png">
