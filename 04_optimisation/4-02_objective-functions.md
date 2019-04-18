@@ -1,9 +1,9 @@
 # Objective Function 
 The objective function is the thing you want to maximise or minimise. It is what you will measure solutions against to decide which is best. The objective function can be thought of as the “goal” of your Generative Design process. In finance the objective function is to maximise portfolio value, in aerospace engineering the objective is often to minimise weight.  
 
-The key is that the objective function must be quantifiable, you must be able to put a number to it. 
+They key is that the objective function must be quantifiable, you must be able to put a number to it. 
 
-In generative design we are not limited to one objective we can also have multiple objectives or goals that we are trying to optimise our design against. These different ways of implementing optimisation is called Single Objective Optimisation and Multi Objective Optimisation, respectively.
+In generative design we are not limited to one objective we can also have multiple objectives or goals that we are trying to optimise our design against.   These different ways of doing optimisation is called Single Objective Optimisation and Multi Objective Optimisation, respectively.
 
 <br/>
 
@@ -18,6 +18,8 @@ Usually, optimising designs involves multiple competing objectives, therefore op
 Imagine having to optimize a structural design, we want the structure to be as light as possible, but at the same time we want it to be as rigid as possible. This example has two competing objectives; there will be one lightest solution and one solution stiffer than the rest, and in between those, a huge amount of designs that are compromises of weight and stiffness. The designs that cannot be improved more in one objective without hurting another objective is known as the pareto optimal solutions.
 
 For a design to be in the pareto optimal set it cannot be dominated by another solution. If a solution is worse than another solution on all objectives, then it is dominated and not in the pareto optimal set. 
+
+![alt text](Images/4-01_what-is-optimisation//4-02_ExampleOfParetoFrontier.png "Example Of Pareto Frontier")
 
 <br/>
           
