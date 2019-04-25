@@ -1,4 +1,5 @@
 # The Evaluation Phase
+The genetic algorithm needs to evaluate each desig option it makes in order to optimise it over generations. The evaluation phase is a process of assigning a quantifiable value to each of the objectives in the model. These values, also called the fitness, is measured based on the fitness function that are setup in the generative model.
 
 ## What do you mean by ‘fitness’? 
 A fitness function is essentially the objective function for the genetic algorithm; it's the criterion you want to maximise or minimise, the thing you care most about achieving. A fitness function is used to evaluate how close (or far) a given design solution is from achieving the designer’s goals. The genetic algorithm is designed to drive the model to higher and higher fitness, so defining a fitness function precisely and accurately is vital. 
