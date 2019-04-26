@@ -1,6 +1,6 @@
 # What is Optioneering?
 
-![alt text](Images/3-01_what-is-optioneering//3-01_optioneering-example.png "Illustration of crossover (http://mnemstudio.org/genetic-algorithms-recombination.htm)")
+![](Images/3-01_what-is-optioneering//3-01_optioneering-example.png)
 
 Optioneering is the human touch in the computational process, it is the name given to the task of selecting from the many design variants outputted by a Generative Design procedure. Optioneering is not a computational process, rather the designer sifts through a series of design variants, tags ones she likes or identifies options that are particularly aligned with her design objectives. It is a great way to add in all those little elements of a brief that an algorithm may not be able to capture; optioneering brings a designer’s feel and eye into the equation. 
 
