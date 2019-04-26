@@ -4,5 +4,5 @@ A solver is an algorithm specifically designed to find the solution to a precise
 
 Solvers typically require inputs to take a very specific form. Often, the greatest challenge is defining your problem in a way that a solver can understand. To take a simple example, your phone’s calculator is a solver for addition, subtraction, and division – but it only works if you punch things in correctly.
 
-![IMAGE](Images/5-04_solvers//5_04_rubiks-cube-solver.jpg)
+![Rubik's cube solver](Images/5_04_rubiks-cube-solver.jpg)
 >(https://rubiks-cube-solver.com/)
