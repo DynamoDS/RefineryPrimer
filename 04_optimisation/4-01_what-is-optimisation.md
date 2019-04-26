@@ -1,6 +1,6 @@
 # What is Optimisation?
 
-<img src="Images/4-01_what-is-optimisation//4-01_WhatIsOptimisationStart.png">
+<img src="Images/4-01_WhatIsOptimisationStart.png">
 
 <br/>
 
