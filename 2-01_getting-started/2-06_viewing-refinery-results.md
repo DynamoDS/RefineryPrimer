@@ -12,7 +12,7 @@ The design grid shows each option as a 3d geometrical thumbnail that can be indi
 
 The design table replaces the design grid, if chosen, and lists each option in a table form with each column representing the values for the inputs and outputs.
 
-![](../.gitbook/assets/refinery_visualiseresults_designtable%20%281%29.png)
+![](../.gitbook/assets/refinery_visualiseresults_designtable.png)
 
 ## Scatterplot
 
@@ -28,7 +28,7 @@ The other chart available in Refinery is a parallel coordinates graph. This char
 
 The graph can be filtered by dragging the selection on each vertical axis.
 
-![](../.gitbook/assets/refinery_visualiseresults_parallelcoordinates%20%281%29.png)
+![](../.gitbook/assets/refinery_visualiseresults_parallelcoordinates.png)
 
 ## Choosing the right visualisation
 

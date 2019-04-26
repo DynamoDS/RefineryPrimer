@@ -51,7 +51,7 @@ In a generative design approach, the designer would instead specify:
 
 The designer would use the computer to help him/her generate a series of designs falling within the specified range. Some designs will be short and wide, others will be tall and thin, but each will satisfy the user-defined constraints. This is key, as many designs can be generated very quickly, much more than any human could feasibily examine.
 
-> Let's imagine the computer looked at 20 different values for each of : length, width, height, table/leg material combinations. The resulting solution space would be 20 _20_ 20 \* 20 = 160,000 designs, which is way too many options for a person to reasonably evaluate.
+> Let's imagine the computer looked at 20 different values for each of : length, width, height, table/leg material combinations. The resulting solution space would be 20  _20_  20 \* 20 = 160,000 designs, which is way too many options for a person to reasonably evaluate.
 
 ![](../.gitbook/assets/tables-multiobjective.png)
 

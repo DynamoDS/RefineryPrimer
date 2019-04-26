@@ -10,11 +10,13 @@ The `08-EvaluateSurface.dyn` graph in the Refinery examples, uses a single objec
 
 U and V values are used to move the sphere across the surface. Since these values are the driving inputs, they need to be marked as _Is Input_ for Refinery to pick them up.
 
-![](../.gitbook/assets/generativedesign_inputs_sinewave%20%281%29.png)
+![](../.gitbook/assets/generativedesign_inputs_sinewave.png)
 
 In order to know when the sphere is at the highest peak, a measure of the Z-value is made every time the sphere moves, this represents the _fitness_ value.
 
-&lt;img src="images/GenerativeDesign\_Outputs\_SineWave.png" style="display: block; width:300px; margin-left: auto; margin-right: auto;&gt;
+  
+ &lt;img src="images/GenerativeDesign\_Outputs\_SineWave.png" style="display: block; width:300px; margin-left: auto; margin-right: auto;&gt;   
+
 
 When running this graph in Refinery:
 
