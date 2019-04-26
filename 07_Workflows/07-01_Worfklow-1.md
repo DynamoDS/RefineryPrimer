@@ -46,4 +46,5 @@ The dynamo script by itself is able to generate one tower based on the user inpu
 ## Results
 
 Once Refinery has finish running we can have a look at the outputs of the new study. 
+This specific example was obtined from a randomized study based on 40 solutions.
 ![IMAGE](Images/07-01_Workflow_1//7-01_workflow1_randomisationrun.png)
