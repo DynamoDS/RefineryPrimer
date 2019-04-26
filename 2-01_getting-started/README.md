@@ -1,4 +1,8 @@
-# Getting Started with Generative Techniques in your Design Process
+---
+description: Getting Started with Generative Techniques in your Design Process
+---
+
+# Getting Started
 
 Now that we're familiar with what generative design is, why use it and seen some example use-cases, the next question becomes:
 

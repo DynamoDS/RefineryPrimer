@@ -14,9 +14,7 @@ U and V values are used to move the sphere across the surface. Since these value
 
 In order to know when the sphere is at the highest peak, a measure of the Z-value is made every time the sphere moves, this represents the _fitness_ value.
 
-  
- &lt;img src="images/GenerativeDesign\_Outputs\_SineWave.png" style="display: block; width:300px; margin-left: auto; margin-right: auto;&gt;   
-
+&lt;img src="images/GenerativeDesign\_Outputs\_SineWave.png" style="display: block; width:300px; margin-left: auto; margin-right: auto;&gt;
 
 When running this graph in Refinery:
 

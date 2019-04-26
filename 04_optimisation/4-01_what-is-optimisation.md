@@ -9,4 +9,3 @@ Optimisation is an inherently mathematical subject. It is concerned with maximis
 1. An objective function 
 2. Constraints 
 3. Data
-
