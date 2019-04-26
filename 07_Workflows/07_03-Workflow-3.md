@@ -46,4 +46,6 @@ The dynamo script by itself is able to generate generate a desk and amenity spac
 ## Results
 
 Once Refinery has finish running we can have a look at the outputs of the new study. 
+<br>
+This specific example was obtined from a randomized study based on 35 solutions. 
 ![IMAGE](Images/07-03_Workflow_3//7-03_workflow3_randomisationrun.png)
