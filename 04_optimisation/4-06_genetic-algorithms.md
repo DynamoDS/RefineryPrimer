@@ -1,6 +1,6 @@
 # What do you mean by genetic algorithms?
-<img src="Images/4-06_genetic-algorithms//4_06_GAProcess.png">
-<br/>
+![GAProcess](Images/4_06_GAProcess.png "GAProcess")
+
 
 A genetic algorithm is a kind of optimisation algorithm that is popular in Generative Design applications. In technical speak, it is an example of an “adaptive heuristic algorithm”. You might also hear it referred to as an “evolutionary algorithm”. Genetic algorithms tend to be very useful when your objective function is highly complex, subject to randomness, or is discontinuous.  
 
