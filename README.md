@@ -1,8 +1,12 @@
+---
+description: >-
+  Welcome to the Generative Design Primer, which aims to introduce AEC
+  practitioners of all experience levels to an exciting new approach to design
+---
+
 # About
 
-## About
-
-Welcome to the Generative Design Primer, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design. This primer will help you:
+This primer will help you:
 
 * **Understand** what generative design is by defining the base concepts and terminology you need to know 
 * **Explore** how these techniques can be used to solve practical challenges commonly found in AEC design projects
@@ -16,7 +20,7 @@ Using these technologies requires new skills and new ways to think about design.
 
 designtech.io was commissioned to kick-start the development of this primer, we thank them for all their efforts in establishing this valuable resource.
 
-[![](.gitbook/assets/designtech-logo.png)](http://designtech.io)
+[![](.gitbook/assets/designtech-logo%20%281%29.png)](http://designtech.io)
 
 ### Open-Source
 
