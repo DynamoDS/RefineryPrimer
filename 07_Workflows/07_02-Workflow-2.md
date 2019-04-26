@@ -53,5 +53,5 @@ Design options where the building is outside of the site boundary have been pena
 
 ## Results
 
-Once Refinery has finish running we can have a look at the outputs of the new study. 
-*add images of all the resultant options and the refinery graphs*
+Once Refinery has finish running we can have a look at the outputs of the new study.
+![IMAGE](Images/07-02_Workflow_2//7-02_workflow2_optimisationrun.png)
