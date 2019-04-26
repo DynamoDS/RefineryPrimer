@@ -59,4 +59,4 @@ This specific example was obtined from an optimized study based on 10 generation
 Regarding the outputs, the building area outside of the site boundary ***OUT_Area Out(m2)*** and the solar incidence on the external cladding ***OUT_Avg. (kWh/m2)*** are set to minimized, that will keep the building within the site boundary. 
 <br>
 The last output, area of the site not occupied by the building ***OUT_Free Area (m2)*** can be ignored, as this value will allways be the same while the building is inside the site perimeter.
-![IMAGE](Images/07-02_Workflow_2//7-02_workflow2_optimisationrun.png)
+![Workflow 2](Images/7-02_workflow2_optimisationrun.png)
