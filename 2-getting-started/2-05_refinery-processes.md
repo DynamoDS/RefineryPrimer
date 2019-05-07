@@ -6,8 +6,8 @@ An optioneering process lets you explore all possible solutions that the graph c
 
 To run an optioneering process in Refinery, follow these steps:
 
-* Open Refinery from the View Menu in Dynamo
-* Create a new study and select **Randomise** as the generation method
+* Launch Refinery from the Refinery menu in Dynamo
+* Create a new study and select **Randomize** as the generation method
 * Under Inputs make sure that all the desired inputs are present
 * For inputs that should not change on each run, set the desired value and uncheck the box alongside it
 * Under Outputs ensure each output defined in the graph is listed  
@@ -20,7 +20,7 @@ To run an optioneering process in Refinery, follow these steps:
 
 ## How to run an optimisation process using Refinery
 
-An optimisation process lets Refinery evolve your design to find the most suitable options based on the constraints and goals provided. Refinery will run multiple generations of options and each time it will take the fittest \(best\) options of the generation and use them to create a new generation. Refinery is using NSGA-II, an elitist multi objective genetic algorithm to optimise results.
+An optimisation process lets Refinery evolve your design to find the most suitable options based on the constraints and goals provided. Refinery will run multiple generations of options and each time it will take the fittest \(best\) options of the generation and use them to create a new generation. Refinery is using NSGA-II <add link to more explanation>, an elitist multi objective genetic algorithm to optimise results.
 
 To run an optimisation process in Refinery, follow these steps:
 
