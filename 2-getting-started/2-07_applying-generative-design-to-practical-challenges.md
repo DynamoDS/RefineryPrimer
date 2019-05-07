@@ -1,6 +1,6 @@
 # Applying Generative Design to Practical Challenges
 
-When you install the Refinery package for Dynamo, it ships with a few very useful practical examples, let's have a look at a few of them.
+When you download  Refinery for Dynamo, you can also download a few very useful practical examples, let's have a look at a few of them.
 
 ## Example 8
 
