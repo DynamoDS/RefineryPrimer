@@ -8,7 +8,7 @@ _above: Citymapper website showing possible routes, considering multiple modes o
 
 To help illustrate this analogy, let's make a table comparing the expected activities when searching for the quickest commute route and what their equivalent would be in a generative design process.
 
-| activity | equivalent in generative design process |
+| map activity | equivalent in generative design process |
 | :--- | :--- |
 | `person` \(you\) sets first parameter: go from Brooklyn to Manhattan | stage: Generate  step: set generation parameters |
 | `computer` generates possible routes from Brooklyn to Manhattan,  taking into consideration all the available transportation modes, their operating status & set routes. | stage: Generate  step: run generation algorithm |
