@@ -1,4 +1,4 @@
-# An Example of Generative Design  TESTTEST
+# An Example of Generative Design
 
 Let’s look at several examples that illustrate how generative design can help you achieve your design goals.
 
