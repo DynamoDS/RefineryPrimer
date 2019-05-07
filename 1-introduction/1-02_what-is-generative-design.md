@@ -14,5 +14,5 @@ Generative design is a specific application of the computational design approach
 
 * the designer defines goals to achieve a design \(rather than the exact steps\)
 * the computer generates many designs \(not just one\)
-* the computer finds the optimal solution that satisfies the designer’s multiple competing goals, amongst all generated designs
+* the computer finds a set of  optimal solutions that satisfy the designer’s multiple competing goals
 
