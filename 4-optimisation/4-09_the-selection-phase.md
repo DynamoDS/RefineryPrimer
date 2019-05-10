@@ -1,6 +1,6 @@
 # The Selection Phase
 
-At each iteration, some proportion of the population (i.e., some subset of potential solutions) is selected to breed so that their features can be passed on to the next generation. Since the goal of a generative algorithm is optimisation, we want to converge to some high-quality solution. It makes sense then to select only those solutions with the best possible features for breeding.
+At each iteration, a certain proportion of the population (i.e., a subset of potential solutions) is selected to breed so that their features can be passed on to the next generation. This value is fixed at __ in Project Refinery and is not currently available as a setting. Since the goal of a generative algorithm is optimisation, we want to converge to some high-quality solution. It makes sense then to select only those solutions with the best possible features for breeding.
 
 Selection is done on the basis of the fitness value created by the fitness function. Individuals with a higher fitness score have better genes. (See previous section for a fuller discussion of fitness and fitness functions.)
 
