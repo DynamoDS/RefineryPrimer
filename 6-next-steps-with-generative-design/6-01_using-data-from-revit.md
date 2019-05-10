@@ -10,6 +10,6 @@ This node is designed to capture the output of any node and store it in the .dyn
 
 A typical workflow is to run a Dynamo for Revit workflow once with the node spliced in at the appropriate parts of the graph to syphon off and persist the data flow, save the graph and then open it in DynamoSandbox where it is now possible to run a successful optimization with Refinery.
 You can use as many Remember nodes as is necessary for your purposes. 
-The node remembers the last non-null value that passed through it, which is useful for executing the graph in such environments as Dynamo for Revit. Please note that with version 0.4.26 of Refinery the node does not  yet support nested lists. 
+The node remembers the last non-null value that passed through it, which is useful for executing the graph in such environments as Dynamo for Revit. Please note that with version 0.4.44 of Refinery the node does not  yet support nested lists. You can work around this by remembering each list.
 
-An example of how to use the Remember node to cache your data:
+An example of how to use the Remember node to cache your data:  _need example_
