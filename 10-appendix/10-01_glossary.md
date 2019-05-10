@@ -34,7 +34,7 @@
 
 **Seed** / seed / noun
 
-> tbc
+> A value that initializes a random function.
 
 **Genetic** / ge·net·ic / noun
 
@@ -42,7 +42,7 @@
 
 **Algorithm** / al·go·rithm / noun
 
-> tbc
+> A process or set of rules to be followed in calculations or other problem-solving operations with a computer.
 
 **Iterative** / it·er·a·tive / verb
 
@@ -54,7 +54,7 @@
 
 **Optioneering** / op·tion·eer·ing / verb
 
-> Describe a goal, define constraints and make the computer generate all possible solutions.
+> Enter a desired number of results and design algorithm and make the computer generate solutions.
 
 **Optimisation** / op·ti·mi·sa·tion / verb
 
@@ -62,11 +62,11 @@
 
 **Permutation** / per·mu·ta·tion / verb
 
-> tbc
+> A unique iteration of a design.
 
 **Cross-product** / cross pro·duct / verb
 
-> tbc
+> aka Cartesian Product: the product of two or more sets that contains all ordered pairs between the sets.
 
 **Local optimum** / lo·cal op·ti·mum / verb
 
