@@ -1,12 +1,12 @@
 # Objective Function 
-The objective function is the thing you want to maximise or minimise. It is what you will measure solutions against to decide which is best. The objective function can be thought of as the “goal” of your Generative Design process. In finance the objective function is to maximise portfolio value, in aerospace engineering the objective is often to minimise weight.  
+An objective function is the output that you want to maximise or minimise. It is what you will measure solutions against to decide which is best. The objective function can be thought of as the “goal” of your generative design process. In finance the objective function is to maximise portfolio value, in aerospace engineering the objective is often to minimise weight.  
 
 They key is that the objective function must be quantifiable, you must be able to put a number to it. 
 
-In generative design we are not limited to one objective we can also have multiple objectives or goals that we are trying to optimise our design against.   These different ways of doing optimisation is called Single Objective Optimisation and Multi Objective Optimisation, respectively.
+In generative design workflows, we are not limited to one objective (single objective optimization) we can also have multiple objectives or goals that we are trying to optimise our design against (multi-objective optimization).   
 
 ## Single Objective Optimisation
-When we have only one objective function, we are able to find one optimal solution. 
+When we have only one objective function, the system will return one optimal solution. 
 
 ## Multi Objective Optimisation
 Usually, optimising designs involves multiple competing objectives, therefore optimisation becomes a matter of finding the best trade-off between these objectives rather than finding the one best solution. Whilst adding more objectives makes the optimisation more complex, it also opens up for the possibility to get a set of optimal solutions that the decision maker can choose from, instead of just getting one single solution. 
