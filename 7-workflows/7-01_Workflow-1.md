@@ -41,7 +41,7 @@ All unnecesary geometry has been hidden from the graph in order to get a nice vi
 
 ## Refinery
 
-The dynamo script by itself is able to generate one tower based on the user inputs, but combined with Refinery will allow users to generate as many options of the tower as they need. This script can be used with an optimizing study but works best with a randomizing study, as there are not many outputs that can be optimized. 
+The dynamo script by itself is able to generate one tower based on the user inputs, but combined with Refinery will allow users to generate as many options of the tower as they need. This script can be used with an optimizing study but works best with a randomizing study, as there are not many outputs that can be optimized. _dosen't this one work best with randomize mode because of how it generates the towers - e.g. totally randomly?  There ARE outputs that you could maximize or minimize (various areas) - the optimization algororithms just won't work with this approach because the design output space has no pattern that the algorithm can use to make different options - maybe it would be good to show this approach with random generation method and then filtering results on parallel coordinates afterwards to use desired metrics to find better options?)_
 
 ## Results
 
