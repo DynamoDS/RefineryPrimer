@@ -11,8 +11,7 @@ The graph will iterate the position and rotation of the selected tower design, s
 To avoid options that don't comply (outside of site boundary), the results are heavily penalized, saving computational time by making the analysis to fail on purpose.
 
 ## Inputs
-
-| Dynamo Input          | Input Description |
+| Dynamo Input          | Input Description |  _what do you mean by Dynamo and Refinery Input?  ARen't there Revit inputs here? (like the building mass?) 
 | :--- | :--- |
 | Site boundary         | Select the site boundary lines from the Revit model |
 | Surrounding buildings | Select the surrounding constructions that will affect the proposed building location |
@@ -46,9 +45,9 @@ All unnecesary geometry has been hidden from the graph in order to get a nice vi
 
 ## Refinery
 
-This graph can be used in combination with refinery to iterate through a series of inputs calculating the best position for a maximum solar incidence over the external surfaces of the building.
+This graph can be used in combination with Refinery to iterate through a series of inputs calculating the best position for a maximum solar incidence over the external surfaces of the building.
 This specific script is prepared to be used with optimizing studies. 
-One of the caveats of the script is the site offset. Big offset values help refinery to get optimal solutions where the entire building is inside of the site boundary. Otherwise, the movement allowance of the building will be so large that it will take refinery big populations to get an optimal solution without getting out of the site boundary.
+One of the caveats of the script is the site offset. Big offset values help Refinery to get optimal solutions where the entire building is inside of the site boundary. Otherwise, the movement allowance of the building will be so large that it will take refinery big populations to get an optimal solution without getting out of the site boundary.
 Design options where the building is outside of the site boundary have been penalized in the script. They will still show the resultant outputs, but the building visual won't show the solar incision in the external walls.
 
 ## Results
