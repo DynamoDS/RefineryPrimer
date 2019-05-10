@@ -6,3 +6,4 @@ Solvers typically require inputs to take a very specific form. Often, the greate
 
 ![Rubik's cube solver](Images/5_04_rubiks-cube-solver.jpg)
 >(https://rubiks-cube-solver.com/)
+_again, let's use the 3Box or sim example here.  I don't really understand what you're getting at with solvers though....how different from previous sections?_
