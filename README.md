@@ -1,14 +1,14 @@
-Welcome to the Generative Design Primer, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design. This primer will help you:
+Welcome to the Refinery Primer, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design using generative design workflows. This primer will help you:
 
 * **Understand** what generative design is by defining the base concepts and terminology you need to know 
 * **Explore** how these techniques can be used to solve practical challenges commonly found in AEC design projects
-* **Learn** how to use Autodesk’s newest Generative Design tools such as Refinery, through practical workflows 
+* **Learn** how to use Autodesk’s newest generative design tools such as Project Refinery, through practical workflows 
 
-### Why make a generative design primer?
+### Why make a primer?
 
 Autodesk is working to democratize technologies that can help designers in the AEC industry automate the creation of design options and optimise those designs to achieve better outcomes.
 
-Using these technologies requires new skills and new ways to think about design. We created this generative design primer to explain the terminology, ideas and methods you will need to understand to begin using tools that support this new approach to design.
+Using these technologies requires new skills and new ways to think about design. We created this primer to explain the terminology, ideas and methods you will need to understand to begin using generative design workflows and tools that support this new approach to design.
 
 designtech.io was commissioned to kick-start the development of this primer, we thank them for all their efforts in establishing this valuable resource.
 
@@ -28,11 +28,11 @@ Contributions are of course welcomed. You can contribute to the primer in the fo
 
 Let us know about any issues with this document.
 
-generativedesign@autodesk.com \(tbc\)
+refineryfeedback@autodesk.com
 
 ### License
 
-Copyright 2018 Autodesk
+Copyright 2019 Autodesk
 
 Licensed under the Apache License, Version 2.0 \(the "License"\); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
