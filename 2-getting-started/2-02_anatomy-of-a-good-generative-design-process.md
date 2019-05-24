@@ -2,7 +2,7 @@
 
 A helpful general rule for developing good generative design workflows could be:
 
-> Ask & answer as many questions about the activities & aspects involved in each the [stages of generative design](../1-introduction/1-04_what-goes-into-a-generative-design-process.md) \(Generate, Evaluate, Evolve, Explore, Integrate\) as you can think about.
+> Ask & answer as many questions about the activities & aspects involved in each the [stages of generative design](../1-00_introduction/1-04_what-goes-into-a-generative-design-process.md) \(Generate, Evaluate, Evolve, Explore, Integrate\) as you can think about.
 
 To guide you through this process, you'll find below a helpful framework, with notes, questions and pointers. This is by no means an exhaustive list, so please feel free to make it your own - and maybe even contribute to this primer!
 

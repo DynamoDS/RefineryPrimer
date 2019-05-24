@@ -4,7 +4,7 @@
 
 As previously discussed, generative design allows for a more integrated workflow between human and computer, and as a result both are required to undertake a series of steps that allow the process to take place. These steps can be categorised into the following stages:
 
-![](../.gitbook/assets/generative-design-steps%20%281%29.png)
+![](../.gitbook/assets/generative-design-steps.png)
 
 | Stage | Description |
 | :--- | :--- |
@@ -21,7 +21,7 @@ Each of these stages can be further broken down into `define`, `run` and `result
 
 Using this breakdown, let's look at what the `Generate` stage would entail.
 
-![](../.gitbook/assets/generative-design-generate-step%20%281%29.png)
+![](../.gitbook/assets/generative-design-generate-step.png)
 
 ### Define
 
