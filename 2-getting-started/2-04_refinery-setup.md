@@ -18,5 +18,5 @@ To define outputs in Refinery, right-click on the watch nodes and select the “
 
 Once both inputs and outputs are correctly set up, Refinery can be launched. In Dynamo navigate to the toolbar and select View &gt; Refinery… This will start the local Refinery server and a new window will open.
 
-![](../.gitbook/assets/refinery_settingupgraph_refinery.png)
+![](../.gitbook/assets/refinery_settingupgraph_refinery%20%281%29.png)
 
