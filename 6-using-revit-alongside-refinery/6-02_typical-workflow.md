@@ -13,5 +13,5 @@ A typical workflow for using Revit data, would consist of the following steps:
 * Open DynamoSandbox and the graph just created
 * Rerun the graph and everything upstream will become an unresolved node, however the *Data.Remember* node will retain the cached information
 
-![Data Remember in Revit](images/6-02_sandbox_dynamo.png "Data Remember in Sandbox")
+![Data Remember in Sandbox](images/6-02_sandbox_dynamo.png "Data Remember in Sandbox")
 
