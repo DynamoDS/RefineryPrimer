@@ -8,8 +8,10 @@ A typical workflow for using Revit data, would consist of the following steps:
 * Run the graph, so all nodes execute and the *Data.Remember* node has data passing through it
 * Save the graph and close Dynamo/Revit
 
+![alt text](images/6-02_revit_dynamo.png)
 
 * Open DynamoSandbox and the graph just created
 * Rerun the graph and everything upstream will become an unresolved node, however the *Data.Remember* node will retain the cached information
 
+![alt text](images/6-02_sandbox_dynamo.png)
 
