@@ -24,15 +24,3 @@ Like This will make Refinery apply slight variations to your current input confi
 ![Refinery's Randomize method](Images/5_04_like_this.png)
 
 Solvers typically require inputs to take a very specific form. Often, the greatest challenge is defining your problem in a way that a solver can understand. To take a simple example, your phone’s calculator is a solver for addition, subtraction, and division – but it only works if you punch things in correctly.
-
-Another example of a solver is a rubiks cube solver. A rubiks cube consist of 54 colored fields that can turn in different directions, the goal is to have each side of the cube to be a specific color. Each time we twist the cube we generate a new layout, this layout can be evaluated based on how close the cube is to being covered with the right color. 
-
-Solving a rubiks cube is normally a manual process were you turn the sides and check the new layout.
-
-![Rubik's cube](Images/5_04_rubiks-scramble.png)
->(https://rubiks-cube-solver.com/)
-
-If we instead of solving the rubiks cube the traditional way use a solver, we can feed the solver the rubiks cube a have that generate layouts until it reaches the correct soultion.
-
-![Rubik's cube solution](Images/5_04_rubiks-solution.png)
->The solver will run the rubiks cube automatically until it ends up with the correct result.
