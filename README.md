@@ -1,10 +1,11 @@
+# About
 Welcome to the Refinery Primer, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design using generative design workflows. This primer will help you:
 
 * **Understand** what generative design is by defining the base concepts and terminology you need to know 
 * **Explore** how these techniques can be used to solve practical challenges commonly found in AEC design projects
 * **Learn** how to use Autodesk’s newest generative design tools such as Project Refinery, through practical workflows 
 
-### Why make a primer?
+## Why make a primer?
 
 Autodesk is working to democratize technologies that can help designers in the AEC industry automate the creation of design options and optimise those designs to achieve better outcomes.
 
@@ -17,7 +18,7 @@ Enstoa (designtech.io) was commissioned to kick-start the development of this pr
 [![](.gitbook/assets/enstoa-logo.png)](https://enstoa.com/)
 [![](.gitbook/assets/designtech-logo.png)](https://enstoa.com)
 
-### Open-Source
+## Open-Source
 
 This primer is an open source project initiated by the AEC Generative Design Team at Autodesk and we are dedicated to providing high-quality content on generative design in this primer.
 
@@ -27,13 +28,13 @@ Contributions are of course welcomed. You can contribute to the primer in the fo
 * if you’d like to improve, clarify or add content to the Primer, please head over to our [Github repository](https://github.com/DynamoDS/GenerativePrimer)
 * have an example workflow of generative design? Head over to our [contribution guidelines](https://github.com/DynamoDS/GenerativePrimer/CONTRIBUTING.md) and see how you can add it to the Community examples section
 
-### Contact
+## Contact
 
 Let us know about any issues with this document.
 
 refineryfeedback@autodesk.com
 
-### License
+## License
 
 Copyright 2019 Autodesk
 
