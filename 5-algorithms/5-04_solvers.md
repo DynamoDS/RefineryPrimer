@@ -1,13 +1,13 @@
 # Solvers
 
-A solver is an algorithm specifically designed to find the solution to a precisely defined problem. If you pass the solver a problem of the right form, it will use built-in procedures to find you a solution. This means that the designer doesn’t have to do all the calculations herself. 
+Think of a solver as a tool that can automate running a script that contains generators and evaluators many times.
 ![Refinery's Randomize method](Images/5_04_solver-dynamo.png)
 
-Think of a solver as a tool that can automate running a script that contains generators and evaluators many times. A solver can use different methods to process these scripts in different ways, for example the methods currently available in Refinery include:
+A solver can use different methods to process these scripts in different ways, for example the methods currently available in Refinery include:
 
 * **Randomize** - when Refiery uses the Randomize option it will generate a specified number of design options, by randomly assigning a value to each of the input parameters. This option is what you would use when doing a optioneering process. For a deeper explenation of this see INSERT LINK.
 ![Refinery's Randomize method](Images/5_04_randomize.png)
-* **Optimize** - is the method for doing a optimization run with Refinery. During an optimization run Refinery will evolve the design based on the evaluators outputs. For a deeper explenation of this see INSERT LINK.
+* **Optimize** - is the method for doing a optimization run with Refinery. During an optimization run Refinery will evolve the design based on the evaluators outputs. The optimization process works by running multiple generations of a design, each generation will use the input configuration from previous generations and from that optimize the new design options. For a deeper explenation of this see INSERT LINK.
 ![Refinery's Randomize method](Images/5_04_optimize.png)
 * **Cross Product** - The Cross Product method let's you explore the entire design space of your design, by combining each step of every parameter with the remining parameters.
 ![Refinery's Randomize method](Images/5_04_cross_product.png)
