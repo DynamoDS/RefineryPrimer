@@ -15,3 +15,4 @@ A typical workflow for using Revit data, would consist of the following steps:
 
 ![Data Remember in Sandbox](images/6-02_sandbox-dynamo.png "Data Remember in Sandbox")
 
+* Now Refinery can utilise the data and geometry from Revit without needing to start up Revit in the background each time
