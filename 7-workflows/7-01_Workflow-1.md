@@ -6,7 +6,7 @@
 
 ## Description
 
-This graph, used with Refinery on `Randomize` mode, will generate a series of random towers, sitting across a stipulated site boundary. The tower will randomise in height, floor plate design and orientation allowing for a large amount of potential design solutions within minutes.
+This graph, used with Refinery on `Randomize` mode, will generate a series of random towers, sitting across a stipulated site boundary. The tower will randomize in height, floor plate design and orientation allowing for a large amount of potential design solutions within minutes.
 
 ## Data extracted from Revit
 
@@ -26,7 +26,7 @@ This graph, used with Refinery on `Randomize` mode, will generate a series of ra
 
 ## Functions
 
-The script is made up of a series of functions, which are divided into groups inside the graph. Each group has a name and a short description, where the name indicates the type of funciton that is being run and the description explains in more detail the process.
+The script is made up of a series of functions, which are divided into groups inside the graph. Each group has a name and a short description, where the name indicates the type of function that is being run and the description explains in more detail the process.
 
 The graph takes the site boundary from Revit, the offset and the U and V values from the user inputs and generates the base floor plate for the new tower inside the allowed space. Using the building height and the floor to floor height, the script then generates all the other floors based on the initial floor plate with slight variations. Once all the floor plates are created, the script then creates the external walls by lofting the outer floor boundaries. 
 
@@ -42,11 +42,11 @@ With the geometry of the building generated, the script then evaluates the desig
 
 ## Visualization
 
-When geometry is created in Dynamo, often other geometry is needed to facilitate the overall process. To ensure the geometry displayed shows the final geometric output, all unessacary geometry has been switched off. Any nodes with the preview switched off will not display the output visually in Refinery. In this case, only the site boundary, the tower's external walls and floors, will be visible. This will provide the user with the ability to critique the design options based on aesthetics within the Refinery thumbnail. For a better understanding of the exercise a series of context buildings have been inluded in the Revit sample file.
+When geometry is created in Dynamo, often other geometry is needed to facilitate the overall process. To ensure the geometry displayed shows the final geometric output, all unnecessary geometry has been switched off. Any nodes with the preview switched off will not display the output visually in Refinery. In this case, only the site boundary, the tower's external walls and floors, will be visible. This will provide the user with the ability to critique the design options based on aesthetics within the Refinery thumbnail. For a better understanding of the exercise a series of context buildings have been included in the Revit sample file.
 
 ## Benefit of using Refinery
 
-On running the script, Dynamo is able to generate one design option based on the user inputs, but by utilising Refinery as the solver many more options can be generated in a single run. Due to the nature of this graph, it works best when run using the `Randomize` mode. Although the outputs can be used to maximise or minimze the various areas, the optimization approach won't work as there is no pattern for the algorithm to use. By selecting Randomise, Refinery can produce hundreds, if not thousands of different iterations and the user is able to rank and explore the options to find the most suited option. 
+On running the script, Dynamo is able to generate one design option based on the user inputs, but by utilising Refinery as the solver many more options can be generated in a single run. Due to the nature of this graph, it works best when run using the `Randomize` mode. Although the outputs can be used to maximise or minimize the various areas, the optimization approach won't work as there is no pattern for the algorithm to use. By selecting Randomise, Refinery can produce hundreds, if not thousands of different iterations and the user is able to rank and explore the options to find the most suited option. 
 
 _maybe it would be good to show this approach with random generation method and then filtering results on parallel coordinates afterwards to use desired metrics to find better options?)_
 
