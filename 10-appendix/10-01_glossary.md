@@ -36,10 +36,6 @@
 
 > A value that initializes a random function.
 
-**Genetic** / ge·net·ic / noun
-
-> tbc
-
 **Algorithm** / al·go·rithm / noun
 
 > A process or set of rules to be followed in calculations or other problem-solving operations with a computer.

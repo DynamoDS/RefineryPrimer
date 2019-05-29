@@ -1,4 +1,4 @@
-# References
+# Additional Material
 
 Getting Started with Dynamo:
 https://primer.dynamobim.org/
@@ -17,3 +17,9 @@ https://www.autodesk.com/solutions/refinery-beta
 
 Generative design education:
 https://medium.com/generative-design 
+
+Design Modeling Terminology:
+https://archinate.files.wordpress.com/2018/06/dstasiuk-design-modeling-terminology1.pdf 
+
+Evolutionary Principles:
+https://www.grasshopper3d.com/profiles/blogs/evolutionary-principles
