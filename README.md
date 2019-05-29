@@ -10,7 +10,9 @@ Autodesk is working to democratize technologies that can help designers in the A
 
 Using these technologies requires new skills and new ways to think about design. We created this primer to explain the terminology, ideas and methods you will need to understand to begin using generative design workflows and tools that support this new approach to design.
 
-designtech.io was commissioned to kick-start the development of this primer, we thank them for all their efforts in establishing this valuable resource.
+*Note: there are many different applications of generative design/art, and this primer does not aim to cover them all. This primer is focused on AEC methodologies and how these apply to both Project Refinery/Dynamo*
+
+Enstoa (designtech.io) was commissioned to kick-start the development of this primer, we thank them for all their efforts in establishing this valuable resource.
 
 [![](.gitbook/assets/designtech-logo.png)](http://designtech.io)
 
