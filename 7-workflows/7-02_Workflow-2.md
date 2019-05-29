@@ -1,4 +1,4 @@
-# Workflow 2 : Building positionning based on solar analysis
+# Workflow 2 : Building positioning based on solar analysis
 
 <p align="center">
   <img src="https://media.giphy.com/media/kDNLpoOjcxV96gOa2P/giphy.gif">
@@ -6,56 +6,52 @@
 
 ## Description
 
-The graph will iterate the position and rotation of the selected tower design, so it falls within the site boundary while minimizing the Solar Indicence by Area ratio.
+This graph will move and rotate the position of a selected mass within a site boundary to minimize or maximize the solar incidence by Area ratio. This workflow relies heavily on the Solar Analysis node from Dynamo which makes external calls to a web service. As a result, each iteration can take a while to run while the solution runs the analysis. For the options where the movement or rotation causes the building to fall outside of the site boundary, the results are heavily penalized, to ensure the analysis doesn't run. 
 
-To avoid options that don't comply (outside of site boundary), the results are heavily penalized, saving computational time by making the analysis to fail on purpose.
+## Static inputs
 
-## Inputs
-| Dynamo Input          | Input Description |  _what do you mean by Dynamo and Refinery Input?  ARen't there Revit inputs here? (like the building mass?) 
+| Name| Input Description | 
 | :--- | :--- |
-| Site boundary         | Select the site boundary lines from the Revit model |
-| Surrounding buildings | Select the surrounding constructions that will affect the proposed building location |
-| Main building         | Select the building that will relocated based on solar analysis |
-| Site offset           | Give the site boundary an offset to limit the building movement inside the boundary |
-| Floor height          | Average floor to floor height used on the solar analysis |
-| Location coordinates  | Specify the building real world coordinates for the solar analysis |
+| Site boundary         | Select the site boundary lines from the Revit model (model curves) |
+| Surrounding buildings | Select the surrounding context that will affect solar analysis |
+| Main building         | Select the mass (building) that will be repositioned |
+| Site offset           | A number to define the offset from the site boundary |
+| Floor height          | Floor to floor height used on the solar analysis |
+| Location coordinates  | The real-world coordinates used for the solar analysis |
 
-| Refinery Input    | Input Description |
+## Variable inputs
+
+| Name    | Description |
 | :--- | :--- |
-| Building rotation | Angle between 0° and 360° that will rotate the building from its initial position |
+| Building rotation | The angle between 0° and 360° that will rotate the building from its initial position |
 | U value           | U parameter from the site surface where the building will be located |
 | V value           | V parameter from the site surface where the building will be located |
 
 ## Functions
 
-The script is made up of a series of functions, which are divided into groups inside the graph. Each group has a name and a short description, where the name indicates the type of funciton that is being run and the description explains a bit more in detail the process.
-This graph is taking the main building and converting it into dynamo geometry. It also takes all the surrounding buildings that are higher than 30m and converting them into dynamo geometry as well. Then it retrieves the mid point at the base of the main building it moves based on the U and V values and it rotates it based on the input angle. With the new location, a solar analysis is carried out for all the external vertical surfaces of the building. With the final result from the analysis the outputs are calculated.
+The script is made up of a series of functions, which are divided into groups inside the graph. Each group has a name and a short description, where the name indicates the type of function that is being run and the description explains in more detail the process.
+
+The graph uses the Revit mass/building and extracts the geometry in Dynamo. All the surrounding context higher than 30m tall is also referenced in as Dynamo geometry. The generator of this script provides a new location based on the UV values and a new rotation. The building is then moved to the new location point and rotated to suit the new angle. Once the building is in the new location, and it complies with the site boundary, the solar analysis takes place by reviewing all external vertical surfaces of the building and calculating their solar incidence.
 
 ## Visualization
 
-All unnecesary geometry has been hidden from the graph in order to get a nice visual in the Refinery interface. Only the main building and the solar analysis will be visible. The solar analysis is represented on the external surfaces of the building. A grid of points in every surface is coloured based on the results from the analysis following a range from yellow to red. Yellow indicates low sun incidence and red high incidence. This will make easy the task of visually going through the options generated by the graph. For a better understanding of the results, a series of context buildings have been inluded in the Revit sample file.
+When geometry is created in Dynamo, often other geometry is needed to facilitate the overall process. To ensure the geometry displayed shows the final geometric output, all unnecessary geometry has been switched off. Any nodes with the preview switched off will not display the output visually in Refinery. In this case, only the main building and the resulting solar analysis will be visible. The solar analysis is represented on the external surfaces of the building as a colored grid of points. These points are colored from yellow to red to indicate a low amount of incidence and a amount of incidence respectively. 
 
-## Outputs
+## Evaluators
 
-| Refinery Output   | Output Description |
+| Name   | Description |
 | :--- | :--- |
-| Area out          | Area of the building in square meters that is outside of the site boundary |
-| Free area         | Area of the construction site in plan that is not occupied by the building |
-| Average incidence | Incidence in square meters into the external walls of the building |
+| Area out          | Area of the building in square meters that sits outside the site boundary |
+| Free area         | Area of the internal site boundary that is not occupied by the building floor plate |
+| Average incidence | The average incidence in square meters of the external walls of the building |
 
-## Refinery
+## Benefits of using Refinery
 
-This graph can be used in combination with Refinery to iterate through a series of inputs calculating the best position for a maximum solar incidence over the external surfaces of the building.
-This specific script is prepared to be used with optimizing studies. 
-One of the caveats of the script is the site offset. Big offset values help Refinery to get optimal solutions where the entire building is inside of the site boundary. Otherwise, the movement allowance of the building will be so large that it will take refinery big populations to get an optimal solution without getting out of the site boundary.
-Design options where the building is outside of the site boundary have been penalized in the script. They will still show the resultant outputs, but the building visual won't show the solar incision in the external walls.
+Without the aid of Refinery, running this script in Dynamo, the user would be required to manually move the building until they managed to find the desired location and rotation. This process, unless incredibly lucky, would take hours if not days. As the aim is simple, to find the location and rotation that provides either the minimum or maximum incidence, Refinery can be leveraged by using the `Optimize` approach. Larger site offset values restrict the space the building can move and so reduce the potential for it falling outside of the site boundary. 
 
 ## Results
 
-Once Refinery has finish running we can have a look at the outputs of the new study.
-This specific example was obtined from an optimized study based on 10 generations with a population of 20. 
+Once Refinery has completed, the results can be explored through the available tables and graphs.
+The image below shows an example output from an optimized study based on 10 generations with a population of 20. The outputs were defined as minimized for both ***OUT_Area Out(m2)*** and ***OUT_Avg. (kWh/m2)***.
 <br>
-Regarding the outputs, the building area outside of the site boundary ***OUT_Area Out(m2)*** and the solar incidence on the external cladding ***OUT_Avg. (kWh/m2)*** are set to minimized, that will keep the building within the site boundary. 
-<br>
-The last output, area of the site not occupied by the building ***OUT_Free Area (m2)*** can be ignored, as this value will allways be the same while the building is inside the site perimeter.
 ![Workflow 2](Images/7-02_workflow2_optimisationrun.png)

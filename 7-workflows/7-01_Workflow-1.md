@@ -32,7 +32,7 @@ The graph takes the site boundary from Revit, the offset and the U and V values 
 
 With the geometry of the building generated, the script then evaluates the design based on the outputs defined. 
 
-## Outputs Refinery will use
+## Evaluators
 
 | Name     | Description |
 | :--- | :--- |
