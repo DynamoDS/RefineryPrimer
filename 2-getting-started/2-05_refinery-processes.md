@@ -1,5 +1,7 @@
 # Running Refinery
 
+Refinery can be run using different methods. In the Refinery window you can chooses from four different Generation Methods, all of these methods are Refinerys Solvers, a futher explenation of what Solvers are can be found in [section 5-04](/5-algorithms/5-04_solvers.md).
+
 ## How to run an optioneering process using Refinery
 
 An optioneering process lets you explore all possible solutions that the graph can produce. Refinery will generate the solutions based on the constraints that were defined in the Dynamo graph.
@@ -7,7 +9,7 @@ An optioneering process lets you explore all possible solutions that the graph c
 To run an optioneering process in Refinery, follow these steps:
 
 * Launch Refinery from the Refinery menu in Dynamo
-* Create a new study and select **Randomize** as the generation method
+* Create a new study and select **Randomize** as the generation method ([see section 5-04](/5-algorithms/5-04_solvers.md))
 * Under Inputs make sure that all the desired inputs are present
 * For inputs that should not change on each run, set the desired value and uncheck the box alongside it
 * Under Outputs ensure each output defined in the graph is listed  
@@ -25,7 +27,7 @@ An optimisation process lets Refinery evolve your design to find the most suitab
 To run an optimisation process in Refinery, follow these steps:
 
 * Open Refinery from the View Menu in Dynamo
-* Create a new study and select **Optimize** as the generation method
+* Create a new study and select **Optimize** as the generation method ([see section 5-04](/5-algorithms/5-04_solvers.md))
 * Under Inputs make sure that all the desired inputs are present
 * For inputs that should not change on each run, set the desired value and uncheck the box alongside it  
 * Under Outputs go through each objective and set the optimisation goal you want to achieve - Maximize, Minimize, or Ignore
