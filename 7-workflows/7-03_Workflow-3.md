@@ -6,46 +6,48 @@
 
 ## Description
 
-This Graph can be used with Dynamo Refinery to generate desk layouts on a floor plan. You can use Refinery to maximise the amount of desks placed while maintaining a larger area reserved for amenities.
+This graph will generate a series of desk layouts based on a floor plate and neighbourhood boundaries. Desks are placed in rows either horizontally or vertically, alongside a reserved space for amentities such as breakout spaces, or tea points. The intention is to find a solution that maximises the number of desks the layouts can fit in whilst maintaining a high area for amenities. 
 
-## Inputs
+## Static inputs
 
-| Dynamo Input          | Input Description |
+| Name  | Description |
 | :--- | :--- |
-| Floor plate              | Select the floor to  |
-| Neighbourhood boundaries | Select the model lines that limit the different areas of the floor plate that will move |
-| Desk width               | With of the standard office desk in mm |
-| Desk depth               | Depth of the standard office desk in mm |
-| Back to back tolerance   | Distance between desks in mm |
+| Floor plate              | Select the floor geometry  |
+| Neighbourhood boundaries | Select the neighbourhood boundaries (model curves) |
+| Desk width               | Width of the office desk (mm) |
+| Desk depth               | Depth of the office desk (mm) |
+| Back to back tolerance   | Distance between two desks where people would be sat back to back (mm) |
 
-| Refinery Input    | Input Description |
+## Variable inputs
+
+| Name    | Description |
 | :--- | :--- |
-| Boundaries start points | Range of movement of the start point of the neighbourhood boundaries between areas |
-| Boundaries end points   | Range of movement of the end point of the neighbourhood boundaries between areas |
+| Boundary start points | The movement of the start point of each of the neighbourhood boundaries along the floor boundary |
+| Boundary end points   | The movement of the end point of each of the neighbourhood boundaries along the floor boundary |
 
 ## Functions
 
-The script is made up of a series of functions, which are divided into groups inside the graph. Each group has a name and a short description, where the name indicates the type of funciton that is being run and the description explains a bit more in detail the process.
-This graph is taking the floor plate occupied by the office spaces and exrtacting the perimeter curves from it. It is also taking all the model lines that divide the different working areas and converting them to dynamo curves. Based on those two inputs the script is retrieving the start and end point of each division line and finding the perimeter line into which they are sitting. Based on the range of movement specified on the inputs, those points are changin their position aalong their respective perimeter lines, generating a variety of layouts for the office space. For every individual area in every design option an amenity space is generated and the rest of it is filled with desks based on the dimensions in the inputs.
+The script is made up of a series of functions, which are divided into groups inside the graph. Each group has a name and a short description, where the name indicates the type of function that is being run and the description explains in more detail the process.
+This graph extracts the underlying surface from the floor geometry and builds perimeter curves. The neighbourhood boundaries sit along these perimeter curves and can move within a tolerance defined by the script. This movement causes the neighbourhood sizes to change providing new floor plates and new layouts respectively. The amentity space is defined as an offset space based from the longest curve and the desks then occupy the remaining space in the most efficeint way. 
 
 ## Visualization
 
-All unnecesary geometry has been hidden from the graph in order to get a nice visual in the Refinery interface. Only the perimeter lines of the office area, the division lines, amenity spaces and office desks will be visible. The amenity spaces are shown in grey to differenciate them from the rest of the geometry. 
+When geometry is created in Dynamo, often other geometry is needed to facilitate the overall process. To ensure the geometry displayed shows the final geometric output, all unnecessary geometry has been switched off. Any nodes with the preview switched off will not display the output visually in Refinery. In this case, only the perimeter lines of the floor plate, the neighbourhood boundaries, amenity spaces and office desks will be visible. The amenity spaces are shown in grey to differenciate them from the rest of the geometry. 
 
-## Outputs
+## Evaluators
 
-| Refinery Output   | Output Description |
+| Name   | Description |
 | :--- | :--- |
-| Amenity space area | Area ocupied by the amenity spaces in the floor plate generated |
-| Number of desks    | Number of office desks that can be fitted into the generated design option |
+| Amenity space area | The total area occupied by the amenity spaces |
+| Number of desks    | The total number of office desks |
 
 ## Refinery
 
-The dynamo script by itself is able to generate generate a desk and amenity space distribution in an existing office floorplan, but combined with Refinery will allow users to generate a variety of office layouts within the same floorplan. This script can be used with an optimizing study but works best with a randomizing study, as there are not many outputs that can be optimized.
+Designers can spend hours laying out repetivie areas such as offices an toilets. By creating an algorithm with clear goals, maximum number of desks and maximum amenity space, Refinery can be used as the solver to arrive at the best solution quicker. 
 
 ## Results
 
-Once Refinery has finish running we can have a look at the outputs of the new study. 
+Once Refinery has completed, the results can be explored through the available tables and graphs
 <br>
-This specific example was obtined from a randomized study based on 35 solutions. 
+The image below shows an example output from a randomized study based on 35 solutions.
 ![Workflow 3](Images/7-03_workflow3_randomisationrun.png)
