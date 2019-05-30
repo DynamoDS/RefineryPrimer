@@ -8,6 +8,8 @@
 
 This graph will move and rotate the position of a selected mass within a site boundary to minimize or maximize the solar incidence by Area ratio. This workflow relies heavily on the Solar Analysis node from Dynamo which makes external calls to a web service. As a result, each iteration can take a while to run while the solution runs the analysis. For the options where the movement or rotation causes the building to fall outside of the site boundary, the results are heavily penalized, to ensure the analysis doesn't run. 
 
+*All sample files for this example can be found in the `7-00_sample_files` folder in the Github repository* 
+
 ## Static inputs
 
 | Name| Input Description | 

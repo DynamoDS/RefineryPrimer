@@ -8,6 +8,8 @@
 
 This graph will generate a series of desk layouts based on a floor plate and neighborhood boundaries. Desks are placed in rows either horizontally or vertically, alongside a reserved space for amenities such as breakout spaces, or tea points. The intention is to find a solution that maximizes the number of desks the layouts can fit in whilst maintaining a high area for amenities. 
 
+*All sample files for this example can be found in the `7-00_sample_files` folder in the Github repository* 
+
 ## Static inputs
 
 | Name  | Description |

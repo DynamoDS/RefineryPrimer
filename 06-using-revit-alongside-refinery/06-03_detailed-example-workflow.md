@@ -2,6 +2,8 @@
 
 In the following example, we will use the steps from the previous section, and cache data from Revit. We will then perform an optimization process using Refinery to find the optimum solution before pushing the result back to Revit.
 
+*All sample files for this example can be found in the `6-00_sample_files` folder in the Github repository* 
+
 ## About
 The intention of this workflow is to find the best location for a desk in the office floor plate, where it maximizes the number of views to the outside. To do this the information we need to cache in the *`Data.Remember`* node is all the geometry relating to the bounding elements of the room (walls, doors, windows and internal obstructions).
 
