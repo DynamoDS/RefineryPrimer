@@ -1,6 +1,9 @@
 # What is Optioneering?
 
-![alt text](Images/3-01_optioneering-example.png "Illustration of crossover (http://mnemstudio.org/genetic-algorithms-recombination.htm)")
+<p align="center">
+<img src="Images/3-01_optioneering-example.png" style="width:85%;"/>
+</p>
+<br/>
 
 Optioneering involves creating design options that are not guided by outcomes while they are being created. Optioneering methods can be used to explore a design space quickly and when you might not know what metrics you want to optimize for yet.  After performing optioneering, the designer can sort and filter design variants to identify options that are particularly aligned with her design objectives. 
 

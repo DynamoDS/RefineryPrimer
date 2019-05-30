@@ -6,7 +6,11 @@ To set up a Dynamo graph for Refinery right-click on each node used to drive the
 
 \(Note: currently all inputs must be number slider nodes\)
 
-![](../.gitbook/assets/refinery_settingupgraph_isinput.png)
+<br/>
+
+<p align="center">
+<img src="../.gitbook/assets/refinery_settingupgraph_isinput.png" style="width:50%;"/>
+</p>
 
 ## Outputs
 
@@ -14,9 +18,18 @@ To define outputs in Refinery, right-click on the watch nodes and select the *`I
 
 \(Note: currently all outputs must be watch nodes with a data type of Number\).
 
-![](../.gitbook/assets/refinery_settingupgraph_renameoutput.png)
+<br/>
+
+<p align="center">
+<img src="../.gitbook/assets/refinery_settingupgraph_renameoutput.png" style="width:50%;"/>
+</p>
+
+<br/>
 
 Once both inputs and outputs are correctly set up, Refinery can be launched. In Dynamo navigate to the toolbar and select *`View > Refinery…`* This will start the local Refinery server and a new window will open.
 
-![](../.gitbook/assets/refinery_settingupgraph_refinery.png)
+<br/>
 
+<p align="center">
+<img src="../.gitbook/assets/refinery_settingupgraph_refinery.png" style="width:85%;"/>
+</p>

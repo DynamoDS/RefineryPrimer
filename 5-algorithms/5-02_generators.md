@@ -6,4 +6,8 @@ In the table example, a generator is the block of code that churns out all the d
 
 In the simple Dynamo example below, the node that is highlighted and creates the cuboid acts as the generator. The node takes the input values and generates a design option using these variables. When the values change and the programme is rerun the generator node is called into action again to create a new design option. In a generative design process this generator could be a single function or a series of functions pieced together, that produce hundreds if not thousands of different options. 
 
-![Generator](Images/5_02_generator-dynamo.png)
+<br/>
+
+<p align="center">
+<img src="Images/5_02_generator-dynamo.png" style="width:85%;"/>
+</p>

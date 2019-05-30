@@ -1,6 +1,10 @@
 # What Do You Mean by Genetic Algorithms?
-![Genetic algorithm process](Images/4_06_GAProcess.png "Genetic algorithm process")
 
+<p align="center">
+<img src="Images/4_06_GAProcess.png" style="width:85%;"/>
+</p>
+
+<br/>
 
 A genetic algorithm - specifically *`NSGA-II`* (<https://www.iitk.ac.in/kangal/Deb_NSGA-II.pdf>), is a kind of optimization algorithm that is popular in generative design applications. In technical speak, it is an example of an *“adaptive heuristic algorithm”*. You might also hear it referred to as an “evolutionary algorithm”. Genetic algorithms tend to be very useful when your objective function is highly complex, subject to randomness, or is discontinuous.  
 

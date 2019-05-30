@@ -31,7 +31,11 @@ After they were formulated, the computer used these algorithms to evaluate each 
 
 Once designs have been evaluated, the designers then explored what is often called the *`solution space`* : the generated designs together with their evaluation results. Taking into account each defined goal, they identified the design that best achieved the defined goals.
 
-![](../.gitbook/assets/autodesk-project-mars.jpg)
+<p align="center">
+<img src="../.gitbook/assets/autodesk-project-mars.jpg" style="width:85%;"/>
+</p>
+
+<br/>
 
 ## Furniture Design
 
@@ -39,7 +43,11 @@ Looking at a simpler example, let's consider the process of designing a typical,
 
 Using a standard approach, a designer would manually define the height, width, depth & material of the table, and the resulting output would be a single, physical object with a fixed, immutable form. Perhaps the designer tested several distinct sets of dimensions & material combinations and ends up with three or four table prototypes.
 
-![](../.gitbook/assets/table.PNG)
+<p align="center">
+<img src="../.gitbook/assets/table.PNG" style="width:85%;"/>
+</p>
+
+<br/>
 
 In a generative design approach, the designer would instead specify:
 
@@ -53,17 +61,25 @@ The designer would use the computer to help him/her generate a series of designs
 
 > Let's imagine the computer looked at 20 different values for each of : length, width, height, table/leg material combinations. The resulting solution space would be 20 _20_ 20 \* 20 = 160,000 designs, which is way too many options for a person to reasonably evaluate.
 
-![](../.gitbook/assets/tables-multiobjective.png)
+!<p align="center">
+<img src="../.gitbook/assets/tables-multiobjective.png" style="width:85%;"/>
+</p>
 
 _Above: matrix showing 100 generated table designs, varying width, length and height_
+
+<br/>
 
 ### Evaluate
 
 The next step is to define how the generated designs are evaluated. This is the designer's opportunity to clearly express what the goals of the design are.
 
-![](../.gitbook/assets/tables-singleobjective.png)
+<p align="center">
+<img src="../.gitbook/assets/tables-singleobjective.png" style="width:85%;"/>
+</p>
 
 _Above: range of table designs \(sizes\), colour-coded based on evaluator function result \(cost\)_
+
+<br/>
 
 Let's see how different design goals could be expressed in this *`evaluation`* stage:
 
@@ -80,9 +96,13 @@ For the second scenario, we're optimizing for overall return on investment for e
 
 This second example is a good illustration of using generative design to design for multiple & competing goals, which is very hard for humans to replicate.
 
-![](../.gitbook/assets/tables-multiobjective_colour.png)
+<p align="center">
+<img src="../.gitbook/assets/tables-multiobjective_colour.png" style="width:85%;"/>
+</p>
 
 _Above: visualizing evaluator function results as a color range_
+
+<br/>
 
 As you can see, both of these examples follow the same fairly generic process, which is why there are so many possible applications of generative design, in areas as diverse as aviation, automotive and building design, manufacturing, and product design.
 

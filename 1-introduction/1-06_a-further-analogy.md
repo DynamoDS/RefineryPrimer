@@ -2,9 +2,13 @@
 
 Let’s now look at generative design through the lens of something most of us do on a daily basis: find the quickest commute route. Say you’re looking to go from *`Brooklyn`* to *`Manhattan`*, so you go to your favorite route-comparison website and ask it to find you the quickest route.
 
-![](../.gitbook/assets/citymapper-brooklyn-to-manhattan.jpg)
+<p align="center">
+<img src="../.gitbook/assets/citymapper-brooklyn-to-manhattan.jpg" style="width:85%;"/>
+</p>
 
 _above: Citymapper website showing possible routes, considering multiple modes of transportation_
+
+<br/>
 
 To help illustrate this analogy, let's make a table comparing the expected activities when searching for the quickest commute route and what their equivalent would be in a generative design process.
 
@@ -22,9 +26,13 @@ To help illustrate this analogy, let's make a table comparing the expected activ
 
 It's important to note that because the system knows about multiple modes of transport \(walk, cycle, bus, train, etc\), it can combine them to best achieve the defined goal. This means the goal we set can greatly impact the routes generated. For example, we could set the goal to be shortest distance if travelling by car or step-free access and the resulting routes could be completely different.
 
-![](../.gitbook/assets/citymapper-alternate-goals.jpg)
+<p align="center">
+<img src="../.gitbook/assets/citymapper-alternate-goals.jpg" style="width:85%;"/>
+</p>
 
 _above: Citymapper website showing routes that have step-free access_
+
+<br/>
 
 We can see the routes identified generally take longer than in the first example, as the new goal is having *`step-free access`* instead of *`quickest`* commute.
 
