@@ -4,7 +4,7 @@ Let’s look at several examples that illustrate how generative design can help 
 
 ## Building Design
 
-For the design of the new office and research space in the MaRs Innovation District of Toronto, Autodesk leveraged generative design processes. Starting with high-level goals & constraints and then used the power of computation to generate, evaluate, and evolve thousands of design options. The result is a high-performing and novel work environment for Autodesk that would not have been possible to create without this approach.
+For the design of the new office and research space in the MaRs Innovation District of Toronto, Autodesk leveraged generative design processes. Starting with high-level goals & constraints and the the power of computation to generate, evaluate, and evolve thousands of design options. The result is a high-performing and novel work environment for Autodesk that would not have been possible to create without this approach.
 
 ### Generate
 
@@ -85,8 +85,8 @@ Let's see how different design goals could be expressed in this *`evaluation`* s
 
 | Design goal | Analysis method | Ranking method |
 | :--- | :--- | :--- |
-| Lowest cost per desk, with minimum 800mm x 600mm size | - desk size: at least 800mm x 600mm in size, outputs *`yes/no`*    - desk cost: area \* material cost/m², outputs currency *`$`* value\) | - lowest cost first   - only options that satisfy area requirements |
-| Most profitable  \(largest desk area with lowest material cost\) | - desk area, outputs m²   - unit cost \(area \* material cost/m²\), outputs currency *`$`* value | - largest area  - lowest cost |
+| Lowest cost per desk, with minimum 800mm x 600mm size | desk size: at least 800mm x 600mm in size = *`yes/no`*   &  desk cost: area \* material cost/m² = currency *`$`* value\) | lowest cost first & only options that satisfy area requirements |
+| Most profitable  \(largest desk area with lowest material cost\) | desk area = outputs m²  &  unit cost \(area \* material cost/m²\) = currency *`$`* value | largest area & lowest cost |
 
 The matrix above showcases how you can use this stage in the generative design process to design for wildly different scenarios.
 

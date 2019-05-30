@@ -23,7 +23,7 @@ As previously discussed, generative design allows for a more integrated workflow
 
 ## Anatomy of each stage
 
-Each of these stages can be further broken down into *`define`*, *`run`* and *`results`* steps. The *`define`* steps is the responsibility of the designer whilst the *`run`* & *`results`* steps is performed by the machine.
+Each of these stages can be further broken down into *`define`*, *`run`* and *`results`* steps. The *`define`* step is the responsibility of the designer whilst the *`run`* & *`results`* steps are performed by the machine.
 
 Using this breakdown, let's look at what the *`Generate`* stage would entail.
 

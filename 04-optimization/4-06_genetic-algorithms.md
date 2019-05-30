@@ -1,4 +1,4 @@
-# What Do You Mean by Genetic Algorithms?
+# What are Genetic Algorithms?
 
 <p align="center">
 <img src="Images/4_06_GAProcess.png" style="width:85%;"/>
