@@ -8,5 +8,6 @@ Dynamo can be used as a stand-alone product \(Sandbox\) or can plug into other p
 
 For more information on Dynamo please refer to the [Dynamo Primer](http://primer.dynamobim.org/).
 
-[![](../.gitbook/assets/dynamo_logo_dark-trim.png)](https://dynamobim.org)
-
+<p align="center">
+<img src="../.gitbook/assets/dynamo_logo_dark-trim.png" style="width:85%;"/>
+</p>

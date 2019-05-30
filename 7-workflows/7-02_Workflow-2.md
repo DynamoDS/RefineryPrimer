@@ -53,5 +53,9 @@ Without the aid of Refinery, running this script in Dynamo, the user would be re
 
 Once Refinery has completed, the results can be explored through the available tables and graphs.
 The image below shows an example output from an optimized study based on 10 generations with a population of 20. The outputs were defined as minimized for both ***OUT_Area Out(m2)*** and ***OUT_Avg. (kWh/m2)***.
+
 <br>
-![Workflow 2](Images/7-02_workflow2_optimisationrun.png)
+
+<p align="center">
+<img src="Images/7-02_workflow2_optimisationrun.png" style="width:85%;"/>
+</p>

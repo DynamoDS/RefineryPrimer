@@ -2,9 +2,15 @@
 
 ## Stages
 
-As previously discussed, generative design allows for a more integrated workflow between human and computer, and as a result both are required to undertake a series of steps that allow the process to take place. These steps can be categorised into the following stages:
+As previously discussed, generative design allows for a more integrated workflow between human and computer, and as a result both are required to undertake a series of steps that allow the process to take place. These steps can be categorized into the following stages:
 
-![](../.gitbook/assets/generative-design-steps.png)
+<br/>
+
+<p align="center">
+<img src="../.gitbook/assets/generative-design-steps.png" style="width:85%;"/>
+</p>
+
+<br/>
 
 | Stage | Description |
 | :--- | :--- |
@@ -21,7 +27,12 @@ Each of these stages can be further broken down into `define`, `run` and `result
 
 Using this breakdown, let's look at what the `Generate` stage would entail.
 
-![](../.gitbook/assets/generative-design-generate-step.png)
+<br/>
+
+<p align="center">
+<img src="../.gitbook/assets/generative-design-generate-step.png" style="width:40%;"/>
+</p>
+
 
 ### Define
 
@@ -44,7 +55,9 @@ Things that are generated in the run step are the final results or outputs of ea
 
 We can map these stages & steps together in a single diagram to visualize the order they happen in and the dependencies between them.
 
-![](../.gitbook/assets/generative-design-overall-process.png)
+<p align="center">
+<img src="../.gitbook/assets/generative-design-overall-process.png" style="width:85%;"/>
+</p>
 
 The diagram above should clearly illustrate how
 

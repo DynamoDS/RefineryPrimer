@@ -8,11 +8,23 @@ A typical workflow for using Revit data, would consist of the following steps:
 * Run the graph, so all nodes execute and the *Data.Remember* node has data passing through it
 * Save the graph and close Dynamo/Revit
 
-![Data Remember in Revit](images/6-02_revit_dynamo.PNG "Data Remember in Revit")
+<br/>
+
+<p align="center">
+<img src="images/6-02_revit_dynamo.PNG" style="width:85%;"/>
+</p>
+
+<br/>
 
 * Open DynamoSandbox and the graph just created
 * Rerun the graph and everything upstream will become an unresolved node, however the *Data.Remember* node will retain the cached information
 
-![Data Remember in Sandbox](images/6-02_sandbox-dynamo.png "Data Remember in Sandbox")
+<br/>
+
+<p align="center">
+<img src="images/6-02_sandbox-dynamo.png" style="width:85%;"/>
+</p>
+
+<br/>
 
 * Now Refinery can utilise the data and geometry from Revit without needing to start up Revit in the background each time

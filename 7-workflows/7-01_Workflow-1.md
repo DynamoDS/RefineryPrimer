@@ -55,4 +55,9 @@ _maybe it would be good to show this approach with random generation method and 
 Once Refinery has completed, the results can be explored through the available tables and graphs.
 <br>
 The image below shows an example output from a randomized study based on 40 solutions.
-![Workflow 1](Images/7-01_workflow1_randomisationrun.png)
+
+<br/>
+
+<p align="center">
+<img src="Images/7-01_workflow1_randomisationrun.png" style="width:85%;"/>
+</p>
