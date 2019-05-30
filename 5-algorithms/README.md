@@ -1,9 +1,11 @@
-# What are Algorithms?
+# Algorithms
 
-An algorithm is a process or set of rules to be followed in calculations or other problem-solving operations involving a computer.  A generative design approach involves several distinct steps with distict kinds of algorithms to encode logic at each step. The types of methods used in each step are very different from each other, so we generally categorise them as follows:
+In this chapter, we’ll look at:
 
-| Step | Algorithm Type |	
-| :--- | :--- |	
-| generation of new design studies | generators |	
-| evaluation of each study | evaluators |	
-| ranking & solution achieves goal | solvers |
+* what are algorithms?
+* learn about generators
+* learn about evaluators
+* understand what a solver is
+* and how Refinery behaves as a solver
+
+First, let's understand what the term **algorithms** means in relation to AEC and generative design.

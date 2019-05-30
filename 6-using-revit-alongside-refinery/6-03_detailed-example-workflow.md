@@ -43,7 +43,7 @@ With the graph correctly set up and run once in D4R to cache the data, we can cl
 ![Dynamo Sandbox overview](images/6-03_sandbox-overview.png "Dynamo Sandbox overview")
 
 ## Refinery
-Now we are ready to run through Refinery. In Refinery we want to select **Optimize**. For more details on how to run an optimisation process please refer to [section 2-05](/2-getting-started/2-05_refinery-processes.md). For this study we want to **Maximize** the result. Refinery then goes to work to solve the design problem, using the population size and amount of generations to decide on the best option.
+Now we are ready to run through Refinery. In Refinery we want to select **Optimize**. For more details on how to run an optimization process please refer to [section 2-05](/2-getting-started/2-05_refinery-processes.md). For this study we want to **Maximize** the result. Refinery then goes to work to solve the design problem, using the population size and amount of generations to decide on the best option.
 
 ![Refinery optimization result](images/6-03_refinery_result.png "Refinery optimization result")
 

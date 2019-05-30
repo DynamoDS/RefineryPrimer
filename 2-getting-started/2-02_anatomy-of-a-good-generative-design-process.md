@@ -15,7 +15,7 @@ The first thing to do is to have a clear understanding of what you want to achie
 * What conditions must the design satisfy?
 * What must not be present in a final design?
 * What makes the design a success or a failure?
-* What aspects would you like to maximise or minimise?
+* What aspects would you like to maximize or minimize?
 
 Answering these questions not only clarifies the problem at hand in the designer’s mind, but also helps break the problem into smaller components that will be used in each stage of the generative design process. The more questions you formulate and the more precisely you can answer these questions, the more relevant the outputs of a generative process will be.
 
@@ -33,13 +33,13 @@ For the **Exploration** & **Evolution** phases:
 
 * What key result do you want?  
 * What kind of decision will you be trying to make? Is it choosing a single outcome \(a design solution maybe\), an approach \(comparing multiple classes of solutions\) or something altogether different?
-* What influeces that decision?
+* What influences that decision?
 
 For the **Evaluation** phase:
 
 * What do you need to measure or analyse? Make sure you're not defining any metrics that measure the same thing, just in different ways.
 * How can these aspects be measured or quantified? Is there an existing methodology you can learn from?
-* Evaluation will drive the optimisation process, so it contributes significantly to the overall process. As such, poorly defined evaluation criteria will result in less than stellar solutions.
+* Evaluation will drive the optimization process, so it contributes significantly to the overall process. As such, poorly defined evaluation criteria will result in less than stellar solutions.
 
 For the **Generate** phase:
 
