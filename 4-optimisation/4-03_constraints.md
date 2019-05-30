@@ -1,8 +1,8 @@
 # Constraints 
-A constraint is a condition that a solution of an optimisation problem must satisfy. In the table example, constraints may include the following: 
+A constraint is a condition that a solution of an optimization problem must satisfy. In the table example, constraints may include the following: 
 
 - The table must have four legs 
-- The table must be at least 50 centimetres wide 
+- The table must be at least 50 centimeters wide 
 - The table may be no more than 1 metre tall 
 - The table cannot be blue 
 
