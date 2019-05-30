@@ -6,7 +6,7 @@
 
 ## Description
 
-This graph, used with Refinery on `Randomize` mode, will generate a series of random towers, sitting across a stipulated site boundary. The tower will randomize in height, floor plate design and orientation allowing for a large amount of potential design solutions within minutes.
+This graph, used with Refinery on *`Randomize`* mode, will generate a series of random towers, sitting across a stipulated site boundary. The tower will randomize in height, floor plate design and orientation allowing for a large amount of potential design solutions within minutes.
 
 ## Static inputs
 
@@ -46,9 +46,7 @@ When geometry is created in Dynamo, often other geometry is needed to facilitate
 
 ## Benefit of using Refinery
 
-On running the script, Dynamo is able to generate one design option based on the user inputs, but by utilising Refinery as the solver many more options can be generated in a single run. Due to the nature of this graph, it works best when run using the `Randomize` mode. Although the outputs can be used to maximise or minimize the various areas, the optimization approach won't work as there is no pattern for the algorithm to use. By selecting Randomise, Refinery can produce hundreds, if not thousands of different iterations and the user is able to rank and explore the options to find the most suited option. 
-
-_maybe it would be good to show this approach with random generation method and then filtering results on parallel coordinates afterwards to use desired metrics to find better options?)_
+On running the script, Dynamo is able to generate one design option based on the user inputs, but by utilising Refinery as the solver many more options can be generated in a single run. Due to the nature of this graph, it works best when run using the *`Randomize`* mode. Although the outputs can be used to maximize or minimize the various areas, the optimization approach won't work as there is no pattern for the algorithm to use. By selecting *`Randomise`*, Refinery can produce hundreds, if not thousands of different iterations and the user is able to rank and explore the options to find the most suited option. 
 
 ## Results
 

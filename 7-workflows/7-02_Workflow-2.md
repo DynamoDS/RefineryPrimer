@@ -1,4 +1,4 @@
-# Workflow 2 : Building positioning based on solar analysis
+# Workflow 2 : Building Positioning Based on Solar Analysis
 
 <p align="center">
   <img src="https://media.giphy.com/media/kDNLpoOjcxV96gOa2P/giphy.gif">
@@ -45,13 +45,13 @@ When geometry is created in Dynamo, often other geometry is needed to facilitate
 | Free area         | Area of the internal site boundary that is not occupied by the building floor plate |
 | Average incidence | The average incidence in square meters of the external walls of the building |
 
-## Benefits of using Refinery
+## Benefits of Using Refinery
 
-Without the aid of Refinery, running this script in Dynamo, the user would be required to manually move the building until they managed to find the desired location and rotation. This process, unless incredibly lucky, would take hours if not days. As the aim is simple, to find the location and rotation that provides either the minimum or maximum incidence, Refinery can be leveraged by using the `Optimize` approach. Larger site offset values restrict the space the building can move and so reduce the potential for it falling outside of the site boundary. 
+Without the aid of Refinery, running this script in Dynamo, the user would be required to manually move the building until they managed to find the desired location and rotation. This process, unless incredibly lucky, would take hours if not days. As the aim is simple, to find the location and rotation that provides either the minimum or maximum incidence, Refinery can be leveraged by using the *`Optimize`* approach. Larger site offset values restrict the space the building can move and so reduce the potential for it falling outside of the site boundary. 
 
 ## Results
 
 Once Refinery has completed, the results can be explored through the available tables and graphs.
-The image below shows an example output from an optimized study based on 10 generations with a population of 20. The outputs were defined as minimized for both ***OUT_Area Out(m2)*** and ***OUT_Avg. (kWh/m2)***.
+The image below shows an example output from an optimized study based on 10 generations with a population of 20. The outputs were defined as minimized for both *`OUT_Area Out(m2)`* and *`OUT_Avg.(kWh/m2)`*.
 <br>
 ![Workflow 2](Images/7-02_workflow2_optimisationrun.png)
