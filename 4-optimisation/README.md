@@ -1,10 +1,18 @@
-# What is Optimisation?
+# Optimization
 
-![What Is Optimization Start](Images/4-01_WhatIsOptimisationStart.png "What Is Optimization Start")
+In this chapter, we’ll look at:
 
+* what is optimization
+* objective functions
+* constraints
+* data
+* defining goals and objective criteria
+* genetic algorithms
+* the initialization phase
+* the evaluation phase
+* the selection phase
+* the crossover phase
+* the mutation phase
+* other applicable techniques
 
-Optimisation is an inherently mathematical subject. It is concerned with maximising or minimising some mathematical function to arrive at the best possible solution to a problem. Optimisation problems arise in all kinds of fields, from aerospace engineering to architectural design, but regardless of domain, every optimisation problem has three features: 
-
-1. An objective function 
-2. Constraints 
-3. Data
+First, let's explore what **optimization** means in relation to AEC and generative design.

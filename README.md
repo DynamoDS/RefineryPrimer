@@ -15,8 +15,9 @@ Using these technologies requires new skills and new ways to think about design.
 
 Enstoa (designtech.io) was commissioned to kick-start the development of this primer, we thank them for all their efforts in establishing this valuable resource.
 
-[![](.gitbook/assets/enstoa-logo.png)](https://enstoa.com/)
-[![](.gitbook/assets/designtech-logo.png)](https://enstoa.com)
+
+[<img src=".gitbook/assets/enstoa-logo.png" style="width:200px;"/>](https://enstoa.com/)
+[<img src=".gitbook/assets/designtech-logo.png" style="width:200px;"/>](https://enstoa.com)
 
 ## Open-Source
 
