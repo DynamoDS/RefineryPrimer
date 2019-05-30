@@ -2,7 +2,7 @@
 
 A helpful general rule for developing good generative design workflows could be:
 
-> Ask & answer as many questions about the activities & aspects involved in each the [stages of generative design](../1-00_introduction/1-04_what-goes-into-a-generative-design-process.md) \(Generate, Evaluate, Evolve, Explore, Integrate\) as you can think about.
+> Ask & answer as many questions about the activities & aspects involved in each of the [stages of generative design](../1-introduction/1-04_what-goes-into-a-generative-design-process.md) \(Generate, Evaluate, Evolve, Explore, Integrate\) as you can think about.
 
 To guide you through this process, you'll find below a helpful framework, with notes, questions and pointers. This is by no means an exhaustive list, so please feel free to make it your own - and maybe even contribute to this primer!
 
@@ -15,7 +15,7 @@ The first thing to do is to have a clear understanding of what you want to achie
 * What conditions must the design satisfy?
 * What must not be present in a final design?
 * What makes the design a success or a failure?
-* What aspects would you like to maximise or minimise?
+* What aspects would you like to maximize or minimize?
 
 Answering these questions not only clarifies the problem at hand in the designer’s mind, but also helps break the problem into smaller components that will be used in each stage of the generative design process. The more questions you formulate and the more precisely you can answer these questions, the more relevant the outputs of a generative process will be.
 
@@ -25,7 +25,7 @@ Answering these questions not only clarifies the problem at hand in the designer
 
 As a designer, you wouldn't sign up to design the school without a sufficiently defined brief. This step is critically important, since a generative process cannot consider any goals that is has not been instructed to consider.
 
-## Step 2 : Sketch it out
+## Step 2 : Sketch it Out
 
 Now that you've written down a rough definition of the problem, it's time to look at potential solutions! Start with the end design in mind, keeping in mind what you want to achieve and work backwards from there, letting each section guide the next one. Don't be afraid to draw, diagram, mind-map or use any other technique you prefer to help you document the below.
 
@@ -33,22 +33,22 @@ For the **Exploration** & **Evolution** phases:
 
 * What key result do you want?  
 * What kind of decision will you be trying to make? Is it choosing a single outcome \(a design solution maybe\), an approach \(comparing multiple classes of solutions\) or something altogether different?
-* What influeces that decision?
+* What influences that decision?
 
 For the **Evaluation** phase:
 
 * What do you need to measure or analyse? Make sure you're not defining any metrics that measure the same thing, just in different ways.
 * How can these aspects be measured or quantified? Is there an existing methodology you can learn from?
-* Evaluation will drive the optimisation process, so it contributes significantly to the overall process. As such, poorly defined evaluation criteria will result in less than stellar solutions.
+* Evaluation will drive the optimization process, so it contributes significantly to the overall process. As such, poorly defined evaluation criteria will result in less than stellar solutions.
 
 For the **Generate** phase:
 
 * Can you write down your design steps? Generally, if you can define the concrete steps used to design something, it is much easier to create a computational model.
 * Specify constraints and anything else that will drive your design. Is it sizes, quantities, environmental or cost factors?
 * Are you generating geometry and what are the driving parameters of the geometry? Is it one of the constraints or something else?
-* Are there any dependencies or relationships between different elements in your design? For example, when designing a masterplan, does the height of one building affect the height of its neighouring buildings? If so, define how these relationships are expressed.
+* Are there any dependencies or relationships between different elements in your design? For example, when designing a masterplan, does the height of one building affect the height of its neighboring buildings? If so, define how these relationships are expressed.
 
-## Step 3 : Define inputs & outputs
+## Step 3 : Define Inputs & Outputs
 
 For this step, try to think about the overall process and the constants & variables in your defined problem & solution?
 
@@ -57,7 +57,7 @@ For this step, try to think about the overall process and the constants & variab
 * Start with the minimal needed inputs and gradually add more if needed as you become more aware of what your design needs.
 * What are you trying to accomplish during this step? Decide if/what you need to measure and if/how that output is communicated to subsequent steps.
 
-## Step 4 : Measuring which option is best
+## Step 4 : Measuring which Option is Best
 
 Having precise rules for evaluation is critical for a Generative Design process to be successful. Without anything to evaluate, the generative process will produce a random and arbitrary set of designs which may not be of use to any designer.
 
