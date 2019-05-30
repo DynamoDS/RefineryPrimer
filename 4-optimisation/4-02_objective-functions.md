@@ -1,12 +1,12 @@
 # Objective Function 
 An objective function is the output that you want to maximize or minimize. It is what you will measure solutions against to decide which is best. The objective function can be thought of as the “goal” of your generative design process. In finance the objective function is to maximize portfolio value, in aerospace engineering the objective is often to minimize weight.  
 
-They key is that the objective function must be quantifiable, you must be able to put a number to it. 
+> The key is that the objective function must be quantifiable, you must be able to put a number to it. 
 
 In generative design workflows, we are not limited to one objective (single objective optimization) we can also have multiple objectives or goals that we are trying to optimise our design against (multi-objective optimization).   
 
 ## Single Objective Optimization
-When we have only one objective function, the system will return one optimal solution. 
+When we have only one objective function, the system will return one optimal solution eg. return surface with largest area.
 
 ## Multi Objective Optimization
 Usually, optimizing designs involves multiple competing objectives, therefore optimization becomes a matter of finding the best trade-off between these objectives rather than finding the one best solution. Whilst adding more objectives makes the optimization more complex, it also opens up for the possibility to get a set of optimal solutions that the decision maker can choose from, instead of just getting one single solution. 
