@@ -23,23 +23,11 @@ Answering these questions not only clarifies the problem at hand in the designer
 
 > Imagine you’ve been engaged by a client to design a school. You’d want to nail down precisely the site restrictions, number of students, teaching profile, total budget, and any other mission-critical requirements as soon as possible.
 
-As a designer, you wouldn't sign up to design the school without a sufficiently defined brief. This step is critically important, since a generative process cannot consider any goals that is has not been instructed to consider.
+As a designer, you wouldn't sign up to design the school without a sufficiently defined brief. This step is critically important, since a generative process cannot consider any goals that has not been instructed to consider.
 
 ## Step 2 : Sketch it Out
 
-Now that you've written down a rough definition of the problem, it's time to look at potential solutions! Start with the end design in mind, keeping in mind what you want to achieve and work backwards from there, letting each section guide the next one. Don't be afraid to draw, diagram, mind-map or use any other technique you prefer to help you document the below.
-
-For the **Exploration** & **Evolution** phases:
-
-* What key result do you want?  
-* What kind of decision will you be trying to make? Is it choosing a single outcome \(a design solution maybe\), an approach \(comparing multiple classes of solutions\) or something altogether different?
-* What influences that decision?
-
-For the **Evaluation** phase:
-
-* What do you need to measure or analyse? Make sure you're not defining any metrics that measure the same thing, just in different ways.
-* How can these aspects be measured or quantified? Is there an existing methodology you can learn from?
-* Evaluation will drive the optimization process, so it contributes significantly to the overall process. As such, poorly defined evaluation criteria will result in less than stellar solutions.
+Now that you've written down a rough definition of the problem, it's time to look at potential solutions! Start with the end design in mind, remembering what you want to achieve and work backwards from there, letting each section guide the next one. Don't be afraid to draw, diagram, mind-map or use any other technique you prefer to help you document the below.
 
 For the **Generate** phase:
 
@@ -47,6 +35,18 @@ For the **Generate** phase:
 * Specify constraints and anything else that will drive your design. Is it sizes, quantities, environmental or cost factors?
 * Are you generating geometry and what are the driving parameters of the geometry? Is it one of the constraints or something else?
 * Are there any dependencies or relationships between different elements in your design? For example, when designing a masterplan, does the height of one building affect the height of its neighboring buildings? If so, define how these relationships are expressed.
+
+For the **Evaluation** phase:
+
+* What do you need to measure or analyse? Make sure you're not defining any metrics that measure the same thing, just in different ways.
+* How can these aspects be measured or quantified? Is there an existing methodology you can learn from?
+* Evaluation will drive the optimization process, so it contributes significantly to the overall process. As such, poorly defined evaluation criteria will result in less than stellar solutions.
+  
+For the **Exploration** & **Evolution** phases:
+
+* What key result do you want?  
+* What kind of decision will you be trying to make? Is it choosing a single outcome \(a design solution maybe\), an approach \(comparing multiple classes of solutions\) or something altogether different?
+* What influences that decision?
 
 ## Step 3 : Define Inputs & Outputs
 
@@ -67,7 +67,7 @@ Adding evaluation criteria to a computational process makes it more complex, but
 
 To get the most out of your generative design process, remember that the final step isn't necessarily where the process ends, so ask yourself some of the following questions.
 
-* How do you want to review the results? Do you need to 3D visuals, a data table, graphs or all of the above?
+* How do you want to review the results? Do you need 3D visuals, a data table, graphs or all of the above?
 * Who is the target audience and what do you want them to decide on?
 * How many options should you present to the target audience? Too many options to consider can get overwhelming and too few can make the process look shallow, make sure to find the best balance based on your measures.
 * What do you want to do with the results? What is the next step?

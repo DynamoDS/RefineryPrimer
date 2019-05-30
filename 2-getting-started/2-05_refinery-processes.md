@@ -26,11 +26,11 @@ To run an optioneering process in Refinery, follow these steps:
 
 <br/>
 
-## How to run an optimisation process using Refinery
+## How to run an optimization process using Refinery
 
-An optimisation process lets Refinery evolve your design to find the most suitable options based on the constraints and goals provided. Refinery will run multiple generations of options and each time it will take the fittest \(best\) options of the generation and use them to create a new generation. Refinery is using [NSGA-II](https://www.iitk.ac.in/kangal/Deb_NSGA-II.pdf "NSGA-II"), an elitist multi objective genetic algorithm to optimise results.
+An optimization process lets Refinery evolve your design to find the most suitable options based on the constraints and goals provided. Refinery will run multiple generations of options and each time it will take the fittest \(best\) options of the generation and use them to create a new generation. Refinery is using [NSGA-II](https://www.iitk.ac.in/kangal/Deb_NSGA-II.pdf "NSGA-II"), an elitist multi objective genetic algorithm to optimise results.
 
-To run an optimisation process in Refinery, follow these steps:
+To run an optimization process in Refinery, follow these steps:
 
 * Open Refinery from the View Menu in Dynamo
 * Create a new study and select *`Optimize`* as the generation method ([see section 5-04](/5-algorithms/5-04_solvers.md))
