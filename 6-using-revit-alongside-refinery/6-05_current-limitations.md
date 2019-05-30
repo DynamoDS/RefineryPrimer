@@ -1,6 +1,6 @@
 # Current Limitations
 
-Known limitations of the **Data.Remember** node:
+Known limitations of the *`Data.Remember`* node:
 
 * currently only works with the following data types:
   * strings
