@@ -4,6 +4,6 @@ An evaluator (also known as a discriminator), is fed potential solutions from th
 
 In design, evaluators must be specified mathematically, they must output a number that can be used to discriminate between solutions. 
 
-Again, in the simple Dynamo example below, the nodes that are highlighted demonstrate evaluators. They are nodes that query a particular property of the design option, in this case the volume and surface area of the cuboid. These evaluators allow the user or programme to critique each design option to help pick the best one based on our predfeined rules - maximum volume, minimum surface area etc.
+Again, in the simple Dynamo example below, the nodes that are highlighted demonstrate evaluators. They are nodes that query a particular property of the design option, in this case the volume and surface area of the cuboid. These evaluators allow the user or programme to critique each design option to help pick the best one based on our predefined rules - maximum volume, minimum surface area etc.
 
 ![Evaluator](Images/5_03_evaluator-dynamo.png)

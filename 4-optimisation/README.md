@@ -15,4 +15,4 @@ In this chapter, we’ll look at:
 * the mutation phase
 * other applicable techniques
 
-First, let's explore what **optimization** means in relation to AEC and generative design.
+First, let's explore what *`optimization`* means in relation to AEC and generative design.

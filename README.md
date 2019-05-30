@@ -5,7 +5,7 @@ Welcome to the Refinery Primer, which aims to introduce AEC practitioners of all
 * **Explore** how these techniques can be used to solve practical challenges commonly found in AEC design projects
 * **Learn** how to use Autodesk’s newest generative design tools such as Project Refinery, through practical workflows 
 
-## Why make a primer?
+## Why Make a Primer?
 
 Autodesk is working to democratize technologies that can help designers in the AEC industry automate the creation of design options and optimise those designs to achieve better outcomes.
 
