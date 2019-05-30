@@ -8,7 +8,7 @@
 
 This graph, used with Refinery on *`Randomize`* mode, will generate a series of random towers, sitting across a stipulated site boundary. The tower will randomize in height, floor plate design and orientation allowing for a large amount of potential design solutions within minutes.
 
-*All sample files for this example can be found in the `7-00_sample_files` folder in the Github repository* 
+*All sample files for this example can be found in the [`07-00_sample_files`](https://github.com/DynamoDS/RefineryPrimer/tree/master/07-workflows/07-00_sample_files) folder in the Github repository* 
 
 ## Static inputs
 
