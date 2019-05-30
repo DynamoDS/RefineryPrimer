@@ -6,7 +6,7 @@
 
 **Generative design** / gen·er·a·tive de·sign / noun
 
-> A system that produces design studies \(alternatives\), evaluates them against quantiﬁable goals, improves studies by learning from previous, and ranks results based on their distance from the goals. The project is kept as a system, with affordances to choose one or a small subset of alternatives as a ﬁnal set of project data and geometry.
+> A system that produces design studies \(alternatives\), evaluates them against quantifiable goals, improves studies by learning from previous, and ranks results based on their distance from the goals. The project is kept as a system, with affordances to choose one or a small subset of alternatives as a final set of project data and geometry.
 
 **Generate** / gen·er·ate / verb
 
@@ -14,7 +14,7 @@
 
 **Goal** / goal / noun
 
-> A quantiﬁable target value or range for a project or feature of a project.
+> A quantifiable target value or range for a project or feature of a project.
 
 **Evaluate** / e·val·u·ate / verb
 
@@ -46,13 +46,13 @@
 
 **Multi-objective** / mul·ti ob·ject·ive / adjective
 
-> Using two or more objectives when optimising a solution.
+> Using two or more objectives when optimizing a solution.
 
 **Optioneering** / op·tion·eer·ing / verb
 
 > Enter a desired number of results and design algorithm and make the computer generate solutions.
 
-**Optimisation** / op·ti·mi·sa·tion / verb
+**Optimization** / op·ti·mi·sa·tion / verb
 
 > Maximising or minimising some mathematical function to arrive at the best possible solution to a problem.
 

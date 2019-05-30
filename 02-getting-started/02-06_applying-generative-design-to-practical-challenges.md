@@ -14,7 +14,7 @@ The *`08-EvaluateSurface.dyn`* graph in the Refinery examples, uses a single obj
 
 <br/>
 
-U and V values are used to move the sphere across the surface. Since these values are the driving inputs, they need to be marked as *`Is Input`* for Refinery to pick them up.
+U and V values are used to move the sphere across the surface. Since these values are the driving inputs, they need to be marked as *`IsInput`* for Refinery to pick them up.
 
 <br/>
 
@@ -66,7 +66,7 @@ We say these two goals are competing because when considering one cuboid, the bi
 
 _Above: the three cuboids joined together to form one solid_
 
-Please make sure all the nodes controlling the size & location of the cuboids are set as _Is Input_ in the Dynamo graph.
+Please make sure all the nodes controlling the size & location of the cuboids are set as *`IsInput`* in the Dynamo graph.
 
 <br/>
 
@@ -76,7 +76,7 @@ Please make sure all the nodes controlling the size & location of the cuboids ar
 
 <br/>
 
-Whenever an input parameter is changed the option's volume and total surface area will be re-calculated. These two values are the _fitness_ values and need to be set as _Is Output_ in the Dynamo graph.
+Whenever an input parameter is changed the option's volume and total surface area will be re-calculated. These two values are the _fitness_ values and need to be set as *`IsInput`* in the Dynamo graph.
 
 <br/>
 

@@ -4,7 +4,7 @@ After Refinery has run the generative process, the results are displayed in both
 
 ## Design Grid
 
-The design grid shows each option as a 3d geometrical thumbnail that can be individually rotated, zoomed and panned to explore the design in more detail. The order of the thumbnails can be sorted based on the inputs or outputs of the Dynamo script, with a toggle for both ascending and descending values.
+The *`design grid`* shows each option as a 3d geometrical thumbnail that can be individually rotated, zoomed and panned to explore the design in more detail. The order of the thumbnails can be sorted based on the inputs or outputs of the Dynamo script, with a toggle for both ascending and descending values.
 
 <br/>
 
@@ -16,7 +16,7 @@ The design grid shows each option as a 3d geometrical thumbnail that can be indi
 
 ## Design Table
 
-The design table replaces the design grid, if chosen, and lists each option in a table form with each column representing the values for the inputs and outputs.
+The *`design table`* replaces the design grid, if chosen, and lists each option in a table form with each column representing the values for the inputs and outputs.
 
 <br/>
 

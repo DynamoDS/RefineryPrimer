@@ -46,7 +46,7 @@ When geometry is created in Dynamo, often other geometry is needed to facilitate
 
 ## Benefit of using Refinery
 
-On running the script, Dynamo is able to generate one design option based on the user inputs, but by utilising Refinery as the solver many more options can be generated in a single run. Due to the nature of this graph, it works best when run using the *`Randomize`* mode. Although the outputs can be used to maximize or minimize the various areas, the optimization approach won't work as there is no pattern for the algorithm to use. By selecting *`Randomise`*, Refinery can produce hundreds, if not thousands of different iterations and the user is able to rank and explore the options to find the most suited option. 
+On running the script, Dynamo is able to generate one design option based on the user inputs, but by utilizing Refinery as the solver many more options can be generated in a single run. Due to the nature of this graph, it works best when run using the *`Randomize`* mode. Although the outputs can be used to maximize or minimize the various areas, the optimization approach won't work as there is no pattern for the algorithm to use. By selecting *`Randomize`*, Refinery can produce hundreds, if not thousands of different iterations and the user is able to rank and explore the options to find the most suited option. 
 
 ## Results
 
