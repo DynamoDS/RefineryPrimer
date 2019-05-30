@@ -8,7 +8,7 @@
   * [What goes into a Generative Design Process?](01-introduction/01-04_what-goes-into-a-generative-design-process.md)
   * [An Example of Generative Design](01-introduction/01-05_an-example-of-generative-design.md)
   * [A Further Analogy](01-introduction/01-06_a-further-analogy.md)
-  * [What is Visual Programming?](01-introduction/1-07_what-is-visual-programming.md)
+  * [What is Visual Programming?](01-introduction/01-07_what-is-visual-programming.md)
   * [What is Dynamo?](01-introduction/01-08_what-is-dynamo.md)
   * [What is Refinery?](01-introduction/01-09_what-is-refinery.md)
 * [Getting Started](02-getting-started/README.md)

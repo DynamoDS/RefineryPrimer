@@ -30,7 +30,7 @@ Using this breakdown, let's look at what the *`Generate`* stage would entail.
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/generative-design-generate-step.jpg" style="width:40%;"/>
+<img src="../.gitbook/assets/generative-design-generate-step.jpg" style="width:45%;"/>
 </p>
 
 

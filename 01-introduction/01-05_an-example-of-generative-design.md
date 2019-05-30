@@ -61,7 +61,7 @@ The designer would use the computer to help him/her generate a series of designs
 
 > Let's imagine the computer looked at 20 different values for each of : length, width, height, table/leg material combinations. The resulting solution space would be 20\*20\*20\*20 = 160,000 designs, which is way too many options for a person to reasonably evaluate.
 
-!<p align="center">
+<p align="center">
 <img src="../.gitbook/assets/tables-multiobjective.png" style="width:85%;"/>
 </p>
 
