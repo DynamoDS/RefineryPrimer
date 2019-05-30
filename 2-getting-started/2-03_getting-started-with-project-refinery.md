@@ -4,7 +4,7 @@ Project Refinery is currently available as a Beta release, as of March 2019. In 
 
 [https://www.autodesk.com/solutions/refinery-beta](https://www.autodesk.com/solutions/refinery-beta)
 
-## The Refinery community
+## The Refinery Community
 
 After signing up for the Beta you will be presented with an overview of the Refinery community. From here you can:
 

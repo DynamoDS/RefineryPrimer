@@ -12,7 +12,7 @@ Project Refinery is Autodesk’s latest application for generative design workfl
 
 The key features of Project Refinery are that it makes it easier to drive a design towards optimality, as it handles all the back-end work of generation and iteration and presents the user with either a single design solution or a collection of optimal solutions that best align with his or her goals.
 
-In short, Refinery enables users to tackle the `Generate`, `Evaluate`, `Evolve` & `Explore` stages of a generative design process.
+In short, Refinery enables users to tackle the *`Generate`*, *`Evaluate`*, *`Evolve`* & *`Explore`* stages of a generative design process.
 
 As a technical note, Refinery:
 
