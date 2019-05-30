@@ -8,7 +8,7 @@ For the design of the new office and research space in the MaRs Innovation Distr
 
 ### Generate
 
-A geometric system was created by the designers that allowed the exploration of multiple configurations of work neighborhoods, amenity spaces and circulation zones - this represents the `define` step of the `generate` phase as defined previously.
+A geometric system was created by the designers that allowed the exploration of multiple configurations of work neighborhoods, amenity spaces and circulation zones - this represents the *`define`* step of the *`generate`* phase as defined previously.
 
 The computer used this algorithm, varying its parameters to produce thousands of design options.
 
@@ -23,13 +23,13 @@ To begin with, information was collected from employees and managers about work 
 * daylight
 * views to the outside
 
-The designers then created an algorithm to measure how any given floor plan can be measured against each of the stated goals above. Known as `evaluators`, these algorithms represents the `analyse` & `rank` stages of the generative process.
+The designers then created an algorithm to measure how any given floor plan can be measured against each of the stated goals above. Known as *`evaluators`*, these algorithms represents the *`analyse`* & *`rank`* stages of the generative process.
 
 After they were formulated, the computer used these algorithms to evaluate each of the designs generated in the previous stage against the defined goals.
 
 ### Explore
 
-Once designs have been evaluated, the designers then explored what is often called the `solution space` : the generated designs together with their evaluation results. Taking into account each defined goal, they identified the design that best achieved the defined goals.
+Once designs have been evaluated, the designers then explored what is often called the *`solution space`* : the generated designs together with their evaluation results. Taking into account each defined goal, they identified the design that best achieved the defined goals.
 
 ![](../.gitbook/assets/autodesk-project-mars.jpg)
 
@@ -49,7 +49,7 @@ In a generative design approach, the designer would instead specify:
 
 ### Generate
 
-The designer would use the computer to help him/her generate a series of designs falling within the specified range. Some designs will be short and wide, others will be tall and thin, but each will satisfy the user-defined constraints. This is key, as many designs can be generated very quickly, much more than any human could feasibily examine.
+The designer would use the computer to help him/her generate a series of designs falling within the specified range. Some designs will be short and wide, others will be tall and thin, but each will satisfy the user-defined constraints. This is key, as many designs can be generated very quickly, much more than any human could feasible examine.
 
 > Let's imagine the computer looked at 20 different values for each of : length, width, height, table/leg material combinations. The resulting solution space would be 20 _20_ 20 \* 20 = 160,000 designs, which is way too many options for a person to reasonably evaluate.
 
@@ -65,18 +65,18 @@ The next step is to define how the generated designs are evaluated. This is the 
 
 _Above: range of table designs \(sizes\), colour-coded based on evaluator function result \(cost\)_
 
-Let's see how different design goals could be expressed in this `evaluation` stage:
+Let's see how different design goals could be expressed in this *`evaluation`* stage:
 
 | Design goal | Analysis method | Ranking method |
 | :--- | :--- | :--- |
-| Lowest cost per desk, with minimum 800mm x 600mm size | - desk size: at least 800mm x 600mm in size, outputs `yes/no`    - desk cost: area \* material cost/m², outputs currency `$` value\) | - lowest cost first   - only options that satisfy area requirements |
-| Most profitable  \(largest desk area with lowest material cost\) | - desk area, outputs m²   - unit cost \(area \* material cost/m²\), outputs currency `$` value | - largest area  - lowest cost |
+| Lowest cost per desk, with minimum 800mm x 600mm size | - desk size: at least 800mm x 600mm in size, outputs *`yes/no`*    - desk cost: area \* material cost/m², outputs currency *`$`* value\) | - lowest cost first   - only options that satisfy area requirements |
+| Most profitable  \(largest desk area with lowest material cost\) | - desk area, outputs m²   - unit cost \(area \* material cost/m²\), outputs currency *`$`* value | - largest area  - lowest cost |
 
 The matrix above showcases how you can use this stage in the generative design process to design for wildly different scenarios.
 
 In the first scenario, lowest overall cost is the driving goal, so we can expect small desk sizes & cheap materials, whilst still satisfying the size requirement. This scenario would be relatively simple for humans to replicate, so generative design would only come in handy when the variation or complexity of material costs is high.
 
-For the second scenario, we're optimising for overall return on investment for each desk, so we can expect larger & more expensive desks than the first one, but that have the best overall ROI. It wouldn't be unexpected for this process to identify a desk with cheap legs & costlier tabletop materials as a viable option.
+For the second scenario, we're optimizing for overall return on investment for each desk, so we can expect larger & more expensive desks than the first one, but that have the best overall ROI. It wouldn't be unexpected for this process to identify a desk with cheap legs & costlier tabletop materials as a viable option.
 
 This second example is a good illustration of using generative design to design for multiple & competing goals, which is very hard for humans to replicate.
 

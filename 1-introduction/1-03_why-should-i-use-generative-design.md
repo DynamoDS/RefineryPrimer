@@ -8,7 +8,7 @@ In a nutshell, generative design is a goal-driven approach to design that uses a
 
 ## Better outcomes & insight
 
-As the designer, you specify what outcomes you want to achieve for your design and how they are measured. With your guidance, the computer produces sets of optimal designs, along with the data to prove which design performs best against your goals. Analysing how the generated designs measure up against the set goals, a designer can gain valuable insight into which design aspects impact the outcome & how.
+As the designer, you specify what outcomes you want to achieve for your design and how they are measured. With your guidance, the computer produces sets of optimal designs, along with the data to prove which design performs best against your goals. Analyzing how the generated designs measure up against the set goals, a designer can gain valuable insight into which design aspects impact the outcome & how.
 
 ## Faster
 

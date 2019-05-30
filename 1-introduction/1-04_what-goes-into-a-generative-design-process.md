@@ -2,7 +2,7 @@
 
 ## Stages
 
-As previously discussed, generative design allows for a more integrated workflow between human and computer, and as a result both are required to undertake a series of steps that allow the process to take place. These steps can be categorised into the following stages:
+As previously discussed, generative design allows for a more integrated workflow between human and computer, and as a result both are required to undertake a series of steps that allow the process to take place. These steps can be categorized into the following stages:
 
 ![](../.gitbook/assets/generative-design-steps.png)
 
@@ -17,28 +17,28 @@ As previously discussed, generative design allows for a more integrated workflow
 
 ## Anatomy of each stage
 
-Each of these stages can be further broken down into `define`, `run` and `results` steps. The `define` steps is the responsibility of the designer whilst the `run` & `results` steps is performed by the machine.
+Each of these stages can be further broken down into *`define`*, *`run`* and *`results`* steps. The *`define`* steps is the responsibility of the designer whilst the *`run`* & *`results`* steps is performed by the machine.
 
-Using this breakdown, let's look at what the `Generate` stage would entail.
+Using this breakdown, let's look at what the *`Generate`* stage would entail.
 
 ![](../.gitbook/assets/generative-design-generate-step.png)
 
 ### Define
 
-For the `define` step, the expertise of the designer is needed to
+For the *`define`* step, the expertise of the designer is needed to
 
 * establish the generation algorithm: the logic defining how designs are generated, which may include things like constraints, rules, etc.
 * provide the generation parameters : the variables or inputs needed by the previously-defined algorithm
 
-This `define` step is present and vital for all stages of the generative design process, and the validity of outputs is reliant on the quality of the designer's contribution. Only with clear and concise logic, will the machine be able to provide suitable outputs.
+This *`define`* step is present and vital for all stages of the generative design process, and the validity of outputs is reliant on the quality of the designer's contribution. Only with clear and concise logic, will the machine be able to provide suitable outputs.
 
 ### Run
 
-Once everything is defined in the algorithms & accompanying parameters, the machine begins to `run`, meaning it starts to generate different designs options. This process might happen locally on the designer's computer or, for more intensive calculations, run using cloud computing.
+Once everything is defined in the algorithms & accompanying parameters, the machine begins to *`run`*, meaning it starts to generate different designs options. This process might happen locally on the designer's computer or, for more intensive calculations, run using cloud computing.
 
 ### Results
 
-Things that are generated in the run step are the final results or outputs of each stage and are used as inputs or parameters in subsequent phases. For example, the designs created in the `Generate` phase are used as one of input parameters in the `Analysis` phase.
+Things that are generated in the run step are the final results or outputs of each stage and are used as inputs or parameters in subsequent phases. For example, the designs created in the *`Generate`* phase are used as one of input parameters in the *`Analysis`* phase.
 
 ## Overall process
 
