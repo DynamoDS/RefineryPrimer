@@ -21,7 +21,7 @@
 * [Optioneering](03-optioneering/README.md)
   * [What is Optioneering?](03-optioneering/03-01_what-is-optioneering.md)
 * [Optimization](04-optimization/README.md)
-  * [Objective Function ](04-optimization/04-01_what-is-optimization.md)
+  * [What is Optimization? ](04-optimization/04-01_what-is-optimization.md)
   * [Objective Function ](04-optimization/04-02_objective-functions.md)
   * [Constraints](04-optimization/04-03_constraints.md)
   * [Data](04-optimization/04-04_data.md)
