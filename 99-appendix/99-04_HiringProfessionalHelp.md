@@ -19,7 +19,7 @@ As a Computational Designer, you'll be responsible for developing and encoding o
  
 ### Sound Like You?
 - Master's degree in Architecture or related design field
-- Strong design skills, especially in interior layout and design
+- Strong design skills
 - Strong visualization skills (2D drawing and 3D modeling/rendering)
 - Strong communication skills (ability to translate concepts at the business, designer, and developer levels)
 - Experienced in visual scripting languages (such as Autodesk Dynamo)
