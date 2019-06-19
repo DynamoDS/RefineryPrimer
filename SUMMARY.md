@@ -51,4 +51,5 @@
   * [Glossary](99-appendix/99-01_glossary.md)
   * [Additional Material](99-appendix/99-02_additional-material.md)
   * [Community Examples](99-appendix/99-03_community-examples.md)
+  * [Need Professional Help?](99-04_HiringProfessionalHelp.md)
 
