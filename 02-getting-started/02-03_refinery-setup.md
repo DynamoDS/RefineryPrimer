@@ -4,7 +4,7 @@
 
 To set up a Dynamo graph for Refinery right-click on each node used to drive the graph and ensure that the *`Is Input`* option is ticked. Renaming the node with a standard approach such as *`IN_description`* will help to distinguish these inputs in Refinery.
 
-\(Note: currently all inputs must be number slider nodes\)
+\(Note: currently all inputs must be number/integer slider nodes or boolean nodes\)
 
 <br/>
 
@@ -26,7 +26,7 @@ To define outputs in Refinery, right-click on the watch nodes and select the *`I
 
 <br/>
 
-Once both inputs and outputs are correctly set up, Refinery can be launched. In Dynamo navigate to the toolbar and select *`View > Refinery…`* This will start the local Refinery server and a new window will open.
+Once both inputs and outputs are correctly set up, Refinery can be launched. In Dynamo navigate to the toolbar and select *`Refinery > Launch Refinery…`* This will start the local Refinery server and a new window will open.
 
 <br/>
 

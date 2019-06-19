@@ -12,12 +12,13 @@ The first thing to do is to have a clear understanding of what you want to achie
 
 * What do you want to design?
 * What are the design parameters?
+* What is the reasonable range for these parameters?
 * What conditions must the design satisfy?
 * What must not be present in a final design?
 * What makes the design a success or a failure?
 * What aspects would you like to maximize or minimize?
 
-Answering these questions not only clarifies the problem at hand in the designer’s mind, but also helps break the problem into smaller components that will be used in each stage of the generative design process. The more questions you formulate and the more precisely you can answer these questions, the more relevant the outputs of a generative process will be.
+Answering these questions not only clarifies the problem at hand in the designer’s mind, but also helps break the problem into smaller components that will be used in each stage of the generative design process. The more relevant questions you formulate and the more precisely you can answer these questions, the more relevant the outputs of a generative process will be.
 
 **Example**
 
@@ -38,9 +39,9 @@ For the **Generate** phase:
 
 For the **Evaluation** phase:
 
-* What do you need to measure or analyse? Make sure you're not defining any metrics that measure the same thing, just in different ways.
-* How can these aspects be measured or quantified? Is there an existing methodology you can learn from?
-* Evaluation will drive the optimization process, so it contributes significantly to the overall process. As such, poorly defined evaluation criteria will result in less than stellar solutions.
+* What do you need to measure or analyse?
+* How can these aspects be measured or quantified? Is there an existing methodology you can learn from? Is there an existing peice of work that you can reuse in this process?
+* Evaluation will drive the optioneering and optimization process, so it contributes significantly to the overall process. As such, poorly defined evaluation criteria will result in less than stellar solutions.
   
 For the **Exploration** & **Evolution** phases:
 
@@ -57,7 +58,7 @@ For this step, try to think about the overall process and the constants & variab
 * Start with the minimal needed inputs and gradually add more if needed as you become more aware of what your design needs.
 * What are you trying to accomplish during this step? Decide if/what you need to measure and if/how that output is communicated to subsequent steps.
 
-## Step 4 : Measuring which Option is Best
+## Step 4 : Measuring which Option is the Best
 
 Having precise rules for evaluation is critical for a Generative Design process to be successful. Without anything to evaluate, the generative process will produce a random and arbitrary set of designs which may not be of use to any designer.
 

@@ -1,6 +1,6 @@
 # Getting Started with Project Refinery
 
-Project Refinery is currently available as a Beta release, as of March 2019. In order to use Refinery, you need to sign up to the Refinery community, using your Autodesk credentials at the following website:
+Project Refinery is currently available as a Beta release, as of June 2019. In order to use Refinery, you need to sign up to the Refinery community, using your Autodesk credentials at the following website:
 
 [https://www.autodesk.com/solutions/refinery-beta](https://www.autodesk.com/solutions/refinery-beta)
 
