@@ -39,7 +39,7 @@
   * [Solvers](05-algorithms/05-04_solvers.md)
 * [Using Revit alongside Refinery](06-using-revit-alongside-refinery/README.md)
   * [Using data from Revit](06-using-revit-alongside-refinery/06-01_using-data-from-revit.md)
-  * [Typical Workflow](06-using-revit-alongside-refinery/06-02_typical-workflow.md)
+  * [How to test Revit data capture](06-using-revit-alongside-refinery/06-02_typical-workflow.md)
   * [Detailed Example Workflow](06-using-revit-alongside-refinery/06-03_detailed-example-workflow.md)
   * [Sharing Logic and Results](06-using-revit-alongside-refinery/06-04_sharing-logic-and-results.md)
   * [Current Limitations](06-using-revit-alongside-refinery/06-05_current-limitations.md)
