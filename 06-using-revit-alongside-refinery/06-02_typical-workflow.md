@@ -1,6 +1,6 @@
-# Typical workflow
+# How to test Revit data capture
 
-A typical workflow for using Revit data, would consist of the following steps:
+A  workflow for using Revit data consists of the following steps:
 
 * Create a graph in Dynamo for Revit (D4R)
 * Use the common Revit nodes (categories, select model element etc) to pull information from Revit into Dynamo
