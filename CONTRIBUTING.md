@@ -1,6 +1,6 @@
-# Contributing to the Generative Design Primer
+# Contributing to the Refinery Design Primer
 
-`GenerativePrimer` is an open source project and the work of many contributors. We appreciate your help!
+`RefineryPrimer` is an open source project and the work of many contributors. We appreciate your help!
 
 
 ## Filing issues
