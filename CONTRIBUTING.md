@@ -1,4 +1,4 @@
-# Contributing to the Refinery Design Primer
+# Contributing to the Refinery Primer
 
 `RefineryPrimer` is an open source project and the work of many contributors. We appreciate your help!
 
