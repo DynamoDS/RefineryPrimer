@@ -21,7 +21,7 @@
 * [Optioneering](03-optioneering/README.md)
   * [What is Optioneering?](03-optioneering/03-01_what-is-optioneering.md)
 * [Optimization](04-optimization/README.md)
-  * [Objective Function ](04-optimization/04-01_what-is-optimization.md)
+  * [What is Optimization? ](04-optimization/04-01_what-is-optimization.md)
   * [Objective Function ](04-optimization/04-02_objective-functions.md)
   * [Constraints](04-optimization/04-03_constraints.md)
   * [Data](04-optimization/04-04_data.md)
@@ -39,7 +39,7 @@
   * [Solvers](05-algorithms/05-04_solvers.md)
 * [Using Revit alongside Refinery](06-using-revit-alongside-refinery/README.md)
   * [Using data from Revit](06-using-revit-alongside-refinery/06-01_using-data-from-revit.md)
-  * [Typical Workflow](06-using-revit-alongside-refinery/06-02_typical-workflow.md)
+  * [How to test Revit data capture](06-using-revit-alongside-refinery/06-02_typical-workflow.md)
   * [Detailed Example Workflow](06-using-revit-alongside-refinery/06-03_detailed-example-workflow.md)
   * [Sharing Logic and Results](06-using-revit-alongside-refinery/06-04_sharing-logic-and-results.md)
   * [Current Limitations](06-using-revit-alongside-refinery/06-05_current-limitations.md)
@@ -51,4 +51,5 @@
   * [Glossary](99-appendix/99-01_glossary.md)
   * [Additional Material](99-appendix/99-02_additional-material.md)
   * [Community Examples](99-appendix/99-03_community-examples.md)
+  * [Need Professional Help?](99-appendix/99-04_HiringProfessionalHelp.md)
 

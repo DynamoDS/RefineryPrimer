@@ -19,6 +19,14 @@ Enstoa (designtech.io) was commissioned to kick-start the development of this pr
 [<img src=".gitbook/assets/enstoa-logo.png" style="width:200px;"/>](https://enstoa.com/)
 [<img src=".gitbook/assets/designtech-logo.png" style="width:200px;"/>](https://enstoa.com)
 
+Special thanks goes to:
+
+Mark Thorley - [@MarkThorley](https://github.com/MarkThorley)
+<br>
+Radu Gidei - [@radumg](https://github.com/radumg)
+<br>
+Sylvester Knudsen - [@SHKnudsen](https://github.com/SHKnudsen)
+
 ## Open-Source
 
 This primer is an open source project initiated by the AEC Generative Design Team at Autodesk and we are dedicated to providing high-quality content on generative design in this primer.
