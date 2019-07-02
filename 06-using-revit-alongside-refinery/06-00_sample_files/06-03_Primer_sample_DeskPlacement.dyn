@@ -1425,7 +1425,7 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "Autodesk.GenerativeToolkit.Analyze.ViewsToOutside.ByLineSegments@Autodesk.DesignScript.Geometry.Curve[],Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Polygon[],Autodesk.DesignScript.Geometry.Polygon[]",
+      "FunctionSignature": "Autodesk.RefineryToolkits.SpacePlanning.Analyze.ViewsToOutside.ByLineSegments@Autodesk.DesignScript.Geometry.Curve[],Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Polygon[],Autodesk.DesignScript.Geometry.Polygon[]",
       "Id": "5136c93bdb124dd0b2b06338da6579ef",
       "Inputs": [
         {
