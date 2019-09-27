@@ -1,6 +1,6 @@
 # Table of contents
 
-* [About Refinery Primer](README.md)
+* [About](README.md)
 * [Introduction](01-introduction/README.md)
   * [What is Computational Design?](01-introduction/01-01_what-is-computational-design.md)
   * [What is Generative Design?](01-introduction/01-02_what-is-generative-design.md)

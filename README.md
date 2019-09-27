@@ -1,11 +1,8 @@
----
-description: >-
-  An Autodesk generative design beta for the architecture, engineering and
-  construction industry that gives users the power to quickly explore and
-  optimize their Dynamo designs.
----
+# About
 
-# About Refinery Primer
+## Refinery Primer
+
+An Autodesk generative design beta for the architecture, engineering and construction industry that gives users the power to quickly explore and optimize their Dynamo designs.
 
 ![](.gitbook/assets/b2.gif)
 
