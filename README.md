@@ -2,11 +2,13 @@
 
 ## Refinery Primer
 
-An Autodesk generative design beta for the architecture, engineering and construction industry that gives users the power to quickly explore and optimize their Dynamo designs.
+Welcome to the Refinery Primer, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design using generative design workflows. 
 
 ![](.gitbook/assets/b2.gif)
 
-Welcome to the Refinery Primer, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design using generative design workflows. This primer will help you:
+Welcome to the Refinery Primer, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design using generative design workflows. 
+
+This primer will help you:
 
 * **Understand** what generative design is by defining the base concepts and terminology you need to know 
 * **Explore** how these techniques can be used to solve practical challenges commonly found in AEC design projects
