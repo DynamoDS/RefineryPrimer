@@ -36,7 +36,7 @@
     * [Current Limitations](01-introduction/06-using-revit-alongside-refinery/06-05_current-limitations.md)
   * [What is Dynamo?](01-introduction/01-08_what-is-dynamo.md)
   * [What is Refinery?](01-introduction/01-09_what-is-refinery.md)
-* [Hello World! Project Refinary](02-getting-started/README.md)
+* [Hello Project Refinery](02-getting-started/README.md)
   * [Anatomy of a Good Generative Design Process](02-getting-started/02-01_anatomy-of-a-good-generative-design-process.md)
   * [Getting Started with Project Refinery](02-getting-started/02-02_getting-started-with-project-refinery.md)
   * [Setting up a Graph for Refinery](02-getting-started/02-03_refinery-setup.md)
