@@ -16,25 +16,15 @@ After signing up for the Beta you will be presented with an overview of the Refi
 
 Any new releases of Refinery will be available to download and install from this location too.
 
-<br/>
-
-<p align="center">
-<img src="../.gitbook/assets/refinery_community_overview.png" style="width:85%;"/>
-</p>
+![](../.gitbook/assets/refinery_community_overview.png)
 
 _Above: the Refinery community home page_
-
-<br/>
 
 ## Installing Refinery
 
 To install the latest version of Refinery, go to the Getting Started section, where you can see the latest Pre-Requisites needed to use Refinery. After making sure you satisfy these initial requirements, please follow the step-by-step guide in the install section.
 
-<br/>
-
-<p align="center">
-<img src="../.gitbook/assets/refinery_gettingstarted_installation.png" style="width:85%;"/>
-</p>
+![](../.gitbook/assets/refinery_gettingstarted_installation.png)
 
 _Above: the Refinery beta community Getting Started instructions page_
 
