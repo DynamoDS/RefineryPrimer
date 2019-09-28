@@ -1,6 +1,6 @@
 # What is Generative Design?
 
-![](../.gitbook/assets/intro-whatisgd.gif)
+![](../../.gitbook/assets/intro-whatisgd.gif)
 
 You may have encountered the term _`generative design`_ in the context of producing design permutations, creating geometry from some simple inputs or even just building computational graphs using Dynamo or Grasshopper.
 
