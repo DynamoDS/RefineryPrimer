@@ -1,5 +1,7 @@
 # Other Techniques
 
+![](../../.gitbook/assets/introgaothertechniques.jpg)
+
 There are many techniques that can be used to tackle a Computational Design problem. In addition to the genetic algorithm, other examples include:
 
 * Solving with pen and paper 

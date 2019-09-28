@@ -7,3 +7,7 @@ Nonetheless, a genetic algorithm always begins with a set of potential solutions
 * At least some of the genes needs to have ranges in which their values can changes.
 * The population size needs to be large enough. The question of when a population is large enough is difficult to answer, it depends on the project, the amount of genes and the gene value range. A good rule of thumb is to set the population size to at least 3x the number of inputs. If the results don't start to converge to an answer you may need to increase the population size.
 
+![](../../.gitbook/assets/intro-generativealgorithms2.jpg)
+
+![random population  each with a random set of features ](../../.gitbook/assets/intro-generativealgorithms1.jpg)
+

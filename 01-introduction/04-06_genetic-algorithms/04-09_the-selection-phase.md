@@ -1,5 +1,7 @@
 # The Selection Phase
 
+![](../../.gitbook/assets/intro-gaselectionfase.jpg)
+
 At each iteration, a certain proportion of the population \(i.e., a subset of potential solutions\) is selected to breed so that their features can be passed on to the next generation. This value is fixed in Project Refinery and is not currently available as a setting. Since the goal of a generative algorithm is optimization, we want to converge to some high-quality solution. It makes sense then to select only those solutions with the best possible features for breeding.
 
 Selection is done on the basis of the fitness value created by the fitness function. Individuals with a higher fitness score have better genes. \([See previous section for a detailed discussion of fitness and fitness functions](https://github.com/martinstacey/RefineryPrimer/tree/8d96884e8995d45c8287c9e96530f8bc208e5f07/04-optimisation/04-08_the-evaluation-phase.md)\)

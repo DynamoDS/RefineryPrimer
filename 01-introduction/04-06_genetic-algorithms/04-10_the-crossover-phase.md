@@ -4,3 +4,5 @@ This is the breeding stage. Crossover can be very complex, but at a basic level,
 
 The goal, of course, is for the offspring to be fitter than their parents. In general, after each round of breeding, the average fitness score of the population will have increased \(although this is by no means guaranteed\). This occurs since only the most fit parents are selected for crossover. Repeating the selection and crossover process leads to greater average fitness with each successive generation. The intention is to converge to the best possible fitness.
 
+![](../../.gitbook/assets/introgacrossover.jpg)
+

@@ -2,6 +2,8 @@
 
 ## What do you mean by ‘fitness’?
 
+![](../../.gitbook/assets/introgaevaluationphase.jpg)
+
 A fitness function is essentially the objective function for the genetic algorithm; it's the criterion you want to maximize or minimize, the thing you care most about achieving. A fitness function is used to evaluate how close \(or far\) a given design solution is from achieving the designer’s goals. The genetic algorithm is designed to drive the model to higher and higher fitness, so defining a fitness function precisely and accurately is vital.
 
 Some examples of fitness functions that could be used in a Generative Design context include:
@@ -21,4 +23,6 @@ Another consideration is that it is desirable for fitness functions to be calcul
 One of the great strengths of a genetic approach is that the fitness function can be quite complicated. In fact, a single genetic model can have multiple competing fitness functions or even a single fitness function that is a combination of several others \(minimize the weight of a design while also making it as structurally sound as possible, for example\). This is also known as Multi Objective Optimization and Single Objective Optimization.
 
 Only once a fitness function has been defined can the selection phase of a genetic algorithm begin.
+
+![](../../.gitbook/assets/introgaevaluationphase2.jpg)
 
