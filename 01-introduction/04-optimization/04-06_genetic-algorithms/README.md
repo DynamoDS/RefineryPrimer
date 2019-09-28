@@ -1,6 +1,6 @@
 # Genetic Algorithms
 
-![](../../.gitbook/assets/4_06_gaprocess.png)
+![](../../../.gitbook/assets/4_06_gaprocess.png)
 
 A genetic algorithm - specifically _`NSGA-II`_ \([https://www.iitk.ac.in/kangal/Deb\_NSGA-II.pdf](https://www.iitk.ac.in/kangal/Deb_NSGA-II.pdf)\), is a kind of optimization algorithm that is popular in generative design applications. In technical speak, it is an example of an _“adaptive heuristic algorithm”_. You might also hear it referred to as an “evolutionary algorithm”. Genetic algorithms tend to be very useful when your objective function is highly complex, subject to randomness, or is discontinuous.
 
