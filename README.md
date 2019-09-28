@@ -1,12 +1,10 @@
 # About
 
-## Refinery Primer
+## Welcome
 
-Welcome to the Refinery Primer, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design using generative design workflows. 
+Welcome to the **Refinery Primer**, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design using generative design workflows. 
 
-![](.gitbook/assets/b2.gif)
-
-Welcome to the Refinery Primer, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design using generative design workflows. 
+![](.gitbook/assets/about-welcome%20%281%29.gif)
 
 This primer will help you:
 
@@ -16,17 +14,17 @@ This primer will help you:
 
 ## Why Make a Primer?
 
+Autodesk is working to **democratize technologies** that can help designers in the AEC industry automate the creation of design options and optimise those designs to achieve better outcomes.
 
-
-Autodesk is working to democratize technologies that can help designers in the AEC industry automate the creation of design options and optimise those designs to achieve better outcomes.
+![](.gitbook/assets/about-whyprimer.jpg)
 
 Using these technologies requires new skills and new ways to think about design. We created this primer to explain the terminology, ideas and methods you will need to understand to begin using generative design workflows and tools that support this new approach to design.
 
-_Note: there are many different applications of generative design/art, and this primer does not aim to cover them all. This primer is focused on AEC methodologies and how these apply to both Project Refinery/Dynamo_
+> _Note: there are many different applications of generative design/art, and this primer does not aim to cover them all. This primer is focused on AEC methodologies and how these apply to both Project Refinery/Dynamo_
 
-Enstoa \(designtech.io\) was commissioned to kick-start the development of this primer, we thank them for all their efforts in establishing this valuable resource.
+\*\*\*\*
 
-[![](.gitbook/assets/enstoa-logo.png)](https://enstoa.com/) [![](.gitbook/assets/designtech-logo.png)](https://enstoa.com)
+**matterlab** was commissioned to kick-start the development of this primer, we thank them for all their efforts in establishing this valuable resource
 
 Special thanks goes to:
 
