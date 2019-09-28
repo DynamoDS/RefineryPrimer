@@ -1,4 +1,6 @@
-# What is Visual Programming?
+# Visual Programming
+
+## What is Visual Programming?
 
 Visual Programming is a form of coding that, unlike textual programming, does not require compiling code or familiarity with a textual programming language \(like C\# or Python\). Instead, it uses a visual interface where a user connects small nodes of pre-defined functionality. Together, these nodes form a larger network of functionality that can achieve complex goals. This approach is easier to learn and makes tasks that were previously reserved for expert coders accessible to everyone.
 
