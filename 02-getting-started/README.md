@@ -1,4 +1,4 @@
-# Hello Project Refinery
+# Hello Project Refinery!
 
 Now that we're familiar with what generative design is, the basic concepts behind it and have seen some example use-cases, the next question becomes:
 

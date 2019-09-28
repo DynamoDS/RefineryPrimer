@@ -22,7 +22,7 @@ Using these technologies requires new skills and new ways to think about design.
 
 > _Note: there are many different applications of generative design/art, and this primer does not aim to cover them all. This primer is focused on AEC methodologies and how these apply to both Project Refinery/Dynamo_
 
-\*\*\*\*
+![](.gitbook/assets/about-whyprimer2.jpg)
 
 **matterlab** was commissioned to kick-start the development of this primer, we thank them for all their efforts in establishing this valuable resource
 
@@ -34,7 +34,7 @@ Mark Thorley - [@MarkThorley](https://github.com/MarkThorley)
 
 ## Open-Source
 
-This primer is an open source project initiated by the AEC Generative Design Team at Autodesk and we are dedicated to providing high-quality content on generative design in this primer.
+This primer is an open source project initiated by the **AEC Generative Design Team** at Autodesk and we are dedicated to providing high-quality content on generative design in this primer.
 
 Contributions are of course welcomed. You can contribute to the primer in the following ways:
 
@@ -54,7 +54,7 @@ Copyright 2019 Autodesk
 
 Licensed under the Apache License, Version 2.0 \(the "License"\); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
-[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+{% embed url="http://www.apache.org/licenses/LICENSE-2.0" %}
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
