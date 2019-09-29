@@ -9,5 +9,5 @@ We would go through the following subjects:
 * [What goes into a generative design process?](01-04_what-goes-into-a-generative-design-process.md)
 * [Examples of Generative Design](examples-of-generative-design/)
 
-![The Alkmaar Housing commission \(shown above\)  required The Living to use generative design to optimize cost, views, solar gain,  backyard size, program, etc.](../../.gitbook/assets/intro-generativedesign.gif)
+![Alkmaar Housing commission - The Living](../../.gitbook/assets/intro-generativedesign.gif)
 
