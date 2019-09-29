@@ -2,7 +2,7 @@
 
 You may have encountered the term _`generative design`_ in the context of producing design permutations, creating geometry from some simple inputs or even just building computational graphs using Dynamo or Grasshopper.
 
-![](../../.gitbook/assets/download-1.gif)
+![The Alkmaar Housing commission \(shown above\)  required The Living to use generative design to optimize cost, views, solar gain,  backyard size, program, etc.](../../.gitbook/assets/download-1.gif)
 
 We see generative design as:
 
