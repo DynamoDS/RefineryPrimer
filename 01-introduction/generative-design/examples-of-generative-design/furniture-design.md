@@ -2,11 +2,9 @@
 
 Looking at a simpler example, let's consider the process of designing a typical, four-legged table.
 
-Using a standard approach, a designer would manually define the height, width, depth & material of the table, and the resulting output would be a single, physical object with a fixed, immutable form. Perhaps the designer tested several distinct sets of dimensions & material combinations and ends up with three or four table prototypes.
+Using a standard approach, a designer would manually define the length, width, height & material of the table, and the resulting output would be a single, physical object with a fixed, immutable form. Perhaps the designer tested several distinct sets of dimensions & material combinations and ends up with three or four table prototypes.
 
-
-
-![](../../../.gitbook/assets/table.PNG)
+![](../../../.gitbook/assets/intro-furnituregd.jpg)
 
 In a generative design approach, the designer would instead specify:
 
@@ -22,7 +20,7 @@ The designer would use the computer to help him/her generate a series of designs
 
 ![](../../../.gitbook/assets/tables-multiobjective.png)
 
-_Above: matrix showing 100 generated table designs, varying width, length and height_
+_Above: matrix showing 36 generated table designs, varying width, length and height_
 
 ### Evaluate
 
