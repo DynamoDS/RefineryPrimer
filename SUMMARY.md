@@ -2,7 +2,7 @@
 
 * [Welcome](README.md)
 * [Introduction to Generative Design](01-introduction/README.md)
-  * [Computational Design](01-introduction/01-01_what-is-computational-design.md)
+  * [Computational Design](01-introduction/01-01_computational-design.md)
   * [Generative Design](01-introduction/01-02_generative-design/README.md)
     * [What is Generative Design?](01-introduction/01-02_generative-design/01-02-01_what-is-generative-design.md)
     * [Why should I use Generative Design?](01-introduction/01-02_generative-design/01-02-02_why-should-i-use-generative-design.md)
