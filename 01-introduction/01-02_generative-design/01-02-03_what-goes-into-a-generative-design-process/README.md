@@ -13,12 +13,12 @@ As previously discussed, generative design allows for a more integrated workflow
 | Explore | Generated designs are compared or explored by the designer, inspecting both the geometry and evaluation results. |
 | Integrate | After choosing a favorite design option, the designer uses or integrates this design into the wider project or design work. |
 
-<img src="../../../.gitbook/assets/intro/stages1.gif" style="width:200px;"/>
-<img src="../../.gitbook/assets/intro/stages2.gif" style="width:200px;"/>
-<img src="../../.gitbook/assets/intro/stages3.gif" style="width:200px;"/>
-<img src="../../.gitbook/assets/intro/stages4.gif" style="width:200px;"/>
-<img src="../../.gitbook/assets/intro/stages5.gif" style="width:200px;"/>
-<img src="../../.gitbook/assets/intro/stages6.gif" style="width:200px;"/>
+<img src="../../../.gitbook/assets/intro/stages1.png" style="width:200px;"/>
+<img src="../../../.gitbook/assets/intro/stages2.png" style="width:200px;"/>
+<img src="../../../.gitbook/assets/intro/stages3.png" style="width:200px;"/>
+<img src="../../../.gitbook/assets/intro/stages4.png" style="width:200px;"/>
+<img src="../../../.gitbook/assets/intro/stages5.png" style="width:200px;"/>
+<img src="../../../..gitbook/assets/intro/stages6.png" style="width:200px;"/>
 
 ## Anatomy of each stage
 
