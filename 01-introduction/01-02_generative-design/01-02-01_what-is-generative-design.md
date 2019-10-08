@@ -8,9 +8,7 @@ We see generative design as:
 
 > a collaborative design process between humans and machines. During this process, the designer defines the design parameters and the computer produces design studies \(alternatives\), evaluates them against quantifiable goals set by the designer, improves the studies by using results from previous ones and feedback from the designer, and ranks the results based on how well they achieve the designer’s original goals.
 
-<p align="center">
-<img src="../.gitbook/assets/generative-design-diagram.jpg" style="width:85%;"/>
-</p>
+<img src=".gitbook/assets/intro/whatisgen.gif" style="width:200px;"/>
 
 Generative design is a specific application of the computational design approach, with the following distinctions:
 

@@ -8,11 +8,15 @@ For the design of the new office and research space in the MaRs Innovation Distr
 
 ### Generate
 
+<img src=".gitbook/assets/intro/mars1.png" style="width:200px;"/>
+
 A geometric system was created by the designers that allowed the exploration of multiple configurations of work neighborhoods, amenity spaces and circulation zones - this represents the *`define`* step of the *`generate`* phase as defined previously.
 
 The computer used this algorithm, varying its parameters to produce thousands of design options.
 
 ### Evaluate
+
+<img src=".gitbook/assets/intro/mars2.jpg" style="width:200px;"/>
 
 To begin with, information was collected from employees and managers about work styles and location preferences. Based on this data, six primary and measurable goals were defined:
 
@@ -28,6 +32,8 @@ The designers then created an algorithm to measure how any given floor plan can 
 After they were formulated, the computer used these algorithms to evaluate each of the designs generated in the previous stage against the defined goals.
 
 ### Explore
+
+<img src=".gitbook/assets/intro/mars3.gif" style="width:200px;"/>
 
 Once designs have been evaluated, the designers then explored what is often called the *`solution space`* : the generated designs together with their evaluation results. Taking into account each defined goal, they identified the design that best achieved the defined goals.
 

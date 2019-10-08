@@ -11,3 +11,5 @@ In this chapter, we’ll look at:
 
 Let’s start by first looking at something you’re very likely to be aware of and already using today: computational design.
 
+<img src=".gitbook/assets/intro/gendesign.gif" style="width:200px;"/>
+
