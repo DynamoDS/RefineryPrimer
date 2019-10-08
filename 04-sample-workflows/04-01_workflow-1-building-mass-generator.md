@@ -1,7 +1,7 @@
 # Workflow 1 : Building mass generator
 
 <p align="center">
-  <img src="https://media.giphy.com/media/Ze2mIugKGllYHDF6o0/giphy.gif">
+  <img src="../.gitbook/assets/sample/workflow11.png" style="width:200px;"/>
 </p>
 
 ## Description
@@ -59,5 +59,5 @@ The image below shows an example output from a randomized study based on 40 solu
 <br/>
 
 <p align="center">
-<img src="Images/7-01_workflow1_randomisationrun.png" style="width:85%;"/>
+<img src="../.gitbook/assets/sample/workflow12.gif" style="width:85%;"/>
 </p>
