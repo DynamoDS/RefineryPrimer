@@ -1,4 +1,6 @@
-# What is Dynamo?
+# Dynamo
+
+**What is Dynamo?** 
 
 Dynamo is an [open-source](https://github.com/DynamoDS/Dynamo) visual programming application from Autodesk that
 

@@ -1,15 +1,14 @@
 # Introduction
 
-In this chapter, we’ll look at:
 
-* common approaches in practice now
-* a definition of generative design in the context of AEC
-* what is Refinery
-* the fundamental concepts needed to understand generative design
-* examples of using generative design to solve a design problem
-* related concepts
+In this section, we’ll look at what the term _`generative design`_ means in relation to AEC.
 
-Let’s start by first looking at something you’re very likely to be aware of and already using today: computational design.
+We will look at the following:
+
+* [What is generative design?](01-02_what-is-generative-design.md)
+* [Why should I use generative design?](01-03_why-should-i-use-generative-design.md)
+* [What goes into a generative design process?](01-04_what-goes-into-a-generative-design-process/)
+* [Examples of Generative Design](examples-of-generative-design/)
 
 <img src="../../.gitbook/assets/intro/gendesign.gif" style="width:200px;"/>
 

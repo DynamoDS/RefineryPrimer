@@ -1,13 +1,8 @@
-# Introduction
+# Examples of Generative Design
 
-In this chapter, we’ll look at:
+Let’s look at several examples that illustrate how generative design can help you achieve your design goals.
 
-* common approaches in practice now
-* a definition of generative design in the context of AEC
-* what is Refinery
-* the fundamental concepts needed to understand generative design
-* examples of using generative design to solve a design problem
-* related concepts
-
-Let’s start by first looking at something you’re very likely to be aware of and already using today: computational design.
+1. [MaRs Innovation District of Toronto](01-05_an-example-of-generative-design.md)
+2. [Furniture Design](furniture-design.md)
+3. [A Further Analogy](01-06_a-further-analogy.md)
 
