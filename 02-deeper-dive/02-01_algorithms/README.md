@@ -1,5 +1,7 @@
 # Algorithms
 
+<img src="../../.gitbook/assets/deeper/algorithm.png" style="width:200px;"/>
+
 In this chapter, we’ll look at:
 
 * what are algorithms?
