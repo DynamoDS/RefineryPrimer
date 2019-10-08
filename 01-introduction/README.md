@@ -2,7 +2,7 @@
 
 In this chapter, we’ll look at:
 
-<img src=".gitbook/assets/intro/intro.png" style="width:200px;"/>
+<img src="../.gitbook/assets/intro/intro.png" style="width:200px;"/>
 
 * common approaches in practice now
 * a definition of generative design in the context of AEC
