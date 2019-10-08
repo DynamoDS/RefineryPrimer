@@ -1,3 +1,6 @@
+
+<img src="../../.gitbook/assets/deeper/generators.png" style="width:200px;"/>
+
 # Generators
 
 Generators are the logic that creates new potential solutions. Generators can be very simple (a function that outputs totally random designs) or highly sophisticated (a network model that learns over time), but what they do is generate new data, in whatever form the user desires. 
