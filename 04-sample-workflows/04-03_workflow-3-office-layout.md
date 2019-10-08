@@ -1,7 +1,7 @@
 # Workflow 3 : Create office layout
 
 <p align="center">
-  <img src="https://media.giphy.com/media/TKM85J7g6Aewuotwj9/giphy.gif">
+  <img src="../.gitbook/assets/sample/workflow31.gif"">
 </p>
 
 ## Description
@@ -56,5 +56,5 @@ The image below shows an example output from a randomized study based on 35 solu
 <br>
 
 <p align="center">
-<img src="Images/7-03_workflow3_randomisationrun.png" style="width:85%;"/>
+<img src="../.gitbook/assets/sample/workflow32.png" style="width:85%;"/>
 </p>
