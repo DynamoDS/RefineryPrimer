@@ -2,7 +2,7 @@
 
 In this chapter, we’ll look at:
 
-<img src="../.gitbook/assets/intro/deeper.png" style="width:200px;"/>
+<img src="../.gitbook/assets/deeper/deeper.png" style="width:200px;"/>
 
 * what are algorithms?
 * learn about generators
