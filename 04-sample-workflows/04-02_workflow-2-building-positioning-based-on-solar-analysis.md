@@ -1,7 +1,7 @@
 # Workflow 2 : Building Positioning Based on Solar Analysis
 
 <p align="center">
-  <img src="https://media.giphy.com/media/kDNLpoOjcxV96gOa2P/giphy.gif">
+  <img src="../.gitbook/assets/sample/workflow21.gif">
 </p>
 
 ## Description
@@ -59,5 +59,5 @@ The image below shows an example output from an optimized study based on 10 gene
 <br>
 
 <p align="center">
-<img src="Images/7-02_workflow2_optimisationrun.png" style="width:85%;"/>
+<img src="../.gitbook/assets/sample/workflow22.png" style="width:85%;"/>
 </p>
