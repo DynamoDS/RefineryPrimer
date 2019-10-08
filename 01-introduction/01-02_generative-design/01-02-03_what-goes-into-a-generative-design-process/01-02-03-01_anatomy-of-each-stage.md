@@ -4,7 +4,7 @@
 
 As previously discussed, generative design allows for a more integrated workflow between human and computer, and as a result both are required to undertake a series of steps that allow the process to take place. These steps can be categorized into the following stages:
 
-<img src=".gitbook/assets/intro/anatomy1.png" style="width:200px;"/>
+<img src="../../../.gitbook/assets/intro/anatomy1.png" style="width:200px;"/>
 <img src=".gitbook/assets/intro/anatomy2.png" style="width:200px;"/>
 <img src=".gitbook/assets/intro/anatomy3.png" style="width:200px;"/>
 <img src=".gitbook/assets/intro/anatomy4.png" style="width:200px;"/>
