@@ -13,7 +13,7 @@ This primer will help you:
 
 Autodesk is working to democratize technologies that can help designers in the AEC industry automate the creation of design options and optimise those designs to achieve better outcomes.
 
-[<img src=".gitbook/assets/welcome/whyprimer.png" style="width:200px;"/>]
+<img src=".gitbook/assets/welcome/whyprimer.png" style="width:200px;"/>
 
 Using these technologies requires new skills and new ways to think about design. We created this primer to explain the terminology, ideas and methods you will need to understand to begin using generative design workflows and tools that support this new approach to design.
 
