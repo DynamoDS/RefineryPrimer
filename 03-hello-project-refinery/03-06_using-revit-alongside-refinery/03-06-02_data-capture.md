@@ -12,7 +12,7 @@ A  workflow for using Revit data consists of the following steps:
 <br/>
 
 <p align="center">
-<img src="images/6-02_revit_dynamo.PNG" style="width:85%;"/>
+<img src="../../.gitbook/assets/hello/testrevit1.png" style="width:85%;"/>
 </p>
 
 <br/>
@@ -23,7 +23,7 @@ A  workflow for using Revit data consists of the following steps:
 <br/>
 
 <p align="center">
-<img src="images/6-02_sandbox-dynamo.png" style="width:85%;"/>
+<img src="../../.gitbook/assets/hello/testrevit2.png" style="width:85%;"/>
 </p>
 
 <br/>
