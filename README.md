@@ -1,8 +1,9 @@
-# About
-Welcome to the Refinery Primer, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design using generative design workflows. 
+# Welcome
+Welcome to the **Refinery Primer**, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design using generative design workflows. 
 
 <img src=".gitbook/assets/welcome/introgif.gif" style="width:200px;"/>
 
+## About
 This primer will help you:
 
 * **Understand** what generative design is by defining the base concepts and terminology you need to know 
@@ -11,7 +12,7 @@ This primer will help you:
 
 ## Why Make a Primer?
 
-Autodesk is working to democratize technologies that can help designers in the AEC industry automate the creation of design options and optimise those designs to achieve better outcomes.
+Autodesk is working to **democratize technologies** that can help designers in the AEC industry automate the creation of design options and optimise those designs to achieve better outcomes.
 
 <img src=".gitbook/assets/welcome/whyprimer.png" style="width:200px;"/>
 
@@ -19,7 +20,7 @@ Using these technologies requires new skills and new ways to think about design.
 
 *Note: there are many different applications of generative design/art, and this primer does not aim to cover them all. This primer is focused on AEC methodologies and how these apply to both Project Refinery/Dynamo*
 
-Enstoa (designtech.io) was commissioned to kick-start the development of this primer, we thank them for all their efforts in establishing this valuable resource.
+**matterlab** was commissioned to kick-start the development of this primer, we thank them for all their efforts in establishing this valuable resource.
 
 [<img src=".gitbook/assets/welcome/matterlab-logo.jpg" style="width:150px;"/>](https://www.matterlab.co/)
 
@@ -33,7 +34,7 @@ Sylvester Knudsen - [@SHKnudsen](https://github.com/SHKnudsen)
 
 ## Open-Source
 
-This primer is an open source project initiated by the AEC Generative Design Team at Autodesk and we are dedicated to providing high-quality content on generative design in this primer.
+This primer is an open source project initiated by the **AEC Generative Design Team** at Autodesk and we are dedicated to providing high-quality content on generative design in this primer.
 
 Contributions are of course welcomed. You can contribute to the primer in the following ways:
 
