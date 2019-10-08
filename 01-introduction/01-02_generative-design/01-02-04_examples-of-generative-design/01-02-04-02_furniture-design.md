@@ -1,9 +1,9 @@
 # A Further Analogy
 
-<img src=".gitbook/assets/intro/furn1.jpg" style="width:200px;"/>
-<img src=".gitbook/assets/intro/furn2.png" style="width:200px;"/>
-<img src=".gitbook/assets/intro/furn3.jpg" style="width:200px;"/>
-<img src=".gitbook/assets/intro/furn4.jpg" style="width:200px;"/>
+<img src="../../../.gitbook/assets/intro/furn1.jpg" style="width:200px;"/>
+<img src="../../../.gitbook/assets/intro/furn2.png" style="width:200px;"/>
+<img src="../../../.gitbook/assets/intro/furn3.jpg" style="width:200px;"/>
+<img src="../../../.gitbook/assets/intro/furn4.jpg" style="width:200px;"/>
 
 Let’s now look at generative design through the lens of something most of us do on a daily basis: find the quickest commute route. Say you’re looking to go from *`Brooklyn`* to *`Manhattan`*, so you go to your favorite route-comparison website and ask it to find you the quickest route.
 
