@@ -26,4 +26,4 @@ As previously discussed, generative design allows for a more integrated **workfl
 
 **Integrate**: After choosing a favorite design option, the designer uses or integrates this design into the wider project or design work.
 
-<img src="../../../..gitbook/assets/intro/stages6.png" style="width:200px;"/>
+<img src="../../../.gitbook/assets/intro/stages6.png" style="width:200px;"/>
