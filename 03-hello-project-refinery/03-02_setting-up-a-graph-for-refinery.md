@@ -8,9 +8,7 @@ To set up a Dynamo graph for Refinery right-click on each node used to drive the
 
 <br/>
 
-<p align="center">
-<img src="../.gitbook/assets/refinery_settingupgraph_isinput.png" style="width:50%;"/>
-</p>
+<img src="../.gitbook/assets/hello/setting1.png" style="width:200px;"/>
 
 ## Outputs
 
@@ -20,9 +18,7 @@ To define outputs in Refinery, right-click on the watch nodes and select the *`I
 
 <br/>
 
-<p align="center">
-<img src="../.gitbook/assets/refinery_settingupgraph_renameoutput.png" style="width:50%;"/>
-</p>
+<img src="../.gitbook/assets/hello/setting2.png" style="width:200px;"/>
 
 <br/>
 
@@ -30,6 +26,4 @@ Once both inputs and outputs are correctly set up, Refinery can be launched. In 
 
 <br/>
 
-<p align="center">
-<img src="../.gitbook/assets/refinery_settingupgraph_refinery.png" style="width:85%;"/>
-</p>
+<img src="../.gitbook/assets/hello/setting3.png" style="width:200px;"/>
