@@ -11,7 +11,9 @@ In generative design workflows, we are not limited to one objective (single obje
 When we have only one objective function, the system will return one optimal solution eg. return surface with largest area.
 
 ## Multi Objective Optimization
+
 <img src="../../.gitbook/assets/deeper/objectivefunction2.png" style="width:200px;"/>
+
 Usually, optimizing designs involves multiple competing objectives, therefore optimization becomes a matter of finding the best trade-off between these objectives rather than finding the one best solution. Whilst adding more objectives makes the optimization more complex, it also opens up for the possibility to get a set of optimal solutions that the decision maker can choose from, instead of just getting one single solution. 
 
 Imagine having to optimize a structural design, we want the structure to be as light as possible, but at the same time we want it to be as rigid as possible. This example has two competing objectives; there will be one lightest solution and one solution stiffer than the rest, and in between those, a huge amount of designs that are compromises of weight and stiffness. The designs that cannot be improved more in one objective without hurting another objective is known as a pareto optimal solutions.
