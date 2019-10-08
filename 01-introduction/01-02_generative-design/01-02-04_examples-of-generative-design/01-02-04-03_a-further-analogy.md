@@ -2,7 +2,7 @@
 
 Let’s now look at generative design through the lens of something most of us do on a daily basis: find the quickest commute route. Say you’re looking to go from *`Brooklyn`* to *`Manhattan`*, so you go to your favorite route-comparison website and ask it to find you the quickest route.
 
-<img src=".gitbook/assets/intro/furth1.png" style="width:200px;"/>
+<img src="../../../.gitbook/assets/intro/furth1.png" style="width:200px;"/>
 
 _above: Citymapper website showing possible routes, considering multiple modes of transportation_
 
