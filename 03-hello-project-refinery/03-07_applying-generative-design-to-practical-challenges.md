@@ -9,7 +9,7 @@ The *`08-EvaluateSurface.dyn`* graph in the Refinery examples, uses a single obj
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/generativedesign_sinewavesurface.png" style="width:85%;"/>
+<img src="../.gitbook/assets/hello/applychanges1.png" style="width:85%;"/>
 </p>
 
 <br/>
@@ -19,7 +19,7 @@ U and V values are used to move the sphere across the surface. Since these value
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/generativedesign_inputs_sinewave.png" style="width:40%;"/>
+<img src="../.gitbook/assets/hello/applychanges2.png" style="width:40%;"/>
 </p>
 
 <br/>
@@ -38,7 +38,7 @@ When running this graph in Refinery:
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/generativedesign_sinewave_results.png" style="width:85%;"/>
+<img src="../.gitbook/assets/hello/applychanges3.png" style="width:85%;"/>
 </p>
 
 <br/>
@@ -59,7 +59,7 @@ We say these two goals are competing because when considering one cuboid, the bi
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/generativedesign_3boxessurfacevolume.png" style="width:85%;"/>
+<img src="../.gitbook/assets/hello/applychanges4.png" style="width:85%;"/>
 </p>
 
 <br/>
@@ -71,7 +71,7 @@ Please make sure all the nodes controlling the size & location of the cuboids ar
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/generativedesign_3boxessurfacevolume_inputs.png" style="width:40%;"/>
+<img src="../.gitbook/assets/hello/applychanges5.png" style="width:40%;"/>
 </p>
 
 <br/>
@@ -81,7 +81,7 @@ Whenever an input parameter is changed the option's volume and total surface are
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/generativedesign_3boxessurfacevolume_outputs.png" style="width:40%;"/>
+<img src="../.gitbook/assets/hello/applychanges6.png" style="width:40%;"/>
 </p>
 
 <br/>
@@ -98,7 +98,7 @@ When running this graph in Refinery:
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/generativedesign_3boxessurfacevolume_result.png" style="width:85%;"/>
+<img src="../.gitbook/assets/hello/applychanges7.png" style="width:85%;"/>
 </p>
 
 <br/>
