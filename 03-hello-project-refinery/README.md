@@ -2,6 +2,8 @@
 
 Now that we're familiar with what generative design is, the basic concepts behind it and have seen some example use-cases, the next question becomes:
 
+<img src="../.gitbook/assets/hello/hellorefinery.png" style="width:200px;"/>
+
 > how can we leverage Refinery to apply generative design principles to real-world design problems?
 
 This chapter demonstrates the answer to this question through a series of common design challenges.
