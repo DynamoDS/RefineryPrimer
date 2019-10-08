@@ -1,5 +1,5 @@
 
-<img src="../../.gitbook/assets/deeper/generators.png" style="width:200px;"/>
+<img src="../../.gitbook/assets/deeper/generators1.png" style="width:200px;"/>
 
 # Generators
 
@@ -11,6 +11,4 @@ In the simple Dynamo example below, the node that is highlighted and creates the
 
 <br/>
 
-<p align="center">
-<img src="Images/5_02_generator-dynamo.png" style="width:85%;"/>
-</p>
+<img src="../../.gitbook/assets/deeper/generators2.png" style="width:200px;"/>
