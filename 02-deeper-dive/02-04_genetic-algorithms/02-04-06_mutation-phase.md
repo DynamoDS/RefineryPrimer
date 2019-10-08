@@ -5,9 +5,8 @@ The motivation for mutation is that, with some luck, a mutant offspring may have
 
 <br/>
 
-<p align="center">
-<img src="Images/4_03_GlobalLocalMaxMin.jpg" style="width:85%;"/>
-</p>
+
+<img src="../../.gitbook/assets/deeper/mutation.png" style="width:200px;"/>
 
 <br/>
 
