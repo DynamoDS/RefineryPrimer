@@ -8,7 +8,7 @@ For the design of the new office and research space in the MaRs Innovation Distr
 
 ### Generate
 
-<img src=".gitbook/assets/intro/mars1.png" style="width:200px;"/>
+<img src="../../../.gitbook/assets/intro/mars1.png" style="width:200px;"/>
 
 A geometric system was created by the designers that allowed the exploration of multiple configurations of work neighborhoods, amenity spaces and circulation zones - this represents the *`define`* step of the *`generate`* phase as defined previously.
 
@@ -16,7 +16,7 @@ The computer used this algorithm, varying its parameters to produce thousands of
 
 ### Evaluate
 
-<img src=".gitbook/assets/intro/mars2.jpg" style="width:200px;"/>
+<img src="../../../.gitbook/assets/intro/mars2.jpg" style="width:200px;"/>
 
 To begin with, information was collected from employees and managers about work styles and location preferences. Based on this data, six primary and measurable goals were defined:
 
@@ -33,13 +33,9 @@ After they were formulated, the computer used these algorithms to evaluate each 
 
 ### Explore
 
-<img src=".gitbook/assets/intro/mars3.gif" style="width:200px;"/>
+<img src="../../../.gitbook/assets/intro/mars3.gif" style="width:200px;"/>
 
 Once designs have been evaluated, the designers then explored what is often called the *`solution space`* : the generated designs together with their evaluation results. Taking into account each defined goal, they identified the design that best achieved the defined goals.
-
-<p align="center">
-<img src="../.gitbook/assets/autodesk-project-mars.jpg" style="width:85%;"/>
-</p>
 
 <br/>
 
@@ -48,10 +44,6 @@ Once designs have been evaluated, the designers then explored what is often call
 Looking at a simpler example, let's consider the process of designing a typical, four-legged table.
 
 Using a standard approach, a designer would manually define the height, width, depth & material of the table, and the resulting output would be a single, physical object with a fixed, immutable form. Perhaps the designer tested several distinct sets of dimensions & material combinations and ends up with three or four table prototypes.
-
-<p align="center">
-<img src="../.gitbook/assets/table.PNG" style="width:85%;"/>
-</p>
 
 <br/>
 
