@@ -1,6 +1,6 @@
 # Optimization
 
-<img src="../../.gitbook/assets/deeper/optimization.png" style="width:200px;"/>
+![](../../.gitbook/assets/optimization.png)
 
 In this chapter, we’ll look at:
 
@@ -17,4 +17,5 @@ In this chapter, we’ll look at:
 * the mutation phase
 * other applicable techniques
 
-First, let's explore what *`optimization`* means in relation to AEC and generative design.
+First, let's explore what _`optimization`_ means in relation to AEC and generative design.
+

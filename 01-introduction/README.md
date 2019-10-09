@@ -1,8 +1,8 @@
-# Introduction
+# Introduction to Generative Design
 
 In this chapter, we’ll look at:
 
-<img src="../.gitbook/assets/intro/intro.png" style="width:200px;"/>
+![](../.gitbook/assets/intro.png)
 
 * common approaches in practice now
 * a definition of generative design in the context of AEC
