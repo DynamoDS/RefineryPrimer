@@ -9,5 +9,6 @@ In this chapter, we’ll look at:
 * a more detailed example
 * how we share Revit logic and results
 * known limitations of the Data.Remember node
-  
-First, let's look at why we would want to combine Revit and Refinery processes. 
+
+First, let's look at why we would want to combine Revit and Refinery processes.
+

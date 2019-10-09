@@ -4,7 +4,7 @@ Looking at a simpler example, let's consider the process of designing a typical,
 
 Using a standard approach, a designer would manually define the length, width, height & material of the table, and the resulting output would be a single, physical object with a fixed, immutable form. Perhaps the designer tested several distinct sets of dimensions & material combinations and ends up with three or four table prototypes.
 
-<img src="../../../.gitbook/assets/intro/furn1.jpg" style="width:200px;"/>
+![](../../../.gitbook/assets/furn1.jpg)
 
 In a generative design approach, the designer would instead specify:
 
@@ -12,21 +12,21 @@ In a generative design approach, the designer would instead specify:
 * a series of available materials and their properties \(such as cost/m²\)
 * a set of goals that measure how successful a table design is
 
-### Generate
+## Generate
 
 The designer would use the computer to help him/her generate a series of designs falling within the specified range. Some designs will be short and wide, others will be tall and thin, but each will satisfy the user-defined constraints. This is key, as many designs can be generated very quickly, much more than any human could feasibly examine.
 
-<img src="../../../.gitbook/assets/intro/furn2.png" style="width:200px;"/>
+![](../../../.gitbook/assets/furn2.png)
 
 > Let's imagine the computer looked at 20 different values for each of : length, width, height, table/leg material combinations. The resulting solution space would be 20\*20\*20\*20 = 160,000 designs, which is way too many options for a person to reasonably evaluate.
 
 _Above: matrix showing 36 generated table designs, varying width, length and height_
 
-### Evaluate
+## Evaluate
 
 The next step is to define how the generated designs are evaluated. This is the designer's opportunity to clearly express what the goals of the design are.
 
-<img src="../../../.gitbook/assets/intro/furn3.jpg" style="width:200px;"/>
+![](../../../.gitbook/assets/furn3.jpg)
 
 _Above: range of table designs \(sizes\), colour-coded based on evaluator function result \(cost\)_
 
@@ -45,8 +45,9 @@ For the second scenario, we're optimizing for overall return on investment for e
 
 This second example is a good illustration of using generative design to design for multiple & competing goals, which is very hard for humans to replicate.
 
-<img src="../../../.gitbook/assets/intro/furn4.jpg" style="width:200px;"/>
+![](../../../.gitbook/assets/furn4.jpg)
 
 _Above: visualizing evaluator function results as a color range_
 
 As you can see, both of these examples follow the same fairly generic process, which is why there are so many possible applications of generative design, in areas as diverse as aviation, automotive and building design, manufacturing, and product design.
+
