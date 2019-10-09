@@ -1,4 +1,5 @@
-# About
+# Welcome
+
 Welcome to the Refinery Primer, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design using generative design workflows. This primer will help you:
 
 * **Understand** what generative design is by defining the base concepts and terminology you need to know 
@@ -11,21 +12,17 @@ Autodesk is working to democratize technologies that can help designers in the A
 
 Using these technologies requires new skills and new ways to think about design. We created this primer to explain the terminology, ideas and methods you will need to understand to begin using generative design workflows and tools that support this new approach to design.
 
-*Note: there are many different applications of generative design/art, and this primer does not aim to cover them all. This primer is focused on AEC methodologies and how these apply to both Project Refinery/Dynamo*
+_Note: there are many different applications of generative design/art, and this primer does not aim to cover them all. This primer is focused on AEC methodologies and how these apply to both Project Refinery/Dynamo_
 
-Enstoa (designtech.io) was commissioned to kick-start the development of this primer, we thank them for all their efforts in establishing this valuable resource.
+Enstoa \(designtech.io\) was commissioned to kick-start the development of this primer, we thank them for all their efforts in establishing this valuable resource.
 
-
-[<img src=".gitbook/assets/enstoa-logo.png" style="width:200px;"/>](https://enstoa.com/)
-[<img src=".gitbook/assets/designtech-logo.png" style="width:200px;"/>](https://enstoa.com)
+[![](.gitbook/assets/enstoa-logo.png)](https://enstoa.com/) [![](.gitbook/assets/designtech-logo.png)](https://enstoa.com)
 
 Special thanks goes to:
 
-Mark Thorley - [@MarkThorley](https://github.com/MarkThorley)
-<br>
-Radu Gidei - [@radumg](https://github.com/radumg)
-<br>
-Sylvester Knudsen - [@SHKnudsen](https://github.com/SHKnudsen)
+Mark Thorley - [@MarkThorley](https://github.com/MarkThorley)   
+ Radu Gidei - [@radumg](https://github.com/radumg)   
+ Sylvester Knudsen - [@SHKnudsen](https://github.com/SHKnudsen)
 
 ## Open-Source
 

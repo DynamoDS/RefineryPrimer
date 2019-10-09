@@ -2,7 +2,7 @@
 
 A helpful general rule for developing good generative design workflows could be:
 
-> Ask & answer as many questions about the activities & aspects involved in each of the [stages of generative design](../01-introduction/01-04_what-goes-into-a-generative-design-process.md) \(Generate, Evaluate, Evolve, Explore, Integrate\) as you can think about.
+> Ask & answer as many questions about the activities & aspects involved in each of the [stages of generative design](https://github.com/martinstacey/RefineryPrimer/tree/abd341f189bdd68abb198f34d20acd278bf70b1b/01-introduction/01-04_what-goes-into-a-generative-design-process.md) \(Generate, Evaluate, Evolve, Explore, Integrate\) as you can think about.
 
 To guide you through this process, you'll find below a helpful framework, with notes, questions and pointers. This is by no means an exhaustive list, so please feel free to make it your own - and maybe even contribute to this primer!
 
@@ -41,7 +41,7 @@ For the **Evaluation** phase:
 * What do you need to measure or analyse? Make sure you're not defining any metrics that measure the same thing, just in different ways.
 * How can these aspects be measured or quantified? Is there an existing methodology you can learn from?
 * Evaluation will drive the optimization process, so it contributes significantly to the overall process. As such, poorly defined evaluation criteria will result in less than stellar solutions.
-  
+
 For the **Exploration** & **Evolution** phases:
 
 * What key result do you want?  

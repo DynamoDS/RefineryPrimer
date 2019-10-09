@@ -1,16 +1,10 @@
-# What goes into a Generative Design Process?
+# Anatomy of each stage
 
 ## Stages
 
 As previously discussed, generative design allows for a more integrated workflow between human and computer, and as a result both are required to undertake a series of steps that allow the process to take place. These steps can be categorized into the following stages:
 
-<br/>
-
-<p align="center">
-<img src="../.gitbook/assets/generative-design-steps.png" style="width:85%;"/>
-</p>
-
-<br/>
+![](https://github.com/martinstacey/RefineryPrimer/tree/0535209bda8816f02c705f62ff577e96ff760e1d/01-introduction/01-02_generative-design/.gitbook/assets/generative-design-steps.png)
 
 | Stage | Description |
 | :--- | :--- |
@@ -23,41 +17,34 @@ As previously discussed, generative design allows for a more integrated workflow
 
 ## Anatomy of each stage
 
-Each of these stages can be further broken down into *`define`*, *`run`* and *`results`* steps. The *`define`* step is the responsibility of the designer whilst the *`run`* & *`results`* steps are performed by the machine.
+Each of these stages can be further broken down into _`define`_, _`run`_ and _`results`_ steps. The _`define`_ step is the responsibility of the designer whilst the _`run`_ & _`results`_ steps are performed by the machine.
 
-Using this breakdown, let's look at what the *`Generate`* stage would entail.
+Using this breakdown, let's look at what the _`Generate`_ stage would entail.
 
-<br/>
-
-<p align="center">
-<img src="../.gitbook/assets/generative-design-generate-step.jpg" style="width:45%;"/>
-</p>
-
+![](https://github.com/martinstacey/RefineryPrimer/tree/0535209bda8816f02c705f62ff577e96ff760e1d/01-introduction/01-02_generative-design/.gitbook/assets/generative-design-generate-step.jpg)
 
 ### Define
 
-For the *`define`* step, the expertise of the designer is needed to
+For the _`define`_ step, the expertise of the designer is needed to
 
 * establish the generation algorithm: the logic defining how designs are generated, which may include things like constraints, rules, etc.
 * provide the generation parameters : the variables or inputs needed by the previously-defined algorithm
 
-This *`define`* step is present and vital for all stages of the generative design process, and the validity of outputs is reliant on the quality of the designer's contribution. Only with clear and concise logic, will the machine be able to provide suitable outputs.
+This _`define`_ step is present and vital for all stages of the generative design process, and the validity of outputs is reliant on the quality of the designer's contribution. Only with clear and concise logic, will the machine be able to provide suitable outputs.
 
 ### Run
 
-Once everything is defined in the algorithms & accompanying parameters, the machine begins to *`run`*, meaning it starts to generate different designs options. This process might happen locally on the designer's computer or, for more intensive calculations, run using cloud computing.
+Once everything is defined in the algorithms & accompanying parameters, the machine begins to _`run`_, meaning it starts to generate different designs options. This process might happen locally on the designer's computer or, for more intensive calculations, run using cloud computing.
 
 ### Results
 
-Things that are generated in the run step are the final results or outputs of each stage and are used as inputs or parameters in subsequent phases. For example, the designs created in the *`Generate`* phase are used as one of input parameters in the *`Analysis`* phase.
+Things that are generated in the run step are the final results or outputs of each stage and are used as inputs or parameters in subsequent phases. For example, the designs created in the _`Generate`_ phase are used as one of input parameters in the _`Analysis`_ phase.
 
 ## Overall process
 
 We can map these stages & steps together in a single diagram to visualize the order they happen in and the dependencies between them.
 
-<p align="center">
-<img src="../.gitbook/assets/generative-design-overall-process.png" style="width:85%;"/>
-</p>
+![](https://github.com/martinstacey/RefineryPrimer/tree/0535209bda8816f02c705f62ff577e96ff760e1d/01-introduction/01-02_generative-design/.gitbook/assets/generative-design-overall-process.png)
 
 The diagram above should clearly illustrate how
 
