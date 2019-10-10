@@ -2,7 +2,7 @@
 
 Let’s now look at generative design through the lens of something most of us do on a daily basis: find the quickest commute route. Say you’re looking to go from _`Brooklyn`_ to _`Manhattan`_, so you go to your favorite route-comparison website and ask it to find you the quickest route.
 
-<img src="../../../.gitbook/assets/intro/furth1.png" style="width:200px;"/>
+![](../../../.gitbook/assets/furth1.png)
 
 _above: Citymapper website showing possible routes, considering multiple modes of transportation_
 
@@ -22,10 +22,11 @@ To help illustrate this analogy, let's make a table comparing the expected activ
 
 It's important to note that because the system knows about multiple modes of transport \(walk, cycle, bus, train, etc\), it can combine them to best achieve the defined goal. This means the goal we set can greatly impact the routes generated. For example, we could set the goal to be shortest distance if travelling by car or step-free access and the resulting routes could be completely different.
 
-<img src="../../../.gitbook/assets/intro/furth2.png" style="width:200px;"/>
+![](../../../.gitbook/assets/furth2.png)
 
 _above: Citymapper website showing routes that have step-free access_
 
 We can see the routes identified generally take longer than in the first example, as the new goal is having _`step-free access`_ instead of _`quickest`_ commute.
 
 Though stretching the imagination a bit \(computer doesn't _`generate`_ new transport modes, just new routes using existing modes\), this analogy demonstrates similar steps as those found in a generative design workflow.
+

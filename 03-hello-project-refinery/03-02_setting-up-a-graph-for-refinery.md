@@ -2,25 +2,19 @@
 
 ## Inputs
 
-To set up a Dynamo graph for Refinery right-click on each node used to drive the graph and ensure that the *`Is Input`* option is ticked. Renaming the node with a standard approach such as *`IN_description`* will help to distinguish these inputs in Refinery.
+To set up a Dynamo graph for Refinery right-click on each node used to drive the graph and ensure that the _`Is Input`_ option is ticked. Renaming the node with a standard approach such as _`IN_description`_ will help to distinguish these inputs in Refinery.
 
 \(Note: currently all inputs must be number slider nodes\)
 
-<br/>
-
-<img src="../.gitbook/assets/hello/setting1.png" style="width:200px;"/>
+![](../.gitbook/assets/setting1%20%281%29.png)
 
 ## Outputs
 
-To define outputs in Refinery, right-click on the watch nodes and select the *`Is Output`* option. Renaming the node with a standard approach such as *`OUT_description`* will help to distinguish these outputs in Refinery.
+To define outputs in Refinery, right-click on the watch nodes and select the _`Is Output`_ option. Renaming the node with a standard approach such as _`OUT_description`_ will help to distinguish these outputs in Refinery.
 
 \(Note: currently all outputs must be watch nodes with a data type of Number\).
 
-<br/>
-
-<img src="../.gitbook/assets/hello/setting2.png" style="width:200px;"/>
-
-<br/>
+![](../.gitbook/assets/setting2.png)
 
 ## Export to Refinery
 
@@ -40,6 +34,5 @@ In Dynamo navigate to the toolbar and select _`Refinery > Launch Refinery`_
 
 Once refinery is lauched you would have to select _`New Study`_
 
-<br/>
+![](../.gitbook/assets/setting3.png)
 
-<img src="../.gitbook/assets/hello/setting3.png" style="width:200px;"/>

@@ -1,8 +1,8 @@
-# Introduction
+# Introduction to Generative Design
 
 In this chapter, we’ll look at key concepts that are essential to understanding generative design and how Project Refinery works.
 
-<img src="../.gitbook/assets/intro/intro.png" style="width:200px;"/>
+![](../.gitbook/assets/intro%20%283%29.png)
 
 We will look at the following topics:
 

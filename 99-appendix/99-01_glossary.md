@@ -71,3 +71,4 @@
 **Solver** / solv·er / noun
 
 > An algorithm specifically designed to find the solution to a precisely defined problem.
+
