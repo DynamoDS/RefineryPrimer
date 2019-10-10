@@ -18,7 +18,7 @@ To run an optioneering process in Refinery, follow these steps:
 * Under Issues resolve any items
 * Click Generate
 
-![](../.gitbook/assets/running1%20%281%29.png)
+![](../.gitbook/assets/running1%20%282%29.png)
 
 ## How to run an optimization process using Refinery
 
