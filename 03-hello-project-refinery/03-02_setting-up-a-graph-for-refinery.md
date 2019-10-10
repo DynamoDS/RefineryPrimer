@@ -6,7 +6,7 @@ To set up a Dynamo graph for Refinery right-click on each node used to drive the
 
 \(Note: currently all inputs must be number slider nodes\)
 
-![](../.gitbook/assets/setting1%20%281%29.png)
+<img src="../.gitbook/assets/hello/setting1.png" style="width:200px;"/>
 
 ## Outputs
 
@@ -14,7 +14,7 @@ To define outputs in Refinery, right-click on the watch nodes and select the _`I
 
 \(Note: currently all outputs must be watch nodes with a data type of Number\).
 
-![](../.gitbook/assets/setting2.png)
+<img src="../.gitbook/assets/hello/setting2.png" style="width:200px;"/>
 
 ## Export to Refinery
 
@@ -34,5 +34,5 @@ In Dynamo navigate to the toolbar and select _`Refinery > Launch Refinery`_
 
 Once refinery is lauched you would have to select _`New Study`_
 
-![](../.gitbook/assets/setting3.png)
+<img src="../.gitbook/assets/hello/setting3.png" style="width:200px;"/>
 
