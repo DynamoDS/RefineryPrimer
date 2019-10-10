@@ -24,7 +24,7 @@ Your initial design parameters are used to generate many, even thousands, of pot
 
 For example, it's feasible for a designer to explore ten variants or a few tens if using established computational design techniques. It is not uncommon however for an algorithm, once created, to generate thousands of variants in mere minutes.
 
-![](../../.gitbook/assets/whyusegen3.gif)
+![](../../.gitbook/assets/whyusegen3%20%281%29.gif)
 
 ## Collaborative
 

@@ -1,6 +1,6 @@
 # Workflow 2 - Building Positioning based on Solar Analysis
 
-![](../.gitbook/assets/workflow21.gif)
+![](../.gitbook/assets/workflow21%20%281%29.gif)
 
 ## Description
 

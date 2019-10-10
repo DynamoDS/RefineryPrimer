@@ -1,6 +1,6 @@
 # Algorithms
 
-![](../../.gitbook/assets/algorithm.png)
+![](../../.gitbook/assets/algorithm%20%281%29.png)
 
 In this chapter, we’ll look at:
 

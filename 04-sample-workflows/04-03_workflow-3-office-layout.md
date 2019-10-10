@@ -49,5 +49,5 @@ Designers can spend hours laying out repetitive areas such as offices an toilets
 Once Refinery has completed, the results can be explored through the available tables and graphs   
  The image below shows an example output from a randomized study based on 35 solutions.
 
-![](../.gitbook/assets/workflow32.png)
+![](../.gitbook/assets/workflow32%20%281%29.png)
 

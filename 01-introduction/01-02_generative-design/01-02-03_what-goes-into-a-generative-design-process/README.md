@@ -13,7 +13,7 @@ As previously discussed, generative design allows for a more integrated workflow
 | Explore | Generated designs are compared or explored by the designer, inspecting both the geometry and evaluation results. |
 | Integrate | After choosing a favorite design option, the designer uses or integrates this design into the wider project or design work. |
 
-![](../../../.gitbook/assets/stages1.png) ![](../../../.gitbook/assets/stages2.png) ![](../../../.gitbook/assets/stages3.png) ![](../../../.gitbook/assets/stages4.png) ![](../../../.gitbook/assets/stages5.png) ![](https://github.com/martinstacey/RefineryPrimer/tree/4f8d7fa0b367dd9f86557d30f0bdcae005db870c/..gitbook/assets/intro/stages6.png)
+![](../../../.gitbook/assets/stages1%20%281%29.png) ![](../../../.gitbook/assets/stages2%20%281%29.png) ![](../../../.gitbook/assets/stages3.png) ![](../../../.gitbook/assets/stages4%20%281%29.png) ![](../../../.gitbook/assets/stages5%20%281%29.png) ![](https://github.com/martinstacey/RefineryPrimer/tree/4f8d7fa0b367dd9f86557d30f0bdcae005db870c/..gitbook/assets/intro/stages6.png)
 
 ## Anatomy of each stage
 
