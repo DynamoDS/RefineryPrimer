@@ -16,7 +16,6 @@ To define outputs in Refinery, right-click on the watch nodes and select the _`I
 
 <img src="../.gitbook/assets/hello/setting2.png" style="width:200px;"/>
 
-<<<<<<< HEAD
 ## Export to Refinery
 
 Once both inputs and outputs are correctly set up and your graph is saved, Refinery can be exported. In Dynamo navigate to the toolbar and select _`Refinery> Export for Refinery…`_
@@ -34,11 +33,6 @@ In Dynamo navigate to the toolbar and select _`Refinery > Launch Refinery`_
 <img src="../.gitbook/assets/hello/setting23.png" style="width:200px;"/>
 
 Once refinery is lauched you would have to select _`New Study`_
-=======
-<br/>
-
-Once both inputs and outputs are correctly set up, Refinery can be launched. In Dynamo navigate to the toolbar and select *`View > Refinery…`* This will start the local Refinery server and a new window will open.
->>>>>>> parent of 4078ea6... 6.1 Updating Setting Refinery
 
 <img src="../.gitbook/assets/hello/setting3.png" style="width:200px;"/>
 
