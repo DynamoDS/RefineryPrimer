@@ -1,5 +1,3 @@
 # Refinery Toolkit
 
-Add description of Refinery Toolkit
-
-Link to the Refinery Toolkit: 
+Provide link to the refinery toolkit when it is released. 
