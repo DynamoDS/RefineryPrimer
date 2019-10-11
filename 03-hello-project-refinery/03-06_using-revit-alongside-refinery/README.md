@@ -1,5 +1,9 @@
 # Using Revit alongside Refinery
 
+<p align="center">
+<img src="../../.gitbook/assets/hello/revitandrefinery.png" style="width:85%;"/>
+</p>
+
 There are many ways to integrate the Refinery generative design process with current workflows. One key method is to use it to analyse current or create new Revit geometrical and non-geometrical data.
 
 In this chapter, we’ll look at:
