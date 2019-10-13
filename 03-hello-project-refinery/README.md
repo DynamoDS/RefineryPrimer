@@ -2,7 +2,7 @@
 
 Now that we're familiar with what generative design is, the basic concepts behind it and have seen some example use-cases, the next question becomes:
 
-![](../.gitbook/assets/hellorefinery%20%281%29.png)
+![](../.gitbook/assets/hellorefinery%20%282%29.png)
 
 > how can we leverage Refinery to apply generative design principles to real-world design problems?
 

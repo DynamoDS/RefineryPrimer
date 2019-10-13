@@ -6,13 +6,13 @@ After Refinery has run the generative process, the results are displayed in both
 
 The _`design grid`_ shows each option as a 3d geometrical thumbnail that can be individually rotated, zoomed and panned to explore the design in more detail. The order of the thumbnails can be sorted based on the inputs or outputs of the Dynamo script, with a toggle for both ascending and descending values.
 
-![](../.gitbook/assets/visualize1%20%281%29.png)
+![](../.gitbook/assets/visualize1%20%282%29.png)
 
 ## Design Table
 
 The _`design table`_ replaces the design grid, if chosen, and lists each option in a table form with each column representing the values for the inputs and outputs.
 
-![](../.gitbook/assets/visualize2%20%281%29.png)
+![](../.gitbook/assets/visualize2%20%282%29.png)
 
 ## Scatterplot
 
@@ -20,7 +20,7 @@ The first chart Refinery uses to visualize data is a _`Scatterplot`_ : a type of
 
 Selecting a circle from the graph space will also highlight the chosen option in the design grid or design table.
 
-![](../.gitbook/assets/visualize3.png)
+![](../.gitbook/assets/visualize3%20%281%29.png)
 
 ## Parallel Coordinates
 
@@ -28,7 +28,7 @@ The other chart available in Refinery is a _`Parallel Coordinates`_ graph. This 
 
 The graph can be filtered by dragging the selection on each vertical axis.
 
-![](../.gitbook/assets/visualize4%20%281%29.png)
+![](../.gitbook/assets/visualize4%20%282%29.png)
 
 ## Choosing the right Visualization
 

@@ -18,7 +18,7 @@ To run an optioneering process in Refinery, follow these steps:
 * Under Issues resolve any items
 * Click Generate
 
-![](../.gitbook/assets/running1%20%282%29.png)
+![](../.gitbook/assets/running1%20%284%29.png)
 
 ## How to run an optimization process using Refinery
 
@@ -35,5 +35,5 @@ To run an optimization process in Refinery, follow these steps:
 * Under Settings set the amount of generations you want to create. Each new generation is a range of options that falls between the two best designs of the previous generation
 * Click Generate
 
-![](../.gitbook/assets/running2.png)
+![](../.gitbook/assets/running2%20%281%29.png)
 

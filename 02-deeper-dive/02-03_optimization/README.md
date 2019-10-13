@@ -1,6 +1,6 @@
 # Optimization
 
-![](../../.gitbook/assets/optimization.png)
+![](../../.gitbook/assets/optimization%20%281%29.png)
 
 In this chapter, we’ll look at:
 

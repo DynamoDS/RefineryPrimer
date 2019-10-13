@@ -28,9 +28,9 @@ The Cross Product method lets you explore the entire design space of your design
 
 Like This will make Refinery apply slight variations to your current input configuration. Using this method lets you explore different variations of a design that you already like.
 
-![](../../.gitbook/assets/solvers5%20%281%29.png)
+![](../../.gitbook/assets/solvers5%20%282%29.png)
 
 Solvers typically require inputs to take a very specific form. Often, the greatest challenge is defining your problem in a way that a solver can understand. To take a simple example, your phone’s calculator is a solver for addition, subtraction, and division – but it only works if you punch things in correctly.
 
-![](../../.gitbook/assets/solvers6%20%281%29.png)
+![](../../.gitbook/assets/solvers6%20%282%29.png)
 

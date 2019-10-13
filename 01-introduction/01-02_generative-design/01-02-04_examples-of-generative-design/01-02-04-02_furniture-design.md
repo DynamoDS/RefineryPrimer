@@ -1,6 +1,6 @@
 # Furniture Design
 
-![](../../../.gitbook/assets/furn1%20%281%29.jpg) ![](../../../.gitbook/assets/furn2.png) ![](../../../.gitbook/assets/furn3.jpg) ![](../../../.gitbook/assets/furn4.jpg)
+![](../../../.gitbook/assets/furn1%20%282%29.jpg) ![](../../../.gitbook/assets/furn2.png) ![](../../../.gitbook/assets/furn3.jpg) ![](../../../.gitbook/assets/furn4%20%281%29.jpg)
 
 Let’s now look at generative design through the lens of something most of us do on a daily basis: find the quickest commute route. Say you’re looking to go from _`Brooklyn`_ to _`Manhattan`_, so you go to your favorite route-comparison website and ask it to find you the quickest route.
 
