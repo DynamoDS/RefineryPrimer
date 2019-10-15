@@ -31,7 +31,7 @@ After they were formulated, the computer used these algorithms to evaluate each 
 
 ### Explore
 
-![](../../../.gitbook/assets/mars3%20%283%29.gif)
+![](../../../.gitbook/assets/mars3%20%284%29.gif)
 
 Once designs have been evaluated, the designers then explore what is often called the _`solution space`_ : the generated designs together with their evaluation results. Taking into account each defined goal, they identified the design that best achieved the defined goals.
 
