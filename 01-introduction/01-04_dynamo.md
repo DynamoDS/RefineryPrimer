@@ -1,6 +1,6 @@
 # Dynamo
 
-**What is Dynamo?**
+**What is Dynamo?** 
 
 Dynamo is an [open-source](https://github.com/DynamoDS/Dynamo) visual programming application from Autodesk that
 
@@ -8,7 +8,6 @@ Dynamo is an [open-source](https://github.com/DynamoDS/Dynamo) visual programmin
 
 Dynamo can be used as a stand-alone product \(Sandbox\) or can plug into other products such as Revit \(Dynamo for Revit\).
 
-![](../.gitbook/assets/dynamo1%20%281%29.png)
+<img src="../.gitbook/assets/intro/dynamo1.png" style="width:200px;"/>
 
 For more information on Dynamo please refer to the [Dynamo Primer](http://primer.dynamobim.org/).
-
