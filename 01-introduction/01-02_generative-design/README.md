@@ -11,5 +11,5 @@ In this chapter, we’ll look at:
 
 Let’s start by first looking at something you’re very likely to be aware of and already using today: computational design.
 
-![](../../.gitbook/assets/gendesign%20%282%29.gif)
+![](../../.gitbook/assets/gendesign%20%283%29.gif)
 

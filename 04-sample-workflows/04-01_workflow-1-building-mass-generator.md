@@ -53,5 +53,5 @@ On running the script, Dynamo is able to generate one design option based on the
 Once Refinery has completed, the results can be explored through the available tables and graphs.   
  The image below shows an example output from a randomized study based on 40 solutions.
 
-![](../.gitbook/assets/workflow12%20%282%29.png)
+![](../.gitbook/assets/workflow12%20%283%29.png)
 

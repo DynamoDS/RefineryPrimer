@@ -1,4 +1,4 @@
 # Genetic Algorithms
 
-![](../../.gitbook/assets/genetic.png)
+![](../../.gitbook/assets/genetic%20%281%29.png)
 

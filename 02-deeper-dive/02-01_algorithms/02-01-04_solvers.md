@@ -2,7 +2,7 @@
 
 Think of a solver as a tool that can automate running a script that contains generators and evaluators many times.
 
-![](../../.gitbook/assets/solvers1%20%281%29.png)
+![](../../.gitbook/assets/solvers1%20%282%29.png)
 
 A solver can use different methods to process these scripts in different ways, for example the methods currently available in Refinery include:
 
@@ -22,15 +22,15 @@ Optimize is the method for doing an optimization run with Refinery. During an op
 
 The Cross Product method lets you explore the entire design space of your design, by combining each step of every parameter with the remaining parameters.
 
-![](../../.gitbook/assets/solvers4%20%281%29.png)
+![](../../.gitbook/assets/solvers4%20%282%29.png)
 
 ## Like This
 
 Like This will make Refinery apply slight variations to your current input configuration. Using this method lets you explore different variations of a design that you already like.
 
-![](../../.gitbook/assets/solvers5%20%282%29.png)
+![](../../.gitbook/assets/solvers5%20%283%29.png)
 
 Solvers typically require inputs to take a very specific form. Often, the greatest challenge is defining your problem in a way that a solver can understand. To take a simple example, your phone’s calculator is a solver for addition, subtraction, and division – but it only works if you punch things in correctly.
 
-![](../../.gitbook/assets/solvers6%20%282%29.png)
+![](../../.gitbook/assets/solvers6%20%283%29.png)
 

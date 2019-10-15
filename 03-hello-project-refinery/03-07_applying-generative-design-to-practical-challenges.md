@@ -10,7 +10,7 @@ The _`08-EvaluateSurface.dyn`_ graph in the Refinery examples, uses a single obj
 
 U and V values are used to move the sphere across the surface. Since these values are the driving inputs, they need to be marked as _`IsInput`_ for Refinery to pick them up.
 
-![](../.gitbook/assets/applychanges2%20%281%29.png)
+![](../.gitbook/assets/applychanges2%20%282%29.png)
 
 In order to know when the sphere is at the highest peak, a measure of the Z-value is made every time the sphere moves, this represents the _`fitness value`_.
 
@@ -23,7 +23,7 @@ When running this graph in Refinery:
 * Under Issues resolve any items
 * Click Generate to run the optimization process.
 
-![](../.gitbook/assets/applychanges3%20%281%29.png)
+![](../.gitbook/assets/applychanges3%20%282%29.png)
 
 As this is a Single Optimization problem, Refinery returns only one result which is the global optimum or in this case the highest peak on the surface.
 
@@ -48,7 +48,7 @@ Please make sure all the nodes controlling the size & location of the cuboids ar
 
 Whenever an input parameter is changed the option's volume and total surface area will be re-calculated. These two values are the _fitness_ values and need to be set as _`IsInput`_ in the Dynamo graph.
 
-![](../.gitbook/assets/applychanges6%20%282%29.png)
+![](../.gitbook/assets/applychanges6%20%283%29.png)
 
 When running this graph in Refinery:
 

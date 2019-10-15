@@ -1,6 +1,6 @@
 # Workflow 3 - Office Layout
 
-![](../.gitbook/assets/workflow31.gif)
+![](../.gitbook/assets/workflow31%20%281%29.gif)
 
 ## Description
 

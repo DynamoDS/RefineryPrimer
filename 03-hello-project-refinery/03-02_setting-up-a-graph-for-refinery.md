@@ -14,7 +14,7 @@ To define outputs in Refinery, right-click on the watch nodes and select the _`I
 
 \(Note: currently all outputs must be watch nodes with a data type of Number\).
 
-![](../.gitbook/assets/setting2%20%281%29.png)
+![](../.gitbook/assets/setting2%20%282%29.png)
 
 Once both inputs and outputs are correctly set up, Refinery can be launched. In Dynamo navigate to the toolbar and select _`View > Refinery…`_ This will start the local Refinery server and a new window will open.
 

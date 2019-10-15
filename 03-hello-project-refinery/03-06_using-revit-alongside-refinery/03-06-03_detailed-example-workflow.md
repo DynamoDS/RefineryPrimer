@@ -8,7 +8,7 @@ _All sample files for this example can be found in the_ [_`06-00_sample_files`_]
 
 The intention of this workflow is to find the best location for a desk in the office floor plate, where it maximizes the number of views to the outside. To do this the information we need to cache in the _`Data.Remember`_ node is all the geometry relating to the bounding elements of the room \(walls, doors, windows and internal obstructions\).
 
-![](../../.gitbook/assets/detailex1%20%282%29.png)
+![](../../.gitbook/assets/detailex1%20%283%29.png)
 
 With this data, we will use Refinery to perform an optimization process to determine the best location for the desk from the thousands of permutations, before using the result and pushing the value back into Revit.
 
@@ -44,19 +44,19 @@ The output of the node returns both a visual and non-visual output:
 * visible segments \(sections of windows that can be seen from the point\)
 * score \(a number between 0-1 that denotes a percentage amount of the total 360° view from the point\)
 
-![](../../.gitbook/assets/detailex5%20%282%29.png)
+![](../../.gitbook/assets/detailex5%20%283%29.png)
 
 ## Dynamo Sandbox
 
 With the graph correctly set up and run once in D4R to cache the data, we can close Dynamo and Revit and open Dynamo Sandbox. As per the previous example, the Revit nodes upstream of the _`Data.Remember`_ node are marked as unresolved, but on running the graph the values are still cached in the _`Data.Remember`_ nodes themselves.
 
-![](../../.gitbook/assets/detailex6%20%281%29.png)
+![](../../.gitbook/assets/detailex6%20%282%29.png)
 
 ## Refinery
 
 Now we are ready to run through Refinery. In Refinery we want to select _`Optimize`_. For more details on how to run an optimization process please refer to [section 2-05](https://github.com/martinstacey/RefineryPrimer/tree/618a1baff6731c0ec166ccc9f94c1d578a87eeae/2-getting-started/2-05_refinery-processes.md). For this study we want to _`Maximize`_ the result. Refinery then goes to work to solve the design problem, using the population size and amount of generations to decide on the best option.
 
-![](../../.gitbook/assets/detailex7%20%282%29.png)
+![](../../.gitbook/assets/detailex7%20%283%29.png)
 
 ## Revit
 

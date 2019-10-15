@@ -6,7 +6,7 @@ A genetic algorithm - specifically _`NSGA-II`_ \([https://www.iitk.ac.in/kangal/
 
 Genetic algorithms were inspired by the process of evolution by natural selection; in a genetic algorithm the _“fittest”_ individuals \(i.e., potential solutions\) are selected for reproduction and their _“genes”_ are passed on to future generations. When doing generative design we can think of _"genes"_ as the parameters of our model. These are the values that drive our design and will either consist of a single value or a range of acceptable values.
 
-![](../../.gitbook/assets/whatisgenetic2%20%282%29.png)
+![](../../.gitbook/assets/whatisgenetic2%20%283%29.png)
 
 A typical genetic algorithm has five phases:
 
