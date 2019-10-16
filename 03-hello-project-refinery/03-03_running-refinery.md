@@ -1,6 +1,6 @@
 # Running Refinery
 
-Refinery can be run using different methods. In the Refinery window you can chooses from four different Generation Methods, all of these methods are Refinery's Solvers, a further explanation of what Solvers are can be found in [section 05-04](/05-algorithms/05-04_solvers.md).
+Refinery can be run using different methods. In the Refinery window you can chooses from four different Generation Methods, all of these methods are Refinery's Solvers, a further explanation of what Solvers are can be found in [section 05-04](https://github.com/martinstacey/RefineryPrimer/tree/755bf593c7a89c6ec793d58de951e0f6f63c45ec/05-algorithms/05-04_solvers.md).
 
 ## How to run an optioneering process using Refinery
 
@@ -9,7 +9,7 @@ An optioneering process lets you explore all possible solutions that the graph c
 To run an optioneering process in Refinery, follow these steps:
 
 * Launch Refinery from the Refinery menu in Dynamo
-* Create a new study and select *`Randomize`* as the generation method ([see section 05-04](/05-algorithms/05-04_solvers.md))
+* Create a new study and select _`Randomize`_ as the generation method \([see section 05-04](https://github.com/martinstacey/RefineryPrimer/tree/755bf593c7a89c6ec793d58de951e0f6f63c45ec/05-algorithms/05-04_solvers.md)\)
 * Under Inputs make sure that all the desired inputs are present
 * For inputs that should not change on each run, set the desired value and uncheck the box alongside it
 * Under Outputs ensure each output defined in the graph is listed  
@@ -18,22 +18,16 @@ To run an optioneering process in Refinery, follow these steps:
 * Under Issues resolve any items
 * Click Generate
 
-<br/>
-
-<p align="center">
-<img src="../.gitbook/assets/hello/running1.png" style="width:50%;"/>
-</p>
-
-<br/>
+![](../.gitbook/assets/running1%20%283%29.png)
 
 ## How to run an optimization process using Refinery
 
-An optimization process lets Refinery evolve your design to find the most suitable options based on the constraints and goals provided. Refinery will run multiple generations of options and each time it will take the fittest \(best\) options of the generation and use them to create a new generation. Refinery is using [NSGA-II](https://www.iitk.ac.in/kangal/Deb_NSGA-II.pdf "NSGA-II"), an elitist multi objective genetic algorithm to optimise results.
+An optimization process lets Refinery evolve your design to find the most suitable options based on the constraints and goals provided. Refinery will run multiple generations of options and each time it will take the fittest \(best\) options of the generation and use them to create a new generation. Refinery is using [NSGA-II](https://www.iitk.ac.in/kangal/Deb_NSGA-II.pdf), an elitist multi objective genetic algorithm to optimise results.
 
 To run an optimization process in Refinery, follow these steps:
 
 * Open Refinery from the View Menu in Dynamo
-* Create a new study and select *`Optimize`* as the generation method ([see section 05-04](/05-algorithms/05-04_solvers.md))
+* Create a new study and select _`Optimize`_ as the generation method \([see section 05-04](https://github.com/martinstacey/RefineryPrimer/tree/755bf593c7a89c6ec793d58de951e0f6f63c45ec/05-algorithms/05-04_solvers.md)\)
 * Under Inputs make sure that all the desired inputs are present
 * For inputs that should not change on each run, set the desired value and uncheck the box alongside it  
 * Under Outputs go through each objective and set the optimization goal you want to achieve - Maximize, Minimize, or Ignore
@@ -41,9 +35,5 @@ To run an optimization process in Refinery, follow these steps:
 * Under Settings set the amount of generations you want to create. Each new generation is a range of options that falls between the two best designs of the previous generation
 * Click Generate
 
-<br/>
-
-<p align="center">
-<img src="../.gitbook/assets/hello/running2.png" style="width:50%;"/>
-</p>
+![](../.gitbook/assets/running2%20%284%29.png)
 
