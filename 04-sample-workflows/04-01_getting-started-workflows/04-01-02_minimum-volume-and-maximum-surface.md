@@ -1,51 +1,4 @@
-# Applying Generative Design to Practical Challenges
-
-When you download  Refinery for Dynamo, you can also download a few very useful practical examples, let's have a look at a few of them.
-
-## Example 8
-
-The *`08-EvaluateSurface.dyn`* graph in the Refinery examples, uses a single objective optimization approach to find the highest Z point on a sinuous surface. The objective of the graph is to get the orange sphere to the highest peak of the surface.
-
-<br/>
-
-<p align="center">
-<img src="../.gitbook/assets/hello/applychanges1.png" style="width:85%;"/>
-</p>
-
-<br/>
-
-U and V values are used to move the sphere across the surface. Since these values are the driving inputs, they need to be marked as *`IsInput`* for Refinery to pick them up.
-
-<br/>
-
-<p align="center">
-<img src="../.gitbook/assets/hello/applychanges2.png" style="width:40%;"/>
-</p>
-
-<br/>
-
-In order to know when the sphere is at the highest peak, a measure of the Z-value is made every time the sphere moves, this represents the *`fitness value`*.
-
-When running this graph in Refinery:
-
-* Use the *`Optimize`* generation method
-* Under Inputs make sure that all inputs are checked
-* Under Outputs set the *`Point Z value (Height)`* to *`Maximize`* \(if you want the lowest point, set it to Minimize\).  
-* Under settings set Population Size and number of Generations  
-* Under Issues resolve any items
-* Click Generate to run the optimization process.
-
-<br/>
-
-<p align="center">
-<img src="../.gitbook/assets/hello/applychanges3.png" style="width:85%;"/>
-</p>
-
-<br/>
-
-As this is a Single Optimization problem, Refinery returns only one result which is the global optimum or in this case the highest peak on the surface.
-
-### Example 2
+### Minimum Volume and Maximum Surface
 
 The *`02-3BoxVolumeSurfaceArea.dyn`* graph in the Refinery examples is a multi-objective optimization problem with two competing objectives. The graph consists of three cuboids which have different variable parameters like height and location. The objectives of the graph are to find an option with minimal volume and maximum combined surface area.
 
@@ -59,7 +12,7 @@ We say these two goals are competing because when considering one cuboid, the bi
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/hello/applychanges4.png" style="width:85%;"/>
+<img src="../../.gitbook/assets/hello/applychanges4.png" style="width:85%;"/>
 </p>
 
 <br/>
@@ -71,7 +24,7 @@ Please make sure all the nodes controlling the size & location of the cuboids ar
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/hello/applychanges5.png" style="width:40%;"/>
+<img src="../../.gitbook/assets/hello/applychanges5.png" style="width:40%;"/>
 </p>
 
 <br/>
@@ -81,7 +34,7 @@ Whenever an input parameter is changed the option's volume and total surface are
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/hello/applychanges6.png" style="width:40%;"/>
+<img src="../../.gitbook/assets/hello/applychanges6.png" style="width:40%;"/>
 </p>
 
 <br/>
@@ -98,7 +51,7 @@ When running this graph in Refinery:
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/hello/applychanges7.png" style="width:85%;"/>
+<img src="../../.gitbook/assets/hello/applychanges7.png" style="width:85%;"/>
 </p>
 
 <br/>
