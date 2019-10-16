@@ -6,7 +6,7 @@ When you download Refinery for Dynamo, you can also download a few very useful p
 
 The _`08-EvaluateSurface.dyn`_ graph in the Refinery examples, uses a single objective optimization approach to find the highest Z point on a sinuous surface. The objective of the graph is to get the orange sphere to the highest peak of the surface.
 
-![](../.gitbook/assets/applychanges1.png)
+![](../.gitbook/assets/applychanges1%20%281%29.png)
 
 U and V values are used to move the sphere across the surface. Since these values are the driving inputs, they need to be marked as _`IsInput`_ for Refinery to pick them up.
 
@@ -38,7 +38,7 @@ The three cuboids \(C1, C2 & C3\) represent buildings and can vary in different 
 
 We say these two goals are competing because when considering one cuboid, the bigger the volume, the bigger the surface area, so we can't maximize one whilst minimizing the other. However, when we consider multiple cuboids, with each of them constrained differently and their volumes joined together to form a single solid element, it becomes possible to find an optimal solution of minimizing volume & maximizing surface area.
 
-![](../.gitbook/assets/applychanges4%20%282%29.png)
+![](../.gitbook/assets/applychanges4%20%283%29.png)
 
 _Above: the three cuboids joined together to form one solid_
 
@@ -48,7 +48,7 @@ Please make sure all the nodes controlling the size & location of the cuboids ar
 
 Whenever an input parameter is changed the option's volume and total surface area will be re-calculated. These two values are the _fitness_ values and need to be set as _`IsInput`_ in the Dynamo graph.
 
-![](../.gitbook/assets/applychanges6%20%283%29.png)
+![](../.gitbook/assets/applychanges6%20%284%29.png)
 
 When running this graph in Refinery:
 
@@ -59,7 +59,7 @@ When running this graph in Refinery:
 * Under Issues resolve any items
 * Click Generate
 
-![](../.gitbook/assets/applychanges7%20%282%29.png)
+![](../.gitbook/assets/applychanges7%20%283%29.png)
 
 A multi-objective optimization run will not return one single result, but instead it will show all options which are non-dominated. A non-dominated option simply means that you can't make an option which is better in one of the objectives without it making another objective worse.
 

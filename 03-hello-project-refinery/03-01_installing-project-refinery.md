@@ -4,9 +4,9 @@ Project Refinery is currently available as a Beta release, as of March 2019. In 
 
 [https://www.autodesk.com/solutions/refinery-beta](https://www.autodesk.com/solutions/refinery-beta)
 
-![](../.gitbook/assets/install1.png)
+![](../.gitbook/assets/install1%20%281%29.png)
 
-![](../.gitbook/assets/install2%20%281%29.png)
+![](../.gitbook/assets/install2%20%282%29.png)
 
 ## The Refinery Community
 
@@ -28,7 +28,7 @@ _Above: the Refinery community home page_
 
 To install the latest version of Refinery, go to the Getting Started section, where you can see the latest Pre-Requisites needed to use Refinery. After making sure you satisfy these initial requirements, please follow the step-by-step guide in the install section.
 
-![](../.gitbook/assets/install4%20%283%29.png)
+![](../.gitbook/assets/install4%20%284%29.png)
 
 _Above: the Refinery beta community Getting Started instructions page_
 

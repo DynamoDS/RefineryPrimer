@@ -6,7 +6,7 @@ After Refinery has run the generative process, the results are displayed in both
 
 The _`design grid`_ shows each option as a 3d geometrical thumbnail that can be individually rotated, zoomed and panned to explore the design in more detail. The order of the thumbnails can be sorted based on the inputs or outputs of the Dynamo script, with a toggle for both ascending and descending values.
 
-![](../.gitbook/assets/visualize1%20%283%29.png)
+![](../.gitbook/assets/visualize1%20%284%29.png)
 
 ## Design Table
 
@@ -28,7 +28,7 @@ The other chart available in Refinery is a _`Parallel Coordinates`_ graph. This 
 
 The graph can be filtered by dragging the selection on each vertical axis.
 
-![](../.gitbook/assets/visualize4%20%283%29.png)
+![](../.gitbook/assets/visualize4%20%284%29.png)
 
 ## Choosing the right Visualization
 

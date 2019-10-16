@@ -22,7 +22,7 @@ To help illustrate this analogy, let's make a table comparing the expected activ
 
 It's important to note that because the system knows about multiple modes of transport \(walk, cycle, bus, train, etc\), it can combine them to best achieve the defined goal. This means the goal we set can greatly impact the routes generated. For example, we could set the goal to be shortest distance if travelling by car or step-free access and the resulting routes could be completely different.
 
-![](../../../.gitbook/assets/furth2%20%283%29.png)
+![](../../../.gitbook/assets/furth2%20%284%29.png)
 
 _above: Citymapper website showing routes that have step-free access_
 

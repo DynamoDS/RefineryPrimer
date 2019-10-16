@@ -8,7 +8,7 @@ For the design of the new office and research space in the MaRs Innovation Distr
 
 ### Generate
 
-![](../../../.gitbook/assets/mars1%20%281%29.png)
+![](../../../.gitbook/assets/mars1%20%282%29.png)
 
 A geometric system was created by the designers that allowed the exploration of multiple configurations of work neighborhoods, amenity spaces and circulation zones - this represents the _`define`_ step of the _`generate`_ phase as defined previously.
 
