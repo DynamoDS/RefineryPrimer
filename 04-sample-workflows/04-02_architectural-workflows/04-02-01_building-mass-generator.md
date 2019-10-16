@@ -1,9 +1,8 @@
 # Workflow 1 : Building mass generator
 
 <p align="center">
-  <img src="../.gitbook/assets/sample/workflow11.gif" style="width:200px;"/>
+  <img src="../../.gitbook/assets/sample/workflow11.gif" style="width:200px;"/>
 </p>
-
 ## Description
 
 This graph, used with Refinery on *`Randomize`* mode, will generate a series of random towers, sitting across a stipulated site boundary. The tower will randomize in height, floor plate design and orientation allowing for a large amount of potential design solutions within minutes.
@@ -59,5 +58,5 @@ The image below shows an example output from a randomized study based on 40 solu
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/sample/workflow12.png" style="width:85%;"/>
+<img src="../../.gitbook/assets/sample/workflow12.png" style="width:85%;"/>
 </p>
