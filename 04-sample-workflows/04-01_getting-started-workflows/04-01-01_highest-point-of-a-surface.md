@@ -5,7 +5,7 @@ The *`01-01_EvaluateSurface.dyn`* graph in the Refinery examples, uses a single 
 <br/>
 
 <p align="center">
-<img src="../../.gitbook/assets/hello/applychanges1.png" style="width:85%;"/>
+<img src="../../assets/hello/applychanges1.png" style="width:85%;"/>
 </p>
 
 <br/>
@@ -15,7 +15,7 @@ U and V values are used to move the sphere across the surface. Since these value
 <br/>
 
 <p align="center">
-<img src="../../.gitbook/assets/hello/applychanges2.png" style="width:40%;"/>
+<img src="../../assets/hello/applychanges2.png" style="width:40%;"/>
 </p>
 
 <br/>
@@ -34,7 +34,7 @@ When running this graph in Refinery:
 <br/>
 
 <p align="center">
-<img src="../../.gitbook/assets/hello/applychanges3.png" style="width:85%;"/>
+<img src="../../assets/hello/applychanges3.png" style="width:85%;"/>
 </p>
 
 <br/>

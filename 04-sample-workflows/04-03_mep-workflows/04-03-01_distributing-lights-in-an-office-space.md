@@ -1,7 +1,7 @@
 # Workflow 3 : Create office layout
 
 <p align="center">
-  <img src="../../.gitbook/assets/sample/workflowmep1.gif"">
+  <img src="../../assets/sample/workflowmep1.gif"">
 </p>
 
 ## Description
@@ -42,5 +42,5 @@ Without the aid of refinery the designer would usually place light sources evenl
 Once Refinery has completed, the results can be explored through the available tables and graphs. The image below shows an example output from an optimized study based on 10 generations with a population of 20. The outputs were defined as minimized for both _`underlit spots`_ and _`overlit spots`_.
 
 <p align="center">
-<img src="../../.gitbook/assets/sample/workflowsmep2.png" style="width:100%;"/>
+<img src="../../assets/sample/workflowsmep2.png" style="width:100%;"/>
 </p>

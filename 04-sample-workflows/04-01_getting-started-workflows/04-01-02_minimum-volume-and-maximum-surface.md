@@ -12,7 +12,7 @@ We say these two goals are competing because when considering one cuboid, the bi
 <br/>
 
 <p align="center">
-<img src="../../.gitbook/assets/hello/applychanges4.png" style="width:85%;"/>
+<img src="../../assets/hello/applychanges4.png" style="width:85%;"/>
 </p>
 
 <br/>
@@ -24,7 +24,7 @@ Please make sure all the nodes controlling the size & location of the cuboids ar
 <br/>
 
 <p align="center">
-<img src="../../.gitbook/assets/hello/applychanges5.png" style="width:40%;"/>
+<img src="../../assets/hello/applychanges5.png" style="width:40%;"/>
 </p>
 
 <br/>
@@ -34,7 +34,7 @@ Whenever an input parameter is changed the option's volume and total surface are
 <br/>
 
 <p align="center">
-<img src="../../.gitbook/assets/hello/applychanges6.png" style="width:40%;"/>
+<img src="../../assets/hello/applychanges6.png" style="width:40%;"/>
 </p>
 
 <br/>
@@ -51,7 +51,7 @@ When running this graph in Refinery:
 <br/>
 
 <p align="center">
-<img src="../../.gitbook/assets/hello/applychanges7.png" style="width:85%;"/>
+<img src="../../assets/hello/applychanges7.png" style="width:85%;"/>
 </p>
 
 <br/>

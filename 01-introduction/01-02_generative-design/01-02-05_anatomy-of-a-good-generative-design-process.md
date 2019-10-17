@@ -6,7 +6,7 @@ A helpful general rule for developing good generative design workflows could be:
 
 To guide you through this process, you'll find below a helpful framework, with notes, questions and pointers. This is by no means an exhaustive list, so please feel free to make it your own - and maybe even contribute to this primer!
 
-<img src="../../.gitbook/assets/intro/good1.png" style="width:200px;"/>
+<img src="../../assets/intro/good1.png" style="width:200px;"/>
 
 ## Step 1 : Define your problem
 
@@ -19,7 +19,7 @@ The first thing to do is to have a clear understanding of what you want to achie
 * What makes the design a success or a failure?
 * What aspects would you like to maximize or minimize?
 
-<img src="../../.gitbook/assets/intro/good2.png" style="width:200px;"/>
+<img src="../../assets/intro/good2.png" style="width:200px;"/>
 
 Answering these questions not only clarifies the problem at hand in the designer’s mind, but also helps break the problem into smaller components that will be used in each stage of the generative design process. The more questions you formulate and the more precisely you can answer these questions, the more relevant the outputs of a generative process will be.
 
@@ -33,7 +33,7 @@ As a designer, you wouldn't sign up to design the school without a sufficiently 
 
 Now that you've written down a rough definition of the problem, it's time to look at potential solutions! Start with the end design in mind, remembering what you want to achieve and work backwards from there, letting each section guide the next one. Don't be afraid to draw, diagram, mind-map or use any other technique you prefer to help you document the below.
 
-<img src="../../.gitbook/assets/intro/good3.png" style="width:200px;"/>
+<img src="../../assets/intro/good3.png" style="width:200px;"/>
 
 For the **Generate** phase:
 
@@ -58,7 +58,7 @@ For the **Exploration** & **Evolution** phases:
 
 For this step, try to think about the overall process and the constants & variables in your defined problem & solution?
 
-<img src="../../.gitbook/assets/intro/good4.png" style="width:200px;"/>
+<img src="../../assets/intro/good4.png" style="width:200px;"/>
 
 * Identify which inputs will change for each stage and what are their allowed value ranges
 * Identify the inputs that will remain the same for all stages & across generated solutions
@@ -69,7 +69,7 @@ For this step, try to think about the overall process and the constants & variab
 
 Having precise rules for evaluation is critical for a Generative Design process to be successful. Without anything to evaluate, the generative process will produce a random and arbitrary set of designs which may not be of use to any designer.
 
-<img src="../../.gitbook/assets/intro/good5.png" style="width:200px;"/>
+<img src="../../assets/intro/good5.png" style="width:200px;"/>
 
 Adding evaluation criteria to a computational process makes it more complex, but also more realistic and relevant to the designer’s needs. Whilst adding evaluation conditions that say “make the largest table possible” and “use the fewest materials possible” make the model complex \(there is now an unavoidable tradeoff that must be considered\), they also directly target what the designer is most interested in \(a big table at minimum cost\). Algorithms perform best when these conditions are combined and a solution that balances them must be found.
 
@@ -77,7 +77,7 @@ Adding evaluation criteria to a computational process makes it more complex, but
 
 To get the most out of your generative design process, remember that the final step isn't necessarily where the process ends, so ask yourself some of the following questions.
 
-<img src="../../.gitbook/assets/intro/good6.png" style="width:200px;"/>
+<img src="../../assets/intro/good6.png" style="width:200px;"/>
 
 * How do you want to review the results? Do you need 3D visuals, a data table, graphs or all of the above?
 * Who is the target audience and what do you want them to decide on?

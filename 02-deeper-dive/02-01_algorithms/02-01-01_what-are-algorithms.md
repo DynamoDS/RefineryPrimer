@@ -4,7 +4,7 @@ There has been a sudden hype towards algorithms, mystifying them and giving them
 
 > A set of instructions that typically help to solve a problem.
 
-<img src="../../.gitbook/assets/deeper/whatarealgorithms.png" style="width:200px;"/>
+<img src="../../assets/deeper/whatarealgorithms.png" style="width:200px;"/>
 
 **Algorithms in generative design**
 

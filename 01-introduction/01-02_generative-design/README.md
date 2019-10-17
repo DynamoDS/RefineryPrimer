@@ -9,7 +9,7 @@ We will look at the following:
 * [What goes into a generative design process?](01-02-03_what-goes-into-a-generative-design-process/README.md)
 * [Examples of Generative Design](01-02-04_examples-of-generative-design/README.md)
 
-<img src="../../.gitbook/assets/intro/gendesign.gif" style="width:200px;"/>
+<img src="../../assets/intro/gendesign.gif" style="width:200px;"/>
 
 >Massing analysis - Alkmaar Housing Commission - The Living
 

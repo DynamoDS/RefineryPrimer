@@ -1,6 +1,6 @@
 # Are There Examples of Other Techniques That Could be Used to Solve This Problem? 
 
-<img src="../.gitbook/assets/deeper/othertechniques.png" style="width:200px;"/>
+<img src="../assets/deeper/othertechniques.png" style="width:200px;"/>
 
 There are many techniques that can be used to tackle a Computational Design problem. In addition to the genetic algorithm, other examples include: 
 

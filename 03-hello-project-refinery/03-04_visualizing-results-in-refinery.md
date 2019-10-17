@@ -9,7 +9,7 @@ The *`design grid`* shows each option as a 3d geometrical thumbnail that can be 
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/hello/visualize1.png" style="width:85%;"/>
+<img src="../assets/hello/visualize1.png" style="width:85%;"/>
 </p>
 
 <br/>
@@ -21,7 +21,7 @@ The *`design table`* replaces the design grid, if chosen, and lists each option 
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/hello/visualize2.png" style="width:85%;"/>
+<img src="../assets/hello/visualize2.png" style="width:85%;"/>
 </p>
 
 <br/>
@@ -35,7 +35,7 @@ Selecting a circle from the graph space will also highlight the chosen option in
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/hello/visualize3.png" style="width:85%;"/>
+<img src="../assets/hello/visualize3.png" style="width:85%;"/>
 </p>
 
 <br/>
@@ -49,7 +49,7 @@ The graph can be filtered by dragging the selection on each vertical axis.
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/hello/visualize4.png" style="width:85%;"/>
+<img src="../assets/hello/visualize4.png" style="width:85%;"/>
 </p>
 
 <br/>

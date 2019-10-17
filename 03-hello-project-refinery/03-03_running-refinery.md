@@ -21,7 +21,7 @@ To run an optioneering process in Refinery, follow these steps:
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/hello/running1.png" style="width:50%;"/>
+<img src="../assets/hello/running1.png" style="width:50%;"/>
 </p>
 
 <br/>
@@ -44,6 +44,6 @@ To run an optimization process in Refinery, follow these steps:
 <br/>
 
 <p align="center">
-<img src="../.gitbook/assets/hello/running2.png" style="width:50%;"/>
+<img src="../assets/hello/running2.png" style="width:50%;"/>
 </p>
 

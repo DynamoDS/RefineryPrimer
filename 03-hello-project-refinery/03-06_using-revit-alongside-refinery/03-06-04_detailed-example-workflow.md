@@ -10,7 +10,7 @@ The intention of this workflow is to find the best location for a desk in the of
 <br/>
 
 <p align="center">
-<img src="../../.gitbook/assets/hello/detailex1.png" style="width:85%;"/>
+<img src="../../assets/hello/detailex1.png" style="width:85%;"/>
 </p>
 
 <br/>
@@ -23,7 +23,7 @@ The first step is to create our script. Remember, our script needs to contain bo
 <br/>
 
 <p align="center">
-<img src="../../.gitbook/assets/hello/detailex2.png" style="width:85%;"/>
+<img src="../../assets/hello/detailex2.png" style="width:85%;"/>
 </p>
 
 <br/>
@@ -34,7 +34,7 @@ In this example, there is a little work needed to extract the correct geometry f
 <br/>
 
 <p align="center">
-<img src="../../.gitbook/assets/hello/detailex3.png" style="width:85%;"/>
+<img src="../../assets/hello/detailex3.png" style="width:85%;"/>
 </p>
 
 <br/>
@@ -45,7 +45,7 @@ The generator of the script determines how Refinery will move the point around t
 <br/>
 
 <p align="center">
-<img src="../../.gitbook/assets/hello/detailex4.png" style="width:85%;"/>
+<img src="../../assets/hello/detailex4.png" style="width:85%;"/>
 </p>
 
 <br/>
@@ -64,7 +64,7 @@ The output of the node returns both a visual and non-visual output:
 <br/>
 
 <p align="center">
-<img src="../../.gitbook/assets/hello/detailex5.png" style="width:85%;"/>
+<img src="../../assets/hello/detailex5.png" style="width:85%;"/>
 </p>
 
 <br/>
@@ -75,7 +75,7 @@ With the graph correctly set up and run once in D4R to cache the data, we can cl
 <br/>
 
 <p align="center">
-<img src="../../.gitbook/assets/hello/detailex6.png" style="width:85%;"/>
+<img src="../../assets/hello/detailex6.png" style="width:85%;"/>
 </p>
 
 <br/>
@@ -86,7 +86,7 @@ Now we are ready to run through Refinery. In Refinery we want to select *`Optimi
 <br/>
 
 <p align="center">
-<img src="../../.gitbook/assets/hello/detailex7.png" style="width:85%;"/>
+<img src="../../assets/hello/detailex7.png" style="width:85%;"/>
 </p>
 
 <br/>
@@ -97,5 +97,5 @@ To use the design option from Refinery, we simply click through either the chart
 <br/>
 
 <p align="center">
-<img src="../../.gitbook/assets/hello/detailex8.png" style="width:85%;"/>
+<img src="../../assets/hello/detailex8.png" style="width:85%;"/>
 </p>

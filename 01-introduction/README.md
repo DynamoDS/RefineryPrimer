@@ -2,7 +2,7 @@
 
 In this chapter, we’ll look at key concepts that are essential to understanding generative design and how Project Refinery works.
 
-<img src="../.gitbook/assets/intro/intro.png" style="width:200px;"/>
+<img src="../assets/intro/intro.png" style="width:200px;"/>
 
 We will look at the following topics:
 

@@ -1,6 +1,6 @@
 # What is Optimization?
 
-<img src="../../.gitbook/assets/deeper/whatisoptimization.png" style="width:200px;"/>
+<img src="../../assets/deeper/whatisoptimization.png" style="width:200px;"/>
 
 <br/>
 

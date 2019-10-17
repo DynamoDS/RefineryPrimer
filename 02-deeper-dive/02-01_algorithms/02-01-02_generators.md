@@ -1,7 +1,7 @@
 
 # Generators
 
-<img src="../../.gitbook/assets/deeper/generators1.png" style="width:200px;"/>
+<img src="../../assets/deeper/generators1.png" style="width:200px;"/>
 
 Generators are the logic that creates new potential solutions. Generators can be very simple (a function that outputs totally random designs) or highly sophisticated (a network model that learns over time), but what they do is generate new data, in whatever form the user desires. 
 
@@ -11,4 +11,4 @@ In the simple Dynamo example below, the node that is highlighted and creates the
 
 <br/>
 
-<img src="../../.gitbook/assets/deeper/generators2.png" style="width:200px;"/>
+<img src="../../assets/deeper/generators2.png" style="width:200px;"/>

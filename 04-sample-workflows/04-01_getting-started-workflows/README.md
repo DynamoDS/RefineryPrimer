@@ -1,6 +1,6 @@
 # Getting Started Workflows
 
-<img src="../../.gitbook/assets/sample/beginer.png" style="width:200px;"/>
+<img src="../../assets/sample/beginer.png" style="width:200px;"/>
 
 The following section has simple workflows to get you started in Refinery:
 

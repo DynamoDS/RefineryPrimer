@@ -6,7 +6,7 @@ For the design of the new office and research space in the MaRs Innovation Distr
 
 ### Generate
 
-<img src="../../../.gitbook/assets/intro/mars1.png" style="width:200px;"/>
+<img src="../../../assets/intro/mars1.png" style="width:200px;"/>
 
 >Design goals - Mars Innovation District - The Living
 
@@ -16,7 +16,7 @@ The computer used this algorithm, varying its parameters to produce thousands of
 
 ### Evaluate
 
-<img src="../../../.gitbook/assets/intro/mars2.jpg" style="width:200px;"/>
+<img src="../../../assets/intro/mars2.jpg" style="width:200px;"/>
 
 > Design option evaluated and selected- Mars Innovation District - The Living
 
@@ -35,7 +35,7 @@ After they were formulated, the computer used these algorithms to evaluate each 
 
 ### Explore
 
-<img src="../../../.gitbook/assets/intro/mars3.gif" style="width:200px;"/>
+<img src="../../../assets/intro/mars3.gif" style="width:200px;"/>
 
 > Design Options - Mars Innovation District - The Living
 

@@ -1,6 +1,6 @@
 # Constraints 
 
-<img src="../../.gitbook/assets/deeper/constrains.png" style="width:200px;"/>
+<img src="../../assets/deeper/constrains.png" style="width:200px;"/>
 
 A constraint is a condition that a solution of an optimization problem must satisfy. In the table example, constraints may include the following: 
 

@@ -3,7 +3,7 @@ Know your design parameters inside and out!
 
 Every good generative design project starts with a clear and precise understanding of the design problem and a clear description of the goals. Algorithms are great at churning through thousands of design options very quickly, but they don’t perform nearly as well when given vague or imprecise instructions. You must be able to define your problem in a mathematical way (i.e. with some sort of number that can be used to rank outcomes).
 
-<img src="../../.gitbook/assets/deeper/definegoals.png" style="width:200px;"/>
+<img src="../../assets/deeper/definegoals.png" style="width:200px;"/>
 
 Some good questions to ask when formulating design goals are: 
 
