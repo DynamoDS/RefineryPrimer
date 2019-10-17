@@ -24,14 +24,6 @@ Using these technologies requires new skills and new ways to think about design.
 
 [<img src="assets/welcome/matterlab-logo.jpg" style="width:150px;"/>](https://www.matterlab.co/)
 
-Special thanks goes to:
-
-Mark Thorley - [@MarkThorley](https://github.com/MarkThorley)
-<br>
-Radu Gidei - [@radumg](https://github.com/radumg)
-<br>
-Sylvester Knudsen - [@SHKnudsen](https://github.com/SHKnudsen)
-
 ## Open-Source
 
 This primer is an open source project initiated by the **AEC Generative Design Team** at Autodesk and we are dedicated to providing high-quality content on generative design in this primer.
