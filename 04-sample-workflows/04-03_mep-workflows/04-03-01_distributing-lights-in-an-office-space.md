@@ -8,43 +8,22 @@
 This graph used refinery on `optimize mode` to place a number of lights in a hypothetical office layout to optimize light distribution by minimizing both the number of lighting fixtures and overlit points, but maximizing at the same time number of lit points on the floor surface within the space. 
 The graph works by calculating unobstructed distances from light sources to an evenly distributed series of analysis points within the floor of a selected Revit room.
 _All sample files for this example can be found in the_ [_`7-00_sample_files`_](https://github.com/DynamoDS/RefineryPrimer/tree/master/07-workflows/07-00_sample_files) _folder in the Github repository_
-## Static inputs
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Input</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">Obstacles</td>
-      <td style="text-align:left">
-        <p>Select Revit model to pull obstruction geometry.</p>
-        <p>This would check possible geometries (walls, columns, curtain panels)
-          that may interfere with light-rays.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Room</td>
-      <td style="text-align:left">Select Revit room you wish to perform lighting calculation</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Light Power</td>
-      <td style="text-align:left">Maximum distance (mm) a ray can cast</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Grid Size (mm)</td>
-      <td style="text-align:left">Grid of analysis points on which the lighting calculation would be performed.
-        (A smaller grid would result in a more accurate but slower calculation)</td>
-    </tr>
-  </tbody>
-</table>## Variable inputs
+## Static inputs 
+| Input                              | Description                                                   |
+| :-------------------------------- | :------------------------------------------------------------ |
+| Obstacles                         | The maximum distance between lighting fixtures on the X axis. |
+| Room                              | The maximum distance between lighting fixtures on the Y axis. |
+| Light Power                       | The maximum distance a light source can reach.                |
+| Light Power                       | The maximum distance a light source can reach.                |
+| Grid Size (mm)                    | Grid of analysis points on which the lighting calculation would be performed. (A smaller grid would result in a more accurate but slower calculation) |
+
+## Variable inputs
 | Name                              | Description                                                   |
 | :-------------------------------- | :------------------------------------------------------------ |
 | Lighting Max Width Distance (mm)  | The maximum distance between lighting fixtures on the X axis. |
 | Lighting Max Length Distance (mm) | The maximum distance between lighting fixtures on the Y axis. |
 | Light Power (mm)                  | The maximum distance a light source can reach.                |
+
 ## Functions
 The script is made up of a series of functions, which are divided into groups inside the graph. Each group has a name and a short description, where the name indicates the type of function that is being run and the description explains in more detail the process.
 The graph places an evenly distributed number of analysis points within the floor of the room selected. It also places a grid of light sources along the ceiling of the room, defined by the variable inputs. A ray records the distance from each light source to analysis point, each analysis point is colored according to the total amount of light received by all light sources. The ray trace is only considered if no geometries obstruct its way.  
