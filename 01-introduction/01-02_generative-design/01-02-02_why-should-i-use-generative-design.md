@@ -12,11 +12,15 @@ As the designer, you specify what outcomes you want to achieve for your design a
 
 <img src="../../.gitbook/assets/intro/whyusegen1.gif" style="width:200px;"/>
 
+> Maximization of active shared spaces - Mars Innovation District - The Living 
+
 ## Faster
 
 Generative design can help a designer find better designs for his or her project faster, by leveraging what machines are good at: computation & repetition. Computers can generate and evaluate a huge number of design variants in only a fraction of the time it would take an individual designer, allowing us to learn what works & what doesn't at an accelerated pace.
 
 <img src="../../.gitbook/assets/intro/whyusegen2.gif" style="width:200px;"/>
+
+>Design options generated - Mars Innovation District - The Living
 
 ## More variation
 
@@ -25,6 +29,8 @@ Your initial design parameters are used to generate many, even thousands, of pot
 For example, it's feasible for a designer to explore ten variants or a few tens if using established computational design techniques. It is not uncommon however for an algorithm, once created, to generate thousands of variants in mere minutes.
 
 <img src="../../.gitbook/assets/intro/whyusegen3.gif" style="width:200px;"/>
+
+>Design options generated - Bionic Partition for Airbus - The Living
 
 ## Collaborative
 

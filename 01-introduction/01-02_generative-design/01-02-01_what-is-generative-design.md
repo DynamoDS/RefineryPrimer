@@ -10,6 +10,8 @@ We see generative design as:
 
 <img src="../../.gitbook/assets/intro/whatisgen.gif" style="width:200px;"/>
 
+>Some generated alternatives - Mars Innovation District - The Living 
+
 Generative design is a specific application of the computational design approach, with the following distinctions:
 
 * the designer defines goals to achieve a design \(rather than the exact steps\)

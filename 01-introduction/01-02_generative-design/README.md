@@ -11,3 +11,5 @@ We will look at the following:
 
 <img src="../../.gitbook/assets/intro/gendesign.gif" style="width:200px;"/>
 
+>Massing analysis - Alkmaar Housing Commission - The Living
+
