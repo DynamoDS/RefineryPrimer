@@ -1,4 +1,3 @@
-# Installing the Refinery Toolkit from the Dynamo Package Manager
+# Refinery Toolkit
 
-Provide link to the refinery toolkit when it is released.
-
+Provide link to the refinery toolkit when it is released. 

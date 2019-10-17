@@ -61,10 +61,9 @@
     * [Office Layout](04-sample-workflows/04-02_architectural-workflows/04-02-03_office-layout.md)
   * [MEP Workflows](04-sample-workflows/04-03_mep-workflows/README.md)
     * [Distributing Spotlights in an Office Space](04-sample-workflows/04-03_mep-workflows/04-03-01_distributing-lights-in-an-office-space.md)
-  * [Structural Workflows](04-sample-workflows/04-04_structural-workflows.md)
+  * [Structural Workflows](04-sample-workflows/04-04_structural-workflows/README.md)
   * [Community Examples](04-sample-workflows/04-05_community-examples.md)
 * [Appendix](99-appendix/README.md)
   * [Glossary](99-appendix/99-01_glossary.md)
   * [Reference Material](99-appendix/99-02_reference-material.md)
   * [Need Professional Help?](99-appendix/99-03_need-professional-help.md)
-
