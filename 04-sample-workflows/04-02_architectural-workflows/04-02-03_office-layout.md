@@ -8,7 +8,7 @@
 
 This graph will generate a series of desk layouts based on a floor plate and neighborhood boundaries. Desks are placed in rows either horizontally or vertically, alongside a reserved space for amenities such as breakout spaces, or tea points. The intention is to find a solution that maximizes the number of desks the layouts can fit in whilst maintaining a high area for amenities. 
 
-*All sample files for this example can be found in the [`7-00_sample_files`](https://github.com/DynamoDS/RefineryPrimer/tree/master/07-workflows/07-00_sample_files) folder in the Github repository* 
+*The sample files for this example can be found in the [`04-03_office-layout`](https://github.com/martinstacey/RefineryPrimer/tree/ContentBranch/04-sample-workflows/04-00_sample_files/04-00-02_architecture/02-03_Architecture) folder in the Github repository* 
 
 ## Static inputs
 

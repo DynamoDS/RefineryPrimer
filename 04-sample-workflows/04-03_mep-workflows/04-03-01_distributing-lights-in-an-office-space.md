@@ -8,7 +8,7 @@
 
 This graph used refinery on optimize mode to place a number of lights in a hypothetical office layout to optimize light distribution by minimizing both unlit spots and overlit spots within the space. 
 The graph works by calculating unobstructed distances from light sources to an evenly distributed series of analisis points within a selected floor.
-All sample files for this example can be found in the 7-00_sample_files folder in the Github repository
+All sample files for this example can be found in the [03-01_Distributing_flights](https://github.com/martinstacey/RefineryPrimer/tree/ContentBranch/04-sample-workflows/04-00_sample_files/04-00-03_mep/03-01_Distributing-lights) folder in the Github repository
 
 ## Static inputs
 
