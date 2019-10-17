@@ -1,8 +1,6 @@
 ### Minimum Volume and Maximum Surface
 
-The *`01-02_Minimum-volume-and-maximum-surface.dyn`* graph in the Refinery examples is a multi-objective optimization problem with two competing objectives. The graph consists of three cuboids which have different variable parameters like height and location. The objectives of the graph are to find an option with minimal volume and maximum combined surface area.
-
-[get files](https://github.com/martinstacey/RefineryPrimer/tree/ContentBranch/04-sample-workflows/04-00_sample_files/04-00-01_gettingstarted/01-02_Minimum-volume-and-maximum-surface)
+The *`01-02_Minimum-volume-and-maximum-surface.dyn`* graph in the Refinery examples is a multi-objective optimization problem with two competing objectives. The graph consists of three cuboids which have different variable parameters like height and location. The objectives of the graph are to find an option with minimal volume and maximum combined surface area. [get files](https://github.com/martinstacey/RefineryPrimer/tree/ContentBranch/04-sample-workflows/04-00_sample_files/04-00-01_gettingstarted/01-02_Minimum-volume-and-maximum-surface)
 
 The three cuboids \(C1, C2 & C3\) represent buildings and can vary in different ways:
 
