@@ -38,7 +38,7 @@ In Dynamo navigate to the toolbar and select _`Refinery > Launch Refinery`_
 
 <img src="../assets/hello/setting23.png" style="width:200px;"/>
 
-Once refinery is lauched you would have to select _`New Study`_
+Once Refinery is lauched you would have to select _`New Study`_
 
 <br/>
 
