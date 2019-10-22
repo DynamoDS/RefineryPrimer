@@ -38,6 +38,9 @@ When geometry is created in Dynamo, often other geometry is needed to facilitate
 | Overlit spots | Amount of overlit analysis points                      |
 ## Benefits of Using Refinery
 Without the aid of Refinery the designer would usually place light sources evenly distributing them along spaces to later perform lighting calculations. In regular shaped rooms this method produces good results but things can get complicated if  rooms have irregular shapes that may result in blind spots. Refinery using an optimization method can speed up how light sources are distributed. 
+## Results
+Once Refinery has completed, the results can be explored through the available tables and graphs. The image below shows an example output from an optimized study based on 10 generations with a population of 20. The outputs were defined as minimized for both _`underlit spots`_ and _`overlit spots`_.
+
 ## Acknowledgements
 We want to thank Jared Linden Digital Applications Developer at Hoare Lea for contributing to the primer with this workflow. 
 
