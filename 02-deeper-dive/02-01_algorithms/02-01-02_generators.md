@@ -12,3 +12,5 @@ In the simple Dynamo example below, the node that is highlighted and creates the
 <br/>
 
 <img src="../../assets/deeper/generators2.png" style="width:200px;"/>
+
+> Gears and Sliders: Icons made by Freepik from www.flaticon.com

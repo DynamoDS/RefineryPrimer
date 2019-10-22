@@ -6,3 +6,4 @@ In the future we want the community to submit their generative design case studi
 
 The submitted case studies should show the process from start to finish and highlight the benefits of working with generative design.
 
+> Lego Heads: Icons made by Smashicons from www.flaticon.com
