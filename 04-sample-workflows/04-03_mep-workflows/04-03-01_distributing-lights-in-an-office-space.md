@@ -5,7 +5,7 @@
 </p>
 
 ## Description
-This graph used refinery on `optimize mode` to place a number of lights in a hypothetical office layout to optimize light distribution by minimizing both the number of lighting fixtures and overlit points, but maximizing at the same time number of lit points on the floor surface within the space. 
+This graph used Refinery on `optimize mode` to place a number of lights in a hypothetical office layout to optimize light distribution by minimizing both the number of lighting fixtures and overlit points, but maximizing at the same time number of lit points on the floor surface within the space. 
 The graph works by calculating unobstructed distances from light sources to an evenly distributed series of analysis points within the floor of a selected Revit room.
 _All sample files for this example can be found in the_ [_`7-00_sample_files`_](https://github.com/DynamoDS/RefineryPrimer/tree/master/07-workflows/07-00_sample_files) _folder in the Github repository_
 ## Static inputs 
@@ -37,9 +37,13 @@ When geometry is created in Dynamo, often other geometry is needed to facilitate
 | Lit spots     | Amount of overall illuminated analysis points          |
 | Overlit spots | Amount of overlit analysis points                      |
 ## Benefits of Using Refinery
-Without the aid of refinery the designer would usually place light sources evenly distributing them along spaces to later perform lighting calculations. In regular shaped rooms this method produces good results but things can get complicated if  rooms have irregular shapes that may result in blind spots. Refinery using an optimization method can speed up how light sources are distributed. 
+Without the aid of Refinery the designer would usually place light sources evenly distributing them along spaces to later perform lighting calculations. In regular shaped rooms this method produces good results but things can get complicated if  rooms have irregular shapes that may result in blind spots. Refinery using an optimization method can speed up how light sources are distributed. 
 ## Results
 Once Refinery has completed, the results can be explored through the available tables and graphs. The image below shows an example output from an optimized study based on 10 generations with a population of 20. The outputs were defined as minimized for both _`underlit spots`_ and _`overlit spots`_.
+
+## Acknowledgements
+We want to thank Jared Linden Digital Applications Developer at Hoare Lea for contributing to the primer with this workflow. 
+
 
 <p align="center">
 <img src="../../assets/sample/workflowsmep2.png" style="width:100%;"/>

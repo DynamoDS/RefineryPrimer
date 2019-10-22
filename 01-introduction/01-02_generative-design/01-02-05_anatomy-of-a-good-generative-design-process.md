@@ -62,6 +62,8 @@ For this step, try to think about the overall process and the constants & variab
 
 * Identify which inputs will change for each stage and what are their allowed value ranges
 * Identify the inputs that will remain the same for all stages & across generated solutions
+# The curse of dimensionality
+* Be careful not to over-complicate your generative design process by adding too many initial inputs and outputs. 
 * Start with the minimal needed inputs and gradually add more if needed as you become more aware of what your design needs.
 * What are you trying to accomplish during this step? Decide if/what you need to measure and if/how that output is communicated to subsequent steps.
 

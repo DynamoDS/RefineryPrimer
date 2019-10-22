@@ -38,4 +38,6 @@ The diagram above should clearly illustrate how
 * each stage & step are dependent on the previous one
 * the overall study process can be repeated, learning from each iteration
 
+> Lego Faces: Icons made by Smashicons from www.flaticon.com
+
 
