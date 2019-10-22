@@ -37,7 +37,7 @@ When geometry is created in Dynamo, often other geometry is needed to facilitate
 | Lit spots     | Amount of overall illuminated analysis points          |
 | Overlit spots | Amount of overlit analysis points                      |
 ## Benefits of Using Refinery
-Without the aid of refinery the designer would usually place light sources evenly distributing them along spaces to later perform lighting calculations. In regular shaped rooms this method produces good results but things can get complicated if  rooms have irregular shapes that may result in blind spots. Refinery using an optimization method can speed up how light sources are distributed. 
+Without the aid of Refinery the designer would usually place light sources evenly distributing them along spaces to later perform lighting calculations. In regular shaped rooms this method produces good results but things can get complicated if  rooms have irregular shapes that may result in blind spots. Refinery using an optimization method can speed up how light sources are distributed. 
 ## Acknowledgements
 We want to thank Jared Linden Digital Applications Developer at Hoare Lea for contributing to the primer with this workflow. 
 
