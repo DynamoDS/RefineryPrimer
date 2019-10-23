@@ -10,4 +10,6 @@ This section will explore a series of workflows that can be found in the 07-00_s
 * [Structural Workflows](04-02_structural-workflows/README.md)
 * [Community Examples](04-05_community-examples.md)
 
-[Download all sample workflow files](TBC)
+Click below to download a zip with all sample workflows or go to each workflow's page to download them individually. You can also find these sample files on the [Releases page](https://github.com/DynamoDS/RefineryPrimer/releases) of the repo 
+
+[Download all sample workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-all-sample-workflows.zip)

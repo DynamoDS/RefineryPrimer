@@ -8,5 +8,5 @@ This section will explore a series of workflows related to architecture.
 * [Building positioning based on solar analysis](04-02-02_building-positioning-based-on-solar-analysis.md)
 * [Office layout](04-02-03_office-layout.md)
 
-[Download Architectural workflow files](TBC) 
+[Download Architectural workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-02_architectural-workflows.zip) 
 
