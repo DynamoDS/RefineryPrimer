@@ -22,7 +22,7 @@
 
 ## Refinery
 
-- [Refinery main page] https://www.autodesk.com/solutions/refinery-beta
+- [Refinery main page](https://www.autodesk.com/solutions/refinery-beta)
 - [Refinery beta project page](https://beta.autodesk.com/key/RefineryLanding)
 
 ## Generative design 
