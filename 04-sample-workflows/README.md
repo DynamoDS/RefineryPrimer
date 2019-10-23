@@ -9,3 +9,5 @@ This section will explore a series of workflows that can be found in the 07-00_s
 * [MEP Workflows](04-03_mep-workflows/README.md) 
 * [Structural Workflows](04-02_structural-workflows/README.md)
 * [Community Examples](04-05_community-examples.md)
+
+[Download all sample workflow files](TBC)
