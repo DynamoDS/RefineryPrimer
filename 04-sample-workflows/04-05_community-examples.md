@@ -1,6 +1,6 @@
 # Community Examples
 
-In the future we want the community to submit their generative design case studies to this primer. This chapter will showcase these cases so they will be available as examples for the wider generative design/Refinery community.
+In the future we want the community to submit their generative design case studies to this primer. This chapter will showcase these workflows so they will be available as examples for the wider generative design & Refinery community.
 
 <img src="../assets/sample/comunity.png" style="width:200px;"/>
 
