@@ -2,7 +2,7 @@
 
 This section will explore a series of workflows that can be found in the 07-00_sample_files folder in the Github repository.
 
-<img src="../../assets/sample/sample.png" style="width:200px;"/>
+<img src="../assets/sample/sample.png" style="width:200px;"/>
 
 * [Getting Started Workflows](04-01_getting-started-workflows/README.md) 
 * [Architectural Workflows](04-02_architectural-workflows/README.md)
