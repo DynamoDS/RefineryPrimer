@@ -1,6 +1,8 @@
 # Highest Point of a Surface
 
-The *`01-01_EvaluateSurface.dyn`* graph in the Refinery examples, uses a single objective optimization approach to find the highest Z point on a sinuous surface. The objective of the graph is to get the orange sphere to the highest peak of the surface. [get files](https://github.com/DynamoDS/RefineryPrimer/tree/master/04-sample-workflows/04-00_sample_files/04-00-01_gettingstarted)
+The *`01-01_EvaluateSurface.dyn`* graph in the Refinery examples, uses a single objective optimization approach to find the highest Z point on a sinuous surface. The objective of the graph is to get the orange sphere to the highest peak of the surface. 
+
+[Download Dynamo file](https://github.com/DynamoDS/RefineryPrimer/blob/master/04-sample-workflows/04-00-01_getting-started-workflows/04-01-01_Highest-point-of-a-surface.dyn)
 
 <br/>
 
