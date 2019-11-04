@@ -6,7 +6,7 @@
 
 <img src="../assets/intro/compdesign.gif" style="width:200px;"/>
 
->Image above Ehsan Baharlo - ICD - Generative Agent-Based Architectural Design Computation Based on the Integration of Material, Fabrication and Construction Systems
+>Image above Martin Stacey - UCL - NURBS manipulation. 
 
 Put simply, computers are very good at **performing calculations** and **executing pre-defined steps.**
 
