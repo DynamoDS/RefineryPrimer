@@ -16,6 +16,6 @@ A typical genetic algorithm has five phases:
 4. [Crossover / Reproduction](02-04-05_crossover-phase.md)
 5. [Mutation ](02-04-06_mutation-phase.md)
 
-<img src="../../assets/deeper/whatisgenetic3.png" style="width:200px;"/>
+<Ximg src="../../assets/deeper/whatisgenetic3.png" style="width:200px;"/>
 
 Each of these phases repeats itself over generations, where each generation will use the data generated in the previous. A generation consist of a population which holds a collection of possible solutions. 
