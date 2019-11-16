@@ -1,6 +1,6 @@
 # Genetic Algorithms
 
-<img src="../../assets/deeper/genetic.png" style="width:200px;"/>
+<Ximg src="../../assets/deeper/genetic.png" style="width:200px;"/>
 
 In this section, we’ll look at the term _`Generative Algorithms`_
 
