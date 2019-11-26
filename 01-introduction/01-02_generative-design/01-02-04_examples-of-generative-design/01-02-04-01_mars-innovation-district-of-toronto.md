@@ -37,4 +37,4 @@ After the algorithms were formulated, the computer used them to evaluate each of
 
 > Design Options - Mars Innovation District - The Living
 
-After the designs were evaluated, the designers explored the _`solution space`_ : (the generated designs together with their evaluation results). Taking into account each defined goal, they identified the design that best achieved the goals overall.
+After the designs were evaluated, the designers explored the _`solution space`_ (the generated designs together with their evaluation results). Taking into account each defined goal, they identified the design that best achieved the goals overall.
