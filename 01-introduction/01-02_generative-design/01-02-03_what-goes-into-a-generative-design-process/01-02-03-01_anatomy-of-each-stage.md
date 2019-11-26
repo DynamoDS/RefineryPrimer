@@ -29,7 +29,7 @@ Things that are generated in the run step are the final results or outputs of ea
 
 ## Overall process
 
-We can map these stages and steps together in a single diagram, this way we are able to visualize the order of each stage and their dependencies.
+We can map these stages and steps together in a single diagram, allowing us to visualize the order of each stage and their dependencies.
 
 <img src="../../../assets/intro/anatomy4.png" style="width:200px;"/>
 
@@ -39,5 +39,4 @@ The diagram illustrates the following:
 * The entire study process is repeatable, so that each iteration learns from the previous result.
 
 > Lego Faces: Icons made by Smashicons from www.flaticon.com
-
 
