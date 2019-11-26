@@ -16,11 +16,11 @@ As previously discussed, generative design allows for a more integrated **workfl
 
 <img src="../../../assets/intro/stages3.png" style="width:200px;"/>
 
-**Evolve**: The process will use the ranking of the design options to figure out in which direction designs should be further developed or evolved
+**Evolve**: The process uses the ranking of the design options to figure out in which direction designs should be further developed or evolved.
 
 <img src="../../../assets/intro/stages4.png" style="width:200px;"/>
 
-**Explore**: Generated designs are compared or explored by the designer, inspecting both the geometry and evaluation results.
+**Explore**: The designer compares and explores the generated designs, inspecting both the geometry and evaluation results.
 
 <img src="../../../assets/intro/stages5.png" style="width:200px;"/>
 
