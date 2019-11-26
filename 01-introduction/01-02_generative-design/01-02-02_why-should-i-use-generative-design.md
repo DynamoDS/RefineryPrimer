@@ -34,6 +34,6 @@ For example, it's feasible for you to explore ten variants or a few tens if usin
 
 ## Collaborative
 
-The aim of a generative approach is to **augment human capability** with computer power, not to replace designers.
+The aim of a generative approach is to **augment human capability** with computation power, not to replace designers.
 
 To help illustrate this, remember that a good generative design process that uses several metrics to analyze designs in a study will rarely generate a single output. It  will almost always generate a wide range of outputs from which the designer can choose. That is, it doesn’t choose for you, it provides a list of options to choose from, and the options have already been objectively assessed and ranked.
