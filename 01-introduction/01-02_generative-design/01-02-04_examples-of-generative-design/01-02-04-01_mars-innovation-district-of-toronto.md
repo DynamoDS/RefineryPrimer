@@ -1,8 +1,6 @@
 # MaRs Innovation District of Toronto
 
-## Building Design
-
-For the design of the new office and research space in the MaRs Innovation District of Toronto, Autodesk leveraged generative design processes. Starting with high-level goals & constraints and the the power of computation to generate, evaluate, and evolve thousands of design options. The result is a high-performing and novel work environment for Autodesk that would not have been possible to create without this approach.
+For the design of the new office and research space in the MaRs Innovation District of Toronto, Autodesk leveraged generative design processes. Starting with high-level goals and constraints, the design team used the power of computation to generate, evaluate, and evolve thousands of design alternatives. The result was a high-performing and novel work environment that would not have been possible to create without this approach.
 
 ### Generate
 
@@ -10,7 +8,7 @@ For the design of the new office and research space in the MaRs Innovation Distr
 
 >Design goals - Mars Innovation District - The Living
 
-A geometric system was created by the designers that allowed the exploration of multiple configurations of work neighborhoods, amenity spaces and circulation zones - this represents the _`define`_ step of the _`generate`_ phase as defined previously.
+The designers created a geometric system that allowed the exploration of multiple configurations of work neighborhoods, amenity spaces, and circulation zones. This work represents the _`define`_ step of the _`generate`_ phase.
 
 The computer used this algorithm, varying its parameters to produce thousands of design options.
 
@@ -31,7 +29,7 @@ To begin with, information was collected from employees and managers about work 
 
 The designers then created an algorithm to measure how any given floor plan can be measured against each of the stated goals above. Known as _`evaluators`_, these algorithms represents the _`analyse`_ & _`rank`_ stages of the generative process.
 
-After they were formulated, the computer used these algorithms to evaluate each of the designs generated in the previous stage against the defined goals.
+After the algorithms were formulated, the computer used them to evaluate each of the designs generated in the previous stage against the defined goals.
 
 ### Explore
 
@@ -39,4 +37,4 @@ After they were formulated, the computer used these algorithms to evaluate each 
 
 > Design Options - Mars Innovation District - The Living
 
-Once designs have been evaluated, the designers then explore what is often called the _`solution space`_ : the generated designs together with their evaluation results. Taking into account each defined goal, they identified the design that best achieved the defined goals.
+After the designs were evaluated, the designers explored the _`solution space`_ : (the generated designs together with their evaluation results). Taking into account each defined goal, they identified the design that best achieved the goals overall.
