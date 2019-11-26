@@ -10,5 +10,4 @@
 
 Put simply, computers are very good at **performing calculations** and **executing pre-defined steps.**
 
-When approaching a design computationally, the designer would focus on developing the procedure that would create a design, and not the design in itself. The process of iterating through options and data are offloaded to a machine. Saving time, money, and effort, and letting the designer focus on the creativity of the design process.
-
+When approaching a design computationally, the designer would focus on developing the procedure that would create a design, and not the design itself. The process of iterating through options and data are offloaded to a machine. This saves time, money, effort, and lets the designer focus on the creativity of the design process.
