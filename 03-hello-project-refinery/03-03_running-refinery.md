@@ -1,6 +1,6 @@
 # Running Refinery
 
-Refinery can be run using different methods. In the Refinery window you can chooses from four different Generation Methods, all of these methods are Refinery's Solvers, a further explanation of what Solvers are can be found in [section 05-04](/05-algorithms/05-04_solvers.md).
+Refinery can be run using different methods. In the Refinery window you can chooses from four different Generation Methods, all of these methods are Refinery's Solvers, a further explanation of what Solvers are can be found in [section 05-04](../02-deeper-dive/02-01_algorithms/02-01-04_solvers.md).
 
 ## How to run an optioneering process using Refinery
 
