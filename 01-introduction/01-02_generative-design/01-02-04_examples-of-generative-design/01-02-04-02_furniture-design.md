@@ -4,7 +4,7 @@ Looking at a simpler example, let's consider the process of designing a typical,
 
 Using a standard approach, you would manually define the length, width, height, and material of the table. The resulting output is a single, physical object with a fixed, immutable form. Perhaps you could tests several distinct sets of dimensions and material combinations, resulting in three or four prototypes.
 
-<img src="../../../assets/intro/furn1.jpg" style="width:200px;"/>
+<img src="../../../assets/intro/furn1.png" style="width:200px;"/>
 
 In a generative design approach, you would instead specify:
 
