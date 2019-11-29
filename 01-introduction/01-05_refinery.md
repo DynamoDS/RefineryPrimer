@@ -6,7 +6,7 @@ Project Refinery is Autodesk’s latest application for generative design workfl
 
 <img src="../assets/intro/refinery1.png" style="width:200px;"/>
 
-The key features of Project Refinery are that it makes it easier to drive a design towards optimality, as it handles all the back-end work of generation and iteration and presents the user with either a single design solution or a collection of optimal solutions that best align with his or her goals.
+The key features of Project Refinery are that it makes it easier to drive a design towards optimality, as it handles all the back-end work of generation and iteration and presents the user with either a single design solution or a collection of optimal solutions that best align with his or her goals. When used in Revit, Refinery also allows someone who is not Dynamo-savvy to use generative design.
 
 <img src="../assets/intro/refinery2.png" style="width:200px;"/>
 

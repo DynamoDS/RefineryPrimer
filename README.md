@@ -6,9 +6,9 @@ Welcome to the **Refinery Primer**, which aims to introduce AEC practitioners of
 ## About
 This primer will help you:
 
-* **Understand** what generative design is by defining the base concepts and terminology you need to know 
-* **Explore** how these techniques can be used to solve practical challenges commonly found in AEC design projects
-* **Learn** how to use Autodesk’s newest generative design tools such as Project Refinery, through practical workflows 
+* **Understand** what generative design is by defining the base concepts and terminology you need to know. 
+* **Explore** how these techniques can be used to solve practical challenges commonly found in AEC design projects.
+* **Learn** how to use Autodesk’s newest generative design tools such as Project Refinery, through practical workflows.
 
 ## Why Make a Primer?
 
@@ -30,9 +30,9 @@ This primer is an open source project initiated by the **AEC Generative Design T
 
 Contributions are of course welcomed. You can contribute to the primer in the following ways:
 
-* you can report any issue you may have found on our [issues page](https://github.com/DynamoDS/GenerativePrimer/issues)
-* if you’d like to improve, clarify or add content to the Primer, please head over to our [Github repository](https://github.com/DynamoDS/GenerativePrimer)
-* have an example workflow of generative design? Head over to our [contribution guidelines](https://github.com/DynamoDS/RefineryPrimer/blob/master/CONTRIBUTING.md) and see how you can add it to the Community examples section
+* You can report any issue you may have found on our [issues page](https://github.com/DynamoDS/GenerativePrimer/issues).
+* If you’d like to improve, clarify or add content to the Primer, please head over to our [Github repository](https://github.com/DynamoDS/GenerativePrimer).
+* Have an example workflow of generative design? Head over to our [contribution guidelines](https://github.com/DynamoDS/RefineryPrimer/blob/master/CONTRIBUTING.md) and see how you can add it to the Community examples section.
 
 ## Contact
 
