@@ -11,7 +11,7 @@ To help illustrate this analogy, let's make a table comparing the expected activ
 | map activity | equivalent in generative design process |
 | :--- | :--- |
 | _`person`_ \(you\) sets first parameter: go from Brooklyn to Manhattan | stage: Generate  step: set generation parameters |
-| _`computer`_ generates possible routes from Brooklyn to Manhattan,  taking into consideration all the available transportation modes, their operating status & set routes. | stage: Generate  step: run generation algorithm |
+| _`computer`_ generates possible routes from Brooklyn to Manhattan,  taking into consideration all the available transportation modes, their operating status and set routes. | stage: Generate  step: run generation algorithm |
 | _`person`_ sets goals: quickest route | stage: Rank  step: define ranking objectives |
 | _`computer`_ evaluates each of the identified routes based on your goals | stage: Rank  step: run ranking |
 | _`computer`_ attempts to solve your goals and returns the list of routes,  with most suitable ones first | stage: Evolve  step: run evolution |

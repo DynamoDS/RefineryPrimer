@@ -8,7 +8,7 @@
 - [Dynamo Primer](https://primer.dynamobim.org/)
 - [Dynamo learning materials](https://dynamobim.org/learn/)
 
-#### Dynamo questions & inspiration
+#### Dynamo questions and inspiration
 
 - [Dynamo Forum](https://forum.dynamobim.org/)
 - [Dynamo gallery](https://www.dynamobim.org/)

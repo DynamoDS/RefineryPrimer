@@ -1,6 +1,6 @@
 # Anatomy of each stage
 
-Each of these stages can be further broken down into _`define`_, _`run`_ and _`results`_ steps. The _`define`_ step is the responsibility of the designer while the _`run`_ & _`results`_ steps are performed by the machine.
+Each of these stages can be further broken down into _`define`_, _`run`_ and _`results`_ steps. The _`define`_ step is the responsibility of the designer while the _`run`_ and _`results`_ steps are performed by the machine.
 
 Using this breakdown, let's look at what the _`Generate`_ stage would entail.
 
@@ -19,7 +19,7 @@ This _`define`_ step is present and vital for all stages of the generative desig
 
 <img src="../../../assets/intro/anatomy2.png" style="width:200px;"/>
 
-Once everything is defined in the algorithms & accompanying parameters, the machine begins to _`run`_, meaning it starts to generate different design options. This process might happen locally on the designer's computer or, for more intensive calculations, run using cloud computing.
+Once everything is defined in the algorithms and accompanying parameters, the machine begins to _`run`_, meaning it starts to generate different design options. This process might happen locally on the designer's computer or, for more intensive calculations, run using cloud computing.
 
 ### Results
 

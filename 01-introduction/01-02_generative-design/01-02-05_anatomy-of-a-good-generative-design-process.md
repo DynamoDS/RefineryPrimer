@@ -2,7 +2,7 @@
 
 A general rule for developing good generative design workflows could be:
 
-> Ask & answer as many questions about the activities & aspects involved in each of the [stages of generative design](../01-02_generative-design/01-02-03_what-goes-into-a-generative-design-process/README.md) \(Generate, Analyze, Rank, Evolve, Explore, Integrate\) as you can think about.
+> Ask and answer as many questions about the activities and aspects involved in each of the [stages of generative design](../01-02_generative-design/01-02-03_what-goes-into-a-generative-design-process/README.md) \(Generate, Analyze, Rank, Evolve, Explore, Integrate\) as you can think about.
 
 To guide you through this process, you'll find below a helpful framework, with notes, questions, and pointers. This is by no means an exhaustive list, so please feel free to make it your own - and maybe even contribute to this primer!
 
@@ -48,20 +48,20 @@ For the **Evaluation** phase:
 * How can these aspects be measured or quantified? Is there an existing methodology you can learn from?
 * Evaluation will drive the optimization process, so it contributes significantly to the overall process. As such, poorly defined evaluation criteria will result in less than stellar solutions.
   
-For the **Exploration** & **Evolution** phases:
+For the **Exploration** and **Evolution** phases:
 
 * What key result do you want?  
 * What kind of decision will you be trying to make? Is it choosing a single outcome \(a design solution maybe\), an approach \(comparing multiple classes of solutions\) or something altogether different?
 * What influences that decision?
 
-## Step 3 : Define inputs & outputs
+## Step 3 : Define inputs and outputs
 
-Think about the overall process and the constants & variables in your defined problem & solution?
+Think about the overall process and the constants and variables in your defined problem and solution?
 
 <img src="../../assets/intro/good4.png" style="width:200px;"/>
 
 * Identify which inputs will change for each stage and what are their allowed value ranges.
-* Identify the inputs that will remain the same for all stages & across generated solutions.
+* Identify the inputs that will remain the same for all stages and across generated solutions.
 * The curse of dimensionality: Be careful not to over-complicate your generative design process by adding too many initial inputs and outputs. 
 * Start with the minimal needed inputs and gradually add more if needed as you become more aware of what your design needs.
 * What are you trying to accomplish during this step? Decide if/what you need to measure and if/how that output is communicated to subsequent steps.

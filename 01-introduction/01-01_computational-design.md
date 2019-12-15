@@ -2,7 +2,7 @@
 
 #### What is Computational design? 
 
-**Computational design** is not any one algorithm or off-the-shelf process you can apply. Rather, we describe it as an approach whereby a designer defines a series of **instructions, rules,** and **relationships** that precisely identify the steps necessary to achieve a proposed design and the resulting data or geometry. Crucially, these steps must be computable, meaning they can be understood & calculated by a machine.
+**Computational design** is not any one algorithm or off-the-shelf process you can apply. Rather, we describe it as an approach whereby a designer defines a series of **instructions, rules,** and **relationships** that precisely identify the steps necessary to achieve a proposed design and the resulting data or geometry. Crucially, these steps must be computable, meaning they can be understood and calculated by a machine.
 
 <img src="../assets/intro/compdesign.gif" style="width:200px;"/>
 

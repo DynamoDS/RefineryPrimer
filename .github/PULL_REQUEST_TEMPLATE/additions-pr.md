@@ -7,12 +7,12 @@
 Check these if you believe they are true:
 
 - [ ] The Primer content is in a better state after this PR
-- [ ] The language & tone of voice used are appropriate for this Primer and inclusive
+- [ ] The language and tone of voice used are appropriate for this Primer and inclusive
 - [ ] Proposed changes are according to the [contribution standards](https://github.com/DynamoDS/GenerativePrimer/blob/master/CONTRIBUTING.md)
 - [ ] The Gitbook table of contents (`SUMMARY.md`) file has been updated
 
 Make sure the below can be ticked for this `addition` PR to be considered:
-- [ ] proposed addition has already been discussed & agreed in an issue
+- [ ] proposed addition has already been discussed and agreed in an issue
 - [ ] PR does NOT affect the Gitbook setup other than table of contents
 - [ ] PR does NOT include copyrighted external material
 

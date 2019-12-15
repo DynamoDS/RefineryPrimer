@@ -12,11 +12,11 @@ Project Refinery is currently available as a Beta release, as of March 2019. In 
 
 After signing up for the Beta you will be presented with an overview of the Refinery community. From here you can:
 
-* access detailed instructions on getting started & installation
+* access detailed instructions on getting started and installation
 * access demo/sample files
 * access further learning resources
 * provide feedback and ask questions to the Refinery development team
-* discuss & collaborate with fellow Refinery community members
+* discuss and collaborate with fellow Refinery community members
 
 Any new releases of Refinery will be available to download and install from this location too.
 

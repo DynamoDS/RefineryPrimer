@@ -34,16 +34,16 @@ Let's see how different design goals could be expressed in this _`evaluation`_ s
 
 | Design goal | Analysis method | Ranking method |
 | :--- | :--- | :--- |
-| Lowest cost per desk, with minimum 800mm x 600mm size | desk size: at least 800mm x 600mm in size = _`yes/no`_   &  desk cost: area \* material cost/m² = currency _`$`_ value\) | lowest cost first & only options that satisfy area requirements |
-| Most profitable  \(largest desk area with lowest material cost\) | desk area = outputs m²  &  unit cost \(area \* material cost/m²\) = currency _`$`_ value | largest area & lowest cost |
+| Lowest cost per desk, with minimum 800mm x 600mm size | desk size: at least 800mm x 600mm in size = _`yes/no`_   and  desk cost: area \* material cost/m² = currency _`$`_ value\) | lowest cost first and only options that satisfy area requirements |
+| Most profitable  \(largest desk area with lowest material cost\) | desk area = outputs m²  and  unit cost \(area \* material cost/m²\) = currency _`$`_ value | largest area and lowest cost |
 
 The matrix above showcases how you can use this stage in the generative design process to design for wildly different scenarios.
 
-In the first scenario, lowest overall cost is the driving goal, so we can expect small desk sizes & cheap materials, while still satisfying the size requirement. This scenario would be relatively simple for humans to replicate, so generative design would only come in handy when the variation or complexity of material costs is high.
+In the first scenario, lowest overall cost is the driving goal, so we can expect small desk sizes and cheap materials, while still satisfying the size requirement. This scenario would be relatively simple for humans to replicate, so generative design would only come in handy when the variation or complexity of material costs is high.
 
-For the second scenario, we're optimizing for overall return on investment for each desk, so we can expect larger & more expensive desks than the first one, but that have the best overall ROI. It wouldn't be unexpected for this process to identify a desk with cheap legs & costlier tabletop materials as a viable option.
+For the second scenario, we're optimizing for overall return on investment for each desk, so we can expect larger and more expensive desks than the first one, but that have the best overall ROI. It wouldn't be unexpected for this process to identify a desk with cheap legs and costlier tabletop materials as a viable option.
 
-This second example is a good illustration of using generative design to design for multiple & competing goals, which is very hard for humans to replicate.
+This second example is a good illustration of using generative design to design for multiple and competing goals, which is very hard for humans to replicate.
 
 <img src="../../../assets/intro/furn4.jpg" style="width:200px;"/>
 

@@ -27,7 +27,7 @@ To begin with, information was collected from employees and managers about work 
 * daylight
 * views to the outside
 
-The designers then created an algorithm to measure how any given floor plan can be measured against each of the stated goals above. Known as _`evaluators`_, these algorithms represents the _`analyse`_ & _`rank`_ stages of the generative process.
+The designers then created an algorithm to measure how any given floor plan can be measured against each of the stated goals above. Known as _`evaluators`_, these algorithms represents the _`analyse`_ and _`rank`_ stages of the generative process.
 
 After the algorithms were formulated, the computer used them to evaluate each of the designs generated in the previous stage against the defined goals.
 

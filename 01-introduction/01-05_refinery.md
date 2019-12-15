@@ -10,7 +10,7 @@ The key features of Project Refinery are that it makes it easier to drive a desi
 
 <img src="../assets/intro/refinery2.png" style="width:200px;"/>
 
-In short, Refinery enables users to tackle the *`Generate`*, *`Evaluate`*, *`Evolve`* & *`Explore`* stages of a generative design process.
+In short, Refinery enables users to tackle the *`Generate`*, *`Evaluate`*, *`Evolve`* and *`Explore`* stages of a generative design process.
 
 <img src="../assets/intro/refinery3.png" style="width:200px;"/>
 

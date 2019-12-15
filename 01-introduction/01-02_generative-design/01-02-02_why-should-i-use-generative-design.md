@@ -3,12 +3,12 @@
 In a nutshell, generative design is a goal-driven approach to design that uses automation so that designers and engineers
 
 * have better insight into their designs.
-* can make faster & more informed design decisions. 
+* can make faster and more informed design decisions. 
 * can explore more options using the power of computers.
 
-## Better outcomes & insight
+## Better outcomes and insight
 
-As the designer, you specify what outcomes you want to achieve for your design and how they are measured. With your guidance, the computer produces sets of optimal designs, along with the data to prove which design performs best against your goals. Analyzing how the generated designs measure up against the set goals, you can gain valuable insight into which design aspects impact the outcome & how.
+As the designer, you specify what outcomes you want to achieve for your design and how they are measured. With your guidance, the computer produces sets of optimal designs, along with the data to prove which design performs best against your goals. Analyzing how the generated designs measure up against the set goals, you can gain valuable insight into which design aspects impact the outcome and how.
 
 <img src="../../assets/intro/whyusegen1.gif" style="width:200px;"/>
 
@@ -16,7 +16,7 @@ As the designer, you specify what outcomes you want to achieve for your design a
 
 ## Faster
 
-Generative design can help you find better designs for your project faster, by leveraging what machines are good at: computation & repetition. Computers can generate and evaluate a huge number of design variants in only a fraction of the time it would take an individual designer, allowing you to learn what works & what doesn't at an accelerated pace.
+Generative design can help you find better designs for your project faster, by leveraging what machines are good at: computation and repetition. Computers can generate and evaluate a huge number of design variants in only a fraction of the time it would take an individual designer, allowing you to learn what works and what doesn't at an accelerated pace.
 
 <img src="../../assets/intro/whyusegen2.gif" style="width:200px;"/>
 
