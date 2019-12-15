@@ -2,9 +2,9 @@
 
 In a nutshell, generative design is a goal-driven approach to design that uses automation so that designers and engineers
 
-* have better insight into their designs
-* can make faster & more informed design decisions 
-* can explore more options using the power of computers
+* have better insight into their designs.
+* can make faster & more informed design decisions. 
+* can explore more options using the power of computers.
 
 ## Better outcomes & insight
 

@@ -34,7 +34,7 @@ This graph extracts the underlying surface from the floor geometry and builds pe
 
 ## Visualization
 
-When geometry is created in Dynamo, often other geometry is needed to facilitate the overall process. To ensure the geometry displayed shows the final geometric output, all unnecessary geometry has been switched off. Any nodes with the preview switched off will not display the output visually in Refinery. In this case, only the perimeter lines of the floor plate, the neighborhood boundaries, amenity spaces and office desks will be visible. The amenity spaces are shown in grey to differentiate them from the rest of the geometry. 
+When geometry is created in Dynamo, often other geometry is needed to facilitate the overall process. To ensure the geometry displayed shows the final geometric output, all unnecessary geometry has been switched off. Any nodes with the preview switched off will not display the output visually in Refinery. In this case, only the perimeter lines of the floor plate, the neighborhood boundaries, amenity spaces, and office desks will be visible. The amenity spaces are shown in grey to differentiate them from the rest of the geometry. 
 
 ## Evaluators
 

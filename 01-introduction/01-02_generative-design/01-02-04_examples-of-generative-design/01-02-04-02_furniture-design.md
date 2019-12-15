@@ -20,7 +20,7 @@ You use the computer to generate a series of designs falling within the specifie
 
 > Let's imagine the computer looked at 20 different values for each of: length, width, height, table/leg material combinations. The resulting solution space would be 20\*20\*20\*20 = 160,000 designs, which is way too many options for a person to reasonably evaluate.
 
-_Above: matrix showing 36 generated table designs, varying width, length and height_
+_Above: matrix showing 36 generated table designs, varying width, length, and height_
 
 ### Evaluate
 

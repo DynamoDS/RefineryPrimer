@@ -6,7 +6,7 @@
 
 ## Description
 
-This graph, used with Refinery on *`Randomize`* mode, will generate a series of random towers, sitting across a stipulated site boundary. The tower will randomize in height, floor plate design and orientation allowing for a large amount of potential design solutions within minutes.
+This graph, used with Refinery on *`Randomize`* mode, will generate a series of random towers, sitting across a stipulated site boundary. The tower will randomize in height, floor plate design, and orientation allowing for a large amount of potential design solutions within minutes.
 
 [Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-02-01_Building-mass-generator.zip)
 
@@ -30,7 +30,7 @@ This graph, used with Refinery on *`Randomize`* mode, will generate a series of 
 
 The script is made up of a series of functions, which are divided into groups inside the graph. Each group has a name and a short description, where the name indicates the type of function that is being run and the description explains in more detail the process.
 
-The graph takes the site boundary from Revit, the offset and the U and V values from the user inputs and generates the base floor plate for the new tower inside the allowed space. Using the building height and the floor to floor height, the script then generates all the other floors based on the initial floor plate with slight variations. Once all the floor plates are created, the script then creates the external walls by lofting the outer floor boundaries. 
+The graph takes the site boundary from Revit, the offset, and the U and V values from the user inputs and generates the base floor plate for the new tower inside the allowed space. Using the building height and the floor to floor height, the script then generates all the other floors based on the initial floor plate with slight variations. Once all the floor plates are created, the script then creates the external walls by lofting the outer floor boundaries. 
 
 With the geometry of the building generated, the script then evaluates the design based on the outputs defined. 
 
