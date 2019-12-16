@@ -11,12 +11,11 @@ The graph works by calculating unobstructed distances from light sources to an e
 [Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-03-01_Distributing-lights.zip)
 
 ## Static inputs 
-| Input                              | Description                                                   |
+| Input                              | Description                                                  |
 | :-------------------------------- | :------------------------------------------------------------ |
-| Obstacles                         | The maximum distance between lighting fixtures on the X axis. |
-| Room                              | The maximum distance between lighting fixtures on the Y axis. |
-| Light Power                       | The maximum distance a light source can reach.                |
-| Light Power                       | The maximum distance a light source can reach.                |
+| Obstacles                         | Select Revit model to pull obstruction geometry. This would check possible geometries (walls, columns, curtain panels) that may interfere with light-rays. |
+| Room                              | Select Revit room you wish to perform lighting calculation    |
+| Light Power                       | Maximum distance (mm) a ray can cast                          |
 | Grid Size (mm)                    | Grid of analysis points on which the lighting calculation would be performed. (A smaller grid would result in a more accurate but slower calculation) |
 
 ## Variable inputs
