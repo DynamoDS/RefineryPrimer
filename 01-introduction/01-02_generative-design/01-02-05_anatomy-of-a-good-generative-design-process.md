@@ -68,7 +68,7 @@ Think about the overall process and the constants and variables in your defined 
 
 ## Step 4 : Determine evaluation criteria
 
-Having precise rules for evaluation is critical for a Generative Design process to be successful. Without anything to evaluate, the generative process will produce a random and arbitrary set of designs which may not be of use to any designer.
+Having precise rules for evaluation is critical for a generative design process to be successful. Without anything to evaluate, the generative process will produce a random and arbitrary set of designs which may not be of use to any designer.
 
 <img src="../../assets/intro/good5.png" style="width:200px;"/>
 

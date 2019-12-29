@@ -6,7 +6,7 @@ A fitness function is essentially the objective function for the genetic algorit
 
 <img src="../../assets/deeper/evaluation1.png" style="width:200px;"/>
 
-Some examples of fitness functions that could be used in a Generative Design context include: 
+Some examples of fitness functions that could be used in a generative design context include: 
 
 - Maximize hours of daylight for each desk in an office 
 - Maximize circulation in common areas 
