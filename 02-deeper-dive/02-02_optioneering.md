@@ -19,5 +19,3 @@ The example above illustrates a possible simplified use of optioneering. Imagine
 In the AEC industry instead of ingredients you have variables and instead of cocktail drinks you have design options but the concept remains the same. 
 
 <img src="../assets/deeper/optioneering2.png" style="width:200px;"/>
-
-> Icons on Optioneering graph: Icons made by Smashicons from www.flaticon.com
