@@ -10,13 +10,13 @@ To help illustrate this analogy, let's make a table comparing the expected activ
 
 | map activity | equivalent in generative design process |
 | :--- | :--- |
-| _`person`_ \(you\) sets first parameter: go from Brooklyn to Manhattan | stage: Generate  step: set generation parameters |
-| _`computer`_ generates possible routes from Brooklyn to Manhattan,  taking into consideration all the available transportation modes, their operating status and set routes. | stage: Generate  step: run generation algorithm |
-| _`person`_ sets goals: quickest route | stage: Rank  step: define ranking objectives |
-| _`computer`_ evaluates each of the identified routes based on your goals | stage: Rank  step: run ranking |
-| _`computer`_ attempts to solve your goals and returns the list of routes,  with most suitable ones first | stage: Evolve  step: run evolution |
-| _`person`_ evaluates the list of best options and makes a choice , faster and better than if they had to do all of this work on their own | stage: Explore  step: |
-| _`person`_ chooses preferred route and sends travel instructions to their phone | stage: Integrate   step: integrate preferred option |
+| Person \(you\) sets first parameter: go from Brooklyn to Manhattan | stage: Generate  step: set generation parameters |
+| Computer generates possible routes from Brooklyn to Manhattan,  taking into consideration all the available transportation modes, their operating status and set routes. | stage: Generate  step: run generation algorithm |
+| Person sets goals: quickest route | stage: Rank  step: define ranking objectives |
+| Computer evaluates each of the identified routes based on your goals | stage: Rank  step: run ranking |
+| Computer attempts to solve your goals and returns the list of routes,  with most suitable ones first | stage: Evolve  step: run evolution |
+| Person evaluates the list of best options and makes a choice , faster and better than if they had to do all of this work on their own | stage: Explore  step: |
+| Person chooses preferred route and sends travel instructions to their phone | stage: Integrate   step: integrate preferred option |
 
 ## Alternate Goals
 
