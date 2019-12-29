@@ -16,7 +16,7 @@ As the designer, you specify what outcomes you want to achieve for your design a
 
 ## Faster
 
-Generative design can help you find better designs for your project faster, by leveraging what machines are good at: computation and repetition. Computers can generate and evaluate a huge number of design variants in only a fraction of the time it would take an individual designer, allowing you to learn what works and what doesn't at an accelerated pace.
+Generative design can help you find better designs for your project faster, by leveraging what computers are good at: computation and repetition. Computers can generate and evaluate a huge number of design variants in only a fraction of the time it would take an individual designer, allowing you to learn what works and what doesn't at an accelerated pace.
 
 <img src="../../assets/intro/whyusegen2.gif" style="width:200px;"/>
 

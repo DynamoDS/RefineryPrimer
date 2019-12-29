@@ -8,7 +8,7 @@ An objective function is the output that you want to maximize or minimize. It is
 In generative design workflows, we are not limited to one objective (single objective optimization) we can also have multiple objectives or goals that we are trying to optimise our design against (multi-objective optimization).   
 
 ## Single Objective Optimization
-When we have only one objective function, the system will return one optimal solution eg. return surface with largest area.
+When we have only one objective function, the computer will return one optimal solution eg. return surface with largest area.
 
 ## Multi Objective Optimization
 
