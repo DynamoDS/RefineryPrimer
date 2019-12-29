@@ -8,7 +8,7 @@ Using this breakdown, let's look at what the _`Generate`_ stage would entail.
 
 <img src="../../../assets/intro/anatomy1.png" style="width:200px;"/>
 
-For the _`define`_ step, the expertise of the designer is needed to
+For the _`define`_ step, the expertise of the designer is needed to do the following:
 
 * establish the generation algorithm: the logic defining how designs are generated, which may include things like constraints and rules.
 * provide the generation parameters: the variables or inputs needed by the previously-defined algorithm
