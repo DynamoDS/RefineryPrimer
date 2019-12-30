@@ -1,6 +1,6 @@
 # Initialization Phase 
 
-The genetic algorithm kicks off with an initial population from which selection is to occur. Each "individual", or design option, in the population is a potential solution to the design problem. Individuals each have a **unique set of features**; long legs, short legs, wide top, thin top, heavy, light, etc. These features are the design options genes, and is what we use to evolve our design. Some of these features are desirable, others are not. The algorithm leverages these differences to converge to the best possible solution.
+The genetic algorithm kicks off with an initial population from which selection is to occur. Each "individual", or design option, in the population is a potential solution to the design problem. Individuals each have a unique set of features; long legs, short legs, wide top, thin top, heavy, light, etc. These features are the design options genes and is what we use to evolve our design. Some of these features are desirable, others are not. The algorithm leverages these differences to converge to the best possible solution.
 
 <img src="../../assets/deeper/initialization1.png" style="width:200px;"/>
 

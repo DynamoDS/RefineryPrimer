@@ -2,7 +2,7 @@
 
 #### What is Optioneering?
 
-Optioneering involves creating design options that are not guided by outcomes while they are being created. Optioneering methods can be used to **explore a design space quickly when you might not know what metrics you want to optimize for yet**. After performing optioneering, the designer can sort and filter design variants to identify options that are particularly aligned with her design objectives.
+Optioneering involves creating design options that are not guided by outcomes while they are being created. Optioneering methods can be used to explore a design space quickly when you might not know what metrics you want to optimize for yet. After performing optioneering, the designer can sort and filter design variants to identify options that are particularly aligned with her design objectives.
 
 <img src="../assets/deeper/optioneering1.png" style="width:200px;"/>
 
@@ -10,7 +10,7 @@ The example above illustrates a possible simplified use of optioneering. Imagine
 
 #### Advantages
 
-* Gives you a direct relation between **variables** \(input\) and **design results** \(output\)
+* Gives you a direct relation between _`variables`_ \(input\) and _`design results`_ \(output\)
 * Easy to create constrains limiting the design span that you want to explore. 
 * Enables changing variables manually. 
 

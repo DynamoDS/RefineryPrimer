@@ -22,7 +22,7 @@ You can see here that these suggestions are always framed as either a maximizati
 
 Another consideration is that it is desirable for fitness functions to be calculated very efficiently by a computer. That is, a good fitness function can be calculated fast. With experience, a user comes to learn which kinds of fitness functions are likely to be particularly fast or slow. 
 
-One of the great strengths of a genetic approach is that the fitness function can be quite complicated. In fact, a single genetic model can have multiple competing fitness functions or even a single fitness function that is a combination of several others (minimize the weight of a design while also making it as structurally sound as possible, for example). This is also known as Multi Objective Optimization and Single Objective Optimization. 
+One of the great strengths of a genetic approach is that the fitness function can be quite complicated. In fact, a single genetic model can have multiple competing fitness functions or even a single fitness function that is a combination of several others (minimize the weight of a design while also making it as structurally sound as possible, for example). This is also known as multi objective optimization and single objective optimization. 
 
 <img src="../../assets/deeper/evaluation3.png" style="width:200px;"/>
 

@@ -2,7 +2,7 @@
 
 <img src="../assets/intro/visual1.png" style="width:200px;"/>
 
-Visual programming is a form of coding that, unlike textual programming, does not require compiling code or familiarity with a textual programming language \(like C\# or Python\). Instead, it uses a **visual interface** where a user **connects small nodes** **of pre-defined functionality**. Together, these nodes form a larger network of functionality that can achieve complex goals. This approach is easier to learn and makes tasks that were previously reserved for expert coders accessible to everyone.
+Visual programming is a form of coding that, unlike textual programming, does not require compiling code or familiarity with a textual programming language \(like C\# or Python\). Instead, it uses a visual interface where a user connects small nodes of pre-defined functionality. Together, these nodes form a larger network of functionality that can achieve complex goals. This approach is easier to learn and makes tasks that were previously reserved for expert coders accessible to everyone.
 
 <img src="../assets/intro/visual2.png" style="width:200px;"/>
 
