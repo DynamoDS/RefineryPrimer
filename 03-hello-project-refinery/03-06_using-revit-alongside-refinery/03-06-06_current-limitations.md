@@ -1,9 +1,9 @@
 # Current Limitations
 
-Known limitations of the *`Data.Remember`* node:
+The *`Data.Remember`* node has the following known limitations:
 
-* currently only works with the following data types:
+* It currently only works with the following data types:
   * strings
   * numbers
   * raw dynamo geometry (points, lines, surfaces, solids etc)
-* with version 0.4.26 of Refinery the node does not  yet support nested lists
+* In version 0.4.26 of Refinery the node does not  yet support nested lists

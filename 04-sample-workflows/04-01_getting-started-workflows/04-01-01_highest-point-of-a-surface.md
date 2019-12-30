@@ -24,7 +24,7 @@ U and V values are used to move the sphere across the surface. Since these value
 
 In order to know when the sphere is at the highest peak, a measure of the Z-value is made every time the sphere moves, this represents the *`fitness value`*.
 
-When running this graph in Refinery:
+When running this graph in Refinery follow these steps:
 
 * Use the *`Optimize`* generation method
 * Under Inputs make sure that all inputs are checked

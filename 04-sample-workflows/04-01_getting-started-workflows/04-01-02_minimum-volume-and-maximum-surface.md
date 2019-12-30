@@ -41,7 +41,7 @@ Whenever an input parameter is changed the option's volume and total surface are
 
 <br/>
 
-When running this graph in Refinery:
+When running this graph in Refinery follow these steps:
 
 * Use the *`Optimize`* generation method
 * Under Inputs make sure that all inputs are checked

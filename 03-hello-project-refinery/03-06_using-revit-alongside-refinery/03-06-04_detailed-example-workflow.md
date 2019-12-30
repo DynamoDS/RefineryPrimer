@@ -51,7 +51,7 @@ The generator of the script determines how Refinery will move the point around t
 <br/>
 
 ## Evaluators
-The evaluator of the script determines how each design option scores in relation to our overall goal. Remember the goal of this workflow was to maximize the views to outside. To enable this, we have a custom node that takes in:
+The evaluator of the script determines how each design option scores in relation to our overall goal. Remember the goal of this workflow was to maximize the views to outside. To enable this, we have a custom node that takes in the following inputs:
 * view segments (windows)
 * origin (point location)
 * boundary (overall floor plate)

@@ -10,8 +10,8 @@ Using this breakdown, let's look at what the _`Generate`_ stage would entail.
 
 For the _`define`_ step, the expertise of the designer is needed to do the following:
 
-* establish the generation algorithm: the logic defining how designs are generated, which may include things like constraints and rules.
-* provide the generation parameters: the variables or inputs needed by the previously-defined algorithm
+* Establish the generation algorithm: the logic defining how designs are generated, which may include things like constraints and rules.
+* Provide the generation parameters: the variables or inputs needed by the previously-defined algorithm.
 
 This _`define`_ step is present and vital for all stages of the generative design process. The validity of outputs relies on the quality of the designer’s contribution. With clear and concise logic, the computer can provide suitable outputs.
 

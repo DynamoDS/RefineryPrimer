@@ -14,12 +14,12 @@ In short, Refinery enables users to tackle the *`Generate`*, *`Evaluate`*, *`Evo
 
 <img src="../assets/intro/refinery3.png" style="width:200px;"/>
 
-As a technical note, Refinery:
+As a technical note, Refinery works by doing the following:
 
-* allows a user to leverage Dynamo Package Manager and run custom nodes \(including Python nodes\)
-* runs locally on a user’s computer 
-* can be accessed from Dynamo for Revit or Dynamo Sandbox
-* includes a node to cache Revit or other external data without the need to rely on external processes that could be computationally expensive.
+* It allows a user to leverage Dynamo Package Manager and run custom nodes \(including Python nodes\)
+* It runs locally on a user’s computer 
+* It can be accessed from Dynamo for Revit or Dynamo Sandbox
+* It includes a node to cache Revit or other external data without the need to rely on external processes that could be computationally expensive.
 
 Project Refinery is currently available as a Beta release, as of February 2019: [https://www.autodesk.com/solutions/refinery-beta](https://www.autodesk.com/solutions/refinery-beta)
 
