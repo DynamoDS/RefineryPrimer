@@ -54,7 +54,7 @@ The graph can be filtered by dragging the selection on each vertical axis.
 
 <br/>
 
-## Choosing the right Visualization
+## Choosing the Right Visualization
 
 The kind of visualization you choose for your project may vary depending on what kind of process you are running. If you are running an *`optioneering`* process, it can be beneficial to visualize it using a parallel coordinates chart as it will be easier to filter options, while visualizing a multi-objective *`optimization`* using a scatterplot chart will make it easier to find the best trade-off between two objectives.
 

@@ -1,4 +1,4 @@
-# Anatomy of each stage
+# Anatomy of Each Stage
 
 Each of these stages can be further broken down into _`define`_, _`run`_ and _`results`_ steps. The _`define`_ step is the responsibility of the designer while the _`run`_ and _`results`_ steps are performed by the computer.
 

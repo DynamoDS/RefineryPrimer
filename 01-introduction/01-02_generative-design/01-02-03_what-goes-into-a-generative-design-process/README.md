@@ -1,4 +1,4 @@
-# What goes into a Generative Design Process?
+# What Goes into a Generative Design Process?
 
 ## Stages
 

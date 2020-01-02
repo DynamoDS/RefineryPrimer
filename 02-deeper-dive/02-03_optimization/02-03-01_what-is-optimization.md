@@ -1,4 +1,4 @@
-# What is Optimization?
+# What Is Optimization?
 
 <img src="../../assets/deeper/whatisoptimization.png" style="width:200px;"/>
 

@@ -1,4 +1,4 @@
-# Are There Examples of Other Techniques That Could be Used to Solve This Problem? 
+# Are There Examples of Other Techniques That Could Be Used to Solve This Problem?
 
 <img src="../assets/deeper/othertechniques.png" style="width:200px;"/>
 

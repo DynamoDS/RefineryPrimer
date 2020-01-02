@@ -1,4 +1,4 @@
-# The Mutation Phase 
+# Mutation Phase 
 Here, randomness is introduced to algorithm. With mutation, at each crossover, with a low probability, certain offspring are subject to random mutations, meaning some of their traits randomly change (I.e., mutate) and are not inherited from their parents. 
 
 <br/>

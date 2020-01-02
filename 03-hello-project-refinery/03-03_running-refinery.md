@@ -2,7 +2,7 @@
 
 Refinery can be run using different methods. In the Refinery window you can chooses from four different Generation Methods, all of these methods are Refinery's Solvers, a further explanation of what Solvers are can be found in [section 02-01-04](../02-deeper-dive/02-01_algorithms/02-01-04_solvers.md).
 
-## How to run an optioneering process using Refinery
+## How to Run an Optioneering Process Using Refinery
 
 An optioneering process lets you explore all possible solutions that the graph can produce. Refinery will generate the solutions based on the constraints that were defined in the Dynamo graph.
 
@@ -26,7 +26,7 @@ To run an optioneering process in Refinery, follow these steps:
 
 <br/>
 
-## How to run an optimization process using Refinery
+## How to Run an Optimization Process Using Refinery
 
 An optimization process lets Refinery evolve your design to find the most suitable options based on the constraints and goals provided. Refinery will run multiple generations of options, each time it will take the fittest \(best\) options of the generation, and use them to create a new generation. Refinery is using [NSGA-II](https://www.iitk.ac.in/kangal/Deb_NSGA-II.pdf "NSGA-II"), an elitist multi objective genetic algorithm to optimise results.
 

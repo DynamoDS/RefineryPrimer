@@ -10,7 +10,7 @@ This graph will move and rotate the position of a selected mass within a site bo
 
 [Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-02-02_Building-positioning.zip)
 
-## Static inputs
+## Static Inputs
 
 | Name| Input Description | 
 | :--- | :--- |
@@ -21,7 +21,7 @@ This graph will move and rotate the position of a selected mass within a site bo
 | Floor height          | Floor to floor height used on the solar analysis |
 | Location coordinates  | The real-world coordinates used for the solar analysis |
 
-## Variable inputs
+## Variable Inputs
 
 | Name    | Description |
 | :--- | :--- |

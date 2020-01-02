@@ -1,4 +1,4 @@
-# Using Data from Revit in Refinery
+# Using Data From Revit in Refinery
 
 Using Refinery alongside Revit can be a very powerful approach to quickly explore multiple design options. In order to achieve this, there is a particular workflow that needs to be followed. 
 

@@ -1,4 +1,4 @@
-# How to test Revit data capture
+# How to Test Revit Data Capture
 
 A  workflow for using Revit data consists of the following steps:
 

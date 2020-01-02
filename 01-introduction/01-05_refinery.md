@@ -1,7 +1,5 @@
 # Refinery
 
-**What is Refinery?** 
-
 Project Refinery is Autodesk’s latest application for generative design workflows that allows users to explore, evaluate, and optimize their Dynamo designs. Refinery allows users to set multiple \(and sometimes, competing\) design goals, generates a series of solutions, and enables the user to make decisions by automating the creation and evaluation of designs.
 
 <img src="../assets/intro/refinery1.png" style="width:200px;"/>

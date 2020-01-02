@@ -1,6 +1,6 @@
 # Evaluation Phase
 
-## What do you mean by ‘fitness’? 
+## What do You Mean by ‘Fitness’? 
 
 A fitness function is essentially the objective function for the genetic algorithm; it's the criterion you want to maximize or minimize, the thing you care most about achieving. A fitness function is used to evaluate how close (or far) a given design solution is from achieving the designer’s goals. The genetic algorithm is designed to drive the model to higher and higher fitness, so defining a fitness function precisely and accurately is vital. 
 

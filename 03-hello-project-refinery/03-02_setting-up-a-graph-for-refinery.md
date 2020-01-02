@@ -1,4 +1,4 @@
-# Setting up a Graph for Refinery
+# Setting Up a Graph for Refinery
 
 ## Inputs
 

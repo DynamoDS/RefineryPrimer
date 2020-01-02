@@ -1,4 +1,4 @@
-# Workflow 3 : Create office layout
+# Workflow 3 : Create Office Layout
 
 <p align="center">
   <img src="../../assets/sample/workflow31.gif"">
@@ -10,7 +10,7 @@ This graph will generate a series of desk layouts based on a floor plate and nei
 
 [Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-02-03_Office-layout.zip)
 
-## Static inputs
+## Static Inputs
 
 | Name  | Description |
 | :--- | :--- |
@@ -20,7 +20,7 @@ This graph will generate a series of desk layouts based on a floor plate and nei
 | Desk depth               | Depth of the office desk (mm) |
 | Back to back tolerance   | Distance between two desks where people would be sat back to back (mm) |
 
-## Variable inputs
+## Variable Inputs
 
 | Name    | Description |
 | :--- | :--- |

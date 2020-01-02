@@ -1,6 +1,6 @@
 # Optioneering
 
-#### What is Optioneering?
+#### What Is Optioneering?
 
 Optioneering involves creating design options that are not guided by outcomes while they are being created. Optioneering methods can be used to explore a design space quickly when you might not know what metrics you want to optimize for yet. After performing optioneering, the designer can sort and filter design variants to identify options that are particularly aligned with her design objectives.
 

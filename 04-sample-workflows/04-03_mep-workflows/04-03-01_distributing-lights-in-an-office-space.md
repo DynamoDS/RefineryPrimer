@@ -1,4 +1,4 @@
-# Workflow 3 : Create office layout
+# Workflow 3 : Create Office Layout
 
 <p align="center">
   <img src="../../assets/sample/workflowmep1.gif"">
@@ -10,7 +10,7 @@ The graph works by calculating unobstructed distances from light sources to an e
 
 [Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-03-01_Distributing-lights.zip)
 
-## Static inputs 
+## Static Inputs 
 | Input                              | Description                                                  |
 | :-------------------------------- | :------------------------------------------------------------ |
 | Obstacles                         | Select Revit model to pull obstruction geometry. This would check possible geometries (walls, columns, curtain panels) that may interfere with light-rays. |
@@ -18,7 +18,7 @@ The graph works by calculating unobstructed distances from light sources to an e
 | Light Power                       | Maximum distance (mm) a ray can cast                          |
 | Grid Size (mm)                    | Grid of analysis points on which the lighting calculation would be performed. (A smaller grid would result in a more accurate but slower calculation) |
 
-## Variable inputs
+## Variable Inputs
 | Name                              | Description                                                   |
 | :-------------------------------- | :------------------------------------------------------------ |
 | Lighting Max Width Distance (mm)  | The maximum distance between lighting fixtures on the X axis. |
