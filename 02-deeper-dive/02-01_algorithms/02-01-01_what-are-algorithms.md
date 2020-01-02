@@ -6,7 +6,7 @@ There has been a sudden hype towards algorithms, mystifying them and giving them
 
 <img src="../../assets/deeper/whatarealgorithms.png" style="width:200px;"/>
 
-**Algorithms in Generative Design**
+## Algorithms in Generative Design
 
 A generative design approach involves several distinct steps with distinct kinds of algorithms to encode logic at each step. The types of methods used in each step are very different from each other, so we generally categorize them as follows:
 
