@@ -17,4 +17,4 @@ Some good questions to ask when formulating design goals are:
 - What would you like to minimize? And why? 
 - Can your maximization or minimization question be quantified mathematically? If so, how precisely?
 
-Being able to confidently answer at least some of the above, is a good first step to home in on precisely what objectives your computational procedure should have.
+Being able to confidently answer at least some of the above, is a good first step to hone in on precisely what objectives your computational procedure should have.
