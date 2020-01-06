@@ -1,3 +1,3 @@
-# Refinery Toolkit
+# Refinery Toolkit Installation
 
-Provide link to the Refinery Toolkit when it is released. 
+A link would be provided when the Refinery Toolkit is released. 

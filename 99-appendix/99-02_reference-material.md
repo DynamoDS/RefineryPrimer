@@ -8,7 +8,7 @@
 - [Dynamo Primer](https://primer.dynamobim.org/)
 - [Dynamo learning materials](https://dynamobim.org/learn/)
 
-#### Dynamo questions & inspiration
+#### Dynamo Questions and Inspiration
 
 - [Dynamo Forum](https://forum.dynamobim.org/)
 - [Dynamo gallery](https://www.dynamobim.org/)
@@ -25,7 +25,7 @@
 - [Refinery main page](https://www.autodesk.com/solutions/refinery-beta)
 - [Refinery beta project page](https://beta.autodesk.com/key/RefineryLanding)
 
-## Generative design 
+## Generative Design 
 
 - [General blog posts](https://medium.com/generative-design) on Medium.com
 - [Design Modeling Terminology](https://archinate.files.wordpress.com/2018/06/dstasiuk-design-modeling-terminology1.pdf) by [Nathan Miller](https://github.com/archinate)

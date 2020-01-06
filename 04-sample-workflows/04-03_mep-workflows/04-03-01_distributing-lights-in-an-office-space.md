@@ -1,4 +1,4 @@
-# Workflow 3 : Create office layout
+# Workflow 3 : Create Office Layout
 
 <p align="center">
   <img src="../../assets/sample/workflowmep1.gif"">
@@ -10,16 +10,15 @@ The graph works by calculating unobstructed distances from light sources to an e
 
 [Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-03-01_Distributing-lights.zip)
 
-## Static inputs 
-| Input                              | Description                                                   |
+## Static Inputs 
+| Input                              | Description                                                  |
 | :-------------------------------- | :------------------------------------------------------------ |
-| Obstacles                         | The maximum distance between lighting fixtures on the X axis. |
-| Room                              | The maximum distance between lighting fixtures on the Y axis. |
-| Light Power                       | The maximum distance a light source can reach.                |
-| Light Power                       | The maximum distance a light source can reach.                |
+| Obstacles                         | Select Revit model to pull obstruction geometry. This would check possible geometries (walls, columns, curtain panels) that may interfere with light-rays. |
+| Room                              | Select Revit room you wish to perform lighting calculation    |
+| Light Power                       | Maximum distance (mm) a ray can cast                          |
 | Grid Size (mm)                    | Grid of analysis points on which the lighting calculation would be performed. (A smaller grid would result in a more accurate but slower calculation) |
 
-## Variable inputs
+## Variable Inputs
 | Name                              | Description                                                   |
 | :-------------------------------- | :------------------------------------------------------------ |
 | Lighting Max Width Distance (mm)  | The maximum distance between lighting fixtures on the X axis. |
@@ -31,7 +30,7 @@ The script is made up of a series of functions, which are divided into groups in
 The graph places an evenly distributed number of analysis points within the floor of the room selected. It also places a grid of light sources along the ceiling of the room, defined by the variable inputs. A ray records the distance from each light source to analysis point, each analysis point is colored according to the total amount of light received by all light sources. The ray trace is only considered if no geometries obstruct its way.  
 Using optimization, both number of light sources and overlit analysis points are minimized while maximizing the overall number of lit points withing the room.
 ## Visualization
-When geometry is created in Dynamo, often other geometry is needed to facilitate the overall process. To ensure the geometry displayed shows the final geometric output, all unnecessary geometry has been switched off. Any nodes with the preview switched off will not display the output visually in Refinery. In this case, only the obstructing geometry, light sources and final coloured analysis points are visible. The analysis points are coloured from blue (less illuminated) to red (more illuminated).
+When geometry is created in Dynamo, often other geometry is needed to facilitate the overall process. To ensure the geometry displayed shows the final geometric output, all unnecessary geometry has been switched off. Any nodes with the preview switched off will not display the output visually in Refinery. In this case, only the obstructing geometry, light sources, and final coloured analysis points are visible. The analysis points are coloured from blue (less illuminated) to red (more illuminated).
 ## Evaluators
 | Name          | Description                                            |
 | :------------ | :----------------------------------------------------- |

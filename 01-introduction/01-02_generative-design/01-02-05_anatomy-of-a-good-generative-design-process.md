@@ -2,13 +2,13 @@
 
 A general rule for developing good generative design workflows could be:
 
-> Ask & answer as many questions about the activities & aspects involved in each of the [stages of generative design](../01-02_generative-design/01-02-03_what-goes-into-a-generative-design-process/README.md) \(Generate, Analyze, Rank, Evolve, Explore, Integrate\) as you can think about.
+> Ask and answer as many questions about the activities and aspects involved in each of the [stages of generative design](../01-02_generative-design/01-02-03_what-goes-into-a-generative-design-process/README.md) \(Generate, Analyze, Rank, Evolve, Explore, Integrate\) as you can think about.
 
-To guide you through this process, you'll find below a helpful framework, with notes, questions and pointers. This is by no means an exhaustive list, so please feel free to make it your own - and maybe even contribute to this primer!
+To guide you through this process, you'll find below a helpful framework, with notes, questions, and pointers. This is by no means an exhaustive list, so please feel free to make it your own - and maybe even contribute to this primer!
 
 <img src="../../assets/intro/good1.png" style="width:200px;"/>
 
-## Step 1 : Define your problem
+## Step 1 : Define Your Problem
 
 Have a clear understanding of what you want to achieve, asking yourself:
 
@@ -29,7 +29,7 @@ Answering these questions not only clarifies the problem in your mind. It also h
 
 As a designer, you wouldn't sign up to design the school without a sufficiently defined brief. This step is critically important, since a generative process cannot consider any goals that it has not been instructed to consider.
 
-## Step 2 : Sketch it out
+## Step 2 : Sketch It Out
 
 Now that you've written down a rough definition of the problem, it's time to look at potential solutions! Start with the end design in mind, remembering what you want to achieve and work backwards from there, letting each section guide the next one. Don't be afraid to draw, diagram, mind-map or use any other technique you prefer to help you document the following.
 
@@ -48,33 +48,33 @@ For the **Evaluation** phase:
 * How can these aspects be measured or quantified? Is there an existing methodology you can learn from?
 * Evaluation will drive the optimization process, so it contributes significantly to the overall process. As such, poorly defined evaluation criteria will result in less than stellar solutions.
   
-For the **Exploration** & **Evolution** phases:
+For the **Exploration** and **Evolution** phases:
 
 * What key result do you want?  
 * What kind of decision will you be trying to make? Is it choosing a single outcome \(a design solution maybe\), an approach \(comparing multiple classes of solutions\) or something altogether different?
 * What influences that decision?
 
-## Step 3 : Define inputs & outputs
+## Step 3 : Define Inputs and Outputs
 
-Think about the overall process and the constants & variables in your defined problem & solution?
+Think about the overall process and the constants and variables in your defined problem and solution?
 
 <img src="../../assets/intro/good4.png" style="width:200px;"/>
 
 * Identify which inputs will change for each stage and what are their allowed value ranges.
-* Identify the inputs that will remain the same for all stages & across generated solutions.
+* Identify the inputs that will remain the same for all stages and across generated solutions.
 * The curse of dimensionality: Be careful not to over-complicate your generative design process by adding too many initial inputs and outputs. 
 * Start with the minimal needed inputs and gradually add more if needed as you become more aware of what your design needs.
 * What are you trying to accomplish during this step? Decide if/what you need to measure and if/how that output is communicated to subsequent steps.
 
-## Step 4 : Determine evaluation criteria
+## Step 4 : Determine Evaluation Criteria
 
-Having precise rules for evaluation is critical for a Generative Design process to be successful. Without anything to evaluate, the generative process will produce a random and arbitrary set of designs which may not be of use to any designer.
+Having precise rules for evaluation is critical for a generative design process to be successful. Without anything to evaluate, the generative process will produce a random and arbitrary set of designs which may not be of use to any designer.
 
 <img src="../../assets/intro/good5.png" style="width:200px;"/>
 
 Adding evaluation criteria to a computational process makes it more complex, but also more realistic and relevant to the designer’s needs. While adding evaluation conditions that say “make the largest table possible” and “use the fewest materials possible” make the model complex \(there is now an unavoidable tradeoff that must be considered\), they also directly target what the designer is most interested in \(a big table at minimum cost\). Algorithms perform best when these conditions are combined and a solution that balances them must be found.
 
-## Step 5 : Decide how to use the results
+## Step 5 : Decide How to Use the Results
 
 To get the most out of your generative design process, remember that the final step isn't necessarily where the process ends, so ask yourself some of the following questions.
 

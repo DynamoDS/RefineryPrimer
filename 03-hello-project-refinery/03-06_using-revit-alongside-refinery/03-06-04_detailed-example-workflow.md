@@ -1,8 +1,8 @@
-# Detailed example workflow
+# Detailed Example Workflow
 
 In the following example, we will use the steps from the previous section, and cache data from Revit. We will then perform an optimization process using Refinery to find the optimum solution before pushing the result back to Revit.
 
-*All sample files for this example can be found in the [`06-00_sample_files`](https://github.com/DynamoDS/RefineryPrimer/tree/master/06-using-revit-alongside-refinery/06-00_sample_files) folder in the Github repository* 
+*All sample files for this example can be found in the [`04_sample_files`](https://github.com/DynamoDS/RefineryPrimer/releases) folder in the Github repository* 
 
 ## About
 The intention of this workflow is to find the best location for a desk in the office floor plate, where it maximizes the number of views to the outside. To do this the information we need to cache in the *`Data.Remember`* node is all the geometry relating to the bounding elements of the room (walls, doors, windows and internal obstructions).
@@ -17,7 +17,7 @@ The intention of this workflow is to find the best location for a desk in the of
 
 With this data, we will use Refinery to perform an optimization process to determine the best location for the desk from the thousands of permutations, before using the result and pushing the value back into Revit.
 
-## Script creation
+## Script Creation
 The first step is to create our script. Remember, our script needs to contain both the generator to create the different options and the evaluators to assess the performance of each option against our criteria.
 
 <br/>
@@ -28,7 +28,7 @@ The first step is to create our script. Remember, our script needs to contain bo
 
 <br/>
 
-## Data.Remember node
+## Data.Remember Node
 In this example, there is a little work needed to extract the correct geometry from each of the Revit elements. For this workflow we require a set of polygons across a common plane. We extract this information from the walls, windows and internal columns through a combination of nodes in Dynamo. Once we have this geometry, we can use the *`Data.Remember`* node to cache the values in the script.
 
 <br/>
@@ -51,7 +51,7 @@ The generator of the script determines how Refinery will move the point around t
 <br/>
 
 ## Evaluators
-The evaluator of the script determines how each design option scores in relation to our overall goal. Remember the goal of this workflow was to maximize the views to outside. To enable this, we have a custom node that takes in:
+The evaluator of the script determines how each design option scores in relation to our overall goal. Remember the goal of this workflow was to maximize the views to outside. To enable this, we have a custom node that takes in the following inputs:
 * view segments (windows)
 * origin (point location)
 * boundary (overall floor plate)

@@ -1,10 +1,10 @@
-# What are Genetic Algorithms?
+# What Are Genetic Algorithms?
 
-A genetic algorithm - specifically _`NSGA-II`_ \([https://www.iitk.ac.in/kangal/Deb\_NSGA-II.pdf](https://www.iitk.ac.in/kangal/Deb_NSGA-II.pdf)\), is a kind of **optimization algorithm** that is popular in generative design applications. In technical speak, it is an example of an _“adaptive heuristic algorithm”_. You might also hear it referred to as an “evolutionary algorithm”. Genetic algorithms tend to be very useful when your objective function is highly complex, subject to randomness, or is discontinuous.
+A genetic algorithm - specifically _`NSGA-II`_ \([https://www.iitk.ac.in/kangal/Deb\_NSGA-II.pdf](https://www.iitk.ac.in/kangal/Deb_NSGA-II.pdf)\), is a kind of _`optimization algorithm`_ that is popular in generative design applications. In technical speak, it is an example of an _“adaptive heuristic algorithm”_. You might also hear it referred to as an “evolutionary algorithm”. Genetic algorithms tend to be very useful when your objective function is highly complex, subject to randomness, or is discontinuous.
 
 <img src="../../assets/deeper/whatisgenetic1.png" style="width:200px;"/>
 
-Genetic algorithms were **inspired by the process of evolution** **by natural selection**; in a genetic algorithm the _“fittest”_ individuals \(i.e., potential solutions\) are selected for reproduction and their _“genes”_ are passed on to future generations. When doing generative design we can think of _"genes"_ as the parameters of our model. These are the values that drive our design and will either consist of a single value or a range of acceptable values.
+Genetic algorithms were **inspired by the process of evolution by natural selection**; in a genetic algorithm the _“fittest”_ individuals \(i.e., potential solutions\) are selected for reproduction and their _“genes”_ are passed on to future generations. When doing generative design we can think of _"genes"_ as the parameters of our model. These are the values that drive our design and will either consist of a single value or a range of acceptable values.
 
 <img src="../../assets/deeper/whatisgenetic2.png" style="width:200px;"/>
 

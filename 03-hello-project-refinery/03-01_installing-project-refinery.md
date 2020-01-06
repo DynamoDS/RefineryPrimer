@@ -1,4 +1,4 @@
-# Getting Started with Project Refinery
+# Getting Started With Project Refinery
 
 Project Refinery is currently available as a Beta release, as of March 2019. In order to use Refinery, you need to sign up to the Refinery community, using your Autodesk credentials at the following website:
 
@@ -10,13 +10,13 @@ Project Refinery is currently available as a Beta release, as of March 2019. In 
 
 ## The Refinery Community
 
-After signing up for the Beta you will be presented with an overview of the Refinery community. From here you can:
+After signing up for the Beta you will be presented with an overview of the Refinery community. From here you can do the following:
 
-* access detailed instructions on getting started & installation
-* access demo/sample files
-* access further learning resources
-* provide feedback and ask questions to the Refinery development team
-* discuss & collaborate with fellow Refinery community members
+* Access detailed instructions on getting started and installation.
+* Access demo/sample files.
+* Access further learning resources.
+* Provide feedback and ask questions to the Refinery development team.
+* Discuss and collaborate with fellow Refinery community members.
 
 Any new releases of Refinery will be available to download and install from this location too.
 

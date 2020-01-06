@@ -9,7 +9,7 @@ When filing an issue, please make sure to
 - use one of the provided issue templates
 - answer all questions contained in the issue templates
 
-[**Improvement & corrections issue template**](.github/ISSUE_TEMPLATE/improvement.md)
+[**Improvement and corrections issue template**](.github/ISSUE_TEMPLATE/improvement.md)
       
 Use this issue template when you have identified a potential improvement or correction needed to the content of the Primer. Changes discussed or proposed in these issues will not include new content beyond text edits required in existing files.
 
@@ -71,7 +71,7 @@ DOs and DON'Ts
 
 Please do:
 
-* **DO** follow similar language & tone of voice
+* **DO** follow similar language and tone of voice
 * **DO** try to keep material accessible to a wide audience
 * **DO** use British English spelling
 * **DO** keep the discussions focused. When a new or related topic comes up

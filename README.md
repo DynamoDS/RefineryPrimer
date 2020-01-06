@@ -16,7 +16,7 @@ Autodesk is working to **democratize technologies** that can help designers in t
 
 <img src="assets/welcome/whyprimer.png" style="width:200px;"/>
 
-Using these technologies requires new skills and new ways to think about design. We created this primer to explain the terminology, ideas and methods you will need to understand to begin using generative design workflows and tools that support this new approach to design.
+Using these technologies requires new skills and new ways to think about design. We created this primer to explain the terminology, ideas, and methods you will need to understand to begin using generative design workflows and tools that support this new approach to design.
 
 *Note: there are many different applications of generative design/art, and this primer does not aim to cover them all. This primer is focused on AEC methodologies and how these apply to both Project Refinery/Dynamo*
 
@@ -44,7 +44,7 @@ refineryfeedback@autodesk.com
 
 Copyright 2019 Autodesk
 
-Licensed under the Apache License, Version 2.0 \(the "License"\); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 \(the "License"\); you may not use this file except in compliance with the License. You may obtain a copy of the License at the following link:
 
 [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 

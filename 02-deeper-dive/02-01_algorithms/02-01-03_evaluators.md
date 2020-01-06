@@ -12,4 +12,3 @@ Again, in the simple Dynamo example below, the nodes that are highlighted demons
 
 <img src="../../assets/deeper/evaluators2.png" style="width:200px;"/>
 
-> Giraffe: Icon made by Freepik from www.flaticon.com

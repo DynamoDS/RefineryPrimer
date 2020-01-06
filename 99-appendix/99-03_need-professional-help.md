@@ -28,7 +28,7 @@ As a Computational Designer, you'll be responsible for developing and encoding o
 - Experienced in visual scripting languages (such as Autodesk Dynamo)
 - Familiarity with basic/intermediate level computer programming concepts and scripting languages (Python, C#, DesignScript)
  
-### For the core developer hire(s), suggesting to add the following to their qualifications:
+### For the Core Developer Hire(s), Suggesting to Add the Following to Their Qualifications:
 - Basic computer graphics/geometry knowledge
 - Experience with Autodesk Dynamo and/or Rhino Grasshopper
 - Experience with CAD of any sort
