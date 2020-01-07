@@ -72,7 +72,7 @@ Having precise rules for evaluation is critical for a generative design process 
 
 <img src="../../assets/intro/good5.png" style="width:200px;"/>
 
-Adding evaluation criteria to a computational process makes it more complex, but also more realistic and relevant to the designer’s needs. While adding evaluation conditions that say “make the largest table possible” and “use the fewest materials possible” make the model complex \(there is now an unavoidable tradeoff that must be considered\), they also directly target what the designer is most interested in \(a big table at minimum cost\). Algorithms perform best when these conditions are combined and a solution that balances them must be found.
+Adding evaluation criteria to a computational process makes it more complex, but also more realistic and relevant to your needs. While adding evaluation conditions that say “make the largest table possible” and “use the fewest materials possible” make the model complex \(there is now an unavoidable tradeoff that must be considered\), they also directly target what you are most interested in \(a big table at minimum cost\). Algorithms perform best when these conditions are combined and a solution that balances them must be found.
 
 ## Step 5 : Decide How to Use the Results
 
