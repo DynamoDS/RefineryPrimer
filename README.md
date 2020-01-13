@@ -31,7 +31,7 @@ This primer is an open source project initiated by the **AEC Generative Design T
 Contributions are of course welcomed. You can contribute to the primer in the following ways:
 
 * You can report any issue you may have found on our [issues page](https://github.com/DynamoDS/GenerativePrimer/issues).
-* If you’d like to improve, clarify or add content to the Primer, please head over to our [Github repository](https://github.com/DynamoDS/GenerativePrimer).
+* If you’d like to improve, clarify, or add content to the Primer, please head over to our [Github repository](https://github.com/DynamoDS/GenerativePrimer).
 * Have an example workflow of generative design? Head over to our [contribution guidelines](https://github.com/DynamoDS/RefineryPrimer/blob/master/CONTRIBUTING.md) and see how you can add it to the Community examples section.
 
 ## Contact
