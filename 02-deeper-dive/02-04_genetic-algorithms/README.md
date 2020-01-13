@@ -2,7 +2,7 @@
 
 <img src="../../assets/deeper/genetic.png" style="width:200px;"/>
 
-In this section, we’ll look at the term _`Generative Algorithm`_
+In this section, we’ll look at the term _`Genetic Algorithm`_
 
 We will cover the following:
 
