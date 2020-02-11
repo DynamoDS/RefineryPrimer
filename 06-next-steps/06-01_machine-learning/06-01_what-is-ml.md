@@ -1,45 +1,34 @@
-# Setting Up a Graph for Refinery
+# What is Machine Learning?
 
-## Inputs
+<img src="../../assets/nextsteps/whatisml1.png"/>
 
-To set up a Dynamo graph for Refinery right-click on each node used to drive the graph and ensure that the *`Is Input`* option is ticked. Renaming the node with a standard approach such as *`IN_description`* will help to distinguish these inputs in Refinery.
+Machine learning has become a popular area of interest in the last few years. From virtual assistants to financial data interpretation, machine learning has become an important tool in creating models to explain data behaviour. Rather than trying to define ML here, we suggest that you visit the following sites to get more in depth information of the subject. For the purposes of this chapter we will look we assume you have a basic understanding of machine learning and will instead focus on the key aspects that relate to generative design.
 
-\(Note: currently all inputs must be number slider nodes\)
+### **Articles**
 
-<br/>
+* [https://expertsystem.com/machine-learning-definition/](https://expertsystem.com/machine-learning-definition/)
+* [https://www.geeksforgeeks.org/machine-learning/](https://www.geeksforgeeks.org/machine-learning/)
 
-<img src="../assets/hello/setting1.png" style="width:200px;"/>
+### Courses
 
-## Outputs
+* [https://es.coursera.org/learn/machine-learning](https://es.coursera.org/learn/machine-learning)
+* [https://www.udemy.com/course/data-science-and-machine-learning-with-python-hands-on](https://www.udemy.com/course/data-science-and-machine-learning-with-python-hands-on/)
+* [https://www.edx.org/learn/machine-learning](https://www.edx.org/learn/machine-learning)
 
-To define outputs in Refinery, right-click on the watch nodes and select the *`Is Output`* option. Renaming the node with a standard approach such as *`OUT_description`* will help to distinguish these outputs in Refinery.
+### Videos
 
-\(Note: currently all outputs must be watch nodes with a data type of Number\).
+* [https://www.youtube.com/watch?v=ukzFI9rgwfU](https://www.youtube.com/watch?v=ukzFI9rgwfU)
+* [https://www.youtube.com/watch?v=f\_uwKZIAeM0](https://www.youtube.com/watch?v=f_uwKZIAeM0)
+* [https://royalsociety.org/topics-policy/projects/machine-learning/videos-and-background-information/](https://royalsociety.org/topics-policy/projects/machine-learning/videos-and-background-information/)
 
-<br/>
 
-<img src="../assets/hello/setting2.png" style="width:200px;"/>
 
-<br/>
+## What is Machine Learning?
 
-## Export to Refinery
+Machine learning \(for our concern\) is methods of analysing data as well as predicting behaviours according to this data.
 
-Once both inputs and outputs are correctly set up and your graph is saved, Refinery can be exported. In Dynamo navigate to the toolbar and select _`Refinery> Export for Refinery…`_
+<img src="../../assets/nextsteps/whatisml2.png"/>
 
-<img src="../assets/hello/setting21.png" style="width:200px;"/>
+### So Why the Big Hype?
 
-Refinery would proceed to create a copy of your graph and would be available to launch. Remember that graphs that have the same name would be overwritten.
-
-<img src="../assets/hello/setting22.png" style="width:200px;"/>
-
-## Launch Refinery
-
-In Dynamo navigate to the toolbar and select _`Refinery > Launch Refinery`_
-
-<img src="../assets/hello/setting23.png" style="width:200px;"/>
-
-Once Refinery is lauched you would have to select _`New Study`_
-
-<br/>
-
-<img src="../assets/hello/setting3.png" style="width:200px;"/>
+Due to the immense amount of data that we currently have and produce, these methods have become an extremely powerful, accurate and quick way to explore this large dataset. From classifying cancerous cells from images to predicting if a costumer will buy a product or not. 
