@@ -1,6 +1,6 @@
 # How to Convince Senior Stakeholders of Using Generative Design?
 
-<img src="../../assets/gdinoffice/howtoconvince1.png"/>
+<img src="../assets/gdoffice/howtoconvince1.png"/>
 
 One of the main goals of Refinery is to make generative design accessible and functional to all people within the AEC industry. For this reason, the benefits of using generative design so should be clearly articulated to those less familiar with its capabilities. 
 
@@ -12,24 +12,24 @@ Below are some tips that may help you explain/convince senior stakeholders and p
 
 ### Focus on Practical Issues Local to Your Practice
 
-<img src="../../assets/gdinoffice/howtoconvince2.png"/>
+<img src="../assets/gdoffice/howtoconvince2.png"/>
 
 Instead of focusing on the all the potential possibilities Refinery can offer, start by thinking of day to day concerns you may be able to address in your practice. Assess what is keeping your firm from being more productive, and ask if Refinery can help you solve it.
 
 ### Start With Easy Problems
 
-<img src="../../assets/gdinoffice/howtoconvince3.png"/>
+<img src="../assets/gdoffice/howtoconvince3.png"/>
 
 Start with small, easy problems before tackling bigger and more complex problems. Try to break complex problems into simpler generic problems, so that the time that you spend on workflows can be re-used later on. 
 
 ### Make Reasonable Time Frames for Solving a Problem
 
-<img src="../../assets/gdinoffice/howtoconvince4.png"/>
+<img src="../assets/gdoffice/howtoconvince4.png"/>
 
 Every problem you intend to solve should have an estimated time-frame and cost defined. This will make it easier to evaluate what problems are worth tackling initially and which problems will have the highest return on investment. 
 
 ### Do not Oversell Refinery
 
-<img src="../../assets/gdinoffice/howtoconvince5.png"/>
+<img src="../assets/gdoffice/howtoconvince5.png"/>
 
 As described in section: `What Generative Design Can't Be Used For?` Overstating the use cases or potential power can often have a detrimental effect should the process then not perform resolve the problem.

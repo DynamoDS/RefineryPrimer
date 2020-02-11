@@ -49,7 +49,7 @@ The script would start by extracting the surface of a room. This room would be u
 Refinery will display the surface of the room selected, the point of interest and the entourage elements as lines. We suggest you combine this with the 3d view used so that you get results as you export them to Revit.
 
 <p align="center">
-<img src="../../assets/sample/workflowrandom3.png" style="width:85%;"/>
+<img src="../../assets/sample/workflowrandom3.gif" style="width:85%;"/>
 </p>
 
 ## Evaluation

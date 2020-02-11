@@ -2,7 +2,7 @@
 
 In this section we will discuss how generative design can be used within your office.
 
-<img src="../../assets/gdinoffice/gdinyouroffice.png"/>
+<img src="../../assets/gdoffice/gdinyouroffice.png"/>
 
 We will look at the following:
 
