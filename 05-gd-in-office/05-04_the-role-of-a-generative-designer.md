@@ -4,7 +4,7 @@ The generative designer is someone in charge of using / maintaining / exploring 
 
 ### Identifying the Possible Problems:
 
-<img src="../../assets/gdoffice/therole1.png"/>
+<img src="../assets/gdoffice/therole1.png"/>
 
 Although identifying a possible problem for Refinery may seem like a straightforward task, making sure that the problem contains certain characteristics that are worth solving may cause this responsibility to become more complex. Some of the criteria that should be considered include: making sure the problem is relevant to the scale of your office; framing problems so they can be reused in different contexts; making sure the complexity of the problem is manageable by your generative design team.
 

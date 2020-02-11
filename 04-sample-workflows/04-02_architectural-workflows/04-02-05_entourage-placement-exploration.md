@@ -76,7 +76,7 @@ Once Refinery has completed, the results can be explored through the available t
 One of the key elements to understand when placing elements randomly is Gaussian distribution. By using Gaussian normal distribution instead of the regular random method you can control the clustering of elements and your placement would feel more organic. 
 
 <p align="center">
-<img src="../../assets/sample/workflowrandom1.png" style="width:85%;"/>
+<img src="../../assets/sample/workflowrandom1.jpg" style="width:85%;"/>
 </p>
 
 For further reading on this subject please refer to the following link:
