@@ -1,45 +1,35 @@
-# Setting Up a Graph for Refinery
+# How to Convince Senior Stakeholders of Using Generative Design?
 
-## Inputs
+<img src="../../assets/gdinoffice/howtoconvince1.png"/>
 
-To set up a Dynamo graph for Refinery right-click on each node used to drive the graph and ensure that the *`Is Input`* option is ticked. Renaming the node with a standard approach such as *`IN_description`* will help to distinguish these inputs in Refinery.
+One of the main goals of Refinery is to make generative design accessible and functional to all people within the AEC industry. For this reason, the benefits of using generative design so should be clearly articulated to those less familiar with its capabilities. 
 
-\(Note: currently all inputs must be number slider nodes\)
+## Convincing Seniors/Stakeholders
 
-<br/>
+If you are clear that Refinery can improve performance in your office and you are confident that with Refinery you can explore a design spectrum unlikely reached through traditional methods, it may prove difficult to communicate this to someone who is unaware of generative design or someone who would likely have little interest in understanding the detail.  
 
-<img src="../assets/hello/setting1.png" style="width:200px;"/>
+Below are some tips that may help you explain/convince senior stakeholders and people outside of the AEC technology spectrum to use or invest in generative design:
 
-## Outputs
+### Focus on Practical Issues Local to Your Practice
 
-To define outputs in Refinery, right-click on the watch nodes and select the *`Is Output`* option. Renaming the node with a standard approach such as *`OUT_description`* will help to distinguish these outputs in Refinery.
+<img src="../../assets/gdinoffice/howtoconvince2.png"/>
 
-\(Note: currently all outputs must be watch nodes with a data type of Number\).
+Instead of focusing on the all the potential possibilities Refinery can offer, start by thinking of day to day concerns you may be able to address in your practice. Assess what is keeping your firm from being more productive, and ask if Refinery can help you solve it.
 
-<br/>
+### Start With Easy Problems
 
-<img src="../assets/hello/setting2.png" style="width:200px;"/>
+<img src="../../assets/gdinoffice/howtoconvince3.png"/>
 
-<br/>
+Start with small, easy problems before tackling bigger and more complex problems. Try to break complex problems into simpler generic problems, so that the time that you spend on workflows can be re-used later on. 
 
-## Export to Refinery
+### Make Reasonable Time Frames for Solving a Problem
 
-Once both inputs and outputs are correctly set up and your graph is saved, Refinery can be exported. In Dynamo navigate to the toolbar and select _`Refinery> Export for Refinery…`_
+<img src="../../assets/gdinoffice/howtoconvince4.png"/>
 
-<img src="../assets/hello/setting21.png" style="width:200px;"/>
+Every problem you intend to solve should have an estimated time-frame and cost defined. This will make it easier to evaluate what problems are worth tackling initially and which problems will have the highest return on investment. 
 
-Refinery would proceed to create a copy of your graph and would be available to launch. Remember that graphs that have the same name would be overwritten.
+### Do not Oversell Refinery
 
-<img src="../assets/hello/setting22.png" style="width:200px;"/>
+<img src="../../assets/gdinoffice/howtoconvince5.png"/>
 
-## Launch Refinery
-
-In Dynamo navigate to the toolbar and select _`Refinery > Launch Refinery`_
-
-<img src="../assets/hello/setting23.png" style="width:200px;"/>
-
-Once Refinery is lauched you would have to select _`New Study`_
-
-<br/>
-
-<img src="../assets/hello/setting3.png" style="width:200px;"/>
+As described in section: `What Generative Design Can't Be Used For?` Overstating the use cases or potential power can often have a detrimental effect should the process then not perform resolve the problem.

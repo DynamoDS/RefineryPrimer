@@ -1,7 +1,7 @@
 # Workflow 3 : Create Office Layout
 
 <p align="center">
-  <img src="../../assets/sample/workflow31.gif"">
+  <img src="../../assets/sample/workflow31.gif">
 </p>
 
 ## Description

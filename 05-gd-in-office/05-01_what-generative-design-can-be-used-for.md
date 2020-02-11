@@ -1,45 +1,5 @@
-# Setting Up a Graph for Refinery
+# What Generative Design Can Be Used For?
 
-## Inputs
+<img src="../../assets/gdinoffice/whatgdcanbeusedfor.png"/>
 
-To set up a Dynamo graph for Refinery right-click on each node used to drive the graph and ensure that the *`Is Input`* option is ticked. Renaming the node with a standard approach such as *`IN_description`* will help to distinguish these inputs in Refinery.
-
-\(Note: currently all inputs must be number slider nodes\)
-
-<br/>
-
-<img src="../assets/hello/setting1.png" style="width:200px;"/>
-
-## Outputs
-
-To define outputs in Refinery, right-click on the watch nodes and select the *`Is Output`* option. Renaming the node with a standard approach such as *`OUT_description`* will help to distinguish these outputs in Refinery.
-
-\(Note: currently all outputs must be watch nodes with a data type of Number\).
-
-<br/>
-
-<img src="../assets/hello/setting2.png" style="width:200px;"/>
-
-<br/>
-
-## Export to Refinery
-
-Once both inputs and outputs are correctly set up and your graph is saved, Refinery can be exported. In Dynamo navigate to the toolbar and select _`Refinery> Export for Refinery…`_
-
-<img src="../assets/hello/setting21.png" style="width:200px;"/>
-
-Refinery would proceed to create a copy of your graph and would be available to launch. Remember that graphs that have the same name would be overwritten.
-
-<img src="../assets/hello/setting22.png" style="width:200px;"/>
-
-## Launch Refinery
-
-In Dynamo navigate to the toolbar and select _`Refinery > Launch Refinery`_
-
-<img src="../assets/hello/setting23.png" style="width:200px;"/>
-
-Once Refinery is lauched you would have to select _`New Study`_
-
-<br/>
-
-<img src="../assets/hello/setting3.png" style="width:200px;"/>
+Generative design helps with problems that are common to design practitioners that do not have a clear solution or path to resolve. As designers we often encounter problems with more than one possible solution, complex inter-dependencies, and contradictory requirements. We may have a good idea of what a building may require to be properly designed, but no straightforward recipe to achieve it. This is often defined as a [wicked problem](https://en.wikipedia.org/wiki/Wicked_problem), and this are the type of problems generative design is used for.

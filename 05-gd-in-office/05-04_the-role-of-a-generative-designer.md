@@ -1,45 +1,21 @@
-# Setting Up a Graph for Refinery
+# The Role of a Generative Designer
 
-## Inputs
+The generative designer is someone in charge of using / maintaining / exploring practical applications for  generative design in an intended work environment. The role can involve one or more people, so it is important to define responsibilities correctly. Some of the possible responsibilities would be described below:
 
-To set up a Dynamo graph for Refinery right-click on each node used to drive the graph and ensure that the *`Is Input`* option is ticked. Renaming the node with a standard approach such as *`IN_description`* will help to distinguish these inputs in Refinery.
+### Identifying the Possible Problems:
 
-\(Note: currently all inputs must be number slider nodes\)
+<img src="../../assets/gdinoffice/therole1.png"/>
 
-<br/>
+Although identifying a possible problem for Refinery may seem like a straightforward task, making sure that the problem contains certain characteristics that are worth solving may cause this responsibility to become more complex. Some of the criteria that should be considered include: making sure the problem is relevant to the scale of your office; framing problems so they can be reused in different contexts; making sure the complexity of the problem is manageable by your generative design team.
 
-<img src="../assets/hello/setting1.png" style="width:200px;"/>
+### Workflow Creation
 
-## Outputs
+<img src="../../assets/gdinoffice/therole2.png"/>
 
-To define outputs in Refinery, right-click on the watch nodes and select the *`Is Output`* option. Renaming the node with a standard approach such as *`OUT_description`* will help to distinguish these outputs in Refinery.
+Workflow creation deals with the nuts and bolts of Refinery. This role would be responsible for creating the actual workflow and relations for variables, results and evaluation criteria. A person who would ideally take this role should be prolific in Dynamo and visual programming; as much of his/her time would be spent in developing workflows within this platform.
 
-\(Note: currently all outputs must be watch nodes with a data type of Number\).
+### Evaluation
 
-<br/>
+<img src="../../assets/gdinoffice/therole3.png"/>
 
-<img src="../assets/hello/setting2.png" style="width:200px;"/>
-
-<br/>
-
-## Export to Refinery
-
-Once both inputs and outputs are correctly set up and your graph is saved, Refinery can be exported. In Dynamo navigate to the toolbar and select _`Refinery> Export for Refinery…`_
-
-<img src="../assets/hello/setting21.png" style="width:200px;"/>
-
-Refinery would proceed to create a copy of your graph and would be available to launch. Remember that graphs that have the same name would be overwritten.
-
-<img src="../assets/hello/setting22.png" style="width:200px;"/>
-
-## Launch Refinery
-
-In Dynamo navigate to the toolbar and select _`Refinery > Launch Refinery`_
-
-<img src="../assets/hello/setting23.png" style="width:200px;"/>
-
-Once Refinery is lauched you would have to select _`New Study`_
-
-<br/>
-
-<img src="../assets/hello/setting3.png" style="width:200px;"/>
+This should desirably be someone external to the generative design process. Someone who is aware of the company/office needs that will allow him/her to be more objective in evaluating how useful and relevant the generative design workflows were and how time-effective they were.

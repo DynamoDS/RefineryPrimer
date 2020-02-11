@@ -1,17 +1,13 @@
-# Introduction
+# Generative Design in Your Office
 
-In this chapter, we’ll look at key concepts that are essential to understanding generative design and how Project Refinery works.
+In this section we will discuss how generative design can be used within your office.
 
-<img src="../assets/intro/intro.png" style="width:200px;"/>
+<img src="../../assets/gdinoffice/gdinyouroffice.png"/>
 
-We will look at the following topics:
+We will look at the following:
 
-* the fundamental concepts needed to understand generative design
-* a definition of generative design in the context of AEC
-* an introduction to Refinery
-* examples of using generative design to solve design problems
-* related concepts
-* common approaches used
-
-Let’s start by first looking at something you’re very likely to be aware of and already using today: computational design.
-
+* [What generative design can be used for?](05-01_what-generative-design-can-be-used-for.md)
+* [What generative design can't be used for?](05-02_what-generative-design-cant-be-used-for.md)
+* [How to convince stakeholders to use generative design.](05-03_how-to-convince-senior-stakeholders-of-using-gd.md)
+* [The role of a generative designer.](05-04_the-role-of-a-generative-designer.md)
+* [Hiring a generative designer](05-05_hiring-a-generative-designer.md)

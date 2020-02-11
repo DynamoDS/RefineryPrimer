@@ -1,45 +1,33 @@
-# Setting Up a Graph for Refinery
+# What Generative Design Can’t Be Used For?
 
-## Inputs
+<img src="../../assets/gdinoffice/whatgdcantbeusedfor1.png"/>
 
-To set up a Dynamo graph for Refinery right-click on each node used to drive the graph and ensure that the *`Is Input`* option is ticked. Renaming the node with a standard approach such as *`IN_description`* will help to distinguish these inputs in Refinery.
+If you want to implement Refinery in your office it is important to understand what generative design can and cannot do, and communicate it correctly to your peers. Unrealistic expectations may lead to a level of mistrust within potential users and could risk losing further interest in investing in generative design applications.
 
-\(Note: currently all inputs must be number slider nodes\)
+## **Myths and Misconceptions:**
 
-<br/>
+Although generative design is great at solving problems, there are certain problems that are usually assigned to generative design that should not be. Guiding a team into allocating the appropriate amount of time and effort into the most applicable problems can be just as important as solving the problem itself. Some of the common mistakes are described below:
 
-<img src="../assets/hello/setting1.png" style="width:200px;"/>
+### **Evident Solutions**
 
-## Outputs
+<img src="../../assets/gdinoffice/whatgdcantbeusedfor2.png"/>
 
-To define outputs in Refinery, right-click on the watch nodes and select the *`Is Output`* option. Renaming the node with a standard approach such as *`OUT_description`* will help to distinguish these outputs in Refinery.
+One of the advantages of Refinery is that it may help you clarify multiple dimensionality and complexity that go way beyond human understanding. Although some of the examples presented in this primer are simple, the true potential of Refinery is achieved by incorporating conflicting criteria and the right amount of complexity. To avoid wasting time and ensure Refinery becomes a valuable resource, focus on problems that do not have evident solutions. If your problem delivers evident solutions you may be lacking variables. ****
 
-\(Note: currently all outputs must be watch nodes with a data type of Number\).
+### Confusing Visual Programming Problems with Generative Design Problems
 
-<br/>
+<img src="../../assets/gdinoffice/whatgdcantbeusedfor3.png"/>
 
-<img src="../assets/hello/setting2.png" style="width:200px;"/>
+Even though Refinery works with Dynamo, it is important to differentiate between problems that need an automated process and problems that need exploration. In general terms, if you intend to solve a problem that deals with automation use Dynamo, whereas if you intend to explore multiple solutions use Refinery.
 
-<br/>
+### Problem is Not Defined in Terms of Variables
 
-## Export to Refinery
+<img src="../../assets/gdinoffice/whatgdcantbeusedfor4.png"/>
 
-Once both inputs and outputs are correctly set up and your graph is saved, Refinery can be exported. In Dynamo navigate to the toolbar and select _`Refinery> Export for Refinery…`_
+A generative design problem needs a set of variables/inputs. These inputs need to be manipulated and their variation should result in a design space to explore. If the design space is too limited, Refinery is not able to show heterogeneous results. 
 
-<img src="../assets/hello/setting21.png" style="width:200px;"/>
+### No Clear Relationship Between Variables and Intention
 
-Refinery would proceed to create a copy of your graph and would be available to launch. Remember that graphs that have the same name would be overwritten.
+<img src="../../assets/gdinoffice/whatgdcantbeusedfor5.png"/>
 
-<img src="../assets/hello/setting22.png" style="width:200px;"/>
-
-## Launch Refinery
-
-In Dynamo navigate to the toolbar and select _`Refinery > Launch Refinery`_
-
-<img src="../assets/hello/setting23.png" style="width:200px;"/>
-
-Once Refinery is lauched you would have to select _`New Study`_
-
-<br/>
-
-<img src="../assets/hello/setting3.png" style="width:200px;"/>
+Unfortunately, Refinery can’t define your design’s intent. It would be similar to asking Google for the meaning of life. If you don’t have clear goals to evaluate or clear ways of defining which designs are acceptable then Refinery can’t help you. There should also be a clear understanding on how the intent relates to your inputs.

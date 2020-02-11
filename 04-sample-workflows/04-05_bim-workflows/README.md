@@ -1,7 +1,5 @@
-# Refinery Example Workflows
+# BIM Workflows
 
-<img src="../../assets/sample/workflows2.png" style="width:200px;"/>
+The following section has workflows related to BIM processes:
 
-Coming Soon! 
-
-Have Refinery structural workflows already ? This Primer is open-source, so please read [how you can get involved and contribute](https://refineryprimer.dynamobim.org/#open-source), or drop us a line.
+* [Placement of views on sheets](04-05-01_placement-of-views-on-sheets.md) - get files 
