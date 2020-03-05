@@ -1,4 +1,4 @@
-# Refinery Example Workflows
+# Generative Design Example Workflows
 
 This section will explore a series of workflows related to architecture.
 

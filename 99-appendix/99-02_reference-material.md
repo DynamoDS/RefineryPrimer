@@ -20,10 +20,10 @@
 - [DesignScript documentation](https://dynamobim.org/wp-content/links/DesignScriptDocumentation.pdf)
 - [DesignScript class materials from BiLT conference](https://github.com/Amoursol/dynamoDesignScript) by [Sol Amour](https://github.com/Amoursol)
 
-## Refinery
+## Generative Design
 
-- [Refinery main page](https://www.autodesk.com/solutions/refinery-beta)
-- [Refinery beta project page](https://beta.autodesk.com/key/RefineryLanding)
+- [Generative Design main page](https://www.autodesk.com/solutions/refinery-beta)
+- [Generative Design beta project page](https://beta.autodesk.com/key/RefineryLanding)
 
 ## Generative Design 
 

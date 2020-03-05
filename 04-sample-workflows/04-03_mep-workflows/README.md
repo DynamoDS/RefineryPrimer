@@ -1,4 +1,4 @@
-# Refinery Example Workflows
+# Generative Design Example Workflows
 
 The following section has workflows related to MEP:
 

@@ -46,7 +46,7 @@ The script would start by extracting the surface of a room. This room would be u
 
 ## Visualization
 
-Refinery will display the surface of the room selected, the point of interest and the entourage elements as lines. We suggest you combine this with the 3d view used so that you get results as you export them to Revit.
+Generative Design will display the surface of the room selected, the point of interest and the entourage elements as lines. We suggest you combine this with the 3d view used so that you get results as you export them to Revit.
 
 <p align="center">
 <img src="../../assets/sample/workflowrandom3.gif" style="width:85%;"/>
@@ -64,7 +64,7 @@ There is no optimization but some metrics give you information of the scenes cre
 
 ## Results
 
-Once Refinery has completed, the results can be explored through the available tables and graphs   
+Once Generative Design has completed, the results can be explored through the available tables and graphs   
  The image below shows an example output from a randomized study based on 40 solutions.
 
 <p align="center">

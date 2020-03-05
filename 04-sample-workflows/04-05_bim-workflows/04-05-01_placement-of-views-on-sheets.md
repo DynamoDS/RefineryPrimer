@@ -6,7 +6,7 @@
 
 ## Description
 
-The following graph takes all cropped views from the current Revit document and places them onto sheets. It creates all the sheets needed to accommodate existing cropped views, and then generates different options for the ways the views can be laid out. By using Refinery, we are able to find solutions that minimize the number of sheets and reduce the amount of whitespace.
+The following graph takes all cropped views from the current Revit document and places them onto sheets. It creates all the sheets needed to accommodate existing cropped views, and then generates different options for the ways the views can be laid out. By using Generative Design, we are able to find solutions that minimize the number of sheets and reduce the amount of whitespace.
 
 \[Download workflow files\]
 
@@ -40,13 +40,13 @@ Once all the views have been placed on sheets, the script evaluates the design b
 | Sheet space not occupied | Percentage of the space left free in the generated sheets |
 | Order percentage | Percentage measuring how good is the order in the shuffled list of views |
 
-## Benefit of using Refinery
+## Benefit of using Generative Design
 
-Without the aid of Refinery, running this script in Dynamo, the user would be required to manually reorder the list of views until they manage to find the desired layout. This process, unless incredibly lucky, would take hours. As the aim is simple, to find the best arrangement for the views maximizing the space used in the sheets, Refinery can be leveraged by using the Optimize approach. The shuffle seed included in the script helps Refinery keep record of the best shuffled option and optimize the results from there.
+Without the aid of Generative Design, running this script in Dynamo, the user would be required to manually reorder the list of views until they manage to find the desired layout. This process, unless incredibly lucky, would take hours. As the aim is simple, to find the best arrangement for the views maximizing the space used in the sheets, Generative Design can be leveraged by using the Optimize approach. The shuffle seed included in the script helps Generative Design keep record of the best shuffled option and optimize the results from there.
 
 ## Results
 
-Once Refinery has completed the study, the results can be explored through the available tables and graphs. The image below shows an example output from a randomized study based on 50 outputs. Although this graph would usually be used under optimization criteria, in this case a randomize method was used to display the variety of  results that the script may produce. From the graph below you can see that most results require 2 sheets \(represented as small circles\) but some require 3 sheets \(big circles\). The Y axis represents how well ordered the views are placed. 
+Once Generative Design has completed the study, the results can be explored through the available tables and graphs. The image below shows an example output from a randomized study based on 50 outputs. Although this graph would usually be used under optimization criteria, in this case a randomize method was used to display the variety of  results that the script may produce. From the graph below you can see that most results require 2 sheets \(represented as small circles\) but some require 3 sheets \(big circles\). The Y axis represents how well ordered the views are placed. 
 
 <p align="center">
 <img src="../../assets/sample/workflowsheets2.png" style="width:85%;"/>

@@ -1,5 +1,5 @@
 # Welcome
-Welcome to the **Refinery Primer**, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design using generative design workflows. 
+Welcome to the **Generative Design Primer**, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design using generative design workflows. 
 
 <img src="assets/welcome/introgif.gif" style="width:200px;"/>
 
@@ -8,7 +8,7 @@ This primer will help you:
 
 * **Understand** what generative design is by defining the base concepts and terminology you need to know. 
 * **Explore** how these techniques can be used to solve practical challenges commonly found in AEC design projects.
-* **Learn** how to use Autodesk’s newest generative design tools such as Project Refinery, through practical workflows.
+* **Learn** how to use Autodesk’s newest generative design tools such as Generative Design, through practical workflows.
 
 ## Why Make a Primer?
 
@@ -18,7 +18,7 @@ Autodesk is working to **democratize technologies** that can help designers in t
 
 Using these technologies requires new skills and new ways to think about design. We created this primer to explain the terminology, ideas, and methods you will need to understand to begin using generative design workflows and tools that support this new approach to design.
 
-*Note: there are many different applications of generative design/art, and this primer does not aim to cover them all. This primer is focused on AEC methodologies and how these apply to both Project Refinery/Dynamo*
+*Note: there are many different applications of generative design/art, and this primer does not aim to cover them all. This primer is focused on AEC methodologies and how these apply to both Generative Design/Dynamo*
 
 **matterlab** was commissioned to kick-start the development of this primer, we thank them for all their efforts in establishing this valuable resource.
 

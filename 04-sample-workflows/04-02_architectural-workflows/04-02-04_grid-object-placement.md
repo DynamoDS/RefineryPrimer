@@ -6,7 +6,7 @@
 
 ## Description
 
-This graph uses Refinery on optimize mode to place objects in a room/space using a grid formation. The graph will compare the percentage of total coverage, the number of objects placed, and the overlap in area of object influence, as various grid configurations are explored through Refinery. Although a simplified approach, this graph can be used as the foundation to explore more complex and personalized criteria that relates specifically to your project or practice. All sample files for this example can be found in the \[PROVIDE LINK\] folder in the GitHub repository.
+This graph uses Generative Design on optimize mode to place objects in a room/space using a grid formation. The graph will compare the percentage of total coverage, the number of objects placed, and the overlap in area of object influence, as various grid configurations are explored through Generative Design. Although a simplified approach, this graph can be used as the foundation to explore more complex and personalized criteria that relates specifically to your project or practice. All sample files for this example can be found in the \[PROVIDE LINK\] folder in the GitHub repository.
 
 ## Static inputs
 
@@ -50,10 +50,10 @@ Using optimization, the object's coverage is maximized while the total object ov
 
 ## Results
 
-Refinery will display various grid configurations. In this example you can see results in the x and y axis according to their X and Y seed. Each result is showed as a point, the point’s size is determined by the number of objects of each result.
+Generative Design will display various grid configurations. In this example you can see results in the x and y axis according to their X and Y seed. Each result is showed as a point, the point’s size is determined by the number of objects of each result.
 
 <p align="center">
 <img src="../../assets/sample/workflowgrid2.png" style="width:85%;"/>
 </p>
 
-Once Refinery has completed, the results can be explored through the available tables and graphs. The image below shows an example output from an optimized study based on 4 generations with a population of 20.
+Once Generative Design has completed, the results can be explored through the available tables and graphs. The image below shows an example output from an optimized study based on 4 generations with a population of 20.

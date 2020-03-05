@@ -2,11 +2,11 @@
 
 <img src="../assets/gdoffice/howtoconvince1.png"/>
 
-One of the main goals of Refinery is to make generative design accessible and functional to all people within the AEC industry. For this reason, the benefits of using generative design so should be clearly articulated to those less familiar with its capabilities. 
+One of the main goals of Generative Design is to make generative design accessible and functional to all people within the AEC industry. For this reason, the benefits of using generative design so should be clearly articulated to those less familiar with its capabilities. 
 
 ## Convincing Seniors/Stakeholders
 
-If you are clear that Refinery can improve performance in your office and you are confident that with Refinery you can explore a design spectrum unlikely reached through traditional methods, it may prove difficult to communicate this to someone who is unaware of generative design or someone who would likely have little interest in understanding the detail.  
+If you are clear that Generative Design can improve performance in your office and you are confident that with Generative Design you can explore a design spectrum unlikely reached through traditional methods, it may prove difficult to communicate this to someone who is unaware of generative design or someone who would likely have little interest in understanding the detail.  
 
 Below are some tips that may help you explain/convince senior stakeholders and people outside of the AEC technology spectrum to use or invest in generative design:
 
@@ -14,7 +14,7 @@ Below are some tips that may help you explain/convince senior stakeholders and p
 
 <img src="../assets/gdoffice/howtoconvince2.png"/>
 
-Instead of focusing on the all the potential possibilities Refinery can offer, start by thinking of day to day concerns you may be able to address in your practice. Assess what is keeping your firm from being more productive, and ask if Refinery can help you solve it.
+Instead of focusing on the all the potential possibilities Generative Design can offer, start by thinking of day to day concerns you may be able to address in your practice. Assess what is keeping your firm from being more productive, and ask if Generative Design can help you solve it.
 
 ### Start With Easy Problems
 
@@ -28,7 +28,7 @@ Start with small, easy problems before tackling bigger and more complex problems
 
 Every problem you intend to solve should have an estimated time-frame and cost defined. This will make it easier to evaluate what problems are worth tackling initially and which problems will have the highest return on investment. 
 
-### Do not Oversell Refinery
+### Do not Oversell Generative Design
 
 <img src="../assets/gdoffice/howtoconvince5.png"/>
 

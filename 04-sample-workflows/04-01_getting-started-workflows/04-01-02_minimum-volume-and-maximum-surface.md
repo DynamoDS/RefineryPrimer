@@ -1,6 +1,6 @@
 ### Minimum Volume and Maximum Surface
 
-The *`01-02_Minimum-volume-and-maximum-surface.dyn`* graph in the Refinery examples is a multi-objective optimization problem with two competing objectives. The graph consists of three cuboids which have different variable parameters like height and location. The objectives of the graph are to find an option with minimal volume and maximum combined surface area. 
+The *`01-02_Minimum-volume-and-maximum-surface.dyn`* graph in the Generative Design examples is a multi-objective optimization problem with two competing objectives. The graph consists of three cuboids which have different variable parameters like height and location. The objectives of the graph are to find an option with minimal volume and maximum combined surface area. 
 
 [Download Dynamo file](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-01-02_Minimum-volume-and-maximum-surface.dyn)
 
@@ -41,7 +41,7 @@ Whenever an input parameter is changed the option's volume and total surface are
 
 <br/>
 
-When running this graph in Refinery follow these steps:
+When running this graph in Generative Design follow these steps:
 
 * Use the *`Optimize`* generation method
 * Under Inputs make sure that all inputs are checked

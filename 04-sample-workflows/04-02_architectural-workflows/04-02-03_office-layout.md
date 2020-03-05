@@ -34,7 +34,7 @@ This graph extracts the underlying surface from the floor geometry and builds pe
 
 ## Visualization
 
-When geometry is created in Dynamo, often other geometry is needed to facilitate the overall process. To ensure the geometry displayed shows the final geometric output, all unnecessary geometry has been switched off. Any nodes with the preview switched off will not display the output visually in Refinery. In this case, only the perimeter lines of the floor plate, the neighborhood boundaries, amenity spaces, and office desks will be visible. The amenity spaces are shown in grey to differentiate them from the rest of the geometry. 
+When geometry is created in Dynamo, often other geometry is needed to facilitate the overall process. To ensure the geometry displayed shows the final geometric output, all unnecessary geometry has been switched off. Any nodes with the preview switched off will not display the output visually in Generative Design. In this case, only the perimeter lines of the floor plate, the neighborhood boundaries, amenity spaces, and office desks will be visible. The amenity spaces are shown in grey to differentiate them from the rest of the geometry. 
 
 ## Evaluators
 
@@ -43,13 +43,13 @@ When geometry is created in Dynamo, often other geometry is needed to facilitate
 | Amenity space area | The total area occupied by the amenity spaces |
 | Number of desks    | The total number of office desks |
 
-## Refinery
+## Generative Design
 
-Designers can spend hours laying out repetitive areas such as offices an toilets. By creating an algorithm with clear goals, maximum number of desks and maximum amenity space, Refinery can be used as the solver to arrive at the best solution quicker. 
+Designers can spend hours laying out repetitive areas such as offices an toilets. By creating an algorithm with clear goals, maximum number of desks and maximum amenity space, Generative Design can be used as the solver to arrive at the best solution quicker. 
 
 ## Results
 
-Once Refinery has completed, the results can be explored through the available tables and graphs
+Once Generative Design has completed, the results can be explored through the available tables and graphs
 <br>
 The image below shows an example output from a randomized study based on 35 solutions.
 

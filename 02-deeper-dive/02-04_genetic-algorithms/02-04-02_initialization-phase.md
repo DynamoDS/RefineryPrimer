@@ -4,7 +4,7 @@ The genetic algorithm kicks off with an initial population from which selection 
 
 <img src="../../assets/deeper/initialization1.png" style="width:200px;"/>
 
-Nonetheless, a genetic algorithm always begins with a set of potential solutions. When doing generative design with Refinery this initial population is created randomly based on a seed. Often, a generative design algorithm is used to create an initial population that can be fed into a genetic algorithm. An important thing to remember in the initialization phase is the importance of the variation element, if there is little to no variation in the populations individuals there is little chance that a good evolution will happen. To ensure variation a few things are important:
+Nonetheless, a genetic algorithm always begins with a set of potential solutions. When doing generative design with Generative Design this initial population is created randomly based on a seed. Often, a generative design algorithm is used to create an initial population that can be fed into a genetic algorithm. An important thing to remember in the initialization phase is the importance of the variation element, if there is little to no variation in the populations individuals there is little chance that a good evolution will happen. To ensure variation a few things are important:
 
 <img src="../../assets/deeper/initialization2.png" style="width:200px;"/>
 

@@ -1,8 +1,8 @@
-# Setting Up a Graph for Refinery
+# Setting Up a Graph for Generative Design
 
 ## Inputs
 
-To set up a Dynamo graph for Refinery right-click on each node used to drive the graph and ensure that the *`Is Input`* option is ticked. Renaming the node with a standard approach such as *`IN_description`* will help to distinguish these inputs in Refinery.
+To set up a Dynamo graph for Generative Design right-click on each node used to drive the graph and ensure that the *`Is Input`* option is ticked. Renaming the node with a standard approach such as *`IN_description`* will help to distinguish these inputs in Generative Design.
 
 \(Note: currently all inputs must be number slider nodes\)
 
@@ -12,7 +12,7 @@ To set up a Dynamo graph for Refinery right-click on each node used to drive the
 
 ## Outputs
 
-To define outputs in Refinery, right-click on the watch nodes and select the *`Is Output`* option. Renaming the node with a standard approach such as *`OUT_description`* will help to distinguish these outputs in Refinery.
+To define outputs in Generative Design, right-click on the watch nodes and select the *`Is Output`* option. Renaming the node with a standard approach such as *`OUT_description`* will help to distinguish these outputs in Generative Design.
 
 \(Note: currently all outputs must be watch nodes with a data type of Number\).
 
@@ -22,23 +22,23 @@ To define outputs in Refinery, right-click on the watch nodes and select the *`I
 
 <br/>
 
-## Export to Refinery
+## Export to Generative Design
 
-Once both inputs and outputs are correctly set up and your graph is saved, Refinery can be exported. In Dynamo navigate to the toolbar and select _`Refinery> Export for Refinery…`_
+Once both inputs and outputs are correctly set up and your graph is saved, Generative Design can be exported. In Dynamo navigate to the toolbar and select _`Generative Design> Export for Generative Design`_
 
 <img src="../assets/hello/setting21.png" style="width:200px;"/>
 
-Refinery would proceed to create a copy of your graph and would be available to launch. Remember that graphs that have the same name would be overwritten.
+Generative Design would proceed to create a copy of your graph and would be available to launch. Remember that graphs that have the same name would be overwritten.
 
 <img src="../assets/hello/setting22.png" style="width:200px;"/>
 
-## Launch Refinery
+## Launch Generative Design
 
-In Dynamo navigate to the toolbar and select _`Refinery > Launch Refinery`_
+In Dynamo navigate to the toolbar and select _`Generative Design > Launch Generative Design`_
 
 <img src="../assets/hello/setting23.png" style="width:200px;"/>
 
-Once Refinery is lauched you would have to select _`New Study`_
+Once Generative Design is lauched you would have to select _`New Study`_
 
 <br/>
 

@@ -1,6 +1,6 @@
 # Selection Phase
 
-At each iteration, a certain proportion of the population (i.e., a subset of potential solutions) is selected to breed so that their features can be passed on to the next generation. This value is fixed in Project Refinery and is not currently available as a setting. Since the goal of a generative algorithm is optimization, we want to converge to some high-quality solution. It makes sense then to select only those solutions with the best possible features for breeding.
+At each iteration, a certain proportion of the population (i.e., a subset of potential solutions) is selected to breed so that their features can be passed on to the next generation. This value is fixed in Generative Design and is not currently available as a setting. Since the goal of a generative algorithm is optimization, we want to converge to some high-quality solution. It makes sense then to select only those solutions with the best possible features for breeding.
 
 <img src="../../assets/deeper/selection1.png" style="width:200px;"/>
 
