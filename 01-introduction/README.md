@@ -1,6 +1,6 @@
 # Introduction
 
-In this chapter, we’ll look at key concepts that are essential to understanding generative design and how Generative Design works.
+In this chapter, we’ll look at key concepts that are essential to understanding generative design and how Revit Generative Design works.
 
 <img src="../assets/intro/intro.png" style="width:200px;"/>
 
@@ -8,7 +8,7 @@ We will look at the following topics:
 
 * the fundamental concepts needed to understand generative design
 * a definition of generative design in the context of AEC
-* an introduction to Generative Design
+* an introduction to Revit Generative Design
 * examples of using generative design to solve design problems
 * related concepts
 * common approaches used

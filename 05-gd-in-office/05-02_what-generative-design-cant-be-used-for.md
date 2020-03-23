@@ -2,7 +2,7 @@
 
 <img src="../assets/gdoffice/whatgdcantbeusedfor1.png"/>
 
-If you want to implement Generative Design in your office it is important to understand what generative design can and cannot do, and communicate it correctly to your peers. Unrealistic expectations may lead to a level of mistrust within potential users and could risk losing further interest in investing in generative design applications.
+If you want to implement Revit Generative Design in your office it is important to understand what generative design can and cannot do, and communicate it correctly to your peers. Unrealistic expectations may lead to a level of mistrust within potential users and could risk losing further interest in investing in generative design applications.
 
 ## **Myths and Misconceptions:**
 
@@ -12,7 +12,7 @@ Although generative design is great at solving problems, there are certain probl
 
 <img src="../assets/gdoffice/whatgdcantbeusedfor2.png"/>
 
-One of the advantages of Generative Design is that it may help you clarify multiple dimensionality and complexity that go way beyond human understanding. Although some of the examples presented in this primer are simple, the true potential of Generative Design is achieved by incorporating conflicting criteria and the right amount of complexity. To avoid wasting time and ensure Generative Design becomes a valuable resource, focus on problems that do not have evident solutions. If your problem delivers evident solutions you may be lacking variables. ****
+One of the advantages of generative design is that it may help you clarify multiple dimensionality and complexity that go way beyond human understanding. Although some of the examples presented in this primer are simple, the true potential of generative design is achieved by incorporating conflicting criteria and the right amount of complexity. To avoid wasting time and ensure generative design becomes a valuable resource, focus on problems that do not have evident solutions. If your problem delivers evident solutions you may be lacking variables. ****
 
 ### Confusing Visual Programming Problems with Generative Design Problems
 
@@ -30,4 +30,4 @@ A generative design problem needs a set of variables/inputs. These inputs need t
 
 <img src="../assets/gdoffice/whatgdcantbeusedfor5.png"/>
 
-Unfortunately, Generative Design can’t define your design’s intent. It would be similar to asking Google for the meaning of life. If you don’t have clear goals to evaluate or clear ways of defining which designs are acceptable then Generative Design can’t help you. There should also be a clear understanding on how the intent relates to your inputs.
+Unfortunately, generative design can’t define your design’s intent. It would be similar to asking Google for the meaning of life. If you don’t have clear goals to evaluate or clear ways of defining which designs are acceptable then Generative Design can’t help you. There should also be a clear understanding on how the intent relates to your inputs.

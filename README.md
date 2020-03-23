@@ -8,7 +8,7 @@ This primer will help you:
 
 * **Understand** what generative design is by defining the base concepts and terminology you need to know. 
 * **Explore** how these techniques can be used to solve practical challenges commonly found in AEC design projects.
-* **Learn** how to use Autodesk’s newest generative design tools such as Generative Design, through practical workflows.
+* **Learn** how to use Autodesk’s newest generative design tools such as Generative Design for Revit and Dynamo, through practical workflows.
 
 ## Why Make a Primer?
 
@@ -26,7 +26,7 @@ Using these technologies requires new skills and new ways to think about design.
 
 ## Open-Source
 
-This primer is an open source project initiated by the **AEC Generative Design Team** at Autodesk and we are dedicated to providing high-quality content on generative design in this primer.
+This primer is an open source project initiated by the **Generative Design Team** at Autodesk and we are dedicated to providing high-quality content on generative design in this primer.
 
 Contributions are of course welcomed. You can contribute to the primer in the following ways:
 

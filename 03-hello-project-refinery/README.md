@@ -4,7 +4,7 @@ Now that we're familiar with what generative design is, the basic concepts behin
 
 <img src="../assets/hello/hellorefinery.png" style="width:200px;"/>
 
-> how can we leverage Generative Design to apply generative design principles to real-world design problems?
+> how can we leverage software tools to apply generative design principles to real-world design problems?
 
 This chapter demonstrates the answer to this question through a series of common design challenges.
 

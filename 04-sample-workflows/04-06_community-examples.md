@@ -1,6 +1,6 @@
 # Community Examples
 
-In the future we want the community to submit their generative design case studies to this primer. This chapter will showcase these workflows so they will be available as examples for the wider generative design and Generative Design community.
+In the future we want the community to submit their generative design case studies to this primer. This chapter will showcase these workflows so they will be available as examples for the wider generative design community.
 
 <img src="../assets/sample/comunity.png" style="width:200px;"/>
 

@@ -1,4 +1,4 @@
-# Setting Up a Graph for Generative Design
+# Setting Up a Graph for Revit Generative Design
 
 ## Inputs
 
@@ -12,7 +12,7 @@ To set up a Dynamo graph for Generative Design right-click on each node used to 
 
 ## Outputs
 
-To define outputs in Generative Design, right-click on the watch nodes and select the *`Is Output`* option. Renaming the node with a standard approach such as *`OUT_description`* will help to distinguish these outputs in Generative Design.
+To define outputs in Generative Design, right-click on the watch nodes and select the *`Is Output`* option. Renaming the node with a standard approach such as *`OUT_description`* will help to distinguish these outputs in Revit Generative Design.
 
 \(Note: currently all outputs must be watch nodes with a data type of Number\).
 
@@ -34,11 +34,11 @@ Generative Design would proceed to create a copy of your graph and would be avai
 
 ## Launch Generative Design
 
-In Dynamo navigate to the toolbar and select _`Generative Design > Launch Generative Design`_
+In Dynamo navigate to the toolbar and select _`Generative Design > Create Study`_
 
 <img src="../assets/hello/setting23.png" style="width:200px;"/>
 
-Once Generative Design is lauched you would have to select _`New Study`_
+Once Generative Design is lauched you would have to select a saved study.
 
 <br/>
 
