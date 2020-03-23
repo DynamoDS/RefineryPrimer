@@ -1,4 +1,4 @@
-# Running Revit Generative Design
+# Running Generative Design
 
 Generative Design can be run using different methods. In the Generative Design window you can chooses from four different Generation Methods, all of these methods are Generative Design's Solvers, a further explanation of what Solvers are can be found in [section 02-01-04](../02-deeper-dive/02-01_algorithms/02-01-04_solvers.md).
 

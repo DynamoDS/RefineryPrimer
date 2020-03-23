@@ -2,7 +2,7 @@
 
 <img src="../assets/gdoffice/whatgdcantbeusedfor1.png"/>
 
-If you want to implement Revit Generative Design in your office it is important to understand what generative design can and cannot do, and communicate it correctly to your peers. Unrealistic expectations may lead to a level of mistrust within potential users and could risk losing further interest in investing in generative design applications.
+If you want to implement Generative Design for Revit in your office it is important to understand what generative design can and cannot do, and communicate it correctly to your peers. Unrealistic expectations may lead to a level of mistrust within potential users and could risk losing further interest in investing in generative design applications.
 
 ## **Myths and Misconceptions:**
 

@@ -1,6 +1,6 @@
-# Getting Started With Revit Generative Design
+# Getting Started With Generative Design for Revit and Dynamo
 
-Revit Generative Design is currently available as a Beta release, as of March 2019. In order to use Revit Generative Design, you need to sign up to the Generative Design community, using your Autodesk credentials at the following website:
+Generative Design is currently available as a Beta release, as of March 2019. In order to use Generative Design, you need to sign up to the Generative Design community, using your Autodesk credentials at the following website:
 
 [https://www.autodesk.com/solutions/refinery-beta](https://www.autodesk.com/solutions/refinery-beta)
 
@@ -15,10 +15,10 @@ After signing up for the Beta you will be presented with an overview of the Gene
 * Access detailed instructions on getting started and installation.
 * Access demo/sample files.
 * Access further learning resources.
-* Provide feedback and ask questions to the Generative Design development team.
+* Provide feedback and ask questions to the Generative Design team.
 * Discuss and collaborate with fellow Generative Design community members.
 
-Any new releases of Revit Generative Design will be available to download and install from this location too.
+Any new releases of Generative Design will be available to download and install from this location too.
 
 <br/>
 
@@ -28,9 +28,9 @@ _Above: the Generative Design community home page_
 
 <br/>
 
-## Installing Revit Generative Design
+## Installing Generative Design for Revit and Dynamo
 
-To install the latest version of Revit Generative Design, go to the Getting Started section, where you can see the latest Pre-Requisites needed to use Revit Generative Design. After making sure you satisfy these initial requirements, please follow the step-by-step guide in the install section.
+To install the latest version of Generative Design, go to the Getting Started section, where you can see the latest Pre-Requisites needed to use Generative Design. After making sure you satisfy these initial requirements, please follow the step-by-step guide in the install section.
 
 <br/>
 

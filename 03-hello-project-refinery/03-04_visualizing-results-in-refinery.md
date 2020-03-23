@@ -1,4 +1,4 @@
-# Visualizing Results in Revit Generative Design
+# Visualizing Results in Generative Design
 
 After Generative Design has run the generative process, the results are displayed in both geometric form and through a series of charts or tables. All of the resulting views are interlinked and selecting an option in one view will highlight it in the other views currently displayed. If Dynamo is running in *`Automatic mode`* in the background, selecting an option will also update the graph to show this design.
 
