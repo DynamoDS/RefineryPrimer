@@ -1,5 +1,5 @@
 # Welcome
-Welcome to the **Generative Design Primer**, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design using generative design workflows. 
+Welcome to the **AEC Generative Design Primer**, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design using generative design workflows. 
 
 <img src="assets/welcome/introgif.gif" style="width:200px;"/>
 
@@ -26,7 +26,7 @@ Using these technologies requires new skills and new ways to think about design.
 
 ## Open-Source
 
-This primer is an open source project initiated by the **Generative Design Team** at Autodesk and we are dedicated to providing high-quality content on generative design in this primer.
+This primer is an open source project initiated by the **AEC Generative Design Team** at Autodesk and we are dedicated to providing high-quality content on generative design in this primer.
 
 Contributions are of course welcomed. You can contribute to the primer in the following ways:
 

@@ -15,7 +15,7 @@ After signing up for the Beta you will be presented with an overview of the Gene
 * Access detailed instructions on getting started and installation.
 * Access demo/sample files.
 * Access further learning resources.
-* Provide feedback and ask questions to the Generative Design team.
+* Provide feedback and ask questions to the AEC Generative Design team.
 * Discuss and collaborate with fellow Generative Design community members.
 
 Any new releases of Generative Design will be available to download and install from this location too.
