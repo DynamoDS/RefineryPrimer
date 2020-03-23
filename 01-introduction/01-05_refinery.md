@@ -19,5 +19,5 @@ As a technical note, Generative Design works by doing the following:
 * It can be accessed from Dynamo for Revit or Dynamo Sandbox
 * It includes a node to cache Revit or other external data without the need to rely on external processes that could be computationally expensive.
 
-Generative Design is currently available as a Beta release, as of February 2019: [https://www.autodesk.com/solutions/refinery-beta](https://www.autodesk.com/solutions/refinery-beta)
+Generative Design is currently available in Revit 2021.
 
