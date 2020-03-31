@@ -2,7 +2,7 @@
 
 We want the community to submit their generative design case studies to this primer. This chapter will showcase these cases so they will be available as examples for the wider generative design community.
 
-<img src="../assets/sample/comunity.png" style="width:200px;"/>
+<img src="../../assets/sample/comunity.png" style="width:200px;"/>
 
 In this section we will explore:
 
