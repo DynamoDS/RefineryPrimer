@@ -51,7 +51,7 @@
     * [Detailed Example Workflow](03-hello-GD-For-Revit/03-06_using-revit-alongside-GD-For-Revit/03-06-04_detailed-example-workflow.md)
     * [Sharing Logic and Results](03-hello-GD-For-Revit/03-06_using-revit-alongside-GD-For-Revit/03-06-05_sharing-logic-and-results.md)
     * [Current Limitations](03-hello-GD-For-Revit/03-06_using-revit-alongside-GD-For-Revit/03-06-06_current-limitations.md)
-    * [Accessing Generative Design Directly From Revit](03-hello-GD-For-Revit\03-06_using-revit-alongside-GD-For-Revit\03-06-07_accesing-refinery-directly-from-revit.md)
+    * [Accessing Generative Design Directly From Revit](03-hello-GD-For-Revit/03-06_using-revit-alongside-GD-For-Revit/03-06-07_accesing-refinery-directly-from-revit.md)
 * [Sample Workflows](04-sample-workflows/README.md)
   * [Getting Started Workflows](04-sample-workflows/04-01_getting-started-workflows/README.md)
     * [Highest Point of a Surface](04-sample-workflows/04-01_getting-started-workflows/04-01-01_highest-point-of-a-surface.md)
