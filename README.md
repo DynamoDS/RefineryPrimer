@@ -1,5 +1,5 @@
 # Welcome
-Welcome to the **AEC Generative Design Primer**, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design using generative design workflows. 
+Welcome to the **Generative Design Primer**, which aims to introduce AEC practitioners of all experience levels to an exciting new approach to design using generative design workflows. 
 
 <img src="assets/welcome/introgif.gif" style="width:200px;"/>
 
