@@ -6,5 +6,5 @@ We want the community to submit their generative design case studies to this pri
 
 In this section we will explore:
 
-* [Guidelines to upload examples](04-sample-workflows/04-06_community-examples/04-06-01_Guidelines.md) 
-* [List of community examples](04-sample-workflows/04-06_community-examples/04-06-02_List-Of-Examples.md)
+* [Guidelines to upload examples](04-06-01_Guidelines.md) 
+* [List of community examples](04-06-02_List-Of-Examples.md)
