@@ -73,7 +73,7 @@
 * [Generative Design in Your Office](05-gd-in-office/README.md)
   * [What Generative Design Can Be Used For?](05-gd-in-office/05-01_what-generative-design-can-be-used-for.md)
   * [What Generative Design Can’t Be Used For?](05-gd-in-office/05-02_what-generative-design-cant-be-used-for.md)
-  * [How to Convince Senior Stakeholders of Using Generative Design?](05-gd-in-office/05-03_how-to-convince-senior-stakeholders-of-using-gd)
+  * [How to Convince Senior Stakeholders of Using Generative Design?](05-gd-in-office/05-03_how-to-convince-senior-stakeholders-of-using-gd.md)
   * [The Role of a Generative Designer](05-gd-in-office/05-04_the-role-of-a-generative-designer.md)
   * [Hiring a Generative Designer](05-gd-in-office/05-05_hiring-a-generative-designer.md)
 * [Next Steps](06-next-steps/README.md)
