@@ -1,4 +1,4 @@
-# What Generative Design Can’t Be Used For?
+# What Can't Generative Design Be Used for?
 
 ![](../.gitbook/assets/whatgdcantbeusedfor1.png)
 

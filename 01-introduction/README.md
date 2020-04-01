@@ -6,12 +6,12 @@ In this chapter, we’ll look at key concepts that are essential to understandin
 
 We will look at the following topics:
 
-* the fundamental concepts needed to understand generative design
-* a definition of generative design in the context of AEC
-* an introduction to Generative Design for Revit and Dynamo
-* examples of using generative design to solve design problems
-* related concepts
-* common approaches used
+* The fundamental concepts needed to understand generative design.
+* A definition of generative design in the context of AEC.
+* An introduction to Generative Design for Revit and Dynamo.
+* Examples of using generative design to solve design problems.
+* Common approaches used.
+* Related concepts.
 
-Let’s start by first looking at something you’re very likely to be aware of and already using today: computational design.
+Let’s start by looking at something you’re very likely to be aware of and already using today: computational design.
 

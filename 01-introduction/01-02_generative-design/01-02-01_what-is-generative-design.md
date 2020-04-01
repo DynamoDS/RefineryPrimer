@@ -1,6 +1,6 @@
-# What is Generative Design?
+# What Is Generative Design?
 
-You may have encountered the term _`generative design`_ in the context of producing design permutations, creating geometry from some simple inputs or even just building computational graphs using Dynamo or Grasshopper.
+You may have encountered the term _`generative design`_ in the context of producing design permutations, creating geometry from some simple inputs, or even just building computational graphs using Dynamo or Grasshopper.
 
 We see generative design as:
 
@@ -14,7 +14,7 @@ We see generative design as:
 
 Generative design is a specific application of the computational design approach, with the following distinctions:
 
-* the designer defines goals to achieve a design \(rather than the exact steps\)
-* the computer generates many designs \(not just one\)
-* the computer finds a set of optimal solutions that satisfy the designer’s multiple competing goals
+* The designer defines goals to achieve a design \(rather than the exact steps\).
+* The computer generates many designs \(not just one\).
+* The computer finds a set of optimal solutions that satisfy the designer’s multiple competing goals.
 

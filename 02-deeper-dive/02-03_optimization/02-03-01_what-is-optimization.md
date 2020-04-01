@@ -1,4 +1,4 @@
-# What is Optimization?
+# What Is Optimization?
 
 ![](../../.gitbook/assets/whatisoptimization.png)
 

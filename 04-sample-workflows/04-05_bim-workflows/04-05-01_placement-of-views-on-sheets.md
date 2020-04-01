@@ -1,4 +1,4 @@
-# Placement of views on sheets
+# Placement of Views on Sheets
 
 ![](../../.gitbook/assets/workflowsheets1.gif)
 

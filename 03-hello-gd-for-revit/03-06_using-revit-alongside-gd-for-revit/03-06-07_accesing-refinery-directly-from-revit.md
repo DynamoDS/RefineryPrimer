@@ -1,4 +1,4 @@
-# Accessing Generative Design Directly From Revit
+# Accessing Generative Design Directly from Revit
 
 In the Revit preview release you will find a new plugin that will let you access Generative Design directly from Revit. This plugin is intended for users who are not familiar with Dynamo to be able to explore and try Generative Design without needing to create their own workflows \(similar to Dynamo Player\).
 

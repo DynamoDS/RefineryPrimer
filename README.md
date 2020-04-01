@@ -6,11 +6,11 @@ Welcome to the **Generative Design Primer**, which aims to introduce AEC practit
 
 ## About
 
-This primer will help you:
+This primer will help you to:
 
-* **Understand** what generative design is by defining the base concepts and terminology you need to know. 
-* **Explore** how these techniques can be used to solve practical challenges commonly found in AEC design projects.
-* **Learn** how to use Autodesk’s newest generative design tools such as Generative Design for Revit and Dynamo, through practical workflows.
+* **understand** what generative design is by defining the base concepts and terminology you need to know;
+* **explore** how these techniques can be used to solve practical challenges commonly found in AEC design projects; and
+* **learn** how to use Autodesk’s newest generative design tools such as Generative Design for Revit and Dynamo, through practical workflows.
 
 ## Why Make a Primer?
 
@@ -18,19 +18,19 @@ Autodesk is working to **democratize technologies** that can help designers in t
 
 ![](.gitbook/assets/whyprimer.png)
 
-Using these technologies requires new skills and new ways to think about design. We created this primer to explain the terminology, ideas, and methods you will need to understand to begin using generative design workflows and tools that support this new approach to design.
+Using these technologies requires new skills and new ways to think about design. We created this primer to explain the terminology, ideas and methods you'll need to begin using generative design workflows and tools that support this new approach to design.
 
-_Note: there are many different applications of generative design/art, and this primer does not aim to cover them all. This primer is focused on AEC methodologies and how these apply to both Generative Design/Dynamo_
+_Note: There are many different applications of generative design/art and this primer does not aim to cover them all. This primer is focused on AEC methodologies and how these apply to both Generative Design and Dynamo._
 
-**matterlab** was commissioned to kick-start the development of this primer, we thank them for all their efforts in establishing this valuable resource.
+**matterlab** was commissioned to kick-start the development of this primer. We thank them for all their efforts in establishing this valuable resource.
 
 [![](.gitbook/assets/matterlab-logo.jpg)](https://www.matterlab.co/)
 
 ## Open-Source
 
-This primer is an open source project initiated by the **AEC Generative Design Team** at Autodesk and we are dedicated to providing high-quality content on generative design in this primer.
+This primer is an open-source project initiated by the **AEC Generative Design Team** at Autodesk and we are dedicated to providing high-quality content on generative design in this primer.
 
-Contributions are of course welcomed. You can contribute to the primer in the following ways:
+Contributions are of course welcome. You can contribute to the primer in the following ways:
 
 * You can report any issue you may have found on our [issues page](https://github.com/DynamoDS/GenerativePrimer/issues).
 * If you’d like to improve, clarify, or add content to the Primer, please head over to our [Github repository](https://github.com/DynamoDS/GenerativePrimer).
@@ -38,7 +38,7 @@ Contributions are of course welcomed. You can contribute to the primer in the fo
 
 ## Contact
 
-Let us know about any issues with this document.
+Please let us know about any issues with this document.
 
 refineryfeedback@autodesk.com
 
