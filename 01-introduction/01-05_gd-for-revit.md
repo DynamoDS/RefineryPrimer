@@ -2,15 +2,15 @@
 
 Generative Design for Revit and Dynamo is Autodesk’s latest application for generative design workflows that allows users to explore, evaluate, and optimize their Dynamo designs. Generative Design allows users to set multiple \(and sometimes, competing\) design goals, generates a series of solutions, and enables the user to make decisions by automating the creation and evaluation of designs.
 
-<img src="../assets/intro/refinery1.png" style="width:200px;"/>
+![](../.gitbook/assets/refinery1.png)
 
 The key features of Generative Design are that it makes it easier to drive a design towards optimality, as it handles all the back-end work of generation and iteration; and presents the user with either a single design solution or a collection of optimal solutions that best align with his or her goals. Generative Design for Revit also allows someone who is not Dynamo-savvy to use generative design workflows.
 
-<img src="../assets/intro/refinery2.png" style="width:200px;"/>
+![](../.gitbook/assets/refinery2.png)
 
-In short, Generative Design for Revit and dynamo enables users to tackle the *`Generate`*, *`Evaluate`*, *`Evolve`* and *`Explore`* stages of a generative design process.
+In short, Generative Design for Revit and dynamo enables users to tackle the _`Generate`_, _`Evaluate`_, _`Evolve`_ and _`Explore`_ stages of a generative design process.
 
-<img src="../assets/intro/refinery3.png" style="width:200px;"/>
+![](../.gitbook/assets/refinery3.png)
 
 As a technical note, Generative Design works by doing the following:
 

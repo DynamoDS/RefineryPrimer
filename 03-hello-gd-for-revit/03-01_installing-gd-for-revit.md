@@ -1,12 +1,12 @@
-# Getting Started With Generative Design for Revit and Dynamo
+# Installing Generative Design
 
 Generative Design is currently available as a Beta release, as of March 2019. In order to use Generative Design, you need to sign up to the Generative Design community, using your Autodesk credentials at the following website:
 
 [https://www.autodesk.com/solutions/refinery-beta](https://www.autodesk.com/solutions/refinery-beta)
 
-<img src="../assets/hello/install1.png" style="width:200px;"/>
+![](../.gitbook/assets/install1.png)
 
-<img src="../assets/hello/install2.png" style="width:200px;"/>
+![](../.gitbook/assets/install2.png)
 
 ## The Generative Design Community
 
@@ -20,21 +20,15 @@ After signing up for the Beta you will be presented with an overview of the Gene
 
 Any new releases of Generative Design will be available to download and install from this location too.
 
-<br/>
-
-<img src="../assets/hello/install3.png" style="width:200px;"/>
+![](../.gitbook/assets/install3.png)
 
 _Above: the Generative Design community home page_
-
-<br/>
 
 ## Installing Generative Design for Revit and Dynamo
 
 To install the latest version of Generative Design, go to the Getting Started section, where you can see the latest Pre-Requisites needed to use Generative Design. After making sure you satisfy these initial requirements, please follow the step-by-step guide in the install section.
 
-<br/>
-
-<img src="../assets/hello/install4.png" style="width:200px;"/>
+![](../.gitbook/assets/install4.png)
 
 _Above: the Generative Design beta community Getting Started instructions page_
 

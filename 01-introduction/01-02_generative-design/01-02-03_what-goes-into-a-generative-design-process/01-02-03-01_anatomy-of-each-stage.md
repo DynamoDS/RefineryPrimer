@@ -6,7 +6,7 @@ Using this breakdown, let's look at what the _`Generate`_ stage would entail.
 
 ### Define
 
-<img src="../../../assets/intro/anatomy1.png" style="width:200px;"/>
+![](../../../.gitbook/assets/anatomy1.png)
 
 For the _`define`_ step, the expertise of the designer is needed to do the following:
 
@@ -17,13 +17,13 @@ This _`define`_ step is present and vital for all stages of the generative desig
 
 ### Run
 
-<img src="../../../assets/intro/anatomy2.png" style="width:200px;"/>
+![](../../../.gitbook/assets/anatomy2.png)
 
 Once everything is defined in the algorithms and accompanying parameters, the computer begins to _`run`_, meaning it starts to generate different design options. This process might happen locally on the designer's computer or, for more intensive calculations, run using cloud computing.
 
 ### Results
 
-<img src="../../../assets/intro/anatomy3.png" style="width:200px;"/>
+![](../../../.gitbook/assets/anatomy3.png)
 
 Things that are generated in the run step are the final results or outputs of each stage. They are used as inputs or parameters in subsequent phases. For example, the designs created in the _`Generate`_ phase are used as one of input parameters in the _`Analysis`_ phase.
 
@@ -31,7 +31,7 @@ Things that are generated in the run step are the final results or outputs of ea
 
 We can map these stages and steps together in a single diagram, allowing us to visualize the order of each stage and their dependencies.
 
-<img src="../../../assets/intro/anatomy4.png" style="width:200px;"/>
+![](../../../.gitbook/assets/anatomy4.png)
 
 The diagram illustrates the following:
 

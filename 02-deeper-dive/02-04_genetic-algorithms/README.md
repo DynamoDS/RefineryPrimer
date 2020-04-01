@@ -1,6 +1,6 @@
 # Genetic Algorithms
 
-<img src="../../assets/deeper/genetic.png" style="width:200px;"/>
+![](../../.gitbook/assets/genetic.png)
 
 In this section, we’ll look at the term _`Generative Algorithm`_
 
