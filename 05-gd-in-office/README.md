@@ -2,7 +2,7 @@
 
 In this section we will discuss how generative design can be used within your office.
 
-![](../.gitbook/assets/gdinyouroffice.png)
+<img src="../assets/gdoffice/gdinyouroffice.png"/>
 
 We will look at the following:
 
@@ -11,4 +11,3 @@ We will look at the following:
 * [How to convince stakeholders to use generative design?](05-03_how-to-convince-senior-stakeholders-of-using-gd.md)
 * [The role of a generative designer.](05-04_the-role-of-a-generative-designer.md)
 * [Hiring a generative designer](05-05_hiring-a-generative-designer.md)
-

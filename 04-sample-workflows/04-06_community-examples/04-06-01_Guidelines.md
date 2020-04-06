@@ -8,12 +8,12 @@ If you have any suggestions for the primer, we will gladly review them. To do so
 
 ## Submitting Examples
 
-If you have an example please create a Pull Request in GitHub containing your workflow. Follow these steps:
+If you have an example please create a Pull Request in GitHub containing your workflow. Follow these steps: 
 
-#### **1. Upload files:**
+#### **1. Upload files:** 
 
 * Place all necessary files for your workflow in a zip file, this zip file should be named using the following format: Author's last name \(Uppercase, 3 first letters\) + Short descriptive name of workflow Example:`RAH_FloorsFromSolarAnalysis.zip`
-* All files should be named using the same format. Example:  `RAH_FloorsFromSolarAnalysis.dyn`.
+*  All files should be named using the same format. Example:  `RAH_FloorsFromSolarAnalysis.dyn`.
 * Create a pull request by adding this zip file to the following folder:`04-sample-worflows/04-06_Community-Examples/04-06-00_Community_Examples`
 * Make sure your file runs on the last version of Refinery and Revit. 
 * You should include: 
@@ -45,39 +45,53 @@ To ensure that all sample files presented in this page are easy to understand, w
 
 ### Create a Title Block
 
-This title block will help the user identify all the requirements needed to run the workflow \(Revit version, required dynamo packages, etc.\). The title block will also display observations that help explain what the workflow does, and how is it useful.
+This title block will help the user identify all the requirements needed to run the workflow \(Revit version, required dynamo packages, etc.\). The title block will also display observations that help explain what the workflow does, and how is it useful.  
 
 > You can copy a panel from an existing document and change the information in it so it suits your workflow
 
-![](../../.gitbook/assets/guidelines1.png)
+<p align="center">
+  <img src="../../assets/sample/guidelines1.png">
+</p>
+
 
 ### Organize Nodes Into Groups
 
 Organizing nodes into groups will help the user understand how the workflow is structured. Groups should have comments that indicate the general purpose of the group of nodes.
 
-![](../../.gitbook/assets/guidelines2.png)
+<p align="center">
+  <img src="../../assets/sample/guidelines2.png">
+</p>
 
 ### Follow Color Guidelines
 
 We use a consistent color pallet through out our workflows. Don't forget to follow this color pallet in your workflow:
 
-#### Inputs - Pink
+####  Inputs - Pink
 
-![](../../.gitbook/assets/guidelines3.png)
+<p align="center">
+  <img src="../../assets/sample/guidelines3.png">
+</p>
 
 #### Generators - Green
 
-![](../../.gitbook/assets/guidelines4.png)
+<p align="center">
+  <img src="../../assets/sample/guidelines4.png">
+</p>
 
 #### Display - Blue
 
-![](../../.gitbook/assets/guidelines5.png)
+<p align="center">
+  <img src="../../assets/sample/guidelines5.png">
+</p>
 
 #### Metrics - Orange
 
-![](../../.gitbook/assets/guidelines6.png)
+<p align="center">
+  <img src="../../assets/sample/guidelines6.png">
+</p>
 
-#### Remember/Gate - Purple
+#### Remember/Gate - Purple 
 
-![](../../.gitbook/assets/guidelines7.png)
-
+<p align="center">
+  <img src="../../assets/sample/guidelines7.png">
+</p>
