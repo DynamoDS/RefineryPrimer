@@ -8,7 +8,7 @@ The key features of Generative Design are that it makes it easier to drive a des
 
 <img src="../assets/intro/refinery2.png" style="width:200px;"/>
 
-In short, Generative Design for Revit and dynamo enables users to tackle the *`Generate`*, *`Evaluate`*, *`Evolve`* and *`Explore`* stages of a generative design process.
+In short, Generative Design for Revit and dynamo enables users to tackle the _`Generate`_, _`Evaluate`_, _`Evolve`_ and _`Explore`_ stages of a generative design process.
 
 <img src="../assets/intro/refinery3.png" style="width:200px;"/>
 

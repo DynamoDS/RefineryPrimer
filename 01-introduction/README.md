@@ -1,4 +1,4 @@
-# Introduction
+# Introduction to Generative Design
 
 In this chapter, we’ll look at key concepts that are essential to understanding generative design and how Generative Design for Revit and Dynamo works.
 

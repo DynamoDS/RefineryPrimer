@@ -12,7 +12,7 @@ As the designer, you specify what outcomes you want to achieve for your design a
 
 <img src="../../assets/intro/whyusegen1.gif" style="width:200px;"/>
 
-> Maximization of active shared spaces - Mars Innovation District - The Living 
+> Maximization of active shared spaces - Mars Innovation District - The Living
 
 ## Faster
 
@@ -20,7 +20,7 @@ Generative design can help you find better designs for your project faster, by l
 
 <img src="../../assets/intro/whyusegen2.gif" style="width:200px;"/>
 
->Design options generated - Mars Innovation District - The Living
+> Design options generated - Mars Innovation District - The Living
 
 ## More Variation
 

@@ -1,6 +1,6 @@
 # What is Generative Design?
 
-You may have encountered the term *`generative design`* in the context of producing design permutations, creating geometry from some simple inputs or even just building computational graphs using Dynamo or Grasshopper.
+You may have encountered the term _`generative design`_ in the context of producing design permutations, creating geometry from some simple inputs or even just building computational graphs using Dynamo or Grasshopper.
 
 We see generative design as:
 

@@ -4,7 +4,7 @@ _`Computational design`_ is not any one algorithm or off-the-shelf process you c
 
 <img src="../assets/intro/compdesign.gif" style="width:200px;"/>
 
->Image above Martin Stacey - UCL - NURBS manipulation. 
+> Image above Martin Stacey - UCL - NURBS manipulation. 
 
 Put simply, computers are very good at performing calculations and executing pre-defined steps.
 

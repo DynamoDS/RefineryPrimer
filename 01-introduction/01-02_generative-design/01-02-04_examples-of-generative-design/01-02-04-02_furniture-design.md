@@ -12,7 +12,7 @@ In a generative design approach, you would instead specify:
 * a series of available materials and their properties \(such as cost/m²\)
 * a set of goals that measure how successful a table design is
 
-### Generate
+## Generate
 
 You use the computer to generate a series of designs falling within the specified range. Some designs will be short and wide, others will be tall and thin, but each will satisfy the user-defined constraints. This is key, as many designs can be generated very quickly, much more than any human could feasibly examine.
 
@@ -22,7 +22,7 @@ You use the computer to generate a series of designs falling within the specifie
 
 _Above: matrix showing 36 generated table designs, varying width, length, and height_
 
-### Evaluate
+## Evaluate
 
 The next step is to define how the generated designs are evaluated. This is your opportunity to clearly express the design goals.
 

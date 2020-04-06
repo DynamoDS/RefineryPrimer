@@ -1,4 +1,4 @@
-# What is Visual Programming?
+# Visual Programming?
 
 <img src="../assets/intro/visual1.png" style="width:200px;"/>
 

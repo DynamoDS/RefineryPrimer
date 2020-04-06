@@ -2,7 +2,7 @@
 
 For the design of the new office and research space in the MaRs Innovation District of Toronto, Autodesk leveraged generative design processes. Starting with high-level goals and constraints, the design team used the power of computation to generate, evaluate, and evolve thousands of design alternatives. The result was a high-performing and novel work environment that would not have been possible to create without this approach.
 
-### Generate
+## Generate
 
 <img src="../../../assets/intro/mars1.png" style="width:200px;"/>
 
@@ -12,7 +12,7 @@ The designers created a geometric system that allowed the exploration of multipl
 
 The computer used this algorithm, varying its parameters to produce thousands of design options.
 
-### Evaluate
+## Evaluate
 
 <img src="../../../assets/intro/mars2.jpg" style="width:200px;"/>
 
@@ -31,7 +31,7 @@ The designers then created an algorithm to measure how any given floor plan can 
 
 After the algorithms were formulated, the computer used them to evaluate each of the designs generated in the previous stage against the defined goals.
 
-### Explore
+## Explore
 
 <img src="../../../assets/intro/mars3.gif" style="width:200px;"/>
 
