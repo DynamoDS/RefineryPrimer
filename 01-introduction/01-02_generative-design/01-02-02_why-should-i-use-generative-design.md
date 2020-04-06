@@ -18,13 +18,13 @@ As the designer, you specify which outcomes you want to achieve for your design 
 
 Generative design can help you find better designs for your project more quickly by leveraging what computers are good at: computation and repetition. 
 
-Computers can generate and evaluate a huge number of design variants in only a fraction of the time it would take an individual designer, allowing you to learn what works and what doesn't at an accelerated pace.
+Computers can generate and evaluate a huge number of design variants in only a fraction of the time it would take an individual designer, allowing you to learn what does and doesn't work at an accelerated pace.
 
 ![](../../.gitbook/assets/whyusegen2.gif)
 
 > Design options generated - Mars Innovation District - The Living
 
-## More Variation
+## A Greater Variety of Options
 
 Your initial design parameters are used to generate many, even thousands, of potential design solutions, with the only limitation being how much computer power and time you have.
 
@@ -34,7 +34,7 @@ For example, it's feasible for you to explore ten variants \(or even a few tens\
 
 > Design options generated - Bionic Partition for Airbus - The Living
 
-## Collaboration
+## A Collaborative Approach
 
 The aim of a generative approach is not to replace designers - it is to augment human capability with computation power.
 

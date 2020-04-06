@@ -4,9 +4,11 @@
 
 ## Description
 
-This graph will move and rotate the position of a selected mass within a site boundary to minimize or maximize the solar incidence by Area ratio. This workflow relies heavily on the Solar Analysis node from Dynamo which makes external calls to a web service. As a result, each iteration can take a while to run while the solution runs the analysis. For the options where the movement or rotation causes the building to fall outside of the site boundary, the results are heavily penalized, to ensure the analysis doesn't run.
+This graph will move and rotate the position of a selected mass within a site boundary to minimize or maximize the solar incidence by Area ratio. This workflow relies heavily on the 'Solar Analysis' node from Dynamo, which makes external calls to a web service to collect the necessary information for analysis. 
 
-[Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-02-02_Building-positioning.zip)
+As a result, each iteration can take a while to run. For the options where the movement or rotation causes the building to fall outside of the site boundary, the results are heavily penalized to ensure the analysis doesn't run.
+
+[Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-02-02_Building-positioning.zip).
 
 ## Static Inputs
 
@@ -16,7 +18,7 @@ This graph will move and rotate the position of a selected mass within a site bo
 | Surrounding buildings | Select the surrounding context that will affect solar analysis |
 | Main building | Select the mass \(building\) that will be repositioned |
 | Site offset | A number to define the offset from the site boundary |
-| Floor height | Floor to floor height used on the solar analysis |
+| Floor height | Floor-to-floor height used on the solar analysis |
 | Location coordinates | The real-world coordinates used for the solar analysis |
 
 ## Variable Inputs
@@ -29,29 +31,37 @@ This graph will move and rotate the position of a selected mass within a site bo
 
 ## Functions
 
-The script is made up of a series of functions, which are divided into groups inside the graph. Each group has a name and a short description, where the name indicates the type of function that is being run and the description explains in more detail the process.
+The script is made up of a series of functions, which are divided into groups inside the graph. Each group has a name and a short description, where the name indicates the type of function being run and the description explains in more detail the process.
 
-The graph uses the Revit mass/building and extracts the geometry in Dynamo. All the surrounding context higher than 30m tall is also referenced in as Dynamo geometry. The generator of this script provides a new location based on the UV values and a new rotation. The building is then moved to the new location point and rotated to suit the new angle. Once the building is in the new location, and it complies with the site boundary, the solar analysis takes place by reviewing all external vertical surfaces of the building and calculating their solar incidence.
+The graph uses the Revit mass \(building\) and extracts the geometry in Dynamo. All the surrounding context higher than 30m tall is also referenced in as Dynamo geometry. The generator of this script provides a new location \(based on the U and V values\), along with a new rotation. The building is then moved to the new location point and rotated to fit the new angle. Once the building is in its new location and in line with the site boundary, the solar analysis takes place by reviewing all external vertical surfaces of the building and calculating their solar incidence.
 
 ## Visualization
 
-When geometry is created in Dynamo, often other geometry is needed to facilitate the overall process. To ensure the geometry displayed shows the final geometric output, all unnecessary geometry has been switched off. Any nodes with the preview switched off will not display the output visually in Generative Design. In this case, only the main building and the resulting solar analysis will be visible. The solar analysis is represented on the external surfaces of the building as a colored grid of points. These points are colored from yellow to red to indicate a low amount of incidence and a amount of incidence respectively.
+When geometry is created in Dynamo, often other geometry is needed to facilitate the overall process. 
+
+Please note that all unnecessary geometry has been switched off in Dynamo - this is to ensure the geometry displayed shows the final geometric output. Any nodes with the preview switched off will not display the output visually in Generative Design. In this case, only the main building and the resulting solar analysis will be visible. 
+
+The solar analysis is represented on the external surfaces of the building as a colored grid points. These points range in color from yellow to red, where yellow indiciates a low amount of incidence and red inidicates an amount of incidence.
 
 ## Evaluators
 
 | Name | Description |
 | :--- | :--- |
-| Area out | Area of the building in square meters that sits outside the site boundary |
+| Area out | Area of the building \(m²\) that sits outside the site boundary |
 | Free area | Area of the internal site boundary that is not occupied by the building floor plate |
-| Average incidence | The average incidence in square meters of the external walls of the building |
+| Average incidence | The average incidence \(m²\) of the external walls of the building |
 
 ## Benefits of Using Generative Design
 
-Without the aid of Generative Design, running this script in Dynamo, the user would be required to manually move the building until they managed to find the desired location and rotation. This process, unless incredibly lucky, would take hours if not days. As the aim is simple, to find the location and rotation that provides either the minimum or maximum incidence, Generative Design can be leveraged by using the _`Optimize`_ approach. Larger site offset values restrict the space the building can move and so reduce the potential for it falling outside of the site boundary.
+Without Generative Design, in running this script in Dynamo the user would have to manually move the building until they finally managed to find the desired location and rotation. This process would take hours if not days \(unless they were incredibly lucky\). 
+
+As the aim in this example is simple \(finding the best location and rotation for either the minimum or maximum incidence\), Generative Design can be leveraged by using the _`Optimize`_ approach; larger site offset values would limit the space the building can move and so would also reduce the potential for it falling outside of the site boundary.
 
 ## Results
 
-Once Generative Design has completed, the results can be explored through the available tables and graphs. The image below shows an example output from an optimized study based on 10 generations with a population of 20. The outputs were defined as minimized for both _`OUT_Area Out(m2)`_ and _`OUT_Avg.(kWh/m2)`_.
+Once Generative Design has completed, the results can be explored through Generative Design's tables and graphs. 
+
+The image below shows an example output from an optimized study based on 10 generations with a population of 20. The outputs were defined as minimized for both _`OUT_Area Out(m2)`_ and _`OUT_Avg.(kWh/m2)`_.
 
 ![](../../.gitbook/assets/workflow22.png)
 

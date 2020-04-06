@@ -1,6 +1,10 @@
 # BIM Workflows
 
-The following section has workflows related to BIM processes:
+This section provides workflows related to BIM processes.
 
-* [Placement of views on sheets](04-05-01_placement-of-views-on-sheets.md) - get files 
+In this section, we will look at:
+
+* [Placement of Views on Sheets](04-05-01_placement-of-views-on-sheets.md)
+
+Download BIM workflow files.
 

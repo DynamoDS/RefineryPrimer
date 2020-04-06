@@ -1,8 +1,10 @@
 # Sample Workflows
 
-This section will explore a series of workflows that can be found in the 07-00\_sample\_files folder in the Github repository.
+This section will explore a series of workflows that can be found in the '07-00\_sample\_files' folder in the Github repository.
 
 ![](../.gitbook/assets/sample.png)
+
+The following sample workflows are available:
 
 * [Getting Started Workflows](04-01_getting-started-workflows/) 
 * [Architectural Workflows](04-02_architectural-workflows/)
@@ -10,7 +12,7 @@ This section will explore a series of workflows that can be found in the 07-00\_
 * [Structural Workflows](04-04_structural-workflows.md)
 * [Community Examples](https://github.com/martinstacey/RefineryPrimer/tree/4a402d4d1c74b998ec77ae24ba1fe5a01289adf9/04-sample-workflows/04-05_community-examples.md)
 
-Click below to download a zip with all sample workflows or go to each workflow's page to download them individually. You can also find these sample files on the [Releases page](https://github.com/DynamoDS/RefineryPrimer/releases) of the repo
+Click the link below to download a zip with all of the sample workflows, or go to each workflow's page to download them individually. You can also find these sample files on the '[Releases](https://github.com/DynamoDS/RefineryPrimer/releases)' page of the repository.
 
-[Download all sample workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-all-sample-workflows.zip)
+[Download all sample workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-all-sample-workflows.zip).
 
