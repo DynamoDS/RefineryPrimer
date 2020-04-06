@@ -1,6 +1,6 @@
 # What Are Algorithms?
 
-There's been a growing public interest in algorithms in recent years, and this shift has, in some ways, created an idea that algorithms are far more complex and advanced than they actually are or need to be. In essence, an algorithm can be thought of as:
+There has been a sudden hype towards algorithms, mystifying them and giving them false pretences that go way beyond what they do, but in essence an algorithm can be thought of as:
 
 > A set of instructions that typically help to solve a problem.
 
@@ -8,7 +8,7 @@ There's been a growing public interest in algorithms in recent years, and this s
 
 ## Algorithms in Generative Design
 
-A generative design approach involves several steps with distinct types of algorithms that encode logic at each step. The methods used in each step are very different from each other, so we generally categorize them as follows:
+A generative design approach involves several distinct steps with distinct kinds of algorithms to encode logic at each step. The types of methods used in each step are very different from each other, so we generally categorize them as follows:
 
 | Step | Algorithm Type |
 | :--- | :--- |

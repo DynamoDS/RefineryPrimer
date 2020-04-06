@@ -1,12 +1,12 @@
 # Detailed Example Workflow
 
-In the following example, we will use the steps from the previous section to cache data from Revit and perform an optimization process using Generative Design to find the best solution. Then, we'll push the result back to Revit.
+In the following example, we will use the steps from the previous section, and cache data from Revit. We will then perform an optimization process using Generative Design to find the optimum solution before pushing the result back to Revit.
 
-_Note: All sample files for this example can be found in the_ [_`04_sample_files`_](https://github.com/DynamoDS/RefineryPrimer/releases) _folder in the Github repository._
+_All sample files for this example can be found in the_ [_`04_sample_files`_](https://github.com/DynamoDS/RefineryPrimer/releases) _folder in the Github repository_
 
-## About This Example
+## About
 
-The intention of this workflow is to find the best location for a desk in the office floor plate, where it maximizes the number of views to the outside. To do this, the information we need to cache in the _`Data.Remember`_ node includes all the geometry relating to the bounding elements of the room \(walls, doors, windows and internal obstructions\).
+The intention of this workflow is to find the best location for a desk in the office floor plate, where it maximizes the number of views to the outside. To do this the information we need to cache in the _`Data.Remember`_ node is all the geometry relating to the bounding elements of the room \(walls, doors, windows and internal obstructions\).
 
 ![](../../.gitbook/assets/detailex1.png)
 
@@ -14,15 +14,13 @@ With this data, we will use Generative Design to perform an optimization process
 
 ## Script Creation
 
-The first step is to create our script. Remember, our script needs to contain both the generator \(to create the different options\) and the evaluators \(to assess the performance of each option against our criteria\).
+The first step is to create our script. Remember, our script needs to contain both the generator to create the different options and the evaluators to assess the performance of each option against our criteria.
 
 ![](../../.gitbook/assets/detailex2.png)
 
 ## Data.Remember Node
 
-In this example, there is a little work needed to extract the correct geometry from each of the Revit elements. 
-
-For this workflow, we need a set of polygons across a common plane. To get this information, we use a combinations of nodes in Dynamo to extract it from the walls, windows and internal columns. Once we have this geometry, we can use the _`Data.Remember`_ node to cache the values in the script.
+In this example, there is a little work needed to extract the correct geometry from each of the Revit elements. For this workflow we require a set of polygons across a common plane. We extract this information from the walls, windows and internal columns through a combination of nodes in Dynamo. Once we have this geometry, we can use the _`Data.Remember`_ node to cache the values in the script.
 
 ![](../../.gitbook/assets/detailex3.png)
 
@@ -34,9 +32,7 @@ The generator of the script determines how Generative Design will move the point
 
 ## Evaluators
 
-The evaluator of the script determines how each design option scores in relation to our overall goal. Remember the goal of this workflow was to maximize the number of views to outside. 
-
-To enable this, we have a custom node that takes in the following inputs:
+The evaluator of the script determines how each design option scores in relation to our overall goal. Remember the goal of this workflow was to maximize the views to outside. To enable this, we have a custom node that takes in the following inputs:
 
 * view segments \(windows\)
 * origin \(point location\)
@@ -52,25 +48,19 @@ The output of the node returns both a visual and non-visual output:
 
 ## Dynamo Sandbox
 
-With the graph correctly set up and run once in D4R to cache the data, we can close Dynamo and Revit and open Dynamo Sandbox. 
-
-As we know from the previous example, the Revit nodes upstream of the _`Data.Remember`_ node are marked as unresolved, but on running the graph the values are still cached in the _`Data.Remember`_ nodes.
+With the graph correctly set up and run once in D4R to cache the data, we can close Dynamo and Revit and open Dynamo Sandbox. As per the previous example, the Revit nodes upstream of the _`Data.Remember`_ node are marked as unresolved, but on running the graph the values are still cached in the _`Data.Remember`_ nodes themselves.
 
 ![](../../.gitbook/assets/detailex6.png)
 
 ## Generative Design
 
-Now we are ready to run through Generative Design. In Generative Design, select _`Optimize`_ \(for more details on how to run an optimization process, please refer to the '[Optimization](../../02-deeper-dive/02-03_optimization/)' section\). 
-
-For this study, we want to _`Maximize`_ the result. Generative Design then works to solve the design problem, taking into account the pre-defined population size and amount of generations .
+Now we are ready to run through Generative Design. In Generative Design we want to select _`Optimize`_. For more details on how to run an optimization process please refer to [section 2-03](../../02-deeper-dive/02-03_optimization/). For this study we want to _`Maximize`_ the result. Generative Design then goes to work to solve the design problem, using the population size and amount of generations to decide on the best option.
 
 ![](../../.gitbook/assets/detailex7.png)
 
 ## Revit
 
-To use a design option from Generative Design, we simply click through either the charts or tables to select our design option. More detail on this is found in the '[Optimization](../../02-deeper-dive/02-03_optimization/)' section. 
-
-When you choose your option in Generative Design, the input values used by the generator in Dynamo will be set to the same nodes. Saving the graph saves these values back to the Dynamo file. If we close Dynamo Sandbox at this point and reopen Revit, we can also add additional Revit nodes to the end of the graph. This will take the point generated by the best option in Generative Design and place our desk \(family instance\).
+To use the design option from Generative Design, we simply click through either the charts or tables to select our chosen option. More detail on this is found in [section 02-05](../../02-deeper-dive/02-03_optimization/). By clicking on the option in Generative Design the input values used by the generator in Dynamo are set to the same nodes. Saving the graph saves these values back to the Dynamo file. Closing Dynamo Sandbox and reopening Revit, we can add some additional Revit nodes to the end of the graph. This will take the point generated by the best option in Generative Design and place our desk \(family instance\).
 
 ![](../../.gitbook/assets/detailex8.png)
 
