@@ -1,4 +1,4 @@
-# What Can Generative Design Be Used for?
+# What Generative Design Can Be Used For?
 
 ![](../.gitbook/assets/whatgdcanbeusedfor.png)
 

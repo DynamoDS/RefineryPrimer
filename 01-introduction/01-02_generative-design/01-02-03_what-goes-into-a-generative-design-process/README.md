@@ -24,7 +24,7 @@ Based on the results of the analysis, design options are ordered or ranked.
 
 ### Evolve
 
-The process ranks the design options to figure out which direction they should be further developed or evolved into.
+The process uses the ranking of the design options to figure out in which direction designs should be further developed or evolved.
 
 ![](../../../.gitbook/assets/stages4.png)
 

@@ -2,7 +2,7 @@
 
 Looking at a simpler example, let's consider the process of designing a typical, four-legged table.
 
-Using a standard approach, you would manually define the length, width, height and material of the table. The resulting output is a single, physical object with a fixed, immutable form. Perhaps you could tests several distinct sets of dimensions and material combinations, resulting in three or four prototypes.
+Using a standard approach, you would manually define the length, width, height, and material of the table. The resulting output is a single, physical object with a fixed, immutable form. Perhaps you could tests several distinct sets of dimensions and material combinations, resulting in three or four prototypes.
 
 ![](../../../.gitbook/assets/furn1.png)
 

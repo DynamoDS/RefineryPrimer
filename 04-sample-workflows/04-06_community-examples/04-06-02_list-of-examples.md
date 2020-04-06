@@ -1,4 +1,4 @@
-# List of Examples
+# List Of Examples
 
 ## Architectural Workflows
 

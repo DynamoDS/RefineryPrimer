@@ -1,4 +1,4 @@
-# Building Positioning Based on Solar Analysis
+# Building Positioning based on Solar Analysis
 
 ![](../../.gitbook/assets/workflow21.gif)
 

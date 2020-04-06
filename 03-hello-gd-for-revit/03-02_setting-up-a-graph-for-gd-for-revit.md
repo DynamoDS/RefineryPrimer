@@ -1,4 +1,4 @@
-# Setting Up a Graph for Generative Design
+# Setting up a Graph for Generative Design
 
 ## Inputs
 

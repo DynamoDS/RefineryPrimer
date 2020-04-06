@@ -1,4 +1,4 @@
-# What Are Algorithms?
+# What are Algorithms?
 
 There has been a sudden hype towards algorithms, mystifying them and giving them false pretences that go way beyond what they do, but in essence an algorithm can be thought of as:
 
