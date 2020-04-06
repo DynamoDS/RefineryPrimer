@@ -2,7 +2,7 @@
 
 The Refinery Toolkit is a collection of packages to accelerate generative design workflows in Dynamo and Generative Design.
 
-![](../../.gitbook/assets/spaceplanningtoolkit_floorplan_layout.png)
+![](../../.gitbook/assets/image%20%284%29.png)
 
 ## The toolkits
 
