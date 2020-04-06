@@ -15,9 +15,7 @@ There are currently 2 packages included in the toolkit, each focusing on enablin
 
 The toolkit offers a range of nodes that help with general space-planning workflows in Dynamo and Revit.
 
-![](../../.gitbook/assets/packing_gif.gif)
-
-![](../../.gitbook/assets/visibilityanalysis.gif)
+![](../../.gitbook/assets/image%20%282%29.png)
 
 [Read more about the SpacePlanningToolkit](https://github.com/DynamoDS/RefineryToolkits/tree/master/src/SpacePlanning)
 
