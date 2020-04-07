@@ -15,17 +15,23 @@ We describe these two goals as 'competing' because, if we had a single cuboid, i
 
 However, when we consider multiple cuboids, with each of them constrained differently and their volumes joined together to form a single, solid element, it becomes possible to find an optimal solution of minimizing volume and maximizing surface area.
 
-![](../../.gitbook/assets/applychanges4.png)
+<p align="center">
+<img src="../../assets/hello/applychanges4.png" style="width:85%;"/>
+</p>
 
 _Above: The three cuboids joined together to form one solid._
 
 It is important to make sure here that all the nodes controlling the size and location of the cuboids are set as 'IsInput' in the Dynamo graph.
 
-![](../../.gitbook/assets/applychanges5.png)
+<p align="center">
+<img src="../../assets/hello/applychanges5.png" style="width:40%;"/>
+</p>
 
 Whenever an input parameter is changed, the option's volume and total surface area will be re-calculated. These two values are the 'fitness' values and need to be set as 'IsInput' in the Dynamo graph.
 
-![](../../.gitbook/assets/applychanges6.png)
+<p align="center">
+<img src="../../assets/hello/applychanges6.png" style="width:40%;"/>
+</p>
 
 When running this graph, you will need to follow these steps:
 
@@ -36,7 +42,9 @@ When running this graph, you will need to follow these steps:
 5. Under 'Issues', resolve any items.
 6. Click 'Generate'.
 
-![](../../.gitbook/assets/applychanges7.png)
+<p align="center">
+<img src="../../assets/hello/applychanges7.png" style="width:85%;"/>
+</p>
 
 A multi-objective optimization run will not return one single result, but instead it will show all of the 'non-dominated' options. A 'non-dominated' option means simply that you can't make an option that is better in one of the objectives without compromising another.
 
