@@ -6,11 +6,11 @@
 
 **Computational design** / comp·u·ta·tion·al de·sign / noun
 
-> Explicit rules that systematically model the behavior of a proposed design and the resulting data and geometry. Little project data is kept as static objects, instead the procedure to create them is saved. Project geometry and data are generated from the execution of mathematical and logical procedures.
+> Explicit rules that systematically model the behavior of a proposed design and the resulting data and geometry. Not many project data are kept as static objects; instead, the procedure to create them is saved. Project geometry and data are generated from the execution of mathematical and logical procedures.
 
 **Cross-product** / cross pro·duct / verb
 
-> aka Cartesian Product: the product of two or more sets that contains all ordered pairs between the sets.
+> aka Cartesian Product - the product of two or more sets that contains all ordered pairs between the sets.
 
 **Evaluate** / e·val·u·ate / verb
 
@@ -22,19 +22,19 @@
 
 **Explore** / ex·plore / verb
 
-> Different ways to interpret results and rankings.
+> To consider different ways of interpreting results and rankings.
 
 **Generate** / gen·er·ate / verb
 
-> To produce or create a design. Requires 1 or more input parameters which are combined in an algorithm to produce a design study. The resulting model or data is not necessarily a viable design.
+> To produce or create a design. Requires one or more input parameters that are combined in an algorithm to produce a design study. The resulting model or data is not necessarily a viable design.
 
 **Generative design** / gen·er·a·tive de·sign / noun
 
-> A system that produces design studies \(alternatives\), evaluates them against quantifiable goals, improves studies by learning from previous, and ranks results based on their distance from the goals. The project is kept as a system, with affordances to choose one or a small subset of alternatives as a final set of project data and geometry.
+> A system that produces design studies \(alternatives\), evaluates them against quantifiable goals, improves studies by learning from previous results, and ranks results based on their distance from the goals. The project is kept as a system, with affordances to choose one or a small subset of alternatives as a final set of project data and geometry.
 
 **Global optimum** / glo·bal op·ti·mum / verb
 
-> The most optimal solution out of all the possible solutions.
+> The best solution out of all the possible solutions.
 
 **Goal** / goal / noun
 
@@ -46,7 +46,7 @@
 
 **Local optimum** / lo·cal op·ti·mum / verb
 
-> The best solution within a neighbourhood of solutions that are slightly different, but still worse than the global optimum.
+> The best solution within a group of solutions that are slightly different, but still worse than the global optimum.
 
 **Multi-objective** / mul·ti ob·ject·ive / adjective
 
@@ -54,7 +54,7 @@
 
 **Optimization** / op·ti·mi·sa·tion / verb
 
-> Maximizing or minimizing some mathematical function to arrive at the best possible solution to a problem.
+> Maximizing or minimizing a mathematical function to arrive at the best possible solution to a problem.
 
 **Optioneering** / op·tion·eer·ing / verb
 
@@ -71,3 +71,4 @@
 **Solver** / solv·er / noun
 
 > An algorithm specifically designed to find the solution to a precisely defined problem.
+
