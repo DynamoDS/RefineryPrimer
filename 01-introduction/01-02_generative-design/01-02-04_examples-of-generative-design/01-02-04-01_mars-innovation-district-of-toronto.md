@@ -16,7 +16,7 @@ Using this algorithm, the computer varied the parameters to produce thousands of
 
 ## Evaluate
 
-<img src="../../../assets/intro/mars2.png" style="width:200px;"/>
+<img src="../../../assets/intro/mars2.jpg" style="width:200px;"/>
 
 > _Above: Design option evaluated and selected- Mars Innovation District - The Living_
 
@@ -35,7 +35,7 @@ After the algorithms were formulated, the computer used them to evaluate each of
 
 ## Explore
 
-<img src="../../../assets/intro/mars3.png" style="width:200px;"/>
+<img src="../../../assets/intro/mars3.gif" style="width:200px;"/>
 
 > _Above: Design Options - Mars Innovation District - The Living_
 

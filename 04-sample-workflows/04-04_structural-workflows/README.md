@@ -4,4 +4,4 @@
 
 Coming Soon!
 
-Do you have generative structural workflows already? This Primer is open-source, so please read [how you can get involved and contribute](https://refineryprimer.dynamobim.org/#open-source) or drop us a line.
+Do you have generative structural workflows already? This Primer is open-source, so please read [how you can get involved and contribute](https://refineryprimer.dynamobim.org/#open-source) or drop us a line at refineryfeedback@autodesk.com.

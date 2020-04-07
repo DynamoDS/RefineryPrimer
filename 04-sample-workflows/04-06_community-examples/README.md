@@ -8,6 +8,5 @@ This chapter will showcase these examples so they are available for the wider co
 
 In this section, we will look at:
 
-* [Guidelines for Uploading Examples](04-06-01_guidelines.md) 
-* [List of Community Examples](04-06-02_list-of-examples.md)
-
+* [Guidelines for Uploading Examples](04-06-01_Guidelines.md) 
+* [List of Community Examples](04-06-02_List-Of-Examples.md)

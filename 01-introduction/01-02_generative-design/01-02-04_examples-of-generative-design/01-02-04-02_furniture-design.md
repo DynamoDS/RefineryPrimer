@@ -28,7 +28,7 @@ _Above: Matrix showing 36 generated table designs, varying width, length, and he
 
 The next step is to define how the generated designs are evaluated. This is your opportunity to clearly express your design goals.
 
-<img src="../../../assets/intro/furn3.png" style="width:200px;"/>
+<img src="../../../assets/intro/furn3.jpg" style="width:200px;"/>
 
 _Above: A range of table designs \(sizes\), colour-coded based on evaluator function result \(cost\)._
 
@@ -47,7 +47,7 @@ For the second scenario, we're aiming to maximize return on investment \(ROI\) f
 
 This second scenario is a good illustration of using generative design to work towards multiple and competing goals, which is very hard for humans to replicate.
 
-<img src="../../../assets/intro/furn4.png" style="width:200px;"/>
+<img src="../../../assets/intro/furn4.jpg" style="width:200px;"/>
 
 _Above: Visualizing evaluator function results as a color range._
 
