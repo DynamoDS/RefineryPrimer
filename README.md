@@ -38,7 +38,7 @@ Contributions are of course welcomed. You can contribute to the primer in the fo
 
 Let us know about any issues with this document.
 
-refineryfeedback@autodesk.com
+aecgdfeedback@autodesk.com
 
 ## License
 

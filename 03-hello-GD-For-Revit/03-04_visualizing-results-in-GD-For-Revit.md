@@ -2,8 +2,6 @@
 
 After running a generative process, the results will be displayed in the Explore Outcomes dialog in both geometric form and through a series of charts or tables. All of the resulting views are connected and selecting an option in one view will highlight it in the other displays. 
 
-If Dynamo is running in automatic mode in the background, selecting an option will also update the graph there so that it shows this design.
-
 ## Design Grid
 
 The design grid shows each option as a 3D geometrical thumbnail that can be individually rotated, zoomed and panned to explore the design in more detail. 
@@ -49,7 +47,7 @@ The graph can be filtered by dragging the selection on each vertical axis.
 The kind of visualization you choose for your project may vary depending on what kind of process you are running:
 
 * If you are running an _`optioneering`_ process, it may be beneficial to visualize it using a parallel coordinates chart, as it will be easier to filter options after you run them to explore different goals.
-* If you are running a multi-objective _`optimization process`_, it may be beneficial to visualize it using a scatterplot chart, as it will make it easier to find the best trade-off between two objectives and see the Pareto front.
+* If you are running a multi-objective _`optimization process`_, it may be beneficial to visualize it using a scatterplot chart, as it will make it easier to find the best trade-off between two objectives and see the Pareto front. For more information on multi-objective optimization and the pareto front refer to our section on the [objective function.](../02-deeper-dive/02-03_optimization/02-03-02_objective-function.md)
 
 
 

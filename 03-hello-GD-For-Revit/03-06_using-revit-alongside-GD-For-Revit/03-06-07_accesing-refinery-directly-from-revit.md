@@ -14,7 +14,7 @@ To access Generative Design in Revit, you'll need to do the following:
 
 <img src="../../assets/hello/accessrefinery2.png"/>
 
-3. You will notice that examples of workflows previously created appear in this window. By default, Generative Design launches with a number of sample workflows. To proceed, select a workflow you want to try.
+3. You will notice that examples of workflows previously created appear in this window. By default, Generative Design launches with a number of sample workflows. You can add personalized workflows via Dynamo, and those workflows will be available in this window. To proceed, select a workflow you want to try.
 
 <img src="../../assets/hello/accessrefinery3.png"/>
 
