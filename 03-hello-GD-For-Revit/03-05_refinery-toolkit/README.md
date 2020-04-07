@@ -2,7 +2,7 @@
 
 The Refinery Toolkit is a collection of packages to accelerate generative design workflows in Dynamo.
 
-![](../../.gitbook/assets/spaceplanningtoolkit_floorplan_layout.png)
+<img src="../../assets/hello/toolkit1.png" style="width:50%;"/>
 
 ## The toolkits
 
@@ -15,9 +15,9 @@ There are currently two packages included in the toolkit, each focusing on enabl
 
 This toolkit offers a range of nodes that help with general space-planning workflows in Dynamo and Revit.
 
-![](../../.gitbook/assets/packing_gif.gif)
+<img src="../../assets/hello/toolkit2.gif" style="width:50%;"/>
 
-![](../../.gitbook/assets/visibilityanalysis.gif)
+<img src="../../assets/hello/toolkit3.gif" style="width:50%;"/>
 
 [Read more about the SpacePlanningToolkit](https://github.com/DynamoDS/RefineryToolkits/tree/master/src/SpacePlanning).
 
@@ -25,7 +25,7 @@ This toolkit offers a range of nodes that help with general space-planning workf
 
 This toolkit offers resources and information about optimization and design option generation for massing.
 
-![](../../.gitbook/assets/massingtoolkit_overview.png)
+<img src="../../assets/hello/toolkit4.png" style="width:50%;"/>
 
 [Read more about the MassingToolkit](https://github.com/DynamoDS/RefineryToolkits/tree/master/src/MassingSandbox).
 
