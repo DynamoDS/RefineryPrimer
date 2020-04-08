@@ -1,39 +1,42 @@
 # Why Should I Use Generative Design?
 
-In a nutshell, generative design is a goal-driven approach to design that uses automation so that designers and engineers can do the following:
+In a nutshell, generative design is a goal-driven approach to design that leverages automation so that designers and engineers can:
 
-* Have better insight into their designs.
-* Make faster and more informed design decisions. 
-* Explore more options using the power of computers.
+* have better insight into their designs;
+* make faster, more informed design decisions; and
+* explore more options using the power of computers.
 
 ## Better Outcomes and Insight
 
-As the designer, you specify what outcomes you want to achieve for your design and how they are measured. With your guidance, the computer produces sets of optimal designs, along with the data to prove which design performs best against your goals. Analyzing how the generated designs measure up against the set goals, you can gain valuable insight into which design aspects impact the outcome and how.
+As the designer, you specify which outcomes you want to achieve for your design and how they are measured. With your guidance, the computer produces sets of optimal designs, along with the data used to prove which design performs best against your goals. By analyzing how the generated designs measure up against the set goals, you can gain valuable insight into which design aspects impact the outcome and how.
 
 <img src="../../assets/intro/whyusegen1.gif" style="width:200px;"/>
 
-> Maximization of active shared spaces - Mars Innovation District - The Living 
+> Maximization of active shared spaces - Mars Innovation District - The Living
 
-## Faster
+## Faster, More Informed Design Decisions
 
-Generative design can help you find better designs for your project faster, by leveraging what computers are good at: computation and repetition. Computers can generate and evaluate a huge number of design variants in only a fraction of the time it would take an individual designer, allowing you to learn what works and what doesn't at an accelerated pace.
+Generative design can help you find better designs for your project more quickly by leveraging what computers are good at: computation and repetition. 
+
+Computers can generate and evaluate a huge number of design variants in only a fraction of the time it would take an individual designer, allowing you to learn what does and doesn't work at an accelerated pace.
 
 <img src="../../assets/intro/whyusegen2.gif" style="width:200px;"/>
 
->Design options generated - Mars Innovation District - The Living
+> _Above: Design options generated - Mars Innovation District - The Living_
 
-## More Variation
+## A Greater Variety of Options
 
-Your initial design parameters are used to generate many, even thousands, of potential design solutions, with the only limitation being how much compute power and time you have.
+With s generative design approach, the initial design parameters you input are used to generate your potential design solutions, with the only limitation being how much computer power and time you have.
 
-For example, it's feasible for you to explore ten variants or a few tens if using established computational design techniques. It is not uncommon however for an algorithm, once created, to generate thousands of variants in mere minutes.
+For example, using traditional computational design techniques, it's feasible for you to explore ten variants \(or more, perhaps\). However, using generative design, an algorithm can generate thousands of variants in mere minutes.
 
 <img src="../../assets/intro/whyusegen3.gif" style="width:200px;"/>
 
->Design options generated - Bionic Partition for Airbus - The Living
+> _Above: Design options generated - Bionic Partition for Airbus - The Living_
 
-## Collaborative
+## A Collaborative Approach
 
-The aim of a generative approach is to augment human capability with computation power, not to replace designers.
+The aim of a generative design approach is not to replace designers - it is to augment human capability with computation power.
 
-To help illustrate this, remember that a good generative design process that uses several metrics to analyze designs in a study will rarely generate a single output. It  will almost always generate a wide range of outputs from which the designer can choose. That is, it doesn’t choose for you, it provides a list of options to choose from, and the options have already been objectively assessed and ranked.
+To illustrate this, this about the fact that a good generative design process using several metrics to analyze designs in a study will rarely generate a single output. Instead, it will almost always generate a range of outputs that the designer can choose from, all of which will already have been objectively assessed and ranked. It doesn't choose for you. 
+

@@ -2,10 +2,11 @@
 
 <img src="../../assets/deeper/whatisoptimization.png" style="width:200px;"/>
 
-<br/>
+Optimization is an inherently mathematical subject. It is about maximizing or minimizing some mathematical function to arrive at the best possible solution to a problem, and involves creating design options that are shaped by certain outcomes as they are being created.
 
-Optimization is an inherently mathematical subject, that involves creating design options that are guided by outcomes while they are being created. It is concerned with maximizing or minimizing some mathematical function to arrive at the best possible solution to a problem. Optimization problems arise in all kinds of fields, from aerospace engineering to architectural design, but regardless of domain, every optimization problem has three features: 
+Optimization problems arise in all kinds of fields, from aerospace engineering to architectural design. However, regardless of domain, every optimization problem has three features:
 
-1. An objective function 
-2. Constraints 
-3. Data
+1. An objective function. 
+2. Constraints.
+3. Data.
+

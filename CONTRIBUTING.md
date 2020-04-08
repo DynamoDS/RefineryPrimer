@@ -1,6 +1,6 @@
-# Contributing to the Refinery Primer
+# Contributing to the Generative Design Primer
 
-`RefineryPrimer` is an open source project and the work of many contributors. We appreciate your help!
+`Generative Design Primer` is an open source project and the work of many contributors. We appreciate your help!
 
 
 ## Filing issues
@@ -46,7 +46,7 @@ To help decide which one, answer the following questions:
 
 ### Notes on the PR process
 
-1. The Autodesk Generative Design Team will meet 1x a month to review PRs found on Github (Issues will be handled separately)
+1. The Autodesk AEC Generative Design Team will meet 1x a month to review PRs found on Github (Issues will be handled separately)
 2. PRs will be reviewed from oldest to newest
 3. If a reviewed PR requires changes by the owner, the owner of the PR has 30 days to respond. If the PR has seen no activity by the next session, it will be either closed by the team or depending on its utility will be taken over by someone on the team
 4. PRs should use one of the two PR templates described above in order to be considered for review.
@@ -57,9 +57,9 @@ To help decide which one, answer the following questions:
 Contribution "Bar"
 ------------------
 
-The Autodesk Generative Design Team will merge changes that make it easier for AEC practitioners to get started with generative design.
+The Autodesk AEC Generative Design Team will merge changes that make it easier for AEC practitioners to get started with generative design.
 
-The Autodesk Generative Design Team will not merge changes that
+The Autodesk AEC Generative Design Team will not merge changes that
 - have narrowly-defined benefits
 - include copyrighted external material that the PR author does not have rights to
 - simply reference external material (such as blog posts) by the PR author
