@@ -10,7 +10,7 @@ This graph uses the optimize method to place objects in a room/space using a gri
 
 Although a simplified approach, this graph can be used as the foundation to explore more complex and personalized criteria that relate specifically to your project or practice. 
 
-All sample files for this example can be found in the \[PROVIDE LINK\] folder in the GitHub repository.
+[Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v2/04-02-04_Grid-object-placement.zip).
 
 ## Static inputs
 

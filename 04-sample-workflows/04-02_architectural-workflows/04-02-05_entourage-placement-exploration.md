@@ -14,7 +14,7 @@ This workflow is intended to be used with the 'Randomize' mode. Because of this,
 
 With this workflow you can save time by quickly generating multiple scenes without having to manually place each element.
 
-The sample files for this example can be found in the `PROVIDE LINK` folder in the Github repository.
+[Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v2/04-02-05_Random-object-placement.zip).
 
 ## Static inputs
 

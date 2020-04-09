@@ -4,7 +4,7 @@ The _`01-02_Minimum-volume-and-maximum-surface.dyn`_ graph in the examples is a 
 
 The graph consists of three cuboids with different variable parameters, such as height and location. The objectives of the graph are to find an option with minimal volume and maximum combined surface area.
 
-[Download Dynamo file](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-01-02_Minimum-volume-and-maximum-surface.dyn).
+[Download Dynamo file](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v2/04-01-02_Minimum-volume-and-maximum-surface.zip).
 
 The three cuboids \('C1', 'C2' and 'C3'\) represent buildings and can vary in different ways:
 

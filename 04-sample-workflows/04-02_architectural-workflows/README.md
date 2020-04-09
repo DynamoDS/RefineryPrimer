@@ -12,5 +12,3 @@ In this section, we will look at:
 * [Grid Object Placement](04-02-04_grid-object-placement.md)
 * [Entourage Placement Exploration](04-02-05_entourage-placement-exploration.md)
 
-[Download Architectural workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-02_architectural-workflows.zip).
-

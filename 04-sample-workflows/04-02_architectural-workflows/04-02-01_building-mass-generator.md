@@ -12,7 +12,7 @@ The tower will randomize heights, floor plate designs and orientations, allowing
 
 We will work with the Randomize method because in this example we are interested in navigating through a variety of building shapes rather than optimizing an evaluator. Some of the variables used in this workflow are intended to create variation rather than optimization, so using this method is more appropriate.
 
-[Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-02-01_Building-mass-generator.zip).
+[Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v2/04-02-01_Building-mass-generator.zip).
 
 ## Static Inputs
 

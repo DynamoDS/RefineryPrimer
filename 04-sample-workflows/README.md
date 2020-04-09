@@ -15,4 +15,4 @@ The following sample workflows are available:
 
 Click the link below to download a .zip with all of the sample workflows, or go to each workflow's page to download them individually. You can also find these sample files on the '[Releases](https://github.com/DynamoDS/RefineryPrimer/releases)' page of the repository.
 
-[Download all sample workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-all-sample-workflows.zip).
+[Download all sample workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v2/04-All-sample-workflows.zip).
