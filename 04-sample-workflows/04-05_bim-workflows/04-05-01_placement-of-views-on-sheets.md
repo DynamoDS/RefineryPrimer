@@ -64,3 +64,8 @@ From the graph below, you can see that most results require two sheets \(represe
 <img src="../../assets/sample/workflowsheets2.png" style="width:85%;"/>
 </p>
 
+## Video Tutorial
+
+{% embed url="https://www.youtube.com/watch?v=S27Kz7SOCIM" %}
+
+{% page-ref page="./" %}

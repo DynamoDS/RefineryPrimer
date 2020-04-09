@@ -72,3 +72,8 @@ The image below shows an example output from a randomized study based on 40 solu
 <img src="../../assets/sample/workflow12.png" style="width:85%;"/>
 </p>
 
+## Video Tutorial
+
+{% embed url="https://www.youtube.com/watch?v=FVnKMHEXmaQ" %}
+
+{% page-ref page="./" %}

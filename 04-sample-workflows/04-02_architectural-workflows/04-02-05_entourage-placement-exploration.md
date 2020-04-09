@@ -89,3 +89,8 @@ For further reading on this, please refer to the following website:
 
 * [https://natureofcode.com/book/introduction/](https://natureofcode.com/book/introduction/) 
 
+## Video Tutorial
+
+{% embed url="https://www.youtube.com/watch?v=iJKM51kkgq0&t=3s" %}
+
+{% page-ref page="./" %}

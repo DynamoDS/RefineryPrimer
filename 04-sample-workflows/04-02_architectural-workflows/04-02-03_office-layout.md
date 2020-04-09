@@ -62,3 +62,8 @@ Once generation has completed, the results can be explored through the  tables a
 <img src="../../assets/sample/workflow32.png" style="width:85%;"/>
 </p>
 
+## Video Tutorial
+
+{% embed url="https://www.youtube.com/watch?v=bVWQS47he4Y&t=11s" %}
+
+{% page-ref page="./" %}

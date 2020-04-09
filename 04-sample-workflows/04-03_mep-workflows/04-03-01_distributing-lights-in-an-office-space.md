@@ -75,3 +75,8 @@ We want to thank Jared Linden Digital Applications Developer at Hoare Lea for co
 <img src="../../assets/sample/workflowsmep2.png" style="width:100%;"/>
 </p>
 
+## Video Tutorial
+
+{% embed url="https://www.youtube.com/watch?v=S27Kz7SOCIM" %}
+
+{% page-ref page="./" %}

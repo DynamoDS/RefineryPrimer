@@ -62,3 +62,8 @@ Explore Outcomes will display various grid configurations. In this example, you 
 
 Once generation has finished, the results can be explored through the tables and graphs in the Explore Outcomes dialog. The image below shows an example output from an optimized study based on four generations with a population of 20.
 
+## Video Tutorial
+
+{% embed url="https://www.youtube.com/watch?v=IC0JqqeIjwg" %}
+
+{% page-ref page="./" %}

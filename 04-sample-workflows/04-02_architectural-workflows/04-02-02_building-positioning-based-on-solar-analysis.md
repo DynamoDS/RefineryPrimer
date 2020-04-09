@@ -71,3 +71,8 @@ The image below shows an example output from an optimized study based on ten gen
 <img src="../../assets/sample/workflow22.png" style="width:85%;"/>
 </p>
 
+## Video Tutorial
+
+{% embed url="https://www.youtube.com/watch?v=qMHmQceCACM" %}
+
+{% page-ref page="./" %}
