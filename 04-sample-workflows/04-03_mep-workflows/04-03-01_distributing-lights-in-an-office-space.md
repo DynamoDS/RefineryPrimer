@@ -10,7 +10,7 @@ This graph used the `optimize method` to optimize light distribution in a hypoth
 
 The graph works by calculating unobstructed distances from light sources to an evenly-distributed series of analysis points within the floor of the selected Revit room.
 
-[Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-03-01_Distributing-lights.zip).
+[Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v2/04-03-01_Distributing-lights.zip).
 
 ## Static Inputs
 
@@ -75,3 +75,8 @@ We want to thank Jared Linden Digital Applications Developer at Hoare Lea for co
 <img src="../../assets/sample/workflowsmep2.png" style="width:100%;"/>
 </p>
 
+## Video Tutorial
+
+{% embed url="https://www.youtube.com/watch?v=S27Kz7SOCIM" %}
+
+{% page-ref page="./" %}

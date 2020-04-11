@@ -17,7 +17,7 @@ The order of the thumbnails can be sorted based on the inputs or outputs of the 
 The design table replaces the design grid. If chosen, it lists each option in a table form with each column representing the values for the inputs and outputs.
 
 <p align="center">
-<img src="../assets/hello/visualize1.png" style="width:85%;"/>
+<img src="../assets/hello/visualize2.png" style="width:85%;"/>
 </p>
 
 ## Scatterplot
@@ -29,7 +29,7 @@ Generative Design allows you to select which values are displayed along both the
 Selecting a circle from the graph space will also highlight the chosen option in the design grid or design table.
 
 <p align="center">
-<img src="../assets/hello/visualize1.png" style="width:85%;"/>
+<img src="../assets/hello/visualize3.png" style="width:85%;"/>
 </p>
 
 ## Parallel Coordinates
@@ -39,7 +39,7 @@ The other chart available in Explore Outcomes is a _`Parallel Coordinates`_ grap
 The graph can be filtered by dragging the selection on each vertical axis.
 
 <p align="center">
-<img src="../assets/hello/visualize1.png" style="width:85%;"/>
+<img src="../assets/hello/visualize4.png" style="width:85%;"/>
 </p>
 
 ## Choosing the Right Visualization

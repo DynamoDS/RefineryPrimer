@@ -10,7 +10,7 @@ This graph uses the optimize method to place objects in a room/space using a gri
 
 Although a simplified approach, this graph can be used as the foundation to explore more complex and personalized criteria that relate specifically to your project or practice. 
 
-All sample files for this example can be found in the \[PROVIDE LINK\] folder in the GitHub repository.
+[Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v2/04-02-04_Grid-object-placement.zip).
 
 ## Static inputs
 
@@ -62,3 +62,8 @@ Explore Outcomes will display various grid configurations. In this example, you 
 
 Once generation has finished, the results can be explored through the tables and graphs in the Explore Outcomes dialog. The image below shows an example output from an optimized study based on four generations with a population of 20.
 
+## Video Tutorial
+
+{% embed url="https://www.youtube.com/watch?v=IC0JqqeIjwg" %}
+
+{% page-ref page="./" %}

@@ -10,7 +10,7 @@ This graph will move and rotate the position of a selected mass within a site bo
 
 As a result, each iteration can take a while to run. For the options where the movement or rotation causes the building to fall outside of the site boundary, the results are heavily penalized to ensure the analysis doesn't run.
 
-[Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-02-02_Building-positioning.zip).
+[Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v2/04-02-02_Building-positioning.zip).
 
 ## Static Inputs
 
@@ -71,3 +71,8 @@ The image below shows an example output from an optimized study based on ten gen
 <img src="../../assets/sample/workflow22.png" style="width:85%;"/>
 </p>
 
+## Video Tutorial
+
+{% embed url="https://www.youtube.com/watch?v=qMHmQceCACM" %}
+
+{% page-ref page="./" %}

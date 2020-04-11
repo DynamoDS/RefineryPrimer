@@ -4,7 +4,7 @@ The _`01-01_EvaluateSurface.dyn`_ graph in the examples uses a single objective 
 
 The objective of the graph is to get the orange sphere to the highest peak of the surface.
 
-[Download Dynamo file](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-01-01_Highest-point-of-a-surface.dyn).
+[Download Dynamo file](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v2/04-01-01_Highest-point-of-a-surface.zip).
 
 <p align="center">
 <img src="../../assets/hello/applychanges1.png" style="width:85%;"/>

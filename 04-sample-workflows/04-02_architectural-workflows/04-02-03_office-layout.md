@@ -10,7 +10,7 @@ This graph will generate a series of desk layouts based on a floor plate and nei
 
 The intention is to find a solution that maximizes the number of desks in the layout, while still maintaining a high area for amenities.
 
-[Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v1/04-02-03_Office-layout.zip).
+[Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v2/04-02-03_Office-layout.zip).
 
 ## Static Inputs
 
@@ -62,3 +62,8 @@ Once generation has completed, the results can be explored through the  tables a
 <img src="../../assets/sample/workflow32.png" style="width:85%;"/>
 </p>
 
+## Video Tutorial
+
+{% embed url="https://www.youtube.com/watch?v=bVWQS47he4Y&t=11s" %}
+
+{% page-ref page="./" %}

@@ -10,7 +10,7 @@
 
 **Description:** Use site context and a zoning boundary created in Revit to create a generative building form with maximum indoor daylight and PV potential analysis as the key focus.
 
-[Download files for this workflow](../../).
+[Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v2/RAH_ThreeSolidTowerSolarAnalysis.zip).
 
 <p align="center">
   <img src="04-06-00_Example-files/RAH_ThreeSolidTowerSolarAnalysis/RAH_ThreeSolidTowerSolarAnalysis.png">

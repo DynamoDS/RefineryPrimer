@@ -10,7 +10,7 @@ This graph takes all cropped views from the current Revit document and places th
 
 By using generative design methods, we can find solutions that minimize the number of sheets and reduce the amount of whitespace.
 
-\[Download workflow files\]
+[Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v2/04-02-06_Views-in-sheets-placement.zip).
 
 ## Static inputs
 
@@ -64,3 +64,8 @@ From the graph below, you can see that most results require two sheets \(represe
 <img src="../../assets/sample/workflowsheets2.png" style="width:85%;"/>
 </p>
 
+## Video Tutorial
+
+{% embed url="https://www.youtube.com/watch?v=S27Kz7SOCIM" %}
+
+{% page-ref page="./" %}
