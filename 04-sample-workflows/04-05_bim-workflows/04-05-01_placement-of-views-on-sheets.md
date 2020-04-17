@@ -66,6 +66,6 @@ From the graph below, you can see that most results require two sheets \(represe
 
 ## Video Tutorial
 
-{% embed url="https://www.youtube.com/watch?v=S27Kz7SOCIM" %}
+{% embed url="https://www.youtube.com/watch?v=PLFox8XqpVM&t=3s" %}
 
 {% page-ref page="./" %}
