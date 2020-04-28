@@ -26,7 +26,7 @@ Grid formation is used when you need your elements to be aligned in both X and Y
   <img src="../../assets/sample/workflowgrid23.png">
 </p>
 
-In a stepped grid formation objects are not aligned by each axis to avoid a rigid x-y formation. This formation forms a diamond grid. This type of grid is usually used to avoid the overlap of the objects radius of influence. This type of formation is usually used to locate tables, plants, theatre sits, etc. 
+In a stepped grid formation objects are not aligned by each axis to avoid a rigid x-y formation. This formation creates a diamond grid. This type of grid is usually used to avoid the overlap of the objects radius of influence. This type of formation is usually used to locate tables, plants, theatre sits, etc. 
 
 ## Static Inputs
 
