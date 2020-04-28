@@ -6,13 +6,33 @@
 
 ## Description
 
-This graph uses the optimize method to place objects in a room/space using a grid formation. The graph will compare the percentage of total coverage, the number of objects placed and the overlap in area of object influence, as various grid configurations are explored through Generative Design. 
+This graph uses the optimize method to place objects in a room/space using a grid/stepped grid formation. The graph will compare the percentage of total coverage, the number of objects placed and the overlap in area of object influence, as various configurations are explored through Generative Design. 
 
 Although a simplified approach, this graph can be used as the foundation to explore more complex and personalized criteria that relate specifically to your project or practice. 
 
 [Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v2/04-02-04_Grid-object-placement.zip).
 
-## Static inputs
+This workflow features two possible grid arrangements you can choose from, depending on which fits best your workflow: 
+- rectangular grid
+- stepped grid
+
+## Grids
+
+### Rectangular grid
+<p align="center">
+  <img src="../../assets/sample/workflowgrid22.png">
+</p>
+
+With a rectangular grid, elements are aligned in both X and Y axis. This type of formation is useful when you require regularity and straight lines of circulation between elements. Typical use of this grid is for laying out items such as beds, school desks, shop gondolas, etc.  
+
+###  Stepped grid
+<p align="center">
+  <img src="../../assets/sample/workflowgrid23.png">
+</p>
+
+In a stepped grid, objects are not aligned by each axis to avoid a rigid x-y formation, creating a diamond pattern. This type of grid is usually used to avoid the overlap of the objects' radius of influence. The stepped grid is usually used to locate items such as tables, plants, theatre seats, etc. 
+
+## Static Inputs
 
 | Input | Description |
 | :--- | :--- |
@@ -23,7 +43,7 @@ Although a simplified approach, this graph can be used as the foundation to expl
 
 Constraints for radius, minimum, and maximum values can only be changed using Dynamo.
 
-## Variable inputs
+## Variable Inputs
 
 | Name | Description |
 | :--- | :--- |
