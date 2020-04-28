@@ -19,7 +19,7 @@ This workflow has two versions a grid and a stepped grid version, you can choose
   <img src="../../assets/sample/workflowgrid22.png">
 </p>
 
-Grid formation is used when you need your elements to be aligned in both X and Y axis, forming rectangular grid. This type of formation is usually used when you require defined lines of circulation between elements. This type of formation can be used for objects like beds, school desks, shop gondolas etc.  
+Grid formation is used when you need your elements to be aligned in both X and Y axis, forming a rectangular grid. This type of formation is usually used when you require defined lines of circulation between elements. This type of formation can be used for objects like beds, school desks, shop gondolas etc.  
 
 ##  Stepped grid formation
 <p align="center">
