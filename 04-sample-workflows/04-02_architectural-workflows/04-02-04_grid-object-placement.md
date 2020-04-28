@@ -12,21 +12,25 @@ Although a simplified approach, this graph can be used as the foundation to expl
 
 [Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v2/04-02-04_Grid-object-placement.zip).
 
-This workflow has two versions a grid and a stepped grid version, you can choose which ever workflow fits best your desired object formation. 
+This workflow features two possible grid arrangements you can choose from, depending on which fits best your workflow: 
+- rectangular grid
+- stepped grid
 
-## Grid formation
+## Grids
+
+### Rectangular grid
 <p align="center">
   <img src="../../assets/sample/workflowgrid22.png">
 </p>
 
-Grid formation is used when you need your elements to be aligned in both X and Y axis, forming a rectangular grid. This type of formation is usually used when you require defined lines of circulation between elements. This type of formation can be used for objects like beds, school desks, shop gondolas etc.  
+With a rectangular grid, elements are aligned in both X and Y axis. This type of formation is useful when you require regularity and straight lines of circulation between elements. Typical use of this grid is for laying out items such as beds, school desks, shop gondolas, etc.  
 
-##  Stepped grid formation
+###  Stepped grid
 <p align="center">
   <img src="../../assets/sample/workflowgrid23.png">
 </p>
 
-In a stepped grid formation objects are not aligned by each axis to avoid a rigid x-y formation. This formation creates a diamond grid. This type of grid is usually used to avoid the overlap of the objects radius of influence. This type of formation is usually used to locate tables, plants, theatre sits, etc. 
+In a stepped grid, objects are not aligned by each axis to avoid a rigid x-y formation, creating a diamond pattern. This type of grid is usually used to avoid the overlap of the objects' radius of influence. The stepped grid is usually used to locate items such as tables, plants, theatre seats, etc. 
 
 ## Static Inputs
 
