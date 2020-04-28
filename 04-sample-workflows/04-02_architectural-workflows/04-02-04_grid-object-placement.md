@@ -4,15 +4,38 @@
   <img src="../../assets/sample/workflowgrid1.gif">
 </p>
 
+This workflow has two versions a grid and a stepped grid version, you can choose which ever workflow fits best your desired object formation.  
+
+## Grid formation
+<p align="center">
+  <img src="../../assets/sample/workflowgrid22.png">
+</p>
+
+Grid formation is used when you need your elements to be aligned in both X and Y axis, and therefore a rectangular grid will determine the objects location. This type of formation can be used  for objects like beds, school desks, etc. 
+
+##  Stepped grid formation
+<p align="center">
+  <img src="../../assets/sample/workflowgrid23.png">
+</p>
+
+In a stepped grid formation objects are not aligned by each axis to avoid a rigid x-y formation. This formation forms a diamond grid. This type of grid is usually used to avoid the overlap of the objects radius of influence. This type of formation is usually used to locate tables, plants, etc. 
+
 ## Description
 
-This graph uses the optimize method to place objects in a room/space using a grid formation. The graph will compare the percentage of total coverage, the number of objects placed and the overlap in area of object influence, as various grid configurations are explored through Generative Design. 
+This graph uses the optimize method to place objects in a room/space using a grid/stepped grid formation. The graph will compare the percentage of total coverage, the number of objects placed and the overlap in area of object influence, as various configurations are explored through Generative Design. 
 
 Although a simplified approach, this graph can be used as the foundation to explore more complex and personalized criteria that relate specifically to your project or practice. 
 
 [Download workflow files](https://github.com/DynamoDS/RefineryPrimer/releases/download/samples-v2/04-02-04_Grid-object-placement.zip).
 
-## Static inputs
+This workflow has two 
+
+## Grid formation
+
+
+## Stepped Grid Formation
+
+## Static Inputs
 
 | Input | Description |
 | :--- | :--- |
@@ -23,7 +46,7 @@ Although a simplified approach, this graph can be used as the foundation to expl
 
 Constraints for radius, minimum, and maximum values can only be changed using Dynamo.
 
-## Variable inputs
+## Variable Inputs
 
 | Name | Description |
 | :--- | :--- |
