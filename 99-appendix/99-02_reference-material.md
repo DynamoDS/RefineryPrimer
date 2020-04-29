@@ -17,7 +17,7 @@
 * [DesignScript website](http://designscript.io/)
 * [Dynamo DS language guide v1](https://dynamobim.org/wp-content/uploads/forum-assets/colin-mccroneautodesk-com/07/10/Dynamo_language_guide_version_1.pdf)
 * [DesignScript user manual 0.1](http://designscript.io/DesignScript_user_manual_0.1.pdf)
-* [DesignScript documentation](https://dynamobim.org/wp-content/links/DesignScriptDocumentation.pdf)
+* [DesignScript documentation](https://dynamobim.org/wp-content/links/DesignScriptGuide.pdf)
 * [DesignScript class materials from BiLT conference](https://github.com/Amoursol/dynamoDesignScript) by [Sol Amour](https://github.com/Amoursol)
 
 ## Generative Design
