@@ -9,7 +9,7 @@
 
 ### Dynamo Questions and Inspiration
 
-* [Dynamo Forum](https://forum.dynamobim.org/)
+* [Dynamo Forum](https://forum.dynamobim.com/)
 * [Dynamo gallery](https://www.dynamobim.org/)
 
 ## Design Script
