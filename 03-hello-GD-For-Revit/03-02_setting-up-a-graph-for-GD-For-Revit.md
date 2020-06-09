@@ -2,13 +2,12 @@
 
 ## Inputs
 
-To set up a Dynamo graph for use with generative design tools, right-click on each node used to drive the graph and ensure that the _`Is Input`_ option is ticked. Renaming the node with a standard approach such as _`IN_description`_ will help to distinguish these inputs in the Create Study dialog.
+To set up a Dynamo graph for use with generative design tools, right-click on each node used to drive the graph and ensure that the _`Is Input`_ option is checked. Renaming the node with a standard approach such as _`IN_description`_ will help to distinguish these inputs in the Create Study dialog.
 
-1. Right-click on each node used to drive the graph and ensure that the 'Is Input' option is ticked. 
+1. Right-click on each node used to drive the graph and ensure that the 'Is Input' option is checked.
+2. Set 
 
-Renaming the node with a standard approach such as _`IN_description`_ will help to distinguish these inputs in Generative Design.
-
-_Note: Currently all inputs must be 'Number' slider nodes._
+_Note: Currently all inputs must be 'Number' slider nodes or 'Boolean' nodes._
 
 <img src="../assets/hello/setting1.png" style="width:200px;"/>
 
@@ -34,7 +33,7 @@ To create an export to use with Generative Design, please do the following:
 
 1. In Dynamo, navigate to the toolbar and select Generative Design &gt; Export for Generative Design. Generative Design will then create a copy of your graph which will be available to launch.
 
-<img src="../assets/hello/setting21.png" style="width:200px;"/>
+<img src="../assets/hello/setting23.png" style="width:200px;"/>
 
 _Note: Graphs with the same name will be overwritten._
 
@@ -46,7 +45,7 @@ To launch Generative Design, please do the following:
 
 1. In Dynamo, navigate to the toolbar and select Generative Design &gt; Create Study.
 
-<img src="../assets/hello/setting23.png" style="width:200px;"/>
+<img src="../assets/hello/setting21.png" style="width:200px;"/>
 
 Once the Create Study dialog has launched, select a study that you have exported from Dynamo.
 
