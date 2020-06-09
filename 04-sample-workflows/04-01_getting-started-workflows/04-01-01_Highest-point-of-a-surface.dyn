@@ -2,7 +2,7 @@
   "Uuid": "acd93a4a-09f9-4016-99fb-88af762ebf5e",
   "IsCustomNode": false,
   "Description": null,
-  "Name": "08-EvaluateSurface",
+  "Name": "01-01_Highest-point-of-a-surface",
   "ElementResolver": {
     "ResolutionMap": {
       "Math": {
@@ -20,7 +20,7 @@
       "Id": "75675e4a616d40868c15ac62617b91aa",
       "Name": "U Point value",
       "Type": "number",
-      "Value": "1",
+      "Value": "0.134",
       "MaximumValue": 1.0,
       "MinimumValue": 0.0,
       "StepValue": 0.001,
@@ -31,7 +31,7 @@
       "Id": "14f3210b8b634cc2871d1967b0e04d07",
       "Name": "V Point value",
       "Type": "number",
-      "Value": "0.0850156262379933",
+      "Value": "0.58",
       "MaximumValue": 1.0,
       "MinimumValue": 0.0,
       "StepValue": 0.001,
@@ -44,7 +44,7 @@
       "Id": "a132f55d90f641b0a2a32b2f04ac697b",
       "Name": "Point Z value (Height)",
       "Type": "float",
-      "InitialValue": "4.08345873256588",
+      "InitialValue": "1.47584897273708",
       "Description": "Visualize the output of node."
     }
   ],
@@ -347,7 +347,7 @@
       "MaximumValue": 10.0,
       "MinimumValue": 0.0,
       "StepValue": 1.0,
-      "InputValue": 4.0,
+      "InputValue": 3.0,
       "Id": "c43f9771da3441c9b61cdbb44a66e767",
       "Inputs": [],
       "Outputs": [
@@ -371,7 +371,7 @@
       "MaximumValue": 10.0,
       "MinimumValue": 0.0,
       "StepValue": 1.0,
-      "InputValue": 5.0,
+      "InputValue": 9.0,
       "Id": "f0fb6ca30c6744ffa628f9a1be64d130",
       "Inputs": [],
       "Outputs": [
@@ -560,7 +560,7 @@
       "MaximumValue": 1.0,
       "MinimumValue": 0.0,
       "StepValue": 0.001,
-      "InputValue": 1.0,
+      "InputValue": 0.134,
       "Id": "75675e4a616d40868c15ac62617b91aa",
       "Inputs": [],
       "Outputs": [
@@ -584,7 +584,7 @@
       "MaximumValue": 1.0,
       "MinimumValue": 0.0,
       "StepValue": 0.001,
-      "InputValue": 0.085015626237993289,
+      "InputValue": 0.58,
       "Id": "14f3210b8b634cc2871d1967b0e04d07",
       "Inputs": [],
       "Outputs": [
@@ -694,7 +694,7 @@
         {
           "Id": "dcf9c1bdd6574e95877a5d72207867ce",
           "Name": "geometry",
-          "Description": "Geometry",
+          "Description": "The geometry to which you would like to apply color.\n\nGeometry",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -703,7 +703,7 @@
         {
           "Id": "dbf950d937cf4b12bd11a5914634d2b0",
           "Name": "color",
-          "Description": "Color",
+          "Description": "The color.\n\nColor",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -714,7 +714,7 @@
         {
           "Id": "7fb548872047493892673fa21e0d549d",
           "Name": "GeometryColor",
-          "Description": "GeometryColor",
+          "Description": "A Display object.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -722,7 +722,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "GeometryColor.ByGeometryColor (geometry: Geometry, color: Color): GeometryColor"
+      "Description": "Display geometry using a color.\n\nGeometryColor.ByGeometryColor (geometry: Geometry, color: Color): GeometryColor"
     },
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
@@ -733,7 +733,7 @@
         {
           "Id": "4c34bd8b962040ba8f836773b1aa0840",
           "Name": "geometry",
-          "Description": "Geometry",
+          "Description": "The geometry to which you would like to apply color.\n\nGeometry",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -742,7 +742,7 @@
         {
           "Id": "65a2f0a9102749e5851bbd74140372a7",
           "Name": "color",
-          "Description": "Color",
+          "Description": "The color.\n\nColor",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -753,7 +753,7 @@
         {
           "Id": "ed87312198614328b0300e2e8d853438",
           "Name": "GeometryColor",
-          "Description": "GeometryColor",
+          "Description": "A Display object.",
           "UsingDefaultValue": false,
           "Level": 2,
           "UseLevels": false,
@@ -761,7 +761,7 @@
         }
       ],
       "Replication": "Auto",
-      "Description": "GeometryColor.ByGeometryColor (geometry: Geometry, color: Color): GeometryColor"
+      "Description": "Display geometry using a color.\n\nGeometryColor.ByGeometryColor (geometry: Geometry, color: Color): GeometryColor"
     },
     {
       "ConcreteType": "CoreNodeModels.Input.ColorPalette, CoreNodeModels",
@@ -869,12 +869,12 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
       "NodeType": "CodeBlockNode",
-      "Code": "20;",
+      "Code": "100;",
       "Id": "e24afa6625654ff5a6ccd60f7b3e49b4",
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "65b1776e8a3c48779d419338c0dbb096",
+          "Id": "2e3f0d82665845d39e5179f177618c79",
           "Name": "",
           "Description": "Value of expression at line 1",
           "UsingDefaultValue": false,
@@ -1029,33 +1029,34 @@
       "Id": "2db94519f86a4ab28212ec73a2f640ec"
     },
     {
-      "Start": "65b1776e8a3c48779d419338c0dbb096",
+      "Start": "2e3f0d82665845d39e5179f177618c79",
       "End": "0710914da1974548aac950e2d76fcd9f",
-      "Id": "e096ea2817314aaf9f1c778b554652e8"
+      "Id": "2aae1b5d2ed74f44b965cc1593970c32"
     }
   ],
   "Dependencies": [],
+  "NodeLibraryDependencies": [],
   "Bindings": [],
   "View": {
     "Dynamo": {
       "ScaleFactor": 1.0,
       "HasRunWithoutCrash": true,
       "IsVisibleInDynamoLibrary": true,
-      "Version": "2.0.2.6826",
-      "RunType": "Automatic",
+      "Version": "2.5.2.7915",
+      "RunType": "Manual",
       "RunPeriod": "1000"
     },
     "Camera": {
       "Name": "Background Preview",
-      "EyeX": 85.497192526464744,
-      "EyeY": 94.384007088992618,
-      "EyeZ": -139.7794843608574,
-      "LookX": -152.56459829493781,
-      "LookY": -135.35976050671198,
-      "LookZ": 62.604373096489354,
-      "UpX": -0.42000445180449109,
-      "UpY": 0.89100652418843929,
-      "UpZ": 0.17234742330014868
+      "EyeX": 196.69971882649344,
+      "EyeY": 39.177854780389232,
+      "EyeZ": -48.85207334482,
+      "LookX": -196.89097721480272,
+      "LookY": -45.157791756427123,
+      "LookZ": 53.533324934103476,
+      "UpX": -0.0016841857267889675,
+      "UpY": 0.9999984769133462,
+      "UpZ": 0.00045791870728156153
     },
     "NodeViews": [
       {
@@ -1140,23 +1141,23 @@
       },
       {
         "ShowGeometry": false,
-        "Name": "Number Slider",
+        "Name": "Cycles",
         "Id": "c43f9771da3441c9b61cdbb44a66e767",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1537.12816055071,
-        "Y": 773.455882247463
+        "X": 1542.8156503290493,
+        "Y": 804.9755795714085
       },
       {
         "ShowGeometry": false,
-        "Name": "Number Slider",
+        "Name": "Amplitude",
         "Id": "f0fb6ca30c6744ffa628f9a1be64d130",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1537.12816055071,
-        "Y": 858.02921558079584
+        "X": 1544.6824297134351,
+        "Y": 893.28247167351287
       },
       {
         "ShowGeometry": false,
@@ -1331,13 +1332,13 @@
           "63110d14413c49aea02d5f412e7c0f4d"
         ],
         "Left": 1444.29572520588,
-        "Top": 278.307521974474,
+        "Top": 278.807521974474,
         "Width": 2025.921875,
-        "Height": 647.72169360632188,
+        "Height": 682.47494969903892,
         "FontSize": 36.0,
         "InitialTop": 374.807521974474,
-        "InitialHeight": 628.22169360632188,
-        "TextblockHeight": 86.5,
+        "InitialHeight": 663.47494969903892,
+        "TextblockHeight": 86.0,
         "Background": "#FFB9F9E1"
       },
       {
@@ -1351,13 +1352,13 @@
           "64b7249bd20c4a6aa1472d19069b5b48"
         ],
         "Left": 816.46219660069369,
-        "Top": 425.339216999423,
+        "Top": 425.839216999423,
         "Width": 311.00000000000034,
-        "Height": 512.038104871065,
+        "Height": 511.538104871065,
         "FontSize": 36.0,
         "InitialTop": 521.839216999423,
         "InitialHeight": 453.538104871065,
-        "TextblockHeight": 86.5,
+        "TextblockHeight": 86.0,
         "Background": "#FFFFB8D8"
       },
       {
@@ -1369,7 +1370,7 @@
         ],
         "Left": 4295.8580923681075,
         "Top": 216.75239406548008,
-        "Width": 307.5,
+        "Width": 307.0,
         "Height": 472.39344341733681,
         "FontSize": 36.0,
         "InitialTop": 485.75239406548008,
@@ -1379,7 +1380,7 @@
       },
       {
         "Id": "f39e094e3bdd4958a51cad97b78bb579",
-        "Title": "EVALUATE SURFACE\r\nRefinery Graph Example",
+        "Title": "Highest Point of a Surface\r\nRefinery Graph Example",
         "Nodes": [
           "9a507725658c45cea963d1fa92e69aff",
           "f305cfc8c0bd453d8b649c5c1fc75d5a",
@@ -1389,13 +1390,13 @@
           "fa53824ce0584cb09a74ffe65a943d0f",
           "bb5b7692bbe54a59b0411719fdef6b7b"
         ],
-        "Left": -199.26925163803844,
+        "Left": -200.26196580683279,
         "Top": 367.62443543884012,
-        "Width": 632.235627142067,
-        "Height": 541.029896763099,
+        "Width": 633.22834131086131,
+        "Height": 553.93518095742593,
         "FontSize": 48.0,
         "InitialTop": 492.62443543884012,
-        "InitialHeight": 411.02989676309903,
+        "InitialHeight": 423.93518095742593,
         "TextblockHeight": 115.0,
         "Background": "#FFFFFFFF"
       },
@@ -1424,7 +1425,7 @@
         "Left": 435.61247881452505,
         "Top": 648.19230136304861,
         "Width": 314.0,
-        "Height": 146.5,
+        "Height": 146.0,
         "FontSize": 14.0,
         "InitialTop": 678.19230136304861,
         "InitialHeight": 140.0,
@@ -1440,7 +1441,7 @@
         "Left": 435.61247881452505,
         "Top": 491.839216999423,
         "Width": 314.0,
-        "Height": 146.5,
+        "Height": 146.0,
         "FontSize": 14.0,
         "InitialTop": 521.839216999423,
         "InitialHeight": 140.0,
@@ -1477,18 +1478,18 @@
           "e24afa6625654ff5a6ccd60f7b3e49b4"
         ],
         "Left": 3688.0511235709905,
-        "Top": 888.061559978189,
+        "Top": 887.561559978189,
         "Width": 937.904309556829,
-        "Height": 604.57619957226757,
+        "Height": 605.07619957226757,
         "FontSize": 36.0,
         "InitialTop": 1027.5615599781891,
         "InitialHeight": 517.07619957226757,
-        "TextblockHeight": 129.5,
+        "TextblockHeight": 130.0,
         "Background": "#FFB9F9E1"
       },
       {
         "Id": "9a507725658c45cea963d1fa92e69aff",
-        "Title": "DYNAMO PROJECT\r\n________________________________________________________\r\n\r\nREFINERY_EVALUATE_SURFACE",
+        "Title": "DYNAMO PROJECT\r\n________________________________________________________\r\n\r\n04-01-01_Highest-point-of-a-surface.dyn",
         "Nodes": [],
         "Left": -189.26925163803844,
         "Top": 492.62443543884012,
@@ -1516,7 +1517,7 @@
       },
       {
         "Id": "82849cedcccc45d5a989eb5f38548c22",
-        "Title": "AUTHOR(S) / CREATION DATE\r\n________________________________________________________\r\n\r\nRefinery Team and The Proving Ground / Dec 2018",
+        "Title": "AUTHOR(S) / CREATION DATE\r\n________________________________________________________\r\n\r\nAEC Generative Design Team and The Proving Ground / Dec 2018",
         "Nodes": [],
         "Left": -189.26925163803844,
         "Top": 673.31103328090614,
@@ -1532,8 +1533,8 @@
         "Id": "6164fb6260b14b62a1461364ee6a9724",
         "Title": "DESCRIPTION   \r\n________________________________________________________\r\n\r\nThis graph will take a given surface and populate a point on this surface based on a U and V value. It will then report back the Z value (Height) of the point and can be used to find the highest peak through Refinery optimization.",
         "Nodes": [],
-        "Left": -189.26925163803844,
-        "Top": 763.65433220193916,
+        "Left": -190.26196580683279,
+        "Top": 776.559616396266,
         "Width": 0.0,
         "Height": 0.0,
         "FontSize": 36.0,
@@ -1544,7 +1545,7 @@
       },
       {
         "Id": "11aae3552c664ae1943a0ec76ee995df",
-        "Title": "DYNAMO VERSION\r\n________________________________________________________\r\n\r\n2.0.2",
+        "Title": "DYNAMO VERSION\r\n________________________________________________________\r\n\r\n2.5.0",
         "Nodes": [],
         "Left": 123.96637550402852,
         "Top": 493.78588752216916,
@@ -1711,8 +1712,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": 490.65823558221348,
-    "Y": -452.43794053374927,
-    "Zoom": 1.3123119521635012
+    "X": -1113.6020823920294,
+    "Y": -8.2404984337080123,
+    "Zoom": 0.50006292175382627
   }
 }
