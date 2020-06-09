@@ -50,7 +50,7 @@ With the geometry of the building generated, the script then evaluates the desig
 
 When geometry is created in Dynamo, often other geometry is needed to facilitate the overall process. 
 
-Please note that all unnecessary geometry has been switched off in Dynamo - this is to ensure the geometry displayed shows the final geometric output.. Any nodes with the preview switched off will not display the output visually in Explore Outcomes.
+Please note that all unnecessary geometry has been switched off in Dynamo - this is to ensure the geometry displayed shows the final geometric output. Any nodes with the preview switched off will not display the output visually in Explore Outcomes.
 
 In this case, only the site boundary \(the tower's external walls and floors\) will be visible. This will provide the user with the ability to critique the design options based on aesthetics within the thumbnail or detail view. 
 
@@ -58,13 +58,13 @@ A series of context buildings have been included in the Revit sample file for a 
 
 ## Benefit of Using Generative Design
 
-On running the script, Dynamo is able to generate one design option based on the user inputs. However, by utilizing Randomize \(?\) as the solver, many more options can be generated in a single run. 
+On running the script, Dynamo is able to generate one design option based on the user inputs. However, by utilizing Randomize for generation method, many more options can be generated in a single run. 
 
 Due to the nature of this graph, it works best when using the 'Randomize' mode. Although the outputs can be used to maximize or minimize the various areas, the optimization approach won't work as there is no pattern for the algorithm to use. By using the 'Randomize' mode, Generative Design can produce hundreds - if not thousands - of different iterations, allowing the user to rank and explore the options to find the best option.
 
 ## Results
 
-Once the computer has finished running the script, the outcomes can be explored through the tables and graphs available. 
+Once running the study type is finished, the outcomes can be explored through the tables and graphs available. 
 
 The image below shows an example output from a randomized study based on 40 solutions.
 
