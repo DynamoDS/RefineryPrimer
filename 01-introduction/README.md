@@ -13,5 +13,5 @@ In this section, we will explore the following topics:
 * common approaches used
 * related concepts
 
-Let’s start by looking at something you’re likely to be familiar with and already using today: computational design.
+Let’s start by looking at something you are likely to be familiar with and already using today: computational design.
 
