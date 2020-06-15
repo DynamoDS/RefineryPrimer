@@ -6,7 +6,7 @@ To set up a Dynamo graph for use with generative design tools, right-click on ea
 
 1. Right-click on each node used to drive the graph and ensure that the 'Is Input' option is checked.
 2. Rename the node as explained above. 
-2. For slider nodes set proper values for Min, Max, and Step values. 
+3. For slider nodes set values for Min, Max, and Step values. 
 
 _Note: Currently all inputs must be 'Number' or 'Integer' slider, 'Boolean', or 'Revit Selection' nodes._
 

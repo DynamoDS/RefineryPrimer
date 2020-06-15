@@ -10,7 +10,7 @@ This graph uses the optimize method to place objects in a room/space using a gri
 
 Although a simplified approach, this graph can be used as the foundation to explore more complex and personalized criteria that relate specifically to your project or practice. 
 
-This sample file is available in the most recent version of Generative Design tool.
+This sample file is available in the most recent version of Generative Design in Revit.
 
 This workflow features two possible grid arrangements you can choose from, depending on which fits best your workflow: 
 - rectangular grid
