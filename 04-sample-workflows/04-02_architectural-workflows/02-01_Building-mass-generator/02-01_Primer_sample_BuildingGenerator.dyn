@@ -3915,7 +3915,7 @@
         "ShowGeometry": true,
         "Name": "Site Boundary Lines",
         "Id": "3f9bcece727b4440b6c6d1c810e28845",
-        "IsSetAsInput": false,
+        "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 2473.6515645715326,
