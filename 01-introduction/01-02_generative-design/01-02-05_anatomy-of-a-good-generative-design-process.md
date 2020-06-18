@@ -14,6 +14,7 @@ Have a clear understanding of what you want to achieve, asking yourself:
 
 * What do you want to design?
 * What are the design parameters?
+* What is the reasonable range for these parameters?
 * What conditions must the design satisfy?
 * What must not be present in a final design?
 * What makes the design a success or a failure?
@@ -23,7 +24,7 @@ Have a clear understanding of what you want to achieve, asking yourself:
 
 Answering these questions will not only clarify the problem in your mind but it will also help break the problem into smaller components that will be used in each stage of the generative design process. 
 
-The more questions you formulate and the more precisely you answer these questions, the more relevant your outputs will be from the generative process.
+The more relevant questions you formulate and the more precisely you answer these questions, the more relevant your outputs will be from the generative process.
 
 **Example**
 
