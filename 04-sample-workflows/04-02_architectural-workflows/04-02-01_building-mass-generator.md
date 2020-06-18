@@ -58,7 +58,7 @@ A series of context buildings have been included in the Revit sample file for a 
 
 ## Benefit of Using Generative Design
 
-On running the script, Dynamo is able to generate one design option based on the user inputs. However, by utilizing Randomize for generation method, many more options can be generated in a single run. 
+When running the script in Dynamo, a single design option is generated for each run, based on the current user inputs. However, by running the script in Generative Design for Revit and selecting Randomize as the generation method, many more options can be generated at the same time. 
 
 Due to the nature of this graph, it works best when using the 'Randomize' mode. Although the outputs can be used to maximize or minimize the various areas, the optimization approach won't work as there is no pattern for the algorithm to use. By using the 'Randomize' mode, Generative Design can produce hundreds - if not thousands - of different iterations, allowing the user to rank and explore the options to find the best option.
 
