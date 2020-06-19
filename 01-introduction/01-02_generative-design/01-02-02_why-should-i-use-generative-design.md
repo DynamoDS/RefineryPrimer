@@ -26,7 +26,7 @@ Computers can generate and evaluate a huge number of design variants in only a f
 
 ## A Greater Variety of Options
 
-With s generative design approach, the initial design parameters you input are used to generate your potential design solutions, with the only limitation being how much computer power and time you have.
+With a generative design approach, the initial design parameters you input are used to generate your potential design solutions, with the only limitation being how much computer power and time you have.
 
 For example, using traditional computational design techniques, it's feasible for you to explore ten variants \(or more, perhaps\). However, using generative design, an algorithm can generate thousands of variants in mere minutes.
 
