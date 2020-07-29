@@ -1,6 +1,6 @@
 # Minimum Volume and Maximum Surface
 
-Thsi is a multi-objective optimization problem, with two competing objectives. This example consists of three cuboids with different variable parameters, such as height and location. The objectives of the graph are to find an option with minimal volume and maximum combined surface area.
+This is a multi-objective optimization problem, with two competing objectives. This example consists of three cuboids with different variable parameters, such as height and location. The objectives of the graph are to find an option with minimal volume and maximum combined surface area.
 
 This sample file is available in the most recent version of Generative Design in Revit.
 
