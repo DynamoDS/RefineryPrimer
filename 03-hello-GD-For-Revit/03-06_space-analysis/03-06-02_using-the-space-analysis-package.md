@@ -39,6 +39,33 @@ Be sure to peek at the sample files in the extra folder for use-cases of the spa
 ## Acoustics
 Space analysis supports general acoustic analysis which are very useful for Generative Design applications. While these analyses are not _necessarily_ validated. They can be very useful to use for constraints. _(These nodes can be used towards a design goal of "buzz factor")_.
 
-### Resources for Acoustics:
+
+
+
+### Additional Resources for Acoustics:
 - [Introducing Acoustics in Space Analysis](https://www.keanw.com/2019/06/say-what-acoustics-in-space-analysis.html)
 - [Multiple Source Acoustics](https://www.keanw.com/2019/09/build-your-own-soundsystem-space-analysis-now-supports-multi-source-acoustics.html)
+
+---
+
+## Path Finding
+2D Path finding algorithms are included in space analysis. These are achieved using and implementation of [Djikstra’s shortest path algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm). 
+
+A difference between space analysis path finding and the Path Finding in Autodesk Revit is, Space Analysis has no dependency on the Revit API - making it a perfect companion to Dynamo sandbox.
+
+### Simple Two Point Path Finding
+
+Probably the simplest example of this would be to use a start point and end point with a barrier in-between.
+
+In the space analysis samples, this is demonstrated in: `spaceanalysis-pathfinding-01-one-path.dyn`
+
+<img src="../../assets/hello/spaceAnalysis-Pathfinding-01.gif" style="width:50%;"/>
+
+
+### Additional Resources for Pathfinding:
+- [Using Space Analysis for Pathfinding](
+https://www.keanw.com/2019/04/using-the-space-analysis-package-for-pathfinding-and-visibility-in-dynamo.html)
+
+https://www.keanw.com/2019/06/a-nice-introduction-to-dynamaps-and-space-analysis-by-that-bim-girl.html
+
+https://www.keanw.com/2019/04/dynamo-space-analysis-and-revit-2020s-path-of-travel.html
