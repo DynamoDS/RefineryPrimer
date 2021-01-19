@@ -66,6 +66,6 @@ In the space analysis samples, this is demonstrated in: `spaceanalysis-pathfindi
 - [Using Space Analysis for Pathfinding](
 https://www.keanw.com/2019/04/using-the-space-analysis-package-for-pathfinding-and-visibility-in-dynamo.html)
 
-https://www.keanw.com/2019/06/a-nice-introduction-to-dynamaps-and-space-analysis-by-that-bim-girl.html
+- [A Nice Introduction to Dynamaps and Space Analysis by ThatBIMGirl](https://www.keanw.com/2019/06/a-nice-introduction-to-dynamaps-and-space-analysis-by-that-bim-girl.html)
 
-https://www.keanw.com/2019/04/dynamo-space-analysis-and-revit-2020s-path-of-travel.html
+- [Comparing Space Analysis Path of Travel to Revit 2020's Version](https://www.keanw.com/2019/04/dynamo-space-analysis-and-revit-2020s-path-of-travel.html)
