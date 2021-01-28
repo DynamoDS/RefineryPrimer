@@ -28,7 +28,7 @@ The Space lattice object is the base object for space analysis workflows. It is 
 - **resolution** - Space between two adjacent points of the lattice. _**(This uses your project units, so be sure to verify what those are prior to running)**_ default value = 0.2
 
 #### Simple Space Lattice with Barriers
-<img src="../../assets/hello/spaceAnalysis-SpaceLattice-01.gif" style="width:50%;"/>
+<img src="../../assets/hello/spaceAnalysis-SpaceLattice-01.gif" style="width:75%;"/>
 
 Sample File: [spaceAnalysis-CreateSimpleSpaceLattice.dyn](../../assets\hello\spaceAnalysis-CreateSimpleSpaceLattice.dyn)
 
