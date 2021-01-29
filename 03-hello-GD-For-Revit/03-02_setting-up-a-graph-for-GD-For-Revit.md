@@ -51,3 +51,19 @@ Once the Create Study dialog has launched, select a study type that you have exp
 
 <img src="../assets/hello/setting3.png" style="width:200px;"/>
 
+---
+
+# Getting Creative with Inputs
+
+## Creating an Interactive Date/Time Picker with Generative Design
+Often times we are running analyses that depend on time of day. Within Revit we can use the time from the current model. But there are other ways.
+
+In Dynamo core, we have the ability to define a `DateTime` object with the following node:
+
+<img src="../assets/hello/inputs_dateTimePicker-01.png" style="width:200px;" />
+
+`DateTime.FromString`
+
+Using this node, we can provide inputs that are usable in Generative Design by combining them into one string.
+
+<img src="../assets/hello/inputs_dateTimePicker-02.gif" style="width:600px;" />
