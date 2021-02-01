@@ -2,8 +2,6 @@
 
 The Space Analysis package is a collection of nodes for analyzing architectural and urban spaces.
 
-<img src="../../assets/hello/toolkit1.png" style="width:50%;"/>
-
 ## Supported Workflows
 
 There are currently a few node categories to work with inside of the Space Analysis package. The included nodes support the following workflows.
