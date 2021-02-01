@@ -1,0 +1,875 @@
+{
+  "Uuid": "9bb6b394-fc79-4498-bb0d-3413c18082b3",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "_generative_template",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "3e3834a8100c43d7a6e75da20c68d1e8",
+      "Name": "width",
+      "Type": "number",
+      "Value": "10",
+      "MaximumValue": 100.0,
+      "MinimumValue": 10.0,
+      "StepValue": 0.1,
+      "NumberType": "Double",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "Id": "36d042d5f73c482e8bf6879f40e66f2f",
+      "Name": "length",
+      "Type": "number",
+      "Value": "20",
+      "MaximumValue": 100.0,
+      "MinimumValue": 20.0,
+      "StepValue": 0.1,
+      "NumberType": "Double",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "Id": "e0c5323b182d43b0b4f3d0e44636a5b3",
+      "Name": "height",
+      "Type": "number",
+      "Value": "15",
+      "MaximumValue": 100.0,
+      "MinimumValue": 15.0,
+      "StepValue": 0.1,
+      "NumberType": "Double",
+      "Description": "A slider that produces numeric values."
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "9786d909b1774c979a2dd602920f2b6b",
+      "Name": "volume of solid",
+      "Type": "float",
+      "InitialValue": "3000",
+      "Description": "Visualize the output of node."
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 100.0,
+      "MinimumValue": 10.0,
+      "StepValue": 0.1,
+      "InputValue": 10.0,
+      "Id": "3e3834a8100c43d7a6e75da20c68d1e8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "97f34fdfd1b74ea7b6679f6e0db945f3",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 100.0,
+      "MinimumValue": 20.0,
+      "StepValue": 0.1,
+      "InputValue": 20.0,
+      "Id": "36d042d5f73c482e8bf6879f40e66f2f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "506e0f693bb54b51beaff295239f1546",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 100.0,
+      "MinimumValue": 15.0,
+      "StepValue": 0.1,
+      "InputValue": 15.0,
+      "Id": "e0c5323b182d43b0b4f3d0e44636a5b3",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9269daf065c049358f9dd342004e3c85",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Cuboid.ByLengths@double,double,double",
+      "Id": "f70292e67a8647b0a8bd0c13a7cf9ff0",
+      "Inputs": [
+        {
+          "Id": "f320050f3b1f4b878cab433410f988e1",
+          "Name": "width",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c4509626a2c9436d97d6fb2ad816be4f",
+          "Name": "length",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6857c339539841cb9a0fe72edfb400a7",
+          "Name": "height",
+          "Description": "double\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4726265c37f64b5dad491d0b841eb6d9",
+          "Name": "Cuboid",
+          "Description": "Cuboid",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Create a Cuboid centered at WCS origin, with width, length, and height.\n\nCuboid.ByLengths (width: double = 1, length: double = 1, height: double = 1): Cuboid"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Modifiers.GeometryColor.ByGeometryColor@Autodesk.DesignScript.Geometry.Geometry,DSCore.Color",
+      "Id": "9e34af97bf964bb8bfcd12263ccb38b0",
+      "Inputs": [
+        {
+          "Id": "aec2d4014e504fe59491ad3ff37699c6",
+          "Name": "geometry",
+          "Description": "The geometry to which you would like to apply color.\n\nGeometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1b17accc8b8a47e28cb8239ddc94f889",
+          "Name": "color",
+          "Description": "The color.\n\nColor",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ff2396a4ab7b4fd195dd645c3795c799",
+          "Name": "GeometryColor",
+          "Description": "A Display object.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Display geometry using a color.\n\nGeometryColor.ByGeometryColor (geometry: Geometry, color: Color): GeometryColor"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.ColorPalette, CoreNodeModels",
+      "InputValue": {
+        "R": 32,
+        "G": 178,
+        "B": 170,
+        "A": 255
+      },
+      "NodeType": "ColorInputNode",
+      "Id": "00f3dbcb803a4f0e9d0816d7e2477d4e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "fb9bb94d05f4442bb3b69bee1776c780",
+          "Name": "Color",
+          "Description": "Selected Color.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a Color from the palette"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Solid.Volume",
+      "Id": "c2cb59c9ddcd475d91ff3b432f1753b7",
+      "Inputs": [
+        {
+          "Id": "195c6fa6b2214ca08ad397c342316164",
+          "Name": "solid",
+          "Description": "Autodesk.DesignScript.Geometry.Solid",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3a7a83655d1a41c5ac679fa76f19ffcc",
+          "Name": "double",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "The total volume of the Solid\n\nSolid.Volume: double"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "9786d909b1774c979a2dd602920f2b6b",
+      "Inputs": [
+        {
+          "Id": "2a0eb3a0f80d4139ba10d0bc26ce77e8",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2e2fe20d6e194d28a0416460b5786a13",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "97f34fdfd1b74ea7b6679f6e0db945f3",
+      "End": "f320050f3b1f4b878cab433410f988e1",
+      "Id": "7906c111c8d144f899b3682620fc4ca2"
+    },
+    {
+      "Start": "506e0f693bb54b51beaff295239f1546",
+      "End": "c4509626a2c9436d97d6fb2ad816be4f",
+      "Id": "15c3031c6df743f395ad795441fd3af7"
+    },
+    {
+      "Start": "9269daf065c049358f9dd342004e3c85",
+      "End": "6857c339539841cb9a0fe72edfb400a7",
+      "Id": "d1b4b8cfbfbb4b1691d407fd8bc01e3a"
+    },
+    {
+      "Start": "4726265c37f64b5dad491d0b841eb6d9",
+      "End": "aec2d4014e504fe59491ad3ff37699c6",
+      "Id": "87c895166a614373811e831343cfcb5d"
+    },
+    {
+      "Start": "4726265c37f64b5dad491d0b841eb6d9",
+      "End": "195c6fa6b2214ca08ad397c342316164",
+      "Id": "c99406552f634fa3971e4f73170bc857"
+    },
+    {
+      "Start": "fb9bb94d05f4442bb3b69bee1776c780",
+      "End": "1b17accc8b8a47e28cb8239ddc94f889",
+      "Id": "a3cc8c616eb1447c84dee96e57659841"
+    },
+    {
+      "Start": "3a7a83655d1a41c5ac679fa76f19ffcc",
+      "End": "2a0eb3a0f80d4139ba10d0bc26ce77e8",
+      "Id": "9193c4eeea324bbf93ecac9a2e206180"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.10.0.3455",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "width",
+        "Id": "3e3834a8100c43d7a6e75da20c68d1e8",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 466.08706632815313,
+        "Y": 1110.2385491497269
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "length",
+        "Id": "36d042d5f73c482e8bf6879f40e66f2f",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 466.08706632815313,
+        "Y": 1181.368940877727
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "height",
+        "Id": "e0c5323b182d43b0b4f3d0e44636a5b3",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 466.08706632815313,
+        "Y": 1252.4993326057272
+      },
+      {
+        "ShowGeometry": false,
+        "Name": "Cuboid.ByLengths",
+        "Id": "f70292e67a8647b0a8bd0c13a7cf9ff0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 959.35496563968923,
+        "Y": 1148.3173867983642
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "GeometryColor.ByGeometryColor",
+        "Id": "9e34af97bf964bb8bfcd12263ccb38b0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1636.4023769455348,
+        "Y": 1452.8118546896608
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Color Palette",
+        "Id": "00f3dbcb803a4f0e9d0816d7e2477d4e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1466.6833599396059,
+        "Y": 1513.5754533707957
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Solid.Volume",
+        "Id": "c2cb59c9ddcd475d91ff3b432f1753b7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1604.776204516492,
+        "Y": 1150.7305350211561
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "volume of solid",
+        "Id": "9786d909b1774c979a2dd602920f2b6b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "X": 2079.4625118336639,
+        "Y": 1145.6038245818945
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "cde0b2c6686f44b5a1085128aa63fae9",
+        "Title": "",
+        "Nodes": [
+          "c0202d1d65634d658b758cfecd765789"
+        ],
+        "Left": 1417.473493963573,
+        "Top": 329.95113969381003,
+        "Width": 314.0,
+        "Height": 137.0,
+        "FontSize": 14.0,
+        "InitialTop": 359.95113969381003,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 20.0,
+        "Background": "#FFFFC999"
+      },
+      {
+        "Id": "094672e251044040a746356d6a9a50b0",
+        "Title": "Graph Title",
+        "Nodes": [
+          "2190ecaf7930481e9e5dc5c3d7f60a5f",
+          "5b5a1ca746bd473ea50a97b8c70a30eb",
+          "96364c01c6ba408db160b87a37807749",
+          "890db598eee7410598d571f59320dcf4",
+          "2d6b13d37e874a9289f85874c30521ee",
+          "34920654e2864df0959358de71917fe2",
+          "ec1ee102fe8c4f40bec6e7b1dd492ccc"
+        ],
+        "Left": 453.0,
+        "Top": 264.0,
+        "Width": 632.23562714206719,
+        "Height": 441.57338313009438,
+        "FontSize": 48.0,
+        "InitialTop": 332.0,
+        "InitialHeight": 425.57338313009438,
+        "TextblockHeight": 58.0,
+        "Background": "#FFFFFFFF"
+      },
+      {
+        "Id": "cc9395895fce4332ae004c66e4cec880",
+        "Title": "",
+        "Nodes": [
+          "0898ced03f6a4f0d96d7adc6425248ad"
+        ],
+        "Left": 1090.450689561445,
+        "Top": 500.4843089557437,
+        "Width": 314.0,
+        "Height": 123.0,
+        "FontSize": 14.0,
+        "InitialTop": 530.4843089557437,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 20.0,
+        "Background": "#FFE8F7AD"
+      },
+      {
+        "Id": "c592f5947c9f400eb4319da76af9a4ae",
+        "Title": "",
+        "Nodes": [
+          "a71953804b4b40478d01ece7773553f6"
+        ],
+        "Left": 1089.4566579163352,
+        "Top": 330.21478156058288,
+        "Width": 314.0,
+        "Height": 137.0,
+        "FontSize": 14.0,
+        "InitialTop": 360.21478156058288,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 20.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "f09e13237fd048a88eaa7011466645f7",
+        "Title": "",
+        "Nodes": [
+          "100fa5fe225c460cae1677987590801c"
+        ],
+        "Left": 1091.1807703934992,
+        "Top": 649.01032368326707,
+        "Width": 314.0,
+        "Height": 137.0,
+        "FontSize": 14.0,
+        "InitialTop": 679.01032368326707,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 20.0,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "38927fac6f104297a0e4c55cccabe2d7",
+        "Title": "",
+        "Nodes": [
+          "ac652cb35776493a94b29a3a81de74ca"
+        ],
+        "Left": 1419.0578171685993,
+        "Top": 499.813750175781,
+        "Width": 319.0,
+        "Height": 137.0,
+        "FontSize": 14.0,
+        "InitialTop": 529.813750175781,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 20.0,
+        "Background": "#FFD4B6DB"
+      },
+      {
+        "Id": "3f503ac4f19d4e59b299ca3fb24965f5",
+        "Title": "Variables / Inputs",
+        "Nodes": [
+          "3e3834a8100c43d7a6e75da20c68d1e8",
+          "36d042d5f73c482e8bf6879f40e66f2f",
+          "e0c5323b182d43b0b4f3d0e44636a5b3",
+          "8297b93aebd64372b9f11170e8a2d5a1"
+        ],
+        "Left": 456.08706632815313,
+        "Top": 973.43977620895453,
+        "Width": 319.0,
+        "Height": 347.05955639677268,
+        "FontSize": 24.0,
+        "InitialTop": 1012.4397762089545,
+        "InitialHeight": 240.26078345600035,
+        "TextblockHeight": 29.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "1991c1533a714f2d8500247d47d6d0a2",
+        "Title": "Working / Functions",
+        "Nodes": [
+          "f70292e67a8647b0a8bd0c13a7cf9ff0",
+          "14400e15021e4e9b867ebfdb1d654c5c"
+        ],
+        "Left": 947.409964445482,
+        "Top": 1045.6509417778198,
+        "Width": 319.0,
+        "Height": 247.66644502054442,
+        "FontSize": 24.0,
+        "InitialTop": 1084.6509417778198,
+        "InitialHeight": 269.36063856031387,
+        "TextblockHeight": 29.0,
+        "Background": "#FFE8F7AD"
+      },
+      {
+        "Id": "5bbe6816c65d45bb857449e2dabdc3d4",
+        "Title": "Display/Validation",
+        "Nodes": [
+          "9e34af97bf964bb8bfcd12263ccb38b0",
+          "00f3dbcb803a4f0e9d0816d7e2477d4e",
+          "b32f975e59ec44128954bcc33e8c666d"
+        ],
+        "Left": 1453.8275313301419,
+        "Top": 1362.2403823099758,
+        "Width": 462.57484561539286,
+        "Height": 244.33507106081993,
+        "FontSize": 24.0,
+        "InitialTop": 1401.2403823099758,
+        "InitialHeight": 183.76359868113491,
+        "TextblockHeight": 29.0,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "64672bc5a68d4af29b9b0cc12ccbbd80",
+        "Title": "Checking",
+        "Nodes": [
+          "c2cb59c9ddcd475d91ff3b432f1753b7",
+          "9df9571751ae4ded9f5ae2e5951cb996"
+        ],
+        "Left": 1593.0090903452679,
+        "Top": 975.48496723355845,
+        "Width": 319.0,
+        "Height": 268.24556778759768,
+        "FontSize": 24.0,
+        "InitialTop": 1014.4849672335585,
+        "InitialHeight": 235.44650196550469,
+        "TextblockHeight": 29.0,
+        "Background": "#FFFFC999"
+      },
+      {
+        "Id": "600fe5e11051437d9c148ddb6095394e",
+        "Title": "Output",
+        "Nodes": [
+          "9786d909b1774c979a2dd602920f2b6b",
+          "9de1d894b0cd4bacaa2dacf06f9edefa"
+        ],
+        "Left": 2069.4625118336639,
+        "Top": 1024.8114957368093,
+        "Width": 297.00782957867978,
+        "Height": 229.79232884508519,
+        "FontSize": 24.0,
+        "InitialTop": 1063.8114957368093,
+        "InitialHeight": 206.31979152624308,
+        "TextblockHeight": 29.0,
+        "Background": "#FFFFC999"
+      },
+      {
+        "Id": "c0202d1d65634d658b758cfecd765789",
+        "Title": "Checking / Outputs\r\n_______________________________________________________\r\n\r\nOrange indicates checking nodes to ensure the script has deployed correctly.",
+        "Nodes": [],
+        "Left": 1427.473493963573,
+        "Top": 359.95113969381003,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "0898ced03f6a4f0d96d7adc6425248ad",
+        "Title": "Working / Functions\r\n_______________________________________________________\r\n\r\nCore Workings of the Dynamo Graph",
+        "Nodes": [],
+        "Left": 1100.450689561445,
+        "Top": 530.4843089557437,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "34920654e2864df0959358de71917fe2",
+        "Title": "ADDITIONAL COMMENTS\r\n________________________________________________________\r\n\r\n",
+        "Nodes": [],
+        "Left": 776.235627142064,
+        "Top": 511.68659784206591,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "ec1ee102fe8c4f40bec6e7b1dd492ccc",
+        "Title": "REQUIRED DYNAMO PACKAGES\r\n________________________________________________________\r\n",
+        "Nodes": [],
+        "Left": 776.235627142064,
+        "Top": 420.81800784380027,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "a71953804b4b40478d01ece7773553f6",
+        "Title": "Variables / Inputs\r\n_______________________________________________________\r\n\r\nVariables that can be altered per project and must be set accordingly before running the graph.",
+        "Nodes": [],
+        "Left": 1099.4566579163352,
+        "Top": 360.21478156058288,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "2d6b13d37e874a9289f85874c30521ee",
+        "Title": "DYNAMO VERSION\r\n________________________________________________________\r\n",
+        "Nodes": [],
+        "Left": 776.23562714206719,
+        "Top": 332.1614520833291,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "2190ecaf7930481e9e5dc5c3d7f60a5f",
+        "Title": "DYNAMO PROJECT\r\n________________________________________________________\r\n",
+        "Nodes": [],
+        "Left": 463.0,
+        "Top": 332.0,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "5b5a1ca746bd473ea50a97b8c70a30eb",
+        "Title": "ASSOCIATED FILE(S)      \r\n________________________________________________________\r\n\r\nN/A",
+        "Nodes": [],
+        "Left": 463.0,
+        "Top": 421.34329892103312,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "96364c01c6ba408db160b87a37807749",
+        "Title": "AUTHOR(S) / CREATION DATE\r\n________________________________________________________\r\n\r\n",
+        "Nodes": [],
+        "Left": 463.0,
+        "Top": 511.68659784206591,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "890db598eee7410598d571f59320dcf4",
+        "Title": "DESCRIPTION\r\n________________________________________________________\r\n\r\n",
+        "Nodes": [],
+        "Left": 463.0,
+        "Top": 612.57338313009438,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "100fa5fe225c460cae1677987590801c",
+        "Title": "Display / Validation\r\n_______________________________________________________\r\n\r\nLogic used simply for visualization purposes, does not contain core logic.",
+        "Nodes": [],
+        "Left": 1101.1807703934992,
+        "Top": 679.01032368326707,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "ac652cb35776493a94b29a3a81de74ca",
+        "Title": "Remember / Gate Nodes\r\n_______________________________________________________\r\n\r\nData that needs to be cached from Dynamo for Revit is stored here.",
+        "Nodes": [],
+        "Left": 1429.0578171685993,
+        "Top": 529.813750175781,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "8297b93aebd64372b9f11170e8a2d5a1",
+        "Title": "These are examples inputs. They are set as inputs by right clicking on them and selecting, \"IsInput\".\r\n\r\nWe also assign a default starting value, and a start and stop range, with increments.",
+        "Nodes": [],
+        "Left": 466.21459125583567,
+        "Top": 1012.4397762089545,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "14400e15021e4e9b867ebfdb1d654c5c",
+        "Title": "This is the core logic of our graph. Notice how the node is half-toned. This is because we are hiding the geometry for this in favor of displaying it other ways.",
+        "Nodes": [],
+        "Left": 957.409964445482,
+        "Top": 1084.6509417778198,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "b32f975e59ec44128954bcc33e8c666d",
+        "Title": "In this section, we are using the nodes purely for viewport display purposes.",
+        "Nodes": [],
+        "Left": 1463.8275313301419,
+        "Top": 1401.2403823099758,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "9df9571751ae4ded9f5ae2e5951cb996",
+        "Title": "This portion is interesting because it could fit in either:\r\nThe green groups for working and functions as it is doing some of the work.\r\nor:\r\nOrange for verifying what is going on. The important part is to remember to annotate your graph clearly regardless of color.",
+        "Nodes": [],
+        "Left": 1603.0090903452679,
+        "Top": 1014.4849672335585,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "9de1d894b0cd4bacaa2dacf06f9edefa",
+        "Title": "Using a watch node, we are able to provide an output for Generative Design. This is enabled by:\r\n1) Renaming the node.\r\n2) Right-Clicking and enabling, \"IsOutput\"",
+        "Nodes": [],
+        "Left": 2079.4703414123437,
+        "Top": 1063.8114957368093,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -160.70701240367248,
+    "Y": -123.97081614167581,
+    "Zoom": 0.5028124774457593
+  }
+}

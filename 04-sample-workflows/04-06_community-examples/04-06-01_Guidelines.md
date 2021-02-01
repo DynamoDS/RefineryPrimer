@@ -46,7 +46,7 @@ Example:`RAH_FloorsFromSolarAnalysis.zip`
 
 ## Dynamo Files: Basic Guidelines
 
-To ensure that all sample files presented in this page are easy to understand, we recommend you do take the following steps.
+To ensure that all sample files presented in this page are easy to understand, we recommend you do take the following steps. There is a beginner [template](#Generative-Design-Dynamo-Template) provided below for you to get started with your contribution quickly!
 
 ### Create a Title Block
 
@@ -99,4 +99,20 @@ We use a consistent color pallet through out our workflows. Don't forget to use 
 <p align="center">
   <img src="../../assets/sample/guidelines7.png">
 </p>
+
+---
+## Generative Design Dynamo Template
+
+Using templates in Dynamo is a good best-practice for making legible, understandable graphs.
+
+For generative design related examples, we have created the following template that encompasses the above ideas.
+
+In addition to the breakdown above, we have provided sample node groupings in the template.
+
+<p align="center">
+  <img src="../../assets/sample/template_01.png">
+</p>
+
+The sample DYN to download is available here:
+[_generative_template.dyn](../../assets/sample/_generative_template.dyn).
 
