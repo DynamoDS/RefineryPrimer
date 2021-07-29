@@ -48,6 +48,6 @@ The image below shows an example output for a sections sheet within Revit.
 
 ## Video Tutorial
 
-{% embed url="https://www.youtube.com/watch?v=PLFox8XqpVM&t=3s" %}
+{% embed url="https://www.youtube.com/watch?v=hGkxayEHb70" %}
 
 {% page-ref page="./" %}
