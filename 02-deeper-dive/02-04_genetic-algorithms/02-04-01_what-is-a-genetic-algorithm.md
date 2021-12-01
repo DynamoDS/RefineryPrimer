@@ -1,6 +1,6 @@
 # What Is a Genetic Algorithm?
 
-A genetic algorithm - specifically [NSGA II](https://www.iitk.ac.in/kangal/Deb_NSGA-II.pdf) - is a kind of optimization algorithm that is popular in generative design applications. 
+A genetic algorithm - specifically [NSGA II](http://vision.ucsd.edu/~sagarwal/nsga2.pdf) - is a kind of optimization algorithm that is popular in generative design applications. 
 
 Genetic algorithms tend to be very useful when your objective function is highly complex, subject to randomness, or is discontinuous. 
 
