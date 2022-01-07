@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DynaSpace</name>
+    </assembly>
+    <members>
+        <member name="M:DynaSpace.Engine.Create(System.Collections.Generic.List{System.Object})">
+            <summary>
+            Create a new DynaSpace engine
+            </summary>
+            <param name="data">Space specification data</param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaSpace.Engine.CreateWithInitialPositions(System.Collections.Generic.List{System.Object},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point})">
+            <summary>
+            Create a new DynaSpace engine
+            </summary>
+            <param name="data">Space specification data</param>
+            <param name="initialPositions">The initial position of each space bubble</param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaSpace.Engine.Execute(DynaSpace.Engine,System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Collections.Generic.List{System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point}},DynaSpace.SilentModeSettings,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,DynaSpace.Settings)">
+            <summary>
+            Run the DynaSpace engine
+            </summary>
+            <param name="engine">The DynaSpace engine (from Engine.Create node)</param>
+            <param name="boundaryVertices">The vertices of the boundary polygon (must be a convex polygon)</param>
+            <param name="clearancePolygonVertices">The vertices of the clearance polygons (must be convex polygons)</param>
+            <param name="silentModeSettings">Only used when you want to run the engine in silent mode. To do this, create a silentModeSettings (using SilentModeSettings.Create node) and input it here</param>
+            <param name="reset">Reset the engine to the initial state</param>
+            <param name="execute">Run the engine to iteratively solve the space constraints</param>
+            <param name="enableManipulation">Enable mouse manipulation of the space bubbles</param>
+            <param name="showSpaceIds">Display the ID of each space bubble</param>
+            <param name="showSpaceAdjacency">Display the adjacency indicator lines between the space bubbles</param>
+            <param name="showSpaceDepartmentAdjacency">Display the adjacency indicator lines between the space bubbles</param>
+            <param name="settings">You can supply customized settings to fine-tune the engine's execution. To do this, you will need the output from the Settings.Create node</param>
+            <returns name="departmentNames">The name of each department</returns>
+            <returns name="spaceIds">The ID of each space bubble</returns>
+            <returns name="spaceNames">The name of each space bubble </returns>
+            <returns name="spaceCircles">the circle that represents each space bubble</returns>
+            <returns name="spaceAdjLines">each line represents a space-space adjacency relationships</returns>
+            <returns name="spaceAdjErrors">The error for the adjacency requirement between two space bubbles of radii R1 and R2 is measured as "D - (R1 + R2)", where D is the distance between the two bubble's centers. If the adjacency requirement is fully satisfied, the two bubbles should touch each other and hence the error will be 0. If the two bubbles are too far apart, the error will become positive. If the bubbles are too close (in which case they overlap), the error will become negative.</returns>
+            <returns name="spaceAdjErrorRatios">Similar to space adjacency errors, but measured as fractions rather than distance values. It is defined as "D / (R1 + R2"), where R1 and R2 are the bubbles' radii and D is the distance between the two bubbles' centers. We want the error ratio to be as close to 1.0 as possible. Error larger than 1.0 means the bubbles are too far apart and error smaller than 1.0 means the bubbles are too close and overlapping with each other</returns>
+        </member>
+        <member name="M:DynaSpace.Settings.Create(System.Single,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            These settings are used to fine-tune how the DynaSpace engine runs.
+            </summary>
+            <param name="dampingFactor"></param>
+            <param name="iterations">The number of iterations that the solver will execute in the background before display the intermediate result. If set to 0 (the default value), the solver will attempt run as many iterations as possible within approximately 25 milliseconds, which is sufficient for real-time visual feedback. Using a small value (e.g. 1) will make the solver appears to run more slowly and display more intermediate result, allowing us to better observe and understand how the nodes and goals behave.</param>
+            <param name="boundaryStrength">Control the degree to which the space bubbles should respect the site boundary and not cross over it (Note: in this early DynaSpace version, the boundary polygon MUST be a convex polygon).</param>
+            <param name="planarConstraintStrength">Control the degree to which the space bubbles stick the 2D plane horizontal plane. If this value is set to 0 or too low, the space bubbles will deviate from the 2D plane and start floating in 3D space, which is of course will look weird. However, initially setting this value to 0 and slowing increase it might give a better result.</param>
+            <param name="sphereCollisionStrength">Control the degree to which the space bubbles do not overlap with each other.</param>
+            <param name="departmentCohesionStrength">Control the degree to which space bubbles within the same departments should stay close together.</param>
+            <param name="spaceAdjacencyStrength">Control the degree to which an adjacent pair of space bubbles stay close together.</param>
+            <param name="spaceDepartmentAdjacencyStrength">Control the degree to which an adjacent pair of space bubbles stay close together.</param>
+            <returns>All the setting values grouped together as a single item, which can be input into the Engine.Execute node</returns>
+        </member>
+        <member name="M:DynaSpace.SilentModeSettings.Create(System.Int32,System.Single,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Create the settings that enable the DynaSpace engine to run in Silent Mode.
+            </summary>
+            <param name="maxIterationCount">The maximum number of iterations the engine can run before outputting the result</param>
+            <param name="terminationThreshold">If the space bubbles (almost) stop moving (under this threshold value), then the DynaSpace engine will stop and output the result</param>
+            <param name="sphereCollisionKickin">The iteration at which the sphereCollision constraint become active</param>
+            <param name="planarConstraintKickin">The iteration at which the planar constraint become active</param>
+            <param name="boundaryKickin">The iteration at which the boundary constraint becomes active</param>
+            <returns>All the settings values  grouped into a single item</returns>
+        </member>
+    </members>
+</doc>
