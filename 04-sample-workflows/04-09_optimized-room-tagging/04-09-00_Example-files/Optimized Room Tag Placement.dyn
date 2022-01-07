@@ -34,7 +34,7 @@
     },
     {
       "Id": "a43739348d764444b12a52d270994f17",
-      "Name": "Select Existing Room/Space Tag",
+      "Name": "Select Existing Room Tag",
       "Type": "hostSelection",
       "Value": "e29811d8-f362-4144-bef4-40532c4f577a-000348d9",
       "Description": "Select a model element from the document.",
@@ -5753,13 +5753,13 @@
       },
       {
         "ShowGeometry": true,
-        "Name": "Select Existing Room/Space Tag",
+        "Name": "Select Existing Room Tag",
         "Id": "a43739348d764444b12a52d270994f17",
         "IsSetAsInput": true,
         "IsSetAsOutput": false,
         "Excluded": false,
         "X": 420.15811601292882,
-        "Y": 1193.8215462729402
+        "Y": 1194.5560963587873
       },
       {
         "ShowGeometry": false,
@@ -6578,7 +6578,7 @@
         "Left": 368.627054391069,
         "Top": 837.17257615116409,
         "Width": 319.19999999999993,
-        "Height": 476.448970121776,
+        "Height": 477.18352020762313,
         "FontSize": 24.0,
         "InitialTop": 875.972576151164,
         "InitialHeight": 462.84897012177612,
@@ -6915,8 +6915,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": 268.27481923374319,
-    "Y": 109.10188430729909,
-    "Zoom": 0.24969531519248445
+    "X": -389.43266198888762,
+    "Y": -725.523175595076,
+    "Zoom": 1.0891020441138664
   }
 }
