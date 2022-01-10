@@ -1,0 +1,1193 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VASA</name>
+    </assembly>
+    <members>
+        <member name="T:VASA.Core.Axes">
+            <summary>
+            A set of axes on which voxel models can be defined.
+            </summary>
+        </member>
+        <member name="M:VASA.Core.Axes.ByUnitLengthsAndVoxelOrigin(DynamoUnits.Length,DynamoUnits.Length,Autodesk.DesignScript.Geometry.Point,System.Double,System.Int32)">
+            <summary>
+            Create a set of axes on which voxel models can be defined. The width of the coarsest voxels is specified using Length objects with units.
+            </summary>
+            <param name="sceneUnitLength">The units of the scene geometry as a Length object. If the geometry has been loaded directly from Revit, this parameter should match the units of the Revit model.</param>
+            <param name="voxelUnitLength">The width of the coarsest voxels as a Length object. The recommended value is 1 meter.</param>
+            <param name="voxelOrigin">The origin of the axes.</param>
+            <param name="voxelRotation">The angle (in degrees) by which the horizontl axes are rotated in a counterclockwise direction.</param>
+            <param name="verticalLOD">The level of detail associated with the height of all voxels. The height of all voxels is the width of the coarsest voxels divided by 2 to the power of verticalLOD.</param>
+        </member>
+        <member name="M:VASA.Core.Axes.ByCoarseVoxelWidthAndOrigin(System.Double,Autodesk.DesignScript.Geometry.Point,System.Double,System.Int32)">
+            <summary>
+            Create a set of axes on which voxel models can be defined.
+            </summary>
+            <param name="coarseVoxelWidth">The width of the coarsest voxels. The recommended value is 1 meter expressed in the units of the scene.</param>
+            <param name="voxelOrigin">The origin of the axes.</param>
+            <param name="voxelRotation">The angle (in degrees) by which the horizontal axes are rotated in a counterclockwise direction.</param>
+            <param name="verticalLOD">The level of detail associated with the height of all voxels. The height of all voxels is the width of the coarsest voxels divided by 2 to the power of verticalLOD.</param>
+        </member>
+        <member name="M:VASA.Core.Axes.VoxelOrigin">
+            <summary>
+            Get the origin of the axes.
+            </summary>
+            <returns>The origin of the axes.</returns>
+        </member>
+        <member name="M:VASA.Core.Axes.VoxelRotation">
+            <summary>
+            Get the angle (in degrees) by which the horizontal axes are rotated in a counterclockwise direction.
+            </summary>
+            <returns>The angle by which the horizontal axes are rotated.</returns>
+        </member>
+        <member name="M:VASA.Core.Axes.VerticalLOD">
+            <summary>
+            Get the level of detail associated with the height of all voxels.
+            </summary>
+            <returns>The level of detail associated with the height of all voxels.</returns>
+        </member>
+        <member name="M:VASA.Core.Axes.VoxelWidths">
+            <summary>
+            Get a list of voxel widths for each level of detail from 0 to FinestLOD().
+            </summary>
+            <returns>A list of voxel widths for each level of detail.</returns>
+        </member>
+        <member name="M:VASA.Core.Axes.VoxelHeight">
+            <summary>
+            Get the voxel height.
+            </summary>
+            <returns>The voxel height.</returns>
+        </member>
+        <member name="M:VASA.Core.Axes.ContainingVoxel(Autodesk.DesignScript.Geometry.Point,System.Int32)">
+            <summary>
+            Get the indices of the voxel containing a point.
+            </summary>
+            <param name="point">The point for which to find the containing voxel.</param>
+            <param name="voxelLOD">The level of the detail of the voxel.</param>
+            <returns>The indices of the voxel containing the point.</returns>
+        </member>
+        <member name="M:VASA.Core.Axes.LowerVoxelCorner(System.Collections.Generic.List{System.Int32},System.Int32)">
+            <summary>
+            Get the point at the lower corner of the specified voxel.
+            </summary>
+            <param name="voxelIndices">The indices of the voxel.</param>
+            <param name="voxelLOD">The level of the detail of the voxel.</param>
+            <returns>The point at the lower corner of the voxel.</returns>
+        </member>
+        <member name="M:VASA.Core.Axes.UpperVoxelCorner(System.Collections.Generic.List{System.Int32},System.Int32)">
+            <summary>
+            Get the point at the upper corner of the specified voxel.
+            </summary>
+            <param name="voxelIndices">The indices of the voxel.</param>
+            <param name="voxelLOD">The level of the detail of the voxel.</param>
+            <returns>The point at the upper corner of the voxel.</returns>
+        </member>
+        <member name="M:VASA.Core.Axes.VoxelCenter(System.Collections.Generic.List{System.Int32},System.Int32)">
+            <summary>
+            Get the point at the center of the specified voxel.
+            </summary>
+            <param name="voxelIndices">The indices of the voxel.</param>
+            <param name="voxelLOD">The level of the detail of the voxel.</param>
+            <returns>The point at the center of the voxel.</returns>
+        </member>
+        <member name="M:VASA.Core.Axes.DisplayAxes">
+            <summary>
+            Display the axes to be used for voxel models.
+            </summary>
+            <returns>A list of 3 lines indicating the axes.</returns>
+        </member>
+        <member name="M:VASA.Core.Axes.DisplayOriginVoxels">
+            <summary>
+            Display the voxels at the origin for each level of detail.
+            </summary>
+            <returns>A list of lines containing 12 edges for each size of voxel.</returns>
+        </member>
+        <member name="T:VASA.Core.VoxelTessellation">
+            <summary>
+            A display object for voxel models.
+            </summary>
+        </member>
+        <member name="M:VASA.Core.VoxelTessellation.#ctor(System.Collections.Generic.List{System.Double},DSCore.Color)">
+            Create a VoxelTessellation object.
+        </member>
+        <member name="M:VASA.Core.VoxelTessellation.Tessellate(Autodesk.DesignScript.Interfaces.IRenderPackage,Autodesk.DesignScript.Interfaces.TessellationParameters)">
+            Render a list of meshes that compose the same region as the filled voxels.
+        </member>
+        <member name="T:VASA.Core.VoxelModel">
+            <summary>
+            A multi-resolution voxel grid representing building and urban-scale geometry.
+            </summary>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.ByExtents(VASA.Core.Extents,System.Int32,System.Double)">
+            <summary>
+            Create an empty voxel model from a set of extents.
+            </summary>
+            <param name="extents">The extents of the voxel model.</param>
+            <param name="finestLOD">The finest level of detail. The width of the finest voxels is the width of the coarsest voxels divided by 2 to the power of finestLOD.</param>
+            <param name="voxelLimit">The maximum permissible number of voxels at the finest level of detail.</param>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.ByGeometry(Autodesk.DesignScript.Geometry.Geometry,System.Double,System.Int32,System.Int32,System.Double)">
+            <summary>
+            Create a voxel model from geometry.
+            A default set of axes will be used, and the extents will be generated automatically to encompass the geometry.
+            </summary>
+            <param name="geometry">The geometry object to voxelize.</param>
+            <param name="coarseVoxelWidth">The width of the coarsest voxels. The recommended value is 1 meter expressed in the units of the scene.</param>
+            <param name="verticalLOD">The level of detail associated with the height of all voxels. The height of all voxels is the width of the coarsest voxels divided by 2 to the power of verticalLOD.</param>
+            <param name="finestLOD">The finest level of detail at which geometry will be voxelized. The width of the finest voxels is the width of the coarsest voxels divided by 2 to the power of finestLOD.</param>
+            <param name="voxelLimit">The maximum permissible number of voxels at the finest level of detail.</param>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.ByGeometryAndAxes(Autodesk.DesignScript.Geometry.Geometry,VASA.Core.Axes,System.Int32,System.Double)">
+            <summary>
+            Create a voxel model from geometry and a set of axes.
+            The extents will be generated automatically to encompass the voxelized triangles.
+            </summary>
+            <param name="geometry">The geometry object to voxelize.</param>
+            <param name="axes">The axes of the voxel model.</param>
+            <param name="finestLOD">The finest level of detail at which geometry will be voxelized. The width of the finest voxels is the width of the coarsest voxels divided by 2 to the power of finestLOD.</param>
+            <param name="voxelLimit">The maximum permissible number of voxels at the finest level of detail.</param>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.ByGeometryAndExtents(Autodesk.DesignScript.Geometry.Geometry,VASA.Core.Extents,System.Int32,System.Double)">
+            <summary>
+            Create a voxel model from geometry and a set of extents.
+            </summary>
+            <param name="geometry">The geometry object to voxelize.</param>
+            <param name="extents">The extents of the voxel model.</param>
+            <param name="finestLOD">The finest level of detail at which geometry will be voxelized. The width of the finest voxels is the width of the coarsest voxels divided by 2 to the power of finestLOD.</param>
+            <param name="voxelLimit">The maximum permissible number of voxels at the finest level of detail.</param>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.ByTriangles(System.Collections.Generic.List{System.Double},System.Double,System.Int32,System.Int32,System.Double)">
+            <summary>
+            Create a voxel model from triangles represented as a list of numbers.
+            A default set of axes will be used, and the extents will be generated automatically to encompass the voxelized triangles.
+            </summary>
+            <param name="trianglesAsNineNumbers">A list in which each set of nine consecutive numbers represents three points of a triangle.</param>
+            <param name="coarseVoxelWidth">The width of the coarsest voxels. The recommended value is 1 meter expressed in the units of the scene.</param>
+            <param name="verticalLOD">The level of detail associated with the height of all voxels. The height of all voxels is the width of the coarsest voxels divided by 2 to the power of verticalLOD.</param>
+            <param name="finestLOD">The finest level of detail at which geometry will be voxelized. The width of the finest voxels is the width of the coarsest voxels divided by 2 to the power of finestLOD.</param>
+            <param name="voxelLimit">The maximum permissible number of voxels at the finest level of detail.</param>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.ByTrianglesAndAxes(System.Collections.Generic.List{System.Double},VASA.Core.Axes,System.Int32,System.Double)">
+            <summary>
+            Create a voxel model from triangles represented as a list of numbers and a set of axes.
+            The extents will be generated automatically to encompass the voxelized triangles.
+            </summary>
+            <param name="trianglesAsNineNumbers">A list in which each set of nine consecutive numbers represents three points of a triangle.</param>
+            <param name="axes">The axes of the voxel model.</param>
+            <param name="finestLOD">The finest level of detail at which geometry will be voxelized. The width of the finest voxels is the width of the coarsest voxels divided by 2 to the power of finestLOD.</param>
+            <param name="voxelLimit">The maximum permissible number of voxels at the finest level of detail.</param>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.ByTrianglesAndExtents(System.Collections.Generic.List{System.Double},VASA.Core.Extents,System.Int32,System.Double)">
+            <summary>
+            Create a voxel model from triangles represented as a list of numbers and a set of extents.
+            </summary>
+            <param name="trianglesAsNineNumbers">A list in which each set of nine consecutive numbers represents three points of a triangle.</param>
+            <param name="extents">The extents of the voxel model.</param>
+            <param name="finestLOD">The finest level of detail at which geometry will be voxelized. The width of the finest voxels is the width of the coarsest voxels divided by 2 to the power of finestLOD.</param>
+            <param name="voxelLimit">The maximum permissible number of voxels at the finest level of detail.</param>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.Axes">
+            <summary>
+            Get the axes for which the voxel model is defined.
+            </summary>
+            <returns>The axes for which the voxel model is defined.</returns>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.DisplayVoxels(DSCore.Color,System.Int32,System.Double)">
+            <summary>
+            Display the voxels.
+            </summary>
+            <param name="color">The color in which to display the voxels.</param>
+            <param name="voxelLOD">The level of detail at which voxels will be displayed. The default value of -1 means voxels will be displayed at the finest level of detail available.</param>
+            <param name="triangleLimit">The maximum permissible number of generated triangles.</param>
+            <returns>A display object for voxel models.</returns>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.ToCuboids(System.Int32,System.Double)">
+            <summary>
+            Convert the voxel model into a list of cuboids.
+            Note: The DisplayVoxels node provides a more efficient way to render voxel models.
+            </summary>
+            <param name="voxelLOD">The level of detail at which voxels will be converted to cuboids. The default value of -1 means voxels will be converted at the finest level of detail available.</param>
+            <param name="cuboidLimit">The maximum permissible number of generated cuboids.</param>
+            <returns>A list of cuboids of different sizes that collectively occupy the same space as the filled voxels.</returns>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.Extents(System.Int32)">
+            <summary>
+            Get the extents for which the voxel model is defined.
+            </summary>
+            <param name="voxelLOD">The level of detail at which the extents will be retrieved. The default value of -1 means extents will be retrieved at the finest level of detail available.</param>
+            <returns>The extents for which the voxel model is defined.</returns>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.FinestLOD">
+            <summary>
+            Get the finest level of detail available in the voxel model.
+            </summary>
+            <returns>The finest level of detail.</returns>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.IsEmpty">
+            <summary>
+            Check whether the voxel model is empty.
+            </summary>
+            <returns>True if and only if there are no filled voxels.</returns>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.IsFull">
+            <summary>
+            Check whether the voxel model is completely filled.
+            </summary>
+            <returns>True if and only if all voxels are filled.</returns>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.CountFilled(System.Int32)">
+            <summary>
+            Count the number of filled voxels in the model.
+            </summary>
+            <param name="voxelLOD">The level of the detail at which to count filled voxels. The default value of -1 means filled voxels will be counted at the finest level of detail available.</param>
+            <returns>The number of filled voxels in the model.</returns>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.Crop(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Construct a new voxel model with the same data but reduced extents.
+            </summary>
+            <param name="lowerXDepth">The number of voxels to crop off the lower X side.</param>
+            <param name="upperXDepth">The number of voxels to crop off the upper X side.</param>
+            <param name="lowerYDepth">The number of voxels to crop off the lower Y side.</param>
+            <param name="upperYDepth">The number of voxels to crop off the upper Y side.</param>
+            <param name="lowerZDepth">The number of voxels to crop off the lower Z side.</param>
+            <param name="upperZDepth">The number of voxels to crop off the upper Z side.</param>
+            <returns>The cropped voxel model.</returns>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.Enlarge(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Construct a new voxel model with the same data but enlarged extents.
+            </summary>
+            <param name="lowerXPadding">The number of voxels to add to the lower X side.</param>
+            <param name="upperXPadding">The number of voxels to add to the upper X side.</param>
+            <param name="lowerYPadding">The number of voxels to add to the lower Y side.</param>
+            <param name="upperYPadding">The number of voxels to add to the upper Y side.</param>
+            <param name="lowerZPadding">The number of voxels to add to the lower Z side.</param>
+            <param name="upperZPadding">The number of voxels to add to the upper Z side.</param>
+            <returns>The cropped voxel model.</returns>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.Relocate(VASA.Core.Axes)">
+            <summary>
+            Construct a new voxel model with the same data but altered axes.
+            </summary>
+            <param name="newAxes">The axes of the relocated voxel model.</param>
+            <returns>The relocated voxel model.</returns>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.Resize(VASA.Core.Extents)">
+            <summary>
+            Construct a new voxel model with the same data but altered extents.
+            </summary>
+            <param name="newExtents">The extents of the resized voxel model, which must be based on the original set of axes.</param>
+            <returns>The resized voxel model.</returns>
+        </member>
+        <member name="M:VASA.Core.VoxelModel.Refine(System.Int32)">
+            <summary>
+            Construct a new voxel model with the same data but altered finest level of detail.
+            </summary>
+            <param name="newFinestLOD">The finest level of detail in the refined voxel model.</param>
+            <returns>The refined voxel model.</returns>
+        </member>
+        <member name="T:VASA.Core.Extents">
+            <summary>
+            A set of extents that can be used to specify voxel model boundaries or slices.
+            </summary>
+        </member>
+        <member name="M:VASA.Core.Extents.ByAxesAndCornerIndices(VASA.Core.Axes,System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32},System.Int32)">
+            <summary>
+            Create a set of extents that can be used to specify voxel model boundaries or slices.
+            The extents are defined by the indices of the lower and upper corner voxels.
+            </summary>
+            <param name="axes">The axes for which the extents are defined.</param>
+            <param name="lowerIndices">The indices of the voxel just inside the lower corner.</param>
+            <param name="upperIndices">The indices of the voxel just inside the upper corner.</param>
+            <param name="voxelLOD">The level of detail associated with the extents.</param>
+        </member>
+        <member name="M:VASA.Core.Extents.ByAxesAndSixOffsets(VASA.Core.Axes,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Create a set of extents that can be used to specify voxel model boundaries or slices.
+            The extent in each direction is specified as an offset from the origin.
+            </summary>
+            <param name="axes">The axes for which the extents are defined.</param>
+            <param name="lowerXOffset">The offset of the lower extent in the X direction.</param>
+            <param name="upperXOffset">The offset of the upper extent in the X direction.</param>
+            <param name="lowerYOffset">The offset of the lower extent in the Y direction.</param>
+            <param name="upperYOffset">The offset of the upper extent in the Y direction.</param>
+            <param name="lowerZOffset">The offset of the lower extent in the Z direction.</param>
+            <param name="upperZOffset">The offset of the upper extent in the Z direction.</param>
+            <param name="voxelLOD">The level of detail associated with the extents.</param>
+        </member>
+        <member name="M:VASA.Core.Extents.Axes">
+            <summary>
+            Get the axes for which the extents are defined.
+            </summary>
+            <returns>The axes for which the extents are defined.</returns>
+        </member>
+        <member name="M:VASA.Core.Extents.LowerIndices">
+            <summary>
+            Get the indices of the voxel just inside the lower corner.
+            </summary>
+            <returns>The indices of the voxel just inside the lower corner.</returns>
+        </member>
+        <member name="M:VASA.Core.Extents.UpperIndices">
+            <summary>
+            Get the indices of the voxel just inside the upper corner.
+            </summary>
+            <returns>The indices of the voxel just inside the upper corner.</returns>
+        </member>
+        <member name="M:VASA.Core.Extents.LowerXOffset">
+            <summary>
+            Get the offset of the lower extent in the X direction.
+            </summary>
+            <returns>The offset of the lower extent in the X direction.</returns>
+        </member>
+        <member name="M:VASA.Core.Extents.UpperXOffset">
+            <summary>
+            Get the offset of the upper extent in the X direction.
+            </summary>
+            <returns>The offset of the upper extent in the X direction.</returns>
+        </member>
+        <member name="M:VASA.Core.Extents.LowerYOffset">
+            <summary>
+            Get the offset of the lower extent in the Y direction.
+            </summary>
+            <returns>The offset of the lower extent in the Y direction.</returns>
+        </member>
+        <member name="M:VASA.Core.Extents.UpperYOffset">
+            <summary>
+            Get the offset of the upper extent in the Y direction.
+            </summary>
+            <returns>The offset of the upper extent in the Y direction.</returns>
+        </member>
+        <member name="M:VASA.Core.Extents.LowerZOffset">
+            <summary>
+            Get the offset of the lower extent in the Z direction.
+            </summary>
+            <returns>The offset of the lower extent in the Z direction.</returns>
+        </member>
+        <member name="M:VASA.Core.Extents.UpperZOffset">
+            <summary>
+            Get the offset of the upper extent in the Z direction.
+            </summary>
+            <returns>The offset of the upper extent in the Z direction.</returns>
+        </member>
+        <member name="M:VASA.Core.Extents.VoxelLOD">
+            <summary>
+            Get the level of detail associated with the extents.
+            </summary>
+            <returns>The level of detail associated with the extents.</returns>
+        </member>
+        <member name="M:VASA.Core.Extents.ContainsVoxel(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Check whether a voxel is within the extents.
+            </summary>
+            <param name="voxelIndices">The indices of a voxel that may or may not be within the extents.</param>
+            <returns>True if and only if the voxel is within the extents.</returns>
+        </member>
+        <member name="M:VASA.Core.Extents.ClosestVoxel(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Get the indices of the closest voxel within the extents.
+            </summary>
+            <param name="voxelIndices">The indices of a voxel that may or may not be within the extents.</param>
+            <returns>The indices of the closest voxel within the extents.</returns>
+        </member>
+        <member name="M:VASA.Core.Extents.Rescale(System.Int32)">
+            <summary>
+            Construct a new set of extents approximating the same boundary at a different level of detail.
+            </summary>
+            <param name="newLOD">The level of detail associated with the new set of extents.</param>
+            <returns>The new set of extents.</returns>
+        </member>
+        <member name="M:VASA.Core.Extents.VoxelCount">
+            <summary>
+            Get the total number of voxels within the extents.
+            </summary>
+            <returns>The total number of voxels within the extents.</returns>
+        </member>
+        <member name="M:VASA.Core.Extents.DisplayExtents">
+            <summary>
+            Display the extents to be used for voxel models.
+            </summary>
+            <returns>A list of lines representing the 12 edges of a box around the defined space.</returns>
+        </member>
+        <member name="M:VASA.Core.Extents.DisplayCornerVoxels">
+            <summary>
+            Display the voxels at each corner for each level of detail.
+            </summary>
+            <returns>A list of lines containing 12 edges for each corner and each size of voxel.</returns>
+        </member>
+        <member name="T:VASA.Pathfinding.DistanceField">
+            <summary>
+            A field of travel distances computed from a source point.
+            </summary>
+        </member>
+        <member name="M:VASA.Pathfinding.DistanceField.ByPathModelAndSourcePoint(VASA.Pathfinding.PathModel,Autodesk.DesignScript.Geometry.Point,System.Double)">
+            <summary>
+            Create a distance field from a path model and a source point.
+            </summary>
+            <param name="pathModel">The path model for which to compute travel distances.</param>
+            <param name="sourcePoint">The source point from which to compute travel distances.</param>
+            <param name="maxDistance">The distance within which to compute travel distances.</param>
+        </member>
+        <member name="M:VASA.Pathfinding.DistanceField.VoxelLOD">
+            <summary>
+            Get the level of detail at which travel distances have been computed.
+            </summary>
+            <returns>The level of detail at which travel distances have been computed.</returns>
+        </member>
+        <member name="M:VASA.Pathfinding.DistanceField.IsValid">
+            <summary>
+            Check whether the distance field is valid.
+            </summary>
+            <returns>True if and only if the distance field is valid.</returns>
+        </member>
+        <member name="M:VASA.Pathfinding.DistanceField.FarthestDistance">
+            <summary>
+            Get the distance of the farthest reachable voxel.
+            </summary>
+            <returns>The distance of the farthest reachable voxel.</returns>
+        </member>
+        <member name="M:VASA.Pathfinding.DistanceField.ReachableVoxels(System.Double)">
+            <summary>
+            Get the voxel model representing all traversable areas within the specified distance from the source point.
+            </summary>
+            <param name="distance">The travel distance within which to retrieve reachable voxels. The default value of -1 means all reachable voxels will be retrieved.</param>
+            <returns>The voxel model representing all traversable areas within the specified travel distance from the source point.</returns>
+        </member>
+        <member name="T:VASA.Pathfinding.Path">
+            <summary>
+            A path between two points.
+            </summary>
+        </member>
+        <member name="M:VASA.Pathfinding.Path.ByPathModelAndPoints(VASA.Pathfinding.PathModel,Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point)">
+            <summary>
+            Create a path from a path model and two points.
+            </summary>
+            <param name="pathModel">The path model for which to compute the path.</param>
+            <param name="sourcePoint">The source point from which to perform the search.</param>
+            <param name="samplePoint">A sample point marking the other end of the path.</param>
+        </member>
+        <member name="M:VASA.Pathfinding.Path.ByDistanceFieldAndSamplePoint(VASA.Pathfinding.DistanceField,Autodesk.DesignScript.Geometry.Point)">
+            <summary>
+            Create a path from a distance field and a sample point.
+            </summary>
+            <param name="distanceField">The distance field computed from a source point marking one end of the path.</param>
+            <param name="samplePoint">A sample point marking the other end of the path.</param>
+        </member>
+        <member name="M:VASA.Pathfinding.Path.VoxelLOD">
+            <summary>
+            Get the level of detail of the path.
+            </summary>
+            <returns>The level of detail of the path.</returns>
+        </member>
+        <member name="M:VASA.Pathfinding.Path.IsValid">
+            <summary>
+            Check whether the path is valid.
+            </summary>
+            <returns>True if and only if the path is valid.</returns>
+        </member>
+        <member name="M:VASA.Pathfinding.Path.PointsFromSampleToSource">
+            <summary>
+            Get the path represented as a list of points from the sample point to the source point.
+            </summary>
+            <returns>The path represented as a list of points from the sample point to the source point.</returns>
+        </member>
+        <member name="M:VASA.Pathfinding.Path.PointsFromSourceToSample">
+            <summary>
+            Get the path represented as a list of points from the source point to the sample point.
+            </summary>
+            <returns>The path represented as a list of points from the source point to the sample point.</returns>
+        </member>
+        <member name="M:VASA.Pathfinding.Path.CurveFromSampleToSource">
+            <summary>
+            Get the path represented as a curve from the sample point to the source point.
+            </summary>
+            <returns>The path represented as a curve from the sample point to the source point.</returns>
+        </member>
+        <member name="M:VASA.Pathfinding.Path.CurveFromSourceToSample">
+            <summary>
+            Get the path represented as a curve from the source point to the sample point.
+            </summary>
+            <returns>The path represented as a curve from the source point to the sample point.</returns>
+        </member>
+        <member name="M:VASA.Pathfinding.Path.PathLength">
+            <summary>
+            Get the length of the path.
+            </summary>
+            <returns>The length of the path.</returns>
+        </member>
+        <member name="M:VASA.Pathfinding.Path.PathVoxels">
+            <summary>
+            Get the path represented by voxels.
+            </summary>
+            <returns>The path represented by voxels.</returns>
+        </member>
+        <member name="T:VASA.Pathfinding.PathModel">
+            <summary>
+            A multi-resolution representation of the travesable areas of a voxel-based environment.
+            </summary>
+        </member>
+        <member name="M:VASA.Pathfinding.PathModel.ByVoxelModel(VASA.Core.VoxelModel,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Create a path model from a voxel model representing the environment.
+            </summary>
+            <param name="voxelModel">The voxel model for which to perform pathfinding.</param>
+            <param name="voxelLOD">The level of the detail of the path model. The default value of -1 means the level of detail of the path model will be the same as the finest level of detail in the voxel model.</param>
+            <param name="agentDiameterOffset">The approximate diameter of an agent in horizontal voxel spacings.</param>
+            <param name="agentHeightOffset">The approximate height of an agent in vertical voxel spacings.</param>
+        </member>
+        <member name="M:VASA.Pathfinding.PathModel.VoxelLOD">
+            <summary>
+            Get the level of detail of the path model.
+            </summary>
+            <returns>The level of detail of the path model.</returns>
+        </member>
+        <member name="M:VASA.Pathfinding.PathModel.TraversableVoxels">
+            <summary>
+            Get the voxel model representing all traversable areas.
+            </summary>
+            <returns>The voxel model representing all traversable areas.</returns>
+        </member>
+        <member name="T:VASA.Operations.SurfaceOperations">
+            <summary>
+            Operations on voxel models.
+            </summary>
+        </member>
+        <member name="M:VASA.Operations.SurfaceOperations.ExpandByOneVoxel(VASA.Core.VoxelModel,System.Int32,System.Int32)">
+            <summary>
+            Expand filled regions by one voxel.
+            Each voxel will become filled if at least the specified number of horizontally and vertically adjacent voxels are filled.
+            </summary>
+            <param name="voxelModel">The voxel model for which to expand filled regions by one voxel.</param>
+            <param name="horizontalAdjacency">The minimum number of horizontally adjacent filled voxels required to fill each voxel.</param>
+            <param name="verticalAdjacency">The minimum number of vertically adjacent filled voxels required to fill each voxel.</param>
+            <returns>The voxel model with filled regions expanded by one voxel.</returns>
+        </member>
+        <member name="M:VASA.Operations.SurfaceOperations.ReduceByOneVoxel(VASA.Core.VoxelModel,System.Int32,System.Int32)">
+            <summary>
+            Reduce filled regions by one voxel.
+            Each voxel will become unfilled if at least the specified number of horizontally and vertically adjacent voxels are not filled.
+            </summary>
+            <param name="voxelModel">The voxel model for which to reduce filled regions by one voxel.</param>
+            <param name="horizontalAdjacency">The minimum number of horizontally adjacent unfilled voxels required to unfill each voxel.</param>
+            <param name="verticalAdjacency">The minimum number of vertically adjacent unfilled voxels required to unfill each voxel.</param>
+            <returns>The voxel model with filled regions reduced by one voxel.</returns>
+        </member>
+        <member name="M:VASA.Operations.SurfaceOperations.ExpandHorizontally(VASA.Core.VoxelModel,System.Int32)">
+            <summary>
+            Expand filled regions horizontally.
+            Voxels will become filled until the diameter of filled regions has increased by approximately the specified number voxels.
+            </summary>
+            <param name="voxelModel">The voxel model for which to expand filled regions horizontally.</param>
+            <param name="diameterOffset">The approximate increase in the diameter of filled regions in horizontal voxel spacings.</param>
+            <returns>The voxel model with filled regions expanded horizontally.</returns>
+        </member>
+        <member name="M:VASA.Operations.SurfaceOperations.ReduceHorizontally(VASA.Core.VoxelModel,System.Int32)">
+            <summary>
+            Reduce filled regions horizontally.
+            Voxels will become unfilled until the diameter of filled regions has decreased by approximately the specified number voxels.
+            </summary>
+            <param name="voxelModel">The voxel model for which to reduce filled regions horizontally.</param>
+            <param name="diameterOffset">The approximate decrease in the diameter of filled regions in horizontal voxel spacings.</param>
+            <returns>The voxel model with filled regions reduced horizontally.</returns>
+        </member>
+        <member name="M:VASA.Operations.SurfaceOperations.ExpandAlongX(VASA.Core.VoxelModel,System.Int32,System.Int32)">
+            <summary>
+            Expand filled regions along the X axis.
+            Each voxel will become filled if it is within the specified number of voxels from a filled voxel in the X direction.
+            </summary>
+            <param name="voxelModel">The voxel model for which to expand filled regions along the X axis.</param>
+            <param name="lowerOffset">The number of voxels to be added to the lower X side of filled regions.</param>
+            <param name="upperOffset">The number of voxels to be added to the upper X side of filled regions.</param>
+            <returns>The voxel model with filled regions expanded along the X axis.</returns>
+        </member>
+        <member name="M:VASA.Operations.SurfaceOperations.ExpandAlongY(VASA.Core.VoxelModel,System.Int32,System.Int32)">
+            <summary>
+            Expand filled regions along the Y axis.
+            Each voxel will become filled if it is within the specified number of voxels from a filled voxel in the Y direction.
+            </summary>
+            <param name="voxelModel">The voxel model for which to expand filled regions along the Y axis.</param>
+            <param name="lowerOffset">The number of voxels to be added to the lower Y side of filled regions.</param>
+            <param name="upperOffset">The number of voxels to be added to the upper Y side of filled regions.</param>
+            <returns>The voxel model with filled regions expanded along the Y axis.</returns>
+        </member>
+        <member name="M:VASA.Operations.SurfaceOperations.ExpandAlongZ(VASA.Core.VoxelModel,System.Int32,System.Int32)">
+            <summary>
+            Expand filled regions along the Z axis.
+            Each voxel will become filled if it is within the specified number of voxels from a filled voxel in the Z direction.
+            </summary>
+            <param name="voxelModel">The voxel model for which to expand filled regions along the Z axis.</param>
+            <param name="lowerOffset">The number of voxels to be added to the lower Z side of filled regions.</param>
+            <param name="upperOffset">The number of voxels to be added to the upper Z side of filled regions.</param>
+            <returns>The voxel model with filled regions expanded along the Z axis.</returns>
+        </member>
+        <member name="M:VASA.Operations.SurfaceOperations.ReduceAlongX(VASA.Core.VoxelModel,System.Int32,System.Int32)">
+            <summary>
+            Reduce filled regions along the X axis.
+            Each voxel will become unfilled if it is within the specified number of voxels from an unfilled voxel in the X direction.
+            </summary>
+            <param name="voxelModel">The voxel model for which to reduce filled regions along the X axis.</param>
+            <param name="lowerOffset">The number of voxels to be removed from the lower X side of filled regions.</param>
+            <param name="upperOffset">The number of voxels to be removed from the lower Y side of filled regions.</param>
+            <returns>The voxel model with filled regions reduced along the X axis.</returns>
+        </member>
+        <member name="M:VASA.Operations.SurfaceOperations.ReduceAlongY(VASA.Core.VoxelModel,System.Int32,System.Int32)">
+            <summary>
+            Reduce filled regions along the Y axis.
+            Each voxel will become unfilled if it is within the specified number of voxels from an unfilled voxel in the Y direction.
+            </summary>
+            <param name="voxelModel">The voxel model for which to reduce filled regions along the Y axis.</param>
+            <param name="lowerOffset">The number of voxels to be removed from the lower Y side of filled regions.</param>
+            <param name="upperOffset">The number of voxels to be removed from the upper Y side of filled regions.</param>
+            <returns>The voxel model with filled regions reduced along the Y axis.</returns>
+        </member>
+        <member name="M:VASA.Operations.SurfaceOperations.ReduceAlongZ(VASA.Core.VoxelModel,System.Int32,System.Int32)">
+            <summary>
+            Reduce filled regions along the Z axis.
+            Each voxel will become unfilled if it is within the specified number of voxels from an unfilled voxel in the Z direction.
+            </summary>
+            <param name="voxelModel">The voxel model for which to reduce filled regions along the Z axis.</param>
+            <param name="lowerOffset">The number of voxels to be removed from the lower Z side of filled regions.</param>
+            <param name="upperOffset">The number of voxels to be removed from the upper Z side of filled regions.</param>
+            <returns>The voxel model with filled regions reduced along the Z axis.</returns>
+        </member>
+        <member name="T:VASA.Operations.FillOperations">
+            <summary>
+            Operations on voxel models.
+            </summary>
+        </member>
+        <member name="M:VASA.Operations.FillOperations.FillExposedRegions(VASA.Core.VoxelModel)">
+            <summary>
+            Fill any exposed regions connected to the outside of the voxel model.
+            </summary>
+            <param name="voxelModel">The voxel model for which to fill exposed regions.</param>
+            <returns>The voxel model with all exposed regions filled.</returns>
+        </member>
+        <member name="M:VASA.Operations.FillOperations.FillEnclosedRegions(VASA.Core.VoxelModel)">
+            <summary>
+            Fill any enclosed regions cut off from the outside of the voxel model.
+            </summary>
+            <param name="voxelModel">The voxel model for which to fill enclosed regions.</param>
+            <returns>The voxel model with all enclosed regions filled.</returns>
+        </member>
+        <member name="M:VASA.Operations.FillOperations.FillFromPoint(VASA.Core.VoxelModel,Autodesk.DesignScript.Geometry.Point)">
+            <summary>
+            Fill the region containing a point.
+            </summary>
+            <param name="voxelModel">The voxel model for which to fill a region.</param>
+            <param name="point">The point around which to begin the fill operation.</param>
+            <returns>The voxel model with the region containing the point filled.</returns>
+        </member>
+        <member name="T:VASA.Operations.VisibilityOperations">
+            <summary>
+            Voxel-based visibility operations.
+            </summary>
+        </member>
+        <member name="M:VASA.Operations.VisibilityOperations.VisibilityFromDirection(VASA.Core.VoxelModel,Autodesk.DesignScript.Geometry.Vector,System.Int32,System.Double)">
+            <summary>
+            Compute visibility from the outside of the voxel model in the specified direction.
+            Intended for approximating daylight.
+            </summary>
+            <param name="voxelModel">The voxel model for which to compute visibility.</param>
+            <param name="direction">The specified direction in which to compute visibility.</param>
+            <param name="voxelLOD">The level of the detail at which to perform the operation. The default value of -1 means the operation will be performed at the finest level of detail available.</param>
+            <param name="threshold">A measure of how visible a voxel must be to be treated as visible. The value should be between 0 and 1. The default value of 0.5 solves direct light for large-scale geometry, though small openings might require a lower value.</param>
+            <returns>The voxel model containing the results of the visibility computation.</returns>
+        </member>
+        <member name="M:VASA.Operations.VisibilityOperations.VisibilityFromPoint(VASA.Core.VoxelModel,Autodesk.DesignScript.Geometry.Point,System.Int32,System.Double,System.Double)">
+            <summary>
+            Compute visibility from the specified point.
+            Intended for approximating views or light from point sources.
+            </summary>
+            <param name="voxelModel">The voxel model for which to compute visibility.</param>
+            <param name="point">The point from which to compute visibility.</param>
+            <param name="voxelLOD">The level of the detail at which to perform the operation. The default value of -1 means the operation will be performed at the finest level of detail available.</param>
+            <param name="maxRadius">The radius within which to compute visibility. The default value of -1 means visibility will be computed to the extents of the model.</param>
+            <param name="threshold">A measure of how visible a voxel must be to be treated as visible. The value should be between 0 and 1. The default value of 0.5 solves direct light for large-scale geometry, though small openings might require a lower value.</param>
+            <returns>The voxel model containing the results of the visibility computation.</returns>
+        </member>
+        <member name="T:VASA.Operations.SolidOperations">
+            <summary>
+            Operations on voxel models.
+            </summary>
+        </member>
+        <member name="M:VASA.Operations.SolidOperations.Union(System.Collections.Generic.List{VASA.Core.VoxelModel},System.Int32)">
+            <summary>
+            Compute the union of a list of voxel models.
+            </summary>
+            <param name="voxelModels">A list of voxel models.</param>
+            <param name="voxelLOD">The level of the detail at which to perform the operation. The default value of -1 means the operation will be performed at the finest level of detail of any of the input voxel models.</param>
+            <returns>The union of the voxel models.</returns>
+        </member>
+        <member name="M:VASA.Operations.SolidOperations.Intersect(System.Collections.Generic.List{VASA.Core.VoxelModel},System.Int32)">
+            <summary>
+            Compute the intersect of a list of voxel models.
+            </summary>
+            <param name="voxelModels">A list of voxel models.</param>
+            <param name="voxelLOD">The level of the detail at which to perform the operation. The default value of -1 means the operation will be performed at the finest level of detail of any of the input voxel models.</param>
+            <returns>The intersect of the voxel models.</returns>
+        </member>
+        <member name="M:VASA.Operations.SolidOperations.Subtract(VASA.Core.VoxelModel,VASA.Core.VoxelModel,System.Int32)">
+            <summary>
+            Compute the difference between two voxel models.
+            </summary>
+            <param name="voxelModel0">The voxel model on the left-hand side of the difference operation.</param>
+            <param name="voxelModel1">The voxel model on the right-hand side of the difference operation.</param>
+            <param name="voxelLOD">The level of the detail at which to perform the operation. The default value of -1 means the operation will be performed at the finest level of detail of any of the input voxel models.</param>
+            <returns>The difference between the voxel models.</returns>
+        </member>
+        <member name="M:VASA.Operations.SolidOperations.Invert(VASA.Core.VoxelModel)">
+            <summary>
+            Compute the inverse of a voxel model.
+            </summary>
+            <param name="voxelModel">The voxel model to be inverted.</param>
+            <returns>The inverted voxel model.</returns>
+        </member>
+        <member name="T:VASA.Iterators.SliceIterator">
+            <summary>
+            An iterator that can be used to query the value of voxels within a voxel model.
+            </summary>
+        </member>
+        <member name="M:VASA.Iterators.SliceIterator.ByVoxelModelAndXIndex(VASA.Core.VoxelModel,System.Int32,System.Int32)">
+            <summary>
+            Create an iterator that can be used to query a 2D slice of a voxel model.
+            The iterator points to a YZ slice at the specified X index.
+            Slice iterators act as voxel-based section tools.
+            </summary>
+            <param name="voxelModel">The voxel model for which the iterator is defined.</param>
+            <param name="sliceXIndex">The X index of the slice to which the iterator will point.</param>
+            <param name="voxelLOD">The level of detail associated with the slice iterator. The default value of -1 means the slice iterator will be associated with the finest level of detail available.</param>
+        </member>
+        <member name="M:VASA.Iterators.SliceIterator.ByVoxelModelAndYIndex(VASA.Core.VoxelModel,System.Int32,System.Int32)">
+            <summary>
+            Create an iterator that can be used to query a 2D slice of a voxel model.
+            The iterator points to a XZ slice at the specified Y index.
+            Slice iterators act as voxel-based section tools.
+            </summary>
+            <param name="voxelModel">The voxel model for which the iterator is defined.</param>
+            <param name="sliceYIndex">The Y index of the slice to which the iterator will point.</param>
+            <param name="voxelLOD">The level of detail associated with the slice iterator. The default value of -1 means the slice iterator will be associated with the finest level of detail available.</param>
+        </member>
+        <member name="M:VASA.Iterators.SliceIterator.ByVoxelModelAndZIndex(VASA.Core.VoxelModel,System.Int32,System.Int32)">
+            <summary>
+            Create an iterator that can be used to query a 2D slice of a voxel model.
+            The iterator points to a XY slice at the specified Z index.
+            Slice iterators act as voxel-based section tools.
+            </summary>
+            <param name="voxelModel">The voxel model for which the iterator is defined.</param>
+            <param name="sliceZIndex">The Z index of the slice to which the iterator will point.</param>
+            <param name="voxelLOD">The level of detail associated with the slice iterator. The default value of -1 means the slice iterator will be associated with the finest level of detail available.</param>
+        </member>
+        <member name="M:VASA.Iterators.SliceIterator.LowerIndices">
+            <summary>
+            Get the indices of the voxel just inside the lower corner of the slice.
+            </summary>
+            <returns>The indices of the voxel just inside the lower corner of the slice.</returns>
+        </member>
+        <member name="M:VASA.Iterators.SliceIterator.UpperIndices">
+            <summary>
+            Get the indices of the voxel just inside the upper corner of the slice.
+            </summary>
+            <returns>The indices of the voxel just inside the upper corner of the slice.</returns>
+        </member>
+        <member name="M:VASA.Iterators.SliceIterator.VoxelLOD">
+            <summary>
+            Get the level of detail associated with the iterator.
+            </summary>
+            <returns>The level of detail associated with the iterator.</returns>
+        </member>
+        <member name="M:VASA.Iterators.SliceIterator.IsValid">
+            <summary>
+            Check whether the iterator is valid and points to a slice within the extents of the model.
+            </summary>
+            <returns>True if and only if the iterator is valid.</returns>
+        </member>
+        <member name="M:VASA.Iterators.SliceIterator.Advance(System.Int32)">
+            <summary>
+            Create a copy of the iterator that is advanced by the specified offset.
+            </summary>
+            <param name="offset">The offset by which to advance the slice.</param>
+            <returns>The offset iterator.</returns>
+        </member>
+        <member name="M:VASA.Iterators.SliceIterator.SliceData(System.Boolean,System.Boolean)">
+            <summary>
+            Retrieve row data for the slice pointed to by the iterator.
+            </summary>
+            <param name="startAtUpperRow">A boolean indicating whether rows are to be sorted in reverse order.</param>
+            <param name="startAtUpperColumn">A boolean indicating whether columns are to be sorted in reverse order.</param>
+            <returns>Voxel data for each row of the slice.</returns>
+        </member>
+        <member name="M:VASA.Iterators.SliceIterator.SliceExtents">
+            <summary>
+            Get a set of extents encompassing only the slice pointed to by the iterator.
+            </summary>
+            <returns>A set of extents encompassing only the slice pointed to by the iterator.</returns>
+        </member>
+        <member name="M:VASA.Iterators.SliceIterator.SliceVoxels">
+            <summary>
+            Get a new voxel model of the slice pointed to by the iterator.
+            </summary>
+            <returns>A new voxel model of the slice pointed to by the iterator.</returns>
+        </member>
+        <member name="T:VASA.Iterators.VoxelIterator">
+            <summary>
+            An iterator that can be used to query the value of voxels within a voxel model.
+            </summary>
+        </member>
+        <member name="M:VASA.Iterators.VoxelIterator.ByVoxelModelAndIndices(VASA.Core.VoxelModel,System.Collections.Generic.List{System.Int32},System.Int32)">
+            <summary>
+            Create an iterator that can be used to query the value of voxels within a voxel model.
+            The iterator points to the voxel at the specified indices.
+            </summary>
+            <param name="voxelModel">The voxel model for which the iterator is defined.</param>
+            <param name="voxelIndices">The indices of the voxel to which the iterator will point.</param>
+            <param name="voxelLOD">The level of detail associated with the voxel iterator. The default value of -1 means the voxel iterator will be associated with the finest level of detail available.</param>
+        </member>
+        <member name="M:VASA.Iterators.VoxelIterator.ByVoxelModelAndPoint(VASA.Core.VoxelModel,Autodesk.DesignScript.Geometry.Point,System.Int32)">
+            <summary>
+            Create an iterator that can be used to query the value of voxels within a voxel model.
+            The iterator points to the voxel containing the specified point.
+            /// </summary>
+            <param name="voxelModel">The voxel model for which the iterator is defined.</param>
+            <param name="point">The point used to select the voxel.</param>
+            <param name="voxelLOD">The level of detail associated with the voxel iterator. The default value of -1 means the voxel iterator will be associated with the finest level of detail available.</param>
+        </member>
+        <member name="M:VASA.Iterators.VoxelIterator.VoxelIndices">
+            <summary>
+            Get the indices of the voxel to which the iterator points.
+            </summary>
+            <returns>The indices of the voxel to which the iterator points.</returns>
+        </member>
+        <member name="M:VASA.Iterators.VoxelIterator.VoxelLOD">
+            <summary>
+            Get the level of detail associated with the iterator.
+            </summary>
+            <returns>The level of detail associated with the iterator.</returns>
+        </member>
+        <member name="M:VASA.Iterators.VoxelIterator.IsFilled">
+            <summary>
+            Check whether the voxel is filled.
+            </summary>
+            <returns>True if and only if the voxel is filled.</returns>
+        </member>
+        <member name="M:VASA.Iterators.VoxelIterator.IsValid">
+            <summary>
+            Check whether the iterator is valid and points to a voxel within the extents of the model.
+            </summary>
+            <returns>True if and only if the iterator is valid.</returns>
+        </member>
+        <member name="M:VASA.Iterators.VoxelIterator.Advance(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Create a copy of the iterator that is advanced by the specified offsets.
+            </summary>
+            <param name="xOffset">The offset by which to advance the voxel in the X direction.</param>
+            <param name="yOffset">The offset by which to advance the voxel in the Y direction.</param>
+            <param name="zOffset">The offset by which to advance the voxel in the Z direction.</param>
+            <returns>The offset iterator.</returns>
+        </member>
+        <member name="M:VASA.Iterators.VoxelIterator.VoxelCenter">
+            <summary>
+            Get the point at the center of the voxel pointed to by the iterator.
+            </summary>
+            <returns>The point at the center of the voxel.</returns>
+        </member>
+        <member name="M:VASA.Iterators.VoxelIterator.VoxelExtents">
+            <summary>
+            Get a set of extents encompassing only the voxel pointed to by the iterator.
+            </summary>
+            <returns>A set of extents encompassing only the voxel pointed to by the iterator.</returns>
+        </member>
+        <member name="T:VASA.Utils.VertexIndicesByTriangle">
+            <summary>
+            Functions for importing and exporting triangles represented as nine numbers.
+            </summary>
+        </member>
+        <member name="M:VASA.Utils.VertexIndicesByTriangle.FromIndexGroups(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.IndexGroup})">
+            <summary>
+            Creates a list of vertex indices from a list of index groups.
+            Note: Useful for converting a Dynamo mesh into a MeshToolkit mesh.
+            </summary>
+            <param name="indexGroups">The list of index groups to convert into a list of vertex indices.</param>
+            <returns>A list of vertex indices created from the index groups.</returns>
+        </member>
+        <member name="M:VASA.Utils.VertexIndicesByTriangle.ToIndexGroups(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Creates a list of index groups from a list of vertex indices.
+            Note: Useful for converting a MeshToolkit mesh into a Dynamo mesh.
+            </summary>
+            <param name="indices">A list of vertex indices to convert into a list of index groups.</param>
+            <returns>A list of index groups created from a list of vertex indices.</returns>
+        </member>
+        <member name="T:VASA.Utils.TrianglesAsNineNumbers">
+            <summary>
+            Functions for importing and exporting triangles represented as nine numbers.
+            </summary>
+        </member>
+        <member name="M:VASA.Utils.TrianglesAsNineNumbers.ImportFromSTL(System.String)">
+            <summary>
+            Imports an STL file and returns triangles represented as a list of numbers.
+            Each set of nine consecutive numbers represents three points of a triangle.
+            </summary>
+            <param name="filePath">The path to the STL file to import triangles from.</param>
+            <returns>A list in which each set of nine consecutive numbers represents three points of a triangle.</returns>
+        </member>
+        <member name="M:VASA.Utils.TrianglesAsNineNumbers.FromGeometry(Autodesk.DesignScript.Geometry.Geometry)">
+            <summary>
+            Takes geometry and returns triangles represented as a list of numbers.
+            </summary>
+            <param name="geometry">The geometry object from which to take the triangles.</param>
+            <returns>A list in which each set of nine consecutive numbers represents three points of a triangle.</returns>
+        </member>
+        <member name="M:VASA.Utils.TrianglesAsNineNumbers.ExportToSTL(System.Collections.Generic.List{System.Double},System.String,System.Boolean)">
+            <summary>
+            Exports an STL file from triangles represented as a list of numbers.
+            Each set of nine consecutive numbers represents three points of a triangle.
+            </summary>
+            <param name="trianglesAsNineNumbers">A list in which each set of nine consecutive numbers represents three points of a triangle.</param>
+            <param name="filePath">The path to the STL file to export triangles to.</param>
+            <param name="useBinaryFormat">A boolean indicating whether the STL file should be exported using the binary format.</param>
+            <returns></returns>
+        </member>
+        <member name="M:VASA.Utils.TrianglesAsNineNumbers.FromMesh(Autodesk.DesignScript.Geometry.Mesh)">
+            <summary>
+            Takes a mesh object and returns triangles represented as a list of numbers.
+            Note: The input type is a Dynamo mesh, not a MeshToolkit mesh.
+            </summary>
+            <param name="mesh">The mesh object from which to take the triangles.</param>
+            <returns>A list in which each set of nine consecutive numbers represents three points of a triangle.</returns>
+        </member>
+        <member name="M:VASA.Utils.TrianglesAsNineNumbers.ToMesh(System.Collections.Generic.List{System.Double})">
+            <summary>
+            Creates a mesh object from triangles represented as a list of numbers.
+            Note: The output type is a Dynamo mesh, not a MeshToolkit mesh.
+            </summary>
+            <param name="trianglesAsNineNumbers">A list in which each set of nine consecutive numbers represents three points of a triangle.</param>
+            <returns>The mesh object created from the triangles.</returns>
+        </member>
+        <member name="M:VASA.Utils.VoxelModelRenderPackage.TrianglesAsNineNumbers">
+            <summary>
+            Get triangles.
+            </summary>
+        </member>
+        <member name="M:VASA.Utils.VoxelModelRenderPackage.AddPointVertex(System.Double,System.Double,System.Double)">
+            <summary>
+            Add a point vertex to the render package.
+            </summary>
+        </member>
+        <member name="M:VASA.Utils.VoxelModelRenderPackage.AddPointVertexColor(System.Byte,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Add a point color to the render package.
+            </summary>
+        </member>
+        <member name="M:VASA.Utils.VoxelModelRenderPackage.AddTriangleVertex(System.Double,System.Double,System.Double)">
+            <summary>
+            Add a triangle vertex location to the render package.
+            </summary>
+        </member>
+        <member name="M:VASA.Utils.VoxelModelRenderPackage.AddTriangleVertexNormal(System.Double,System.Double,System.Double)">
+            <summary>
+            Add a triangle vertex normal to the render package.
+            </summary>
+        </member>
+        <member name="M:VASA.Utils.VoxelModelRenderPackage.AddTriangleVertexUV(System.Double,System.Double)">
+            <summary>
+            Add a triangle texture coordinate to the render package.
+            </summary>
+        </member>
+        <member name="M:VASA.Utils.VoxelModelRenderPackage.AddTriangleVertexColor(System.Byte,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Add a triangle vertex color to the render package.
+            </summary>
+        </member>
+        <member name="M:VASA.Utils.VoxelModelRenderPackage.AddLineStripVertex(System.Double,System.Double,System.Double)">
+            <summary>
+            Add a line vertex to the render package.
+            </summary>
+        </member>
+        <member name="M:VASA.Utils.VoxelModelRenderPackage.AddLineStripVertexCount(System.Int32)">
+            <summary>
+            Add a line strip vertex count to the render package.
+            </summary>
+        </member>
+        <member name="M:VASA.Utils.VoxelModelRenderPackage.AddLineStripVertexColor(System.Byte,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Add a line strip vertex color to the render package.
+            </summary>
+        </member>
+        <member name="M:VASA.Utils.VoxelModelRenderPackage.ApplyPointVertexColors(System.Byte[])">
+            <summary>
+            Apply a color to each point vertex.
+            </summary>
+            <param name="colors">A buffer of R,G,B,A values corresponding to each vertex.</param>
+        </member>
+        <member name="M:VASA.Utils.VoxelModelRenderPackage.ApplyLineVertexColors(System.Byte[])">
+            <summary>
+            Apply a color to a sequence of line vertices.
+            </summary>
+        </member>
+        <member name="M:VASA.Utils.VoxelModelRenderPackage.ApplyMeshVertexColors(System.Byte[])">
+            <summary>
+            Apply a color to each mesh vertex.
+            </summary>
+            <param name="colors">A buffer of R,G,B,A values corresponding to each vertex.</param>
+        </member>
+        <member name="M:VASA.Utils.VoxelModelRenderPackage.SetColors(System.Byte[])">
+            <summary>
+            Sets an array of bytes that is used as a color map.
+            </summary>
+            <param name="colors"></param>
+        </member>
+        <member name="M:VASA.Utils.VoxelModelRenderPackage.Clear">
+            <summary>
+            Clear all render data from the render package.
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.Description">
+            <summary>
+            A tag used to store information about the render package.
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.IsSelected">
+            <summary>
+            Returns true if the render package is selected.
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.HasRenderingData">
+            <summary>
+            Returns true if the render package has data.
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.DisplayLabels">
+            <summary>
+            Returns true if the render package is displaying labels.
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.RequiresPerVertexColoration">
+            <summary>
+            Returns true if the render package requires per vertex coloration
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.PointVertexCount">
+            <summary>
+            Returns the number of point vertices in the package divided by 3.
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.LineVertexCount">
+            <summary>
+            Returns the number of line vertices in the package divided by 3.
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.MeshVertexCount">
+            <summary>
+            Returns the number of mesh vertices in the package divided by 3.
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.LineStripVertexCounts">
+            <summary>
+            Returns the collection of int values representing how many vertices
+            comprise each line segment in the package.
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.LineStripVertices">
+            <summary>
+            Returns the collection containing all line strip vertices as x1,y1,z1,x2,y2,z2...
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.LineStripVertexColors">
+            <summary>
+            Returns the collection containing all line strip colors as r1,g1,b1,a1,r2,g2,b2,a2...
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.LineStripIndices">
+            <summary>
+            Returns the collection containing all line strip indices.
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.MeshVertices">
+            <summary>
+            Returns the collection containing all mesh vertices as x1,y1,z1,x2,y2,z2...
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.MeshVertexColors">
+            <summary>
+            Returns the collection containing all mesh vertex colors as r1,g1,b1,a1,r2,g2,b2,a2...
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.MeshIndices">
+            <summary>
+            Returns the collection containing all mesh vertex indices.
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.MeshNormals">
+            <summary>
+            Returns the collection containing all mesh normals as x1,y1,z1,x2,y2,z2...
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.MeshTextureCoordinates">
+            <summary>
+            Returns the collection containing all mesh texture coordinates as u1,v1,u2,v2...
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.PointVertices">
+            <summary>
+            Returns the collection containing all point vertices as x1,y1,z1,x2,y2,z2...
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.PointVertexColors">
+            <summary>
+            Returns the collection containing all mesh vertex colors as r1,g1,b1,a1,r2,g2,b2,a2...
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.PointIndices">
+            <summary>
+            Returns the collection containing all mesh vertex indices.
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.Colors">
+            <summary>
+            Returns the collection of bytes representing RGBA colors. This field can be used to populate textures
+            for mapping onto surfaces. Use the ColorsStride property to define the
+            size of one dimension of the collection.
+            </summary>
+        </member>
+        <member name="P:VASA.Utils.VoxelModelRenderPackage.ColorsStride">
+            <summary>
+            The size of one dimension of the Colors collection.
+            </summary>
+        </member>
+        <member name="T:VASA.Utils.Length">
+            <summary>
+            Functions for creating length objects.
+            </summary>
+        </member>
+        <member name="M:VASA.Utils.Length.InMeters(System.Double)">
+            <summary>
+            Create a length object in meters.
+            </summary>
+            <param name="number">The number of meters to represent.</param>
+        </member>
+        <member name="M:VASA.Utils.Length.InCentimeters(System.Double)">
+            <summary>
+            Create a length object in centimeters.
+            </summary>
+            <param name="number">The number of centimeters to represent.</param>
+        </member>
+        <member name="M:VASA.Utils.Length.InMillimeters(System.Double)">
+            <summary>
+            Create a length object in millimeters.
+            </summary>
+            <param name="number">The number of millimeters to represent.</param>
+        </member>
+        <member name="M:VASA.Utils.Length.InFeet(System.Double)">
+            <summary>
+            Create a length object in feet.
+            </summary>
+            <param name="number">The number of feet to represent.</param>
+        </member>
+        <member name="M:VASA.Utils.Length.InInches(System.Double)">
+            <summary>
+            Create a length object in inches.
+            </summary>
+            <param name="number">The number of inches to represent.</param>
+        </member>
+    </members>
+</doc>

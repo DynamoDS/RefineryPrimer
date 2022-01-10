@@ -1,0 +1,2829 @@
+{
+  "Uuid": "7fef79fb-2d02-463d-9e0b-797c0a56ff93",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "10-VASA-Slices-and-Images",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "VASA.Utils.TrianglesAsNineNumbers.ImportFromSTL@string",
+      "Id": "ac3f471baa204d8792be152ebb361057",
+      "Inputs": [
+        {
+          "Id": "6e410a0edc0c4b83b11911dcd181f849",
+          "Name": "filePath",
+          "Description": "The path to the STL file to import triangles from.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "37ab1793ce724878835c500e7d09af8d",
+          "Name": "double[]",
+          "Description": "A list in which each set of nine consecutive numbers represents three points of a triangle.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Imports an STL file and returns triangles represented as a list of numbers. Each set of nine consecutive numbers represents three points of a triangle.\n\nTrianglesAsNineNumbers.ImportFromSTL (filePath: string): double[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "1000;",
+      "Id": "70639680a06c4883acd56462712df788",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "86ddbdac226f4d10ad83de8e0ebcec97",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
+      "HintPath": "C:\\Users\\goldstr\\Documents\\Projects\\Git_Projects\\VASA\\dynamo\\deploy\\VASA\\extra\\TechnicalSchool_building_mm_bin.stl",
+      "InputValue": ".\\TechnicalSchool_building_mm_bin.stl",
+      "NodeType": "ExtensionNode",
+      "Id": "80ae27695a4c429abddd54667f5169f6",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "792cb8c0e83e4a7580ded49a7f162fa2",
+          "Name": "",
+          "Description": "Filename",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows you to select a file on the system to get its file path."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "VASA.Core.VoxelModel.ByTriangles@double[],double,int,int,double",
+      "Id": "abb61ac069ea4df7949b9614ca3f26ad",
+      "Inputs": [
+        {
+          "Id": "1ddf1c33d2a841b489c7bddf0560afde",
+          "Name": "trianglesAsNineNumbers",
+          "Description": "A list in which each set of nine consecutive numbers represents three points of a triangle.\n\ndouble[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "092cd8fcc8bc46019bacb1b53a54fa8c",
+          "Name": "coarseVoxelWidth",
+          "Description": "The width of the coarsest voxels. The recommended value is 1 meter expressed in the units of the scene.\n\ndouble",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f092337f57e34ee394c71d7b344afc18",
+          "Name": "verticalLOD",
+          "Description": "The level of detail associated with the height of all voxels. The height of all voxels is the width of the coarsest voxels divided by 2 to the power of verticalLOD.\n\nint\nDefault value : 2",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b9c86eb9d436442fa1eeed8fa7839c88",
+          "Name": "finestLOD",
+          "Description": "The finest level of detail at which geometry will be voxelized. The width of the finest voxels is the width of the coarsest voxels divided by 2 to the power of finestLOD.\n\nint\nDefault value : 4",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5f452c873b0c4c5e84142ffc632783ae",
+          "Name": "voxelLimit",
+          "Description": "The maximum permissible number of voxels at the finest level of detail.\n\ndouble\nDefault value : 100000000000",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c9e9b87b4dc247c9b358843f68690c24",
+          "Name": "VoxelModel",
+          "Description": "VoxelModel",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Create a voxel model from triangles represented as a list of numbers. A default set of axes will be used, and the extents will be generated automatically to encompass the voxelized triangles.\n\nVoxelModel.ByTriangles (trianglesAsNineNumbers: double[], coarseVoxelWidth: double, verticalLOD: int = 2, finestLOD: int = 4, voxelLimit: double = 100000000000): VoxelModel"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "VASA.Core.VoxelModel.DisplayVoxels@DSCore.Color,int,double",
+      "Id": "decc1f201feb490d98171379d0e6911c",
+      "Inputs": [
+        {
+          "Id": "860c751bcee749a3896c14fead68f8c5",
+          "Name": "voxelModel",
+          "Description": "VASA.Core.VoxelModel",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d070ca04c46547ba944b760aa1cf8521",
+          "Name": "color",
+          "Description": "The color in which to display the voxels.\n\nColor\nDefault value : DSCore.Color.ByARGB(255, 255, 255, 255)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5ea3047cdf7f4847a68ab41dbeb91d86",
+          "Name": "voxelLOD",
+          "Description": "The level of detail at which voxels will be displayed. The default value of -1 means voxels will be displayed at the finest level of detail available.\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3aa78294e52d4b27abf8cc0befa059ea",
+          "Name": "triangleLimit",
+          "Description": "The maximum permissible number of generated triangles.\n\ndouble\nDefault value : 10000000",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a3e87c06a5cb4601844f4b9b4a5e2f72",
+          "Name": "VoxelTessellation",
+          "Description": "A display object for voxel models.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Display the voxels.\n\nVoxelModel.DisplayVoxels (color: Color = DSCore.Color.ByARGB(255, 255, 255, 255), voxelLOD: int = -1, triangleLimit: double = 10000000): VoxelTessellation"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
+      "HintPath": "C:\\Users\\goldstr\\Documents\\Projects\\Git_Projects\\VASA\\dynamo\\deploy\\VASA\\extra\\TechnicalSchool_glazing_mm_bin.stl",
+      "InputValue": ".\\TechnicalSchool_glazing_mm_bin.stl",
+      "NodeType": "ExtensionNode",
+      "Id": "2ac1a35e83c84b7cb1ffa21257123148",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "0c07fae405d24bbc8695cbba3177bdf1",
+          "Name": "",
+          "Description": "Filename",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows you to select a file on the system to get its file path."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "VASA.Utils.TrianglesAsNineNumbers.ImportFromSTL@string",
+      "Id": "f4e499cea06b4080ab6bfd080d3f2316",
+      "Inputs": [
+        {
+          "Id": "393bd68c6afb45029b736705bb3264f6",
+          "Name": "filePath",
+          "Description": "The path to the STL file to import triangles from.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3421d3683ee040aa874610f548b8cfd1",
+          "Name": "double[]",
+          "Description": "A list in which each set of nine consecutive numbers represents three points of a triangle.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Imports an STL file and returns triangles represented as a list of numbers. Each set of nine consecutive numbers represents three points of a triangle.\n\nTrianglesAsNineNumbers.ImportFromSTL (filePath: string): double[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "VASA.Operations.SolidOperations.Union@VASA.Core.VoxelModel[],int",
+      "Id": "cb6cb701dc3f4943b11be54c9810f4f9",
+      "Inputs": [
+        {
+          "Id": "34c9356d6a5c43999d3752bcfe17bb9f",
+          "Name": "voxelModels",
+          "Description": "A list of voxel models.\n\nVoxelModel[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5521da1108fe46c1bbb9bd1fcb70c2b0",
+          "Name": "voxelLOD",
+          "Description": "The level of the detail at which to perform the operation. The default value of -1 means the operation will be performed at the finest level of detail of any of the input voxel models.\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "68fd0e41a5844accb3f00dc04a2a2b58",
+          "Name": "VoxelModel",
+          "Description": "The union of the voxel models.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Compute the union of a list of voxel models.\n\nSolidOperations.Union (voxelModels: VoxelModel[], voxelLOD: int = -1): VoxelModel"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.ColorPalette, CoreNodeModels",
+      "InputValue": {
+        "R": 255,
+        "G": 255,
+        "B": 255,
+        "A": 31
+      },
+      "NodeType": "ColorInputNode",
+      "Id": "b0de22a8836d4bd48ca4881e686a1e21",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "faeb830cb25e4209915035e22f0cde07",
+          "Name": "Color",
+          "Description": "Selected Color.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a Color from the palette"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "VASA.Iterators.SliceIterator.ByVoxelModelAndXIndex@VASA.Core.VoxelModel,int,int",
+      "Id": "2e7e4f1d210441ad91a26d791f52cf63",
+      "Inputs": [
+        {
+          "Id": "8579ca0155dc4d5f9fc2d2712f8b31bc",
+          "Name": "voxelModel",
+          "Description": "The voxel model for which the iterator is defined.\n\nVoxelModel",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f232674c20204fbe9766d6d46fbb3e20",
+          "Name": "sliceXIndex",
+          "Description": "The X index of the slice to which the iterator will point.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a4816343c09e460b8bb144a3978dbcac",
+          "Name": "voxelLOD",
+          "Description": "The level of detail associated with the slice iterator. The default value of -1 means the slice iterator will be associated with the finest level of detail available.\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a79d23005db14dc6a2e552de84829c8f",
+          "Name": "SliceIterator",
+          "Description": "SliceIterator",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Create an iterator that can be used to query a 2D slice of a voxel model. The iterator points to a YZ slice at the specified X index. Slice iterators act as voxel-based section tools.\n\nSliceIterator.ByVoxelModelAndXIndex (voxelModel: VoxelModel, sliceXIndex: int, voxelLOD: int = -1): SliceIterator"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "VASA.Iterators.SliceIterator.SliceVoxels",
+      "Id": "e49722bc317348cbb6bf8e16db78b787",
+      "Inputs": [
+        {
+          "Id": "ace0fe5038bc4bdc9323d7cd771f2236",
+          "Name": "sliceIterator",
+          "Description": "VASA.Iterators.SliceIterator",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6cc55c6e33464680897e30ab7bde64dc",
+          "Name": "VoxelModel",
+          "Description": "A new voxel model of the slice pointed to by the iterator.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get a new voxel model of the slice pointed to by the iterator.\n\nSliceIterator.SliceVoxels ( ): VoxelModel"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "f7734291e6a146fb9e458bd5638bd8ea",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f79516859cd744908e41ca652868b59f",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.ColorPalette, CoreNodeModels",
+      "InputValue": {
+        "R": 255,
+        "G": 0,
+        "B": 0,
+        "A": 255
+      },
+      "NodeType": "ColorInputNode",
+      "Id": "2ba586f956f9490fb9dc9e6a3233a5f1",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "621b389c62174ed29d334d560bbe8736",
+          "Name": "Color",
+          "Description": "Selected Color.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a Color from the palette"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "VASA.Iterators.SliceIterator.SliceData@bool,bool",
+      "Id": "ecfbf97ff5874323895a913f3e637044",
+      "Inputs": [
+        {
+          "Id": "0eb7a201f10045779b81f1e97a3028e6",
+          "Name": "sliceIterator",
+          "Description": "VASA.Iterators.SliceIterator",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "055c09d502b6427688ce298d58471c9e",
+          "Name": "startAtUpperRow",
+          "Description": "A boolean indicating whether rows are to be sorted in reverse order.\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ab918e53f2634f46b9c52c146d466864",
+          "Name": "startAtUpperColumn",
+          "Description": "A boolean indicating whether columns are to be sorted in reverse order.\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "885aa13b4586466098c84ecf492ab65d",
+          "Name": "int[][]",
+          "Description": "Voxel data for each row of the slice.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Retrieve row data for the slice pointed to by the iterator.\n\nSliceIterator.SliceData (startAtUpperRow: bool = false, startAtUpperColumn: bool = false): int[][]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "VASA.Core.VoxelModel.DisplayVoxels@DSCore.Color,int,double",
+      "Id": "46189afa01504f41970f2bcc98bd7386",
+      "Inputs": [
+        {
+          "Id": "6f60765716914e7e809c7b9f1500cdf0",
+          "Name": "voxelModel",
+          "Description": "VASA.Core.VoxelModel",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3f47f8bc4e2b4c37ae04b7a24061f54d",
+          "Name": "color",
+          "Description": "The color in which to display the voxels.\n\nColor\nDefault value : DSCore.Color.ByARGB(255, 255, 255, 255)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7e911ff473234ef8b2dd65c051e9c827",
+          "Name": "voxelLOD",
+          "Description": "The level of detail at which voxels will be displayed. The default value of -1 means voxels will be displayed at the finest level of detail available.\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "58855406241747aabc8dd3547e35cfa9",
+          "Name": "triangleLimit",
+          "Description": "The maximum permissible number of generated triangles.\n\ndouble\nDefault value : 10000000",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "da5073fcc32b40b9a826f428583ad84b",
+          "Name": "VoxelTessellation",
+          "Description": "A display object for voxel models.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Display the voxels.\n\nVoxelModel.DisplayVoxels (color: Color = DSCore.Color.ByARGB(255, 255, 255, 255), voxelLOD: int = -1, triangleLimit: double = 10000000): VoxelTessellation"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "VASA.Iterators.SliceIterator.SliceVoxels",
+      "Id": "03571be1a52747e89507b2c7809d9849",
+      "Inputs": [
+        {
+          "Id": "f1aa90c741f542bba9173a29151b9bbb",
+          "Name": "sliceIterator",
+          "Description": "VASA.Iterators.SliceIterator",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "26df154be4d34747818d1c081c3724c6",
+          "Name": "VoxelModel",
+          "Description": "A new voxel model of the slice pointed to by the iterator.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get a new voxel model of the slice pointed to by the iterator.\n\nSliceIterator.SliceVoxels ( ): VoxelModel"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "VASA.Iterators.SliceIterator.ByVoxelModelAndYIndex@VASA.Core.VoxelModel,int,int",
+      "Id": "c5c3c42444e44dbda06963f8f18da3fb",
+      "Inputs": [
+        {
+          "Id": "da6086658ab64e5ead6183c3bc06a42d",
+          "Name": "voxelModel",
+          "Description": "The voxel model for which the iterator is defined.\n\nVoxelModel",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cba329ec5cf4408ba4b54ef81277398d",
+          "Name": "sliceYIndex",
+          "Description": "The Y index of the slice to which the iterator will point.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "798aa3156efd4b98b6686fd65f00da30",
+          "Name": "voxelLOD",
+          "Description": "The level of detail associated with the slice iterator. The default value of -1 means the slice iterator will be associated with the finest level of detail available.\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "741c71923c58434d9c867476e6b53966",
+          "Name": "SliceIterator",
+          "Description": "SliceIterator",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Create an iterator that can be used to query a 2D slice of a voxel model. The iterator points to a XZ slice at the specified Y index. Slice iterators act as voxel-based section tools.\n\nSliceIterator.ByVoxelModelAndYIndex (voxelModel: VoxelModel, sliceYIndex: int, voxelLOD: int = -1): SliceIterator"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "VASA.Core.VoxelModel.DisplayVoxels@DSCore.Color,int,double",
+      "Id": "6ca813d336044096a77a23f8242afa7a",
+      "Inputs": [
+        {
+          "Id": "641d0bf4243c4e259fc809351945a1a0",
+          "Name": "voxelModel",
+          "Description": "VASA.Core.VoxelModel",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a0200daa33ab489d95d58ddec4c5ba88",
+          "Name": "color",
+          "Description": "The color in which to display the voxels.\n\nColor\nDefault value : DSCore.Color.ByARGB(255, 255, 255, 255)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "49bb157bf7784f93970ef3f93017aa51",
+          "Name": "voxelLOD",
+          "Description": "The level of detail at which voxels will be displayed. The default value of -1 means voxels will be displayed at the finest level of detail available.\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "919284e8705d4affa5abe31ade16bb92",
+          "Name": "triangleLimit",
+          "Description": "The maximum permissible number of generated triangles.\n\ndouble\nDefault value : 10000000",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3c45055d456f432f9013b405f417c1f7",
+          "Name": "VoxelTessellation",
+          "Description": "A display object for voxel models.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Display the voxels.\n\nVoxelModel.DisplayVoxels (color: Color = DSCore.Color.ByARGB(255, 255, 255, 255), voxelLOD: int = -1, triangleLimit: double = 10000000): VoxelTessellation"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.ColorPalette, CoreNodeModels",
+      "InputValue": {
+        "R": 127,
+        "G": 255,
+        "B": 0,
+        "A": 255
+      },
+      "NodeType": "ColorInputNode",
+      "Id": "e8189b9dbc2b43618bc3fbbd2188a93c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "24a8d78f541d42518950f68031a8a0ea",
+          "Name": "Color",
+          "Description": "Selected Color.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a Color from the palette"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "255*value;",
+      "Id": "73505cc253bf4b769b18a4923bdb5258",
+      "Inputs": [
+        {
+          "Id": "cb3e93ad58f8428e81972d2e8b96b894",
+          "Name": "value",
+          "Description": "value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5105b3a2c75245839517a12103d97d9d",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "255*value;",
+      "Id": "4d97eae3d6714f58bf11b360b3e7d76e",
+      "Inputs": [
+        {
+          "Id": "cb6262d7213845cb813899bc37944964",
+          "Name": "value",
+          "Description": "value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "598d0ed8a7ca406cab9f70e1d2984edf",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "fbedcf9456e3424fa8d3816d72ccc748",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9060b839f4fd4a35b1112f3eccd5a485",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.Color.ByARGB@int,int,int,int",
+      "Id": "62075bb09cc040da81d7e60780680295",
+      "Inputs": [
+        {
+          "Id": "ec99bb5a8f3045aba08addd118cfc7e2",
+          "Name": "alpha",
+          "Description": "Alpha value (between 0 and 255 inclusive)\n\nint\nDefault value : 255",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0656a3610616424d9029be70597b1303",
+          "Name": "red",
+          "Description": "Red value for RGB color model (between 0 and 255 inclusive)\n\nint\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "082885ee135e4386934f2aa101598613",
+          "Name": "green",
+          "Description": "Green value for RGB color model (between 0 and 255 inclusive)\n\nint\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "159042cf5070499a96da5101fdc0a875",
+          "Name": "blue",
+          "Description": "Blue value for RGB color model (between 0 and 255 inclusive)\n\nint\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0af269b35b064e1e94ae6efa9a29bca4",
+          "Name": "color",
+          "Description": "Color created from ARGB",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Construct a color by alpha, red, green, and blue components.\n\nColor.ByARGB (alpha: int = 255, red: int = 0, green: int = 0, blue: int = 0): Color"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.Color.ByARGB@int,int,int,int",
+      "Id": "6d0ecbf06a294713b102b40d0a533e60",
+      "Inputs": [
+        {
+          "Id": "b3578820610349c296eabbee87b89f4c",
+          "Name": "alpha",
+          "Description": "Alpha value (between 0 and 255 inclusive)\n\nint\nDefault value : 255",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "35523832bd4f4f269b82c94aafbaa81e",
+          "Name": "red",
+          "Description": "Red value for RGB color model (between 0 and 255 inclusive)\n\nint\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cb2ce966138c46e0aab7aadfe2fa1c17",
+          "Name": "green",
+          "Description": "Green value for RGB color model (between 0 and 255 inclusive)\n\nint\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3ccdfa63fd4048839a4e89414e8dfd6b",
+          "Name": "blue",
+          "Description": "Blue value for RGB color model (between 0 and 255 inclusive)\n\nint\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c197c30eef3d47cbab954ca6c3d2a670",
+          "Name": "color",
+          "Description": "Color created from ARGB",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Construct a color by alpha, red, green, and blue components.\n\nColor.ByARGB (alpha: int = 255, red: int = 0, green: int = 0, blue: int = 0): Color"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "VASA.Iterators.SliceIterator.SliceData@bool,bool",
+      "Id": "ccaa4e58031648ab9622efcc4f26f1cc",
+      "Inputs": [
+        {
+          "Id": "8b6e2e89911a4cb69558d815ca99a12d",
+          "Name": "sliceIterator",
+          "Description": "VASA.Iterators.SliceIterator",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "95637d11ce1a4d02bf8900920a9ab714",
+          "Name": "startAtUpperRow",
+          "Description": "A boolean indicating whether rows are to be sorted in reverse order.\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "556ec89c53cb451285b743304fd51e8f",
+          "Name": "startAtUpperColumn",
+          "Description": "A boolean indicating whether columns are to be sorted in reverse order.\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "06d7a036fa5e47779977aa7dc0e00a5b",
+          "Name": "int[][]",
+          "Description": "Voxel data for each row of the slice.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Retrieve row data for the slice pointed to by the iterator.\n\nSliceIterator.SliceData (startAtUpperRow: bool = false, startAtUpperColumn: bool = false): int[][]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "VASA.Iterators.SliceIterator.ByVoxelModelAndZIndex@VASA.Core.VoxelModel,int,int",
+      "Id": "6067e47b390a4145a6beeabc808a3e38",
+      "Inputs": [
+        {
+          "Id": "cbb22845e2934766a9d9bbb8f497ad0e",
+          "Name": "voxelModel",
+          "Description": "The voxel model for which the iterator is defined.\n\nVoxelModel",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "449c76a902d94a458100408dfa2efe4d",
+          "Name": "sliceZIndex",
+          "Description": "The Z index of the slice to which the iterator will point.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ae5692cdc84a418487be5ff4c60e4530",
+          "Name": "voxelLOD",
+          "Description": "The level of detail associated with the slice iterator. The default value of -1 means the slice iterator will be associated with the finest level of detail available.\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0fd6b889dd57498595d130760f1dfc07",
+          "Name": "SliceIterator",
+          "Description": "SliceIterator",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Create an iterator that can be used to query a 2D slice of a voxel model. The iterator points to a XY slice at the specified Z index. Slice iterators act as voxel-based section tools.\n\nSliceIterator.ByVoxelModelAndZIndex (voxelModel: VoxelModel, sliceZIndex: int, voxelLOD: int = -1): SliceIterator"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "VASA.Core.VoxelModel.DisplayVoxels@DSCore.Color,int,double",
+      "Id": "bfcf30da35d145af9c6ee5ed932b54ac",
+      "Inputs": [
+        {
+          "Id": "b63d2478bd3d4871af01288a8e917eb5",
+          "Name": "voxelModel",
+          "Description": "VASA.Core.VoxelModel",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c864ad96ac8940d588520cbee3a14d03",
+          "Name": "color",
+          "Description": "The color in which to display the voxels.\n\nColor\nDefault value : DSCore.Color.ByARGB(255, 255, 255, 255)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c90ed916cac4484ebb0159dd7b5aba58",
+          "Name": "voxelLOD",
+          "Description": "The level of detail at which voxels will be displayed. The default value of -1 means voxels will be displayed at the finest level of detail available.\n\nint\nDefault value : -1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d287c0554cd04b1aae5a9157d9a9ba13",
+          "Name": "triangleLimit",
+          "Description": "The maximum permissible number of generated triangles.\n\ndouble\nDefault value : 10000000",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "971f8022962a4528abbb2613d2d9d4c2",
+          "Name": "VoxelTessellation",
+          "Description": "A display object for voxel models.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Display the voxels.\n\nVoxelModel.DisplayVoxels (color: Color = DSCore.Color.ByARGB(255, 255, 255, 255), voxelLOD: int = -1, triangleLimit: double = 10000000): VoxelTessellation"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.ColorPalette, CoreNodeModels",
+      "InputValue": {
+        "R": 0,
+        "G": 0,
+        "B": 255,
+        "A": 255
+      },
+      "NodeType": "ColorInputNode",
+      "Id": "073ea548fd21461f951d551f806ce114",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2f3dbb202d9b4c248e1230759a594760",
+          "Name": "Color",
+          "Description": "Selected Color.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a Color from the palette"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "VASA.Iterators.SliceIterator.SliceVoxels",
+      "Id": "d0b0485d90ef4f1fb7f792689313ae25",
+      "Inputs": [
+        {
+          "Id": "3eddb5668b8348598c492ee2f21a9a02",
+          "Name": "sliceIterator",
+          "Description": "VASA.Iterators.SliceIterator",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fbdc2b6d14694261a012f60c0745e8ef",
+          "Name": "VoxelModel",
+          "Description": "A new voxel model of the slice pointed to by the iterator.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get a new voxel model of the slice pointed to by the iterator.\n\nSliceIterator.SliceVoxels ( ): VoxelModel"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.IO.Image.FromPixels@DSCore.Color[][]",
+      "Id": "b5ff94076809470eaad835857fbf4ebb",
+      "Inputs": [
+        {
+          "Id": "a074a4541b9e4844a628f357bbdb500a",
+          "Name": "colors",
+          "Description": "2d rectangular list of colors representing the pixels\n\nColor[][]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c92d3ca5e35942aebc078e46030a2d6f",
+          "Name": "image",
+          "Description": "Image from 2d list of pixels",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Constructs an image from a 2d list of pixels.\n\nImage.FromPixels (colors: Color[][]): var"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.IO.Image.FromPixels@DSCore.Color[][]",
+      "Id": "404f9e8165d545bab8257345c4fb468c",
+      "Inputs": [
+        {
+          "Id": "015f14d244c340c79b017d7f3d7008a0",
+          "Name": "colors",
+          "Description": "2d rectangular list of colors representing the pixels\n\nColor[][]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "dfff58fe3fca4368ad43e8264c954561",
+          "Name": "image",
+          "Description": "Image from 2d list of pixels",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Constructs an image from a 2d list of pixels.\n\nImage.FromPixels (colors: Color[][]): var"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.IO.Image.FromPixels@DSCore.Color[][]",
+      "Id": "b18bad87b5744d0d985939039c0a04a9",
+      "Inputs": [
+        {
+          "Id": "a9e6d128233344faaad9ac6227eb60cd",
+          "Name": "colors",
+          "Description": "2d rectangular list of colors representing the pixels\n\nColor[][]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6098fed886654586b989d21d10a1304b",
+          "Name": "image",
+          "Description": "Image from 2d list of pixels",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Constructs an image from a 2d list of pixels.\n\nImage.FromPixels (colors: Color[][]): var"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "a6f8f7693da14fb2b3aa950c63a9b8cd",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "52f288d8683944259822389616d2af09",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.Color.ByARGB@int,int,int,int",
+      "Id": "c470f72e721b4c7a9c966814a7b180a4",
+      "Inputs": [
+        {
+          "Id": "f0e60aab85fe448d912f9eac857cfb42",
+          "Name": "alpha",
+          "Description": "Alpha value (between 0 and 255 inclusive)\n\nint\nDefault value : 255",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "51ebdf403e244b62925cb9bc3218378c",
+          "Name": "red",
+          "Description": "Red value for RGB color model (between 0 and 255 inclusive)\n\nint\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b273f516375d430fa2f4d524bfce0e8b",
+          "Name": "green",
+          "Description": "Green value for RGB color model (between 0 and 255 inclusive)\n\nint\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7200b0f56cd3424689cb3e2f45e2dfff",
+          "Name": "blue",
+          "Description": "Blue value for RGB color model (between 0 and 255 inclusive)\n\nint\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c9317a1d145348a68add85801f2e1e3e",
+          "Name": "color",
+          "Description": "Color created from ARGB",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Construct a color by alpha, red, green, and blue components.\n\nColor.ByARGB (alpha: int = 255, red: int = 0, green: int = 0, blue: int = 0): Color"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "255*value;",
+      "Id": "ba4a9dfc781b4cd0af07ade97c8ad443",
+      "Inputs": [
+        {
+          "Id": "bd59034ae96c453da43fc90374ca8b19",
+          "Name": "value",
+          "Description": "value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "59d76cee23214a10bee4e040ea485b41",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "VASA.Iterators.SliceIterator.SliceData@bool,bool",
+      "Id": "53d34dce6d9a4178882944b02bce1adf",
+      "Inputs": [
+        {
+          "Id": "1a3084abbb1a41b7b7e815cd54b68463",
+          "Name": "sliceIterator",
+          "Description": "VASA.Iterators.SliceIterator",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b2d06f97b2a94657b7f7ac6947e13025",
+          "Name": "startAtUpperRow",
+          "Description": "A boolean indicating whether rows are to be sorted in reverse order.\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bb91a5924db84128b2e76244c4d6dc2c",
+          "Name": "startAtUpperColumn",
+          "Description": "A boolean indicating whether columns are to be sorted in reverse order.\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e3eafd39ede8400e908633b2c2378a08",
+          "Name": "int[][]",
+          "Description": "Voxel data for each row of the slice.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Retrieve row data for the slice pointed to by the iterator.\n\nSliceIterator.SliceData (startAtUpperRow: bool = false, startAtUpperColumn: bool = false): int[][]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.WatchImageCore, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "420b58b3e2424c49b78db03fd7057967",
+      "Inputs": [
+        {
+          "Id": "57977a7ddc7d4df9b78b55113c288ca1",
+          "Name": "image",
+          "Description": "image",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6f56a30ce088422f8f38427b980d36c8",
+          "Name": "image",
+          "Description": "image",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Previews an image"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.WatchImageCore, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "09cef9f48d3d4b5fa168ccdb4a00f1b5",
+      "Inputs": [
+        {
+          "Id": "6fb492ab31134d7d9057c549132ca0a1",
+          "Name": "image",
+          "Description": "image",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ccad2f046d6f472a9a5accc14419059f",
+          "Name": "image",
+          "Description": "image",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Previews an image"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.WatchImageCore, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "b508de35a6b84715bc384f3ca8feb132",
+      "Inputs": [
+        {
+          "Id": "f4c5260414a94961af3e3af1cd6511c8",
+          "Name": "image",
+          "Description": "image",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e879ce1808e345ff93c9fe3bf299da2f",
+          "Name": "image",
+          "Description": "image",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Previews an image"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.IntegerSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Integer",
+      "InputValue": 4,
+      "MaximumValue": 120,
+      "MinimumValue": -30,
+      "StepValue": 1,
+      "Id": "6984259bffe741b38174f907b0efdb4e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "9521012134eb491ba30d61573eaa23a7",
+          "Name": "",
+          "Description": "Int64",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces integer values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.IntegerSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Integer",
+      "InputValue": -40,
+      "MaximumValue": 80,
+      "MinimumValue": -60,
+      "StepValue": 1,
+      "Id": "3179929fe2b847878113a596fe55ce9d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a3a64765eb2545289deeb84b25677015",
+          "Name": "",
+          "Description": "Int64",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces integer values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.IntegerSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Integer",
+      "InputValue": 13,
+      "MaximumValue": 30,
+      "MinimumValue": -10,
+      "StepValue": 1,
+      "Id": "b13bc46ca175423f9400f0a78238e153",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c90fb78f8c05484b92c8b453354227fc",
+          "Name": "",
+          "Description": "Int64",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces integer values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.IntegerSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Integer",
+      "InputValue": 1,
+      "MaximumValue": 5,
+      "MinimumValue": 0,
+      "StepValue": 1,
+      "Id": "8eaf167ce82c480784937e2bd9a32105",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e1f9be17578b48f1ad144c9ac42d58b6",
+          "Name": "",
+          "Description": "Int64",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces integer values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.IntegerSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Integer",
+      "InputValue": 1,
+      "MaximumValue": 5,
+      "MinimumValue": 0,
+      "StepValue": 1,
+      "Id": "16a2f1c2e44b4fe6bd57d8897c9be13a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "065c0952346b4e63b27b4d0352f20117",
+          "Name": "",
+          "Description": "Int64",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces integer values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.CreateList, CoreNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "88c64c985f32424eb97b68c4e2b48dd1",
+      "Inputs": [
+        {
+          "Id": "ffb57e1cdb6442b38ebb9a067660352c",
+          "Name": "item0",
+          "Description": "Item Index #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "70b4f40a0d824557999342122d5f7fcc",
+          "Name": "item1",
+          "Description": "Item Index #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "004b0450b0b54192aa278449a111d665",
+          "Name": "list",
+          "Description": "A list",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Makes a new list out of the given inputs"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "37ab1793ce724878835c500e7d09af8d",
+      "End": "ffb57e1cdb6442b38ebb9a067660352c",
+      "Id": "dae9fd2962624b1ba3fcc27084a3848a"
+    },
+    {
+      "Start": "86ddbdac226f4d10ad83de8e0ebcec97",
+      "End": "092cd8fcc8bc46019bacb1b53a54fa8c",
+      "Id": "dd0af7d507c34a12bc8de59f823939ce"
+    },
+    {
+      "Start": "792cb8c0e83e4a7580ded49a7f162fa2",
+      "End": "6e410a0edc0c4b83b11911dcd181f849",
+      "Id": "cb1ca0c32c8c4d63ab7dbd982809b039"
+    },
+    {
+      "Start": "c9e9b87b4dc247c9b358843f68690c24",
+      "End": "34c9356d6a5c43999d3752bcfe17bb9f",
+      "Id": "07c6198264394dd1ad1394eb76e1945d"
+    },
+    {
+      "Start": "0c07fae405d24bbc8695cbba3177bdf1",
+      "End": "393bd68c6afb45029b736705bb3264f6",
+      "Id": "ec8b056e0e2441aaabbfe2c7a4907e4b"
+    },
+    {
+      "Start": "3421d3683ee040aa874610f548b8cfd1",
+      "End": "70b4f40a0d824557999342122d5f7fcc",
+      "Id": "f3f931590dff47829e5e1cfe61dd532a"
+    },
+    {
+      "Start": "68fd0e41a5844accb3f00dc04a2a2b58",
+      "End": "860c751bcee749a3896c14fead68f8c5",
+      "Id": "32c876841f8c4c98a8566d451ac33a43"
+    },
+    {
+      "Start": "68fd0e41a5844accb3f00dc04a2a2b58",
+      "End": "8579ca0155dc4d5f9fc2d2712f8b31bc",
+      "Id": "351fd9a1d2d64d7bb4e03b80fbc1f7b2"
+    },
+    {
+      "Start": "68fd0e41a5844accb3f00dc04a2a2b58",
+      "End": "da6086658ab64e5ead6183c3bc06a42d",
+      "Id": "7e4c63df8e9b4f009162d9049c4452da"
+    },
+    {
+      "Start": "68fd0e41a5844accb3f00dc04a2a2b58",
+      "End": "cbb22845e2934766a9d9bbb8f497ad0e",
+      "Id": "9b8aa8b99b384102b1423d24d3677289"
+    },
+    {
+      "Start": "faeb830cb25e4209915035e22f0cde07",
+      "End": "d070ca04c46547ba944b760aa1cf8521",
+      "Id": "f09b594659154399b5c8dfceb0a303b3"
+    },
+    {
+      "Start": "a79d23005db14dc6a2e552de84829c8f",
+      "End": "ace0fe5038bc4bdc9323d7cd771f2236",
+      "Id": "2640d7c4563d4c2e9929b2ef71a6b0f1"
+    },
+    {
+      "Start": "a79d23005db14dc6a2e552de84829c8f",
+      "End": "0eb7a201f10045779b81f1e97a3028e6",
+      "Id": "0534df34c7774419b74d2bdee49e8238"
+    },
+    {
+      "Start": "6cc55c6e33464680897e30ab7bde64dc",
+      "End": "6f60765716914e7e809c7b9f1500cdf0",
+      "Id": "9b5a16a6f3004d2eb08824c3b1563c62"
+    },
+    {
+      "Start": "f79516859cd744908e41ca652868b59f",
+      "End": "055c09d502b6427688ce298d58471c9e",
+      "Id": "e78b5e3b40c04b9cbb91b6b4b6411faf"
+    },
+    {
+      "Start": "621b389c62174ed29d334d560bbe8736",
+      "End": "3f47f8bc4e2b4c37ae04b7a24061f54d",
+      "Id": "e989af2dc5c54461a23c2041a5b1f6d2"
+    },
+    {
+      "Start": "885aa13b4586466098c84ecf492ab65d",
+      "End": "cb3e93ad58f8428e81972d2e8b96b894",
+      "Id": "35361d08c84e4f819826e92e0c41d7bf"
+    },
+    {
+      "Start": "26df154be4d34747818d1c081c3724c6",
+      "End": "641d0bf4243c4e259fc809351945a1a0",
+      "Id": "756ef2f33dde4952ba1d1db575167f6d"
+    },
+    {
+      "Start": "741c71923c58434d9c867476e6b53966",
+      "End": "f1aa90c741f542bba9173a29151b9bbb",
+      "Id": "545abc1baf5b4bde93d0abb67ddf9f6c"
+    },
+    {
+      "Start": "741c71923c58434d9c867476e6b53966",
+      "End": "8b6e2e89911a4cb69558d815ca99a12d",
+      "Id": "17b90deb0d084e0788ac50585139ac0b"
+    },
+    {
+      "Start": "24a8d78f541d42518950f68031a8a0ea",
+      "End": "a0200daa33ab489d95d58ddec4c5ba88",
+      "Id": "802ddfd1efe546f381ad4687dd4cf354"
+    },
+    {
+      "Start": "5105b3a2c75245839517a12103d97d9d",
+      "End": "0656a3610616424d9029be70597b1303",
+      "Id": "def6a9f10c104416b31215efdcc7b1fd"
+    },
+    {
+      "Start": "598d0ed8a7ca406cab9f70e1d2984edf",
+      "End": "cb2ce966138c46e0aab7aadfe2fa1c17",
+      "Id": "9bee9d09dee74641acbd5d74bf1791c1"
+    },
+    {
+      "Start": "9060b839f4fd4a35b1112f3eccd5a485",
+      "End": "95637d11ce1a4d02bf8900920a9ab714",
+      "Id": "35950c78bc354217a61c92c3a9fd43f2"
+    },
+    {
+      "Start": "0af269b35b064e1e94ae6efa9a29bca4",
+      "End": "a074a4541b9e4844a628f357bbdb500a",
+      "Id": "d1e21fef3b10405f84a064ac1fe74f39"
+    },
+    {
+      "Start": "c197c30eef3d47cbab954ca6c3d2a670",
+      "End": "015f14d244c340c79b017d7f3d7008a0",
+      "Id": "bbb0d6824606408b8f1a056ab39ed8a7"
+    },
+    {
+      "Start": "06d7a036fa5e47779977aa7dc0e00a5b",
+      "End": "cb6262d7213845cb813899bc37944964",
+      "Id": "a5a667e793734b57b8c5871b51a46c23"
+    },
+    {
+      "Start": "0fd6b889dd57498595d130760f1dfc07",
+      "End": "3eddb5668b8348598c492ee2f21a9a02",
+      "Id": "eda01bf842164617bf251ac4d401200f"
+    },
+    {
+      "Start": "0fd6b889dd57498595d130760f1dfc07",
+      "End": "1a3084abbb1a41b7b7e815cd54b68463",
+      "Id": "536dae65a51747689b76534e79fcf77a"
+    },
+    {
+      "Start": "2f3dbb202d9b4c248e1230759a594760",
+      "End": "c864ad96ac8940d588520cbee3a14d03",
+      "Id": "f8f1bf5a94ff4604a20638a45e2cd63c"
+    },
+    {
+      "Start": "fbdc2b6d14694261a012f60c0745e8ef",
+      "End": "b63d2478bd3d4871af01288a8e917eb5",
+      "Id": "ffa15e8508744c5b98fe4bcbb0ee0d37"
+    },
+    {
+      "Start": "c92d3ca5e35942aebc078e46030a2d6f",
+      "End": "57977a7ddc7d4df9b78b55113c288ca1",
+      "Id": "318005a4004e4374aa34536ac45d243e"
+    },
+    {
+      "Start": "dfff58fe3fca4368ad43e8264c954561",
+      "End": "6fb492ab31134d7d9057c549132ca0a1",
+      "Id": "7cef425e1e094657bd8e12b4a95bfb9f"
+    },
+    {
+      "Start": "6098fed886654586b989d21d10a1304b",
+      "End": "f4c5260414a94961af3e3af1cd6511c8",
+      "Id": "51523dffef7f4a50a2b650a8f6822b88"
+    },
+    {
+      "Start": "52f288d8683944259822389616d2af09",
+      "End": "b2d06f97b2a94657b7f7ac6947e13025",
+      "Id": "24d30844658c4339a6982e58349c639a"
+    },
+    {
+      "Start": "c9317a1d145348a68add85801f2e1e3e",
+      "End": "a9e6d128233344faaad9ac6227eb60cd",
+      "Id": "735d953e802b4be1808954400b64ed3e"
+    },
+    {
+      "Start": "59d76cee23214a10bee4e040ea485b41",
+      "End": "7200b0f56cd3424689cb3e2f45e2dfff",
+      "Id": "bf56eaa478bb4ea7a66e60b9db5835b7"
+    },
+    {
+      "Start": "e3eafd39ede8400e908633b2c2378a08",
+      "End": "bd59034ae96c453da43fc90374ca8b19",
+      "Id": "e584b95d25f74012bc95a101180353b4"
+    },
+    {
+      "Start": "9521012134eb491ba30d61573eaa23a7",
+      "End": "f232674c20204fbe9766d6d46fbb3e20",
+      "Id": "426a0518434848adac7e7303a15de689"
+    },
+    {
+      "Start": "a3a64765eb2545289deeb84b25677015",
+      "End": "cba329ec5cf4408ba4b54ef81277398d",
+      "Id": "18af8837385c480690851c8559514f49"
+    },
+    {
+      "Start": "c90fb78f8c05484b92c8b453354227fc",
+      "End": "449c76a902d94a458100408dfa2efe4d",
+      "Id": "6e4dbd8c1ad0468485f56ac977939c2c"
+    },
+    {
+      "Start": "e1f9be17578b48f1ad144c9ac42d58b6",
+      "End": "b9c86eb9d436442fa1eeed8fa7839c88",
+      "Id": "a2140d613d4442eba7913fe09f84a093"
+    },
+    {
+      "Start": "065c0952346b4e63b27b4d0352f20117",
+      "End": "f092337f57e34ee394c71d7b344afc18",
+      "Id": "b49b7e92e27e4e539719522a924a4519"
+    },
+    {
+      "Start": "004b0450b0b54192aa278449a111d665",
+      "End": "1ddf1c33d2a841b489c7bddf0560afde",
+      "Id": "09db03f4c38c46e685acc46b05eb7cdc"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "VASA",
+      "Version": "0.1.0",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "ac3f471baa204d8792be152ebb361057",
+        "abb61ac069ea4df7949b9614ca3f26ad",
+        "decc1f201feb490d98171379d0e6911c",
+        "f4e499cea06b4080ab6bfd080d3f2316",
+        "cb6cb701dc3f4943b11be54c9810f4f9",
+        "2e7e4f1d210441ad91a26d791f52cf63",
+        "e49722bc317348cbb6bf8e16db78b787",
+        "ecfbf97ff5874323895a913f3e637044",
+        "46189afa01504f41970f2bcc98bd7386",
+        "03571be1a52747e89507b2c7809d9849",
+        "c5c3c42444e44dbda06963f8f18da3fb",
+        "6ca813d336044096a77a23f8242afa7a",
+        "ccaa4e58031648ab9622efcc4f26f1cc",
+        "6067e47b390a4145a6beeabc808a3e38",
+        "bfcf30da35d145af9c6ee5ed932b54ac",
+        "d0b0485d90ef4f1fb7f792689313ae25",
+        "53d34dce6d9a4178882944b02bce1adf"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    }
+  ],
+  "Author": "None provided",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 100.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.0.5650",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 36573.60546875,
+      "EyeY": 41179.56640625,
+      "EyeZ": 54342.78515625,
+      "LookX": -9839.68359375,
+      "LookY": -52231.45703125,
+      "LookZ": -64223.890625,
+      "UpX": -0.067318543791770935,
+      "UpY": 0.89581120014190674,
+      "UpZ": -0.43930676579475403
+    },
+    "NodeViews": [
+      {
+        "Id": "ac3f471baa204d8792be152ebb361057",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "TrianglesAsNineNumbers.ImportFromSTL",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 804.429187558213,
+        "Y": 81.4971057801027
+      },
+      {
+        "Id": "70639680a06c4883acd56462712df788",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 528.56168110707893,
+        "Y": 593.50467155590536
+      },
+      {
+        "Id": "80ae27695a4c429abddd54667f5169f6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Building Geometry - File Path",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 322.299817897698,
+        "Y": 81.6247822455775
+      },
+      {
+        "Id": "abb61ac069ea4df7949b9614ca3f26ad",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "VoxelModel.ByTriangles",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 1639.1190495670432,
+        "Y": 123.09438014593194
+      },
+      {
+        "Id": "decc1f201feb490d98171379d0e6911c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "VoxelModel.DisplayVoxels",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 2595.9233675669739,
+        "Y": -534.09766865582822
+      },
+      {
+        "Id": "2ac1a35e83c84b7cb1ffa21257123148",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Glazing Geometry - File Path",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 322.299817897698,
+        "Y": 189.088335449059
+      },
+      {
+        "Id": "f4e499cea06b4080ab6bfd080d3f2316",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "TrianglesAsNineNumbers.ImportFromSTL",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 804.868754037213,
+        "Y": 188.968283123266
+      },
+      {
+        "Id": "cb6cb701dc3f4943b11be54c9810f4f9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "SolidOperations.Union",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 2015.0353595746724,
+        "Y": 123.00487283645894
+      },
+      {
+        "Id": "b0de22a8836d4bd48ca4881e686a1e21",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Color Palette",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 2179.7674672961402,
+        "Y": -507.32064755123213
+      },
+      {
+        "Id": "2e7e4f1d210441ad91a26d791f52cf63",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "SliceIterator.ByVoxelModelAndXIndex",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 3100.9147402008161,
+        "Y": -285.667112617485
+      },
+      {
+        "Id": "e49722bc317348cbb6bf8e16db78b787",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "SliceIterator.SliceVoxels",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 3461.305533201903,
+        "Y": -285.52718471847322
+      },
+      {
+        "Id": "f7734291e6a146fb9e458bd5638bd8ea",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Boolean",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 3275.3450123292405,
+        "Y": -74.155959812476
+      },
+      {
+        "Id": "2ba586f956f9490fb9dc9e6a3233a5f1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Color Palette",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 3853.9703404129341,
+        "Y": -221.89652433916319
+      },
+      {
+        "Id": "ecfbf97ff5874323895a913f3e637044",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "SliceIterator.SliceData",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 3457.4767464140132,
+        "Y": -99.894455064853219
+      },
+      {
+        "Id": "46189afa01504f41970f2bcc98bd7386",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "VoxelModel.DisplayVoxels",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 4012.3940486572137,
+        "Y": -284.86187370893322
+      },
+      {
+        "Id": "03571be1a52747e89507b2c7809d9849",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "SliceIterator.SliceVoxels",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 3458.474821651479,
+        "Y": 123.55784849850323
+      },
+      {
+        "Id": "c5c3c42444e44dbda06963f8f18da3fb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "SliceIterator.ByVoxelModelAndYIndex",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 3106.5406653530636,
+        "Y": 123.56963356109681
+      },
+      {
+        "Id": "6ca813d336044096a77a23f8242afa7a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "VoxelModel.DisplayVoxels",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 4019.9598901218233,
+        "Y": 124.8007457866568
+      },
+      {
+        "Id": "e8189b9dbc2b43618bc3fbbd2188a93c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Color Palette",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 3861.5361818775436,
+        "Y": 187.76609515642681
+      },
+      {
+        "Id": "73505cc253bf4b769b18a4923bdb5258",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 4417.2701521515264,
+        "Y": -95.660906221422692
+      },
+      {
+        "Id": "4d97eae3d6714f58bf11b360b3e7d76e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 4417.6475803766371,
+        "Y": 307.27803956796026
+      },
+      {
+        "Id": "fbedcf9456e3424fa8d3816d72ccc748",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Boolean",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 3275.8363199058931,
+        "Y": 328.28976144110686
+      },
+      {
+        "Id": "62075bb09cc040da81d7e60780680295",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Color.ByARGB",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 4624.8878479238465,
+        "Y": -125.73731262206229
+      },
+      {
+        "Id": "6d0ecbf06a294713b102b40d0a533e60",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Color.ByARGB",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 4622.2987130486381,
+        "Y": 251.0753683664876
+      },
+      {
+        "Id": "ccaa4e58031648ab9622efcc4f26f1cc",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "SliceIterator.SliceData",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 3457.536597097419,
+        "Y": 302.33975521321327
+      },
+      {
+        "Id": "6067e47b390a4145a6beeabc808a3e38",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "SliceIterator.ByVoxelModelAndZIndex",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 3112.4155169388432,
+        "Y": 532.97168343477676
+      },
+      {
+        "Id": "bfcf30da35d145af9c6ee5ed932b54ac",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "VoxelModel.DisplayVoxels",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 4020.616556856744,
+        "Y": 532.6462986664767
+      },
+      {
+        "Id": "073ea548fd21461f951d551f806ce114",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Color Palette",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 3862.1928486124734,
+        "Y": 595.61164803623672
+      },
+      {
+        "Id": "d0b0485d90ef4f1fb7f792689313ae25",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "SliceIterator.SliceVoxels",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 3460.6031125833611,
+        "Y": 533.00917179499754
+      },
+      {
+        "Id": "b5ff94076809470eaad835857fbf4ebb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Image.FromPixels",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 4823.0497894603795,
+        "Y": -125.55193906694251
+      },
+      {
+        "Id": "404f9e8165d545bab8257345c4fb468c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Image.FromPixels",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 4818.741969127359,
+        "Y": 250.94423367511536
+      },
+      {
+        "Id": "b18bad87b5744d0d985939039c0a04a9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Image.FromPixels",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 4821.0737750254011,
+        "Y": 648.3178862270122
+      },
+      {
+        "Id": "a6f8f7693da14fb2b3aa950c63a9b8cd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Boolean",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 3278.0223043709639,
+        "Y": 751.45500795702685
+      },
+      {
+        "Id": "c470f72e721b4c7a9c966814a7b180a4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Color.ByARGB",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 4634.2936192338411,
+        "Y": 648.42621366954222
+      },
+      {
+        "Id": "ba4a9dfc781b4cd0af07ade97c8ad443",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 4419.5754500880439,
+        "Y": 730.3432945796169
+      },
+      {
+        "Id": "53d34dce6d9a4178882944b02bce1adf",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "SliceIterator.SliceData",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 3459.2713340296777,
+        "Y": 725.1605159484393
+      },
+      {
+        "Id": "420b58b3e2424c49b78db03fd7057967",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Watch Image",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 5097.28989037915,
+        "Y": -125.507080504463
+      },
+      {
+        "Id": "09cef9f48d3d4b5fa168ccdb4a00f1b5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Watch Image",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 5108.88147761715,
+        "Y": 251.453852273605
+      },
+      {
+        "Id": "b508de35a6b84715bc384f3ca8feb132",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Watch Image",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 5102.6302160921,
+        "Y": 649.224258705452
+      },
+      {
+        "Id": "6984259bffe741b38174f907b0efdb4e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Slice X Index - Integer Slider",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 2321.8897777833258,
+        "Y": 666.02044460035563
+      },
+      {
+        "Id": "3179929fe2b847878113a596fe55ce9d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Slice Y Index - Integer Slider",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 2322.0982376935558,
+        "Y": 735.00732056816571
+      },
+      {
+        "Id": "b13bc46ca175423f9400f0a78238e153",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Slice Z Index - Integer Slider",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 2322.3847729958466,
+        "Y": 803.6027896370955
+      },
+      {
+        "Id": "8eaf167ce82c480784937e2bd9a32105",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Finest Level of Detail - Integer Slider",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 325.51853536255874,
+        "Y": 838.6333223862739
+      },
+      {
+        "Id": "16a2f1c2e44b4fe6bd57d8897c9be13a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Vertical Level of Detail - Integer Slider",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 327.53986277988872,
+        "Y": 763.61771566117386
+      },
+      {
+        "Id": "88c64c985f32424eb97b68c4e2b48dd1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "List Create",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 1132.1956026543733,
+        "Y": 123.23019111201677
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "c6c085344b014cff8002a3699443722c",
+        "Title": "Building and Glazing Voxels",
+        "Nodes": [
+          "abb61ac069ea4df7949b9614ca3f26ad",
+          "cb6cb701dc3f4943b11be54c9810f4f9"
+        ],
+        "Left": 1629.1190495670432,
+        "Top": 69.804872836458941,
+        "Width": 661.516310007629,
+        "Height": 248.289507309473,
+        "FontSize": 36.0,
+        "InitialTop": 123.00487283645894,
+        "InitialHeight": 145.089507309473,
+        "TextblockHeight": 43.2,
+        "Background": "#FFB9F9E1"
+      },
+      {
+        "Id": "591e6967baea45caa12de2247c8b2236",
+        "Title": "Display Building Voxels",
+        "Nodes": [
+          "decc1f201feb490d98171379d0e6911c"
+        ],
+        "Left": 2585.9233675669739,
+        "Top": -630.49766865582819,
+        "Width": 315.19999999999982,
+        "Height": 265.79999999999995,
+        "FontSize": 36.0,
+        "InitialTop": -534.09766865582822,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 86.4,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "1fe44c5839104e27835e594abc81dac7",
+        "Title": "Triangle Data",
+        "Nodes": [
+          "ac3f471baa204d8792be152ebb361057",
+          "f4e499cea06b4080ab6bfd080d3f2316",
+          "88c64c985f32424eb97b68c4e2b48dd1"
+        ],
+        "Left": 794.429187558213,
+        "Top": 28.297105780102697,
+        "Width": 466.96641509616029,
+        "Height": 253.27117734316329,
+        "FontSize": 36.0,
+        "InitialTop": 81.4971057801027,
+        "InitialHeight": 252.47117734316333,
+        "TextblockHeight": 43.2,
+        "Background": "#FFB9F9E1"
+      },
+      {
+        "Id": "3813a7de6afa4685a434a408da375827",
+        "Title": "STL File Paths",
+        "Nodes": [
+          "80ae27695a4c429abddd54667f5169f6",
+          "2ac1a35e83c84b7cb1ffa21257123148"
+        ],
+        "Left": 312.299817897698,
+        "Top": 28.424782245577504,
+        "Width": 259.99999999999994,
+        "Height": 254.06355320348155,
+        "FontSize": 36.0,
+        "InitialTop": 81.6247822455775,
+        "InitialHeight": 252.4635532034815,
+        "TextblockHeight": 43.2,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "a81bd55c6a8f4b56bbad92815bec5b6f",
+        "Title": "VASA Workflow 10: Slices and Images",
+        "Nodes": [
+          "ade4127f829f4cbc9af6ee2f7beb1e95",
+          "931fe0de818847108da71c124a9bae87",
+          "9f1a386739e84e0eabe5e3cc5ed3f8ab",
+          "804f0b8745054289a6fde83b799f6d63",
+          "4c0493aea88c44c7a670e773d4041a67",
+          "845ed2bf74ba4d34b1a165732d24c91e",
+          "fc5a251537634db1835a574ddf2b1b7b"
+        ],
+        "Left": -758.28967831202442,
+        "Top": -85.993058907766411,
+        "Width": 632.5278099805239,
+        "Height": 533.91367292130428,
+        "FontSize": 48.0,
+        "InitialTop": 39.206941092233592,
+        "InitialHeight": 417.91367292130428,
+        "TextblockHeight": 115.2,
+        "Background": "#FFFFFFFF"
+      },
+      {
+        "Id": "2def21a82a804ab4896b45a68fd26574",
+        "Title": "",
+        "Nodes": [
+          "9bf9460a03874d1aaa068ec3b3df2625"
+        ],
+        "Left": -122.39828128664817,
+        "Top": 8.5828812435051063,
+        "Width": 313.6,
+        "Height": 151.4,
+        "FontSize": 14.0,
+        "InitialTop": 38.582881243505106,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 20.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "bb1cf2a736124a4b9350ce98474b6dd9",
+        "Title": "",
+        "Nodes": [
+          "8f895b04214340ce915c9e9fe6ac257c"
+        ],
+        "Left": -122.39828128664817,
+        "Top": 178.99929193255221,
+        "Width": 313.6,
+        "Height": 136.99999999999997,
+        "FontSize": 14.0,
+        "InitialTop": 208.99929193255221,
+        "InitialHeight": 144.99999999999997,
+        "TextblockHeight": 20.0,
+        "Background": "#FFB9F9E1"
+      },
+      {
+        "Id": "f670b94d7b4446dd99f96b6155ee53fb",
+        "Title": "",
+        "Nodes": [
+          "f1ab4f0ba89f4190be26036492280774"
+        ],
+        "Left": -122.39828128664817,
+        "Top": 335.41570262159911,
+        "Width": 313.6,
+        "Height": 137.0,
+        "FontSize": 14.0,
+        "InitialTop": 365.41570262159911,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 20.0,
+        "Background": "#FFFFC999"
+      },
+      {
+        "Id": "fd743301a4fb4e548488d2458bb797ce",
+        "Title": "",
+        "Nodes": [
+          "3da7e01cc5604537bdcec81404a7072c"
+        ],
+        "Left": -122.30554709693718,
+        "Top": 490.63036259905118,
+        "Width": 313.6,
+        "Height": 137.0,
+        "FontSize": 14.0,
+        "InitialTop": 520.63036259905118,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 20.0,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "57de16a37c2e4967a2a67a6ac5c9d815",
+        "Title": "Coarse Voxel Width",
+        "Nodes": [
+          "70639680a06c4883acd56462712df788"
+        ],
+        "Left": 518.56168110707893,
+        "Top": 453.90467155590534,
+        "Width": 118.32000000000001,
+        "Height": 232.20000000000005,
+        "FontSize": 36.0,
+        "InitialTop": 593.50467155590536,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 129.6,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "cba8e1368377428fbf240140c18cabdc",
+        "Title": "Building Voxel Color",
+        "Nodes": [
+          "b0de22a8836d4bd48ca4881e686a1e21"
+        ],
+        "Left": 2169.7674672961402,
+        "Top": -646.92064755123215,
+        "Width": 144.80000000000018,
+        "Height": 232.20000000000005,
+        "FontSize": 36.0,
+        "InitialTop": -507.32064755123213,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 129.6,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "1c90f709ff1a42f08c432b2dce48045a",
+        "Title": "Display Slice Voxels",
+        "Nodes": [
+          "46189afa01504f41970f2bcc98bd7386",
+          "2ba586f956f9490fb9dc9e6a3233a5f1"
+        ],
+        "Left": 3843.9703404129341,
+        "Top": -338.06187370893321,
+        "Width": 473.62370824427944,
+        "Height": 222.6,
+        "FontSize": 36.0,
+        "InitialTop": -284.86187370893322,
+        "InitialHeight": 207.96534936977002,
+        "TextblockHeight": 43.2,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "98ef4b0c8ab94d8381a2dfc2443fc19b",
+        "Title": "Display Slice Voxels",
+        "Nodes": [
+          "6ca813d336044096a77a23f8242afa7a",
+          "e8189b9dbc2b43618bc3fbbd2188a93c"
+        ],
+        "Left": 3851.5361818775436,
+        "Top": 71.6007457866568,
+        "Width": 473.62370824427944,
+        "Height": 222.6,
+        "FontSize": 36.0,
+        "InitialTop": 124.8007457866568,
+        "InitialHeight": 207.96534936976997,
+        "TextblockHeight": 43.2,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "e6b2fbd6ec37470ba12aa1c17cb0822c",
+        "Title": "Display Slice Voxels",
+        "Nodes": [
+          "bfcf30da35d145af9c6ee5ed932b54ac",
+          "073ea548fd21461f951d551f806ce114"
+        ],
+        "Left": 3852.1928486124734,
+        "Top": 479.44629866647671,
+        "Width": 473.62370824427035,
+        "Height": 222.59999999999997,
+        "FontSize": 36.0,
+        "InitialTop": 532.6462986664767,
+        "InitialHeight": 207.96534936976002,
+        "TextblockHeight": 43.2,
+        "Background": "#FFA4E1FF"
+      },
+      {
+        "Id": "d7e7c235ea29465da9ea4581796c00a8",
+        "Title": "Slice Images",
+        "Nodes": [
+          "b5ff94076809470eaad835857fbf4ebb",
+          "62075bb09cc040da81d7e60780680295",
+          "73505cc253bf4b769b18a4923bdb5258",
+          "4d97eae3d6714f58bf11b360b3e7d76e",
+          "404f9e8165d545bab8257345c4fb468c",
+          "6d0ecbf06a294713b102b40d0a533e60",
+          "ba4a9dfc781b4cd0af07ade97c8ad443",
+          "c470f72e721b4c7a9c966814a7b180a4",
+          "b18bad87b5744d0d985939039c0a04a9",
+          "420b58b3e2424c49b78db03fd7057967",
+          "09cef9f48d3d4b5fa168ccdb4a00f1b5",
+          "b508de35a6b84715bc384f3ca8feb132"
+        ],
+        "Left": 4407.2701521515264,
+        "Top": -178.93731262206228,
+        "Width": 1121.2113254656242,
+        "Height": 1207.9615713275143,
+        "FontSize": 36.0,
+        "InitialTop": -125.73731262206229,
+        "InitialHeight": 1001.0806072016792,
+        "TextblockHeight": 43.2,
+        "Background": "#FFFFC999"
+      },
+      {
+        "Id": "d4290b9cb3534e2eb796a1081a71bcf1",
+        "Title": "Slices",
+        "Nodes": [
+          "2e7e4f1d210441ad91a26d791f52cf63",
+          "c5c3c42444e44dbda06963f8f18da3fb",
+          "6067e47b390a4145a6beeabc808a3e38",
+          "e49722bc317348cbb6bf8e16db78b787",
+          "03571be1a52747e89507b2c7809d9849",
+          "d0b0485d90ef4f1fb7f792689313ae25",
+          "a6f8f7693da14fb2b3aa950c63a9b8cd",
+          "fbedcf9456e3424fa8d3816d72ccc748",
+          "f7734291e6a146fb9e458bd5638bd8ea",
+          "ecfbf97ff5874323895a913f3e637044",
+          "ccaa4e58031648ab9622efcc4f26f1cc",
+          "53d34dce6d9a4178882944b02bce1adf"
+        ],
+        "Left": 3090.9147402008161,
+        "Top": -338.86711261748496,
+        "Width": 647.15659382886179,
+        "Height": 1207.8276285659242,
+        "FontSize": 36.0,
+        "InitialTop": -285.667112617485,
+        "InitialHeight": 1182.1221205745119,
+        "TextblockHeight": 43.2,
+        "Background": "#FFB9F9E1"
+      },
+      {
+        "Id": "86131dbf49734d57b2b389f3a84712d2",
+        "Title": "Slice Indices",
+        "Nodes": [
+          "6984259bffe741b38174f907b0efdb4e",
+          "3179929fe2b847878113a596fe55ce9d",
+          "b13bc46ca175423f9400f0a78238e153"
+        ],
+        "Left": 2311.8897777833258,
+        "Top": 612.82044460035559,
+        "Width": 319.69499521252055,
+        "Height": 258.58234503673987,
+        "FontSize": 36.0,
+        "InitialTop": 666.02044460035563,
+        "InitialHeight": 282.58234503673987,
+        "TextblockHeight": 43.2,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "e9284b3920c84e598a7aab3ea39e5c13",
+        "Title": "Level of Detail",
+        "Nodes": [
+          "8eaf167ce82c480784937e2bd9a32105",
+          "16a2f1c2e44b4fe6bd57d8897c9be13a"
+        ],
+        "Left": 315.51853536255874,
+        "Top": 710.41771566117382,
+        "Width": 321.22132741732992,
+        "Height": 196.01560672510004,
+        "FontSize": 36.0,
+        "InitialTop": 763.61771566117386,
+        "InitialHeight": 220.01560672510004,
+        "TextblockHeight": 43.2,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "ade4127f829f4cbc9af6ee2f7beb1e95",
+        "Title": "DYNAMO PROJECT\r\n________________________________________________________\r\n\r\n10-VASA-Slices-and-Images.dyn",
+        "Nodes": [],
+        "Left": -748.19749547357139,
+        "Top": 39.206941092233592,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "931fe0de818847108da71c124a9bae87",
+        "Title": "ASSOCIATED FILE(S)      \r\n________________________________________________________\r\n\r\nsample-data : 2 STL files",
+        "Nodes": [],
+        "Left": -748.28967831202442,
+        "Top": 128.4448320660008,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "fc5a251537634db1835a574ddf2b1b7b",
+        "Title": "REQUIRED DYNAMO PACKAGES\r\n________________________________________________________\r\n\r\nVASA",
+        "Nodes": [],
+        "Left": -435.79715000390144,
+        "Top": 129.02494893603284,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "4c0493aea88c44c7a670e773d4041a67",
+        "Title": "DYNAMO VERSION\r\n________________________________________________________\r\n\r\n2.12.0",
+        "Nodes": [],
+        "Left": -434.96186833150045,
+        "Top": 40.368393175561607,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "9f1a386739e84e0eabe5e3cc5ed3f8ab",
+        "Title": "AUTHOR(S) / CREATION DATE\r\n________________________________________________________\r\n\r\nAutodesk Research 2021",
+        "Nodes": [],
+        "Left": -748.28967831202442,
+        "Top": 220.2827230397688,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "804f0b8745054289a6fde83b799f6d63",
+        "Title": "DESCRIPTION\r\n________________________________________________________\r\n\r\nA demonstration of how slice iterators can be used as section tools. Horizontal and vertical 2D slices are extracted from a 3D voxel model using the Voxel-based Architectural Space Analysis (VASA) package.",
+        "Nodes": [],
+        "Left": -748.28967831202442,
+        "Top": 312.12061401353787,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "845ed2bf74ba4d34b1a165732d24c91e",
+        "Title": "ADDITIONAL COMMENTS\r\n________________________________________________________\r\n\r\nThis example includes one slice iterator for each of the three dimensions. A valid slice iterator can be used to create 2D voxels models, or to access the internal voxel data as nested lists of 0s and 1s. Here the voxel data is used to generate images. While both slice iterators and voxel iterators could be used to traverse voxels within a Python script, slice iterators are easier to use and more efficient.\r\n",
+        "Nodes": [],
+        "Left": -436.05682159171045,
+        "Top": 219.89353893429777,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "9bf9460a03874d1aaa068ec3b3df2625",
+        "Title": "Input Variables\r\n_______________________________________________________\r\n\r\nPink indicates variables that can be altered per project and must be set accordingly before running the script.",
+        "Nodes": [],
+        "Left": -112.39828128664817,
+        "Top": 38.582881243505106,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "8f895b04214340ce915c9e9fe6ac257c",
+        "Title": "Functional Logic\r\n_______________________________________________________\r\n\r\nCyan indicates the logic of the script. No changes should be made in these groups unless advised.",
+        "Nodes": [],
+        "Left": -112.39828128664817,
+        "Top": 208.99929193255221,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "f1ab4f0ba89f4190be26036492280774",
+        "Title": "Output Values\r\n_______________________________________________________\r\n\r\nOrange indicates key resulting values of nodes that should be observed after running the graph.",
+        "Nodes": [],
+        "Left": -112.39828128664817,
+        "Top": 365.41570262159911,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "3da7e01cc5604537bdcec81404a7072c",
+        "Title": "Display Objects\r\n_______________________________________________________\r\n\r\nBlue indicates objects that can be previewed in the 3D background after running the graph.",
+        "Nodes": [],
+        "Left": -112.30554709693718,
+        "Top": 520.63036259905118,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 868.64399557189427,
+    "Y": 103.84363364561432,
+    "Zoom": 0.85871621016315747
+  }
+}

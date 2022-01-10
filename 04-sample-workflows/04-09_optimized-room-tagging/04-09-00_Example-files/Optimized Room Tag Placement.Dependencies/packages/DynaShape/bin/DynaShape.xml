@@ -1,0 +1,715 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DynaShape</name>
+    </assembly>
+    <members>
+        <member name="M:DynaShape.ZeroTouch.Goals.Goal_ChangeWeight(DynaShape.Goals.Goal,System.Single)">
+            <summary>
+            Change the weight value of a goal (of any kind)
+            </summary>
+            <param name="goal"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.AnchorGoal_Create(Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point,System.Single)">
+            <summary>
+            Keep a node an the specified anchor point.
+            By default the weight for this goal set very high to ensure the node really "sticks" to the anchor
+            </summary>
+            <param name="startPosition"></param>
+            <param name="anchor"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.AnchorGoal_Change(DynaShape.Goals.AnchorGoal,Autodesk.DesignScript.Geometry.Point,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="anchor"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.AngleGoal_Create(Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point,System.Single,System.Single)">
+            <summary>
+            Keep the angle formed by three nodes at a target value
+            </summary>
+            <param name="A"></param>
+            <param name="B"></param>
+            <param name="C"></param>
+            <param name="targetAngle"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.AngleGoal_Create(Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point,System.Single)">
+            <summary>
+            Maintain the angle formed by three nodes
+            </summary>
+            <param name="A"></param>
+            <param name="B"></param>
+            <param name="C"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.AngleGoal_Change(DynaShape.Goals.AngleGoal,System.Single,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="targetAngle"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.CoCircularGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Single)">
+            <summary>
+            Force a set of nodes to lie on a common circular arc
+            </summary>
+            <param name="startPositions"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.CoCircularGoal_Change(DynaShape.Goals.CoCircularGoal,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.CoLinearGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Single)">
+            <summary>
+            Force a set of nodes to lie on a common line.
+            The line position and orientation are computed based on the current node positions.
+            This is different from the OnLine goal, where the target line is fixed and defined in advance.
+            </summary>
+            <param name="startPositions"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.CoLinearGoal_Change(DynaShape.Goals.CoLinearGoal,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.ConstantGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},Autodesk.DesignScript.Geometry.Vector,System.Single)">
+            <summary>
+            Apply a constant directional offset to the specified nodes.
+            For example, this is useful to simulate gravity
+            </summary>
+            <param name="startPositions"></param>
+            <param name="constant"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.ConstantGoal_Change(DynaShape.Goals.ConstantGoal,Autodesk.DesignScript.Geometry.Vector,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="constant"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.ConstantPressureGoal_Create(Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point,System.Single,System.Single)">
+            <summary>
+            Applying a force perpendicular to a triangular surface, with magnitude proportional to the surface area.
+            </summary>
+            <param name="startPosition1"></param>
+            <param name="startPosition2"></param>
+            <param name="startPosition3"></param>
+            <param name="pressure">The pressure being applied on the triangle</param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.ConstantPressureGoal_Create(Autodesk.Dynamo.MeshToolkit.Mesh,System.Single,System.Single)">
+            <summary>
+            Applying forces perpendicular to each triangular face of a mesh, with magnitude proportional to the surface area of the triangle
+            </summary>
+            <param name="mesh"></param>
+            <param name="pressure"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.ConstantPressureGoal_Change(DynaShape.Goals.ConstantPressureGoal,System.Single,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="pressure"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.ConstantVolumePressureGoal_Create(Autodesk.Dynamo.MeshToolkit.Mesh,System.Single,System.Single)">
+            <summary>
+            Simulate pressure trapped inside a closed volume. The pressure decreases as the volume expands (Boyle's law)
+            </summary>
+            <param name="mesh">A closed mesh</param>
+            <param name="volumePressureConstant">The constant that is the product of the pressure and volume. This means that pressure will automatically decrease as the mesh volume increases (and vice versa)</param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.ConstantVolumePressureGoal_Change(DynaShape.Goals.ConstantVolumePressureGoal,System.Single,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="volumePressureConstant"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.ConvexPolygonCollisionGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Collections.Generic.List{System.Single},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Single)">
+             <summary>
+            
+             </summary>
+             <param name="centers"></param>
+             <param name="radii"></param>
+             <param name="polygonVertices"></param>
+             <param name="weight"></param>
+             <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.ConvexPolygonCollisionGoal_Change(DynaShape.Goals.ConvexPolygonCollisionGoal,System.Collections.Generic.List{System.Single},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Single)">
+             <summary>
+            
+             </summary>
+             <param name="goal"></param>
+             <param name="radii"></param>
+             <param name="polygonVertices"></param>
+             <param name="weight"></param>
+             <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.ConvexPolygonContainmentGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Collections.Generic.List{System.Single},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Single)">
+             <summary>
+            
+             </summary>
+             <param name="centers"></param>
+             <param name="radii"></param>
+             <param name="polygonVertices"></param>
+             <param name="weight"></param>
+             <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.ConvexPolygonContainmentGoal_Change(DynaShape.Goals.ConvexPolygonContainmentGoal,System.Collections.Generic.List{System.Single},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Single)">
+             <summary>
+            
+             </summary>
+             <param name="goal"></param>
+             <param name="radii"></param>
+             <param name="polygonVertices"></param>
+             <param name="weight"></param>
+             <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.CoPlanarGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Single)">
+            <summary>
+            Force a set of nodes to lie on a common plane.
+            The plane position and orientation are computed based on the current node positions.
+            This is different from the OnPlane goal, where the target plane is fixed and defined in advance.
+            </summary>
+            <param name="startPositions"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.CoPlanarGoal_Change(DynaShape.Goals.CoPlanarGoal,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.CoSphericalGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Single)">
+            <summary>
+            Force a set of nodes to lie on a common spherical surface.
+            The sphere position and radius are computed based the current node positions
+            </summary>
+            <param name="startPositions"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.CoSphericalGoal_Change(DynaShape.Goals.CoSphericalGoal,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.DirectionalWindGoal_Create(Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Vector,System.Single)">
+            <summary>
+            Simulate wind by applying a constant force on the three vertices of a triangle,
+            scaled by the cosine of the angle between the wind vector and the triangle's normal.
+            This way, the wind has full effect when it hits the triangle head-on, and zero
+            effect if it blows parallel to the triangle.
+            </summary>
+            <param name="startPosition1"></param>
+            <param name="startPosition2"></param>
+            <param name="startPosition3"></param>
+            <param name="windVector"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.DirectionalWindGoal_Create(Autodesk.Dynamo.MeshToolkit.Mesh,Autodesk.DesignScript.Geometry.Vector,System.Single)">
+            <summary>
+            Simulate wind blowing along a specified direction, by applying a force on the three vertices of a triangle,
+            The force magnitude is additionally scaled by the cosine of the angle between the wind vector and the triangle's normal.
+            This way, the wind has full effect when it hits the triangle head-on, and zero
+            effect if it blows parallel to the triangle.
+            </summary>
+            <param name="mesh"></param>
+            <param name="windVector"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.DirectionalWindGoal_Change(DynaShape.Goals.DirectionalWindGoal,Autodesk.DesignScript.Geometry.Vector,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="windVector"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.DirectionGoal_Create(Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Vector,System.Single)">
+            <summary>
+            Force the line connecting two nodes to be parallel to the specified direction.
+            </summary>
+            <param name="startPosition1"></param>
+            <param name="startPosition2"></param>
+            <param name="targetDirection"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.DirectionGoal_Change(DynaShape.Goals.DirectionGoal,Autodesk.DesignScript.Geometry.Vector,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="targetDirection"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.EqualLengthsGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Single)">
+            <summary>
+            Force a sequence of nodes to maintain equal distances.
+            </summary>
+            <param name="startPositions"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.EqualLengthsGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Single)">
+            <summary>
+            Force a set of line segments to maintain equal lengths.
+            </summary>
+            <param name="lineStarts"></param>
+            <param name="lineEnds"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.EqualLengthsGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Line},System.Single)">
+            <summary>
+            Force a set of line segments to maintain equal lengths.
+            </summary>
+            <param name="lines"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.EqualLengthsGoal_Change(DynaShape.Goals.EqualLengthsGoal,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.FloorGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Single,System.Single)">
+            <summary>
+            Force a set of nodes to stay above a horizontal floor plane.
+            </summary>
+            <param name="startPositions"></param>
+            <param name="floorHeight"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.FloorGoal_Change(DynaShape.Goals.FloorGoal,System.Single,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="floorHeight"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.LengthGoal_Create(Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point,System.Single,System.Single)">
+            <summary>
+            Force a pair of nodes to maintain the specified distance/length
+            </summary>
+            <param name="startPosition1"></param>
+            <param name="startPosition2"></param>
+            <param name="targetLength">If unspecified, the target length will be the distance between the starting node positions</param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.LengthGoal_Create(Autodesk.DesignScript.Geometry.Line,System.Single,System.Single)">
+            <summary>
+            Maintain the specified distance between two nodes located at the start and end of the given line
+            </summary>
+            <param name="line">This line will be used to create two nodes located at is start and end point</param>
+            <param name="targetLength">If unspecified, the target length will be the distance between the starting node positions</param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.LengthGoal_Change(DynaShape.Goals.LengthGoal,System.Single,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="targetLength"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.MergeGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Single)">
+            <summary>
+            Pull a set of nodes to their center of mass.
+            This is useful to force the nodes to have coincident positions.
+            By default the weight value is set very high to ensure that the nodes really merge together at one position.
+            </summary>
+            <param name="startPositions"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.MergeGoal_Change(DynaShape.Goals.MergeGoal,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.OnCurveGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},Autodesk.DesignScript.Geometry.Curve,System.Single)">
+            <summary>
+            Force a set of nodes to lie on the specified curve.
+            </summary>
+            <param name="startPositions"></param>
+            <param name="targetCurve"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.OnCurveGoal_Change(DynaShape.Goals.OnCurveGoal,Autodesk.DesignScript.Geometry.Curve,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="targetCurve"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.OnLineGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Vector,System.Single)">
+            <summary>
+            Force a set of nodes to lie on the specified line.
+            This is different from other CoLinear goal, where the target line is computed based on the current node positions rather than being defined and fixed in advance.
+            </summary>
+            <param name="startPosition"></param>
+            <param name="targetLineOrigin"></param>
+            <param name="targetLineDirection"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.OnLineGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},Autodesk.DesignScript.Geometry.Line,System.Single)">
+            <summary>
+            Force a set of nodes to lie on the specified line.
+            This is different from other CoLinear goal, where the target line is computed based on the current node positions rather than being defined and fixed in advance.
+            </summary>
+            <param name="startPositions"></param>
+            <param name="targetLine"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.OnLineGoal_Change(DynaShape.Goals.OnLineGoal,Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Vector,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="targetLineOrigin"></param>
+            <param name="targetLineDirection"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.OnLineGoal_Change(DynaShape.Goals.OnLineGoal,Autodesk.DesignScript.Geometry.Line,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="targetLine"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.OnPlaneGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Vector,System.Single)">
+            <summary>
+            Force a set of nodes to lie on the specified plane.
+            This is different from other CoPlanar goal, where the target plane is computed based on the current node positions rather than being defined and fixed in advance.
+            </summary>
+            <param name="startPositions"></param>
+            <param name="targetPlaneOrigin"></param>
+            <param name="targetPlaneNormal"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.OnPlaneGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},Autodesk.DesignScript.Geometry.Plane,System.Single)">
+            <summary>
+            Force a set of nodes to lie on the specified plane.
+            This is different from other CoPlanar goal, where the target plane is computed based on the current node positions rather than being defined and fixed in advance.
+            </summary>
+            <param name="startPositions"></param>
+            <param name="targetPlane"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.OnPlaneGoal_Change(DynaShape.Goals.OnPlaneGoal,Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Vector,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="targetPlaneOrigin"></param>
+            <param name="targetPlaneNormal"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.OnPlaneGoal_Change(DynaShape.Goals.OnPlaneGoal,Autodesk.DesignScript.Geometry.Plane,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="targetPlane"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.OnSurfaceGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},Autodesk.DesignScript.Geometry.Surface,System.Single)">
+            <summary>
+            Force a set of nodes to lie on the specified surface.
+            </summary>
+            <param name="startPositions"></param>
+            <param name="targetSurface"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.OnSurfaceGoal_Change(DynaShape.Goals.OnSurfaceGoal,Autodesk.DesignScript.Geometry.Surface,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="targetSurface"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.ParallelLinesGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Single)">
+            <summary>
+            Force a set of lines to be parallel.
+            </summary>
+            <param name="lineStartPoints"></param>
+            <param name="lineEndPoints"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.ParallelLinesGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Line},System.Single)">
+            <summary>
+            Force a set of lines to be parallel.
+            </summary>
+            <param name="lines"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.ParallelLinesGoal_Change(DynaShape.Goals.ParallelLinesGoal,System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.ShapeMatchingGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Boolean,System.Single)">
+            <summary>
+            Move a set of nodes to positions that resemble a target shape.
+            The target shape is defined by a sequence of points, in the same order as how the nodes are specified.
+            </summary>
+            <param name="startPositions"></param>
+            <param name="targetShapePoints"></param>
+            <param name="allowScaling"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.ShapeMatchingGoal_Change(DynaShape.Goals.ShapeMatchingGoal,System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Nullable{System.Boolean},System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="targetShapePoints"></param>
+            <param name="allowScaling"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.SphereCollisionGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Collections.Generic.List{System.Single},System.Single)">
+            <summary>
+            Maintain minimum distance between the nodes
+            </summary>
+            <param name="centers"></param>
+            <param name="radii"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.SphereCollisionGoal_Change(DynaShape.Goals.SphereCollisionGoal,System.Collections.Generic.List{System.Single},System.Single)">
+            <summary>
+            Maintain minimum distance between the nodes and the (static) lines
+            </summary>
+            <param name="goal"></param>
+            <param name="radii"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.SphereStaticLineCollisionGoal_Create(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Collections.Generic.List{System.Single},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Line},System.Single)">
+            <summary>
+            Move a set of nodes to positions that resemble a target shape.
+            The target shape is defined by a sequence of points, in the same order as how the nodes are specified.
+            </summary>
+            <param name="centers"></param>
+            <param name="radii"></param>
+            <param name="lines"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Goals.SphereStaticLineCollisionGoal_Change(DynaShape.Goals.SphereStaticLineCollisionGoal,System.Collections.Generic.List{System.Single},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Line},System.Single)">
+            <summary>
+            Adjust the goal's parameters while the solver is running.
+            </summary>
+            <param name="goal"></param>
+            <param name="radii"></param>
+            <param name="lines"></param>
+            <param name="weight"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DynaShape.ZeroTouch.Utilities">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Utilities.PlaneMesh(Autodesk.DesignScript.Geometry.CoordinateSystem,System.Double,System.Double,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Create a planar mesh
+            </summary>
+            <param name="cs">The planar mesh will be oriented according to the XY plane of this input coordinate system </param>
+            <param name="lengthX">The X dimension of the planar mesh</param>
+            <param name="lengthY">The Y dimension of the planar mesh</param>
+            <param name="divX">The mesh face division in the X dimension</param>
+            <param name="divY">The mesh face division in the Y dimension</param>
+            <param name="alternatingDiagons">Alternating the diagonal direction of the triangular faces</param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Utilities.RectangularGrid(Autodesk.DesignScript.Geometry.CoordinateSystem,System.Double,System.Double,System.Int32,System.Int32)">
+            <summary>
+            Create a rectangular grid of points
+            </summary>
+            <param name="cs">A coordinate system upon which the rectangular grid is based </param>
+            <param name="lengthX">The X dimension of the grid</param>
+            <param name="lengthY">The Y dimension of the grid</param>
+            <param name="divX">The grid division in the X dimension</param>
+            <param name="divY">The grid division in the Y dimension</param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Utilities.LinesFromPointSequence(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Boolean)">
+            <summary>
+            Create a sequence of lines from a sequence of input points
+            </summary>
+            <param name="points">The sequence of points</param>
+            <param name="loop">If True, the output will also include a line going from the last point back to the first point, creating a loop</param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Solver.Create">
+            <summary>
+            Create a DynaShape solver, which will be input into the Solver.Execute node
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Solver.Execute(DynaShape.Solver,System.Collections.Generic.List{DynaShape.Goals.Goal},System.Collections.Generic.List{DynaShape.GeometryBinders.GeometryBinder},System.Single,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Single)">
+            <summary>
+            Execute the solver to iteratively solve the input goals/constraints
+            </summary>
+            <param name="solver">The solver, which can be obtained from the Solver.Create node</param>
+            <param name="goals">The goals/constraints that the solver will solve</param>
+            <param name="geometryBinders">The geometry binders</param>
+            <param name="nodeMergeThreshold">Before the solver starts to run, nodes that have identical positions (within this threshold) will be merged into one node</param>
+            <param name="iterations">The number of iterations that the solver will execute in the background before display the intermediate result. If set to 0 (the default value), the solver will attempt run as many iterations as possible within approximately 25 milliseconds, which is sufficient for real-time visual feedback. Using a small value (e.g. 1) will make the solver appears to run more slowly and display more intermediate result, allowing us to better observe and understand how the nodes and goals behave</param>
+            <param name="reset">Reset the solver to the initial condition. You should set this to True at the beginning of a scenario, then set it to False. If you add, remove goals, you will need to reset for the changes to take effect</param>
+            <param name="execute">Execute or stop executing the solver</param>
+            <param name="enableMomentum">Apply momentum effect to the movement of the nodes. For simulation of physical motion, this results in more realistic motion. For constraint-based optimization, it often helps the solver to reach the final solution in fewer iteration (i.e. faster), but can sometimes lead to unstable and counter-intuitive solution. In such case, try setting momentum to False </param>
+            <param name="enableFastDisplay"></param>
+            <param name="enableManipulation">Enable manipulation of the nodes in the background view with mouse</param>
+            <param name="dampingFactor">When momentum mode is enabled, this value will determine how much the node's velocity is damped at each iteration</param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.Solver.ExecuteSilently(System.Collections.Generic.List{DynaShape.Goals.Goal},System.Collections.Generic.List{DynaShape.GeometryBinders.GeometryBinder},System.Single,System.Int32,System.Single,System.Boolean,System.Boolean,System.Single)">
+            <summary>
+            Execute the solver silently and only display the final result.
+            </summary>
+            <param name="goals">The goals/constraints that the solver will solve</param>
+            <param name="geometryBinders">The geometry binders</param>
+            <param name="nodeMergeThreshold">Before the solver starts to run, nodes that have identical positions (within this threshold) will be merged into one node</param>
+            <param name="iterations">The maximum number of iterations that will be executed</param>
+            <param name="terminationThreshold">if the nodes' movement is below this threshold, the solver will stop executing and output the result</param>
+            <param name="execute">This allows us to temporarily disable the solver while setting up/changing the parameters the parameters</param>
+            <param name="enableMomentum">Apply momentum effect to the movement of the nodes. For simulation of physical motion, this results in more realistic motion. For constraint-based optimization, it often helps the solver to reach the final solution in fewer iteration (i.e. faster), but can sometimes lead to unstable and counter-intuitive solution. In such case, try setting momentum to False </param>
+            <param name="dampingFactor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DynaShape.ZeroTouch.TestingUtilities.WonkyCubes(System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            This is a quick test setup for shape matching goals. Here we create a 3D grid of cubes, and apply a shape matching goal on each cube to force them maintain their intial unit-cube shape
+            </summary>
+            <param name="X">Number of nodes along the X axis, minimum is 2</param>
+            <param name="Y">Number of nodes along the Y axis, minimum is 2</param>
+            <param name="Z">Number of nodes along the Z axis, minimum is 2</param>
+            <param name="allowScaling"></param>
+            <returns>The ShapeMatching goals, Anchor goals, and polyline binders</returns>
+        </member>
+        <member name="M:DynaShape.Util.ComputeBestFitLine(System.Collections.Generic.List{DynaShape.Triple},DynaShape.Triple@,DynaShape.Triple@,System.Single)">
+            <summary>
+            Compute the line that best fit a set of input points (least squared orthogonal distance)
+            </summary>
+            <param name="points">The input points</param>
+            <param name="lineOrigin">Origin of the best fit line</param>
+            <param name="lineDirection">Direction of the best fit line</param>
+            <param name="tolerance">The tolerance that is used the determined if the input points are coincidental, collinear, or non-collinear</param>
+            <returns>0 if the input points are coincidental; 1 if they are collinear; 2 otherwise</returns>
+        </member>
+        <member name="M:DynaShape.Util.ComputeBestFitPlane(System.Collections.Generic.List{DynaShape.Triple},DynaShape.Triple@,DynaShape.Triple@,System.Single)">
+            <summary>
+            Compute the plane that best fit a set of input points (least squared orthogonal distance)
+            </summary>
+            <param name="points">The input points</param>
+            <param name="planeOrigin">Origin of the best fit plane</param>
+            <param name="planeNormal">Normal of the best fit plane</param>
+            <param name="tolerance">The tolerance that is used the determined if the input points are coincidental, collinear, coplanar, or non-coplanar</param>
+            <returns>0 if the input points are coincidental; 1 if they are collinear; 2 if they are coplanar; 3 otherwise</returns>
+        </member>
+        <member name="M:DynaShape.Util.ComputeBestFitCircle(System.Collections.Generic.List{DynaShape.Triple},DynaShape.Triple@,DynaShape.Triple@,System.Single@,System.Single)">
+            <summary>
+            Approximate the circle that best fit a set of input points
+            </summary>
+            <param name="points">The input points</param>
+            <param name="circleCenter">Center of the best fit circle</param>
+            <param name="circleNormal">Normal of the best fit circle</param>
+            <param name="circleRadius">Radius of the best fit circle</param>
+            <param name="tolerance">The tolerance that is used the determined if the input points are coincidental, collinear, or non-collinear</param>
+            <returns>False if the input points are coincidental or collinear; True otherwise</returns>
+        </member>
+        <member name="M:DynaShape.Util.ComputeBestFitSphere(System.Collections.Generic.List{DynaShape.Triple},DynaShape.Triple@,System.Single@,System.Single)">
+            <summary>
+            Compute the sphere that best fit a set of input points (least squared orthogonal distance)
+            </summary>
+            <param name="points">The input points</param>
+            <param name="sphereCenter">Center of the best fit sphere</param>
+            <param name="sphereRadius">Radius of the best fit sphere</param>
+            <param name="tolerance">The tolerance that is used the determined if the input points are coincidental, collinear, coplanar, or non-coplanar</param>
+            <returns>False if the input points are coincidental, collinear or coplanar; True otherwise</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,27 @@
+{
+  "license": "MIT",
+  "file_hash": null,
+  "name": "GenerativeDesign",
+  "version": "1.10.10.0",
+  "description": "Optioneering and multi-Objective Optimization tool for Dynamo.",
+  "group": "GenerativeDesign",
+  "keywords": [
+    "dynamo",
+    "optimization",
+    "multi-objective",
+    "generative",
+    "optioneering"
+  ],
+  "dependencies": [],
+  "contents": "Nodes for Generative Design work-flows in Dynamo.",
+  "engine_version": "2.12",
+  "engine": "dynamo",
+  "engine_metadata": "",
+  "site_url": "",
+  "repository_url": "",
+  "contains_binaries": true,
+  "node_libraries": [
+    "GenerativeDesign.Dynamo.Nodes, Version=1.0.0, Culture=neutral, PublicKeyToken=null",
+    "GenerativeDesign.Dynamo.Nodes.Functions, Version=1.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
