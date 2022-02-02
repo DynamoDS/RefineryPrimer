@@ -81,6 +81,6 @@ With this data fixed we can directly import this into another tool for data visu
 
 ## Video Tutorial
 
-{% embed url="https://www.youtube.com/watch?v=20O-aElDCyo" %}
+{% embed url="https://www.youtube.com/watch?v=ct7JLzT5H58" %}
 
 {% page-ref page="./" %}
