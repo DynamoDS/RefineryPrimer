@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>DynamoText</name>
+  </assembly>
+  <namespaces>
+    <namespace name="DynamoText">
+      <category>DynamoText</category>
+    </namespace>
+  </namespaces>
+  <classes>
+    <class name="DynamoText.DynamoText.Text" shortname="Text"/>
+  </classes>
+</doc>

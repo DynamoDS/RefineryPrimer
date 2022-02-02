@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>VASA</name>
+  </assembly>
+  <namespaces>
+    <namespace name="VASA">
+      <category>VASA</category>
+    </namespace>
+    <namespace name="VASA.Core">
+      <category>VASA.Core</category>
+    </namespace>
+    <namespace name="VASA.Iterators">
+      <category>VASA.Iterators</category>
+    </namespace>
+    <namespace name="VASA.Operations">
+      <category>VASA.Operations</category>
+    </namespace>
+    <namespace name="VASA.Pathfinding">
+      <category>VASA.Pathfinding</category>
+    </namespace>
+    <namespace name="VASA.Utils">
+      <category>VASA.Utils</category>
+    </namespace>
+  </namespaces>
+</doc>
