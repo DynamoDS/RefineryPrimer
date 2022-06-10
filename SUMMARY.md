@@ -37,6 +37,7 @@
     * [Crossover Phase](02-deeper-dive/02-04_genetic-algorithms/02-04-05_crossover-phase.md)
     * [Mutation Phase](02-deeper-dive/02-04_genetic-algorithms/02-04-06_mutation-phase.md)
   * [Other Techniques](02-deeper-dive/02-05_other-techniques.md)
+  * [Genetic Algorithm Q&A](02-deeper-dive/02-06_faq-under-the-hood.md)
 * [Hello Generative Design for Revit and Dynamo!](03-hello-GD-For-Revit/README.md)
   * [Installing Generative Design](03-hello-GD-For-Revit/03-01_installing-GD-For-Revit.md)
   * [Setting up a Graph for Generative Design](03-hello-GD-For-Revit/03-02_setting-up-a-graph-for-GD-For-Revit.md)
