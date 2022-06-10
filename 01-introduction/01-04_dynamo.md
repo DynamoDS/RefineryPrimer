@@ -6,7 +6,7 @@ It gives users the ability to visually script behavior, define custom pieces of 
 
 Dynamo can be used as a standalone product \(Sandbox\) or can plug into other products such as Revit \(Dynamo for Revit\).
 
-<img src="../assets/intro/dynamo1.png" style="width:200px;"/>
+<img src="../assets/intro/dynamo1.png" style="width:400px;"/>
 
 For more information on Dynamo please refer to the [Dynamo Primer](http://primer.dynamobim.org/).
 

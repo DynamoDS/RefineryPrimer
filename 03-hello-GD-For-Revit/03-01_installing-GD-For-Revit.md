@@ -1,6 +1,6 @@
 # Installing Generative Design
 
-The generative design toolset for Revit 2021 is available to all AEC Collections subscribers. Generative design tools for Dynamo for Revit 2021 are available to all Revit 2021 users. If you want to experiment with generative design tools in Dynamo for Revit 2020 and below, you can join the Project Refinery beta and download an earlier version of the software. More....
+The generative design toolset is available to all AEC Collections subscribers starting with Revit 2021. 
 
 [https://www.autodesk.com/solutions/refinery-beta](https://www.autodesk.com/solutions/refinery-beta)
 

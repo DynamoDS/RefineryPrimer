@@ -14,7 +14,6 @@
 
 ## Design Script
 
-* [DesignScript website](http://designscript.io/)
 * [Dynamo DS language guide v1](https://dynamobim.org/wp-content/uploads/forum-assets/colin-mccroneautodesk-com/07/10/Dynamo_language_guide_version_1.pdf)
 * [DesignScript user manual 0.1](http://designscript.io/DesignScript_user_manual_0.1.pdf)
 * [DesignScript documentation](https://dynamobim.org/wp-content/links/DesignScriptGuide.pdf)
