@@ -1,0 +1,447 @@
+{
+  "Uuid": "7c7c2ce2-4594-44c3-b03f-9b45bc813a03",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "dynamo1",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "InputValue": 0.0,
+      "Id": "1a1608fe3c5147999786764646608e8c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "02d277f868a441638c46f7fbf046750b",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a number."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleInput, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "InputValue": 0.0,
+      "Id": "f33c0744ebb44aa2a69e2931e227a6c6",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "faa28af2470f48328be43ecdd942ac9b",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a number."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 100.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "InputValue": 5.6,
+      "Id": "24d88fcb163d4441b4f22a282f7d3b1b",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4339ba183a5e450ea0bf54e3c73431f6",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 100.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "InputValue": 11.5,
+      "Id": "b6853a09b1424424b8afea08babbcf75",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e763de3c0dad4452b9a0af7c925e599c",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.ByCoordinates@double,double",
+      "Id": "7f020eafcbc04890b94f297780d63b25",
+      "Inputs": [
+        {
+          "Id": "9fa79bc72e8248e0a9624b24885ad1b8",
+          "Name": "x",
+          "Description": "X coordinate\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9b994689d7e844139e1164abdb4a7506",
+          "Name": "y",
+          "Description": "Y coordinate\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c26eb35176244359b44541d62436e462",
+          "Name": "Point",
+          "Description": "Point created by coordinates",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Form a Point in the XY plane given two 2 cartesian coordinates. The Z component is 0.\n\nPoint.ByCoordinates (x: double = 0, y: double = 0): Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.ByCoordinates@double,double,double",
+      "Id": "2bb1c9b108b5463db02b2fbcac0d778b",
+      "Inputs": [
+        {
+          "Id": "96211f12dc954007a5b2474159389cc6",
+          "Name": "x",
+          "Description": "X coordinate\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8c49c05e206a4e74bab22686be39da0e",
+          "Name": "y",
+          "Description": "Y coordinate\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "227a57e7c0a148f2b6db0a32e851d2e7",
+          "Name": "z",
+          "Description": "Z coordinate\n\ndouble\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8295e196f99a442db36cb1702de3066e",
+          "Name": "Point",
+          "Description": "Point created by coordinates",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Form a Point given 3 cartesian coordinates\n\nPoint.ByCoordinates (x: double = 0, y: double = 0, z: double = 0): Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Geometry.DistanceTo@Autodesk.DesignScript.Geometry.Geometry",
+      "Id": "d6cb6feff22c46a4ab2cf3b29b7165c6",
+      "Inputs": [
+        {
+          "Id": "6e50375afb0d4e5891ad74c91bdf680a",
+          "Name": "geometry",
+          "Description": "Autodesk.DesignScript.Geometry.Geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6a8a33ec77be4649ab0c82a42f2b85cf",
+          "Name": "other",
+          "Description": "The other Geometry\n\nGeometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2b666103a54048f7a5b26512a4d940c7",
+          "Name": "double",
+          "Description": "The distance",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Obtain the distance from this Geometry to another\n\nGeometry.DistanceTo (other: Geometry): double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Circle.ByCenterPointRadius@Autodesk.DesignScript.Geometry.Point,double",
+      "Id": "c972503a9c744fd1a1be4891d6854c25",
+      "Inputs": [
+        {
+          "Id": "e1ab5d067a654c0f8034734ab38e9c19",
+          "Name": "centerPoint",
+          "Description": "Center point of circle\n\nPoint\nDefault value : Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0)",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b5f7393ac428448faf1f8f61f169e48c",
+          "Name": "radius",
+          "Description": "Radius\n\ndouble\nDefault value : 1",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "996a51f29cbf4728a601a67ddf4748ae",
+          "Name": "Circle",
+          "Description": "Circle created with center point and radius",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Creates a Circle with input center Point and radius in the world XY plane, with world Z as normal.\n\nCircle.ByCenterPointRadius (centerPoint: Point = Autodesk.DesignScript.Geometry.Point.ByCoordinates(0, 0, 0), radius: double = 1): Circle"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "02d277f868a441638c46f7fbf046750b",
+      "End": "9fa79bc72e8248e0a9624b24885ad1b8",
+      "Id": "89ace75bbe864b0fb1a7d04798361a30",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "faa28af2470f48328be43ecdd942ac9b",
+      "End": "9b994689d7e844139e1164abdb4a7506",
+      "Id": "797534c2151f461fa1023e6f79aaebd0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4339ba183a5e450ea0bf54e3c73431f6",
+      "End": "96211f12dc954007a5b2474159389cc6",
+      "Id": "3a788a5545124bf992e01d6328130057",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e763de3c0dad4452b9a0af7c925e599c",
+      "End": "8c49c05e206a4e74bab22686be39da0e",
+      "Id": "e46b6fa2f43045ac8b14c7ea7cc07424",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c26eb35176244359b44541d62436e462",
+      "End": "6e50375afb0d4e5891ad74c91bdf680a",
+      "Id": "3187f249df7b44a48a35ca00c1c9e6f6",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c26eb35176244359b44541d62436e462",
+      "End": "e1ab5d067a654c0f8034734ab38e9c19",
+      "Id": "4501fc64ad7e474f8cec25e299a3e928",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8295e196f99a442db36cb1702de3066e",
+      "End": "6a8a33ec77be4649ab0c82a42f2b85cf",
+      "Id": "e10d6ba5c04e4297bc6f84f80a1ad84a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2b666103a54048f7a5b26512a4d940c7",
+      "End": "b5f7393ac428448faf1f8f61f169e48c",
+      "Id": "a1eb2f229eb641b5a241a9aad749d5ba",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.14",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.14.0.4641",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Name": "Number",
+        "ShowGeometry": true,
+        "Id": "1a1608fe3c5147999786764646608e8c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 616.0,
+        "Y": 301.0
+      },
+      {
+        "Name": "Number",
+        "ShowGeometry": true,
+        "Id": "f33c0744ebb44aa2a69e2931e227a6c6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 616.0,
+        "Y": 455.0
+      },
+      {
+        "Name": "Number Slider",
+        "ShowGeometry": true,
+        "Id": "24d88fcb163d4441b4f22a282f7d3b1b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 400.0,
+        "Y": 593.0
+      },
+      {
+        "Name": "Number Slider",
+        "ShowGeometry": true,
+        "Id": "b6853a09b1424424b8afea08babbcf75",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 400.0,
+        "Y": 782.203738185797
+      },
+      {
+        "Name": "Point.ByCoordinates",
+        "ShowGeometry": true,
+        "Id": "7f020eafcbc04890b94f297780d63b25",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 934.39656794839,
+        "Y": 324.891226469041
+      },
+      {
+        "Name": "Point.ByCoordinates",
+        "ShowGeometry": true,
+        "Id": "2bb1c9b108b5463db02b2fbcac0d778b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 934.39656794839,
+        "Y": 711.770512013134
+      },
+      {
+        "Name": "Geometry.DistanceTo",
+        "ShowGeometry": true,
+        "Id": "d6cb6feff22c46a4ab2cf3b29b7165c6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1260.5612210895779,
+        "Y": 587.51731081649064
+      },
+      {
+        "Name": "Circle.ByCenterPointRadius",
+        "ShowGeometry": true,
+        "Id": "c972503a9c744fd1a1be4891d6854c25",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1583.90193783993,
+        "Y": 324.891226469041
+      }
+    ],
+    "Annotations": [],
+    "X": 116.23115068620177,
+    "Y": -92.098119436201785,
+    "Zoom": 0.70823125000000009
+  }
+}
