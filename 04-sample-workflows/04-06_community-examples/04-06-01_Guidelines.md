@@ -115,4 +115,4 @@ In addition to the breakdown above, we have provided sample node groupings in th
 
 The sample DYN to download is available here:
 [_generative_template.dyn](../../assets/sample/_generative_template.dyn).
-
+[_generative_template_2.13.dyn](../../assets/sample/_generative_template_2.13.dyn).
