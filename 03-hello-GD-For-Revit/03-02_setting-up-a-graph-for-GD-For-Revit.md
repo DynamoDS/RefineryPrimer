@@ -8,7 +8,7 @@ To set up a Dynamo graph for use with generative design tools, right-click on ea
 2. Rename the node as explained above. 
 3. For slider nodes set values for Min, Max, and Step values. 
 
-_Note: Currently all inputs must be 'Number' or 'Integer' slider, 'Boolean', or 'Revit Selection' nodes._
+_Note: Current supported inputs include 'Number' or 'Integer' slider, 'Boolean', 'Number', 'string' or 'Revit Selection' nodes._
 
 <img src="../assets/hello/setting1.png" style="width:200px;"/>
 
@@ -35,7 +35,7 @@ To create an export to use with Generative Design, please do the following:
 
 <img src="../assets/hello/setting23.png" style="width:200px;"/>
 
-_Note: Graphs with the same name will be overwritten._
+_generative design will create a dependencies folder with relevant packages loaded_
 
 <img src="../assets/hello/setting22.png" style="width:200px;"/>
 
@@ -43,13 +43,15 @@ _Note: Graphs with the same name will be overwritten._
 
 To launch Generative Design, please do the following:
 
-1. In Dynamo, navigate to the toolbar and select Generative Design &gt; Create Study.
+1. In Revit, navigate to Manage > Generative Design > Create Study.
 
 <img src="../assets/hello/setting21.png" style="width:200px;"/>
 
-Once the Create Study dialog has launched, select a study type that you have exported from Dynamo.
+Once the Create Study dialog has launched, you can map to your own folders where you saved your studies.
 
 <img src="../assets/hello/setting3.png" style="width:200px;"/>
+
+<img src="../assets/hello/setting4.png" style="width:200px;"/>
 
 ---
 
