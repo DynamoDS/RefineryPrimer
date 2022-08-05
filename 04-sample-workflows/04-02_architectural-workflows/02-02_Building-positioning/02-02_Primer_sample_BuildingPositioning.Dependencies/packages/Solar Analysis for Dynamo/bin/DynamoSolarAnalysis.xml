@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DynamoSolarAnalysis</name>
+    </assembly>
+    <members>
+        <member name="M:DynamoSolarAnalysis.DynamoSolarAnalysisExtension.RemoveUnusedTempWeatherFileDirectories(System.String)">
+            <summary>
+            Removes all temporary session directories for weather files.  Any directory within the path will be deleted if
+            it contains a Lockfile and the Lockfile is not in use from another Dynamo session's weather node
+            </summary>
+            <param name="path">Path to the temp directory</param>
+        </member>
+        <member name="T:DynamoSolarAnalysis.Weather.Weather">
+            <summary>
+            The Weather class represents weather data read from a weather file
+            or returned from the Climate Server.
+            </summary>
+        </member>
+        <member name="P:DynamoSolarAnalysis.Weather.Weather.LatitudeDegrees">
+            <summary>
+            The latitude of the weather station.
+            </summary>
+            <returns name="latitude">The latitude in degrees.</returns>
+            <search>Weather, Latitude, Solar, Analysis</search>
+        </member>
+        <member name="P:DynamoSolarAnalysis.Weather.Weather.LongitudeDegrees">
+            <summary>
+            The longitude of the weather station.
+            </summary>
+            <returns name="longitude">The longitude in degrees.</returns>
+            <search>Weather, Longitude, Solar, Analysis</search>
+        </member>
+        <member name="P:DynamoSolarAnalysis.Weather.Weather.Name">
+            <summary>
+            The id of the weather station.
+            </summary>
+            <returns name="name">The weather station id.</returns>
+            <search>Weather, Name, Solar, Analysis</search>
+        </member>
+        <member name="P:DynamoSolarAnalysis.Weather.Weather.State">
+            <summary>
+            The state the weather station is located in.
+            </summary>
+            <returns name="state">The weather station state.</returns>
+            <search>Weather, State, Solar, Analysis</search>
+        </member>
+        <member name="M:DynamoSolarAnalysis.Weather.Weather.FromFile(System.String)">
+            <summary>
+             Construct a Weather object by reading a .wea file at a user defined path.
+             </summary>
+             <param name="path">The path to the weather file.</param>
+             <search>Weather, Climate, Location</search>
+        </member>
+        <member name="M:DynamoSolarAnalysis.Weather.Weather.ByLatitudeLongitude(System.Double,System.Double)">
+            <summary>
+             Construct a Weather object by getting data from the Climate Server.
+             </summary>
+            <param name="latitude">The latitude in degrees.</param>
+             <param name="longitude">The longitude in degrees.</param>
+             <search>Weather, Climate, Location, Latitude, Longitude</search>
+        </member>
+        <member name="M:DynamoSolarAnalysis.Weather.Weather.ByLocation(DynamoUnits.Location)">
+            <summary>
+             Construct a Weather object by getting data from the
+             Climate Server using a Location.
+             </summary>
+             <param name="location">The Location object.</param>
+            <search>Weather, Climate, Location</search>
+        </member>
+        <member name="M:DynamoSolarAnalysis.Weather.Weather.SetWeatherDataFromGBSREST(Autodesk.Ecotect.EcotectServices.WeatherData)">
+            <summary>
+            The wea file may not have cosine-corrected values, so after loading weather data
+            call this method to get the values from GBS server and set them
+            </summary>
+            <param name="weather"></param>
+        </member>
+        <member name="M:DynamoSolarAnalysis.Weather.Weather.Properties">
+            <summary>
+            Get the properties of the weather object.
+            </summary>
+            <returns name="station id">The weather station id.</returns>
+            <returns name="state">The weather station state.</returns>
+            <returns name="latitude">The latitude of the weather station's location in degrees.</returns>
+            <returns name="longitude">The longitude of the weather station's location in degrees.</returns>
+            <search>Weather, Station, State, Latitude, Longitude, Solar, Analysis</search>
+        </member>
+        <member name="M:DynamoSolarAnalysis.Weather.Weather.GetHourlyCloud(System.Int32,System.Int32)">
+            <summary>
+            Get the cloud coverage for a given day and hour.
+            </summary>
+            <param name="dayOfYear">Day of the year (0-364).</param>
+            <param name="hourOfDay">Hour of the day (0-23).</param>
+            <returns name="cloudiness">Cloud cover measured in percentage.</returns>
+            <search>Weather, Cloud, Hourly, Solar, Analysis</search>
+        </member>
+        <member name="M:DynamoSolarAnalysis.Weather.Weather.GetHourlyDiffuseRad(System.Int32,System.Int32)">
+            <summary>
+            Get the diffuse solar radiation for a given day and hour.
+            </summary>
+            <param name="dayOfYear">Day of the year (0-364).</param>
+            <param name="hourOfDay">Hour of the day (0-23).</param>
+            <returns name="radiation">Diffuse solar radiation in W/m².</returns>
+            <search>Weather, Radiation, Diffuse, Hourly, Solar, Analysis</search>
+        </member>
+        <member name="M:DynamoSolarAnalysis.Weather.Weather.GetHourlyDirectRad(System.Int32,System.Int32)">
+            <summary>
+            Get the direct solar radiation for a given day and hour.
+            </summary>
+            <param name="dayOfYear">Day of the year (0-364).</param>
+            <param name="hourOfDay">Hour of the day (0-23).</param>
+            <returns name="radiation">Direct solar radiation in W/m².</returns>
+            <search>Weather, Radiation, Direct, Hourly, Solar, Analysis</search>
+        </member>
+        <member name="M:DynamoSolarAnalysis.Weather.Weather.GetHourlyHumidity(System.Int32,System.Int32)">
+            <summary>
+            Get the relative humidity for a given day and hour.
+            </summary>
+            <param name="dayOfYear">Day of the year (0-364).</param>
+            <param name="hourOfDay">Hour of the day (0-23).</param>
+            <returns name="humidity">Relative humidity as a percentage.</returns>
+            <search>Weather, Humidity, Hourly, Solar, Analysis</search>
+        </member>
+        <member name="M:DynamoSolarAnalysis.Weather.Weather.GetHourlyRain(System.Int32,System.Int32)">
+            <summary>
+            Get the rainfall for a given day and hour.
+            </summary>
+            <param name="dayOfYear">Day of the year (0-364).</param>
+            <param name="hourOfDay">Hour of the day (0-23).</param>
+            <returns name="rainfall">Rainfall in milliliters.</returns>
+            <search>Weather, Rainfall, Hourly, Solar, Analysis</search>
+        </member>
+        <member name="M:DynamoSolarAnalysis.Weather.Weather.GetHourlyTemp(System.Int32,System.Int32)">
+            <summary>
+            Get the dry bulb air temperature for a given day and hour.
+            </summary>
+            <param name="dayOfYear">Day of the year (0-364).</param>
+            <param name="hourOfDay">Hour of the day (0-23).</param>
+            <returns name="temperature">Temperature in tenths of degrees Celsius.</returns>
+            <search>Weather, Temperature, Hourly, Solar, Analysis</search>
+        </member>
+        <member name="M:DynamoSolarAnalysis.Weather.Weather.GetHourlyWindDirection(System.Int32,System.Int32)">
+            <summary>
+            Get the wind direction for a given day and hour.
+            </summary>
+            <param name="dayOfYear">Day of the year (0-364).</param>
+            <param name="hourOfDay">Hour of the day (0-23).</param>
+            <returns name="direction">Wind direction in PI/8 segments (0-16).</returns>
+            <search>Weather, Wind, Direction, Hourly, Solar, Analysis</search>
+        </member>
+        <member name="M:DynamoSolarAnalysis.Weather.Weather.GetHourlyWindSpeed(System.Int32,System.Int32)">
+            <summary>
+            Get the wind speed for a given day and hour.
+            </summary>
+            <param name="dayOfYear">Day of the year (0-364).</param>
+            <param name="hourOfDay">Hour of the day (0-23).</param>
+            <returns name="speed">Wind speed in m/s.</returns>
+            <search>Weather, Wind, Speed, Hourly, Solar, Analysis</search>
+        </member>
+        <member name="T:DynamoSolarAnalysis.Analysis.SolarAnalysisData">
+            <summary>
+            An extension of the SurfaceAnalysisData class
+            which allows us to maintain a set of CalculationPoints
+            corresponding to the surfaces and sample locations
+            </summary>
+        </member>
+        <member name="M:DynamoSolarAnalysis.Analysis.TimeStudy.Still(System.DateTime,System.Boolean)">
+            <summary>
+            Create a TimeStudy representing an analysis at one moment in time.
+            </summary>
+            <param name="dateTime">The DateTime at which to conduct the analysis.</param>
+            <param name="usesDST">A boolean value indicating whether the study uses Daylight Savings Time.</param>
+            <returns>A TimeStudy object.</returns>
+        </member>
+        <member name="M:DynamoSolarAnalysis.Analysis.TimeStudy.FromStartTimeToEndTime(System.DateTime,System.DateTime,System.Boolean)">
+            <summary>
+            Create a TimeStudy representing a range from startDateTime to endDateTime.
+            </summary>
+            <param name="startDateTime">The start DateTime of the range.</param>
+            <param name="endDateTime">The end DateTime of the range.</param>
+            <param name="usesDST">A boolean value indicating whether the study uses Daylight Savings Time.</param>
+            <returns>A TimeStudy object.</returns>
+        </member>
+        <member name="M:DynamoSolarAnalysis.Analysis.TimeStudy.FromSunriseToSunset(System.DateTime,System.DateTime,System.Boolean)">
+            <summary>
+            Create a TimeStudy representing sunrise to sunset on the provided date.
+            The time specified in the DateTime object will be ignored.
+            </summary>
+            <param name="dateTime">The DateTime representing the day of the study.</param>
+            <param name="usesDST">A boolean value indicating whether the study uses Daylight Savings Time.</param>
+            <returns>A TimeStudy object.</returns>
+        </member>
+        <member name="T:DynamoSolarAnalysis.Analysis.SolarAnalysis">
+            <summary>
+            A solar analysis.
+            </summary>
+        </member>
+        <member name="M:DynamoSolarAnalysis.Analysis.SolarAnalysis.Analyze(DynamoSolarAnalysis.Weather.Weather,Autodesk.DesignScript.Geometry.Surface[],Autodesk.DesignScript.Geometry.Surface[],DynamoSolarAnalysis.Analysis.TimeStudy,System.Double,System.Double)">
+            <summary>
+            Calculate solar insolation given a weather object and sets of surfaces.
+            </summary>
+            <param name="weather">The weather object.</param>
+            <param name="analysisSurfaces">A list of surfaces on which to conduct analysis.</param>
+            <param name="shadingSurfaces">A set of shading surfaces. If no shading is desired, input an empty list.</param>
+            <param name="timeStudy">A TimeStudy object.</param>
+            <param name="spacing">A value indicating the desired spacing between calculation points.
+            Based on the size and shape of the surface, the actual spacing will deviate from, but never exceed, this value.</param>
+            <param name="projectRotation">An additional rotation, in degrees, from true north.</param>
+            <returns name="Cumulative">Cumulative insolation in Wh/m².</returns>
+            <returns name="Average">Average insolation in Wh/m².</returns>
+            <returns name="Peak">Peak insolation in Wh/m².</returns>
+            <returns name="Calculation Points">The analysis calculation points.</returns>
+            <search>Analyze, Analysis, Solar, Sun</search>
+        </member>
+    </members>
+</doc>
