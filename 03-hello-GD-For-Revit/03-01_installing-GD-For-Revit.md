@@ -2,23 +2,17 @@
 
 The generative design toolset is available to all AEC Collections subscribers starting with Revit 2021. 
 
-[https://www.autodesk.com/solutions/refinery-beta](https://www.autodesk.com/solutions/refinery-beta)
+[https://www.autodesk.com/solutions/generative-design/](https://www.autodesk.com/collections/architecture-engineering-construction/building-design?plc=AECCOL&term=1-YEAR&support=ADVANCED&quantity=1#internal-link-generative-design-in-revit)
 
 <img src="../assets/hello/install1.png" style="width:200px;"/>
 
-<img src="../assets/hello/install2.png" style="width:200px;"/>
-
 ## The Generative Design Community
 
-After signing up for the beta version, you'll be presented with an overview of the Generative Design community. From there, you can do the following:
+The Generative Design Community is part of the Dynamo community. Visit, https://forum.dynamobim.com/c/generative-design/21 to setup your account with your Autodesk credentials to gain access to:
 
-* Access detailed instructions on getting started and installation.
-* Access demo/sample files.
-* Access further learning resources.
 * Provide feedback and ask questions to the AEC Generative Design team.
 * Discuss and collaborate with fellow Generative Design community members.
 
-Any new releases of Generative Design will be available to download and install from this location too.
 
 <img src="../assets/hello/install3.png" style="width:200px;"/>
 
@@ -26,11 +20,6 @@ _Above: The Generative Design community homepage._
 
 ## Installing Generative Design for Revit and Dynamo
 
-To install the latest version of Generative Design, go to the 'Getting Started' section on Autodesk, where you'll see the latest pre-requisites for Generative Design.
+Starting with Revit 2021, Generative Design is available to all AEC Collection Subscribers and can be found in the Autodesk Desktop App or manage.autodesk.com.
 
-After making sure you have all the initial requirements, please follow the step-by-step guide in the install section.
-
-<img src="../assets/hello/install4.png" style="width:200px;"/>
-
-_Above: The Generative Design beta community Getting Started instructions page._
-
+After you have Generative Design for Revit installed, feel free to explore all of the learning resources on the [help guide](https://help.autodesk.com/view/RVT/2022/ENU/?guid=GUID-4E62D48A-783C-45F7-BD0D-F58E986E93F8).
