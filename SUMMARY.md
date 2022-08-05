@@ -45,7 +45,7 @@
   * [Visualizing Results in Generative Design](03-hello-GD-For-Revit/03-04_visualizing-results-in-GD-For-Revit.md)
   * [Refinery Toolkit](03-hello-GD-For-Revit/03-05_refinery-toolkit/README.md)
     * [Installing the Refinery Toolkit from the Dynamo Package Manager](03-hello-GD-For-Revit/03-05_refinery-toolkit/03-05-01_installing-the-refinery-toolkit-from-the-dynamo-package-manager.md)
-    * [Using the Refinery Toolkit](03-hello-GD-For-Revit\03-05_refinery-toolkit\03-05-02_using-the-refinery-toolkit.md)
+    * [Using the Refinery Toolkit ](03-hello-GD-For-Revit\03-05_refinery-toolkit\03-05-02_using-the-refinery-toolkit.md)
   * [Space Analysis for Dynamo](03-hello-GD-For-Revit/03-06_space-analysis/README.md)
     * [Installing the Space Analysis for Dynamo package from the Dynamo Package Manager](03-hello-GD-For-Revit\03-06_space-analysis\03-06-01_installing-space-analysis-from-the-dynamo-package-manager.md)
     * [Using the Space Analysis Package](03-hello-GD-For-Revit\03-06_space-analysis\03-06-02_using-the-space-analysis-package.md)
