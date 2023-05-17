@@ -4,6 +4,7 @@
   <img src="../../assets/sample/workflow31.gif">
 </p>
 
+
 ## Description
 
 This graph will generate a series of desk layouts based on a floor plate and neighborhood boundaries. Desks are placed in rows either horizontally or vertically, alongside a reserved space for amenities, such as breakout spaces or tea points. 
