@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>DynamoSolarAnalysis</name>
+  </assembly>
+  <namespaces>
+    <namespace name="DynamoSolarAnalysis.Weather">
+      <category>Analyze.Solar Analysis.Weather</category>
+    </namespace>
+    <namespace name="DynamoSolarAnalysis.Analysis">
+    	<category>Analyze.Solar Analysis.Analysis</category>
+    </namespace>
+  </namespaces>
+</doc>
