@@ -17,6 +17,10 @@ Make sure the below can be ticked for this `improvement` PR to be considered:
 - [ ] PR does NOT affect the Gitbook setup
 - [ ] PR does NOT include copyrighted external material
 
+### Release Notes
+
+(FILL ME IN) Brief description of the fix / enhancement. Use N/A to indicate that the changes in this pull request do not apply to Release Notes. **Mandatory section**
+
 ### Reviewers
 
 @ mention appropriate reviewers here with their Github username:
