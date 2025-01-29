@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Autodesk.RefineryToolkits.MassingRevit</name>
+    </assembly>
+    <members>
+        <member name="T:Autodesk.RefineryToolkits.MassingRevit.Integrate.Revit">
+            <summary>
+            Revit description.
+            </summary>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.MassingRevit.Integrate.Revit.CreateRevitFloors(Autodesk.DesignScript.Geometry.Surface[][],Revit.Elements.FloorType,System.String)">
+            <summary>
+            Creates Revit floors from building floor surfaces.
+            </summary>
+            <param name="srfList">Floor surfaces.</param>
+            <param name="floorType">Type of created Revit floors.</param>
+            <param name="levelPrefixStr">Prefix for names of created Revit levels.</param>
+            <returns name="floorElementList">Revit floor elements.</returns>
+            <search>refinery</search>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.MassingRevit.Integrate.Revit.CreateRevitMass(Autodesk.DesignScript.Geometry.Solid,Revit.Elements.Category)">
+            <summary>
+            Creates a Revit mass as a direct shape.
+            </summary>
+            <param name="BuildingSolid">The building volume.</param>
+            <param name="Category">A category for the mass.</param>
+            <returns name="RevitBuilding">Revit DirectShape element.</returns>
+            <search>refinery</search>
+        </member>
+    </members>
+</doc>

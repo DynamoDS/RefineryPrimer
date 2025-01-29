@@ -1,0 +1,173 @@
+{
+  "Uuid": "5a4e31de-51f3-49ed-bbc1-9415ac2bb15e",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Query",
+  "Description": "Returns the planar area of the input polygon(s). Not accurate for self-intersecting polys.",
+  "Name": "ꟿ Polygon.2DArea",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Copyright(c) 2017, Dimitar Venkov\r\n# @5devene, dimitar.ven@gmail.com\r\n# www.badmonkeys.net\r\n\r\ndef tolist(obj1):\r\n\tif hasattr(obj1,'__iter__'): return obj1\r\n\telse: return [obj1]\r\n\r\n#https://stackoverflow.com/questions/2432428/is-there-any-algorithm-for-calculating-area-of-a-shape-given-co-ordinates-that-d\r\n\r\npolys = tolist(IN[0])\r\nOUT = []\r\nfor p in polys:\r\n\tt1 = p.GetType().ToString()\r\n\tif 'Polygon' in t1 or 'Rectangle' in t1:\r\n\t\tpts = p.Points\r\n\telif 'PolyCurve' in t1:\r\n\t\tpts = [c.StartPoint for c in p.Curves()]\r\n\telse:\r\n\t\tarea.append(None)\r\n\t\tcontinue\r\n\ta = 0\r\n\tl1 = len(pts)\r\n\tfor i in xrange(l1):\r\n\t\tj = i + 1\r\n\t\tif j == l1:\r\n\t\t\tj = 0\r\n\t\ta += pts[i].X * pts[j].Y\r\n\t\ta -=  pts[i].Y * pts[j].X\r\n\tOUT.append(abs(a/2.0) )",
+      "VariableInputPorts": true,
+      "Id": "ae69638f722240b2a6ab2d4c382c53eb",
+      "Inputs": [
+        {
+          "Id": "547fa2000c7e489a9a86c57e29e7730e",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4b5e6169b12d494395df0e1e54b4b1a2",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "polygon",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "05a38e93d40b486eb2b8d89495235b0e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "995e197bf07349f8bb5eba6c32ddb17e",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "area",
+      "Id": "0c29e8908ffa43e88619c7d37372a4dd",
+      "Inputs": [
+        {
+          "Id": "eccb6ca8f82049e1adbbacb1c2db0b9f",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "4b5e6169b12d494395df0e1e54b4b1a2",
+      "End": "eccb6ca8f82049e1adbbacb1c2db0b9f",
+      "Id": "d2ea3fdcdc264d60aa537893277349c1"
+    },
+    {
+      "Start": "995e197bf07349f8bb5eba6c32ddb17e",
+      "End": "547fa2000c7e489a9a86c57e29e7730e",
+      "Id": "e308885656f24b02a8c41ca833558717"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 6.0204429274854547,
+      "EyeY": 29.77050210416704,
+      "EyeZ": -37.779957854491165,
+      "LookX": 0.66891933667917947,
+      "LookY": -23.809806133828516,
+      "LookZ": -22.68015078902156,
+      "UpX": 0.01648544427864539,
+      "UpY": 0.82903757255507959,
+      "UpZ": -0.55894984875120535
+    },
+    "NodeViews": [
+      {
+        "Id": "ae69638f722240b2a6ab2d4c382c53eb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 250.0,
+        "Y": 0.0
+      },
+      {
+        "Id": "05a38e93d40b486eb2b8d89495235b0e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 79.1915034358726,
+        "Y": -1.55277457717396
+      },
+      {
+        "Id": "0c29e8908ffa43e88619c7d37372a4dd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 415.309325405071,
+        "Y": -0.517591525724669
+      }
+    ],
+    "Annotations": [],
+    "X": -490.88672808225874,
+    "Y": 47.843191115807258,
+    "Zoom": 3.2320837545480292
+  }
+}

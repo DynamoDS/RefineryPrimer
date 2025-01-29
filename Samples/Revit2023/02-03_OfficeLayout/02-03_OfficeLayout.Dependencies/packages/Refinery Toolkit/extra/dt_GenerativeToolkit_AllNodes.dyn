@@ -1,0 +1,1374 @@
+{
+  "Uuid": "4e8d8f9b-66ba-4e98-9257-aadb88b62eaf",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "dt_GenerativeToolkit_AllNodes",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.RefineryToolkits.SpacePlanning.Analyze.PathFinding.CreateVisibilityGraph@Autodesk.DesignScript.Geometry.Polygon[],Autodesk.DesignScript.Geometry.Polygon[]",
+      "Id": "d7e8736654804d35b00374ba1ce1dfcb",
+      "Inputs": [
+        {
+          "Id": "4f8c142623664c78a28becb5ecb46c9b",
+          "Name": "boundary",
+          "Description": "Polygon[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "09734d72739645f28db870c6235d3f4d",
+          "Name": "obstructions",
+          "Description": "Polygon[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b9734f313cd2484391df4ab1e1ef7080",
+          "Name": "RepresentableGraph",
+          "Description": "RepresentableGraph",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "PathFinding.CreateVisibilityGraph (boundary: Polygon[], obstructions: Polygon[]): RepresentableGraph"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.RefineryToolkits.SpacePlanning.Analyze.PathFinding.ShortestPath@Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Polygon[],Autodesk.DesignScript.Geometry.Polygon[]",
+      "Id": "672498da9c0348e6acf4b5b52dec3de6",
+      "Inputs": [
+        {
+          "Id": "a419f44e5cc548cbbf5924696a859064",
+          "Name": "startPoint",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "47a555f2815f4a18b2f01c2836705159",
+          "Name": "endPoint",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "822777c44c9d44709d23e5cea03374e9",
+          "Name": "boundary",
+          "Description": "Polygon[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "35162f1318534638900cfe92b5310b4c",
+          "Name": "obstructions",
+          "Description": "Polygon[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a866474500da4d9581d9ab6810d9fa61",
+          "Name": "Path",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "af42b864fbff489484f4de9215937f89",
+          "Name": "Length",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "PathFinding.ShortestPath (startPoint: Point, endPoint: Point, boundary: Polygon[], obstructions: Polygon[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.RefineryToolkits.SpacePlanning.Explore.Colors.ContrastyColorRange@int,double,int",
+      "Id": "4702f8da299d409cb86cb938b288c374",
+      "Inputs": [
+        {
+          "Id": "714594d906ba445dafef28f90bf13c67",
+          "Name": "amount",
+          "Description": "int\nDefault value : 19 (disabled)",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "754a69336a384762b710fc87fa45ac85",
+          "Name": "brightness",
+          "Description": "double\nDefault value : 0 (disabled)",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c4c9e7be61f74a12ae052b376bce6b44",
+          "Name": "seed",
+          "Description": "int\nDefault value : 1 (disabled)",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e64a3ce1433b49c384b59a53e5aa3eac",
+          "Name": "Color[]",
+          "Description": "Color[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Colors.ContrastyColorRange (amount: int = 19, brightness: double = 0, seed: int = 1): Color[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.RefineryToolkits.SpacePlanning.Generate.AmenitySpace.Create@Autodesk.DesignScript.Geometry.Surface,double,double",
+      "Id": "99f3ea4c05654aa9b8d2fdd662a8a902",
+      "Inputs": [
+        {
+          "Id": "0c8a558b59ab4fc2916bbd40b98cd28a",
+          "Name": "surface",
+          "Description": "Surface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a9c29ca2ea52445f85a3ad080e8c084b",
+          "Name": "offset",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "88b3828023f54449b27b9396a415ac6a",
+          "Name": "depth",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "26e2c57060da47e99838d56e8e63657d",
+          "Name": "amenitySrf",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5799776f0eb04d7fa5d2e9398a620740",
+          "Name": "remainSrf",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "AmenitySpace.Create (surface: Surface, offset: double, depth: double): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.RefineryToolkits.SpacePlanning.Generate.DeskLayout.Create@Autodesk.DesignScript.Geometry.Surface,double,double,double",
+      "Id": "434c6bb581c54c50895d4d9e60b18039",
+      "Inputs": [
+        {
+          "Id": "02c931bde96644e5b114ab2cd8198add",
+          "Name": "surface",
+          "Description": "Surface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b0701c1860b54d8b8117be152120c267",
+          "Name": "deskWidth",
+          "Description": "double\nDefault value : 1400",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1f2fd79f072e45af94e09d98d7834994",
+          "Name": "deskDepth",
+          "Description": "double\nDefault value : 800",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "95038b5b2956437fbd62d9fef0eedea3",
+          "Name": "backToBack",
+          "Description": "double\nDefault value : 2200",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4a5c50073818494395d9afa4f9a1c91c",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "DeskLayout.Create (surface: Surface, deskWidth: double = 1400, deskDepth: double = 800, backToBack: double = 2200): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.RefineryToolkits.SpacePlanning.Generate.SurfaceDivision2D.DivideSurface@Autodesk.DesignScript.Geometry.Surface,double[],double[]",
+      "Id": "12f8f420519f41689740b560d92d3ea6",
+      "Inputs": [
+        {
+          "Id": "1180cb737d0f452cb4efc4cb34eb1b19",
+          "Name": "surface",
+          "Description": "Surface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "557952d3caf04df4a0bd2167678f9442",
+          "Name": "U",
+          "Description": "double[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "962d3732524f4b5b8de5278fb068f461",
+          "Name": "V",
+          "Description": "double[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "313c439434f743f188b9ddc57b7bc32e",
+          "Name": "Geometry[]",
+          "Description": "Geometry[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "SurfaceDivision2D.DivideSurface (surface: Surface, U: double[], V: double[]): Geometry[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.RefineryToolkits.SpacePlanning.Rank.ListShuffle.SeededShuffle@var[]..[],int",
+      "Id": "9a92f8f033de4646a843c95d240940e1",
+      "Inputs": [
+        {
+          "Id": "c185a53d9d174ba69c41094a59e7a8d3",
+          "Name": "list",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "073fb9c6b8f7430782e8d61271e36241",
+          "Name": "seed",
+          "Description": "int\nDefault value : 1 (disabled)",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "885c0eb893ff498b949ceb62b352419f",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "ListShuffle.SeededShuffle (list: var[]..[], seed: int = 1): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.RefineryToolkits.SpacePlanning.Analyze.Openess.FromSurface@Autodesk.DesignScript.Geometry.Surface,double,Autodesk.DesignScript.Geometry.Polygon[],Autodesk.DesignScript.Geometry.Polygon[]",
+      "Id": "b3a514dae9404447bbed244c8c10e44e",
+      "Inputs": [
+        {
+          "Id": "ab91f82d45b34ca1bc90416575273ee0",
+          "Name": "surface",
+          "Description": "Surface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9c22b7e5f8954707b6b265e4a07b2c13",
+          "Name": "searchDistance",
+          "Description": "double\nDefault value : 0",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "aede2b81d915440b8e439445b711cddc",
+          "Name": "boundary",
+          "Description": "Polygon[]\nDefault value : []",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c50dbd6544b94f9e97e998cbc6b3528f",
+          "Name": "obstructions",
+          "Description": "Polygon[]\nDefault value : []",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "622dd5cd188f492691e79f8af699bd01",
+          "Name": "double",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Openess.FromSurface (surface: Surface, searchDistance: double = 0, boundary: Polygon[] = [], obstructions: Polygon[] = []): double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.RefineryToolkits.SpacePlanning.Analyze.Adjacency.GeometricMedianOfPoints@Autodesk.DesignScript.Geometry.Point[]",
+      "Id": "2c0332d30c594058b34be060b57e72f1",
+      "Inputs": [
+        {
+          "Id": "d30eebd0c6bd4a4c96b63621131372d3",
+          "Name": "points",
+          "Description": "Point[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e2a6824f3dbd4cfaac22c8bf8db54173",
+          "Name": "Point",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Adjacency.GeometricMedianOfPoints (points: Point[]): Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.RefineryToolkits.SpacePlanning.Analyze.Visibility.IsovistFromPoint@Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Polygon[],Autodesk.DesignScript.Geometry.Polygon[]",
+      "Id": "93b6aacd63a645fd88d365a3b62f7ffb",
+      "Inputs": [
+        {
+          "Id": "d4b4ef99420a42debc2f3161ce9b6749",
+          "Name": "point",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5c20b780b048482c8fca2f68dcb51c47",
+          "Name": "boundary",
+          "Description": "Polygon[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "39a3b121ff204daa87b123ddcdcd7432",
+          "Name": "obstructions",
+          "Description": "Polygon[]\nDefault value : []",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3476486c6c3443f882aebb504d5953ee",
+          "Name": "Surface",
+          "Description": "Surface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Visibility.IsovistFromPoint (point: Point, boundary: Polygon[], obstructions: Polygon[] = []): Surface"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.RefineryToolkits.SpacePlanning.Analyze.Visibility.OfLinesFromOrigin@Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Curve[],Autodesk.DesignScript.Geometry.Polygon[],Autodesk.DesignScript.Geometry.Polygon[]",
+      "Id": "2af6f72a52674b4ea6b7649ab6e6095c",
+      "Inputs": [
+        {
+          "Id": "c725332ca7a74c548839315c53542a5f",
+          "Name": "origin",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2e0a64c1f37147cf8f36abc42db16112",
+          "Name": "targetLines",
+          "Description": "Curve[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e544004771fb4c66adb64bfb4b815485",
+          "Name": "boundary",
+          "Description": "Polygon[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4dd0d0bad9a9434aa436fa9b8eba81e9",
+          "Name": "obstructions",
+          "Description": "Polygon[]\nDefault value : []",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "96e88c961ebc40c7adbf63d2d0e4af03",
+          "Name": "Percentage visible",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f7d4ca9dcbc34c6091cd183f783d97a7",
+          "Name": "Visibility percentages",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6968a2c9c42b4bfeb62b256828fba2bc",
+          "Name": "Visible items",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Visibility.OfLinesFromOrigin (origin: Point, targetLines: Curve[], boundary: Polygon[], obstructions: Polygon[] = []): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.RefineryToolkits.SpacePlanning.Analyze.Visibility.OfPointsFromOrigin@Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point[],Autodesk.DesignScript.Geometry.Polygon[],Autodesk.DesignScript.Geometry.Polygon[]",
+      "Id": "53bf6e8b53f14050baa14bbd2d844a2d",
+      "Inputs": [
+        {
+          "Id": "b2bfefd7433a4b52ba02518ceac6ade5",
+          "Name": "origin",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "052667ef4c404b4cb467dd425c78d003",
+          "Name": "points",
+          "Description": "Point[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5fd1cae5620446af9547d44c1430ab10",
+          "Name": "boundary",
+          "Description": "Polygon[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "27c51f2ccb0e4d5faa117773cc006a48",
+          "Name": "obstructions",
+          "Description": "Polygon[]\nDefault value : []",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6c8894d7aa8e440db3d671b053600c83",
+          "Name": "Percentage visible",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e4d887de82c543089063229a82bc4dd1",
+          "Name": "Visible items",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Visibility.OfPointsFromOrigin (origin: Point, points: Point[], boundary: Polygon[], obstructions: Polygon[] = []): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.RefineryToolkits.SpacePlanning.Generate.Packing.PackCuboids@Autodesk.DesignScript.Geometry.Cuboid[],Autodesk.DesignScript.Geometry.Cuboid[]",
+      "Id": "2b4e1273dec5481499941cb9c2ee17b6",
+      "Inputs": [
+        {
+          "Id": "a897c70c42184845afacbc4eaeba7a24",
+          "Name": "items",
+          "Description": "Cuboid[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6aefc7d3dc3244908361c3fe7fd456b2",
+          "Name": "containers",
+          "Description": "Cuboid[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1fe25a81cc8c4b699d78f25d26a7ad51",
+          "Name": "Packed Items",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "549f44f017b94681b88787cb70e1770c",
+          "Name": "Packed Indices",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "19cc8a65b7c34ee6a4b030e8adb00f36",
+          "Name": "Remaining Indices",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "916ca5cf7c1845f1bb3c7f90cefa3be8",
+          "Name": "% Container Volume Packed",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dbbef0782690441385cf90ff96e42d53",
+          "Name": "% Items Volume Packed",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Packing.PackCuboids (items: Cuboid[], containers: Cuboid[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.RefineryToolkits.SpacePlanning.Generate.Packing.PackRectangles@Autodesk.DesignScript.Geometry.Rectangle[],Autodesk.DesignScript.Geometry.Rectangle[],Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePackingStrategy",
+      "Id": "28ce89e962dc413fb0bedf8520fb6881",
+      "Inputs": [
+        {
+          "Id": "0b5768bb8d384a7280fc5141e4064d8c",
+          "Name": "items",
+          "Description": "Rectangle[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "11f810ad3caf49e7ad1c26296b772920",
+          "Name": "containers",
+          "Description": "Rectangle[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c819798ddaf445da8c8681a4a8ca1946",
+          "Name": "strategy",
+          "Description": "RectanglePackingStrategy\nDefault value : Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePackingStrategy.BestAreaFits",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "21dddabb29a74830b9771291f6e401c5",
+          "Name": "Packed Items",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ab42cea4315d4edc81299f831a02f7e8",
+          "Name": "Packed Indices",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fe404b5f55cf45c2a3c06c0c9067b33e",
+          "Name": "Remaining Indices",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Packing.PackRectangles (items: Rectangle[], containers: Rectangle[], strategy: RectanglePackingStrategy = Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePackingStrategy.BestAreaFits): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.RefineryToolkits.SpacePlanning.Generate.Packing.RectangleAreaStrategy",
+      "Id": "1d1acf3f6cc84713b19d9c848f22ccef",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c6ad6c3fae324f10a6b96baedf7a4f51",
+          "Name": "RectanglePackingStrategy",
+          "Description": "RectanglePackingStrategy",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Packing.RectangleAreaStrategy: RectanglePackingStrategy"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.RefineryToolkits.SpacePlanning.Generate.Packing.RectangleLongSideStrategy",
+      "Id": "d58d5711a6284a2586bbee2f5fed469e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "78b560dfe467436fb2ecf5a5a4f72d07",
+          "Name": "RectanglePackingStrategy",
+          "Description": "RectanglePackingStrategy",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Packing.RectangleLongSideStrategy: RectanglePackingStrategy"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.RefineryToolkits.SpacePlanning.Generate.Packing.RectangleShortSideStrategy",
+      "Id": "cc84eaddf1a94c85b7977605d895ced8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ca6f5a82460d4fd7b3c92fafd951b1c2",
+          "Name": "RectanglePackingStrategy",
+          "Description": "RectanglePackingStrategy",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Packing.RectangleShortSideStrategy: RectanglePackingStrategy"
+    }
+  ],
+  "Connectors": [],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Refinery Toolkit for Space Planning",
+      "Version": "0.0.1",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "d7e8736654804d35b00374ba1ce1dfcb",
+        "672498da9c0348e6acf4b5b52dec3de6",
+        "4702f8da299d409cb86cb938b288c374",
+        "99f3ea4c05654aa9b8d2fdd662a8a902",
+        "434c6bb581c54c50895d4d9e60b18039",
+        "12f8f420519f41689740b560d92d3ea6",
+        "9a92f8f033de4646a843c95d240940e1",
+        "b3a514dae9404447bbed244c8c10e44e",
+        "2c0332d30c594058b34be060b57e72f1",
+        "93b6aacd63a645fd88d365a3b62f7ffb",
+        "2af6f72a52674b4ea6b7649ab6e6095c",
+        "53bf6e8b53f14050baa14bbd2d844a2d",
+        "2b4e1273dec5481499941cb9c2ee17b6",
+        "28ce89e962dc413fb0bedf8520fb6881",
+        "1d1acf3f6cc84713b19d9c848f22ccef",
+        "d58d5711a6284a2586bbee2f5fed469e",
+        "cc84eaddf1a94c85b7977605d895ced8"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.4.0.6186",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "PathFinding.CreateVisibilityGraph",
+        "Id": "d7e8736654804d35b00374ba1ce1dfcb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 253.0,
+        "Y": 590.5005814603943
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "PathFinding.ShortestPath",
+        "Id": "672498da9c0348e6acf4b5b52dec3de6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 253.0,
+        "Y": 708.834108613859
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Colors.ContrastyColorRange",
+        "Id": "4702f8da299d409cb86cb938b288c374",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 613.46473679729183,
+        "Y": 170.86401332564114
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "AmenitySpace.Create",
+        "Id": "99f3ea4c05654aa9b8d2fdd662a8a902",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 872.62348162138119,
+        "Y": 640.88969982896208
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "DeskLayout.Create",
+        "Id": "434c6bb581c54c50895d4d9e60b18039",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 872.62348162138119,
+        "Y": 468.78023616691371
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "SurfaceDivision2D.DivideSurface",
+        "Id": "12f8f420519f41689740b560d92d3ea6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 872.62348162138119,
+        "Y": 786.99916349101113
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "ListShuffle.SeededShuffle",
+        "Id": "9a92f8f033de4646a843c95d240940e1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1264.1884799136478,
+        "Y": 170.925655396499
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Openess.FromSurface",
+        "Id": "b3a514dae9404447bbed244c8c10e44e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 256.33138951354408,
+        "Y": 407.35018737549723
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Adjacency.GeometricMedianOfPoints",
+        "Id": "2c0332d30c594058b34be060b57e72f1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 257.03049003773452,
+        "Y": 127.2784813897984
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Visibility.IsovistFromPoint",
+        "Id": "93b6aacd63a645fd88d365a3b62f7ffb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 257.9402208036941,
+        "Y": 240.99482713475177
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Visibility.OfLinesFromOrigin",
+        "Id": "2af6f72a52674b4ea6b7649ab6e6095c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 252.36733895918985,
+        "Y": 880.038416491164
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Visibility.OfPointsFromOrigin",
+        "Id": "53bf6e8b53f14050baa14bbd2d844a2d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 255.44997378872119,
+        "Y": 1051.1246495301914
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Packing.PackCuboids",
+        "Id": "2b4e1273dec5481499941cb9c2ee17b6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 873.8428560073346,
+        "Y": 273.34602904348719
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Packing.PackRectangles",
+        "Id": "28ce89e962dc413fb0bedf8520fb6881",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 876.77363398661646,
+        "Y": 128.76098206558916
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Packing.RectangleAreaStrategy",
+        "Id": "1d1acf3f6cc84713b19d9c848f22ccef",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 871.46030766214085,
+        "Y": 1036.2594532615071
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Packing.RectangleLongSideStrategy",
+        "Id": "d58d5711a6284a2586bbee2f5fed469e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 871.46030766214085,
+        "Y": 1132.5625222956382
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Packing.RectangleShortSideStrategy",
+        "Id": "cc84eaddf1a94c85b7977605d895ced8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 871.46030766214085,
+        "Y": 1228.8655913297691
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "5570c4a74e334adcb8014b55c2eb06f3",
+        "Title": "Analyze - Actions ",
+        "Nodes": [
+          "d7e8736654804d35b00374ba1ce1dfcb",
+          "672498da9c0348e6acf4b5b52dec3de6",
+          "b3a514dae9404447bbed244c8c10e44e",
+          "2c0332d30c594058b34be060b57e72f1",
+          "93b6aacd63a645fd88d365a3b62f7ffb",
+          "2af6f72a52674b4ea6b7649ab6e6095c",
+          "53bf6e8b53f14050baa14bbd2d844a2d"
+        ],
+        "Left": 242.36733895918985,
+        "Top": 74.0784813897984,
+        "Width": 340.63266104081015,
+        "Height": 1146.446168140393,
+        "FontSize": 36.0,
+        "InitialTop": 127.2784813897984,
+        "InitialHeight": 1011.319925604863,
+        "TextblockHeight": 43.2,
+        "Background": "#FF48B9FF"
+      },
+      {
+        "Id": "8b60cea2a22c456fae43a198a0d6eb82",
+        "Title": "Explore - Actions",
+        "Nodes": [
+          "4702f8da299d409cb86cb938b288c374"
+        ],
+        "Left": 603.46473679729183,
+        "Top": 74.464013325641133,
+        "Width": 243.2,
+        "Height": 240.20000000000002,
+        "FontSize": 36.0,
+        "InitialTop": 170.86401332564114,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 86.4,
+        "Background": "#FF48B9FF"
+      },
+      {
+        "Id": "04b5b258a0dc40b3b0d2aa46b0e3f5ab",
+        "Title": "Create - Actions",
+        "Nodes": [
+          "99f3ea4c05654aa9b8d2fdd662a8a902",
+          "434c6bb581c54c50895d4d9e60b18039",
+          "12f8f420519f41689740b560d92d3ea6",
+          "28ce89e962dc413fb0bedf8520fb6881",
+          "2b4e1273dec5481499941cb9c2ee17b6"
+        ],
+        "Left": 862.62348162138119,
+        "Top": 75.560982065589158,
+        "Width": 374.01937438595343,
+        "Height": 855.238181425422,
+        "FontSize": 36.0,
+        "InitialTop": 128.76098206558916,
+        "InitialHeight": 729.43785464819507,
+        "TextblockHeight": 43.2,
+        "Background": "#FF48B9FF"
+      },
+      {
+        "Id": "5182cb5c0d8648e8a071db88eb7a7a48",
+        "Title": "Analyze - Querying",
+        "Nodes": [
+          "1d1acf3f6cc84713b19d9c848f22ccef",
+          "d58d5711a6284a2586bbee2f5fed469e",
+          "cc84eaddf1a94c85b7977605d895ced8"
+        ],
+        "Left": 861.46030766214085,
+        "Top": 939.85945326150716,
+        "Width": 256.0,
+        "Height": 381.606138068262,
+        "FontSize": 36.0,
+        "InitialTop": 1036.2594532615071,
+        "InitialHeight": 327.75687221263127,
+        "TextblockHeight": 86.4,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "f6c2a652237f4d578a26d79059c74782",
+        "Title": "Rank- Actions",
+        "Nodes": [
+          "9a92f8f033de4646a843c95d240940e1"
+        ],
+        "Left": 1254.1884799136478,
+        "Top": 74.525655396498991,
+        "Width": 210.4,
+        "Height": 214.60000000000002,
+        "FontSize": 36.0,
+        "InitialTop": 170.925655396499,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 86.4,
+        "Background": "#FF48B9FF"
+      },
+      {
+        "Id": "45e75918bf2043afafe25548af0d270c",
+        "Title": "REFINERY SPACE PLANNING TOOLKIT\r\nNode Index",
+        "Nodes": [
+          "f22effec3a4742a1b98d1dd471c7efc6",
+          "d7a8fa205b92463fb89a32edb39718fc",
+          "60e2bc6567e1477793f48a3f74563ada",
+          "a771a1d4ad2f4382a3d34ae03fd443b4",
+          "c9cb9577ec55485a95b367bfcb62e68f",
+          "73dba53733e7454699a8b2784a91c825",
+          "8b179604499a448c86cfab31f20faaa8"
+        ],
+        "Left": -950.44303474374692,
+        "Top": -90.144266151280192,
+        "Width": 632.43562714206723,
+        "Height": 595.17338313009418,
+        "FontSize": 48.0,
+        "InitialTop": 92.655733848719819,
+        "InitialHeight": 421.57338313009416,
+        "TextblockHeight": 172.8,
+        "Background": "#FFFFFFFF"
+      },
+      {
+        "Id": "36ae6563e8e04267be51e94519123cfd",
+        "Title": "",
+        "Nodes": [
+          "fb34f1f00fb54d358536b61a4c2b92ea"
+        ],
+        "Left": -313.98637682741173,
+        "Top": 91.8705154093027,
+        "Width": 313.6,
+        "Height": 146.4,
+        "FontSize": 14.0,
+        "InitialTop": 121.8705154093027,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 20.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "c093583eade64a9885778515d54f3cae",
+        "Title": "",
+        "Nodes": [
+          "7618438ed58c4cc7841eadde1498c505"
+        ],
+        "Left": -313.98637682741173,
+        "Top": 248.22359977292831,
+        "Width": 313.6,
+        "Height": 146.4,
+        "FontSize": 14.0,
+        "InitialTop": 278.22359977292831,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 20.0,
+        "Background": "#FFB9F9E1"
+      },
+      {
+        "Id": "e8f2b11086ba4e36b36ce1a7b6e7e98c",
+        "Title": "",
+        "Nodes": [
+          "020ebb464a7e44af8d7d28cc2b300128"
+        ],
+        "Left": -313.98637682741173,
+        "Top": 408.90528526744356,
+        "Width": 313.6,
+        "Height": 132.0,
+        "FontSize": 14.0,
+        "InitialTop": 438.90528526744356,
+        "InitialHeight": 140.0,
+        "TextblockHeight": 20.0,
+        "Background": "#FFFFC999"
+      },
+      {
+        "Id": "c9cb9577ec55485a95b367bfcb62e68f",
+        "Title": "DYNAMO VERSION\r\n________________________________________________________\r\n\r\n2.0.2",
+        "Nodes": [],
+        "Left": -627.20740760167973,
+        "Top": 93.817185932048915,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "fb34f1f00fb54d358536b61a4c2b92ea",
+        "Title": "Variables / Inputs\r\n_______________________________________________________\r\n\r\nGreen indicates Variables that can be altered per project and must be set accordingly before running the script.",
+        "Nodes": [],
+        "Left": -303.98637682741173,
+        "Top": 121.8705154093027,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "8b179604499a448c86cfab31f20faaa8",
+        "Title": "REQUIRED DYNAMO PACKAGES\r\n________________________________________________________\r\n\r\nRefinery Toolkit",
+        "Nodes": [],
+        "Left": -627.20740760168292,
+        "Top": 182.47374169251998,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "73dba53733e7454699a8b2784a91c825",
+        "Title": "ADDITIONAL COMMENTS\r\n________________________________________________________\r\n\r\n",
+        "Nodes": [],
+        "Left": -627.20740760168292,
+        "Top": 273.34233169078584,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "7618438ed58c4cc7841eadde1498c505",
+        "Title": "Working / Functions\r\n_______________________________________________________\r\n\r\nOrange indicates the working of the script. No changes should be made in these groups unless advised.",
+        "Nodes": [],
+        "Left": -303.98637682741173,
+        "Top": 278.22359977292831,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "f22effec3a4742a1b98d1dd471c7efc6",
+        "Title": "DYNAMO PROJECT\r\n________________________________________________________\r\n\r\nRefinery Toolkit",
+        "Nodes": [],
+        "Left": -940.44303474374692,
+        "Top": 92.655733848719819,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "d7a8fa205b92463fb89a32edb39718fc",
+        "Title": "ASSOCIATED FILE(S)      \r\n________________________________________________________\r\n\r\nN/A",
+        "Nodes": [],
+        "Left": -940.44303474374692,
+        "Top": 182.99903276975283,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "60e2bc6567e1477793f48a3f74563ada",
+        "Title": "AUTHOR(S) / CREATION DATE\r\n________________________________________________________\r\n\r\ndesigntech.io for Autodesk Refinery Team / April 2019",
+        "Nodes": [],
+        "Left": -940.44303474374692,
+        "Top": 273.34233169078584,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "a771a1d4ad2f4382a3d34ae03fd443b4",
+        "Title": "DESCRIPTION\r\n________________________________________________________\r\n\r\nThis is an index graph showing all the available nodes in the Refinery Toolkit packages. For example workflows of the nodes see the extra folder of the package.",
+        "Nodes": [],
+        "Left": -940.44303474374692,
+        "Top": 374.229116978814,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "020ebb464a7e44af8d7d28cc2b300128",
+        "Title": "Checking / Outputs\r\n_______________________________________________________\r\n\r\nRed indicates checking nodes to ensure the script has deployed correctly.",
+        "Nodes": [],
+        "Left": -303.98637682741173,
+        "Top": 438.90528526744356,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 398.10508439051119,
+    "Y": 124.09752247001384,
+    "Zoom": 0.33893335724341567
+  }
+}

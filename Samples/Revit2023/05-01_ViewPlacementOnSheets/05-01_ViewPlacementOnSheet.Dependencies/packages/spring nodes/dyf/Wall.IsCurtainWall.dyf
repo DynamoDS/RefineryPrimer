@@ -1,0 +1,164 @@
+{
+  "Uuid": "1e205815-6fb3-471a-9276-a942d3cfd25e",
+  "IsCustomNode": true,
+  "Category": "Springs.Revit.Query",
+  "Description": "Returns true if the wall is a curtain wall.",
+  "Name": "ꟿ Wall.IsCurtainWall",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Copyright(c) 2018, Dimitar Venkov\r\n# @5devene, dimitar.ven@gmail.com\r\n# www.badmonkeys.net\r\n\r\ndef tolist(x):\r\n\tif hasattr(x,'__iter__'): return x\r\n\telse : return [x]\r\n\r\nwalls = UnwrapElement(tolist(IN[0]))\r\n\r\nOUT = [getattr(w, 'CurtainGrid', None) is not None for w in walls]",
+      "VariableInputPorts": true,
+      "Id": "f0b0250ea9054598a508ff5db33a2f05",
+      "Inputs": [
+        {
+          "Id": "592c219506a2480eaf6f9b7375e5aeb6",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c163aca1cebb434e864b7d56185983c8",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "wall",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "5130dbf9285a485c8fbcae1fe2a71c35",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "0a9cc4f7abd94c87b9a9d694babf8dd2",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "bool",
+      "Id": "efd57a4f18d74134876a3ba0636d48cd",
+      "Inputs": [
+        {
+          "Id": "50a6365d988842b5b0a5c2f054a13b8c",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "c163aca1cebb434e864b7d56185983c8",
+      "End": "50a6365d988842b5b0a5c2f054a13b8c",
+      "Id": "60864264b39543c2b59acaf721bd2e56"
+    },
+    {
+      "Start": "0a9cc4f7abd94c87b9a9d694babf8dd2",
+      "End": "592c219506a2480eaf6f9b7375e5aeb6",
+      "Id": "0bdf720f71d54be7b2e87691612c1881"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 180259.15625,
+      "EyeY": 461633.3125,
+      "EyeZ": -27778.6875,
+      "LookX": -69730.8203125,
+      "LookY": -17986.240234375,
+      "LookZ": 7711.4501953125,
+      "UpX": -0.034688025712966919,
+      "UpY": 0.99939084053039551,
+      "UpZ": 0.00383610837161541
+    },
+    "NodeViews": [
+      {
+        "Id": "f0b0250ea9054598a508ff5db33a2f05",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 250.0,
+        "Y": 0.0
+      },
+      {
+        "Id": "5130dbf9285a485c8fbcae1fe2a71c35",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 104.283508910606,
+        "Y": -0.560664026401113
+      },
+      {
+        "Id": "efd57a4f18d74134876a3ba0636d48cd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 399.661565676702,
+        "Y": -0.560664026401099
+      }
+    ],
+    "Annotations": [],
+    "X": -413.209577045781,
+    "Y": 152.252833156094,
+    "Zoom": 1.78359936238281
+  }
+}

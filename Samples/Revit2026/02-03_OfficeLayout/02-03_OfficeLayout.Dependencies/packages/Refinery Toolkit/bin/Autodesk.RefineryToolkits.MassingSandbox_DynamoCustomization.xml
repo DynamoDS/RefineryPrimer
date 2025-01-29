@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>Autodesk.RefineryToolkits.MassingSandbox</name>
+  </assembly>
+  <namespaces>
+    <namespace name="Autodesk.RefineryToolkits.MassingSandbox.Analyze">
+      <category>RefineryToolkits.Massing.Analyze</category>
+    </namespace>
+    <namespace name="Autodesk.RefineryToolkits.MassingSandbox.Generate">
+      <category>RefineryToolkits.Massing.Generate</category>
+    </namespace>
+  </namespaces>
+</doc>

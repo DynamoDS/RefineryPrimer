@@ -1,0 +1,364 @@
+{
+  "Uuid": "caf9ae92-b01b-4c76-856d-e7093bfff4c9",
+  "IsCustomNode": true,
+  "Category": "Springs.Actions",
+  "Description": "Check the items that you'd like to filter in.  Unchecked items will be sent to the out list. The optional names input will override the object representation.",
+  "Name": "ꟿ List.FilterBySelection",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "#Copyright(c) 2016, Dimitar Venkov\r\n# @5devene, dimitar.ven@gmail.com\r\n\r\nimport clr\r\nclr.AddReference('System.Windows.Forms')\r\nclr.AddReference('System.Drawing')\r\nfrom System.Drawing import Point, Color, Font\r\nfrom System.Windows.Forms import *\r\n\r\ndef tolist(obj1):\r\n\tif hasattr(obj1,\"__iter__\"): return obj1\r\n\telse: return [obj1]\r\n\t\r\ndef hasInd(l1, i):\r\n\ttry: l1[i] ; return True\r\n\texcept: return False\r\n\r\nclass CheckBoxForm(Form):\r\n\tdef __init__(self, cm1):\r\n\t\tself.Text = \"SpringNodes: Filter By Selection\"\r\n\t\tself.Width = 367\r\n\t\tself.BackColor = Color.FromArgb(40,40,40)\r\n\t\tself.output1 = []\r\n\t\tself.ControlBox = False\r\n\t\tself.TopMost = True\r\n\t\tself.FormBorderStyle = FormBorderStyle.FixedDialog\r\n\t\tself.StartPosition = FormStartPosition.CenterScreen\r\n\t\t\r\n\t\tself.label = Label()\r\n\t\tself.label.Text = cm1\r\n\t\tself.label.Location = Point(5, 5)\r\n\t\tself.label.ForeColor = Color.FromArgb(234,234,234)\r\n\t\tself.label.Font = Font(\"Calibri\", 10)\r\n\t\tself.label.AutoSize = True\r\n\t\tself.Controls.Add(self.label)\r\n\r\n\t\tself.button1 = Button()\r\n\t\tself.button1.Text = 'Save Selection'\r\n\t\tself.button1.AutoSize = True\r\n\t\tself.button1.ForeColor = Color.FromArgb(234,234,234)\r\n\t\tself.button1.Font = Font(\"Calibri\", 10)\r\n\t\tself.button1.Click += self.save\r\n\t\tself.Controls.Add(self.button1)\r\n\r\n\t\tself.button2 = Button()\r\n\t\tself.button2.Text = 'Uncheck All'\r\n\t\tself.button2.AutoSize = True\r\n\t\tself.button2.ForeColor = Color.FromArgb(234,234,234)\r\n\t\tself.button2.Font = Font(\"Calibri\", 10)\r\n\t\tself.button2.Click += self.uncheckAll\r\n\t\tself.Controls.Add(self.button2)\r\n\r\n\t\tself.button3 = Button()\r\n\t\tself.button3.Text = 'Check All'\r\n\t\tself.button3.AutoSize = True\r\n\t\tself.button3.ForeColor = Color.FromArgb(234,234,234)\r\n\t\tself.button3.Font = Font(\"Calibri\", 10)\r\n\t\tself.button3.Click += self.checkAll\r\n\t\tself.Controls.Add(self.button3)\r\n\t\t\r\n\t\tself.panel1 = Panel()\r\n\t\tself.panel1.Location = Point(5, 31)\r\n\t\tself.panel1.Width = 350\r\n\t\tself.panel1.BackColor = Color.FromArgb(53,53,53)\r\n\t\tself.panel1.ForeColor = Color.FromArgb(234,234,234)\r\n\t\tself.Controls.Add(self.panel1)\r\n\t\t\r\n\tdef add_check(self, text1, y1, b1):\r\n\t\tself.check1 = CheckBox()\r\n\t\tself.check1.Text = text1\r\n\t\tself.check1.Location = Point(5, y1)\r\n\t\tself.check1.AutoSize = True\r\n\t\tself.check1.Font = Font(\"Calibri\", 10)\r\n\t\tself.check1.Checked = b1\r\n\t\tself.panel1.Controls.Add(self.check1)\r\n\t\r\n\tdef btn_adjust(self,y1):\r\n\t\tif y1 > 700:\r\n\t\t\ty1 = 700\r\n\t\t\tself.panel1.AutoScroll = True\r\n\t\t\tself.panel1.Focus()\r\n\t\tself.panel1.Height = y1\r\n\t\tself.button1.Location = Point(5,   y1 + 38)\r\n\t\tself.button2.Location = Point(170, y1 + 38)\r\n\t\tself.button3.Location = Point(275, y1 + 38)\r\n\t\tself.Height = y1 + 100\r\n\t\t\t\r\n\tdef save(self, sender, event):\r\n\t\tctrl1 = self.panel1.Controls\r\n\t\tcount1 = ctrl1.Count\r\n\t\tloc = 0\r\n\t\tself.output1 = [c.Checked == 1 for c in ctrl1]\r\n\t\t#for i in xrange(count1):\r\n\t\t#\tif ctrl1[i].Checked == 1:\r\n\t\t#\t\tself.output1.append(l1[loc])\r\n\t\t#\telse:\r\n\t\t#\t\tself.output2.append(l1[loc])\r\n\t\t#\tloc += 1\r\n\t\tself.Close()\r\n\t\r\n\tdef uncheckAll(self, sender, event):\r\n\t\tctrl1 = self.panel1.Controls\r\n\t\tcount1 = ctrl1.Count\r\n\t\tfor i in xrange(count1):\r\n\t\t\tctrl1[i].Checked = False\r\n\t\r\n\tdef checkAll(self, sender, event):\r\n\t\tctrl1 = self.panel1.Controls\r\n\t\tcount1 = ctrl1.Count\r\n\t\tfor i in xrange(count1):\r\n\t\t\tctrl1[i].Checked = True\r\n\r\nl1 = tolist(IN[0])\r\nif IN[1] == None: names = None\r\nelse: names = tolist(IN[1])\r\n\r\nform = CheckBoxForm(IN[2])\r\ny1 = 5\r\nfor i in xrange(len(l1)):\r\n\ttry:\r\n\t\tif hasInd(names, i): val1 = names[i].ToString()\r\n\t\telse: val1 = l1[i].ToString()\r\n\t\tform.add_check(val1, y1, IN[3])\r\n\t\ty1 += 25\r\n\texcept: pass\r\nform.btn_adjust(y1)\r\n\r\nApplication.Run(form)\r\nOUT = form.output1#, form.output2\r\nApplication.Exit()",
+      "VariableInputPorts": true,
+      "Id": "03382455ddfd4730a3aaa5cad2b3ce54",
+      "Inputs": [
+        {
+          "Id": "f0971ab97e244a4eb82f441f804ab889",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "574c0b26d34146c587394d39770c009c",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a4e39729d674411d81eedc03efca7fc5",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "78f6d67ad17d4e4ebe89fa32879a6d72",
+          "Name": "IN[3]",
+          "Description": "Input #3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6dc6d1312e83487394e7dc0d699590e3",
+          "Name": "IN[4]",
+          "Description": "Input #4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f924ed1eba5547378e830e1ad028df4d",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "list",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "ae79b1a258e148848bc6fe747f932d25",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "805dcb58f3b14619ad775b608d69d629",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "names",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": "null",
+        "Description": ""
+      },
+      "Id": "a19c71ba34064731bfa0111f993aecdc",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f97d5d85e55649fabe0b5edbbf9760d4",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "bool",
+      "Id": "c67ccb3e716d4b56976eabb93193c86b",
+      "Inputs": [
+        {
+          "Id": "f55dab910f8f4d0bb951b805b1abef4e",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "customMsg",
+        "TypeName": "string",
+        "TypeRank": 0,
+        "DefaultValue": "\"Choose the objects you'd like to filter:\"",
+        "Description": ""
+      },
+      "Id": "da124c1f175b426888b3b3832474ea2d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ab0ae8a8b9864e1bb7d1054d9a43d0c4",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "checkAll",
+        "TypeName": "bool",
+        "TypeRank": 0,
+        "DefaultValue": "false",
+        "Description": ""
+      },
+      "Id": "f8dce7e0227d43439b2d28d5116c8e0b",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "33a5a0b353024d13bbbc6e06a98b5134",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "reset",
+        "TypeName": "bool",
+        "TypeRank": 0,
+        "DefaultValue": "true",
+        "Description": ""
+      },
+      "Id": "9ad465d9b0ec486fae959f692ab84b41",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "61455930a81641baa71ac37d21efe700",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "f924ed1eba5547378e830e1ad028df4d",
+      "End": "f55dab910f8f4d0bb951b805b1abef4e",
+      "Id": "18aff30a3a714787b47ae8b90676bac7"
+    },
+    {
+      "Start": "805dcb58f3b14619ad775b608d69d629",
+      "End": "f0971ab97e244a4eb82f441f804ab889",
+      "Id": "cbc0fcc8604c420ca3c38ceef69cc395"
+    },
+    {
+      "Start": "f97d5d85e55649fabe0b5edbbf9760d4",
+      "End": "574c0b26d34146c587394d39770c009c",
+      "Id": "41420f2158864f78aabc1d3e78f2e368"
+    },
+    {
+      "Start": "ab0ae8a8b9864e1bb7d1054d9a43d0c4",
+      "End": "a4e39729d674411d81eedc03efca7fc5",
+      "Id": "a16434dae9474492869d1a5260d4bf05"
+    },
+    {
+      "Start": "33a5a0b353024d13bbbc6e06a98b5134",
+      "End": "78f6d67ad17d4e4ebe89fa32879a6d72",
+      "Id": "a5e9e11d3d7444a8aaef28f679b1e04b"
+    },
+    {
+      "Start": "61455930a81641baa71ac37d21efe700",
+      "End": "6dc6d1312e83487394e7dc0d699590e3",
+      "Id": "8c690ef2752c4bc081fe07c1574ed1c1"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 159863.25,
+      "EyeY": 174402.59375,
+      "EyeZ": 57137.6328125,
+      "LookX": -29756.88671875,
+      "LookY": -66413.96875,
+      "LookZ": -203711.40625,
+      "UpX": -0.013853524811565876,
+      "UpY": 0.99539613723754883,
+      "UpZ": -0.094839282333850861
+    },
+    "NodeViews": [
+      {
+        "Id": "03382455ddfd4730a3aaa5cad2b3ce54",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 246.740142128329,
+        "Y": 4.88978680750637
+      },
+      {
+        "Id": "ae79b1a258e148848bc6fe747f932d25",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 112.103380990011,
+        "Y": -22.4821036913729
+      },
+      {
+        "Id": "a19c71ba34064731bfa0111f993aecdc",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -44.6966190099891,
+        "Y": 37.0518980907398
+      },
+      {
+        "Id": "c67ccb3e716d4b56976eabb93193c86b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 400.856832683944,
+        "Y": 5.16887701005855
+      },
+      {
+        "Id": "da124c1f175b426888b3b3832474ea2d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -374.296619009989,
+        "Y": 96.5858998728525
+      },
+      {
+        "Id": "f8dce7e0227d43439b2d28d5116c8e0b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -44.6966190099891,
+        "Y": 156.119901654965
+      },
+      {
+        "Id": "9ad465d9b0ec486fae959f692ab84b41",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 4.90338099001085,
+        "Y": 215.653903437078
+      }
+    ],
+    "Annotations": [],
+    "X": 11.878195970462,
+    "Y": 62.5152890657978,
+    "Zoom": 1.63719728218044
+  }
+}
