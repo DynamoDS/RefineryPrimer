@@ -24,6 +24,4 @@ Foreach ($revitDir in $revitDirs)
       {
            & $7ZipPath a $mypath\$name $mypath\$revitDir\$dir\*
       }
-
-      
 }
