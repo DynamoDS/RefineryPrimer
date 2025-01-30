@@ -13,6 +13,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: 7Zip Files
+        uses: edgarrc/action-7z@v1
+        with:
+          args: 7z a -t7z -mx=9 build.7z ./assets/
       - name: Create Release
         id: create_release
         uses: comnoco/create-release@v2
