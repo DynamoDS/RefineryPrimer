@@ -1,0 +1,299 @@
+{
+  "Uuid": "3a9e5c1b-8e61-481e-9d3d-07053a5f4b45",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Actions",
+  "Description": "Creates a CCW or CW list of quad pairs from a rectangular nested list of points.",
+  "Name": "ꟿ Quads.ByPointMatrix",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Color": {
+        "Key": "DSCore.Color",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "DSCore.List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Math.PI": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Line.ByBestFitThroughPoints": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Plane": {
+        "Key": "Autodesk.DesignScript.Geometry.Plane",
+        "Value": "ProtoGeometry.dll"
+      },
+      "BoundingBox": {
+        "Key": "Autodesk.DesignScript.Geometry.BoundingBox",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Line": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
+      },
+      "IndexGroup": {
+        "Key": "Autodesk.DesignScript.Geometry.IndexGroup",
+        "Value": "ProtoGeometry.dll"
+      },
+      "DesignScript.Mesh": {
+        "Key": "Autodesk.DesignScript.Geometry.Mesh",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Autodesk.DesignScript.Geometry.Mesh": {
+        "Key": "Autodesk.DesignScript.Geometry.Mesh",
+        "Value": "ProtoGeometry.dll"
+      },
+      "PolyCurve": {
+        "Key": "Autodesk.DesignScript.Geometry.PolyCurve",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Math.Log": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "CoordinateSystem": {
+        "Key": "Autodesk.DesignScript.Geometry.CoordinateSystem",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Polygon": {
+        "Key": "Autodesk.DesignScript.Geometry.Polygon",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Circle": {
+        "Key": "Autodesk.DesignScript.Geometry.Circle",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Math.lo": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "List.Crea": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "points",
+        "TypeName": "var",
+        "TypeRank": 2,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "e908788f8fb04721b8f91f105e64f8bf",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ddb3186192db4d63a4c5a0a0a24d3c78",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "CCW",
+        "TypeName": "bool",
+        "TypeRank": 0,
+        "DefaultValue": "true",
+        "Description": ""
+      },
+      "Id": "dd63dc958fb843b6b1cc6d5549a638b6",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c70e7b1b87864769bb159175b9f8aeda",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "quads",
+      "Id": "de3e261cabff4f2db53be81527ed9d47",
+      "Inputs": [
+        {
+          "Id": "5dc9c84dc4ea43bab3416abce1e31aee",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "pts, ccw = IN\r\nOUT = []\r\n\r\nfor i in xrange(len(pts) - 1):\r\n\tfor j in xrange(len(pts[0]) - 1):\r\n\t\tif ccw:\r\n\t\t\tOUT.append([pts[i][j],\r\n\t\t\t\t\t\tpts[i][j+1],\r\n\t\t\t\t\t\tpts[i+1][j+1],\r\n\t\t\t\t\t\tpts[i+1][j]])\r\n\t\telse:\r\n\t\t\tOUT.append([pts[i][j],\r\n\t\t\t\t\t\tpts[i+1][j],\r\n\t\t\t\t\t\tpts[i+1][j+1],\r\n\t\t\t\t\t\tpts[i][j+1]])",
+      "VariableInputPorts": true,
+      "Id": "920c9d89b1ff4699b5fa0a4e633ab172",
+      "Inputs": [
+        {
+          "Id": "b9f0f4ed3ab949d9a30818bef703e828",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cf8640b14aa64024b2ff4fa6f463741b",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e0ead04c4dd4429494b4e790be09835d",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "ddb3186192db4d63a4c5a0a0a24d3c78",
+      "End": "b9f0f4ed3ab949d9a30818bef703e828",
+      "Id": "675c095a051b4f1883b5fb7a2b4b177b"
+    },
+    {
+      "Start": "c70e7b1b87864769bb159175b9f8aeda",
+      "End": "cf8640b14aa64024b2ff4fa6f463741b",
+      "Id": "d9ac38741b294a24839c7d04a666f449"
+    },
+    {
+      "Start": "e0ead04c4dd4429494b4e790be09835d",
+      "End": "5dc9c84dc4ea43bab3416abce1e31aee",
+      "Id": "95cf6922be464afba32fe2595ffc7e04"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.3.8810",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -362.87400610653526,
+      "EyeY": 21932.347811741609,
+      "EyeZ": -5975.5659874639905,
+      "LookX": -17.119960792168285,
+      "LookY": -21710.6227199923,
+      "LookZ": -424.2865911003064,
+      "UpX": -0.039203218219234143,
+      "UpY": 0.23344536385590553,
+      "UpZ": -0.971579317284722
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "e908788f8fb04721b8f91f105e64f8bf",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 20.7368088055181,
+        "Y": -4.11293317567264
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "dd63dc958fb843b6b1cc6d5549a638b6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 19.9337277509575,
+        "Y": 64.2094547855489
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "de3e261cabff4f2db53be81527ed9d47",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 411.13154920010368,
+        "Y": -1.7354065969034451
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "920c9d89b1ff4699b5fa0a4e633ab172",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 252.55640829274165,
+        "Y": -4.1726840482856176
+      }
+    ],
+    "Annotations": [],
+    "X": 153.3043876791202,
+    "Y": 94.3315092778099,
+    "Zoom": 1.27771698410772
+  }
+}

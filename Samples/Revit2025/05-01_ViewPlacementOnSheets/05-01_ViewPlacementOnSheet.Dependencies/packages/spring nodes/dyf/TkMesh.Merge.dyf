@@ -1,0 +1,164 @@
+{
+  "Uuid": "5af4a39b-fd1a-4b15-a9c9-50c850038a7e",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Actions",
+  "Description": "Creates a single mesh entity from a list of toolkit meshes.",
+  "Name": "ꟿ TkMesh.Merge",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "meshes = IN[0]\r\nvertices, indices = [], []\r\nlastInd = 0\r\n\r\nfor m in meshes:\r\n\tvertices.extend(m.Vertices() )\r\n\tindices.extend([i + lastInd for i in m.VertexIndicesByTri()])\r\n\tlastInd += int(m.VertexCount)\r\n\r\nOUT = m.ByVerticesAndIndices(vertices, indices)",
+      "VariableInputPorts": true,
+      "Id": "ec393d3f0c7a49a39d7ee193e6ba49d5",
+      "Inputs": [
+        {
+          "Id": "d1cf1afe45da4c37b8744473dbf65dcc",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f4cd23ae6fb54ab192ee7c267809670e",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "tkMesh",
+      "Id": "6065e59045f74a8fa6dcca9f34b55508",
+      "Inputs": [
+        {
+          "Id": "13d306bb34ba497e956e751f671d8f5f",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "tkMeshes",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "d32da005d0da4162893ffc2a56537e63",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d42f69abc38643db92d9230556f3fec0",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "f4cd23ae6fb54ab192ee7c267809670e",
+      "End": "13d306bb34ba497e956e751f671d8f5f",
+      "Id": "a04c73965a024099abccb46d443f17c7"
+    },
+    {
+      "Start": "d42f69abc38643db92d9230556f3fec0",
+      "End": "d1cf1afe45da4c37b8744473dbf65dcc",
+      "Id": "04a3ddb694d14f07866593b41cccfb0f"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "Id": "ec393d3f0c7a49a39d7ee193e6ba49d5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 250.0,
+        "Y": 0.0
+      },
+      {
+        "Id": "6065e59045f74a8fa6dcca9f34b55508",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 427.694766996758,
+        "Y": -1.68199207920333
+      },
+      {
+        "Id": "d32da005d0da4162893ffc2a56537e63",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 74.1903260731826,
+        "Y": 0.653914191755746
+      }
+    ],
+    "Annotations": [],
+    "X": 144.674181720899,
+    "Y": 200.833679064531,
+    "Zoom": 1.78359936238281
+  }
+}

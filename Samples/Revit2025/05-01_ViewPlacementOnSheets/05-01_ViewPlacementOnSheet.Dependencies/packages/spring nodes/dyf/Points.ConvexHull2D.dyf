@@ -1,0 +1,255 @@
+{
+  "Uuid": "f3262378-975c-40f8-bf70-5867e7837b75",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Create",
+  "Description": "Computes the XY convex hull of a given set of points based on the monotone chain algorithm.",
+  "Name": "ꟿ Points.ConvexHull2D",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Plane": {
+        "Key": "Autodesk.DesignScript.Geometry.Plane",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Rectangle": {
+        "Key": "Autodesk.DesignScript.Geometry.Rectangle",
+        "Value": "ProtoGeometry.dll"
+      },
+      "List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "ConvexHull": {
+        "Key": "Tessellation.ConvexHull",
+        "Value": "Tessellation.dll"
+      },
+      "PolyCurve": {
+        "Key": "Autodesk.DesignScript.Geometry.PolyCurve",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Solid": {
+        "Key": "Autodesk.DesignScript.Geometry.Solid",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Line": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Category": {
+        "Key": "Revit.Elements.Category",
+        "Value": "RevitNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import Point\r\n\r\nfrom itertools import chain\r\n\r\npts = sorted( (p.X, p.Y) for p in IN[0])\r\nelev = IN[1]\r\n\r\ndef pCrs(o, a, b):\r\n\treturn (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])\r\n\r\npLen = len(pts)\r\nif pLen < 4 : OUT = pts\r\nelse:\r\n\tlower, upper = [], []\r\n\t\r\n\tfor i in xrange(pLen):\r\n\t\tj = pLen - 1 - i\r\n\t\twhile len(lower) >= 2 and pCrs(lower[-2], lower[-1], pts[i]) <= 0.000001:\r\n\t\t\tlower.pop()\r\n\t\tlower.append(pts[i])\r\n\t\twhile len(upper) >= 2 and pCrs(upper[-2], upper[-1], pts[j]) <= 0.000001:\r\n\t\t\tupper.pop()\r\n\t\tupper.append(pts[j])\r\n\t\r\n\tlower.pop()\r\n\tupper.pop()\r\n\t\r\n\tOUT = [Point.ByCoordinates(p[0], p[1], elev) for p in chain(lower, upper) ]",
+      "VariableInputPorts": true,
+      "Id": "59b13e3d697544b9b83b3cc04fddfe77",
+      "Inputs": [
+        {
+          "Id": "bcbb408beb754d1497d8e333054f5c7f",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "de51c48cf6ec495eae9de37cb5007539",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ae52412e4d6b403f995dcb871c691047",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "points",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "061ebfe0b2334f86b4d85b125cd57a70",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "93b542c0800946d681c7057164ee4962",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "points",
+      "Id": "cbdb1810f7234503aa78edbeaca4b18f",
+      "Inputs": [
+        {
+          "Id": "a8dc9126b3624c278341a32f40192861",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "elevation",
+        "TypeName": "double",
+        "TypeRank": 0,
+        "DefaultValue": "0",
+        "Description": ""
+      },
+      "Id": "69da2bf8f1294e7b8de33710e4151a2e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b346a37d17ab4c5596eecf0659c6362e",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "ae52412e4d6b403f995dcb871c691047",
+      "End": "a8dc9126b3624c278341a32f40192861",
+      "Id": "53d3046f5fc94770b28e1df5f880a17f"
+    },
+    {
+      "Start": "93b542c0800946d681c7057164ee4962",
+      "End": "bcbb408beb754d1497d8e333054f5c7f",
+      "Id": "a255b192f38e46899349749c78089f80"
+    },
+    {
+      "Start": "b346a37d17ab4c5596eecf0659c6362e",
+      "End": "de51c48cf6ec495eae9de37cb5007539",
+      "Id": "d54faf9697894beba35fe18840e1e4c4"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -79326.34375,
+      "EyeY": 20342.064453125,
+      "EyeZ": 52911.08203125,
+      "LookX": -2.2903738021850586,
+      "LookY": -6085.09619140625,
+      "LookZ": -12.590136528015137,
+      "UpX": -0.17474208772182465,
+      "UpY": 0.21643956005573273,
+      "UpZ": -0.960530698299408
+    },
+    "NodeViews": [
+      {
+        "Id": "59b13e3d697544b9b83b3cc04fddfe77",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 154.700792331351,
+        "Y": -0.0642867484903604
+      },
+      {
+        "Id": "061ebfe0b2334f86b4d85b125cd57a70",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 0.421933698798682,
+        "Y": -0.421933698798654
+      },
+      {
+        "Id": "cbdb1810f7234503aa78edbeaca4b18f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 298.702763576848,
+        "Y": -0.972440894578028
+      },
+      {
+        "Id": "69da2bf8f1294e7b8de33710e4151a2e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -64.6713244716982,
+        "Y": 58.8179002894765
+      }
+    ],
+    "Annotations": [],
+    "X": 139.971711667902,
+    "Y": 219.671776615113,
+    "Zoom": 2.37004060791359
+  }
+}

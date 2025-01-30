@@ -1,0 +1,212 @@
+{
+  "Uuid": "1988f7f7-f763-4bc8-898f-4f516a70c5a2",
+  "IsCustomNode": true,
+  "Category": "Springs.Revit.Actions",
+  "Description": "Converts a revit colour decimal value to its Dynamo equivalent.",
+  "Name": "ꟿ Decimal.ToColor",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Color": {
+        "Key": "DSCore.Color",
+        "Value": "DSCoreNodes.dll"
+      },
+      "String": {
+        "Key": "DSCore.String",
+        "Value": "DSCoreNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "r = x % 256;\nx1 = ((x - r)/256);\ng = x1 % 256;\nb = (x1 - g)/256;\nc = Color.ByARGB(255,r,g,b);",
+      "Id": "872edf86c81245e1b1bcdcffb196ac64",
+      "Inputs": [
+        {
+          "Id": "1031aa8b20ca4e2f8a6d347b87b10315",
+          "Name": "x",
+          "Description": "x",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c22bc5f1002b4356975f86272d296a5c",
+          "Name": "",
+          "Description": "r",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6881b4a5ae7e4b8183884ea978919237",
+          "Name": "",
+          "Description": "x1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "46ea2df1ef67403eb30cd5e7c6f28b77",
+          "Name": "",
+          "Description": "g",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e43ced1e28af46d5a14f33cb402ff631",
+          "Name": "",
+          "Description": "b",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3406c32538404d37b2d9e0b52cd84862",
+          "Name": "",
+          "Description": "c",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "decimal",
+        "TypeName": "var",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "b107c22092ab4f978edc16e964dd19b9",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "436b000bb0fe4859adab7d0f20ae98e7",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "color",
+      "Id": "2e087ca51fae4298a35e39af97fd54fe",
+      "Inputs": [
+        {
+          "Id": "db088207218f42ab848f39d853953175",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "3406c32538404d37b2d9e0b52cd84862",
+      "End": "db088207218f42ab848f39d853953175",
+      "Id": "d2f6f6adaaa9479393616dfcf8b3cbc3"
+    },
+    {
+      "Start": "436b000bb0fe4859adab7d0f20ae98e7",
+      "End": "1031aa8b20ca4e2f8a6d347b87b10315",
+      "Id": "13a8ed175f2e4e1b9d0c6e93a38c1005"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 55.528221130371094,
+      "EyeY": 195.78382873535156,
+      "EyeZ": -51.284481048583984,
+      "LookX": -0.858967661857605,
+      "LookY": -87.94305419921875,
+      "LookZ": -60.708198547363281,
+      "UpX": -0.0096487114205956459,
+      "UpY": 0.73135370016098022,
+      "UpZ": -0.68193012475967407
+    },
+    "NodeViews": [
+      {
+        "Id": "872edf86c81245e1b1bcdcffb196ac64",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 227.558290936142,
+        "Y": -153.852763645381
+      },
+      {
+        "Id": "b107c22092ab4f978edc16e964dd19b9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 82.9911360910862,
+        "Y": -157.87172842291
+      },
+      {
+        "Id": "2e087ca51fae4298a35e39af97fd54fe",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 537.80223342098,
+        "Y": -88.3371993056848
+      }
+    ],
+    "Annotations": [],
+    "X": 62.4224057588192,
+    "Y": 386.227169134356,
+    "Zoom": 1.74331992875497
+  }
+}

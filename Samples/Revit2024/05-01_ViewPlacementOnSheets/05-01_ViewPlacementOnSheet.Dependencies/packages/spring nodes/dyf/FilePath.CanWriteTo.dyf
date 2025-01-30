@@ -1,0 +1,176 @@
+{
+  "Uuid": "97ac7d89-b083-43a6-836c-ece1b3299e65",
+  "IsCustomNode": true,
+  "Category": "Springs.FileSystem.Query",
+  "Description": "Checks if the user and application has write access to the specified path's directory",
+  "Name": "ꟿ FilePath.CanWriteTo",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Category": {
+        "Key": "Revit.Elements.Category",
+        "Value": "RevitNodes.dll"
+      },
+      "Element": {
+        "Key": "Revit.Elements.Element",
+        "Value": "RevitNodes.dll"
+      },
+      "String": {
+        "Key": "DSCore.String",
+        "Value": "DSCoreNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "from System.IO import File, Path, Directory, FileOptions\r\n\r\ndef tolist(x):\r\n    if hasattr(x,'__iter__'): return x\r\n    return [x]\r\n\r\ndef getDirectory(p):\r\n\tif File.Exists(p):\r\n\t\treturn Path.GetDirectoryName(p)\r\n\tif Directory.Exists:\r\n\t\treturn p\r\n\treturn\r\n\r\ndef canWriteToDir(d):\r\n\ttry:\r\n\t\twith File.Create(Path.Combine(d, \"__test_file_name__\"),\r\n\t\t1, FileOptions.DeleteOnClose) as f:\r\n\t\t\treturn True\r\n\texcept:\r\n\t\treturn False\r\n\r\npaths = tolist(IN[0])\r\nOUT = []\r\nfor p in paths:\r\n\td = getDirectory(p)\r\n\tif d is not None:\r\n\t\tOUT.append(canWriteToDir(d))\r\n\telse:\r\n\t\tOUT.append(False)",
+      "VariableInputPorts": true,
+      "Id": "9321d86397a242f5b61b369e087e8da1",
+      "Inputs": [
+        {
+          "Id": "f7e40532d0004c7fb1475e901d16cc9d",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a6cd3f37dcc943aeba3a8a7556198009",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "path",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "639f0024eb3b4c318f389c08ad8f146f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "182f70dc4d9b46adb562ed7345a83453",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "bool",
+      "Id": "7781dedc90bc45c1bea68e0f8216a1a8",
+      "Inputs": [
+        {
+          "Id": "e147e42b31094491a4916c48d19aa429",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "a6cd3f37dcc943aeba3a8a7556198009",
+      "End": "e147e42b31094491a4916c48d19aa429",
+      "Id": "e07b8c03eac04e1dae36503a7224fa0b"
+    },
+    {
+      "Start": "182f70dc4d9b46adb562ed7345a83453",
+      "End": "f7e40532d0004c7fb1475e901d16cc9d",
+      "Id": "fe4f942a3c5f4b38a7f1636fedcbb822"
+    }
+  ],
+  "Dependencies": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.3.8810",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 57670.224914984865,
+      "EyeY": 41915.349947059847,
+      "EyeZ": -69944.532347077533,
+      "LookX": -208921.54749080617,
+      "LookY": -50961.717136645551,
+      "LookZ": 47506.5775345173,
+      "UpX": -0.017017985163769657,
+      "UpY": 0.99984769515639238,
+      "UpZ": 0.0038697120587788264
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "FilePath.CanWriteTo",
+        "Id": "9321d86397a242f5b61b369e087e8da1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 249.25274499455907,
+        "Y": -0.74725500544093393
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "639f0024eb3b4c318f389c08ad8f146f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 63.0,
+        "Y": 1.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "7781dedc90bc45c1bea68e0f8216a1a8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 430.12077976059811,
+        "Y": -1.4945100108818963
+      }
+    ],
+    "Annotations": [],
+    "X": 87.376817764578789,
+    "Y": 212.71738388228943,
+    "Zoom": 1.33823125
+  }
+}

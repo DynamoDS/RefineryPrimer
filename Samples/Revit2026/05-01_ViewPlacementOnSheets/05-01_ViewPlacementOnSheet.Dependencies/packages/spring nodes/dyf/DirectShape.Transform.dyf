@@ -1,0 +1,239 @@
+{
+  "Uuid": "12780047-c2ae-4b94-bb43-6408c7dbd8ef",
+  "IsCustomNode": true,
+  "Category": "Springs.Revit.Actions",
+  "Description": "Transforms the typed DirectShape element from the identity coordinate system to the input coordinate system(s), in a manner similar to Dynamo's Geometry.Transform node.",
+  "Name": "ꟿ DirectShape.Transform",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Rectangle": {
+        "Key": "Autodesk.DesignScript.Geometry.Rectangle",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Sphere": {
+        "Key": "Autodesk.DesignScript.Geometry.Sphere",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Cuboid": {
+        "Key": "Autodesk.DesignScript.Geometry.Cuboid",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Plane.XY": {
+        "Key": "Autodesk.DesignScript.Geometry.Plane",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Plane": {
+        "Key": "Autodesk.DesignScript.Geometry.Plane",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "#Copyright(c) 2016, Dimitar Venkov\r\n# @5devene, dimitar.ven@gmail.com\r\n\r\nimport clr\r\n\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\napp = DocumentManager.Instance.CurrentUIApplication.Application\r\nisRvt2017 = int(app.VersionNumber) > 2016\r\n\r\nclr.AddReference(\"RevitNodes\")\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\nclr.ImportExtensions(Revit.GeometryConversion)\r\n\r\nclr.AddReference(\"RevitAPI\")\r\nfrom Autodesk.Revit.DB import *\r\n\r\ndef tolist(obj1):\r\n\tif hasattr(obj1,\"__iter__\"): return obj1\r\n\telse: return [obj1]\r\n\r\nunits = doc.GetUnits().GetFormatOptions(UnitType.UT_Length).DisplayUnits\r\nfactor = 1 / UnitUtils.ConvertToInternalUnits(1,units)\r\n\r\ndef cs2Trans(cs, scale = factor):\r\n\ttf1 = Transform(Transform.Identity)\r\n\ttf1.Origin = cs.Origin.ToXyz(True)\r\n\ttf1.Basis[0] = cs.XAxis.ToXyz(True)\r\n\ttf1.Basis[1] = cs.YAxis.ToXyz(True)\r\n\ttf1.Basis[2] = cs.ZAxis.ToXyz(True)\r\n\treturn tf1.ScaleBasis(scale)\r\n\r\ndsTyped = UnwrapElement(IN[0])\r\ncs1 = tolist(IN[1])\r\n\r\ntransforms = map(cs2Trans, cs1)\r\ncat = dsTyped.Category\r\nTypeId = dsTyped.GetTypeId()\r\nLib_TypeId = TypeId.ToString()\r\ndsLib = DirectShapeLibrary.GetDirectShapeLibrary(doc)\r\nif not dsLib.ContainsType(Lib_TypeId): dsLib.AddDefinitionType(Lib_TypeId, TypeId)\r\n\r\ndef TransformDS(transf):\r\n\ttry:\r\n\t\tif isRvt2017:\r\n\t\t\tds1 = DirectShape.CreateElementInstance(doc, TypeId, cat.Id, Lib_TypeId, transf)\r\n\t\telse:\r\n\t\t\tds1 = DirectShape.CreateElementInstance(doc, TypeId, cat.Id, Lib_TypeId, transf, \"Dynamo\",\"spring nodes\")\r\n\t\tds1.SetTypeId(TypeId)\r\n\t\treturn ds1.ToDSType(False)\r\n\texcept: return None\r\n\t\r\nTransactionManager.Instance.EnsureInTransaction(doc)\r\nOUT = map(TransformDS, transforms)\r\nTransactionManager.Instance.TransactionTaskDone()",
+      "VariableInputPorts": true,
+      "Id": "8e8f02c480f04d4ba41d7794c28705d4",
+      "Inputs": [
+        {
+          "Id": "f6baea48d92649419d385212e4bad33a",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "33eee31c25104416b0c495f3dde60be4",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4e92f377f70a49f6a8e3546031ae22c5",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "directShape",
+        "TypeName": "var",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "b3522dbfd73c43aaba7ae47a5cc15bfe",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "6ca2e8bfa7024829a83779a8d8fd6d57",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "coordSystem",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "5a074050f54e47c099425d7ed48c3283",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "0844d8dc672d42b88d7cd399636f3021",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "directShape",
+      "Id": "6e27f05ef10740dc97aa1feeca987a8f",
+      "Inputs": [
+        {
+          "Id": "bc349bfb940e43858f161b632d8d1381",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "4e92f377f70a49f6a8e3546031ae22c5",
+      "End": "bc349bfb940e43858f161b632d8d1381",
+      "Id": "a804cbd5d63c4907aa26d5de894120ae"
+    },
+    {
+      "Start": "6ca2e8bfa7024829a83779a8d8fd6d57",
+      "End": "f6baea48d92649419d385212e4bad33a",
+      "Id": "c1a12b54dc1d463d960a2d48582c38af"
+    },
+    {
+      "Start": "0844d8dc672d42b88d7cd399636f3021",
+      "End": "33eee31c25104416b0c495f3dde60be4",
+      "Id": "5a41f1ac2acd45b3903737581e6a9259"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -3569.702273115603,
+      "EyeY": 5016.9938326458223,
+      "EyeZ": 9846.0606026523747,
+      "LookX": 6168.707111185965,
+      "LookY": -4948.4214682036018,
+      "LookZ": -7842.02202553403,
+      "UpX": 0.14957125401442764,
+      "UpY": 0.97029572627599681,
+      "UpZ": -0.19014374442270809
+    },
+    "NodeViews": [
+      {
+        "Id": "8e8f02c480f04d4ba41d7794c28705d4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 187.158521920979,
+        "Y": 0.0
+      },
+      {
+        "Id": "b3522dbfd73c43aaba7ae47a5cc15bfe",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 0.0,
+        "Y": 0.0
+      },
+      {
+        "Id": "5a074050f54e47c099425d7ed48c3283",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -10.1582513734547,
+        "Y": 59.9368903321445
+      },
+      {
+        "Id": "6e27f05ef10740dc97aa1feeca987a8f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 346.6,
+        "Y": 0.800000000000011
+      }
+    ],
+    "Annotations": [],
+    "X": -247.302565242704,
+    "Y": 206.004863419799,
+    "Zoom": 2.26511812821295
+  }
+}

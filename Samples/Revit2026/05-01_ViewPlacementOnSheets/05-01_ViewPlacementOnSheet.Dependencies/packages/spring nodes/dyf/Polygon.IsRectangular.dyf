@@ -1,0 +1,299 @@
+{
+  "Uuid": "9336e01f-c9ab-475b-ad3c-927b537d84a0",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Query",
+  "Description": "Determines if a polygon (or a polycurve) is rectangular or square. If you want to differenciate between square and rectangular polys, use the XOR output.",
+  "Name": "ꟿ Polygon.IsRectangular",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Copyright(c) 2017, Dimitar Venkov\r\n# @5devene, dimitar.ven@gmail.com\r\n# www.badmonkeys.net\r\n\r\nfrom itertools import imap\r\n\r\ndef tolist(obj1):\r\n\tif hasattr(obj1,'__iter__'): return obj1\r\n\telse: return [obj1]\r\n\r\ndef isSq(pts):\r\n\tdef _dist(a, b):\r\n\t\treturn round( (a.X - b.X)**2 + (a.Y - b.Y)**2  + (a.Z - b.Z)**2, 5)\r\n\tisSquare, isRect = False, False\r\n\tln1 = len(pts)\r\n\tif len(pts) != 4:\r\n\t\treturn isSquare, isRect, isSquare ^ isRect\r\n\ta, b, c, d = pts\r\n\tab, ac, bc, bd = map(_dist, (a,a,b,b), (b,c,c,d) )\r\n\tif ac == bd:\r\n\t\tisSquare = ab == bc\r\n\t\tisRect = True if isSquare else ab == _dist(c, d)\r\n\treturn isSquare, isRect, isSquare ^ isRect\r\n\r\ndef getPts(p):\r\n\treturn p.Points if 'Polygon' in p.GetType().ToString() else [c.StartPoint for c in p.Curves()]\r\n\r\npolys = tolist(IN[0])\r\nOUT = zip(*map(isSq, imap(getPts, polys) ) )",
+      "VariableInputPorts": true,
+      "Id": "48b98f7af0e74acb8cdd0bc5412a935a",
+      "Inputs": [
+        {
+          "Id": "21ca2ab7ae2d43798545baee1346472e",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bb0a51e112d34a4e8f9d81bdfc67c40e",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "poly",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "4fb00944bc1f44e3b958261e77c7922d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1b06b97e2cf149adb03523d2e3ea8d1b",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "isSquare",
+      "Id": "3bb5b8d405a34d848e2b22846b6234f8",
+      "Inputs": [
+        {
+          "Id": "fd201b71ebc14ec9994a98f0bc3d5551",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "isRectangle",
+      "Id": "fa4ee49631654156b0122d8b7fd1334e",
+      "Inputs": [
+        {
+          "Id": "5d59cab1b6f84faba7624806a567b420",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "r[0];\nr[1];\nr[2];",
+      "Id": "200c42f1d1824142aad9db20fa748eb4",
+      "Inputs": [
+        {
+          "Id": "97b0d9a338c84102ab0090b1b413f124",
+          "Name": "r",
+          "Description": "r",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a448713aae85426fa49afc150103454a",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "04fcdce103534f03b43304bde7b259e7",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "42be5ede9b214d09bc0284a9345ec561",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "XOR",
+      "Id": "c81c977e86c34abf8959002be33cbac8",
+      "Inputs": [
+        {
+          "Id": "db1be709fc284ef1a84c7bb340c92c61",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "bb0a51e112d34a4e8f9d81bdfc67c40e",
+      "End": "97b0d9a338c84102ab0090b1b413f124",
+      "Id": "55b9d4ead29c4a1688cc86f9a9428259"
+    },
+    {
+      "Start": "1b06b97e2cf149adb03523d2e3ea8d1b",
+      "End": "21ca2ab7ae2d43798545baee1346472e",
+      "Id": "3bff1cbfcb1647a7aafd87778ee83224"
+    },
+    {
+      "Start": "a448713aae85426fa49afc150103454a",
+      "End": "fd201b71ebc14ec9994a98f0bc3d5551",
+      "Id": "abc299957ae943c19498cd1388ebc14a"
+    },
+    {
+      "Start": "04fcdce103534f03b43304bde7b259e7",
+      "End": "5d59cab1b6f84faba7624806a567b420",
+      "Id": "f66ceba49fdd4047a542e5d2c889843a"
+    },
+    {
+      "Start": "42be5ede9b214d09bc0284a9345ec561",
+      "End": "db1be709fc284ef1a84c7bb340c92c61",
+      "Id": "4bf28f4cb3e04efebe74a7edac50af7a"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 5.5631122095352925,
+      "EyeY": 9.2432637523953236,
+      "EyeZ": -45.796186931464973,
+      "LookX": 1.3800816869170571,
+      "LookY": -9.3062320957412119,
+      "LookZ": -15.195781594754443,
+      "UpX": 0.029446923115138076,
+      "UpY": 0.94551857559935792,
+      "UpZ": -0.32423371495835007
+    },
+    "NodeViews": [
+      {
+        "Id": "48b98f7af0e74acb8cdd0bc5412a935a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 167.574744308977,
+        "Y": 0.0
+      },
+      {
+        "Id": "4fb00944bc1f44e3b958261e77c7922d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 4.21933698798659,
+        "Y": 0.421933698798668
+      },
+      {
+        "Id": "3bb5b8d405a34d848e2b22846b6234f8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 514.631816167111,
+        "Y": -1.66775486829023
+      },
+      {
+        "Id": "fa4ee49631654156b0122d8b7fd1334e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 515.12720038156,
+        "Y": 55.8073561589767
+      },
+      {
+        "Id": "200c42f1d1824142aad9db20fa748eb4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 317.157003970051,
+        "Y": 3.94478496498252
+      },
+      {
+        "Id": "c81c977e86c34abf8959002be33cbac8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 515.931538704735,
+        "Y": 114.238681349525
+      }
+    ],
+    "Annotations": [],
+    "X": 155.826823410382,
+    "Y": 245.990139026745,
+    "Zoom": 2.49400635960208
+  }
+}

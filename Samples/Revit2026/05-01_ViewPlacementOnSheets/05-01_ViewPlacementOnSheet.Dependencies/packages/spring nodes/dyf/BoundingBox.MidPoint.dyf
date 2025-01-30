@@ -1,0 +1,202 @@
+{
+  "Uuid": "74b59bed-610f-4fc1-a3b7-8b69fd6fb160",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Query",
+  "Description": "Fetches the mid point of the bounding box.",
+  "Name": "ꟿ BoundingBox.MidPoint",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Plane": {
+        "Key": "Autodesk.DesignScript.Geometry.Plane",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      },
+      "BoundingBox": {
+        "Key": "Autodesk.DesignScript.Geometry.BoundingBox",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "a = bb1.MinPoint;\nb = bb1.MaxPoint;\npt = Point.ByCoordinates(\n  (a.X + b.X) / 2,\n  (a.Y + b.Y) / 2,\n  (a.Z + b.Z) / 2);",
+      "Id": "b34fc205a81248afa27afb28b6679f91",
+      "Inputs": [
+        {
+          "Id": "3b95917e485c41bfa21dbbe503c593af",
+          "Name": "bb1",
+          "Description": "bb1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "308864bfba464ad589bc04d5bacc6687",
+          "Name": "",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1641b62766434853886670bff4081737",
+          "Name": "",
+          "Description": "b",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "64ebcb297b964deaafdb97b3616ee611",
+          "Name": "",
+          "Description": "pt",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "point",
+      "Id": "7a3088350ca5404f81118e8b4053c99a",
+      "Inputs": [
+        {
+          "Id": "4458d07ddf424db3a6abeaf1a09f9cd2",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "boundingBox",
+        "TypeName": "Autodesk.DesignScript.Geometry.BoundingBox",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "a6b9731d45da427e9e1e4cfa445f7154",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "45bd6702e5f54631857efc158d31e4ad",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "64ebcb297b964deaafdb97b3616ee611",
+      "End": "4458d07ddf424db3a6abeaf1a09f9cd2",
+      "Id": "df01a99c29654ae99cd6bd2a15a53de7"
+    },
+    {
+      "Start": "45bd6702e5f54631857efc158d31e4ad",
+      "End": "3b95917e485c41bfa21dbbe503c593af",
+      "Id": "d354a496277f4a1f8052f207a39e1c52"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 5.1678590774536133,
+      "EyeY": 17.185787200927734,
+      "EyeZ": 11.863565444946289,
+      "LookX": -0.16785901784896851,
+      "LookY": -17.185787200927734,
+      "LookZ": -11.863565444946289,
+      "UpX": -0.0096487114205956459,
+      "UpY": 0.73135370016098022,
+      "UpZ": -0.68193012475967407
+    },
+    "NodeViews": [
+      {
+        "Id": "b34fc205a81248afa27afb28b6679f91",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 289.503519128146,
+        "Y": -1.85239653609521
+      },
+      {
+        "Id": "7a3088350ca5404f81118e8b4053c99a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 589.463402498948,
+        "Y": 29.5160411555558
+      },
+      {
+        "Id": "a6b9731d45da427e9e1e4cfa445f7154",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 48.1892543960068,
+        "Y": -8.30844816367064
+      }
+    ],
+    "Annotations": [],
+    "X": -51.5249644173419,
+    "Y": 298.339342348057,
+    "Zoom": 1.79400970938055
+  }
+}

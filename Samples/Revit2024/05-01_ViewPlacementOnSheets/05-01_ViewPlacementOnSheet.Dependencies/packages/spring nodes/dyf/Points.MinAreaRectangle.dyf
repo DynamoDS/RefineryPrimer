@@ -1,0 +1,382 @@
+{
+  "Uuid": "d2aa533e-de28-4383-93ed-0ebbbdfb2596",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Query",
+  "Description": "Computes the minimum area rectangle in xy space for a set of points using a linear time algorithm",
+  "Name": "ꟿ Points.MinAreaRectangle",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Plane": {
+        "Key": "Autodesk.DesignScript.Geometry.Plane",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Line": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
+      },
+      "DSCore.List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Circle": {
+        "Key": "Autodesk.DesignScript.Geometry.Circle",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "x[0];\nx[1];\nx[2];",
+      "Id": "fbe0df27759c4ea599fa4f0fc3734a75",
+      "Inputs": [
+        {
+          "Id": "c7bf5aa29a774a17a235b65979e78e1e",
+          "Name": "x",
+          "Description": "x",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0fd8699adfa34ca685ed04dcac1a8050",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ac00834a03bb43c685aa4e0107d18268",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8df8d31072bf48f89c448811e733b6b6",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import Point, Vector, Rectangle\r\nfrom math import sqrt\r\nfrom operator import itemgetter\r\n\r\n_pts, elev = IN\r\n\r\ndef hull(_pts):\r\n\tdef pCrs(o, a, b):\r\n\t\treturn (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])\r\n\r\n\tpts = sorted( (p.X, p.Y) for p in _pts)\r\n\tpLen = len(pts)\r\n\tif pLen < 4 : return pts\r\n\telse:\r\n\t\tlower, upper = [], []\r\n\t\t\r\n\t\tfor i in xrange(pLen):\r\n\t\t\tj = pLen - 1 - i\r\n\t\t\twhile len(lower) >= 2 and pCrs(lower[-2], lower[-1], pts[i]) <= 0.000001:\r\n\t\t\t\tlower.pop()\r\n\t\t\tlower.append(pts[i])\r\n\t\t\twhile len(upper) >= 2 and pCrs(upper[-2], upper[-1], pts[j]) <= 0.000001:\r\n\t\t\t\tupper.pop()\r\n\t\t\tupper.append(pts[j])\r\n\t\t\r\n\t\tlower.pop()\r\n\t\tupper.pop()\r\n\t\tlower.extend(upper)\r\n\t\treturn lower\r\n\r\n# http://eprints.cs.vt.edu/archive/00000869/01/CS81017-R.pdf\r\n\r\ndef scalar(k, i, j):\r\n\treturn k[0] * (i[1] - j[1]) + k[1] * (j[0] - i[0]) + j[1] * i[0] - i[1] * j[0]\r\n\r\ndef pDist(a, b, sqrt=sqrt):\r\n\treturn sqrt( (a[0] - b[0])**2 + (a[1] - b[1])**2)\r\n\r\ndef linDist(a, b, p):\r\n\tline_dist = pDist(a, b)\r\n\tif line_dist == 0:\r\n\t\treturn a, pDist(p, a)\r\n\t\r\n\tt = ( (p[0] - a[0]) * (b[0] - a[0]) + (p[1] - a[1]) * (b[1] - a[1]) ) / line_dist**2\r\n\t\r\n\tcp = ( (b[0] - a[0]) * t + a[0], (b[1] - a[1]) * t + a[1])\r\n\td1 = pDist(p, cp)\r\n\treturn cp, d1\r\n\r\ndef indexer(end, position=0, start=0, step=1):\r\n\ti = position - step\r\n\twhile True:\r\n\t\ti += step\r\n\t\tif i >= end:\r\n\t\t\ti = start\r\n\t\tyield i\r\n\r\ndef highSearch(pts, iPt, jPt, j, it1=None, k=None, m=None,\r\n\t\t\t   indexer=indexer, scalar=scalar):\r\n\tif it1 is None:\r\n\t\tit1 = indexer(len(pts), j)\r\n\t\tk, m = it1.next(), it1.next()\r\n\tSa = scalar(pts[k], iPt, jPt)\r\n\tSb = scalar(pts[m], iPt, jPt)\r\n\twhile Sa < Sb:\r\n\t\tk, m = m, it1.next()\r\n\t\tSa = scalar(pts[k], iPt, jPt)\r\n\t\tSb = scalar(pts[m], iPt, jPt)\r\n\treturn k, m\r\n\r\npts = hull(_pts)\r\n\r\nOUT = []\r\nhighPts, closePts, areas, dists = [], [], [], []\r\nlnPts = len(pts)\r\n\r\nit1 = indexer(lnPts, 2)\r\nk, m = it1.next(), it1.next()\r\n\r\nfor i in xrange(lnPts):\r\n\tj = (i + 1) % lnPts\r\n\r\n\tk, m = highSearch(pts, pts[i], pts[j], j+1, it1, k, m)\r\n\t\r\n\thighPts.append(pts[k])\r\n\tcp, l1 = linDist(pts[i], pts[j], pts[k])\r\n\tclosePts.append(cp)\r\n\t\r\n\tn, _ = highSearch(pts, pts[k], cp, j)\r\n\t_, l2a = linDist(pts[k], cp, pts[n])\r\n\t\t\r\n\tq, _ = highSearch(pts, cp, pts[k], m)\r\n\t_, l2b = linDist(cp, pts[k], pts[q])\r\n\t\r\n\tareas.append(l1 * (l2a + l2b) )\r\n\tdists.append( (l2a, l2b) )\r\n\r\nix, _ = min(enumerate(areas), key=itemgetter(1) )\r\nd1, d2 = dists[ix]\r\n_a, _b = closePts[ix], highPts[ix]\r\na = Point.ByCoordinates(_a[0], _a[1], elev)\r\nb = Point.ByCoordinates(_b[0], _b[1], elev)\r\n\r\n_v = Vector.ByTwoPoints(a, b)\r\nv = Vector.ByCoordinates(-_v.Y, _v.X, 0).Normalized()\r\np1 = a.Add(v.Scale(d2) )\r\np2 = a.Subtract(v.Scale(d1) )\r\np3 = b.Subtract(v.Scale(d1) )\r\np4 = b.Add(v.Scale(d2) )\r\n\r\nOUT = (Rectangle.ByCornerPoints(p1, p2, p3, p4), \r\n90 - v.AngleAboutAxis(Vector.XAxis(), Vector.ZAxis() ),\r\n[Point.ByCoordinates(p[0], p[1], elev) for p in pts])",
+      "VariableInputPorts": true,
+      "Id": "eb7629059a954f5e9a1c1dc34fdb05c9",
+      "Inputs": [
+        {
+          "Id": "865379829b4b48758576344d56e4b3fe",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "78aefb07b777482086bc52581e78fe9c",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5801042511e843a7a02defb1f610723e",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "points",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "cead9564255247a4931492af32935b33",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1413aa0cbad3461fa558386976c71099",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "elevation",
+        "TypeName": "double",
+        "TypeRank": 0,
+        "DefaultValue": "0",
+        "Description": ""
+      },
+      "Id": "ce003ae7dd734a24b46159bad7d55c37",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a41c662d15b04717bf2443c5961159cb",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "rectangle",
+      "Id": "8d3e374a932b4f84964902d81c9fe87c",
+      "Inputs": [
+        {
+          "Id": "dc40cf669b654570b02dda61a620721a",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "angle",
+      "Id": "b3ccc33ea91c4e4b88b45c03898e01c6",
+      "Inputs": [
+        {
+          "Id": "21246966b10c454390b606f109e0a9ab",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "hullPoints",
+      "Id": "a83607147faf4d75812e0bef3341351e",
+      "Inputs": [
+        {
+          "Id": "e60ed053e2df4da4828e5848419e2b1d",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "0fd8699adfa34ca685ed04dcac1a8050",
+      "End": "dc40cf669b654570b02dda61a620721a",
+      "Id": "1a43f8de869540359640c1fa0aa9f463"
+    },
+    {
+      "Start": "ac00834a03bb43c685aa4e0107d18268",
+      "End": "21246966b10c454390b606f109e0a9ab",
+      "Id": "c6b32df2090c419e85c6263b21bfc66a"
+    },
+    {
+      "Start": "8df8d31072bf48f89c448811e733b6b6",
+      "End": "e60ed053e2df4da4828e5848419e2b1d",
+      "Id": "a444d68c55604598a3fad8d368c3899e"
+    },
+    {
+      "Start": "5801042511e843a7a02defb1f610723e",
+      "End": "c7bf5aa29a774a17a235b65979e78e1e",
+      "Id": "74a8fca9f843421987fe6db91b40b1e6"
+    },
+    {
+      "Start": "1413aa0cbad3461fa558386976c71099",
+      "End": "865379829b4b48758576344d56e4b3fe",
+      "Id": "2daa8ccc322340de857c51f793fd6106"
+    },
+    {
+      "Start": "a41c662d15b04717bf2443c5961159cb",
+      "End": "78aefb07b777482086bc52581e78fe9c",
+      "Id": "c0b10753926a44dbbe76b4141882c2e4"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 120629.421875,
+      "EyeY": 71818.0625,
+      "EyeZ": 10268.4296875,
+      "LookX": -6212.56201171875,
+      "LookY": -56672.3984375,
+      "LookZ": -37893.77734375,
+      "UpX": -0.11136675626039505,
+      "UpY": 0.72537434101104736,
+      "UpZ": -0.679286003112793
+    },
+    "NodeViews": [
+      {
+        "Id": "fbe0df27759c4ea599fa4f0fc3734a75",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 403.511359084488,
+        "Y": 2.58485604730785
+      },
+      {
+        "Id": "eb7629059a954f5e9a1c1dc34fdb05c9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 247.082677316266,
+        "Y": 1.45866134186707
+      },
+      {
+        "Id": "cead9564255247a4931492af32935b33",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -42.787399361434,
+        "Y": 2.43110223644511
+      },
+      {
+        "Id": "ce003ae7dd734a24b46159bad7d55c37",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -42.3011789141451,
+        "Y": 60.5354376988198
+      },
+      {
+        "Id": "8d3e374a932b4f84964902d81c9fe87c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 546.631438956482,
+        "Y": -4.86220447289023
+      },
+      {
+        "Id": "b3ccc33ea91c4e4b88b45c03898e01c6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 549.062541192927,
+        "Y": 54.2145718840625
+      },
+      {
+        "Id": "a83607147faf4d75812e0bef3341351e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 549.625537997169,
+        "Y": 115.05708945634
+      }
+    ],
+    "Annotations": [],
+    "X": -105.741616684786,
+    "Y": 150.661209535187,
+    "Zoom": 2.05668026833428
+  }
+}

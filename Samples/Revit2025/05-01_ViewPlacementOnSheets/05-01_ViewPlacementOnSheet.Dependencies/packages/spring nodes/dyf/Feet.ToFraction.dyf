@@ -1,0 +1,452 @@
+{
+  "Uuid": "3784aae0-dd38-4cfd-ac57-a87ebe885a81",
+  "IsCustomNode": true,
+  "Category": "Springs.Units.Actions",
+  "Description": "Converts a decimal foot value to a fractional foot/inch string.",
+  "Name": "ꟿ Feet.ToFraction",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "String": {
+        "Key": "DSCore.String",
+        "Value": "DSCoreNodes.dll"
+      },
+      "List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "List.Scan": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Math.Round": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "DSCore.List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "sign = _x < 0 ? \"-\" : \"\";\nx = Math.Abs(_x);\nfrac = Math.Pow(2, 1..8);\nft1 = Math.Floor(x);\nin1 = (x - ft1) * 12;\nin2 = Math.Floor(in1);\nfr1 = (in1 - in2) * frac;\nfr2 = Math.Round(fr1);\nv1 = Math.Abs(fr1 - fr2);\nind1 = DSCore.List.FirstIndexOf(v1, DSCore.List.MinimumItem(v1));\nfr3 = (__Apply(f1,fr2[ind1]) + \"/\" + __Apply(f1,frac[ind1]) )[0];\nt0 = String.Substring(fr3, 0, 1) == String.Substring(fr3, -1, 1);\nin3 = t0 ? (in2 + 1) : in2;\nft1s = __Apply(f1,ft1)[0] + \"'\";\nin3s = __Apply(f1,in3)[0];\nft1str = ft1s == \"0'\" ? \"\" : ft1s;\nt1 = in3 == 0;\nt2 = fr3 == \"0/2\";\nin2s = t1 ? \"\" : in3s;\nfr3s = t2 || t0 ? \"\" : fr3;\nmid = t1 || t2 || t0 ? \"\" : \" \";\nend = t1 && t2 ? \"\" : \"\\\"\";\nsign+ft1str+in2s+mid+fr3s+end;",
+      "Id": "5073567261ee4677a5659ec271d29642",
+      "Inputs": [
+        {
+          "Id": "fa47f33b810b457e990e1ff28d7f65f4",
+          "Name": "_x",
+          "Description": "_x",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5142769b630546bcbfd17ec6efe673e3",
+          "Name": "f1",
+          "Description": "f1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "cf7c009eadf14326a82132d683867ab6",
+          "Name": "",
+          "Description": "sign",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "86a2dbdf6d6741ac920b526c011ce18f",
+          "Name": "",
+          "Description": "x",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a0280069feff4f5fa28a290ba718175c",
+          "Name": "",
+          "Description": "frac",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "aafc53594fbc4edf88533845582a1e7f",
+          "Name": "",
+          "Description": "ft1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c1a8f714182a4d1ba72de07d402f33f7",
+          "Name": "",
+          "Description": "in1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "96d431f46475405e92b6de4dcc3758d7",
+          "Name": "",
+          "Description": "in2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4135839e72854050aa17f01fd3e6701e",
+          "Name": "",
+          "Description": "fr1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6871b6fd352b4790837294690c996c25",
+          "Name": "",
+          "Description": "fr2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2fa9cd9c0b0b4509ae46be383e54aee8",
+          "Name": "",
+          "Description": "v1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e2471cca0f1346ea8f479064b0a080cf",
+          "Name": "",
+          "Description": "ind1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "34133f3ec7954c1a93f6fc44b8fe3f72",
+          "Name": "",
+          "Description": "fr3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e7c821c9e3fa4c0eab4232707af3ddae",
+          "Name": "",
+          "Description": "t0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2cc4dbe0e0784ec89ef823dc6f95b0ff",
+          "Name": "",
+          "Description": "in3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "92f364bb41554b1cabc03c5a3fdba7ec",
+          "Name": "",
+          "Description": "ft1s",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "175a1ab933cc47c78f32b095d9a748cc",
+          "Name": "",
+          "Description": "in3s",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d020f2ca3369453ab8b686a3ffe4bbdc",
+          "Name": "",
+          "Description": "ft1str",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0b6d8d29587b41d9ba3bcbf9b2b38ddc",
+          "Name": "",
+          "Description": "t1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "841f6e91be16422d845c83cc1f456ade",
+          "Name": "",
+          "Description": "t2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "65e4477f9cf249a08be7166b99180a65",
+          "Name": "",
+          "Description": "in2s",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "daec2181b5f842ed9a2864c89070d3a0",
+          "Name": "",
+          "Description": "fr3s",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "64a65f6accae44adbe99e246aea6b74d",
+          "Name": "",
+          "Description": "mid",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5602b9b9135445aba6e661b138a1b880",
+          "Name": "",
+          "Description": "end",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d133154536db4593ade8cc859792a86c",
+          "Name": "",
+          "Description": "Value of expression at line 23",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "number",
+        "TypeName": "var",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "2981bc6865814f9aab0d24cd9cde62a9",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4903b678193b4aac95362877c8586a5a",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "fraction(str)",
+      "Id": "73b5f31beca34ac0b2818e6f98c2f79c",
+      "Inputs": [
+        {
+          "Id": "3f85c7afd5d646809456b09b2c9ef6c8",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "7138be89-af7b-4232-b938-e63a5fe78240",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "5155fd01401349809789bb488b8ccc2e",
+      "Inputs": [
+        {
+          "Id": "bb85e87506f9479c8cd2ec712810d83b",
+          "Name": "num",
+          "Description": "var[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "68eb5fad5c2943edb583c1e913d49053",
+          "Name": "digits",
+          "Description": "int\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8226da6aeeee48b1aa36219621c7577c",
+          "Name": "str",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Converts the input number(s) to string. You can optionally limit the number of digits."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "d133154536db4593ade8cc859792a86c",
+      "End": "3f85c7afd5d646809456b09b2c9ef6c8",
+      "Id": "de7163d1008c41b58b20e5474562d3f9"
+    },
+    {
+      "Start": "4903b678193b4aac95362877c8586a5a",
+      "End": "fa47f33b810b457e990e1ff28d7f65f4",
+      "Id": "67385ea36fe340c491e961741660af51"
+    },
+    {
+      "Start": "8226da6aeeee48b1aa36219621c7577c",
+      "End": "5142769b630546bcbfd17ec6efe673e3",
+      "Id": "bcbf1535969240bfa2aba025f9496692"
+    }
+  ],
+  "Dependencies": [
+    "7138be89-af7b-4232-b938-e63a5fe78240"
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "Id": "5073567261ee4677a5659ec271d29642",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 238.04337970268125,
+        "Y": 3.7879873709811136
+      },
+      {
+        "Id": "2981bc6865814f9aab0d24cd9cde62a9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 0.0,
+        "Y": 0.0
+      },
+      {
+        "Id": "73b5f31beca34ac0b2818e6f98c2f79c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 917.602102242351,
+        "Y": 141.325324179753
+      },
+      {
+        "Id": "5155fd01401349809789bb488b8ccc2e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Number.ToString",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -9.2510336831441577,
+        "Y": 67.004356253383122
+      }
+    ],
+    "Annotations": [],
+    "X": -59.509651068459107,
+    "Y": 127.23005849319748,
+    "Zoom": 0.89957718347605209
+  }
+}
