@@ -1,0 +1,244 @@
+{
+  "Uuid": "46725b07-bc8f-477a-8d22-394a758d8474",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Actions",
+  "Description": "Returns a 2d rectangle from a bounding box",
+  "Name": "ꟿ BoundingBox.2dRectangle",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Rectangle": {
+        "Key": "Autodesk.DesignScript.Geometry.Rectangle",
+        "Value": "ProtoGeometry.dll"
+      },
+      "BoundingBox": {
+        "Key": "Autodesk.DesignScript.Geometry.BoundingBox",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "a = bb.MinPoint;\nb = bb.MaxPoint;\nr1 = Rectangle.ByCornerPoints(\n  Point.ByCoordinates(a.X, a.Y, z),\n  Point.ByCoordinates(b.X, a.Y, z),\n  Point.ByCoordinates(b.X, b.Y, z),\n  Point.ByCoordinates(a.X, b.Y, z) );",
+      "Id": "b3243a10648548348e603d45302b6a20",
+      "Inputs": [
+        {
+          "Id": "c599ef63d3484a6185e6271e2843410d",
+          "Name": "bb",
+          "Description": "bb",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f8b07f4a4cff4ffab46610e68df853e9",
+          "Name": "z",
+          "Description": "z",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0f250b485ee140cbbc30aaa19501f9ef",
+          "Name": "",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "519507ebfd804191984ef05d38db531d",
+          "Name": "",
+          "Description": "b",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "11a884f52acb40f991a96369ab008d12",
+          "Name": "",
+          "Description": "r1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "boundingBox",
+        "TypeName": "Autodesk.DesignScript.Geometry.BoundingBox",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "d7b99e2445d54e599f4eb3fb5d048925",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c5fb8a2701d240238082f1b0d323ae5c",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "rectangle",
+      "Id": "6b15a757e25940e981ab21d88039f197",
+      "Inputs": [
+        {
+          "Id": "3d3b85b02b5d4f5abff885d7e8e2f1c6",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "elevation",
+        "TypeName": "double",
+        "TypeRank": 0,
+        "DefaultValue": "0",
+        "Description": ""
+      },
+      "Id": "30b9d2adda274c47a8fa9eca41cdee57",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "dc9c93de70fa4aecbc2951d1afb046ed",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "11a884f52acb40f991a96369ab008d12",
+      "End": "3d3b85b02b5d4f5abff885d7e8e2f1c6",
+      "Id": "a1aa418870354519a0c3af5345be72a1"
+    },
+    {
+      "Start": "c5fb8a2701d240238082f1b0d323ae5c",
+      "End": "c599ef63d3484a6185e6271e2843410d",
+      "Id": "c7ed999016c4486faa34c06545aa832a"
+    },
+    {
+      "Start": "dc9c93de70fa4aecbc2951d1afb046ed",
+      "End": "f8b07f4a4cff4ffab46610e68df853e9",
+      "Id": "59bd0fedca574ef18f5f1d9082177f9f"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 211.04200744628906,
+      "EyeY": -2.0405149459838867,
+      "EyeZ": 84.570404052734375,
+      "LookX": -117.35028076171875,
+      "LookY": 26.65519905090332,
+      "LookZ": -20.036640167236328,
+      "UpX": 0.41658949851989746,
+      "UpY": 0.90630781650543213,
+      "UpZ": 0.071129389107227325
+    },
+    "NodeViews": [
+      {
+        "Id": "b3243a10648548348e603d45302b6a20",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 165.244387662587,
+        "Y": -3.37033837138628
+      },
+      {
+        "Id": "d7b99e2445d54e599f4eb3fb5d048925",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -81.5206653016336,
+        "Y": -6.4698940715582
+      },
+      {
+        "Id": "6b15a757e25940e981ab21d88039f197",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 551.948048691573,
+        "Y": 27.1735551005445
+      },
+      {
+        "Id": "30b9d2adda274c47a8fa9eca41cdee57",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -80.9067459492877,
+        "Y": 50.4085021363236
+      }
+    ],
+    "Annotations": [],
+    "X": 360.325702158816,
+    "Y": 150.1710871246,
+    "Zoom": 1.545620359375
+  }
+}

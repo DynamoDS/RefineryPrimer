@@ -1,0 +1,544 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Autodesk.RefineryToolkits.SpacePlanning</name>
+    </assembly>
+    <members>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.Adjacency.GeometricMedianOfPoints(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point})">
+            <summary>
+            Returns the geometric median point of a list of points, 
+            which is the point minimizing the sum of distances to all supplied points.
+            </summary>
+            <param name="points">List of points to compute geometric median for.</param>
+            <returns>Point that minimizes the distance to all other points</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.Adjacency.CommonPointByPoints(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Int32)">
+            <summary>
+            returns the geometric median of a list of points bigger than 4 and smaller than 3
+            </summary>
+            <returns>geometric median of a list of points bigger than 4 and smaller than 3</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.Adjacency.DistanceSum(Autodesk.DesignScript.Geometry.Point,System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Int32)">
+            <summary>
+            Calculates the sum of Euclidean Distances 
+            </summary>
+            <param name="point"></param>
+            <param name="points"></param>
+            <param name="n"></param>
+            <returns>sum of Euclidean Distances</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.Adjacency.VertexAtAngle(Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point)">
+            <summary>
+            If points are triangle with angle bigger than or equal to 120, return vertex at that angle
+            </summary>
+            <param name="A"></param>
+            <param name="B"></param>
+            <param name="C"></param>
+            <returns>Vertex at angle than or equal to 120</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.Adjacency.LengthSquare(Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point)">
+            <summary>
+            returns square of distance b/w two points 
+            </summary>
+            <param name="pt1"></param>
+            <param name="pt2"></param>
+            <returns>distance b/w two points</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.Adjacency.FermatPoint(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point})">
+            <summary>
+            finds the common point of a triangle with angles bigger than 120
+            </summary>
+            <param name="points"></param>
+            <returns>common point of a triangle with angles bigger than 120</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.Adjacency.ConvexHull(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point})">
+            <summary>
+            returns the Convex Hull of a list of points
+            </summary>
+            <param name="points"></param>
+            <returns>Convex Hull</returns>
+        </member>
+        <member name="T:Autodesk.RefineryToolkits.SpacePlanning.Analyze.BaseGraph">
+            <summary>
+            Representation of a Graph.
+            </summary>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.BaseGraph.IsVisibilityGraph">
+            <summary>
+            Checks if the input is a Visibility or Base graph.
+            </summary>
+            <param name="graph">Graph</param>
+            <returns>Visibility Graph</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.BaseGraph.ByBoundaryAndInternalPolygons(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Polygon},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Polygon})">
+            <summary>
+            Creates a Graph by a set of boundary and internal polygons.
+            </summary>
+            <param name="boundaries">Boundary polygons</param>
+            <param name="obstacles">Internal polygons</param>
+            <returns name="baseGraph">Base graph</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.BaseGraph.ByPolygons(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Polygon})">
+            <summary>
+            Creates a graph by a set of closed polygons
+            </summary>
+            <param name="polygons">Polygons</param>
+            <returns name="baseGraph">Base graph</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.BaseGraph.ByLines(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Line})">
+            <summary>
+            Creates a new Graph by a set of lines.
+            </summary>
+            <param name="lines">Lines</param>
+            <returns name="baseGraph">Base Graph</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.BaseGraph.ToString">
+            <summary>
+            Override of ToString Method
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.BaseGraph.Tessellate(Autodesk.DesignScript.Interfaces.IRenderPackage,Autodesk.DesignScript.Interfaces.TessellationParameters)">
+            <summary>
+            Customizing the render of Graph
+            </summary>
+            <param name="package"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.Openess.FromSurface(Autodesk.DesignScript.Geometry.Surface,System.Double,System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Polygon},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Polygon})">
+            <summary>
+            Calculates an openess percentage based on how enclosed a Surface is. 
+            </summary>
+            <param name="surface">Surface of object to check</param>
+            <param name="searchDistance">(optional) Only takes into account objects that are this given max distance away.</param>
+            <param name="boundary">(optional) Polygon(s) enclosing all obstacle Polygons</param>
+            <param name="obstructions">(optional) List of Polygons representing obstacles that might enclose the object to check</param>
+            <returns>Percentage of openess, from 0 being totally enclosed and 100 being totally open.</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.PathFinding.ShortestPath(Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point,System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Polygon},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Polygon})">
+            <summary>
+            Returns the shortest path between two points, in 2D only. 
+            Works by computing a visibility graph and then finding shortest path on graph with Dijkstra's algorithm.
+            </summary>
+            <param name="startPoint">Start point</param>
+            <param name="endPoint">Destination point</param>
+            <param name="boundary">Polygon(s) enclosing all obstacle Polygons</param>
+            <param name="obstructions">List of Polygons representing internal obstructions</param>
+            <returns name="path">Set of lines representing the shortest path</returns>
+            <returns name="length">Length of path.</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.PathFinding.CreateVisibilityGraph(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Polygon},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Polygon})">
+            <summary>
+            Returns a VisibilityGraph which is used as input for ShortestPath
+            </summary>
+            <returns name = "visGraph">VisibilityGraph for use in ShortestPath</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.PathFinding.LinesFromGraph(Autodesk.RefineryToolkits.SpacePlanning.Graphs.Graph)">
+            <summary>
+            Returns the input graph as a list of lines
+            </summary>
+            <returns name="lines">List of lines representing the graph.</returns>
+        </member>
+        <member name="T:Autodesk.RefineryToolkits.SpacePlanning.Analyze.RepresentableGraph">
+            <summary>
+            Representation of a Graph.
+            </summary>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.RepresentableGraph.ByBaseGraph(Autodesk.RefineryToolkits.SpacePlanning.Analyze.BaseGraph,System.Boolean)">
+            <summary>
+            Computes the Visibility Graph from a base graph using Lee's algorithm.
+            </summary>
+            <param name="baseGraph">Base graph</param>
+            <param name="reduced">Reduced graph returns edges where its vertices belong to different 
+            polygons and at least one is not convex/concave to its polygon.</param>
+            <returns name="visGraph">Visibility graph</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.RepresentableGraph.ConnectGraphs(System.Collections.Generic.List{Autodesk.RefineryToolkits.SpacePlanning.Analyze.RepresentableGraph},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Line})">
+            <summary>
+            Merges a set of Visibility Graphs by connecting them through intersecting lines.
+            In order to work better, lines end points should intersect VG polygon's edges.
+            </summary>
+            <param name="visibilityGraphs"></param>
+            <param name="lines">Connecting lines</param>
+            <returns name="visGraph">Connected VisibilityGraph</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.RepresentableGraph.Connectivity(Autodesk.RefineryToolkits.SpacePlanning.Analyze.RepresentableGraph,System.Collections.Generic.List{DSCore.Color},System.Collections.Generic.List{System.Double})">
+            <summary>
+            Connectivity factors represent the number of connections an edge has 
+            on a range from 0 to 1.
+            </summary>
+            <param name="visGraph">Visibility Graph</param>
+            <param name="colours">List of colours to include on the displayed range</param>
+            <param name="indices">List of values between 0.0 and 1.0 to define the limits of colours</param>
+            <returns name="visGraph">Visibility Graph</returns>
+            <returns name="factors">Connectivity factors by edge on graph</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.RepresentableGraph.TessellateVisibilityGraph(Autodesk.DesignScript.Interfaces.IRenderPackage,Autodesk.DesignScript.Interfaces.TessellationParameters)">
+            <summary>
+            Customizing the render of Graph
+            </summary>
+            <param name="package"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.Visibility.OfPointsFromOrigin(Autodesk.DesignScript.Geometry.Point,System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Point},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Polygon},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Polygon})">
+            <summary>
+            Calculates the visibility of a set of points, from a given origin point.
+            Returns the percentage of points that are visible and the visible points themselves.
+            </summary>
+            <param name="origin">Origin point to measure visibility from.</param>
+            <param name="points">The points to measure visibility to.</param>
+            <param name="boundary">Polygon(s) enclosing all obstacle Polygons</param>
+            <param name="obstructions">List of Polygons representing internal obstructions</param>
+            <returns name="Percentage visible">The percentage of target Points that are visible from the origin point.</returns>
+            <returns name="Visible items">The specific Points that are visible from the origin point.</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.Visibility.OfLinesFromOrigin(Autodesk.DesignScript.Geometry.Point,System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Curve},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Polygon},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Polygon})">
+            <summary>
+            Calculates the visibility of target Lines from a given point based on a 360 degree view range.
+            Returns the percentage of 360 view from origin point that target lines are visible from and the target lines that are visible.
+            </summary>
+            <param name="boundary">Polygon(s) enclosing all internal Polygons</param>
+            <param name="obstructions">List of Polygons representing internal obstructions</param>
+            <param name="targetLines">Line segments representing the views to outside</param>
+            <param name="origin">Origin point to measure from</param>
+            <returns name="Percentage visible">The total percentage of 360 view from origin point that target lines are visible from.</returns>
+            <returns name="Visibility percentages">The percentage of 360 view from origin point that each target lines are visible from.</returns>
+            <returns name="Visible items">The specific Lines that are visible from the origin point.</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Analyze.Visibility.IsovistFromPoint(Autodesk.DesignScript.Geometry.Point,System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Polygon},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Polygon})">
+            <summary>
+            Returns a surface representing the area visible from the given point.
+            </summary>
+            <param name="point">Origin or observation point</param>
+            <param name="boundary">Polygon(s) enclosing all internal Polygons</param>
+            <param name="obstructions">List of Polygons representing internal obstructions</param>
+            <returns name="Isovist">Surface representing the isovist area, meaning the area visible from observation point.</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Explore.Colors.ContrastyColorRange(System.Int32,System.Double,System.Int32)">
+            <summary>
+            Creates a given amount of distinct colors which can be used in a color range
+            </summary>
+            <param name="amount">Number of colors (max. 19)</param>
+            <param name="brightness">Correction factor from 0-1</param>
+            <param name="seed">Seed</param>
+            <returns>distinct colors</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.AmenitySpace.Create(Autodesk.DesignScript.Geometry.Surface,System.Double,System.Double)">
+            <summary>
+            Creates an amentiy space on a given surface, returning both the amenity space and the remaining space within the original surface
+            </summary>
+            <param name="surface">Surface to create Amenity Spaces on</param>
+            <param name="offset">How much to offset to surface perimeter with</param>
+            <param name="depth"></param> 
+            <returns>amenity surface and remaining surface</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.CuboidPacker.PackMultipleContainersWithStats(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Cuboid},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Cuboid})">
+            <summary>
+            Packs the supplied items across the supplied containers and returns packing results and expanded statistics about packing performance.
+            </summary>
+            <param name="items">The items to pack.</param>
+            <param name="containers">The containers to pack into.</param>
+            <returns>Packing results and expanded statistics about packing performance.</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.CuboidPacker.CuboidFromItem(CromulentBisgetti.ContainerPacking.Entities.Item)">
+            <summary>
+            Creates a DesignScript cuboid from a bin-packing Item.
+            </summary>
+            <param name="item">The item to create Cuboid from.</param>
+            <returns>The cuboid that represents the Item.</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.CuboidPacker.ItemFromCuboid(Autodesk.DesignScript.Geometry.Cuboid,System.Int32)">
+            <summary>
+            Creates a bin-packing compatible Item from a DesignScript cuboid.
+            </summary>
+            <param name="cuboid">The cuboid to create item from.</param>
+            <param name="id">The id of the new item.</param>
+            <returns>The bin-packing compatible item.</returns>
+        </member>
+        <member name="T:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker">
+            <summary>
+            Represents an algorithm capable of packing rectangles inside an outer rectangle.
+            </summary>
+        </member>
+        <member name="P:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.PackedItems">
+            <summary>
+            The rectangles that have been packed into the bin.
+            </summary>
+        </member>
+        <member name="P:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.RemainingIndices">
+            <summary>
+            The rectangles that could not be packed and are outside the bin.
+            </summary>
+        </member>
+        <member name="P:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.PackedIndices">
+            <summary>
+            The indices of the rectangles that have been packed from the input list of rectangles.
+            </summary>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.#ctor">
+            <summary>
+            Construct an empty 2D bin packer
+            </summary>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.#ctor(Autodesk.DesignScript.Geometry.Rectangle)">
+            <summary>
+            Construct a 2D bin packer for the specified bin
+            </summary>
+            <param name="bin">The rectangle to use as a bin when packing.</param>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.PackOneContainer(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Rectangle},Autodesk.DesignScript.Geometry.Rectangle)">
+            <summary>
+            Pack a list of supplied rectangles into the supplied bin.
+            </summary>
+            <param name="items">The rectangles to pack.</param>
+            <param name="container">The bin to pack into, clearing any previously initialised bin.</param>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.PackOneContainer(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Rectangle},Autodesk.DesignScript.Geometry.Rectangle,Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePackingStrategy)">
+            <summary>
+            Pack a list of supplied rectangles into the supplied bin.
+            </summary>
+            <param name="items">The rectangles to pack.</param>
+            <param name="container">The container to pack into, clearing any previously initialised bin.</param>
+            <param name="packingStrategy">The method to use when packing.</param>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.PackMultipleContainers(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Rectangle},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Rectangle})">
+            <summary>
+            Pack a list of supplied rectangles into the supplied containers.
+            </summary>
+            <param name="items">The rectangles to pack.</param>
+            <param name="containers">The containers to pack into, clearing any previously initialised bin.</param>
+            <returns>The list of packing results for each container.</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.PackMultipleContainers(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Rectangle},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Rectangle},Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePackingStrategy)">
+            <summary>
+            Pack a list of supplied rectangles into the supplied containers.
+            </summary>
+            <param name="items">The rectangles to pack.</param>
+            <param name="containers">The containers to pack into, clearing any previously initialised bin.</param>
+            <param name="packingStrategy">The method to use when packing.</param>
+            <returns>The list of packing results for each container.</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.PlaceItem(Autodesk.DesignScript.Geometry.Rectangle,Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePackingStrategy,System.Int32)">
+            <summary>
+            Find best free rectangle and place next rectangle
+            </summary>
+            <param name="item"></param>
+            <param name="placementMethod"></param>
+            <param name="itemIndex"></param>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.GetBestFreeRectangle(Autodesk.DesignScript.Geometry.Rectangle,Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePackingStrategy)">
+            <summary>
+            Chooses the best free rectangle for an item based on the placement method. 
+            Rectangles are formed from the leftover free space in the bin.
+            </summary>
+            <param name="item">The rectangle to place</param>
+            <param name="placementMethod">The placement method</param>
+            <param name="this">The bin packing result to investigate.</param>
+            <returns>The free rectangle with best score</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.SplitFreeRectangle(Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.FreeRectangle,Autodesk.DesignScript.Geometry.Rectangle)">
+            <summary>
+            Split the free area into free rectangles
+            </summary>
+            <param name="fRect"></param>
+            <param name="item"></param>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.RemoveEncapsulated">
+            <summary>
+            If FreeRectangle is fully encapsulated, remove it.
+            </summary>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.RemoveOverlaps(System.Collections.Generic.List{System.Double})">
+            <summary>
+            Remove overlap of free areas
+            </summary>
+            <param name="itemBounds"></param>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.ClipOverlap(Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.FreeRectangle,System.Collections.Generic.List{System.Double})">
+            <summary>
+            Clip overlap of overlapping free areas
+            </summary>
+            <param name="f1"></param>
+            <param name="overlapBound"></param>
+            <returns>free rectangles after clipping the overlap</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.OverlapBound(Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.FreeRectangle,System.Collections.Generic.List{System.Double})">
+            <summary>
+            Get the min/max points of the overlap BoundingBox
+            </summary>
+            <param name="f1"></param>
+            <param name="rectBounds"></param>
+            <returns>overlapping boundary</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.RectangleOverlaps(Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.FreeRectangle,System.Collections.Generic.List{System.Double})">
+            <summary>
+            Checks if two rectangles overlaps
+            https://www.geeksforgeeks.org/find-two-rectangles-overlap/
+            </summary>
+            <param name="f1"></param>
+            <param name="rectBounds"></param>
+            <returns>boolean</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.ItemFits(Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.FreeRectangle,Autodesk.DesignScript.Geometry.Rectangle,System.Boolean)">
+            <summary>
+            Checks if the rectangle fits in the freeRectangle
+            </summary>
+            <param name="f"></param>
+            <param name="rectangle"></param>
+            <param name="rotate"></param>
+            <returns>boolean</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.Rotate(Autodesk.DesignScript.Geometry.Rectangle)">
+            <summary>
+            Rotates the item rectangle
+            </summary>
+            <param name="item"></param>
+            <returns>rotated rectangle</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.RectBounds(Autodesk.DesignScript.Geometry.Rectangle)">
+            <summary>
+            Gets the boundary points of a rectangle
+            </summary>
+            <param name="rect"></param>
+            <returns>rectangle boundary points</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.IsEncapsulated(Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.FreeRectangle,Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.FreeRectangle)">
+            <summary>
+            check if FreeRectangle is fully incapsulated in another
+            </summary>
+            <param name="f1"></param>
+            <param name="f2"></param>
+            <returns>boolean</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.BSSF_Score(Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.FreeRectangle,Autodesk.DesignScript.Geometry.Rectangle)">
+            <summary>
+            Scoring Method for best short side fits
+            </summary>
+            <param name="freeRect"></param>
+            <param name="item"></param>
+            <returns>Score of Best Short Side Fits</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.BLSF_Score(Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.FreeRectangle,Autodesk.DesignScript.Geometry.Rectangle)">
+            <summary>
+            Scoring Method for Best Long Side Fits
+            </summary>
+            <param name="freeRect"></param>
+            <param name="item"></param>
+            <returns>Score of Best Long Side Fits</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.BAF_Score(Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePacker.FreeRectangle,Autodesk.DesignScript.Geometry.Rectangle)">
+            <summary>
+            Scoring Method for Best Area Fits
+            </summary>
+            <param name="freeRect"></param>
+            <param name="item"></param>
+            <returns>Score of Best Area Fits</returns>
+        </member>
+        <member name="T:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePackingStrategy">
+            <summary>
+            Placement methods for packing rectangles in a bin.
+            </summary>
+        </member>
+        <member name="F:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePackingStrategy.BestShortSideFits">
+            <summary>
+            Best Short Side Fits:
+            Packs next rectangle into the free area where the length of the longer leftover side is minimized. 
+            </summary>
+        </member>
+        <member name="F:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePackingStrategy.BestLongSideFits">
+            <summary>
+            Best Long Side Fits:
+            Packs next rectangle into the free area where the length of the shorter leftover side is minimized.  
+            </summary>
+        </member>
+        <member name="F:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePackingStrategy.BestAreaFits">
+            <summary>
+            Best Area Fits:
+            Picks the free area that is smallest in area to place the next rectangle into.
+            </summary>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packing.PackRectangles(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Rectangle},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Rectangle},Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.RectanglePackingStrategy)">
+            <summary>
+            Packs a list of items (Rectangles) into a set of containers (Rectangles too).
+            Algorithm sequentially packs rectangles in each container (order as provided) until there is nothing left to pack or it run out of bins.
+            You can safely use this with a single container as well.
+            </summary>
+            <param name="items">List of items (rectangles) to pack.</param>
+            <param name="containers">List of containers (rectangles) to pack into. </param>
+            <param name="strategy">(optional) Method for choosing where to place the next rectangle when packing.
+            Possible values are : RectangleShortSideStrategy, RectangleLongSideStrategy, RectangleAreaStrategy</param>
+            <returns name="Packed Items">List of packed rectangles for each of the containers provided.</returns>
+            <returns name="Packed Indices">Indices of packed rectangles for correlation to input items list.</returns>
+            <returns name="Remaining Items">Items (rectangles) that didn't get packed.</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packing.PackCuboids(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Cuboid},System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Cuboid})">
+            <summary>
+            Packs a list of items (Cuboids) into a set of containers (Cuboids too).
+            When supplying multiple containers, it sequentially packs each until no space is left, before moving on to next container.
+            </summary>
+            <param name="items">List of Cuboids to pack</param>
+            <param name="containers">Set of Cuboids to pack into.</param>
+            <returns name="Packed Items">The cuboids that were packed.</returns>
+            <returns name="Packed Indices">Indices of packed cuboids for correlation to input items list.</returns>
+            <returns name="Remaining Items">Cuboids that didn't get packed.</returns>
+            <returns name="% Container Volume Packed">Metric : percentage of each container volume that was packed.</returns>
+            <returns name="% Item Volume Packed">Metric : percentage expressing how much of total items volume was packed in each container.</returns>
+        </member>
+        <member name="P:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packing.RectangleShortSideStrategy">
+            <summary>
+            Packs next rectangle into the free area where the length of the longer leftover side is minimized
+            </summary>
+        </member>
+        <member name="P:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packing.RectangleLongSideStrategy">
+            <summary>
+            Packs next rectangle into the free area where the length of the shorter leftover side is minimized.  
+            </summary>
+        </member>
+        <member name="P:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packing.RectangleAreaStrategy">
+            <summary>
+            Picks the free area that is smallest in area to place the next rectangle into.
+            </summary>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packing.ToDictionary(System.Collections.Generic.List{Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.IPacker{Autodesk.DesignScript.Geometry.Rectangle,Autodesk.DesignScript.Geometry.Rectangle}})">
+            <summary>
+            Formats a list of BinPacker2D results to a dictionary for use in Dynamo multi-return nodes 
+            </summary>
+            <param name="packers">The list of packing results to convert.</param>
+            <returns>A dictionary with 3 items: packed, remaining and indices for each BinPacker2D result, as lists.</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.Packing.ToDictionary(System.Collections.Generic.List{Autodesk.RefineryToolkits.SpacePlanning.Generate.Packers.CuboidPacker})">
+            <summary>
+            Formats a list of BinPacker3D results to a dictionary for use in Dynamo multi-return nodes 
+            </summary>
+            <param name="packers">The list of packing results to convert.</param>
+            <returns>A dictionary with 5 items: packed items, their indices, remaining items and 2 packing performance metrics.</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.DeskLayout.Create(Autodesk.DesignScript.Geometry.Surface,System.Double,System.Double,System.Double)">
+            <summary>
+            Creates a layout of desks on a surface based on desk dimensions
+            </summary>
+            <param name="surface"></param>
+            <param name="deskWidth">the width of the desks in mm</param>
+            <param name="deskDepth">the depth of the desks in mm</param>
+            <param name="backToBack">the distance in mm between two desks where the people sat at them are back to back</param>
+            <search></search>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Generate.SurfaceDivision2D.DivideSurface(Autodesk.DesignScript.Geometry.Surface,System.Collections.Generic.List{System.Double},System.Collections.Generic.List{System.Double})">
+            <summary>
+            Divides surface based on U and V parameters
+            </summary>
+            <param name="surface">Surface to divide</param>
+            <param name="U">U parameter</param>
+            <param name="V">V parameter</param>
+            <returns>List of individual surfaces</returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.SpacePlanning.Rank.ListShuffle.SeededShuffle(System.Collections.IList,System.Int32)">
+            <summary>
+            Shuffles a list, randomizing the order of its items based on the seed.
+            </summary>
+            <param name="list">List to shuffle</param>
+            <param name="seed">Seed</param>
+            <returns>randomized list</returns>
+        </member>
+    </members>
+</doc>

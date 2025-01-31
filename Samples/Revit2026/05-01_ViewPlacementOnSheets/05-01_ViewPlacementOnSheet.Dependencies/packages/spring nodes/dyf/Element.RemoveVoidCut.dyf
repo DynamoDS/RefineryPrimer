@@ -1,0 +1,239 @@
+{
+  "Uuid": "8e939b52-ea4c-41ff-97bb-f54ba062c938",
+  "IsCustomNode": true,
+  "Category": "Springs.Revit.Actions",
+  "Description": "Removes the void cut between the input elements, if such exists.",
+  "Name": "ꟿ Element.RemoveVoidCut",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Cuboid": {
+        "Key": "Autodesk.DesignScript.Geometry.Cuboid",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Sphere": {
+        "Key": "Autodesk.DesignScript.Geometry.Sphere",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Cuboid.ByLengths": {
+        "Key": "Autodesk.DesignScript.Geometry.Cuboid",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Copyright(c) 2017, Dimitar Venkov\r\n# @5devene, dimitar.ven@gmail.com\r\n# www.badmonkeys.net\r\n\r\nimport clr\r\n\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\nclr.AddReference(\"RevitAPI\")\r\nfrom Autodesk.Revit.DB import *\r\n\r\ndef tolist(obj1):\r\n\tif hasattr(obj1,\"__iter__\"): return obj1\r\n\telse: return [obj1]\r\n\r\ndef singleton(x):\r\n\tif hasattr(x,'__iter__'): return x[0]\r\n\telse : return x\r\n\r\nelem = UnwrapElement(singleton(IN[0]) )\r\ncuts = UnwrapElement(tolist(IN[1]) )\r\nout1 = []\r\n\r\ncutU = InstanceVoidCutUtils\r\nOUT = 0\r\nif cutU.CanBeCutWithVoid(elem):\r\n\tTransactionManager.Instance.EnsureInTransaction(doc)\r\n\tfor c in cuts:\r\n\t\tif cutU.IsVoidInstanceCuttingElement(c) and \\\r\n\t\tcutU.InstanceVoidCutExists(elem, c):\r\n\t\t\ttry:\r\n\t\t\t\tcutU.RemoveInstanceVoidCut(doc,ToBeCut[i],Cuts[j])\r\n\t\t\t\tOUT += 1\r\n\t\t\texcept:\r\n\t\t\t\tpass\r\n\tTransactionManager.Instance.TransactionTaskDone()",
+      "VariableInputPorts": true,
+      "Id": "6451a46772c7440fb8c54bd2791f6c5d",
+      "Inputs": [
+        {
+          "Id": "71458f63a30548758740bb27f19a90d0",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8f4598fb44334bd39d4d214441921be5",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3960b4403a1245c1b3178d9d56044c45",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "elementBeingCut",
+        "TypeName": "var",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "9ff9dc4c45aa4c03a2a56de0b141d8c3",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4a51271ee3f3478da89e78fdf258af6c",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "cuttingElement",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "eb7e5e335f474d5f8ae3c16b6a9acf02",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "5a45874a2b3b4f88adb40f867a888037",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "uncutCount",
+      "Id": "4426ed9635ed4c7d9f75caaf24685997",
+      "Inputs": [
+        {
+          "Id": "c2b50e289a6849eaa5fb2fdb70db1998",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "3960b4403a1245c1b3178d9d56044c45",
+      "End": "c2b50e289a6849eaa5fb2fdb70db1998",
+      "Id": "61af90eea1bb47db8f824bac13422819"
+    },
+    {
+      "Start": "4a51271ee3f3478da89e78fdf258af6c",
+      "End": "71458f63a30548758740bb27f19a90d0",
+      "Id": "acabd616663c4de9bd723af3338a65d2"
+    },
+    {
+      "Start": "5a45874a2b3b4f88adb40f867a888037",
+      "End": "8f4598fb44334bd39d4d214441921be5",
+      "Id": "b2352bb9bf794c50ac3530d955afc9e3"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "Id": "6451a46772c7440fb8c54bd2791f6c5d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 225.155606765216,
+        "Y": -1.55277457717398
+      },
+      {
+        "Id": "9ff9dc4c45aa4c03a2a56de0b141d8c3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -8.79905593731912,
+        "Y": 2.8421709430404E-14
+      },
+      {
+        "Id": "eb7e5e335f474d5f8ae3c16b6a9acf02",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -17.0805203489137,
+        "Y": 59.421482998185
+      },
+      {
+        "Id": "4426ed9635ed4c7d9f75caaf24685997",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 381.477918604345,
+        "Y": -1.55277457717398
+      }
+    ],
+    "Annotations": [],
+    "X": 211.182559200034,
+    "Y": 97.6636844236248,
+    "Zoom": 1.545620359375
+  }
+}

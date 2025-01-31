@@ -1,0 +1,218 @@
+{
+  "Uuid": "ee989d34-a224-4217-967b-6b42dafd005e",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Actions",
+  "Description": "Checks a line's end points for irregularities in  the Z axis and corrects them if they are at or below the specified margin. The default margin is 1/5000 of the curve length, which is conservative.",
+  "Name": "ꟿ Line.StraightenZ",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "straightened = [Imperative]{\nmargin = c.Length / x;\ncS = c.StartPoint;\ncE = c.EndPoint;\ndZ = Math.Abs(cS.Z - cE.Z);\nif (dZ <= margin)\n{\n\treturn = Line.ByStartPointEndPoint(\n\tcS,Point.ByCoordinates(cE.X, cE.Y, cS.Z));\n}\nelse\n{\n\treturn = c;\n}\n};",
+      "Id": "4a477d19690240a58904cb31baba93d4",
+      "Inputs": [
+        {
+          "Id": "a6323d05be534fe9981bd799fb418aab",
+          "Name": "c",
+          "Description": "c",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9b7462bb99444d98aaab9ba22b2ff272",
+          "Name": "x",
+          "Description": "x",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b837a628e57b453dadc6b93e82c6052d",
+          "Name": "",
+          "Description": "straightened",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "line",
+        "TypeName": "var",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "bbfe1380fbd442c5bce6554cbed2d8cd",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "dc4162f1308943f491236a9e37fb0fc8",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "margin",
+        "TypeName": "double",
+        "TypeRank": 0,
+        "DefaultValue": "5000",
+        "Description": ""
+      },
+      "Id": "fd3fc27f662f404381d9576b620c25b3",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2a67335c9f254ce184094df010ba4df6",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "line",
+      "Id": "3f612da13c3749218cbce7bd4707a8ae",
+      "Inputs": [
+        {
+          "Id": "8e3e052b5af545fdbc25e5a1e1d42de8",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "b837a628e57b453dadc6b93e82c6052d",
+      "End": "8e3e052b5af545fdbc25e5a1e1d42de8",
+      "Id": "e5a98641c8f64f1a8f3c9a04fd365b85"
+    },
+    {
+      "Start": "dc4162f1308943f491236a9e37fb0fc8",
+      "End": "a6323d05be534fe9981bd799fb418aab",
+      "Id": "75d4c8fd5a1547c4adfaff251e6646a1"
+    },
+    {
+      "Start": "2a67335c9f254ce184094df010ba4df6",
+      "End": "9b7462bb99444d98aaab9ba22b2ff272",
+      "Id": "e51d185978d64a6eb8679987c169349c"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 52.285865783691406,
+      "EyeY": 18.647590637207031,
+      "EyeZ": -122.33722686767578,
+      "LookX": -26.749288558959961,
+      "LookY": 2.3711609840393066,
+      "LookZ": 58.1855583190918,
+      "UpX": 0.10458335280418396,
+      "UpY": 0.9681476354598999,
+      "UpZ": -0.22749169170856476
+    },
+    "NodeViews": [
+      {
+        "Id": "4a477d19690240a58904cb31baba93d4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 283.449070560333,
+        "Y": 356.483271869652
+      },
+      {
+        "Id": "bbfe1380fbd442c5bce6554cbed2d8cd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 145.273645276534,
+        "Y": 356.797356582051
+      },
+      {
+        "Id": "fd3fc27f662f404381d9576b620c25b3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 28.8371688006907,
+        "Y": 417.963974883365
+      },
+      {
+        "Id": "3f612da13c3749218cbce7bd4707a8ae",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 749.003046098799,
+        "Y": 356.196690080798
+      }
+    ],
+    "Annotations": [],
+    "X": 53.8542462902103,
+    "Y": -297.701947319076,
+    "Zoom": 1.51051845643135
+  }
+}

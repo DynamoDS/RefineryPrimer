@@ -1,0 +1,216 @@
+{
+  "Uuid": "268c3e45-41fa-4d94-a91c-1a45a41b45aa",
+  "IsCustomNode": true,
+  "Category": "Springs.Revit.Create",
+  "Description": "Convert the input geometry to a Revit Form object. Forms can exist only in the family environment. You can convert complicated solids or surfaces directly into forms. A form can act as a void. Provide either one true boolean value to convert a form into a void. The node's lacing is set to longest by default.",
+  "Name": "ꟿ Form.ByGeometry",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "#Copyright(c) 2016, Dimitar Venkov\r\n# @5devene, dimitar.ven@gmail.com\r\nimport clr\r\nimport System\r\nfrom System.Collections.Generic import *\r\n\r\nfrom itertools import repeat\r\n\r\npf_path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ProgramFilesX86)\r\nimport sys\r\nsys.path.append(\"%s\\IronPython 2.7\\Lib\" %pf_path)\r\nimport traceback\r\n\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\nclr.AddReference(\"RevitNodes\")\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\nclr.ImportExtensions(Revit.GeometryConversion)\r\n\r\nclr.AddReference(\"RevitAPI\")\r\nfrom Autodesk.Revit.DB import *\r\n\r\ndef tolist(obj1):\r\n\tif hasattr(obj1,\"__iter__\"): return obj1\r\n\telse: return [obj1]\r\n\r\ndef PadLists(lists):\r\n\tlen1 = len(lists[0])\r\n\tfor i in xrange(1,len(lists)):\r\n\t\tlen2 = len(lists[i])\r\n\t\tif len2 == len1 : continue\r\n\t\telif len2 > len1: lists[i] = lists[i][:len1]\r\n\t\telse : lists[i].extend(repeat(lists[i][-1],len1 - len2))\r\n\treturn lists\r\n\r\ndef NewForm(s1, isVoid1):\r\n\tmessage = None\r\n\ttemp_path = System.IO.Path.GetTempPath()\r\n\trand_name = System.Guid.NewGuid().ToString()\r\n\tsat_path = \"%s%s.sat\" % (temp_path, rand_name)\r\n\ttry:\r\n\t\tif factor != 1:\r\n\t\t\ts1 = s1.Scale(factor)\r\n\t\tsat1 = Geometry.ExportToSAT(s1, sat_path)\r\n\t\tsatOpt = SATImportOptions()\r\n\t\tsatOpt.Placement = ImportPlacement.Origin\r\n\t\tsatOpt.Unit = ImportUnit.Foot\r\n\t\tsatId = doc.Import(sat1, satOpt, view1)\r\n\t\topt1 = Options()\r\n\t\topt1.ComputeReferences = True\r\n\t\tel1 = doc.GetElement(satId)\r\n\t\tgeom1 = el1.get_Geometry(opt1)\r\n\t\tenum = geom1.GetEnumerator()\r\n\t\tenum.MoveNext()\r\n\t\tgeom2 = enum.Current.GetInstanceGeometry()\r\n\t\tenum2 = geom2.GetEnumerator()\r\n\t\tenum2.MoveNext()\r\n\t\ts1 = enum2.Current\r\n\t\tdoc.Delete(satId)\r\n\t\tSystem.IO.File.Delete(sat_path)\r\n\texcept:\r\n\t\tmessage = traceback.format_exc()\r\n\t\tpass\r\n\tif message == None:\r\n\t\ttry:\r\n\t\t\ts2 = FreeFormElement.Create(doc,s1)\r\n\t\t\tif isVoid1:\r\n\t\t\t\tvoid_par = s2.get_Parameter(BuiltInParameter.ELEMENT_IS_CUTTING)\r\n\t\t\t\tvoid_par.Set(1)\r\n\t\t\treturn s2.ToDSType(False)\r\n\t\texcept:\r\n\t\t\tmessage = traceback.format_exc()\r\n\t\t\treturn message\r\n\telse : return message\r\n\r\ngeom, isVoid = tolist(IN[0]),  tolist(IN[1])\r\n\r\nacceptable_views = (\"ThreeD\", \"FloorPlan\", \"EngineeringPlan\", \"CeilingPlan\", \"Elevation\", \"Section\")\r\nview_fec = FilteredElementCollector(doc).OfClass(View)\r\nview1 = None\r\nfor v in view_fec:\r\n\tif str(v.ViewType) in acceptable_views and not v.IsTemplate:\r\n\t\tview1 = v\r\n\t\tbreak\r\nif int(doc.Application.VersionNumber) > 2021:\r\n\tunits = doc.GetUnits().GetFormatOptions(ForgeTypeId(\"autodesk.spec.aec:length\")).GetUnitTypeId()\r\nelse:\r\n\tunits = doc.GetUnits().GetFormatOptions(UnitType.UT_Length).DisplayUnits\r\nfactor = UnitUtils.ConvertToInternalUnits(1,units)\r\nif doc.IsFamilyDocument:\r\n\tif len(geom) == len(isVoid):\r\n\t\tTransactionManager.Instance.EnsureInTransaction(doc)\r\n\t\tOUT = map(NewForm, geom, isVoid)\r\n\t\tTransactionManager.Instance.TransactionTaskDone()\r\n\telse:\r\n\t\tpadded = PadLists([geom,isVoid])\r\n\t\tp_isVoid = padded[1]\r\n\t\tTransactionManager.Instance.EnsureInTransaction(doc)\r\n\t\tOUT = map(NewForm, geom, p_isVoid)\r\n\t\tTransactionManager.Instance.TransactionTaskDone()\r\nelse : OUT = \"Forms can only exist in family documents\"",
+      "Engine": "IronPython2",
+      "VariableInputPorts": true,
+      "Id": "5b20d6d5cea041c5bfc569ce2f727abf",
+      "Inputs": [
+        {
+          "Id": "72028de56d284c1f987d334b6ff58366",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1cf82e76ae854489ae7dfdee8da97ee2",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "814df216a9ac4cc8a80a15303988e9d7",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "geometry",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "eae70b5f06924372ab80d18a7b1f5adb",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "755485d23dbe4b5c97f1c2275e940a1f",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "Form",
+      "Id": "6b741902d5d84efeb621e8d7fb813375",
+      "Inputs": [
+        {
+          "Id": "78a8e4ff8167497aa7b66dec97f8f60a",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "isVoid",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": "false",
+        "Description": ""
+      },
+      "Id": "f66887452d9a436b8ce68f61c0f2b25f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b3e97a8e89944541ab931ab6c8c865e7",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "814df216a9ac4cc8a80a15303988e9d7",
+      "End": "78a8e4ff8167497aa7b66dec97f8f60a",
+      "Id": "2ac2245501a04b198d32c82b01325c68"
+    },
+    {
+      "Start": "755485d23dbe4b5c97f1c2275e940a1f",
+      "End": "72028de56d284c1f987d334b6ff58366",
+      "Id": "6b65a7f23f6845a5b7f46a5259dbfe7f"
+    },
+    {
+      "Start": "b3e97a8e89944541ab931ab6c8c865e7",
+      "End": "1cf82e76ae854489ae7dfdee8da97ee2",
+      "Id": "0249af827b934d08b61b0c271149b2ee"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.10.1.3976",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "5b20d6d5cea041c5bfc569ce2f727abf",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 249.717208630228,
+        "Y": 0.75577052982225723
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "eae70b5f06924372ab80d18a7b1f5adb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 75.9508393348282,
+        "Y": -1.69369341215707
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "6b741902d5d84efeb621e8d7fb813375",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 419.171854779899,
+        "Y": -0.57361817730964
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "f66887452d9a436b8ce68f61c0f2b25f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 22.2280392751892,
+        "Y": 63.6179236576602
+      }
+    ],
+    "Annotations": [],
+    "X": 190.728074781441,
+    "Y": 108.135444080877,
+    "Zoom": 2.34389712846662
+  }
+}

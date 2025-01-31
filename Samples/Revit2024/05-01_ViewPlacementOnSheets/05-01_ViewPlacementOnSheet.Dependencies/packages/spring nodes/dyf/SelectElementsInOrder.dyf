@@ -1,0 +1,164 @@
+{
+  "Uuid": "4af3f490-3741-496b-8452-e65601451ae1",
+  "IsCustomNode": true,
+  "Category": "Springs.Revit.Selection.Actions",
+  "Description": "Select multiple elements from the Revit document in the desired order. Hit ESC to stop picking. To refresh the node, connect a boolean switch node.",
+  "Name": "ꟿ SelectElementsInOrder",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "#Copyright(c) 2016, Dimitar Venkov\r\n# @5devene, dimitar.ven@gmail.com\r\n\r\n#inspired by Troy Gates https://forums.autodesk.com/t5/revit-api/revit-api-selected-element-set-order/td-p/5597203\r\n\r\nimport clr\r\n\r\nclr.AddReference(\"RevitAPIUI\")\r\nfrom  Autodesk.Revit.UI import *\r\n\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\nuidoc=DocumentManager.Instance.CurrentUIApplication.ActiveUIDocument\r\n\r\nclr.AddReference(\"RevitNodes\")\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\n\r\ndef output1(l1):\r\n\tif len(l1) == 1: return l1[0]\r\n\telse: return l1\r\n\r\nsel1 = uidoc.Selection\r\nobt1 = Selection.ObjectType.Element\r\nmsg1 = 'Pick elements in the desired order, hit ESC to stop picking.'\r\nout1 = []\r\n\r\nflag = True\r\nTaskDialog.Show(\"Spring Nodes\", msg1)\r\nwhile flag:\r\n\ttry:\r\n\t\tel1 = doc.GetElement(sel1.PickObject(obt1, msg1).ElementId)\r\n\t\tout1.append(el1.ToDSType(True))\r\n\texcept : flag = False\r\n\r\nOUT = output1(out1)",
+      "VariableInputPorts": true,
+      "Id": "d92bcee5b98a4981a5d22482a43e9bb5",
+      "Inputs": [
+        {
+          "Id": "014e04036cbc4f6c8fd4b531c289690c",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e0cf0061dbca42e59b04d6bfa092abc3",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "elements",
+      "Id": "9656dedf9f184ab095ea32f4161280b3",
+      "Inputs": [
+        {
+          "Id": "4238f8474f7643cdaf80da389ef19104",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "refresh",
+        "TypeName": "bool",
+        "TypeRank": 0,
+        "DefaultValue": "true",
+        "Description": ""
+      },
+      "Id": "df1ac182aa03434da888e8b8d112db70",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2c05082f4d5848a1ace272dbf88f867c",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "e0cf0061dbca42e59b04d6bfa092abc3",
+      "End": "4238f8474f7643cdaf80da389ef19104",
+      "Id": "5b76409c1d7747658d15704336a7914d"
+    },
+    {
+      "Start": "2c05082f4d5848a1ace272dbf88f867c",
+      "End": "014e04036cbc4f6c8fd4b531c289690c",
+      "Id": "a9b187e3c81b4ca2abf4bace28628551"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "Id": "d92bcee5b98a4981a5d22482a43e9bb5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 223.6,
+        "Y": -8.80000000000001
+      },
+      {
+        "Id": "9656dedf9f184ab095ea32f4161280b3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 383.4,
+        "Y": -8.80000000000001
+      },
+      {
+        "Id": "df1ac182aa03434da888e8b8d112db70",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 8.06245304096109,
+        "Y": -9.53754695903895
+      }
+    ],
+    "Annotations": [],
+    "X": -216.707402702134,
+    "Y": 170.464140626685,
+    "Zoom": 2.37004060791358
+  }
+}

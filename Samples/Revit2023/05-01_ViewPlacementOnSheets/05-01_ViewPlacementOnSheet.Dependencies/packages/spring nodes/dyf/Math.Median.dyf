@@ -1,0 +1,226 @@
+{
+  "Uuid": "9160abeb-ce13-4b7e-8752-0403a6658b50",
+  "IsCustomNode": true,
+  "Category": "Springs.Query",
+  "Description": "Calculate a median value from a list of numbers",
+  "Name": "ꟿ Math.Median",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "List": {
+        "Key": "List",
+        "Value": "BuiltIn.ds"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "xs = List.Sort(x);\nn = List.Count(x);\nm = Math.Ceiling(n / 2);\nodd = xs[m-1];\neven = (odd + xs[m]) / 2;\nisEven = n % 2 == 0;\nr = isEven ? even : odd;",
+      "Id": "a5013058cb314dd78e8173e70577bf04",
+      "Inputs": [
+        {
+          "Id": "0baba4feae754540aa005229908dfa6f",
+          "Name": "x",
+          "Description": "x",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1330d5d3ecc9465a8042e23ea53396df",
+          "Name": "",
+          "Description": "xs",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "99ab03d7f8f047888bb739cbe91c94df",
+          "Name": "",
+          "Description": "n",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "86610f97ab104d90a8957e70790b42bb",
+          "Name": "",
+          "Description": "m",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c7641a5337034ed38ea16f19fe2025cf",
+          "Name": "",
+          "Description": "odd",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2c55bda1830e4e60ac90c5a4928d345d",
+          "Name": "",
+          "Description": "even",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dc8c706760b54cf2bc7fabbdbf5943b7",
+          "Name": "",
+          "Description": "isEven",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a8b3615be707401fac8dc297b0459572",
+          "Name": "",
+          "Description": "r",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "list",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "2154ba9538724f1d94b90152a2092d7e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "5850c18e95754030aa08773cb86155db",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "median",
+      "Id": "52736964845948febc8fc87c9baf9291",
+      "Inputs": [
+        {
+          "Id": "a5384d40130548e19e2e2b60a200a4fb",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "a8b3615be707401fac8dc297b0459572",
+      "End": "a5384d40130548e19e2e2b60a200a4fb",
+      "Id": "4b48b64e107442fdbfc4223a473f03bd"
+    },
+    {
+      "Start": "5850c18e95754030aa08773cb86155db",
+      "End": "0baba4feae754540aa005229908dfa6f",
+      "Id": "333a5d8ded5645899f77dcea0ed41af3"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.3.8810",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "a5013058cb314dd78e8173e70577bf04",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 247.0,
+        "Y": 1.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "2154ba9538724f1d94b90152a2092d7e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 69.0,
+        "Y": -6.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "52736964845948febc8fc87c9baf9291",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 545.0,
+        "Y": 103.0
+      }
+    ],
+    "Annotations": [],
+    "X": 241.0,
+    "Y": 79.0,
+    "Zoom": 1.0
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "Uuid": "5e15cf82-0053-49f8-be46-054217321813",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Query",
+  "Description": "Get the bounding box of a mesh. Works with both built-in meshes and toolkit meshes",
+  "Name": "ꟿ Mesh.BoundingBox",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Copyright(c) 2018, Dimitar Venkov\r\n# @5devene, dimitar.ven@gmail.com\r\n# www.badmonkeys.net\r\n\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import BoundingBox, Point, Mesh\r\n\r\ndef tolist(x):\r\n\tif hasattr(x,'__iter__'): return x\r\n\telse : return [x]\r\n\r\nmeshes = tolist(IN[0])\r\nOUT = []\r\n\r\nfor m in meshes:\r\n\tif isinstance(m, Mesh):\r\n\t\tco = zip(*((v.X, v.Y, v.Z) for v in m.VertexPositions))\r\n\telse:\r\n\t\tco = zip(*((v.X, v.Y, v.Z) for v in m.Vertices()))\r\n\r\n\tOUT.append(BoundingBox.ByCorners(Point.ByCoordinates(*map(min, co)), Point.ByCoordinates(*map(max, co))))",
+      "VariableInputPorts": true,
+      "Id": "646fb8a9fbf54f22870af5bf7420b989",
+      "Inputs": [
+        {
+          "Id": "a21f13afb58042fca0c493ee2a3a325b",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a09980d4d64c4720b0f981cd9e7e796d",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "mesh",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "6a631d3a83ee474dad605452ee75d310",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "862e21ed80ce427d8e9bde5cab85ab33",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "boundingBox",
+      "Id": "60a689ae4e244939883d7703cea58af9",
+      "Inputs": [
+        {
+          "Id": "87dd0d259ce44ffc8658e85622ec9be3",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "a09980d4d64c4720b0f981cd9e7e796d",
+      "End": "87dd0d259ce44ffc8658e85622ec9be3",
+      "Id": "f6f2bf65498b465581744e4ef4f9f4f7"
+    },
+    {
+      "Start": "862e21ed80ce427d8e9bde5cab85ab33",
+      "End": "a21f13afb58042fca0c493ee2a3a325b",
+      "Id": "d7eb844113ad43fa8916888a850f3276"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -0.894723117351532,
+      "EyeY": 0.27859959006309509,
+      "EyeZ": -0.47677680850028992,
+      "LookX": 0.87764656543731689,
+      "LookY": -0.13368430733680725,
+      "LookZ": 0.40347501635551453,
+      "UpX": -0.071286827325820923,
+      "UpY": 0.99691736698150635,
+      "UpZ": -0.032772246748209
+    },
+    "NodeViews": [
+      {
+        "Id": "646fb8a9fbf54f22870af5bf7420b989",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 250.0,
+        "Y": 0.0
+      },
+      {
+        "Id": "6a631d3a83ee474dad605452ee75d310",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 95.8735485145898,
+        "Y": 0.560664026401099
+      },
+      {
+        "Id": "60a689ae4e244939883d7703cea58af9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 410.874846204724,
+        "Y": 1.12132805280223
+      }
+    ],
+    "Annotations": [],
+    "X": 187.086707840227,
+    "Y": 110.439728755254,
+    "Zoom": 1.78359936238281
+  }
+}

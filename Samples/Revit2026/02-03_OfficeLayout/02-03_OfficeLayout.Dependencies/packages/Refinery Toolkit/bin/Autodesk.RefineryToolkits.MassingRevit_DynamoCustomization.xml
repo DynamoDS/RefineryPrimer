@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>Autodesk.RefineryToolkits.MassingRevit</name>
+  </assembly>
+  <namespaces>
+    <namespace name="Autodesk.RefineryToolkits.MassingRevit.Integrate">
+      <category>RefineryToolkits.Massing.Integrate</category>
+    </namespace>
+  </namespaces>
+</doc>

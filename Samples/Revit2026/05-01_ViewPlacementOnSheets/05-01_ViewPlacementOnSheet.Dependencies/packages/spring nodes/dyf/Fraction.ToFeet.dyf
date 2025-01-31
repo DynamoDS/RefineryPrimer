@@ -1,0 +1,184 @@
+{
+  "Uuid": "1ef61c6d-ec1d-4a1f-b421-9ad87e5ca736",
+  "IsCustomNode": true,
+  "Category": "Springs.Units.Actions",
+  "Description": "Converts a fractioned feet /inch string value into a decimal foot value.",
+  "Name": "ꟿ Fraction.ToFeet",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "String": {
+        "Key": "DSCore.String",
+        "Value": "DSCoreNodes.dll"
+      },
+      "List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "List.Scan": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Math.Round": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "num = [Imperative]{\ns0 = \"\";\ns1 = String.TrimWhitespace(s1);\nn1 = 0;\nn2 = 0;\nn3 = 0;\nn4 = 0;\nn5 = 0;\nsign = 1;\nif(String.StartsWith(s1,\"-\",true))\n{\n\ts1 = String.Substring(s1, 1,\n\t  String.Length(s1) - 1);\n\tsign = -1;\n}\n\nif(String.Contains(s1,\"'\",true))\n{\n\ts0 = String.Split(s1,[\"'\"]);\n\tn1 = String.ToNumber(s0[0]);\n\ts1 = String.TrimWhitespace(s0[1]);\n}\nif(String.Contains(s1,\" \",true))\n{\n\ts0 = String.Split(s1,[\" \"]);\n\tn2 = String.ToNumber(s0[0])/12;\n\ts1 = s0[1];\n}\nif(String.Contains(s1,\"/\",true))\n{\n\ts0 = String.Split(s1,[\"/\"]);\n\tn3 = String.ToNumber(s0[0]);\n\tn4 = String.ToNumber(\n\tString.Split(s0[1],[\"\\\"\"])[0]);\n}\nelseif(!String.Contains(s1,\"/\",true))\n{\n\tn2 = String.ToNumber(\n\tString.Split(s1,[\"\\\"\"])[0])/12;\n}\nif (n3 != 0 && n4 != 0)\n{\n\tn5 = (n3/n4)/12;\n}\nreturn = sign * (n1 + n2 + n5);\n};",
+      "Id": "0c0bd3f8e20143b5b05e6a25c4aa628e",
+      "Inputs": [
+        {
+          "Id": "862f439d12ac4c71a8619f0cb44b324a",
+          "Name": "s1",
+          "Description": "s1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5a8f7afe28194411a9f16c8769af52d7",
+          "Name": "",
+          "Description": "num",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "fraction",
+        "TypeName": "var",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "8eacd47ba7434b20833686e61f08b6d7",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "061067997953476cb376386ecd3f48e2",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "number",
+      "Id": "57cbf9da5ecd4db3ac39c0f722de232e",
+      "Inputs": [
+        {
+          "Id": "2b035f39112d40b0a2944ed3e73df377",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "5a8f7afe28194411a9f16c8769af52d7",
+      "End": "2b035f39112d40b0a2944ed3e73df377",
+      "Id": "ee7b92b732ef4141a448bff1da9ead8e"
+    },
+    {
+      "Start": "061067997953476cb376386ecd3f48e2",
+      "End": "862f439d12ac4c71a8619f0cb44b324a",
+      "Id": "a96f1e420d83439d9613cf2ccd96e1f2"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 55.528221130371094,
+      "EyeY": 195.78382873535156,
+      "EyeZ": -51.284481048583984,
+      "LookX": -0.858967661857605,
+      "LookY": -87.94305419921875,
+      "LookZ": -60.708198547363281,
+      "UpX": -0.0096487114205956459,
+      "UpY": 0.73135370016098022,
+      "UpZ": -0.68193012475967407
+    },
+    "NodeViews": [
+      {
+        "Id": "0c0bd3f8e20143b5b05e6a25c4aa628e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 347.207899908435,
+        "Y": 68.0962026724531
+      },
+      {
+        "Id": "8eacd47ba7434b20833686e61f08b6d7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 169.271862659019,
+        "Y": 61.1702307007633
+      },
+      {
+        "Id": "57cbf9da5ecd4db3ac39c0f722de232e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 764.939553019642,
+        "Y": 64.8655050159852
+      }
+    ],
+    "Annotations": [],
+    "X": 152.012074100287,
+    "Y": -57.1762560816646,
+    "Zoom": 0.889203022025036
+  }
+}

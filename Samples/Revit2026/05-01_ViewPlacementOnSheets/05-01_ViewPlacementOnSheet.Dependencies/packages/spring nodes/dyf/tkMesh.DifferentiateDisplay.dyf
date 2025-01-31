@@ -1,0 +1,276 @@
+{
+  "Uuid": "bb10ead0-3257-4a6e-975d-94189272ddca",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Actions",
+  "Description": "Paints the input toolkit meshes using the default color range. Works well with lists of meshes.",
+  "Name": "ꟿ tkMesh.DifferentiateDisplay",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Category": {
+        "Key": "Revit.Elements.Category",
+        "Value": "RevitNodes.dll"
+      },
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Line": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Autodesk.Plane.By": {
+        "Key": "Autodesk.DesignScript.Geometry.Plane",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Autodesk.Plane": {
+        "Key": "Autodesk.DesignScript.Geometry.Plane",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Autodesk.DesignScript.Geometry.Plane.By": {
+        "Key": "Autodesk.DesignScript.Geometry.Plane",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Rectangle": {
+        "Key": "Autodesk.DesignScript.Geometry.Rectangle",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Line.ByBestFitThroughPoints": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
+      },
+      "MeshDisplay": {
+        "Key": "Autodesk.Dynamo.MeshToolkit.Display.MeshDisplay",
+        "Value": "MeshToolkit.dll"
+      },
+      "DSCore.Color": {
+        "Key": "DSCore.Color",
+        "Value": "DSCoreNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "def col1(x){\nr = Math.Random(0, 255);\ng = Math.Random(0, 255);\nb = Math.Random(0, 255);\nreturn = DSCore.Color.ByARGB(255, r, g, b);\n};\n\nrand;\ncol = [Imperative]{\nif (rand)\n{\n\treturn = col1(GetKeys(geo));\n}\nelse\n{\n\tdcr = ColorRange1D.Default();\n\treturn = ColorRange1D.GetColorAtParameter\n\t  (dcr, 0..1..#(Count(geo)));\n}\n}\n\nMeshDisplay.ByMeshColor(geo, List.Chop(col, 1));",
+      "Id": "8c5689c781fb4ddc909bc07e1b06f6ab",
+      "Inputs": [
+        {
+          "Id": "9dab3d171e394ad78b5daa79277bbab2",
+          "Name": "rand",
+          "Description": "rand",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4c1e436e97444ba0a9458f4f4e93ea56",
+          "Name": "geo",
+          "Description": "geo",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7e2a78153ec846fe818c008fcfdd2b6b",
+          "Name": "",
+          "Description": "Value of expression at line 8",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "285caae0506a413f9b0936e163e4d991",
+          "Name": "",
+          "Description": "col",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4604b66c6b7841fdad6c306012c2105b",
+          "Name": "",
+          "Description": "Value of expression at line 22",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "meshDisplay",
+      "Id": "7cd8853d42be44a691eba4c218807ae0",
+      "Inputs": [
+        {
+          "Id": "9b811c45c5f54236863a4d73625b0294",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "randomCol",
+        "TypeName": "bool",
+        "TypeRank": 0,
+        "DefaultValue": "false",
+        "Description": ""
+      },
+      "Id": "38b00fa085774c3aad30c779b59d4110",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d6e3dd0d508a45afacca2fe38fbf7f4f",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "geo",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "275daeafc6ec47fc82d4db8921ef1485",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "5e987fe1a3d94067a1c65ed24df79d57",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "4604b66c6b7841fdad6c306012c2105b",
+      "End": "9b811c45c5f54236863a4d73625b0294",
+      "Id": "69be0dba9cc84e7bbaade9179d7ff8ae"
+    },
+    {
+      "Start": "d6e3dd0d508a45afacca2fe38fbf7f4f",
+      "End": "9dab3d171e394ad78b5daa79277bbab2",
+      "Id": "dfc0ee36cf4942a4b77b646338303f90"
+    },
+    {
+      "Start": "5e987fe1a3d94067a1c65ed24df79d57",
+      "End": "4c1e436e97444ba0a9458f4f4e93ea56",
+      "Id": "11d96ed57b224e72b7505db6b92b95c6"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.3.8810",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 10115.774624916165,
+      "EyeY": 80528.949023276073,
+      "EyeZ": -17344.003293993297,
+      "LookX": 4408.435800419029,
+      "LookY": -77120.2967604894,
+      "LookZ": 9901.50892313482,
+      "UpX": 0.40277831002511816,
+      "UpY": 0.13917310096007393,
+      "UpZ": 0.9046548960474069
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "8c5689c781fb4ddc909bc07e1b06f6ab",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 250.0,
+        "Y": 0.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "7cd8853d42be44a691eba4c218807ae0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 751.0,
+        "Y": 364.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "38b00fa085774c3aad30c779b59d4110",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -6.1842036666849936,
+        "Y": 72.344750044386956
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "275daeafc6ec47fc82d4db8921ef1485",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -6.6127671349759964,
+        "Y": 14.819364429349292
+      }
+    ],
+    "Annotations": [],
+    "X": -155.0,
+    "Y": 128.0,
+    "Zoom": 1.0
+  }
+}

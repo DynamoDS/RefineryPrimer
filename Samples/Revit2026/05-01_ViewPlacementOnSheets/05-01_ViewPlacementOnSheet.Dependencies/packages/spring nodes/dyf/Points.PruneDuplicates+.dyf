@@ -1,0 +1,214 @@
+{
+  "Uuid": "eebb86da-9ffb-4f28-bac6-256ff38ff8eb",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Actions",
+  "Description": "An alternative to the built in node, that performs faster at the price of loosing the order of the points. All floating point valies are rounded to the nearest 4 decimal points. You can optionally remove duplicate Z values by setting \"keepDuplicateZ\" to false.",
+  "Name": "ꟿ Points.PruneDuplicates+",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\r\nfrom itertools import groupby\r\nfrom operator import itemgetter\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import Point\r\n\r\ndef p2t(p) : return round(p.X,4), round(p.Y,4), round(p.Z,4)\r\n\r\npts = map(p2t, IN[0])\r\nunique_pts = set(pts)\r\nif not IN[1]:\r\n\tsame_z = [(i[:2],i[-1]) for i in unique_pts]\r\n\tsame_z.sort(key = itemgetter(0) )\r\n\tunique_pts = []\r\n\tfor k, g in groupby(same_z, itemgetter(0) ):\r\n\t\tcoord = list(k)\r\n\t\tcoord.append(max([i[-1] for i in g]) )\r\n\t\tunique_pts.append(coord)\r\nOUT = [Point.ByCoordinates(*i) for i in unique_pts]",
+      "VariableInputPorts": true,
+      "Id": "d6eab51ad8c94223853e6304a236739e",
+      "Inputs": [
+        {
+          "Id": "a59eaef68dba4ac38de27eeaf80e39a1",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "978359a8e14447ab864379630a760f93",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "08998636f3ec45ad946fe3052068c847",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "points",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "b31b6c7e981f4eac9a5548ab77d213c9",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "de640368ee644da9b12471957d45c50a",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "keepDuplicateZ",
+        "TypeName": "bool",
+        "TypeRank": 0,
+        "DefaultValue": "true",
+        "Description": ""
+      },
+      "Id": "ddddf47fe5284dea813803d8518bbe7e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "11b178c025fa4e0ebb3ac808f1bd258b",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "points",
+      "Id": "e7af524edb424737937716ed3f860827",
+      "Inputs": [
+        {
+          "Id": "7a3ef9cb319b451bb6c9d47ab7b2b903",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "08998636f3ec45ad946fe3052068c847",
+      "End": "7a3ef9cb319b451bb6c9d47ab7b2b903",
+      "Id": "9085065f4fbd4d8db5908d582ca72b2d"
+    },
+    {
+      "Start": "de640368ee644da9b12471957d45c50a",
+      "End": "a59eaef68dba4ac38de27eeaf80e39a1",
+      "Id": "59af835383a04c59a23bfdbe732b92c2"
+    },
+    {
+      "Start": "11b178c025fa4e0ebb3ac808f1bd258b",
+      "End": "978359a8e14447ab864379630a760f93",
+      "Id": "cb7ca29c1c5941db93bb0a7933393d22"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 317688.875,
+      "EyeY": 539573.6875,
+      "EyeZ": 378656.90625,
+      "LookX": -321007.625,
+      "LookY": -445359.6875,
+      "LookZ": -461686.65625,
+      "UpX": -0.25025114417076111,
+      "UpY": 0.89879405498504639,
+      "UpZ": -0.35992169380187988
+    },
+    "NodeViews": [
+      {
+        "Id": "d6eab51ad8c94223853e6304a236739e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 165.883862618999,
+        "Y": -0.486220447289043
+      },
+      {
+        "Id": "b31b6c7e981f4eac9a5548ab77d213c9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 0.0,
+        "Y": 0.0
+      },
+      {
+        "Id": "ddddf47fe5284dea813803d8518bbe7e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -123.013773164123,
+        "Y": 60.0492172515308
+      },
+      {
+        "Id": "e7af524edb424737937716ed3f860827",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 309.399613417206,
+        "Y": 0.486220447289014
+      }
+    ],
+    "Annotations": [],
+    "X": 421.440589331896,
+    "Y": 148.670224382741,
+    "Zoom": 2.05668026833428
+  }
+}

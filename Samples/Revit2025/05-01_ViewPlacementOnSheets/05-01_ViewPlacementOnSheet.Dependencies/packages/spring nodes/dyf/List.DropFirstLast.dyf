@@ -1,0 +1,217 @@
+{
+  "Uuid": "2ff558d0-5868-45f0-bb84-67ad6f0526bd",
+  "IsCustomNode": true,
+  "Category": "Springs.Actions",
+  "Description": "Removes the first and last items from the list",
+  "Name": "ꟿ List.DropFirstLast",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "DSCore.List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "DSCore.List.DropItems(DSCore.List.DropItems(l1,1),-1);\nl1[[0,-1]];",
+      "Id": "fa24f103de4d4ddd95805eaedf763bf6",
+      "Inputs": [
+        {
+          "Id": "278e4cbae3094dfa8bef511774c34fd8",
+          "Name": "l1",
+          "Description": "l1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "24daeb5663bf4248a6af212b94b918a3",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b159bb00ba2c4f22b6098ad0aca0f6b9",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "list",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "621eafcf479b4c4fb112bc0fd8418d65",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "8d09d590ffe5443499028c38b7625585",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "rest",
+      "Id": "1f3ad4b6ec4d40cb9a5390c01d3a041b",
+      "Inputs": [
+        {
+          "Id": "ae0aa4a64df6411d80b42dc055eed9fc",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "F&L",
+      "Id": "9ed4ef8ba0b14d25aeaa1f4236ad59fa",
+      "Inputs": [
+        {
+          "Id": "7084e600a8d34890b15a109aa42db638",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "24daeb5663bf4248a6af212b94b918a3",
+      "End": "ae0aa4a64df6411d80b42dc055eed9fc",
+      "Id": "268daab528cd48cc87d5979e276a9f4f"
+    },
+    {
+      "Start": "b159bb00ba2c4f22b6098ad0aca0f6b9",
+      "End": "7084e600a8d34890b15a109aa42db638",
+      "Id": "5a89327d695642f7b613c10b7cd32dc7"
+    },
+    {
+      "Start": "8d09d590ffe5443499028c38b7625585",
+      "End": "278e4cbae3094dfa8bef511774c34fd8",
+      "Id": "376d107fa78843f9b192c57dc1c3f2a3"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 13.437304496765137,
+      "EyeY": 99.696479797363281,
+      "EyeZ": 39.3309211730957,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "Id": "fa24f103de4d4ddd95805eaedf763bf6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 218.027734264208,
+        "Y": 0.81980168553315
+      },
+      {
+        "Id": "621eafcf479b4c4fb112bc0fd8418d65",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 51.9872790702085,
+        "Y": -1.86169767830347
+      },
+      {
+        "Id": "1f3ad4b6ec4d40cb9a5390c01d3a041b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 746.633799392898,
+        "Y": -19.7581485772472
+      },
+      {
+        "Id": "9ed4ef8ba0b14d25aeaa1f4236ad59fa",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 745.908367408086,
+        "Y": 42.6820102812769
+      }
+    ],
+    "Annotations": [],
+    "X": 46.192234397785896,
+    "Y": 180.244744748,
+    "Zoom": 0.679007436100057
+  }
+}

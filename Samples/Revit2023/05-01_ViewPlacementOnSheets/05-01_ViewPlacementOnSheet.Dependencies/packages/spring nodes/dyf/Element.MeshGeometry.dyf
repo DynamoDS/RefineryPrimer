@@ -1,0 +1,264 @@
+{
+  "Uuid": "753fce74-3f5f-437b-9dc0-ac7fbedf9fbf",
+  "IsCustomNode": true,
+  "Category": "Springs.Revit.Query",
+  "Description": "Reads an element's geometry and converts it to either a Dynamo mesh or a toolkit mesh representation.  The node will return Dynamo meshes by default.\r\n\r\nThe LOD input represents the triangulation factor. Its range is from 0 to 1. 0 is the lowest level of detail and 1 is the highest. It's set to 0 by default.",
+  "Name": "ꟿ Element.MeshGeometry",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\r\n\r\nclr.AddReference('RevitServices')\r\nfrom RevitServices.Persistence import DocumentManager\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\nclr.AddReference('RevitNodes')\r\nimport Revit\r\nclr.ImportExtensions(Revit.GeometryConversion)\r\n\r\nclr.AddReference('RevitAPI')\r\nimport Autodesk.Revit.DB as DB\r\n\r\nfrom System.Collections.Generic import List\r\n\r\nindices = List[int]()\r\ndef toTkMesh(m, indices=indices, N=range(3)):\r\n\tverts = (v.ToPoint(1) for v in m.Vertices)\r\n\tindices.Clear()\r\n\tfor i in xrange(m.NumTriangles):\r\n\t\tfor j in N:\r\n\t\t\tindices.Add(m.Triangle[i].Index[j])\r\n\t\r\n\treturn mtk.Mesh.ByVerticesAndIndices(verts, indices)\r\n\r\nelems, tessFactor, asTkMesh = UnwrapElement(IN)\r\nOUT = []\r\nopt1 = DB.Options()\r\n\r\nif asTkMesh:\r\n\tclr.AddReference('MeshToolkit')\r\n\timport Autodesk.Dynamo.MeshToolkit as mtk\r\n\r\ndef getMeshGeo(rvtGeo, geoList=None, opt1=opt1):\r\n\tif geoList is None:\r\n\t\tgeoList = []\r\n\tfor g in rvtGeo:\r\n\t\tif isinstance(g, DB.GeometryInstance):\r\n\t\t\tgetMeshGeo(g.GetInstanceGeometry(), geoList)\r\n\t\telif isinstance(g, DB.Mesh):\r\n\t\t\tgeoList.append(g)\r\n\t\telif isinstance(g, DB.Face):\r\n\t\t\tgeoList.append(g.Triangulate(tessFactor))\r\n\t\telif isinstance(g, DB.Solid):\r\n\t\t\tvol = getattr(g, 'Volume', 0)\r\n\t\t\tif vol > 0:\r\n\t\t\t\tgeoList.extend(f.Triangulate(tessFactor) for f in g.Faces)\r\n\treturn geoList\r\n\r\nfor e in elems:\r\n\tmeshGeo = getMeshGeo(e.Geometry[opt1])\r\n\tif asTkMesh:\r\n\t\tOUT.append(map(toTkMesh, meshGeo))\r\n\telse:\r\n\t\tOUT.append([m.Convert() for m in meshGeo])\r\nopt1.Dispose()",
+      "VariableInputPorts": true,
+      "Id": "b43593b6f80e43309097d375b23588f5",
+      "Inputs": [
+        {
+          "Id": "8b3c91ba36f347b49eb2d997a6957549",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b8d210ecc9874a4599c335cde7287484",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e69bc9b5336e4c5bba0f5d6ae09e4807",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5fa6a4de2eda4ea083582ea81ba0f1df",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "element",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "13c18b999e34479a84008e21428cc8b9",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c58514ce6162483395f8009ed4dca7de",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "LOD",
+        "TypeName": "int",
+        "TypeRank": 0,
+        "DefaultValue": "0",
+        "Description": ""
+      },
+      "Id": "0f47a35c42b14f16a5bc232a74f3077d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4a7d0a4967c247efb5169d1bb286b6c1",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "asToolkitMesh",
+        "TypeName": "bool",
+        "TypeRank": 0,
+        "DefaultValue": "false",
+        "Description": ""
+      },
+      "Id": "4847d8390f1145b6b047929577d94699",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c79029b78df54b3cbfc36f8ed0c6afca",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "meshes",
+      "Id": "b09b374da8e84a03a5c34e2296e3f173",
+      "Inputs": [
+        {
+          "Id": "107df5ecdb5e4988b349015abd851a86",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "5fa6a4de2eda4ea083582ea81ba0f1df",
+      "End": "107df5ecdb5e4988b349015abd851a86",
+      "Id": "95947ca6c8824a958964baa549b1dbf7"
+    },
+    {
+      "Start": "c58514ce6162483395f8009ed4dca7de",
+      "End": "8b3c91ba36f347b49eb2d997a6957549",
+      "Id": "3a4150ca3e8c4d90b51505ca6afef2af"
+    },
+    {
+      "Start": "4a7d0a4967c247efb5169d1bb286b6c1",
+      "End": "b8d210ecc9874a4599c335cde7287484",
+      "Id": "623216ead03444258d5ffb2f735588eb"
+    },
+    {
+      "Start": "c79029b78df54b3cbfc36f8ed0c6afca",
+      "End": "e69bc9b5336e4c5bba0f5d6ae09e4807",
+      "Id": "7e9ae65fd0fe404ca38f7b891da52c63"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "Id": "b43593b6f80e43309097d375b23588f5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 164.21840396063,
+        "Y": 25.2298811880499
+      },
+      {
+        "Id": "13c18b999e34479a84008e21428cc8b9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -121.664093729041,
+        "Y": -1.68199207920334
+      },
+      {
+        "Id": "0f47a35c42b14f16a5bc232a74f3077d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -123.346085808244,
+        "Y": 54.6871155118113
+      },
+      {
+        "Id": "4847d8390f1145b6b047929577d94699",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -121.664093729041,
+        "Y": 110.495559076425
+      },
+      {
+        "Id": "b09b374da8e84a03a5c34e2296e3f173",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 306.030673267717,
+        "Y": 24.1085531352477
+      }
+    ],
+    "Annotations": [],
+    "X": 760.58998405957,
+    "Y": 101.86209573708,
+    "Zoom": 1.78359936238281
+  }
+}

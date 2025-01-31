@@ -1,0 +1,352 @@
+{
+  "Uuid": "fbfba0b2-62c4-4639-9f83-4af9665a373d",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Actions",
+  "Description": "Offsets a curve towards the specified point",
+  "Name": "ꟿ Curve.Offset+",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "d1 = [- dist, dist];\ncl1 = c.Offset(d1<1>);\nc1 = MinimumItemByKey(cl1, fn1);",
+      "Id": "ab369845d66c47389147442cd820b6b5",
+      "Inputs": [
+        {
+          "Id": "c5ee2a8f67434b22a55bd919e2c84b83",
+          "Name": "dist",
+          "Description": "dist",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cbe59d3436b6478f828d592a727a4a91",
+          "Name": "c",
+          "Description": "c",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "65da5180059643e19177995449f518de",
+          "Name": "fn1",
+          "Description": "fn1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8a29f3ea432a42ae986d4a0fb93a9da1",
+          "Name": "",
+          "Description": "d1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "09fe8dc8a7bf4187a18c5423110e08f8",
+          "Name": "",
+          "Description": "cl1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "239cd8ef4e0c4b9ba769d08b48769e31",
+          "Name": "",
+          "Description": "c1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Geometry.DistanceTo@Autodesk.DesignScript.Geometry.Geometry",
+      "Id": "9bd8451fb5ec4026932de2e620899a66",
+      "Inputs": [
+        {
+          "Id": "9f2bebe7fe624bcb8d521faaf580b86a",
+          "Name": "geometry",
+          "Description": "Autodesk.DesignScript.Geometry.Geometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0bc6ed7a47424808b42572e5d362b8b4",
+          "Name": "other",
+          "Description": "The other Geometry\n\nGeometry",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0ee2e1f657f3431db97c2231f5bc1bd5",
+          "Name": "double",
+          "Description": "The distance",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Obtain the distance from this Geometry to another\n\nGeometry.DistanceTo (other: Geometry): double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "curve",
+        "TypeName": "var",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "f92b7735db774782b432dc62a23c6f50",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2daf40e7821e4c52bdec99ed795bb5ec",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "distance",
+        "TypeName": "var",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "bc484a1a109340adb28c99f568e84dd0",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "cf4ff0fe1e9e408a8c4654effc6734e5",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "curve",
+      "Id": "f057e0f6a2df46a5b9a199be52d1e869",
+      "Inputs": [
+        {
+          "Id": "097c4d0180c9483eade41e60c0e4be18",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "point",
+        "TypeName": "var",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "1705570fb0734ff3a99ecb39b3f1f5a1",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "90f4eec47567458fa2746a83f99cea50",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "239cd8ef4e0c4b9ba769d08b48769e31",
+      "End": "097c4d0180c9483eade41e60c0e4be18",
+      "Id": "87a1420f697d47b99c0df43a49676cd8"
+    },
+    {
+      "Start": "0ee2e1f657f3431db97c2231f5bc1bd5",
+      "End": "65da5180059643e19177995449f518de",
+      "Id": "d48e3324f5a642a09586c2287dd0f91d"
+    },
+    {
+      "Start": "2daf40e7821e4c52bdec99ed795bb5ec",
+      "End": "cbe59d3436b6478f828d592a727a4a91",
+      "Id": "7cdabe1dbd48414c9ace2d44d5798a41"
+    },
+    {
+      "Start": "cf4ff0fe1e9e408a8c4654effc6734e5",
+      "End": "c5ee2a8f67434b22a55bd919e2c84b83",
+      "Id": "2472816a4ceb43fca14d5d530fda9d86"
+    },
+    {
+      "Start": "90f4eec47567458fa2746a83f99cea50",
+      "End": "0bc6ed7a47424808b42572e5d362b8b4",
+      "Id": "83973979126c4a198e70f9aca685a53e"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 14.848381996154785,
+      "EyeY": 14.656919479370117,
+      "EyeZ": 12.203851699829102,
+      "LookX": -8.12502384185791,
+      "LookY": -10.863901138305664,
+      "LookZ": -15.083101272583008,
+      "UpX": -0.1622035950422287,
+      "UpY": 0.93969261646270752,
+      "UpZ": -0.3011108934879303
+    },
+    "NodeViews": [
+      {
+        "Id": "ab369845d66c47389147442cd820b6b5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 289.056443991798,
+        "Y": -2.40809777821374
+      },
+      {
+        "Id": "9bd8451fb5ec4026932de2e620899a66",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Geometry.DistanceTo",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 54.9899968766821,
+        "Y": 86.0724820375427
+      },
+      {
+        "Id": "f92b7735db774782b432dc62a23c6f50",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -49.1666621437864,
+        "Y": -30.4264819200407
+      },
+      {
+        "Id": "bc484a1a109340adb28c99f568e84dd0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -61.89038450474,
+        "Y": 26.871037129324
+      },
+      {
+        "Id": "f057e0f6a2df46a5b9a199be52d1e869",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 640.673909217829,
+        "Y": 27.8075177544638
+      },
+      {
+        "Id": "1705570fb0734ff3a99ecb39b3f1f5a1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -70.1681597291677,
+        "Y": 111.433908730436
+      }
+    ],
+    "Annotations": [],
+    "X": 238.930451979491,
+    "Y": 306.258320778078,
+    "Zoom": 1.44258909293313
+  }
+}

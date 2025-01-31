@@ -1,0 +1,375 @@
+{
+  "Uuid": "faf1a814-583f-4469-888a-56118707c9d2",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Query",
+  "Description": "Computes the minimal distance between the axis-aligned bounding boxes of two geometry elements. Works directly with a bounding box input.",
+  "Name": "ꟿ Geometry.BoxedDistanceTo",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "DSCore.Object": {
+        "Key": "DSCore.Object",
+        "Value": "DSCoreNodes.dll"
+      },
+      "String": {
+        "Key": "DSCore.String",
+        "Value": "DSCoreNodes.dll"
+      },
+      "BoundingBox": {
+        "Key": "Autodesk.DesignScript.Geometry.BoundingBox",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "s1 = DSCore.Object.Type(g1);\nt1 = String.Contains(s1, \"BoundingBox\");\na = t1 ? g1 : BoundingBox.ByGeometry(g1);\ns2 = DSCore.Object.Type(g2);\nt2 = String.Contains(s2, \"BoundingBox\");\nb = t2 ? g2 : BoundingBox.ByGeometry(g2);\nam = a.MinPoint;\naM = a.MaxPoint;\nbm = b.MinPoint;\nbM = b.MaxPoint;\namin = [am.X, am.Y, am.Z];\namax = [aM.X, aM.Y, aM.Z];\nbmin = [bm.X, bm.Y, bm.Z];\nbmax = [bM.X, bM.Y, bM.Z];\ndist = [Imperative]{\nsqDist = 0;\nfor (i in GetKeys(amin) )\n{\n\tif (bmax[i] < amin[i])\n\t{\n\t\td = bmax[i] - amin[i];\n\t\tsqDist = sqDist + d * d;\n\t}\n\telseif (bmin[i] > amax[i])\n\t{\n\t\td = bmin[i] - amax[i];\n\t\tsqDist = sqDist + d * d;\n\t}\n}\nreturn = Math.Sqrt(sqDist);\n};",
+      "Id": "4e3465b1092b4585bc90a1f0dfd0d1d2",
+      "Inputs": [
+        {
+          "Id": "af4da4b1135b459b982c23efc455ad2e",
+          "Name": "g1",
+          "Description": "g1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e60e489322c846ababb1cd8f788faa22",
+          "Name": "g2",
+          "Description": "g2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "039893254f7d438482abed877dc27c80",
+          "Name": "",
+          "Description": "s1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "57846c8f48ee41c4819c76c122a5aedd",
+          "Name": "",
+          "Description": "t1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cf5872bb86aa4718a60d226df2b53368",
+          "Name": "",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "47b643260d3b4cc8a22e4989d8d4cb33",
+          "Name": "",
+          "Description": "s2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3907ff3d5f264757850d7c963488463a",
+          "Name": "",
+          "Description": "t2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "425b28a5a7ce4d41afc01a7fae937fb6",
+          "Name": "",
+          "Description": "b",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "924dc137826c4c9b9f8adfd3ca55c91d",
+          "Name": "",
+          "Description": "am",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "24532df5d55b4aa5974363ae81511761",
+          "Name": "",
+          "Description": "aM",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "12887b8d793c4bd2a9f8db39eadb74f3",
+          "Name": "",
+          "Description": "bm",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6bda2ce199b943a0a378326cbf78fb4e",
+          "Name": "",
+          "Description": "bM",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1c13ed6d8c704ad8856b60e29970be6b",
+          "Name": "",
+          "Description": "amin",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ff057c650ab1404fb86ec2d803723c2a",
+          "Name": "",
+          "Description": "amax",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e046bcdec4d44c67b6c0ed9ddab017d6",
+          "Name": "",
+          "Description": "bmin",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7618bdaa08fa4400b43eef1ebf3c836c",
+          "Name": "",
+          "Description": "bmax",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cd7b3666172e4d979d8029ed62c035b2",
+          "Name": "",
+          "Description": "dist",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "geometry",
+        "TypeName": "var",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "463437ef96b643d7b9c3f57e12fba6f2",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "17f3194354944dbaa98bcb308a739133",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "other",
+        "TypeName": "var",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "95b6487ee8114bb4928a17e84cda42be",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ee6303dbd93e4424bad2063ec9c42bf6",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "distance",
+      "Id": "43fc494523e742e7bad7d23817e2285f",
+      "Inputs": [
+        {
+          "Id": "d819970cf4b54e3cbb94ac9ba63f9eae",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "cd7b3666172e4d979d8029ed62c035b2",
+      "End": "d819970cf4b54e3cbb94ac9ba63f9eae",
+      "Id": "077ca1342cd4425b9c1f1fdb9d7d54ce"
+    },
+    {
+      "Start": "17f3194354944dbaa98bcb308a739133",
+      "End": "af4da4b1135b459b982c23efc455ad2e",
+      "Id": "29052f0db8c846dc845304f179ff5238"
+    },
+    {
+      "Start": "ee6303dbd93e4424bad2063ec9c42bf6",
+      "End": "e60e489322c846ababb1cd8f788faa22",
+      "Id": "6461900267e5400891e0c887e2993728"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -19.580507963834865,
+      "EyeY": 11.720259491809445,
+      "EyeZ": 12.985806382400334,
+      "LookX": 23.210629913611985,
+      "LookY": -13.785569419611891,
+      "LookZ": -13.030861399471735,
+      "UpX": 0.22568463132848546,
+      "UpY": 0.96592582628907586,
+      "UpZ": -0.12670337521118588
+    },
+    "NodeViews": [
+      {
+        "Id": "4e3465b1092b4585bc90a1f0dfd0d1d2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 190.244610962067,
+        "Y": 0.948498238697312
+      },
+      {
+        "Id": "463437ef96b643d7b9c3f57e12fba6f2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 0.0,
+        "Y": 0.0
+      },
+      {
+        "Id": "95b6487ee8114bb4928a17e84cda42be",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 0.996383550458859,
+        "Y": 61.0456008019895
+      },
+      {
+        "Id": "43fc494523e742e7bad7d23817e2285f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 668.781095110343,
+        "Y": 1.89699647739474
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "bbfae29512804f2ebdd5f5e26d0b088e",
+        "Title": "https://www.gamedev.net/forums/topic/568111-any-quick-way-to-calculate-min-distance-between-2-bounding-boxes/?do=findComment&comment=4633797",
+        "Nodes": [],
+        "Left": 288.999561369549,
+        "Top": -90.4723858577388,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 347.760767968054,
+    "Y": 182.681533421737,
+    "Zoom": 1.37758335255867
+  }
+}
