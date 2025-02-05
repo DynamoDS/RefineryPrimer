@@ -25,4 +25,4 @@ jobs:
           GH_TOKEN: ${{ secrets.DYNAMO_ACTIONS_TOKEN  }}
         with:
           title: Generative Design Primer Sample Files
-          workdir: "./Release/*.zip"   
+          workdir: "./Release/"   
