@@ -1,8 +1,6 @@
-# Controls when the workflow will run
-on:
-   pull_request:
-    types:
-      - closed
+on: [push]
+permissions:
+  contents: write
 name: Release Sample Files
 
 jobs:
@@ -10,19 +8,19 @@ jobs:
     name: Create Release
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Build Module
         shell: pwsh
         run: ./Samples/ZipForRelease.ps1
-      - name: Create a Release
-        uses: elgohr/Github-Release-Action@v5
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
+      - name: Create Release
+        id: create_release
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          title: Generative Design Primer Sample Files
-          workdir: "./Release/"   
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          title: "Generative Design Primer Samples"
+          prerelease: false
+          files: |
+            ./Release/*.zip
