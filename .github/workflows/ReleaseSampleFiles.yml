@@ -20,11 +20,7 @@ jobs:
         run: ./Samples/ZipForRelease.ps1
       - name: Create Release
         id: create_release
-        uses: "marvinpinto/action-automatic-releases@latest"
+        uses: ncipollo/release-action@v1
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN  }}"
-          automatic_release_tag: "latest"
-          title: "Generative Design Primer Samples"
-          prerelease: false
-          files: |
-            ./Release/*.zip
+          artifacts: "./Release/*.zip"
+          token: "${{ secrets.DYNAMO_ACTIONS_TOKEN  }}"
