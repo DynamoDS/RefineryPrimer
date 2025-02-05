@@ -1,0 +1,29 @@
+﻿<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>Autodesk.RefineryToolkits.SpacePlanning</name>
+  </assembly>
+  <namespaces>
+    <namespace name="Autodesk.RefineryToolkits.SpacePlanning.Analyze">
+      <category>RefineryToolkits.SpacePlanning.Analyze</category>
+    </namespace>
+    <namespace name="Autodesk.RefineryToolkits.SpacePlanning.Evaluate">
+      <category>RefineryToolkits.SpacePlanning.Evaluate</category>
+    </namespace>
+    <namespace name="Autodesk.RefineryToolkits.SpacePlanning.Explore">
+      <category>RefineryToolkits.SpacePlanning.Explore</category>
+    </namespace>
+    <namespace name="Autodesk.RefineryToolkits.SpacePlanning.Generate">
+      <category>RefineryToolkits.SpacePlanning.Generate</category>
+    </namespace>
+    <namespace name="Autodesk.RefineryToolkits.SpacePlanning.Generate.BinPacking.PlacementMethods">
+      <category>RefineryToolkits.SpacePlanning.Generate.BinPacking</category>
+    </namespace>
+    <namespace name="Autodesk.RefineryToolkits.SpacePlanning.Integrate">
+      <category>RefineryToolkits.SpacePlanning.Integrate</category>
+    </namespace>
+    <namespace name="Autodesk.RefineryToolkits.SpacePlanning.Rank">
+      <category>RefineryToolkits.SpacePlanning.Rank</category>
+    </namespace>
+  </namespaces>
+</doc>

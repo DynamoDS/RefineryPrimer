@@ -1,0 +1,164 @@
+{
+  "Uuid": "2652eeea-0a2f-4100-9027-32c61cd67686",
+  "IsCustomNode": true,
+  "Category": "Springs.Revit.Query",
+  "Description": "If the document is workshared, the node returns the path to the central document as a string. Otherwise a null value will be returned.",
+  "Name": "ꟿ Document.CentralPath",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\r\n\r\nclr.AddReference('RevitServices')\r\nfrom RevitServices.Persistence import DocumentManager\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\nclr.AddReference('RevitAPI')\r\nfrom Autodesk.Revit.DB import *\r\n\r\nOUT = None\r\nif doc.IsWorkshared:\r\n\tcp = doc.GetWorksharingCentralModelPath()\r\n\tOUT = ModelPathUtils.ConvertModelPathToUserVisiblePath(cp)",
+      "VariableInputPorts": true,
+      "Id": "1096e2704a884d3fbdecd1ddb4c7d916",
+      "Inputs": [
+        {
+          "Id": "e730def158564af3b6828b0a4ef10c73",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f0ec33e94a3f4f14a2e23c3d9cfd74f4",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "path",
+      "Id": "f10f91d60aab4755b1669907c67c6bc5",
+      "Inputs": [
+        {
+          "Id": "85d42322342b43f2a7a2e4631b928c9a",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "refresh",
+        "TypeName": "bool",
+        "TypeRank": 0,
+        "DefaultValue": "true",
+        "Description": ""
+      },
+      "Id": "b802654ced924677bdcfbeb3826bd0ec",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "96e047bef692441f81e741be4775baec",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "f0ec33e94a3f4f14a2e23c3d9cfd74f4",
+      "End": "85d42322342b43f2a7a2e4631b928c9a",
+      "Id": "8dc466262cc148b0a71698402e957de7"
+    },
+    {
+      "Start": "96e047bef692441f81e741be4775baec",
+      "End": "e730def158564af3b6828b0a4ef10c73",
+      "Id": "deee5f6403c44395b4bc54b369d4004b"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "Id": "1096e2704a884d3fbdecd1ddb4c7d916",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Doc.CentralPath",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 168.485481527625,
+        "Y": 5.30346908990026
+      },
+      {
+        "Id": "f10f91d60aab4755b1669907c67c6bc5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 322.086472781259,
+        "Y": 4.52585243546162
+      },
+      {
+        "Id": "b802654ced924677bdcfbeb3826bd0ec",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -49.4014355967081,
+        "Y": 6.67650529642208
+      }
+    ],
+    "Annotations": [],
+    "X": -78.1601414748687,
+    "Y": 239.871375320695,
+    "Zoom": 1.10476425630303
+  }
+}

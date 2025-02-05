@@ -1,0 +1,279 @@
+{
+  "Uuid": "a530754f-4351-4bdd-81aa-d47d7555fef1",
+  "IsCustomNode": true,
+  "Category": "Springs.Revit.Query",
+  "Description": "Tests if the element is being cut by any void instances. If any cuts exist all cutting elements will be provided.",
+  "Name": "ꟿ Element.IsCut",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Cuboid": {
+        "Key": "Autodesk.DesignScript.Geometry.Cuboid",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Sphere": {
+        "Key": "Autodesk.DesignScript.Geometry.Sphere",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Cuboid.ByLengths": {
+        "Key": "Autodesk.DesignScript.Geometry.Cuboid",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\r\n\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\nclr.AddReference(\"RevitAPI\")\r\nfrom Autodesk.Revit.DB import *\r\n\r\nclr.AddReference(\"RevitNodes\")\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\n\r\ndef tolist(obj1):\r\n\tif hasattr(obj1,\"__iter__\"): return obj1\r\n\telse: return [obj1]\r\n\r\nelements = UnwrapElement(tolist(IN[0]))\r\nout1 = []\r\ncutters = []\r\n\r\ncutU = InstanceVoidCutUtils\r\nfor i in xrange(len(elements)):\r\n\ttry:\r\n\t\tif cutU.CanBeCutWithVoid(elements[i]):\r\n\t\t\tcut1 = cutU.GetCuttingVoidInstances(elements[i])\r\n\t\t\tif cut1.Count == 0:\r\n\t\t\t\tout1.append(False)\r\n\t\t\t\tcutters.append([])\r\n\t\t\telse:\r\n\t\t\t\tout1.append(True)\r\n\t\t\t\tcut1 = [doc.GetElement(id).ToDSType(True) for id in cut1]\r\n\t\t\t\tcutters.append(cut1)\r\n\t\telse:\r\n\t\t\tout1.append(False)\r\n\t\t\tcutters.append([])\r\n\texcept:\r\n\t\tout1.append(False)\r\n\t\tcutters.append([])\t\t\r\n\r\nOUT = out1, cutters",
+      "VariableInputPorts": true,
+      "Id": "9a7feba51d12475e98ba3aa3316ee6c6",
+      "Inputs": [
+        {
+          "Id": "20b8062d609840c09fb688f3573ab7ac",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "02265b0424b04328a051ed57a373ff34",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "element",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "e1633339921a4d6b93cec6cb9d488141",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "268c70c80ffd4e71b86c04c4cdb6332b",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "bool",
+      "Id": "eff4c46583e34fa5a83626007c97b05f",
+      "Inputs": [
+        {
+          "Id": "1ee134630f064470909bd3729721948f",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "res[0];\nres[1];",
+      "Id": "409d4548485443818e9169fce2b7cbd8",
+      "Inputs": [
+        {
+          "Id": "df9b5a4f2f444cf1b3112f61c7a54962",
+          "Name": "res",
+          "Description": "res",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "06fe8c0164494d8b8855d86c484deed2",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2c3af1a627004951974631bd08c9991b",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "cutter",
+      "Id": "067394bcce514677a8831297ef52f059",
+      "Inputs": [
+        {
+          "Id": "81c1801a61e2470aa7263e5777645301",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "02265b0424b04328a051ed57a373ff34",
+      "End": "df9b5a4f2f444cf1b3112f61c7a54962",
+      "Id": "29c61016777e4b58b3bcab4114b89b9c"
+    },
+    {
+      "Start": "268c70c80ffd4e71b86c04c4cdb6332b",
+      "End": "20b8062d609840c09fb688f3573ab7ac",
+      "Id": "d2162fce5193422eace974a769cff15c"
+    },
+    {
+      "Start": "06fe8c0164494d8b8855d86c484deed2",
+      "End": "1ee134630f064470909bd3729721948f",
+      "Id": "2e424470174e4bb3a3edadb33b4b10da"
+    },
+    {
+      "Start": "2c3af1a627004951974631bd08c9991b",
+      "End": "81c1801a61e2470aa7263e5777645301",
+      "Id": "25efa8d3ad8741a2b38285097479807e"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 28.121011734008789,
+      "EyeY": 51.148349761962891,
+      "EyeZ": 53.250408172607422,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "Id": "9a7feba51d12475e98ba3aa3316ee6c6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 250.0,
+        "Y": 0.0
+      },
+      {
+        "Id": "e1633339921a4d6b93cec6cb9d488141",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 99.2,
+        "Y": 2.8421709430404E-14
+      },
+      {
+        "Id": "eff4c46583e34fa5a83626007c97b05f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 551.310468348329,
+        "Y": -8.28656884476153
+      },
+      {
+        "Id": "409d4548485443818e9169fce2b7cbd8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 390.742296820078,
+        "Y": 0.362175540042585
+      },
+      {
+        "Id": "067394bcce514677a8831297ef52f059",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 552.628280733945,
+        "Y": 51.0552676588813
+      }
+    ],
+    "Annotations": [],
+    "X": -376.09990427469,
+    "Y": 126.339947297391,
+    "Zoom": 1.63719728218044
+  }
+}

@@ -1,0 +1,319 @@
+{
+  "Uuid": "aa362d48-4b0d-412d-abcf-0e3ac67b7e2b",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Actions",
+  "Description": "Splits a surface or a solid recursively, using the resulting reduced geometry for every consecutive split. Select a point or another geometry to control the direction of the split.",
+  "Name": "ꟿ Geometry.SplitRecursively",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Circle": {
+        "Key": "Autodesk.DesignScript.Geometry.Circle",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Autodesk.Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Autodesk.DesignScript.Geometry.Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Line": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Color": {
+        "Key": "DSCore.Color",
+        "Value": "DSCoreNodes.dll"
+      },
+      "List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "face;\nplanes;\ndir1;\ngeom = [Imperative]{\noutp = [];\ni = 0;\nfor (p in planes){\n\ts1 = face.Split(p);\n\tif(Count(s1) < 2){\n\t\tface = s1[0];\n\t\tcontinue;\n\t}\n\tind1 = SortIndexByValue(\n\t\tdir1.DistanceTo(s1) );\n\ts1 = Reorder(s1,ind1);\n\tface = s1[0];\n\ts2 = s1[1];\n\toutp[i] = s1[1];\n\ti = i + 1;\n}\noutp[i] = face;\nreturn = outp;\n};",
+      "Id": "a41677810e8a41cda0e66204dcb9e7bb",
+      "Inputs": [
+        {
+          "Id": "eca42bdead9b4a8ca9633c9503d55632",
+          "Name": "face",
+          "Description": "face",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c8cd11d410f24c728a9d95a43b0b581b",
+          "Name": "planes",
+          "Description": "planes",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "57b5eb9f4672426287e6362b68fa65c9",
+          "Name": "dir1",
+          "Description": "dir1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c172e39be9a8438f8eaef16b771a8212",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5f515ee0ac5d461cbc7d8eef7a3db5a0",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "626a0c4a66754892bb66314a38eead5a",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "65bbb4054b194850937c14d6d0ca6d7b",
+          "Name": "",
+          "Description": "geom",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "geometry",
+        "TypeName": "var",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "fc0129dac04a4d628a82d3e809f6e6dd",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a64eb2dea3d24a06aff6c907efef549e",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "tools",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "d8882ad41ccd4eb6960ff1c3bf132f0f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "8457fdcc1ad94cc082d292cd8eb8d4a2",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "pickPoint",
+        "TypeName": "var",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "5991023e8be24c6980a66884683b2059",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "cf41bc3ba6cf4d68815d9ddffb045be3",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "geometry",
+      "Id": "ba31a892dba547b1a5518d48ff3dde2b",
+      "Inputs": [
+        {
+          "Id": "3056f3bac608494f8e887545d4385ecc",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "65bbb4054b194850937c14d6d0ca6d7b",
+      "End": "3056f3bac608494f8e887545d4385ecc",
+      "Id": "d257dda57af949ca92039c3834232426"
+    },
+    {
+      "Start": "a64eb2dea3d24a06aff6c907efef549e",
+      "End": "eca42bdead9b4a8ca9633c9503d55632",
+      "Id": "3379a18e175348d5ae65e2507f550e00"
+    },
+    {
+      "Start": "8457fdcc1ad94cc082d292cd8eb8d4a2",
+      "End": "c8cd11d410f24c728a9d95a43b0b581b",
+      "Id": "8dc57663d55e40f4a16cf23e9d661a02"
+    },
+    {
+      "Start": "cf41bc3ba6cf4d68815d9ddffb045be3",
+      "End": "57b5eb9f4672426287e6362b68fa65c9",
+      "Id": "528bfd3d11f14704a33e4eb7dfe27803"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 20.116401672363281,
+      "EyeY": 17.506513595581055,
+      "EyeZ": 27.060199737548828,
+      "LookX": -1.1268378496170044,
+      "LookY": -6.3907303810119629,
+      "LookZ": -27.926593780517578,
+      "UpX": -0.00035182933788746595,
+      "UpY": 0.99996191263198853,
+      "UpZ": -0.0087194405496120453
+    },
+    "NodeViews": [
+      {
+        "Id": "a41677810e8a41cda0e66204dcb9e7bb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 314.539993482075,
+        "Y": 360.085020456944
+      },
+      {
+        "Id": "fc0129dac04a4d628a82d3e809f6e6dd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 102.911947126204,
+        "Y": 356.507053390387
+      },
+      {
+        "Id": "d8882ad41ccd4eb6960ff1c3bf132f0f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 111.879007191495,
+        "Y": 420.572727764678
+      },
+      {
+        "Id": "5991023e8be24c6980a66884683b2059",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 94.6921420663536,
+        "Y": 485.385657144409
+      },
+      {
+        "Id": "ba31a892dba547b1a5518d48ff3dde2b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 720.08500207862,
+        "Y": 389.21873725698
+      }
+    ],
+    "Annotations": [],
+    "X": -46.3469713489022,
+    "Y": -320.353063528023,
+    "Zoom": 1.27771698410772
+  }
+}

@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Autodesk.RefineryToolkits.MassingSandbox</name>
+    </assembly>
+    <members>
+        <member name="M:Autodesk.RefineryToolkits.MassingSandbox.Analyze.SiteAnalysis.ClashTest(Autodesk.DesignScript.Geometry.Solid,Autodesk.DesignScript.Geometry.Solid)">
+            <summary>
+            Tests site boundary against building mass.
+            </summary>
+            <param name="buildingSolid">Building solid from the generator.</param>
+            <param name="siteSolid">Site boundary volume.</param>
+            <returns name="buildingInside">Volume of building inside of site boundary.</returns>
+            <returns name="buildingOutside">Volume of building outside of site boundary.</returns>
+            <returns name="intersects">Does the building mass intersect with the site boundary?</returns>
+            <returns name="percentOutside">Percent of building volume that is outside the site boundary.</returns>
+            <search>site,design,refinery</search>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.MassingSandbox.Analyze.SiteAnalysis.ViewDistance(Autodesk.DesignScript.Geometry.Surface,Autodesk.DesignScript.Geometry.Geometry[],DSCore.Color,DSCore.Color,System.Double,System.Double)">
+            <summary>
+            Calculates line of sight distances from a grid of points on a surface.
+            </summary>
+            <param name="surface">Surface, such as building's facade, to search from.</param>
+            <param name="contextGeomList">Geometry to calculate distance to.</param>
+            <param name="startColor">Color of start of preview color range.</param>
+            <param name="endColor">Color of end of preview color range.</param>
+            <param name="resolution">Distance between sampling points.</param>
+            <param name="maxDistance">Maximum distance to search.</param>
+            <returns name="pointList">Sampling points.</returns>
+            <returns name="distanceList">Distance from each sampling point along surface normal to the closest context geometry.</returns>
+            <returns name="geometryColor">Colored surfaces mapping view distance.</returns>
+        </member>
+        <member name="P:Autodesk.RefineryToolkits.MassingSandbox.Generate.BuildingBase.UsesDepth">
+            <summary>
+            Gets or sets a value indicating whether this building has a hole in the center.
+            </summary>
+            <value>
+              <c>true</c> if this instance has a hole; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.MassingSandbox.Generate.BuildingBase.TransformFromOrigin``1(``0)">
+            <summary>
+            Geometry is constructed with lower left corner at (0,0). Move and rotate into place.
+            </summary>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.MassingSandbox.Generate.BuildingBase.CreateCoreCurves">
+            <summary>
+            Creates boundary curves at the base of all cores. Defaults to creating a centered rectangle of the same aspect as the building's bounds.
+            </summary>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.MassingSandbox.Generate.BuildingBase.DisposeNonExports">
+            <summary>
+            Dispose of members which aren't exported by the building creation nodes.
+            </summary>
+        </member>
+        <member name="T:Autodesk.RefineryToolkits.MassingSandbox.Generate.Building">
+            <summary>
+            Buildings description.
+            </summary>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.MassingSandbox.Generate.Building.InitializeBuilding(System.String)">
+            <summary>
+            Initializes a building object.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.MassingSandbox.Generate.Building.SelectBuildingType(System.Int32)">
+            <summary>
+            Uses an integer index to select a building type letter from the list of possible options ("U", "L", "H", "O", or "D").
+            </summary>
+            <param name="shapeIndex">Index of building type to select from list of possible types.</param>
+            <returns name="buildingTypeStr">Name of building type. One of "U", "L", "H", "O", or "D".</returns>
+            <search>building,design,refinery</search>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.MassingSandbox.Generate.Building.ByTypeArea(Autodesk.DesignScript.Geometry.Plane,System.String,System.Double,System.Double,System.Double,System.Double,System.Double,System.Boolean,System.Boolean,System.Double,System.Double,System.Double)">
+            <summary>
+            Generates a building solid by shape type and target gross area.
+            </summary>
+            <param name="typeStr">Building type name ("U", "L", "H", "O", or "D").</param>
+            <param name="basePlane">The building base plane.</param>
+            <param name="length">Overall building length.</param>
+            <param name="width">Overall building width.</param>
+            <param name="depth">Building depth.</param>
+            <param name="buildingArea">Target gross building area.</param>
+            <param name="floorHeight">Height of the floors.</param>
+            <param name="curvedBool">Should sides of building be curved or faceted?</param>
+            <param name="createCoreBool">Create core volumes and subtractions?</param>
+            <param name="hallwayToDepth">Core sizing logic: ratio between building depth and width of hallways on either side of core.</param>
+            <param name="coreSizeFactorFloors">Core sizing logic: Add <code>(# of floors) * coreSizeFactorFloors</code> area to core footprint.</param>
+            <param name="coreSizeFactorArea">Core sizing logic: Add <code>(single floor area) * coreSizeFactorArea</code> area to core footprint.</param>
+            <returns name="buildingSolid">Building volume.</returns>
+            <returns name="floorSrfList">Building floor surfaces.</returns>
+            <returns name="netFloorSrfList">Building floor surfaces with core removed.</returns>
+            <returns name="floorElevationList">Elevation of each floor in building.</returns>
+            <returns name="coreSolidList">Building core volumes.</returns>
+            <returns name="topPlane">A plane at the top of the building volume. Use this for additional volumes to create a stacked building.</returns>
+            <returns name="buildingVolume">Volume of entire building solid.</returns>
+            <returns name="grossFloorArea">Combined area of all floors. Will be greater than or equal to input buildingArea.</returns>
+            <returns name="netFloorArea">Combined area of all floors with core removed.</returns>
+            <returns name="totalFacadeArea">Combined area of all facades (vertical surfaces).</returns>
+            <search>building,design,refinery</search>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.MassingSandbox.Generate.Building.ByTypeFloors(Autodesk.DesignScript.Geometry.Plane,System.String,System.Double,System.Double,System.Double,System.Int32,System.Double,System.Boolean,System.Boolean,System.Double,System.Double,System.Double)">
+            <summary>
+            Generates a building solid by shape type and number of floors.
+            </summary>
+            <param name="typeStr">Building type (U, L, H, O, or D).</param>
+            <param name="basePlane">The building base plane.</param>
+            <param name="length">Overall building length.</param>
+            <param name="width">Overall building width.</param>
+            <param name="depth">Building depth.</param>
+            <param name="floorCount">Number of building floors.</param>
+            <param name="floorHeight">Height of the floors.</param>
+            <param name="curvedBool">Should sides of building be curved or faceted?</param>
+            <param name="createCoreBool">Create core volumes and subtractions?</param>
+            <param name="hallwayToDepth">Core sizing logic: ratio between building depth and width of hallways on either side of core.</param>
+            <param name="coreSizeFactorFloors">Core sizing logic: Add <code>(# of floors) * CoreSizeFactorFloors</code> area to core footprint.</param>
+            <param name="coreSizeFactorArea">Core sizing logic: Add <code>(single floor area) * CoreSizeFactorArea</code> area to core footprint.</param>
+            <returns name="buildingSolid">Building volume.</returns>
+            <returns name="floorSrfList">Building floor surfaces.</returns>
+            <returns name="netFloorSrfList">Building floor surfaces with core removed.</returns>
+            <returns name="floorElevationList">Elevation of each floor in building.</returns>
+            <returns name="coreSolidList">Building core volumes.</returns>
+            <returns name="topPlane">A plane at the top of the building volume. Use this for additional volumes to create a stacked building.</returns>
+            <returns name="buildingVolume">Volume of entire building solid.</returns>
+            <returns name="grossFloorArea">Combined area of all floors. Will be at least equal to BldgArea.</returns>
+            <returns name="netFloorArea">Combined area of all floors with core removed.</returns>
+            <returns name="totalFacadeArea">Combined area of all facades (vertical surfaces).</returns>
+            <search>building,design,refinery</search>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.MassingSandbox.Generate.Building.DeconstructFacadeShell(Autodesk.DesignScript.Geometry.Topology,System.Double)">
+            <summary>
+            Deconstructs a building solid into component horizontal and vertical surfaces.
+            </summary>
+            <param name="solid">Building solid.</param>
+            <param name="angleThreshold">Threshold for classification. 0 (more vertical surfaces) - 90 (more horizontal surfaces).</param>
+            <returns name="verticalSrfList">Vertical surfaces.</returns>
+            <returns name="horizontalSrfList">Horizontal surfaces.</returns>
+            <search>building,design,refinery</search>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.MassingSandbox.Generate.Building.GetSurfaceLoops(Autodesk.DesignScript.Geometry.Surface)">
+            <summary>
+            Gets a list of closed polycurve edges of surface. First list item is outside boundary.
+            </summary>
+            <param name="surface">The surface.</param>
+            <returns name="edgeCrvList">Edges of surface.</returns>
+            <exception cref="T:System.ArgumentNullException">Surface</exception>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.MassingSandbox.Generate.Building.ByOutlineArea(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Curve},System.Double,System.Double)">
+            <summary>
+            Generates a building solid from base curves and target gross area.
+            </summary>
+            <param name="edgeLoopCrvList">Closed curve boundaries of building. All curves after first will be treated as holes.</param>
+            <param name="buildingArea">Target gross building area.</param>
+            <param name="floorHeight">Height of the floors.</param>
+            <returns name="buildingSolid">Building volume.</returns>
+            <returns name="floorSrfList">Building floor surfaces.</returns>
+            <returns name="floorElevationList">Elevation of each floor in building.</returns>
+            <returns name="topPlane">A plane at the top of the building volume. Use this for additional volumes to create a stacked building.</returns>
+            <returns name="buildingVolume">Volume of entire building solid.</returns>
+            <returns name="grossFloorArea">Combined area of all floors. Will be at least equal to BldgArea.</returns>
+            <returns name="totalFacadeArea">Combined area of all facades (vertical surfaces).</returns>
+            <search>building,design,refinery</search>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.MassingSandbox.Generate.Building.ByOutlineFloors(System.Collections.Generic.List{Autodesk.DesignScript.Geometry.Curve},System.Int32,System.Double)">
+            <summary>
+            Generates a building solid from base curves and number of floors.
+            </summary>
+            <param name="edgeLoopCrvList">Closed curve boundaries of building. All curves after first will be treated as holes.</param>
+            <param name="floorCount">Target gross building area.</param>
+            <param name="floorHeight">Height of the floors.</param>
+            <returns name="buildingSolid">Building volume.</returns>
+            <returns name="floorSrfList">Building floor surfaces.</returns>
+            <returns name="floorElevationList">Elevation of each floor in building.</returns>
+            <returns name="topPlane">A plane at the top of the building volume. Use this for additional volumes to create a stacked building.</returns>
+            <returns name="buildingVolume">Volume of entire building solid.</returns>
+            <returns name="grossFloorArea">Combined area of all floors. Will be at least equal to BldgArea.</returns>
+            <returns name="totalFacadeArea">Combined area of all facades (vertical surfaces).</returns>
+            <search>building,design,refinery</search>
+        </member>
+        <member name="T:Autodesk.RefineryToolkits.MassingSandbox.Generate.Site">
+            <summary>
+            Site description.
+            </summary>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.MassingSandbox.Generate.Site.VolumeByOutlineSetback(Autodesk.DesignScript.Geometry.Curve,System.Double,System.Double)">
+            <summary>
+            Uses setback and height to create boundary volume for building solid to fit into.
+            </summary>
+            <param name="siteOutline">Site boundary, from Revit.</param>
+            <param name="setback">Site setback distance.</param>
+            <param name="heightLimit">Maximum building height.</param>
+            <returns name="siteSolid">Allowable volume for building mass.</returns>
+            <returns name="siteOffset">Allowable footprint for building mass.</returns>
+            <search>site,design,refactory</search>
+        </member>
+        <member name="M:Autodesk.RefineryToolkits.MassingSandbox.Generate.Site.ContextByElement(Autodesk.DesignScript.Geometry.PolySurface)">
+            <summary>
+            Gets site components from polysurface (e.g. Revit mass).
+            </summary>
+            <param name="polysurface">Referenced site element.</param>
+            <returns name="solidList">Individual solids in site geometry.</returns>
+            <returns name="boundingBoxList">Bounding box for each element.</returns>
+            <returns name="heightList">Height of each element.</returns>
+            <search>refinery</search>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,215 @@
+{
+  "Uuid": "4b49358c-e6c7-4819-b4b3-3a4ccee4f290",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Query",
+  "Description": "Gets all the unique start and end points of the underlying curves in a sorted list.",
+  "Name": "ꟿ PolyCurve.Points",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Line": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
+      },
+      "PolyCurve": {
+        "Key": "Autodesk.DesignScript.Geometry.PolyCurve",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      },
+      "PolyCurve.Sli": {
+        "Key": "Autodesk.DesignScript.Geometry.PolyCurve",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "polyCurve",
+        "TypeName": "var",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "c64419ff75cc45ba8765dd9fc5f96ac2",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "11ab30f99720422aa0ea4156cb4a09b6",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "points",
+      "Id": "1dde373a63504b1f899e4bfc1f12d3f7",
+      "Inputs": [
+        {
+          "Id": "b8a29afcdf7449f390444c737ec05010",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "pc;\nc = pc.Curves();\nsp = c.StartPoint;\npts = [Imperative]{\nif (!pc.IsClosed)\n{\nreturn = List.AddItemToEnd(\n  c[-1].EndPoint, sp);\n}\nreturn = sp;\n};",
+      "Id": "5ba8a6d2d9424cc68518f83e582d4510",
+      "Inputs": [
+        {
+          "Id": "9dab8961be92430397435bc60616c002",
+          "Name": "pc",
+          "Description": "pc",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6e54f64a703c4ab7bc12fba45e5cddd5",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c6c8e00ddad2495db71b629d7f204e66",
+          "Name": "",
+          "Description": "c",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6c538a632e1247cda4bf2b3753436010",
+          "Name": "",
+          "Description": "sp",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3300ed56f7394011b4dbe641c6f104a2",
+          "Name": "",
+          "Description": "pts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "11ab30f99720422aa0ea4156cb4a09b6",
+      "End": "9dab8961be92430397435bc60616c002",
+      "Id": "aa674873afdc46739261c854b832ad57"
+    },
+    {
+      "Start": "3300ed56f7394011b4dbe641c6f104a2",
+      "End": "b8a29afcdf7449f390444c737ec05010",
+      "Id": "bedcfd26b06e4ec28a4b6139d041934b"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -156.52970886230469,
+      "EyeY": 1251.3790283203125,
+      "EyeZ": 348.07293701171875,
+      "LookX": 151.56260681152344,
+      "LookY": -1250.5142822265625,
+      "LookZ": -315.07342529296875,
+      "UpX": 0.38275063037872314,
+      "UpY": 0.46947157382965088,
+      "UpZ": -0.79567486047744751
+    },
+    "NodeViews": [
+      {
+        "Id": "c64419ff75cc45ba8765dd9fc5f96ac2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 112.115703400363,
+        "Y": -5.94096822146747
+      },
+      {
+        "Id": "1dde373a63504b1f899e4bfc1f12d3f7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 569.942148299819,
+        "Y": -0.101542460150718
+      },
+      {
+        "Id": "5ba8a6d2d9424cc68518f83e582d4510",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 270.63596805958,
+        "Y": -4.30270653967476
+      }
+    ],
+    "Annotations": [],
+    "X": -85.8421777378049,
+    "Y": 116.257206916268,
+    "Zoom": 1.545620359375
+  }
+}

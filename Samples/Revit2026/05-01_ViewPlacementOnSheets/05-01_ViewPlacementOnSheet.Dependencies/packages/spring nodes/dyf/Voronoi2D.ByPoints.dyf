@@ -1,0 +1,353 @@
+{
+  "Uuid": "8e0daeeb-d9c7-444d-8c26-03f0b4dfa0a4",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Create",
+  "Description": "Create a voronoi tessellation of a set of planar points. The cell lines will be culled to the bounding extent of the points.",
+  "Name": "ꟿ Voronoi2D.ByPoints",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Plane": {
+        "Key": "Autodesk.DesignScript.Geometry.Plane",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Line": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
+      },
+      "DSCore.List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Circle": {
+        "Key": "Autodesk.DesignScript.Geometry.Circle",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Delaunay": {
+        "Key": "Tessellation.Delaunay",
+        "Value": "Tessellation.dll"
+      },
+      "Autodesk.Surface.ByPerimeterPoints": {
+        "Key": "Autodesk.DesignScript.Geometry.Surface",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Autodesk.Surface": {
+        "Key": "Autodesk.DesignScript.Geometry.Surface",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Autodesk.DesignScript.Geometry.Surface.ByPerimeterPoints": {
+        "Key": "Autodesk.DesignScript.Geometry.Surface",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Rectangle": {
+        "Key": "Autodesk.DesignScript.Geometry.Rectangle",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Autodesk.DesignScript.Geometry.Surface": {
+        "Key": "Autodesk.DesignScript.Geometry.Surface",
+        "Value": "ProtoGeometry.dll"
+      },
+      "BoundingBox": {
+        "Key": "Autodesk.DesignScript.Geometry.BoundingBox",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Voronoi": {
+        "Key": "Tessellation.Voronoi",
+        "Value": "Tessellation.dll"
+      },
+      "Autodesk.Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Autodesk.DesignScript.Geometry.Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "bb = BoundingBox.ByGeometry(pts);\na0 = bb.MinPoint;\nb0 = bb.MaxPoint;\nx = a0.DistanceTo(b0) * 0.1;\nv1 = Autodesk.Vector.ByCoordinates(x, x, 0);\na = a0.Subtract(v1);\nb = b0.Add(v1);\nf1 = Autodesk.Surface.ByPerimeterPoints([\n  Point.ByCoordinates(a.X, a.Y),\n  Point.ByCoordinates(b.X, a.Y),\n  Point.ByCoordinates(b.X, b.Y),\n  Point.ByCoordinates(a.X, b.Y)]);\nuv1 = f1.UVParameterAtPoint(pts);\nln0 = Voronoi.ByParametersOnSurface(uv1, f1);\nmask = ln0.StartPoint.DoesIntersect(f1) &&\n  ln0.EndPoint.DoesIntersect(f1);\nln1 = List.FilterByBoolMask(ln0, mask)[\"in\"];\nln2 = Flatten(List.FilterByBoolMask(ln0, mask)[\"out\"].\n  Intersect(f1) );\nList.Join([ln1, ln2]);",
+      "Id": "1f2c77e7c4b54fe5adddb922b70d0047",
+      "Inputs": [
+        {
+          "Id": "1ec723b9caa4410a93ce8bc1266111af",
+          "Name": "pts",
+          "Description": "pts",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5cde715887594726885d2074dc67c4d3",
+          "Name": "",
+          "Description": "bb",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "41c5b1648fef4b83b8b99ec386df1802",
+          "Name": "",
+          "Description": "a0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c843bf46c9fd46668bd0ff5316ab4258",
+          "Name": "",
+          "Description": "b0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fbe3679c4cdd43c6969f6dcff3459473",
+          "Name": "",
+          "Description": "x",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "03771b32885e41cd9d96e5440cd95926",
+          "Name": "",
+          "Description": "v1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c54c0045be194e9f9e9b61699ecf6f50",
+          "Name": "",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "90f2fa16eb2c4df991b8f5ece3645917",
+          "Name": "",
+          "Description": "b",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8eef99713762461581c12425ec362724",
+          "Name": "",
+          "Description": "f1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3068f1e263a045e0b2f34af434cb4b26",
+          "Name": "",
+          "Description": "uv1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "87f1574f8cfe4d139f070c15d39beb38",
+          "Name": "",
+          "Description": "ln0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5cf6aeeefc0d4724aa63adb413c2eeb9",
+          "Name": "",
+          "Description": "mask",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e131457aedca471ba16218ee2c4d788e",
+          "Name": "",
+          "Description": "ln1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c914214234f741629f95c4c53fe2c4d3",
+          "Name": "",
+          "Description": "ln2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "19e4ea7d9bc743deadeaf54a044a33e7",
+          "Name": "",
+          "Description": "Value of expression at line 20",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "points",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "3e10561470c34ffd8139df796d59e0b8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "30586a8eefb744c6bfd2982b8eff866a",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "lines",
+      "Id": "46c77c1ecc8a4a87a20078f4daccf531",
+      "Inputs": [
+        {
+          "Id": "2f0f6b149bc240dc9518f797144e942a",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "19e4ea7d9bc743deadeaf54a044a33e7",
+      "End": "2f0f6b149bc240dc9518f797144e942a",
+      "Id": "54d1e86fb5df41859cafe7b0b39f7484"
+    },
+    {
+      "Start": "30586a8eefb744c6bfd2982b8eff866a",
+      "End": "1ec723b9caa4410a93ce8bc1266111af",
+      "Id": "bac2ccb7c3c74b97939542657b55755c"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "Id": "1f2c77e7c4b54fe5adddb922b70d0047",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 250.0,
+        "Y": 0.0
+      },
+      {
+        "Id": "3e10561470c34ffd8139df796d59e0b8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 92.0,
+        "Y": -5.0
+      },
+      {
+        "Id": "46c77c1ecc8a4a87a20078f4daccf531",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 883.0,
+        "Y": 9.0
+      }
+    ],
+    "Annotations": [],
+    "X": 85.0,
+    "Y": 115.0,
+    "Zoom": 1.0
+  }
+}

@@ -1,0 +1,439 @@
+{
+  "Uuid": "6d9eac08-17d3-49be-be91-4ce94069a40a",
+  "IsCustomNode": true,
+  "Category": "Springs.Revit.Create",
+  "Description": "Places a text note at a given point in the view. View, text type and content can either be a single item for all points or the same length as the number of points.\r\nSet track to false if you'd like to place notes on every run.",
+  "Name": "ꟿ TextNote.ByPoint",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "String": {
+        "Key": "DSCore.String",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Line": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Copyright(c) 2018, Dimitar Venkov\r\n# @5devene, dimitar.ven@gmail.com\r\n# www.badmonkeys.net\r\n\r\nimport clr\r\n\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\n\r\nclr.AddReference('RevitAPI')\r\nimport Autodesk.Revit.DB as DB\r\n\r\nclr.AddReference(\"RevitNodes\")\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\nclr.ImportExtensions(Revit.GeometryConversion)\r\n\r\ndef tolist(x):\r\n\tif hasattr(x,'__iter__'): return x\r\n\telse : return [x]\r\n\r\nview = UnwrapElement(tolist(IN[0]))\r\npts = tolist(IN[1])\r\ncontent = map(str, tolist(IN[2]))\r\ntxtType = UnwrapElement(tolist(IN[3]))\r\n_txtAlign = str(IN[4])\r\npersistent = not IN[5]\r\n\r\ntxtAlign_dict = {\"Center\" : DB.HorizontalTextAlignment.Center,\r\n\t\t\t\t \"Left\"   : DB.HorizontalTextAlignment.Left,\r\n\t\t\t\t \"Right\"  : DB.HorizontalTextAlignment.Right}\r\ntxtAlign = txtAlign_dict.get(_txtAlign, None)\r\nif txtAlign is None:\r\n\ttxtAlign = txtAlign_dict[\"Center\"]\r\n\r\nif txtType[0] is None:\r\n\ttxtType[0] = doc.GetElement(doc.GetDefaultElementTypeId(DB.ElementTypeGroup.TextNoteType))\r\n\r\nOUT = []\r\ntxtType_len = len(txtType) == 1\r\nview_len = len(view) == 1\r\ncontent_len = len(content) == 1\r\n\r\nTransactionManager.Instance.EnsureInTransaction(doc)\r\nfor i in xrange(len(pts) ):\r\n\tp = pts[i].ToXyz(True)\r\n\tj = 0 if txtType_len else i\r\n\tk = 0 if view_len else i\r\n\tm = 0 if content_len else i\r\n\ttry:\r\n\t\ttn = DB.TextNote.Create(doc, view[k].Id, p, content[m], txtType[j].Id)\r\n\t\ttn.HorizontalAlignment = txtAlign\r\n\t\tOUT.append(tn.ToDSType(persistent) )\r\n\texcept:\r\n\t\tOUT.append(None)\r\nTransactionManager.Instance.TransactionTaskDone()",
+      "VariableInputPorts": true,
+      "Id": "76b9e68c74774f989050d179a0f2ea9e",
+      "Inputs": [
+        {
+          "Id": "05e3db6ad01a4cfbb82c60261defe439",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "386bba1d31bf4a13a433cd6b27c4013a",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "424cbb189ee94b7cb21dfdda9440eab2",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b71fe94c1fae45ab9843abf167a9c0ee",
+          "Name": "IN[3]",
+          "Description": "Input #3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0b054c905907426e826e95943f6ff479",
+          "Name": "IN[4]",
+          "Description": "Input #4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9e874d1ea98643b68ac17c98f0967019",
+          "Name": "IN[5]",
+          "Description": "Input #5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c66210efee4d4c708be942e7da007db8",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "view",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "eefc2086b8944094856189a94c0e22a4",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "feebc11f283845f5bd0aeec1e23b2997",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "point",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "6e48c707ad3b4f83a81abbc04d654e6b",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "01ef8124400043bc9b0d9eb2ad2f0c78",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "content",
+        "TypeName": "string",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "9b9c43ce669b48e182a39fa225590353",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "3d20ab0e440d4256a0627ceb6a03e70a",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "textType",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": "null",
+        "Description": ""
+      },
+      "Id": "d00e87aea26241bf8284c8ea65a67055",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "00bec9feec584e3894e38b08bd62f9a3",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "horAlign",
+        "TypeName": "string",
+        "TypeRank": 0,
+        "DefaultValue": "\"Center\"",
+        "Description": ""
+      },
+      "Id": "763bcf7ad7834c26bb1546ee55daf92d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e5eae995183245c79b9067f5c039b0bd",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "track",
+        "TypeName": "bool",
+        "TypeRank": 0,
+        "DefaultValue": "true",
+        "Description": ""
+      },
+      "Id": "2c5d6b467c084c89bb36b3937acc9871",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "fbaa57602df94fd4bfd27a8bb9956799",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "textNote",
+      "Id": "0db9b4afd0384dcd813198e9eeca3273",
+      "Inputs": [
+        {
+          "Id": "683eee17228a4f588bb1f5d106c128bd",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "c66210efee4d4c708be942e7da007db8",
+      "End": "683eee17228a4f588bb1f5d106c128bd",
+      "Id": "d81ad47c846c458289c667100908014a"
+    },
+    {
+      "Start": "feebc11f283845f5bd0aeec1e23b2997",
+      "End": "05e3db6ad01a4cfbb82c60261defe439",
+      "Id": "530bf3ca0c554294ab2228ce683dabe4"
+    },
+    {
+      "Start": "01ef8124400043bc9b0d9eb2ad2f0c78",
+      "End": "386bba1d31bf4a13a433cd6b27c4013a",
+      "Id": "e219e58c68ad416fb30a64c752deded9"
+    },
+    {
+      "Start": "3d20ab0e440d4256a0627ceb6a03e70a",
+      "End": "424cbb189ee94b7cb21dfdda9440eab2",
+      "Id": "c2bf683be3e7448385af0ed5bc5c8334"
+    },
+    {
+      "Start": "00bec9feec584e3894e38b08bd62f9a3",
+      "End": "b71fe94c1fae45ab9843abf167a9c0ee",
+      "Id": "df3e7efb18394a03a34b779acf8d67b9"
+    },
+    {
+      "Start": "e5eae995183245c79b9067f5c039b0bd",
+      "End": "0b054c905907426e826e95943f6ff479",
+      "Id": "9d6201f766d4415388d082552bc9b98b"
+    },
+    {
+      "Start": "fbaa57602df94fd4bfd27a8bb9956799",
+      "End": "9e874d1ea98643b68ac17c98f0967019",
+      "Id": "cb2695ef317340bba9968a26501d2cb4"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -243.143310546875,
+      "EyeY": 982.30230712890625,
+      "EyeZ": -32.319305419921875,
+      "LookX": -0.19291664659976959,
+      "LookY": -961.03277587890625,
+      "LookZ": -35.58306884765625,
+      "UpX": -0.0052488162182271481,
+      "UpY": 0.2503800094127655,
+      "UpZ": -0.96813338994979858
+    },
+    "NodeViews": [
+      {
+        "Id": "76b9e68c74774f989050d179a0f2ea9e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "TextNote.ByPoint",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 264.004192302455,
+        "Y": 109.316972529113
+      },
+      {
+        "Id": "eefc2086b8944094856189a94c0e22a4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -208.795510364838,
+        "Y": -6.62024350475355
+      },
+      {
+        "Id": "6e48c707ad3b4f83a81abbc04d654e6b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -208.795510364838,
+        "Y": 57.9978833347682
+      },
+      {
+        "Id": "9b9c43ce669b48e182a39fa225590353",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -208.795510364838,
+        "Y": 122.61601017429
+      },
+      {
+        "Id": "d00e87aea26241bf8284c8ea65a67055",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -209.62962469871,
+        "Y": 187.234137013812
+      },
+      {
+        "Id": "763bcf7ad7834c26bb1546ee55daf92d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -208.795510364838,
+        "Y": 251.852263853334
+      },
+      {
+        "Id": "2c5d6b467c084c89bb36b3937acc9871",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -208.795510364838,
+        "Y": 316.470390692855
+      },
+      {
+        "Id": "0db9b4afd0384dcd813198e9eeca3273",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": false,
+        "Excluded": false,
+        "X": 410.058714730446,
+        "Y": 109.746946985836
+      }
+    ],
+    "Annotations": [],
+    "X": 228.39857193783,
+    "Y": 65.9104398948813,
+    "Zoom": 1.1988764122517
+  }
+}

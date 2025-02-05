@@ -1,0 +1,254 @@
+{
+  "Uuid": "66f270da-7ab3-4eaf-81ba-e883ce0fee3f",
+  "IsCustomNode": true,
+  "Category": "Springs.Revit.Selection.Actions",
+  "Description": "Select multiple faces from inside the Revit UI. Be sure to press \"Finish\" once done. Unlike the built-in node, face references of instances will be added sucessfully and you'l get the pick points. You can use a Boolean toggle to refresh your selection.",
+  "Name": "ꟿ SelectFaces+",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "r[0];\nr[1];",
+      "Id": "d91fd4783db943e09a5e5ef3dc4fde29",
+      "Inputs": [
+        {
+          "Id": "23ca1a365c2d4854accfc93723e92556",
+          "Name": "r",
+          "Description": "r",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5d97a3163f904469bd5ce059921d5b42",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "246be1c05cb0445496156f8d7955a071",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "#Copyright(c) 2016, Dimitar Venkov\r\n# @5devene, dimitar.ven@gmail.com\r\n\r\nimport clr\r\n\r\nclr.AddReference(\"RevitAPIUI\")\r\nfrom  Autodesk.Revit.UI import *\r\n\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\nuidoc=DocumentManager.Instance.CurrentUIApplication.ActiveUIDocument\r\n\r\nclr.AddReference(\"RevitNodes\")\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\nclr.ImportExtensions(Revit.GeometryConversion)\r\n\r\nclr.AddReference('RevitAPI')\r\nfrom Autodesk.Revit.DB import *\r\n\r\ndef output1(x):\r\n\tif len(x) == 1: return x[0]\r\n\telse : return x\r\n\r\nsurfaces, gpoints = [], []\r\nsel1 = uidoc.Selection\r\not1 = Selection.ObjectType.Face\r\nref_list = sel1.PickObjects(ot1, \"Select the faces and press Finish.\")\r\nfor ref in ref_list:\r\n\tel1 = doc.GetElement(ref.ElementId)\r\n\tsf0 = el1.GetGeometryObjectFromReference(ref)\r\n\tif isinstance(el1, FamilyInstance):\r\n\t\ttf1 = el1.GetTransform().ToCoordinateSystem()\r\n\t\tsf1 = sf0.Convert(ref, tf1)\r\n\telse:\r\n\t\tsf1 = sf0.ToProtoType(True)\r\n\tfor i in sf1: i.Tags.AddTag(\"RevitFaceReference\", ref)\r\n\tsurfaces.append(output1(sf1) )\r\n\tgpoints.append(ref.GlobalPoint.ToPoint(True) )\r\n\r\nOUT = output1(surfaces), output1(gpoints)",
+      "VariableInputPorts": true,
+      "Id": "6949246403214cb18b1013c3de2324ef",
+      "Inputs": [
+        {
+          "Id": "89cbbb67e7ae482ab7670475330f9310",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0df8034b311d48c583204522cdf348a0",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "refresh",
+        "TypeName": "bool",
+        "TypeRank": 0,
+        "DefaultValue": "true",
+        "Description": ""
+      },
+      "Id": "e960c9b4434f4d94b196defa4081d6bd",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "6d63b1b49a2742c798252140d768cc12",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "faces",
+      "Id": "a6385fb746c24ffe83586c2f4eda4102",
+      "Inputs": [
+        {
+          "Id": "788fcbad0cc74a4980cc0b14233ce356",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "pickPoints",
+      "Id": "76407cbbe7c945ff9e13fb62efcacdd1",
+      "Inputs": [
+        {
+          "Id": "0dab828ab6794ffb9126771481332e40",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "5d97a3163f904469bd5ce059921d5b42",
+      "End": "788fcbad0cc74a4980cc0b14233ce356",
+      "Id": "8e80d82426ee4598979fb22171b72193"
+    },
+    {
+      "Start": "246be1c05cb0445496156f8d7955a071",
+      "End": "0dab828ab6794ffb9126771481332e40",
+      "Id": "d82b0f514df5407eb2ceda131292359c"
+    },
+    {
+      "Start": "0df8034b311d48c583204522cdf348a0",
+      "End": "23ca1a365c2d4854accfc93723e92556",
+      "Id": "d6eeece0c87642378fe4e3da3d149e29"
+    },
+    {
+      "Start": "6d63b1b49a2742c798252140d768cc12",
+      "End": "89cbbb67e7ae482ab7670475330f9310",
+      "Id": "bb0938e9a53d44348f11f455df7532d7"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -6386.11328125,
+      "EyeY": 1433.7071533203125,
+      "EyeZ": 779.842041015625,
+      "LookX": -304.95797729492187,
+      "LookY": -1846.5634765625,
+      "LookZ": -6441.21923828125,
+      "UpX": -0.0029694759286940098,
+      "UpY": 0.99802672863006592,
+      "UpZ": -0.062720261514186859
+    },
+    "NodeViews": [
+      {
+        "Id": "d91fd4783db943e09a5e5ef3dc4fde29",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 414.515992982646,
+        "Y": 0.0
+      },
+      {
+        "Id": "6949246403214cb18b1013c3de2324ef",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 250.0,
+        "Y": 0.643272896364337
+      },
+      {
+        "Id": "e960c9b4434f4d94b196defa4081d6bd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 19.2,
+        "Y": 4.0
+      },
+      {
+        "Id": "a6385fb746c24ffe83586c2f4eda4102",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 565.179059937289,
+        "Y": -0.691144708423309
+      },
+      {
+        "Id": "76407cbbe7c945ff9e13fb62efcacdd1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 563.003681967527,
+        "Y": 64.9244060475162
+      }
+    ],
+    "Annotations": [],
+    "X": -8.06999999999982,
+    "Y": 136.88,
+    "Zoom": 1.1575
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "Uuid": "46a3a667-ec7a-49ed-8675-ed77333ecd8e",
+  "IsCustomNode": true,
+  "Category": "Springs.Display.Query",
+  "Description": "This node that serializes the input information and presents it in a resizable text window.",
+  "Name": "ꟿ WatchDialog",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Rectangle": {
+        "Key": "Autodesk.DesignScript.Geometry.Rectangle",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Copyright(c) 2020, Dimitar Venkov\r\n# @5devene, dimitar.ven@gmail.com\r\n# www.badmonkeys.net\r\n\r\nimport clr\r\n\r\nclr.AddReference('System.Windows.Forms')\r\nclr.AddReference('System.Drawing')\r\nfrom System.Drawing import Point, Color, Font\r\nfrom System.Windows.Forms import *\r\nfrom cStringIO import StringIO\r\n\r\nstr_file = StringIO()\r\nsize1 = [30, 23] #height, width\r\n\r\ndef tolist(obj1):\r\n\tif hasattr(obj1,\"__iter__\"): return obj1\r\n\telse: return [obj1]\r\n\r\ndef write_str(str1, GCL, str_file=str_file, size1=size1):\r\n\tln1 = len(str1)\r\n\tif ln1 > size1[1]:\r\n\t\tsize1[1] = ln1\r\n\t\r\n\tstr_file.write(\"%s%s\\n\" % (\"\".join(GCL), str1) )\r\n\r\ndef list2str(l1, writeInd, GCL=None, GCint=-1, size1=size1, isDict=False):\r\n\tif GCL is None:\r\n\t\tGCL = []\r\n\tGCint += 1\r\n\tGCL.append(None)\r\n\tfor i, x in enumerate(l1):\r\n\t\tif isDict:\r\n\t\t\ti, x = x, l1[x]\r\n\t\t\tGCL[GCint] = \"[%s] \" % i if writeInd else \"  \"\r\n\t\telse:\r\n\t\t\tGCL[GCint] = \"[%i] \" % i if writeInd else \"  \"\r\n\t\tif hasattr(x, \"Id\"): #is element\r\n\t\t\twrite_str(\"%s        %i\" % (x.ToString(), x.Id), GCL)\r\n\t\telif hasattr(x, \"__iter__\"):\r\n\t\t\tif not x:\r\n\t\t\t\twrite_str(\"Empty List\", GCL)\r\n\t\t\telse:\r\n\t\t\t\tlist2str(x, writeInd, GCL, GCint, size1)\r\n\t\telif \"Dictionary\" in x.GetType().ToString():\r\n\t\t\td = x.Components()\r\n\t\t\tk, v = d[\"keys\"], d[\"values\"]\r\n\t\t\tlist2str(dict(zip(k, v)), writeInd, GCL, GCint, size1, True)\r\n\t\telif x is None:\r\n\t\t\twrite_str(\"null\", GCL)\r\n\t\telse:\r\n\t\t\twrite_str(x.ToString(), GCL)\r\n\t\tsize1[0] += 19\r\n\tGCL.pop(GCint)\r\n\tGCint -= 1\r\n\r\nclass WatchBox(Form):\r\n\tdef __init__(self, t1):\r\n\t\tself.Text = \"SpringNodes: Expandable Watch Window\"\r\n\t\tself.BackColor = Color.FromArgb(40,40,40)\r\n\t\tself.ControlBox = False\r\n\t\tself.TopMost = True\r\n\t\tself.FormBorderStyle = FormBorderStyle.Sizable\r\n\t\tself.StartPosition = FormStartPosition.CenterScreen\r\n\t\tself.Resize += self.resize1\r\n\t\tself.text1 = None\r\n\r\n\t\tself.button1 = Button()\r\n\t\tself.button1.Text = 'Close'\r\n\t\tself.button1.Font = Font(IN[3], 10)\r\n\t\tself.button1.AutoSize = True\r\n\t\tself.button1.Width = 200\r\n\t\tself.button1.ForeColor = Color.FromArgb(234,234,234)\r\n\t\tself.button1.Click += self.save\r\n\t\tself.Controls.Add(self.button1)\r\n\t\t\r\n\t\tself.box1 = RichTextBox()\r\n\t\tself.box1.Multiline = True\r\n\t\tself.box1.Location = Point(5, 5)\r\n\t\tself.box1.Font = Font(IN[3], 12)\r\n\t\tself.box1.BackColor = Color.FromArgb(53,53,53)\r\n\t\tself.box1.ForeColor = Color.FromArgb(234,234,234)\r\n\t\tself.box1.DetectUrls = True\r\n\t\tself.box1.Text = t1\r\n\t\tself.Controls.Add(self.box1)\r\n\r\n\tdef adjust_controls(self, height1, width1):\r\n\t\tif height1 > 800:\r\n\t\t\theight1 = 800\r\n\t\t\tself.box1.ScrollBars = RichTextBoxScrollBars.Vertical\r\n\t\tif width1 < 23 : width1 = 23\r\n\t\tif width1 > 88: width1 = 88\r\n\t\tself.Width = 10 + (width1 + 2) * 9 #character width seems to vary between PCs\r\n\t\tself.Height = height1 + 90\r\n\t\tself.box1.Width = self.Width - 17\r\n\t\tself.box1.Height = self.Height - 80\r\n\t\tself.button1.Location = Point(self.Width/2 - 103, self.Height - 70)\r\n\t\r\n\tdef resize1(self, sender, event):\r\n\t\tif self.Width < 210: self.Width = 230\r\n\t\tif self.Height < 120: self.Height = 120\r\n\t\tself.box1.Width = self.Width - 17\r\n\t\tself.box1.Height = self.Height - 80\r\n\t\tself.button1.Location = Point(self.Width/2 - 103, self.Height - 70)\r\n\t\r\n\tdef save(self, sender, event):\r\n\t\tself.text1 = self.box1.Text\r\n\t\tself.Close()\r\n\r\nl1 = [] if IN[0] is None else tolist(IN[0])\r\nlist2str(l1, IN[1])\r\nstr_content = str_file.getvalue()\r\nstr_file.close()\r\n\r\nwidth1 = 100\r\nform = WatchBox(str_content)\r\nform.adjust_controls(*size1)\r\n\r\nApplication.Run(form)\r\nOUT = form.text1\r\nApplication.Exit()\r\nform.Dispose()",
+      "VariableInputPorts": true,
+      "Id": "c476cd36861f4dd5a4e9c36fc7bfbf1e",
+      "Inputs": [
+        {
+          "Id": "331929b53a704a0b83307b683becb453",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1b65dd36652141f48408ab9411e06b5e",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "32de543b6dfa4d9bbb50f42ffcb84ffe",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "82909527d1f1489e870f3717600f4249",
+          "Name": "IN[3]",
+          "Description": "Input #3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6a74a025d1624f0fb965292a2f9f64d8",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "input",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "00aa72d10667491bad7ce6cb1e4634ba",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "dc76c258ec0447ab9633e3d3e41ebd5b",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "addIndexes",
+        "TypeName": "bool",
+        "TypeRank": 0,
+        "DefaultValue": "true",
+        "Description": ""
+      },
+      "Id": "3d9e94be75a445b4902f61a2019e1f73",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c4fd39f0a2b247b1a81c26523ab4d0f3",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "str",
+      "Id": "43a77d273a164650971085700cd25a9e",
+      "Inputs": [
+        {
+          "Id": "053ded14172e4675b17ae31f70d2e3ce",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "reset",
+        "TypeName": "bool",
+        "TypeRank": 0,
+        "DefaultValue": "true",
+        "Description": ""
+      },
+      "Id": "602ac5b7dc574f639c6b00c98cf0ff0c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "fe70f66741b448ff99b52acc8c920838",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "font",
+        "TypeName": "string",
+        "TypeRank": 0,
+        "DefaultValue": "\"Calibri\"",
+        "Description": ""
+      },
+      "Id": "fc5cb9aa734e4d9aaecb2029accf7c2b",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "73667c300b78453d8216c21ac9d8b71c",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "6a74a025d1624f0fb965292a2f9f64d8",
+      "End": "053ded14172e4675b17ae31f70d2e3ce",
+      "Id": "0a641ff815784c8ab13b9198a8d0427c"
+    },
+    {
+      "Start": "dc76c258ec0447ab9633e3d3e41ebd5b",
+      "End": "331929b53a704a0b83307b683becb453",
+      "Id": "10838918de93469ab0e56d822bd00847"
+    },
+    {
+      "Start": "c4fd39f0a2b247b1a81c26523ab4d0f3",
+      "End": "1b65dd36652141f48408ab9411e06b5e",
+      "Id": "ca89e1fba5864d7e93421b28aa002543"
+    },
+    {
+      "Start": "fe70f66741b448ff99b52acc8c920838",
+      "End": "32de543b6dfa4d9bbb50f42ffcb84ffe",
+      "Id": "aff8a59762de4b86b0b9b4570a11da0e"
+    },
+    {
+      "Start": "73667c300b78453d8216c21ac9d8b71c",
+      "End": "82909527d1f1489e870f3717600f4249",
+      "Id": "a77221ea787d408b9f53cb4fa3f00992"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.4.12684",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "c476cd36861f4dd5a4e9c36fc7bfbf1e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 118.307071783181,
+        "Y": -1.09033150600672
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "00aa72d10667491bad7ce6cb1e4634ba",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -188.182429664202,
+        "Y": -2.95353589159062
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "3d9e94be75a445b4902f61a2019e1f73",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -189.53767894051,
+        "Y": 53.8683978072081
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "43a77d273a164650971085700cd25a9e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 267.065801096396,
+        "Y": -1.33679561441611
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "602ac5b7dc574f639c6b00c98cf0ff0c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -183.39169653364323,
+        "Y": 110.92564877579838
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "fc5cb9aa734e4d9aaecb2029accf7c2b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -181.63104721275661,
+        "Y": 183.1122709321491
+      }
+    ],
+    "Annotations": [],
+    "X": 622.143974240344,
+    "Y": 114.500579776336,
+    "Zoom": 1.70391682455499
+  }
+}

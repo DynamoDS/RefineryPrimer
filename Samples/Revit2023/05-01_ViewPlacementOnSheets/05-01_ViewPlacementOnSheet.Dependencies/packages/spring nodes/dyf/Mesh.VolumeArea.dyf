@@ -1,0 +1,254 @@
+{
+  "Uuid": "54f7597d-ba52-40ed-b001-65a328dbbe1f",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry",
+  "Description": "Gets the volume and the area of a mesh. Works with both built in meshes and toolkit meshes. Based on math from geometry3sharp.\r\n\r\nNote that if triangles don't define closed region, volume is probably nonsense.",
+  "Name": "ꟿ Mesh.VolumeArea",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "r[0];\nr[1];",
+      "Id": "abf6c322a51a4f5d900188e6b4e277bb",
+      "Inputs": [
+        {
+          "Id": "48133f5c24bc49af8148781b4c0d47d5",
+          "Name": "r",
+          "Description": "r",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8431a187c79542c79d6ecec7c48e3e83",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b08834c295a04952b8113fd392d47080",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Copyright(c) 2017, Dimitar Venkov\r\n# @5devene, dimitar.ven@gmail.com\r\n# www.badmonkeys.net\r\nfrom math import sqrt\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import Vector, Point, Mesh\r\n\r\nfrom itertools import izip_longest\r\n\r\ndef tolist(obj1):\r\n\tif hasattr(obj1,'__iter__'): return obj1\r\n\treturn [obj1]\r\n\r\ndef grouper(iterable, n, fillvalue=None):\r\n    \"Collect data into fixed-length chunks or blocks\"\r\n    # grouper('ABCDEFG', 3, 'x') --> ABC DEF Gxx\r\n    args = [iter(iterable)] * n\r\n    return izip_longest(fillvalue=fillvalue, *args)\r\n\r\ndef tkMeshData(m):\r\n\tvol, area = 0, 0\r\n\ttris = grouper(m.TrianglesAsNineNumbers, 9)\r\n\tfor t in tris:\r\n\t\ta, b, c = (Vector.ByCoordinates(*c) for c in grouper(t, 3))\r\n\t\te1 = b - a\r\n\t\te2 = c - a\r\n\t\tN = e1.Cross(e2)\r\n\t\tarea += 0.5 * N.Length\r\n\t\tf = a.X + b.X + c.X\r\n\t\tvol += N.X * f\r\n\t\tfor i in a, b, c, e1, e2, N:\r\n\t\t\ti.Dispose()\r\n\treturn vol / 6.0, area\r\n\r\ndef meshData(m):\r\n\tvol, area = 0, 0\r\n\tvp = m.VertexPositions\r\n\tptslist = ([vp[i.A], vp[i.B], vp[i.C]] for i in m.FaceIndices)\r\n\tfor pts in ptslist:\r\n\t\ta, b, c = map(Point.AsVector, pts)\r\n\t\te1 = b - a\r\n\t\te2 = c - a\r\n\t\tN = e1.Cross(e2)\r\n\t\tarea += 0.5 * N.Length\r\n\t\tf = a.X + b.X + c.X\r\n\t\tvol += N.X * f\r\n\t\tfor i in a, b, c, e1, e2, N:\r\n\t\t\ti.Dispose()\r\n\treturn vol / 6.0, area\r\n\r\nmeshes = tolist(IN[0])\r\nvolumes, areas = [], []\r\nOUT = volumes, areas\r\nfor m in meshes:\r\n\tf = meshData if isinstance(m, Mesh) else tkMeshData\r\n\tv, a = f(m)\r\n\tvolumes.append(v)\r\n\tareas.append(a)",
+      "VariableInputPorts": true,
+      "Id": "06c45e4f72dd4c3996ac28cec65e8c79",
+      "Inputs": [
+        {
+          "Id": "c3c178a56cc54212bd5f4b99d3f2cdbc",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "ca4145d9658f4878a1919a66cc79d335",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "mesh",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "3145f338ec584948a49578054b4543b8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c523e5114c0346c6b957205fd2c1b564",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "volume",
+      "Id": "7db89e8ad16c414397caf1f088b0bd3f",
+      "Inputs": [
+        {
+          "Id": "4b6e600ec4594612a2c72fcef1be7423",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "area",
+      "Id": "e6dcfb25407045b491df65731eca66be",
+      "Inputs": [
+        {
+          "Id": "c93478a95f0547abb25e747a23b5cbc0",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "8431a187c79542c79d6ecec7c48e3e83",
+      "End": "4b6e600ec4594612a2c72fcef1be7423",
+      "Id": "e4f9df333dc94e599dd521e29cea8518"
+    },
+    {
+      "Start": "b08834c295a04952b8113fd392d47080",
+      "End": "c93478a95f0547abb25e747a23b5cbc0",
+      "Id": "a490c8c9defd42388b6c2f7e42e45792"
+    },
+    {
+      "Start": "ca4145d9658f4878a1919a66cc79d335",
+      "End": "48133f5c24bc49af8148781b4c0d47d5",
+      "Id": "1dd0a4d274d64db5a1244b7b2f57ca55"
+    },
+    {
+      "Start": "c523e5114c0346c6b957205fd2c1b564",
+      "End": "c3c178a56cc54212bd5f4b99d3f2cdbc",
+      "Id": "97238bcdec294136820e4cf79762a3e2"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.3.8810",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 3.0865197585629409,
+      "EyeY": 1.3035600292911758,
+      "EyeZ": 3.766422570095715,
+      "LookX": -2.2817988473974147,
+      "LookY": -0.49350294925843863,
+      "LookZ": -4.7178934591464232,
+      "UpX": 0.053061685394332647,
+      "UpY": 0.99254615164137872,
+      "UpZ": 0.10971141419704233
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "abf6c322a51a4f5d900188e6b4e277bb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 400.37013975687955,
+        "Y": 6.7886402253557208
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "06c45e4f72dd4c3996ac28cec65e8c79",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 250.0,
+        "Y": 0.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "3145f338ec584948a49578054b4543b8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 36.443161716072154,
+        "Y": -0.56066402640112756
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "7db89e8ad16c414397caf1f088b0bd3f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 562.00615559847279,
+        "Y": -0.56066402640109914
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "e6dcfb25407045b491df65731eca66be",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 558.64217144006625,
+        "Y": 65.339732013432382
+      }
+    ],
+    "Annotations": [],
+    "X": 271.48288097738293,
+    "Y": 209.41683953226567,
+    "Zoom": 1.7835993623828124
+  }
+}

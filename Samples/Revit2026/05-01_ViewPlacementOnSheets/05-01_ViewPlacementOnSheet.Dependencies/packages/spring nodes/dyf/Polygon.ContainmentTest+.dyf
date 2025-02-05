@@ -1,0 +1,231 @@
+{
+  "Uuid": "4e62fd9c-a775-4f8e-a440-2ee029abd122",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Query",
+  "Description": "A less accurate method that should perform faster than the built-in node for large data sets.",
+  "Name": "ꟿ Polygon.ContainmentTest+",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Rectangle": {
+        "Key": "Autodesk.DesignScript.Geometry.Rectangle",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Polygon": {
+        "Key": "Autodesk.DesignScript.Geometry.Polygon",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Circle": {
+        "Key": "Autodesk.DesignScript.Geometry.Circle",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Copyright(c) 2017, Dimitar Venkov\r\n# @5devene, dimitar.ven@gmail.com\r\n# www.badmonkeys.net\r\n\r\ndef tolist(obj1):\r\n\tif hasattr(obj1,'__iter__'): return obj1\r\n\telse: return [obj1]\r\n\r\ndef containment(poly, pt):\r\n\tdef testCCW(A,B,C): return (B.X - A.X) * (C.Y - A.Y) > (B.Y - A.Y) * (C.X - A.X)\r\n\t\r\n\twn = 0\r\n\tln1 = len(poly)\r\n\tfor i in xrange(ln1):\r\n\t\tj = (i+1) % ln1\r\n\t\tisCCW = testCCW(poly[i], poly[j], pt)\r\n\t\tif poly[i].Y <= pt.Y:\r\n\t\t\tif poly[j].Y > pt.Y and isCCW: wn += 1\r\n\t\telse:\r\n\t\t\tif poly[j].Y <= pt.Y and not isCCW: wn -= 1\r\n\t\r\n\treturn wn != 0\r\n\r\npoly = IN[0]\r\npts = tolist(IN[1])\r\nt1 = poly.GetType().ToString()\r\nif 'Polygon' in t1 or 'Rectangle' in t1:\r\n\tpoly_pts = poly.Points\r\nelse:\r\n\tpoly_pts = [c.StartPoint for c in poly.Curves()]\r\n\r\nOUT = [containment(poly_pts, p) for p in pts]",
+      "VariableInputPorts": true,
+      "Id": "45edc1cf90354bccb57bc7f05652dc5b",
+      "Inputs": [
+        {
+          "Id": "6c1e1d666ada48fb9952b4572b874866",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b74276733bce4686910b944bd2e7bc51",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0752251a72cf4b45b13357504fe83b99",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "bool",
+      "Id": "97a722497ac3488491472c99e1196f17",
+      "Inputs": [
+        {
+          "Id": "93196de7991c48b0a8769dfce9764bad",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "polygon",
+        "TypeName": "var",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "ff7b71dc31f74db1a05b218f769eac93",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "03689501e5834e479214d78d791bf574",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "points",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "76c1b705a0f8451da5f7a44fd59d893d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2cbaeaa6f3f54324833c61847d1768a8",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "0752251a72cf4b45b13357504fe83b99",
+      "End": "93196de7991c48b0a8769dfce9764bad",
+      "Id": "7287122dd1204a4980d40f1627e6a924"
+    },
+    {
+      "Start": "03689501e5834e479214d78d791bf574",
+      "End": "6c1e1d666ada48fb9952b4572b874866",
+      "Id": "7f9953153d0445e3a985efe9c2b233f5"
+    },
+    {
+      "Start": "2cbaeaa6f3f54324833c61847d1768a8",
+      "End": "b74276733bce4686910b944bd2e7bc51",
+      "Id": "3b20a3f77d9c4d559d8a322e723cf841"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 5.5631122095352925,
+      "EyeY": 9.2432637523953236,
+      "EyeZ": -45.796186931464973,
+      "LookX": 1.3800816869170571,
+      "LookY": -9.3062320957412119,
+      "LookZ": -15.195781594754443,
+      "UpX": 0.029446923115138076,
+      "UpY": 0.94551857559935792,
+      "UpZ": -0.32423371495835007
+    },
+    "NodeViews": [
+      {
+        "Id": "45edc1cf90354bccb57bc7f05652dc5b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 253.310121752377,
+        "Y": 4.6341704533274708
+      },
+      {
+        "Id": "97a722497ac3488491472c99e1196f17",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 401.334246765775,
+        "Y": 4.63417045332752
+      },
+      {
+        "Id": "ff7b71dc31f74db1a05b218f769eac93",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 88.0372102176575,
+        "Y": 1.59784306034387
+      },
+      {
+        "Id": "76c1b705a0f8451da5f7a44fd59d893d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 80.7926977484724,
+        "Y": 64.7927214817361
+      }
+    ],
+    "Annotations": [],
+    "X": 87.0663234703666,
+    "Y": 163.234582923735,
+    "Zoom": 1.51051845643135
+  }
+}

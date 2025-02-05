@@ -1,0 +1,553 @@
+{
+  "Uuid": "fd198d9c-0e5e-4472-af70-464c835ba923",
+  "IsCustomNode": true,
+  "Category": "Springs.Revit.Create",
+  "Description": "Genearate a new eight point adaptive component family type from any solid or polysurface consisting of planar faces. Faces with openigs are not supported.",
+  "Name": "ꟿ ElementType.AdaptiveBySimpleGeometry",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Cuboid": {
+        "Key": "Autodesk.DesignScript.Geometry.Cuboid",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Polygon": {
+        "Key": "Autodesk.DesignScript.Geometry.Polygon",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Circle": {
+        "Key": "Autodesk.DesignScript.Geometry.Circle",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Sphere": {
+        "Key": "Autodesk.DesignScript.Geometry.Sphere",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Color": {
+        "Key": "DSCore.Color",
+        "Value": "DSCoreNodes.dll"
+      },
+      "ReferencePoint": {
+        "Key": "Revit.Elements.ReferencePoint",
+        "Value": "RevitNodes.dll"
+      },
+      "Line": {
+        "Key": "Autodesk.DesignScript.Geometry.Line",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Surface": {
+        "Key": "Autodesk.DesignScript.Geometry.Surface",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Category": {
+        "Key": "Revit.Elements.Category",
+        "Value": "RevitNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "#Copyright(c) 2016, Dimitar Venkov\r\n# @5devene, dimitar.ven@gmail.com\r\n\r\nimport clr\r\nfrom itertools import repeat\r\n\r\nclr.AddReference('System')\r\nimport System\r\nfrom System.Collections.Generic import List\r\n\r\npf_path = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ProgramFilesX86)\r\nimport sys\r\nsys.path.append('%s\\IronPython 2.7\\Lib' %pf_path)\r\nimport traceback\r\n\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\nclr.AddReference('RevitServices')\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\ndoc = DocumentManager.Instance.CurrentDBDocument\r\napp = DocumentManager.Instance.CurrentUIApplication.Application\r\n\r\nclr.AddReference('RevitNodes')\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\nclr.ImportExtensions(Revit.GeometryConversion)\r\n\r\nclr.AddReference('RevitAPI')\r\nfrom Autodesk.Revit.DB import *\r\n\r\ndef tolist(obj1):\r\n\tif hasattr(obj1,'__iter__'): return obj1\r\n\telse: return [obj1]\r\n\r\ndef PadLists(lists):\r\n\tlen1 = len(lists[0])\r\n\tfor i in xrange(1,len(lists)):\r\n\t\tlen2 = len(lists[i])\r\n\t\tif len2 == len1 : continue\r\n\t\telif len2 > len1: lists[i] = lists[i][:len1]\r\n\t\telse : lists[i].extend(repeat(lists[i][-1],len1 - len2))\r\n\treturn lists\r\n\r\nclass FamOpt1(IFamilyLoadOptions):\r\n\tdef __init__(self): pass\r\n\tdef OnFamilyFound(self,familyInUse, overwriteParameterValues):\r\n\t\treturn True\r\n\tdef OnSharedFamilyFound(self,familyInUse, source, overwriteParameterValues):\r\n\t\treturn True\r\n\r\ndef vert1(obj1) : return [v.PointGeometry for v in obj1.Vertices]\r\n\r\ndef tup1(p) : return round(p.X,3), round(p.Y,3), round(p.Z,3)\r\n\r\ndef domain1(c1, c2, d1):\r\n\tx = 1.0 - abs(c1 - c2) / d1\r\n\treturn 1 if x > 1 else 0 if x < 0 else x\r\n\r\nclass PtsErrorMuncher(IFailuresPreprocessor):\r\n\tdef PreprocessFailures(self, fa):\r\n\t\tfailList = List[FailureMessageAccessor](fa.GetFailureMessages() )\r\n\t\tfor failure in failList:\r\n\t\t\tfailID = failure.GetFailureDefinitionId()\r\n\t\t\tif failID == BuiltInFailures.InaccurateFailures.InaccurateLine\\\r\n\t\t\tor failID == BuiltInFailures.OverlapFailures.DuplicatePoints :\r\n\t\t\t\tfa.DeleteWarning(failure)\r\n\t\treturn FailureProcessingResult.Continue\r\n\r\ngeom = tolist(IN[0])\r\nfam_path = IN[1]\r\nnames = tolist(IN[2])\r\ncategory = tolist(IN[3])\r\nmaterial = tolist(IN[4])\r\nsubcat = tolist(IN[5])\r\n\r\ntemp_path = System.IO.Path.GetTempPath()\r\npmt = PointOnCurveMeasurementType.NormalizedCurveParameter\r\npmf = PointOnCurveMeasureFrom.Beginning\r\n\r\nTransactionManager.ForceCloseTransaction(TransactionManager.Instance)\r\n\r\ndef NewAC_background(s1, name1, cat1, mat1, subcat1):\r\n\ttry:\r\n\t\tenable_mat = True\r\n\t\tif mat1 == None: enable_mat = False\r\n\t\tenable_subcat = True\r\n\t\tif subcat1 == None: enable_subcat = False\r\n\r\n\t\tbb1 = s1.BoundingBox\r\n\t\tcub1 = bb1.ToCuboid()\r\n\t\tsizes1 = cub1.Width, cub1.Length, cub1.Height\r\n\t\torig1 = tup1(bb1.MinPoint)\r\n\r\n\t\tcub_corners = vert1(cub1)\r\n\t\tcub_corners = [cub_corners[n:n+2] for n in xrange(0,8,2)]\r\n\t\tcub_corners[1].reverse()\r\n\t\tcub_corners[2].reverse()\r\n\r\n\t\ts1_corners = map(tup1, vert1(s1) )\r\n\t\tdist1 = [map(domain1, orig1, s1_corners[i], sizes1)\\\r\n\t\tfor i in xrange(len(s1_corners) )]\r\n\t\tpar2, par1, par3 = zip(*dist1)\r\n\r\n\t\tface_corners = [map(tup1,f) for f in map(vert1,s1.Faces)]\r\n\t\t#End of Dynamo geometry pre-processing\r\n\r\n\t\ta_pts = [ [p.ToXyz(True) for p in pts] for pts in cub_corners]\r\n\t\tfamdoc = doc.Application.NewFamilyDocument(fam_path)\r\n\t\tfactory = famdoc.FamilyCreate\r\n\t\tdef ref_line(pts, factory = factory):\r\n\t\t\tpt_arr = ReferencePointArray()\r\n\t\t\tpt_arr.Append(pts[0])\r\n\t\t\tpt_arr.Append(pts[1])\r\n\t\t\tl1 = factory.NewCurveByPoints(pt_arr)\r\n\t\t\tl1.IsReferenceLine = True\r\n\t\t\tl1.ReferenceType = ReferenceType.None\r\n\t\t\treturn l1\r\n\r\n\t\tdef ref_pt(l1, par1, pmt = pmt, pmf = pmf, factory = factory, app = app.Create):\r\n\t\t\tloc1 = PointLocationOnCurve(pmt, par1, pmf)\r\n\t\t\tref1 = l1.GeometryCurve.Reference\r\n\t\t\tpt_ref = app.NewPointOnEdge(ref1, loc1)\r\n\t\t\treturn factory.NewReferencePoint(pt_ref)\r\n\r\n\t\tdef adp_pt(p1, factory = factory):\r\n\t\t\tpt1 = factory.NewReferencePoint(p1)\r\n\t\t\tpar1 = pt1.get_Parameter(BuiltInParameter.POINT_ADAPTIVE_TYPE_PARAM)\r\n\t\t\tpar1.Set(1)\r\n\t\t\treturn pt1\r\n\r\n\t\txr1 = xrange(4)\r\n\t\tlen1 = len(par1)\r\n\t\txr2 = xrange(len1)\r\n\t\twith Transaction(famdoc,' ') as t:\r\n\t\t\tt.Start()\r\n\t\t\t# Catch annoyng points same location warning\r\n\t\t\tfailOptions = t.GetFailureHandlingOptions()\r\n\t\t\tfailOptions.SetFailuresPreprocessor(PtsErrorMuncher())\r\n\t\t\tt.SetFailureHandlingOptions(failOptions)\r\n\r\n\t\t\ta_pts1 = [map(adp_pt, pts) for pts in a_pts]\r\n\t\t\tfamdoc.Regenerate()\r\n\t\t\tlines1 = [ref_line(a_pts1[i]) for i in xr1]\r\n\t\t\tpts1 = [ [ref_pt(lines1[i],par1[j]) for j in xr2] for i in xr1]\r\n\t\t\tpts1z = zip(*pts1[:2]) + zip(*pts1[2:])\r\n\t\t\tfamdoc.Regenerate()\r\n\t\t\tlines2 = [ref_line(pts1z[i]) for i in xrange(len(pts1z) )]\r\n\t\t\tlines2z = zip(lines2[:len1],lines2[len1:])\r\n\t\t\tpts2 = [ [ref_pt(lines2z[i][j],par2[i]) for j in xrange(2)] for i in xr2]\r\n\t\t\tfamdoc.Regenerate()\r\n\t\t\tlines3 = map(ref_line, pts2)\r\n\t\t\tpts3 = [ref_pt(lines3[i],par3[i]) for i in xr2]\r\n\t\t\tfamdoc.Regenerate()\r\n\t\t\t#End of reference skeleton construction\r\n\r\n\t\t\tface_refs = []\r\n\t\t\tref_dict = dict(zip(s1_corners,pts3))\r\n\t\t\tdef search1(searchVals):\r\n\t\t\t\trefs1 = []\r\n\t\t\t\tfor i in xrange(len(searchVals) ):\r\n\t\t\t\t\tif searchVals[i] in ref_dict:\r\n\t\t\t\t\t\trefs1.append(ref_dict[searchVals[i]])\r\n\t\t\t\t\telse : pass\r\n\t\t\t\tface_refs.append(refs1)\r\n\t\t\tmap(search1, face_corners)\r\n\t\t\t#End of face reference mapping\r\n\r\n\t\t\tfaces = []\r\n\t\t\tfor ref in face_refs:\r\n\t\t\t\trefArr = ReferenceArray()\r\n\t\t\t\tfor i in xrange(-1,len(ref) - 1) :\r\n\t\t\t\t\tii = i+1\r\n\t\t\t\t\tc1 = ref_line( (ref[i],ref[ii]) )\r\n\t\t\t\t\tr1 = Reference(c1)\r\n\t\t\t\t\trefArr.Insert(r1,ii)\r\n\t\t\t\tf1 = factory.NewFormByCap(True, refArr)\r\n\t\t\t\tfaces.append(f1)\r\n\t\t\t#End of face generation section\r\n\r\n\t\t\tfamdoc.Regenerate()\r\n\t\t\ttry: #set the family category\r\n\t\t\t\tfam_cat = famdoc.Settings.Categories.get_Item(cat1.Name)\r\n\t\t\t\tfamdoc.OwnerFamily.FamilyCategory = fam_cat\r\n\t\t\texcept: pass\r\n\t\t\tif enable_mat: #assign a material to the family\r\n\t\t\t\tfam_mat = None\r\n\t\t\t\tmat_fec = FilteredElementCollector(famdoc).OfClass(Material)\r\n\t\t\t\tfor m in mat_fec:\r\n\t\t\t\t\tif m.Name == mat1:\r\n\t\t\t\t\t\tfam_mat = m.Id\r\n\t\t\t\t\t\tbreak\r\n\t\t\t\tif fam_mat != None:\r\n\t\t\t\t\tfor f in faces:\r\n\t\t\t\t\t\tmat_par = f.get_Parameter(BuiltInParameter.MATERIAL_ID_PARAM)\r\n\t\t\t\t\t\tmat_par.Set(fam_mat)\r\n\t\t\tif enable_subcat: #create and assign the sub-category:\r\n\t\t\t\ttry:\r\n\t\t\t\t\tcur_fam_cat = famdoc.OwnerFamily.FamilyCategory\r\n\t\t\t\t\tnew_subcat = famdoc.Settings.Categories.NewSubcategory(cur_fam_cat, subcat1)\r\n\t\t\t\t\tfor f in faces: f.Subcategory = new_subcat\r\n\t\t\t\texcept: pass\r\n\t\t\tt.Commit()\r\n\t\tsave_path = '%s%s.rfa' % (temp_path, name1)\r\n\t\tSaveAsOpt = SaveAsOptions() #should probably dispose of these\r\n\t\tSaveAsOpt.OverwriteExistingFile = True\r\n\t\tfamdoc.SaveAs(save_path, SaveAsOpt)\r\n\t\tfamily1 =  famdoc.LoadFamily(doc, FamOpt1())\r\n\t\tfamdoc.Close(False)\r\n\t\tSystem.IO.File.Delete(save_path)\r\n\t\tsymbols = family1.GetFamilySymbolIds().GetEnumerator()\r\n\t\tsymbols.MoveNext()\r\n\t\tsymbol1 = doc.GetElement(symbols.Current)\r\n\t\t#might need to activate the symbol\r\n\t\treturn symbol1.ToDSType(False), family1.ToDSType(False)\r\n\r\n\texcept: return traceback.format_exc(), ''\r\n\r\nif len(geom) == len(names) == len(category) == len(material) == len(subcat):\r\n\treturn1 = map(NewAC_background, geom, names, category, material, subcat)\r\nelif len(geom) == len(names):\r\n\tpadded = PadLists([geom, category, material,subcat])\r\n\tp_category, p_material, p_subcat = padded[1], padded[2], padded[3]\r\n\treturn1 = map(NewAC_background, geom, names, p_category, p_material, p_subcat)\r\nelse : return1 = [('Make sure that each geometry\\\\nobject has a unique family name.', '')]\r\n\r\nOUT = [i[0] for i in return1], [i[1] for i in return1]",
+      "VariableInputPorts": true,
+      "Id": "9fdcb41e44394c41aa8f1f972f3b6caa",
+      "Inputs": [
+        {
+          "Id": "7f98e944d68f43febaf6dfc617e652ed",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "edc6bb2a07a34606a97cc0df635e27b7",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cde30344dcb9416481746612c1c95aec",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a911d631bfbf47ad88403fb4be875cba",
+          "Name": "IN[3]",
+          "Description": "Input #3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a177f442fc2a44788757c6db90dcdbde",
+          "Name": "IN[4]",
+          "Description": "Input #4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "087ae3eb9e9844bf894847e8beafea9f",
+          "Name": "IN[5]",
+          "Description": "Input #5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6783f800384d400990759cabefcfa273",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "geometry",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "b6861b4c82cf44d7a2acb74b029fa281",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "be8613cb48e64e57b34f28bd9b22bdcf",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "familyTemplatePath",
+        "TypeName": "var",
+        "TypeRank": 0,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "49181d52f3a44d4986fde1ea34024383",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "90c322b8201549eabd9859f90cfc4745",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "familyName",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "1d004b83d4c6441c8874153faee3c17e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "0385e330aaa5458d9a20d6ca981d3cea",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "category",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": "Revit.Elements.Category.ByName(\"OST_GenericModel\")",
+        "Description": ""
+      },
+      "Id": "ce2c86c315c8436fbf660ae2c6e3ae66",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "dbe8f644350d4a859c0ccab1188014e8",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "materialName",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": "null",
+        "Description": ""
+      },
+      "Id": "047c74be9f2440e698e0076a9ac418e0",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e53ef69298354570bfc5eec6329a11a8",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "subcategoryName",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": "null",
+        "Description": ""
+      },
+      "Id": "c8374f3431ee4d6f81dff9506a039590",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7941e97f401440228554b8eb48d9eddb",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "type",
+      "Id": "809c94fcf1884f06a8d78ba3c28d324c",
+      "Inputs": [
+        {
+          "Id": "a6b7cd7e84694b1181bf25dccd119419",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "family",
+      "Id": "d5fbedc4553b42b28bf077d4b3145160",
+      "Inputs": [
+        {
+          "Id": "b4b7fd0e45c043fe8e2a1d2cda49db95",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "res[0];\nres[1];",
+      "Id": "60796755f91f4ca29a668b20c3058802",
+      "Inputs": [
+        {
+          "Id": "90c67719ed9747328d23028eda633e07",
+          "Name": "res",
+          "Description": "res",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "72b177acc96e4352a84efb8af94b5542",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d25f81efb45d4e7b8cb366645f1a7032",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "6783f800384d400990759cabefcfa273",
+      "End": "90c67719ed9747328d23028eda633e07",
+      "Id": "a1e7f41cc21748f9a43cfb586d8a81bd"
+    },
+    {
+      "Start": "be8613cb48e64e57b34f28bd9b22bdcf",
+      "End": "7f98e944d68f43febaf6dfc617e652ed",
+      "Id": "e1d7effd5e7b4e169ed17ae487ec3d42"
+    },
+    {
+      "Start": "90c322b8201549eabd9859f90cfc4745",
+      "End": "edc6bb2a07a34606a97cc0df635e27b7",
+      "Id": "bbaf0c49f2eb41689a0fe097f4e7d73d"
+    },
+    {
+      "Start": "0385e330aaa5458d9a20d6ca981d3cea",
+      "End": "cde30344dcb9416481746612c1c95aec",
+      "Id": "d8d3bd99f3ea44d588bfa9ac46f418a0"
+    },
+    {
+      "Start": "dbe8f644350d4a859c0ccab1188014e8",
+      "End": "a911d631bfbf47ad88403fb4be875cba",
+      "Id": "84eb703891d54a6492fe7c598cc77e74"
+    },
+    {
+      "Start": "e53ef69298354570bfc5eec6329a11a8",
+      "End": "a177f442fc2a44788757c6db90dcdbde",
+      "Id": "1ae772ebc4e34311aacecee908ff1179"
+    },
+    {
+      "Start": "7941e97f401440228554b8eb48d9eddb",
+      "End": "087ae3eb9e9844bf894847e8beafea9f",
+      "Id": "55dd3e9c1bca4571830df352a93cf013"
+    },
+    {
+      "Start": "72b177acc96e4352a84efb8af94b5542",
+      "End": "a6b7cd7e84694b1181bf25dccd119419",
+      "Id": "28afe1d8c76c4853858c56f9496c6f69"
+    },
+    {
+      "Start": "d25f81efb45d4e7b8cb366645f1a7032",
+      "End": "b4b7fd0e45c043fe8e2a1d2cda49db95",
+      "Id": "05cd050094c544fc96cf2d7f63c758f3"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 28.121011734008789,
+      "EyeY": 51.148349761962891,
+      "EyeZ": 53.250408172607422,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "Id": "9fdcb41e44394c41aa8f1f972f3b6caa",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 164.268935797559,
+        "Y": 1.06583742058297
+      },
+      {
+        "Id": "b6861b4c82cf44d7a2acb74b029fa281",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -43.9544957328497,
+        "Y": -75.0
+      },
+      {
+        "Id": "49181d52f3a44d4986fde1ea34024383",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -109.95449573285,
+        "Y": -18.3387525234875
+      },
+      {
+        "Id": "1d004b83d4c6441c8874153faee3c17e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -60.9544957328497,
+        "Y": 38.216946046567
+      },
+      {
+        "Id": "ce2c86c315c8436fbf660ae2c6e3ae66",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -357.95449573285,
+        "Y": 96.2789996243319
+      },
+      {
+        "Id": "047c74be9f2440e698e0076a9ac418e0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -134.95449573285,
+        "Y": 155.052622949337
+      },
+      {
+        "Id": "c8374f3431ee4d6f81dff9506a039590",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": -159.95449573285,
+        "Y": 212.351451762905
+      },
+      {
+        "Id": "809c94fcf1884f06a8d78ba3c28d324c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 462.222022594786,
+        "Y": 3.57622615282703
+      },
+      {
+        "Id": "d5fbedc4553b42b28bf077d4b3145160",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 464.355746997316,
+        "Y": 74.1512194043307
+      },
+      {
+        "Id": "60796755f91f4ca29a668b20c3058802",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 304.926563814617,
+        "Y": 7.13279616632583
+      }
+    ],
+    "Annotations": [],
+    "X": 387.159335520163,
+    "Y": 188.915162086108,
+    "Zoom": 1.51051845643135
+  }
+}

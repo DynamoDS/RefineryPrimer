@@ -1,0 +1,292 @@
+{
+  "Uuid": "f2c09603-cba6-4c97-a328-0f1d62a019d9",
+  "IsCustomNode": true,
+  "Category": "Springs.Geometry.Actions",
+  "Description": "Thickens a surface mesh in the provided direction and by the supplied distance.",
+  "Name": "ꟿ TkMesh.Thicken",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "CoordinateSystem": {
+        "Key": "Autodesk.DesignScript.Geometry.CoordinateSystem",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Plane": {
+        "Key": "Autodesk.DesignScript.Geometry.Plane",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Vector": {
+        "Key": "Autodesk.DesignScript.Geometry.Vector",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Color": {
+        "Key": "DSCore.Color",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Math": {
+        "Key": "DSCore.Math",
+        "Value": "DSCoreNodes.dll"
+      },
+      "Category": {
+        "Key": "Revit.Elements.Category",
+        "Value": "RevitNodes.dll"
+      },
+      "Plane.By": {
+        "Key": "Autodesk.DesignScript.Geometry.Plane",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Copyright(c) 2020, Dimitar Venkov\r\n# @5devene, dimitar.ven@gmail.com\r\n# www.badmonkeys.net\r\n\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nimport Autodesk.DesignScript.Geometry as DS\r\n\r\nfrom itertools import izip_longest\r\ndef grouper(iterable, n, fillvalue=None):\r\n    args = [iter(iterable)] * n\r\n    return izip_longest(fillvalue=fillvalue, *args)\r\n\r\nmeshes, vecs, dists = IN\r\n\r\ndef getMeshPerimeter(mesh):\r\n\tedge_dict = {}\r\n\tindices = list(mesh.VertexIndicesByTri())\r\n\ttris = grouper(indices, 3)\r\n\tfor t in tris:\r\n\t\ta, b, c = t\r\n\t\tsides = frozenset((a, b)), frozenset((b, c)), frozenset((c, a))\r\n\t\tfor s in sides:\r\n\t\t\tedge_dict[s] = edge_dict.get(s, 0) + 1\r\n\t\r\n\tperim = [e for e, n in edge_dict.iteritems() if n == 1]\r\n\treturn perim\r\n\r\ndef thickenMesh(mesh, vec, dist):\r\n\tvertices = list(mesh.Vertices())\r\n\tindices = list(mesh.VertexIndicesByTri())\r\n\tn = len(vertices)\r\n\ttopMesh = mesh.Translate(vec, dist)\r\n\tvertices.extend(topMesh.Vertices())\r\n\tindices.extend([i + n for i in topMesh.VertexIndicesByTri()])\r\n\r\n\tfor e in getMeshPerimeter(mesh):\r\n\t\ta, b = e\r\n\t\tc, d = a + n, b + n\r\n\t\tindices.extend([a, b, c])\r\n\t\tindices.extend([c, d, b])\r\n\r\n\treturn mesh.ByVerticesAndIndices(vertices, indices)\r\n\r\nsingleVec = len(vecs) == 1\r\nsingleDist = len(dists) == 1\r\nOUT = []\r\nfor i in xrange(len(meshes)):\r\n\tj = 0 if singleVec else i\r\n\tk = 0 if singleDist else i\r\n\tOUT.append(thickenMesh(meshes[i], vecs[j], dists[k]))\r\n",
+      "VariableInputPorts": true,
+      "Id": "1d4304a51d3948aea9a0a0022179a237",
+      "Inputs": [
+        {
+          "Id": "e2b6d32e96cd437487e970755d1a6062",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fe21f084ed01477983c6800212dddf5e",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6c2f38896c85424892a6262b3eae4ae0",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b7a5e216c9204f2f9644066e0e22f690",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "tkMesh",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "3882678d3e0345489b171f0b6963e41a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1697187b78fc48568ba105ad0cc58b84",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "direction",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "059356b253a144b2ad315d77c88640f6",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f136b29e07444b86b2d1d66a6dd2fd4d",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "distance",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "72040ba72d1e49c7b32a9f00007f687c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e2025f151d0345a9b8efe00f15bedced",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "solidMesh",
+      "Id": "44706b2dde524e94b3c503d0cd78751a",
+      "Inputs": [
+        {
+          "Id": "e2ade5239b99427088c968657522b096",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "b7a5e216c9204f2f9644066e0e22f690",
+      "End": "e2ade5239b99427088c968657522b096",
+      "Id": "aad092f71ae54f55ae40ad744b6bd834"
+    },
+    {
+      "Start": "1697187b78fc48568ba105ad0cc58b84",
+      "End": "e2b6d32e96cd437487e970755d1a6062",
+      "Id": "0631588a582f4c47af66a90e6ac3b14f"
+    },
+    {
+      "Start": "f136b29e07444b86b2d1d66a6dd2fd4d",
+      "End": "fe21f084ed01477983c6800212dddf5e",
+      "Id": "bcdde44839904892928b9c6fd50b506a"
+    },
+    {
+      "Start": "e2025f151d0345a9b8efe00f15bedced",
+      "End": "6c2f38896c85424892a6262b3eae4ae0",
+      "Id": "cf754505d0f94f99a63c6a65fd0117ca"
+    }
+  ],
+  "Dependencies": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.3.8810",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Python Script",
+        "Id": "1d4304a51d3948aea9a0a0022179a237",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 0.0,
+        "Y": 0.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "3882678d3e0345489b171f0b6963e41a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 0.0,
+        "Y": 0.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "059356b253a144b2ad315d77c88640f6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 0.0,
+        "Y": 0.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Input",
+        "Id": "72040ba72d1e49c7b32a9f00007f687c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 0.0,
+        "Y": 0.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "44706b2dde524e94b3c503d0cd78751a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 0.0,
+        "Y": 0.0
+      }
+    ],
+    "Annotations": [],
+    "X": 0.0,
+    "Y": 0.0,
+    "Zoom": 1.0
+  }
+}

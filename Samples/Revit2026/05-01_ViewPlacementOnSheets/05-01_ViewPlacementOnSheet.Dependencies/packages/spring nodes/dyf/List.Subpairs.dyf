@@ -1,0 +1,171 @@
+{
+  "Uuid": "e457a7aa-33e4-401d-9abc-f7a9ea925cad",
+  "IsCustomNode": true,
+  "Category": "Springs.Actions",
+  "Description": "Pair up each list item with the next one.",
+  "Name": "ꟿ List.Subpairs",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "DSCore.List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "DSCore.List.DropItems(DSCore.\nList.Sublists(l1,0..1,1),-1);",
+      "Id": "1a838be4f2a140d992fc3a5048ccd977",
+      "Inputs": [
+        {
+          "Id": "e664e47bcd9540c98c6b4398507b4dd0",
+          "Name": "l1",
+          "Description": "l1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2e8297c845534f919c354f50f0cc4aa4",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "list",
+        "TypeName": "var",
+        "TypeRank": -1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "4e645eca1467463da2948d50197829dc",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "288746e135774bfca0e81ac982763e75",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "lists",
+      "Id": "a5d42d3234dc45a797f9b799877f1713",
+      "Inputs": [
+        {
+          "Id": "123e5e50b51b487a89aeeb669f974167",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "2e8297c845534f919c354f50f0cc4aa4",
+      "End": "123e5e50b51b487a89aeeb669f974167",
+      "Id": "aa455c71577e45e3b900c6f634d64883"
+    },
+    {
+      "Start": "288746e135774bfca0e81ac982763e75",
+      "End": "e664e47bcd9540c98c6b4398507b4dd0",
+      "Id": "92f8cac51f434b3b9df20a209b07d613"
+    }
+  ],
+  "Dependencies": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.3.8810",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -67957.802410128148,
+      "EyeY": 68610.274882289348,
+      "EyeZ": 7975.5805986286177,
+      "LookX": -1442.317257231829,
+      "LookY": -66374.189936123323,
+      "LookZ": -24933.828958964223,
+      "UpX": -0.048432605684251361,
+      "UpY": 0.54463903501502664,
+      "UpZ": -0.83727092642975076
+    },
+    "NodeViews": [
+      {
+        "Id": "1a838be4f2a140d992fc3a5048ccd977",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Code Block",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 250.0,
+        "Y": 0.0
+      },
+      {
+        "Id": "4e645eca1467463da2948d50197829dc",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 73.6,
+        "Y": -4.0
+      },
+      {
+        "Id": "a5d42d3234dc45a797f9b799877f1713",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 575.377537796976,
+        "Y": -8.29373650107988
+      }
+    ],
+    "Annotations": [],
+    "X": 326.146,
+    "Y": 177.678,
+    "Zoom": 1.1575
+  }
+}

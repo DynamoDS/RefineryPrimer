@@ -1,0 +1,214 @@
+{
+  "Uuid": "bac5c146-7610-4c0b-a9b1-7a7aeb13bb2b",
+  "IsCustomNode": true,
+  "Category": "Springs.Revit.Actions",
+  "Description": "Attempts to modify the location of the input element. This can effectively add as a move comand in Revit. Works for both line based and point based elements.",
+  "Name": "ꟿ Element.SetLocation",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "element",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "61e4699303f64a2e9726c414ed48bb4e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "44699cf54e454814998c7ad44e2f3a84",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Symbol, DynamoCore",
+      "NodeType": "InputNode",
+      "Parameter": {
+        "Name": "location",
+        "TypeName": "var",
+        "TypeRank": 1,
+        "DefaultValue": null,
+        "Description": ""
+      },
+      "Id": "ae6130ca546440758f5df9240228246a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e93a830457c94557b62a6a0f628bc9e5",
+          "Name": "",
+          "Description": "Symbol",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A function parameter, use with custom nodes.\r\n\r\nYou can specify the type and default value for parameter. E.g.,\r\n\r\ninput : var[]..[]\r\nvalue : bool = false"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Output, DynamoCore",
+      "NodeType": "OutputNode",
+      "ElementResolver": null,
+      "Symbol": "element",
+      "Id": "75586c6e832e4bda97b9da911b3c771e",
+      "Inputs": [
+        {
+          "Id": "e2c0c29d3be94d3a959f483598cb010a",
+          "Name": "",
+          "Description": "",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [],
+      "Replication": "Disabled",
+      "Description": "A function output, use with custom nodes"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "#Copyright(c) 2016, Dimitar Venkov\r\n# @5devene, dimitar.ven@gmail.com\r\n\r\nimport clr\r\n\r\nclr.AddReference(\"RevitServices\")\r\nimport RevitServices\r\nfrom RevitServices.Persistence import DocumentManager\r\nfrom RevitServices.Transactions import TransactionManager\r\ndoc =  DocumentManager.Instance.CurrentDBDocument\r\n\r\nclr.AddReference(\"RevitNodes\")\r\nimport Revit\r\nclr.ImportExtensions(Revit.Elements)\r\nclr.ImportExtensions(Revit.GeometryConversion)\r\n\r\nclr.AddReference(\"RevitAPI\")\r\nfrom Autodesk.Revit.DB import *\r\nfrom Autodesk.Revit.DB.Structure import StructuralFramingUtils, StructuralType\r\nFrU = StructuralFramingUtils\r\n\r\ndef tolist(obj1):\r\n\tif hasattr(obj1,\"__iter__\"): return obj1\r\n\telse: return [obj1]\r\n\r\nelements = UnwrapElement(tolist(IN[0]))\r\nnewloc = UnwrapElement(tolist(IN[1]))\r\nout1 = []\r\nframing = (\"Beam\", \"Brace\")\r\n\r\nTransactionManager.Instance.EnsureInTransaction(doc)\r\nfor i in xrange(len(elements)):\r\n\ttry:\r\n\t\tel_typ = elements[i].GetType().ToString()\r\n\t\tisWall, isBeam = False, False\r\n\t\tif el_typ == \"Autodesk.Revit.DB.Wall\":\r\n\t\t\tw_start = WallUtils.IsWallJoinAllowedAtEnd(elements[i],0)\r\n\t\t\tw_end = WallUtils.IsWallJoinAllowedAtEnd(elements[i],1)\r\n\t\t\tWallUtils.DisallowWallJoinAtEnd(elements[i],0)\r\n\t\t\tWallUtils.DisallowWallJoinAtEnd(elements[i],1)\r\n\t\t\tisWall = True\r\n\t\telif el_typ == \"Autodesk.Revit.DB.FamilyInstance\":\r\n\t\t\tif elements[i].StructuralType.ToString() in framing:\r\n\t\t\t\tb_start = FrU.IsJoinAllowedAtEnd(elements[i],0)\r\n\t\t\t\tb_end = FrU.IsJoinAllowedAtEnd(elements[i],1)\r\n\t\t\t\tFrU.DisallowJoinAtEnd(elements[i],0)\r\n\t\t\t\tFrU.DisallowJoinAtEnd(elements[i],1)\r\n\t\t\t\tisBeam = True\t\r\n\t\tnewloc1 = newloc[i].ToRevitType()\r\n\t\toldloc = elements[i].Location\r\n\t\tloc_typ = oldloc.GetType().ToString()\r\n\t\tif loc_typ == \"Autodesk.Revit.DB.LocationCurve\":\r\n\t\t\toldloc.Curve = newloc1\r\n\t\telif loc_typ == \"Autodesk.Revit.DB.LocationPoint\":\r\n\t\t\toldloc.Point = newloc1\r\n\t\tif isWall:\r\n\t\t\tif w_start: WallUtils.AllowWallJoinAtEnd(elements[i],0)\r\n\t\t\tif w_end: WallUtils.AllowWallJoinAtEnd(elements[i],1)\r\n\t\tif isBeam:\r\n\t\t\tif b_start: FrU.AllowJoinAtEnd(elements[i],0)\r\n\t\t\tif b_end: FrU.AllowJoinAtEnd(elements[i],1)\r\n\t\tout1.append(elements[i].ToDSType(True))\r\n\texcept:\r\n\t\tout1.append(None)\r\nTransactionManager.Instance.TransactionTaskDone()\r\n\r\nOUT = out1",
+      "VariableInputPorts": true,
+      "Id": "c2d8deac6440491395bd5d08d2a6f123",
+      "Inputs": [
+        {
+          "Id": "ad5280b394dc46d7b561d2fe7824fb6e",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dfc2b11c67974f5c90313edaec9c59b5",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7c4ec790e9a8453ab16e28fbeea5ab63",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "44699cf54e454814998c7ad44e2f3a84",
+      "End": "ad5280b394dc46d7b561d2fe7824fb6e",
+      "Id": "72136750d1ac4e53925bc5d59e6ce3a2"
+    },
+    {
+      "Start": "e93a830457c94557b62a6a0f628bc9e5",
+      "End": "dfc2b11c67974f5c90313edaec9c59b5",
+      "Id": "2f909749adf1456cbc11e625cd1e7c85"
+    },
+    {
+      "Start": "7c4ec790e9a8453ab16e28fbeea5ab63",
+      "End": "e2c0c29d3be94d3a959f483598cb010a",
+      "Id": "bec0f438c8704af5aece7242f075946d"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 28.121011734008789,
+      "EyeY": 51.148349761962891,
+      "EyeZ": 53.250408172607422,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "Id": "61e4699303f64a2e9726c414ed48bb4e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 62.4336804095385,
+        "Y": -2.05223349137634
+      },
+      {
+        "Id": "ae6130ca546440758f5df9240228246a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Input",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 54.712030646603,
+        "Y": 60.7477665086237
+      },
+      {
+        "Id": "75586c6e832e4bda97b9da911b3c771e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Output",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 376.619736891699,
+        "Y": -1.2522334913763
+      },
+      {
+        "Id": "c2d8deac6440491395bd5d08d2a6f123",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 224.950259359426,
+        "Y": -0.150734336487744
+      }
+    ],
+    "Annotations": [],
+    "X": -13.0706922006215,
+    "Y": 134.812825236355,
+    "Zoom": 1.27771698410772
+  }
+}
