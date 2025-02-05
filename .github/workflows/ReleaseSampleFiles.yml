@@ -1,7 +1,6 @@
-on:
-   pull_request:
-    types:
-      - closed
+on: [push]
+permissions:
+  contents: read|write
 name: Release Sample Files
 
 jobs:
