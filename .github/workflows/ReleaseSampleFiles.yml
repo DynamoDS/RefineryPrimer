@@ -1,6 +1,6 @@
 on: [push]
 permissions:
-  contents: read|write
+  contents: write
 name: Release Sample Files
 
 jobs:
