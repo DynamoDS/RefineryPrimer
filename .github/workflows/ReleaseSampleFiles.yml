@@ -1,6 +1,4 @@
 on: [push]
-permissions:
-  contents: write
 name: Release Sample Files
 
 jobs:
