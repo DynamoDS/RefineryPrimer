@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ClimateData</name>
+    </assembly>
+    <members>
+        <member name="M:ClimateData.ClimateServerUtil.GetStations(System.Double,System.Double,System.Int32)">
+            <summary>
+            Get the stations from the given latitude and longitude.
+            </summary>
+            <param name="latitude"></param>
+            <param name="longitude"></param>
+            <param name="count"></param>
+            <returns>The station list near the given coordinates.</returns>
+        </member>
+        <member name="M:ClimateData.ClimateServerUtil.GetDataFile(System.Int32,System.Int32,ClimateData.ThorServiceV2.WeatherDataFileFormat)">
+            <summary>
+            Get the weather data file from the given station id and year.
+            </summary>
+            <param name="stationId"></param>
+            <param name="year"></param>
+            <param name="fileFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClimateData.ClimateServerUtil.GetBestDay(System.DateTime,ClimateData.WeatherDataHour@,ClimateData.WeatherDataHour@)">
+            <summary>
+            Need to look for day with no cloud cover at 09:00 and 15:00 
+            </summary>
+            <param name="desiredDate"></param>
+            <param name="bestAMTime"></param>
+            <param name="bestPMTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClimateData.ClimateServerUtil.GetBestDay(System.DateTime,System.Int32,ClimateData.WeatherDataHour@)">
+            <summary>
+            Need to look for day with no cloud cover at desiredTime 
+            </summary>
+            <param name="desiredDate"></param>
+            <param name="desiredTime"></param>
+            <param name="bestDateHour"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ClimateData.ClimateServerUtil.GetBestHour(System.DateTime,System.Int32,ClimateData.WeatherDataHour@)">
+            <summary>
+            
+            </summary>
+            <param name="desiredDate">Data around which to check for hour with best ghi value and no cloud cover</param>
+            <param name="hour">9am or 3pm</param>
+            <param name="bestDateHour">Best hour found</param>
+            <returns>false if no hour found with zero cloud cover within range</returns>
+        </member>
+        <member name="M:ClimateData.ClimateServerUtil.GetSpatialDaylightAutonomyMinSampleDayHours(System.Int32,System.Int32,System.Boolean,System.Int32,System.Boolean)">
+            <summary>
+            Use 10 hours (8am - 6pm) for each day of the year
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClimateData.ClimateServerUtil.GetSpatialDaylightAutonomyRegularDayHours(System.Int32,System.Int32,System.Boolean,System.Int32)">
+            <summary>
+            Targeting use of 8:30 means using hour 9.  sDA is 10 hours for each day of the year.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClimateData.ClimateServerUtil.GetSpatialDaylightAutonomyAllDaysHours(System.Int32,System.Int32,System.Boolean,System.Int32)">
+            <summary>
+            Use 10 hours (8am - 6pm) for each day of the year
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClimateData.ClimateServerUtil.GetSpatialDaylightAutonomyQuadMedWxDaysHours(System.Int32,System.Int32,System.Int32,System.Int32,ClimateData.ClimateServerUtil.WxData,System.Boolean,System.Int32)">
+            <summary>
+            Use 10 hours (8am - 6pm) for each day of the year
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClimateData.ClimateServerUtil.GetSpatialDaylightAutonomyAvgWxDaysHours(System.Int32,System.Int32,System.Int32,ClimateData.ClimateServerUtil.WxData,System.Boolean,System.Int32,System.Boolean)">
+            <summary>
+            Use 10 hours (8am - 6pm) for each day of the year
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClimateData.ClimateServerUtil.GetSpatialDaylightAutonomyMedianWxDaysHours(System.Int32,System.Int32,System.Int32,ClimateData.ClimateServerUtil.WxData,System.Int32,System.Boolean,System.Int32,System.Boolean)">
+            <summary>
+            Use 10 hours (8am - 6pm) for each day of the year
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClimateData.ClimateServerUtil.GetSpatialDaylightAutonomyRandomDayHours(System.Int32,System.Int32,System.Int32,System.Boolean,System.Int32)">
+            <summary>
+            Use 10 hours (8am - 6pm) for random days of the year
+            Note this will return a differen set of days each time, so will yield inconsistent results
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClimateData.ClimateServerUtil.GetSpatialDaylightAutonomyExtremeWxDaysHours(System.Int32,System.Int32,System.Int32,ClimateData.ClimateServerUtil.WxData,System.Boolean,System.Boolean,System.Int32)">
+            <summary>
+            Use 10 hours (8am - 6pm) for each day of the year
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ClimateData.ClimateServerUtil.GetDiffuseHorizontalIrradiance(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="dayOfYear">>0-365</param>
+            <param name="hourOfDay">0-23</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClimateData.ClimateServerUtil.GetDirectNormalIrradiance(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="dayOfYear">0-365</param>
+            <param name="hourOfDay">0-23</param>
+            <returns></returns>
+        </member>
+        <member name="M:ClimateData.ClimateServerUtil.GetGlobalHorizontalIrradiance(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="dayOfYear">0-365</param>
+            <param name="hourOfDay">0-23</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
