@@ -1,0 +1,4 @@
+<ExtensionDefinition>
+    <AssemblyPath>..\bin\DynamoSolarAnalysis.dll</AssemblyPath>
+    <TypeName>DynamoSolarAnalysis.DynamoSolarAnalysisExtension</TypeName>
+</ExtensionDefinition>

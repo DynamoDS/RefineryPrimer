@@ -1,0 +1,1364 @@
+{
+  "Uuid": "3c9d0464-8643-5ffe-96e5-ab1769818209",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "TimeStudies",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "02743b1d1d9542c0bfb921a01bafa786",
+      "Name": "Date Time",
+      "Type": "date",
+      "Value": "2017-01-18T14:46:00Z",
+      "Description": "Create a DateTime object from a formatted date and time string. Date and time must be of the format \"April 12, 1977 12:00 PM\""
+    },
+    {
+      "Id": "f217756ecb2b4c578c6dade7d869513b",
+      "Name": "Boolean",
+      "Type": "boolean",
+      "Value": "true",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "Id": "2b83f29433064f9b9ff5366806f6dacb",
+      "Name": "Date Time",
+      "Type": "date",
+      "Value": "2017-01-18T14:46:00Z",
+      "Description": "Create a DateTime object from a formatted date and time string. Date and time must be of the format \"April 12, 1977 12:00 PM\""
+    },
+    {
+      "Id": "ed32bf53e3474a22a94ac0853970fbe5",
+      "Name": "Boolean",
+      "Type": "boolean",
+      "Value": "false",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "Id": "933df936f5af4d41847d363be6a65f2e",
+      "Name": "Date Time",
+      "Type": "date",
+      "Value": "2017-01-19T16:46:00Z",
+      "Description": "Create a DateTime object from a formatted date and time string. Date and time must be of the format \"April 12, 1977 12:00 PM\""
+    },
+    {
+      "Id": "7b51be3f60b9427cbe4e88513162e366",
+      "Name": "Boolean",
+      "Type": "boolean",
+      "Value": "false",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "Id": "98477d5f07274950a6e1ec8fd031f881",
+      "Name": "Date Time",
+      "Type": "date",
+      "Value": "2017-01-18T16:46:00Z",
+      "Description": "Create a DateTime object from a formatted date and time string. Date and time must be of the format \"April 12, 1977 12:00 PM\""
+    },
+    {
+      "Id": "e84653db06ed49f5b562e3a6cd379385",
+      "Name": "Date Time",
+      "Type": "date",
+      "Value": "2017-01-18T14:46:00Z",
+      "Description": "Create a DateTime object from a formatted date and time string. Date and time must be of the format \"April 12, 1977 12:00 PM\""
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynamoSolarAnalysis.Analysis.TimeStudy.Still@var,bool",
+      "Id": "fd9caea5059140cc92870daafcf84b84",
+      "Inputs": [
+        {
+          "Id": "4b112b560c5840de803f8b7fb773d974",
+          "Name": "dateTime",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cb1a119686a745d2b057898f818230dc",
+          "Name": "usesDST",
+          "Description": "bool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0c9f1e90a28846f1ae47eadd1bfcfcc3",
+          "Name": "TimeStudy",
+          "Description": "TimeStudy",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "TimeStudy.Still (dateTime: var, usesDST: bool = true): TimeStudy"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DateTime, CoreNodeModels",
+      "NodeType": "DateTimeInputNode",
+      "InputValue": "2017-01-18T14:46:00Z",
+      "Id": "02743b1d1d9542c0bfb921a01bafa786",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "065404fbf47f421a904f9b4fa40b21cf",
+          "Name": "",
+          "Description": "DateTime",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Create a DateTime object from a formatted date and time string. Date and time must be of the format \"April 12, 1977 12:00 PM\""
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "f217756ecb2b4c578c6dade7d869513b",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4f7f9c7f2eda4f5d9ff82793a1e43eb8",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynamoSolarAnalysis.Analysis.TimeStudy.EndDateTime",
+      "Id": "63a120384488484bbb1cd7238c16d9ea",
+      "Inputs": [
+        {
+          "Id": "37e91853780842f1a25c8b23da29ea27",
+          "Name": "timeStudy",
+          "Description": "DynamoSolarAnalysis.Analysis.TimeStudy",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "067365744ec54dbe9566f9bc1624fc71",
+          "Name": "var",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "TimeStudy.EndDateTime: var"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynamoSolarAnalysis.Analysis.TimeStudy.StartDateTime",
+      "Id": "f6dfaefaffb14c35bea010bba43b78d7",
+      "Inputs": [
+        {
+          "Id": "09adb871de9b4ac9a5dba11732cb4256",
+          "Name": "timeStudy",
+          "Description": "DynamoSolarAnalysis.Analysis.TimeStudy",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3495dcf4d58345e7817d100563495033",
+          "Name": "var",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "TimeStudy.StartDateTime: var"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "636837587bb64fe0a5db7e3c7c29a49a",
+      "Inputs": [
+        {
+          "Id": "38b84d9007e44ec49e3b80b03e65a974",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "658f9ce622dc45cbbf962f7269596123",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "9e29315e13024e8f9967c99793d149d4",
+      "Inputs": [
+        {
+          "Id": "6610d05830504f5ca43bc936579b7316",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e168af4b31ca4d2dae9be56657a1a3a5",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynamoSolarAnalysis.Analysis.TimeStudy.IsStillStudy",
+      "Id": "74c74a929a7e406cb5e20d3d4a9df106",
+      "Inputs": [
+        {
+          "Id": "887be22d74514102a9c562a07a929f10",
+          "Name": "timeStudy",
+          "Description": "DynamoSolarAnalysis.Analysis.TimeStudy",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d43b98539cc04560ac17d3b7fd752d30",
+          "Name": "bool",
+          "Description": "bool",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "TimeStudy.IsStillStudy: bool"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "c984878f68974dfbbeba40e648dd2d49",
+      "Inputs": [
+        {
+          "Id": "2ab73bbcd8704a4f87aea3e2f790797b",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7b333b7db576460899f4717f7894c5c2",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynamoSolarAnalysis.Analysis.TimeStudy.FromSunriseToSunset@var,var,bool",
+      "Id": "d8f5659dfb6e4ec5b3034fc22ea366e8",
+      "Inputs": [
+        {
+          "Id": "6e456acb46a74766a06d771096b0eaed",
+          "Name": "startDateTime",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "02374737d1ea47c3abc40d8ad721f30f",
+          "Name": "endDateTime",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3855ec9f033244c0a1273a181e4dc92f",
+          "Name": "usesDST",
+          "Description": "bool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b17d4465df264de5a0a9d0c83c7d57e5",
+          "Name": "TimeStudy",
+          "Description": "TimeStudy",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "TimeStudy.FromSunriseToSunset (startDateTime: var, endDateTime: var, usesDST: bool = true): TimeStudy"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DateTime, CoreNodeModels",
+      "NodeType": "DateTimeInputNode",
+      "InputValue": "2017-01-18T14:46:00Z",
+      "Id": "2b83f29433064f9b9ff5366806f6dacb",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e219f5296e664c1f879bf2ca005a662e",
+          "Name": "",
+          "Description": "DateTime",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Create a DateTime object from a formatted date and time string. Date and time must be of the format \"April 12, 1977 12:00 PM\""
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": false,
+      "Id": "ed32bf53e3474a22a94ac0853970fbe5",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "06ba7ad07f9e411db5783b40c7d84073",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DateTime, CoreNodeModels",
+      "NodeType": "DateTimeInputNode",
+      "InputValue": "2017-01-19T16:46:00Z",
+      "Id": "933df936f5af4d41847d363be6a65f2e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "e71c90dfcb1c443dbeb6030b39ebebd0",
+          "Name": "",
+          "Description": "DateTime",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Create a DateTime object from a formatted date and time string. Date and time must be of the format \"April 12, 1977 12:00 PM\""
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "300c40324642482997084a9e252d92b8",
+      "Inputs": [
+        {
+          "Id": "33acfc49c04a418ca5a4bea20c70f9b3",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "134cf08ef9884e58a63a63c6ce1bfc1a",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "868696d287a74f7baf10013df6f2c9e9",
+      "Inputs": [
+        {
+          "Id": "0b4b2f7e3249497d9afb2400de9dd5f5",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1cff36285b174b30abf583457b3cecdb",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynamoSolarAnalysis.Analysis.TimeStudy.IsStillStudy",
+      "Id": "0fa4651910514b3ea44133b2d4db2e90",
+      "Inputs": [
+        {
+          "Id": "b92301ea10e94d92b2768999f8a26081",
+          "Name": "timeStudy",
+          "Description": "DynamoSolarAnalysis.Analysis.TimeStudy",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9b1f4e923eef41b9a7296dd92dd62e2e",
+          "Name": "bool",
+          "Description": "bool",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "TimeStudy.IsStillStudy: bool"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "b29198c3e60e473e9bf6143c4981cca1",
+      "Inputs": [
+        {
+          "Id": "1779af6160c04b0da92ce93e9d8b41f5",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "12ee8b440c7a4967a73e21ede68977a6",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynamoSolarAnalysis.Analysis.TimeStudy.EndDateTime",
+      "Id": "6e9b322772754c9aaaeb3aaebf93b0e6",
+      "Inputs": [
+        {
+          "Id": "1a57f79a23fc46729887b18f98d2eb96",
+          "Name": "timeStudy",
+          "Description": "DynamoSolarAnalysis.Analysis.TimeStudy",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "383b95f6b0a3404497cdede3ab9a6440",
+          "Name": "var",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "TimeStudy.EndDateTime: var"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynamoSolarAnalysis.Analysis.TimeStudy.StartDateTime",
+      "Id": "5e1d53d8fe104249a2ee619b3c2eead1",
+      "Inputs": [
+        {
+          "Id": "c6b2164ecd1c41e4bf6c70ee2e590781",
+          "Name": "timeStudy",
+          "Description": "DynamoSolarAnalysis.Analysis.TimeStudy",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7fc177cf411f46bfb44647cd14733a4d",
+          "Name": "var",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "TimeStudy.StartDateTime: var"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynamoSolarAnalysis.Analysis.TimeStudy.FromStartTimeToEndTime@var,var,bool",
+      "Id": "2f8241075473438bbb4d4ecaa2e01bf5",
+      "Inputs": [
+        {
+          "Id": "1ad6989afcc947c9a5bfa566e45410e8",
+          "Name": "startDateTime",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9dff98a0853141e79934485b8ad007ac",
+          "Name": "endDateTime",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0c70fd9ce6c84d088d7a32ccde31f30d",
+          "Name": "usesDST",
+          "Description": "bool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "49f58e5c6caf4fc5b70ba16f282aaabd",
+          "Name": "TimeStudy",
+          "Description": "TimeStudy",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "TimeStudy.FromStartTimeToEndTime (startDateTime: var, endDateTime: var, usesDST: bool = true): TimeStudy"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": false,
+      "Id": "7b51be3f60b9427cbe4e88513162e366",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "cfde24e9f3b54c47a64382e80551cad5",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DateTime, CoreNodeModels",
+      "NodeType": "DateTimeInputNode",
+      "InputValue": "2017-01-18T16:46:00Z",
+      "Id": "98477d5f07274950a6e1ec8fd031f881",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2d3e76b4a1ae4e10a75af39934299b40",
+          "Name": "",
+          "Description": "DateTime",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Create a DateTime object from a formatted date and time string. Date and time must be of the format \"April 12, 1977 12:00 PM\""
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DateTime, CoreNodeModels",
+      "NodeType": "DateTimeInputNode",
+      "InputValue": "2017-01-18T14:46:00Z",
+      "Id": "e84653db06ed49f5b562e3a6cd379385",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "74321d506bdb4605822fe73cb42f74a2",
+          "Name": "",
+          "Description": "DateTime",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Create a DateTime object from a formatted date and time string. Date and time must be of the format \"April 12, 1977 12:00 PM\""
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "e428b97bfae9471ab8e624ce375fa660",
+      "Inputs": [
+        {
+          "Id": "66e3823a9b4a4d03a24b289eb852458f",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2912792310b84121924824afe82758f9",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "1e92357f7a824e11b5fba20600b307d2",
+      "Inputs": [
+        {
+          "Id": "a6a9c50a187b421b9d3217aaab95c7d6",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "41e0e7e29bb1458f87c73662d1d4fd28",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "f6b07da8c1aa4779aa43507e194657a8",
+      "Inputs": [
+        {
+          "Id": "0ffd4808f96149aeb457fcb05d20dde5",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fc294fca71574cd0a7092f37affb00e6",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynamoSolarAnalysis.Analysis.TimeStudy.IsStillStudy",
+      "Id": "b73cfe725b9d4d118335e4dfb0198ba0",
+      "Inputs": [
+        {
+          "Id": "5e7b027a31724a3d9c74fba33234453a",
+          "Name": "timeStudy",
+          "Description": "DynamoSolarAnalysis.Analysis.TimeStudy",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "835d022d4d7a4437a6e65d8dbab0b94f",
+          "Name": "bool",
+          "Description": "bool",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "TimeStudy.IsStillStudy: bool"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynamoSolarAnalysis.Analysis.TimeStudy.EndDateTime",
+      "Id": "43ecc0292a6a45ef936bd7e5ac20e8dd",
+      "Inputs": [
+        {
+          "Id": "110f2d3a74e1463fbb530230545d724c",
+          "Name": "timeStudy",
+          "Description": "DynamoSolarAnalysis.Analysis.TimeStudy",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8de5edd96ac64d449da7baf5b00092cc",
+          "Name": "var",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "TimeStudy.EndDateTime: var"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynamoSolarAnalysis.Analysis.TimeStudy.StartDateTime",
+      "Id": "8786cd6c52cb429fbc1c0671a36ae1c8",
+      "Inputs": [
+        {
+          "Id": "0a8d770c2e7346f79f958f126b1441e1",
+          "Name": "timeStudy",
+          "Description": "DynamoSolarAnalysis.Analysis.TimeStudy",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "454d11f3f3af44eb9c0216032fec654b",
+          "Name": "var",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "TimeStudy.StartDateTime: var"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "0c9f1e90a28846f1ae47eadd1bfcfcc3",
+      "End": "37e91853780842f1a25c8b23da29ea27",
+      "Id": "dd8932665ddb411f8b388cd743705079"
+    },
+    {
+      "Start": "0c9f1e90a28846f1ae47eadd1bfcfcc3",
+      "End": "09adb871de9b4ac9a5dba11732cb4256",
+      "Id": "b8b34f6c6f07486cac31f9f6773e4d1c"
+    },
+    {
+      "Start": "0c9f1e90a28846f1ae47eadd1bfcfcc3",
+      "End": "887be22d74514102a9c562a07a929f10",
+      "Id": "4c440a7ab6444b67bc1eb8fbace71749"
+    },
+    {
+      "Start": "065404fbf47f421a904f9b4fa40b21cf",
+      "End": "4b112b560c5840de803f8b7fb773d974",
+      "Id": "c9e313fd63994c3f859518d89df9c9df"
+    },
+    {
+      "Start": "4f7f9c7f2eda4f5d9ff82793a1e43eb8",
+      "End": "cb1a119686a745d2b057898f818230dc",
+      "Id": "327982bbf967494284777e5a90031468"
+    },
+    {
+      "Start": "067365744ec54dbe9566f9bc1624fc71",
+      "End": "6610d05830504f5ca43bc936579b7316",
+      "Id": "a9e0b302431b4ccc89387a69f9dce31c"
+    },
+    {
+      "Start": "3495dcf4d58345e7817d100563495033",
+      "End": "38b84d9007e44ec49e3b80b03e65a974",
+      "Id": "39590f466c68410d9bf03bd60493aaa2"
+    },
+    {
+      "Start": "d43b98539cc04560ac17d3b7fd752d30",
+      "End": "2ab73bbcd8704a4f87aea3e2f790797b",
+      "Id": "1e99494386e54b61ab7b3d49d37b30cb"
+    },
+    {
+      "Start": "b17d4465df264de5a0a9d0c83c7d57e5",
+      "End": "c6b2164ecd1c41e4bf6c70ee2e590781",
+      "Id": "18e3f55ef24940dea2ce3b3483be9a37"
+    },
+    {
+      "Start": "b17d4465df264de5a0a9d0c83c7d57e5",
+      "End": "1a57f79a23fc46729887b18f98d2eb96",
+      "Id": "345e2cc3d0864c2fafa036d722be6f99"
+    },
+    {
+      "Start": "b17d4465df264de5a0a9d0c83c7d57e5",
+      "End": "b92301ea10e94d92b2768999f8a26081",
+      "Id": "10bff38f09c946e2a61eddd2df272974"
+    },
+    {
+      "Start": "e219f5296e664c1f879bf2ca005a662e",
+      "End": "6e456acb46a74766a06d771096b0eaed",
+      "Id": "ca2df2fc5c6c494eb8d31dba7f78521d"
+    },
+    {
+      "Start": "06ba7ad07f9e411db5783b40c7d84073",
+      "End": "3855ec9f033244c0a1273a181e4dc92f",
+      "Id": "8631e1ec32b741f2b147850587fc59fe"
+    },
+    {
+      "Start": "e71c90dfcb1c443dbeb6030b39ebebd0",
+      "End": "02374737d1ea47c3abc40d8ad721f30f",
+      "Id": "4ba47c99e2264fb9b16d1093792cf1ae"
+    },
+    {
+      "Start": "9b1f4e923eef41b9a7296dd92dd62e2e",
+      "End": "0b4b2f7e3249497d9afb2400de9dd5f5",
+      "Id": "df660218c1e34b24bc6bc4f645049105"
+    },
+    {
+      "Start": "383b95f6b0a3404497cdede3ab9a6440",
+      "End": "33acfc49c04a418ca5a4bea20c70f9b3",
+      "Id": "37f1532de94e4b2bbb14d9ac1c7cc04f"
+    },
+    {
+      "Start": "7fc177cf411f46bfb44647cd14733a4d",
+      "End": "1779af6160c04b0da92ce93e9d8b41f5",
+      "Id": "666dd8562843422c946dbdc73f971ce5"
+    },
+    {
+      "Start": "49f58e5c6caf4fc5b70ba16f282aaabd",
+      "End": "0a8d770c2e7346f79f958f126b1441e1",
+      "Id": "850508cecde547e3895e04d5bc8df3ec"
+    },
+    {
+      "Start": "49f58e5c6caf4fc5b70ba16f282aaabd",
+      "End": "110f2d3a74e1463fbb530230545d724c",
+      "Id": "dfe0fc32f2d4486aaf2e958258e36655"
+    },
+    {
+      "Start": "49f58e5c6caf4fc5b70ba16f282aaabd",
+      "End": "5e7b027a31724a3d9c74fba33234453a",
+      "Id": "206cac43df114b539df003baf5704930"
+    },
+    {
+      "Start": "cfde24e9f3b54c47a64382e80551cad5",
+      "End": "0c70fd9ce6c84d088d7a32ccde31f30d",
+      "Id": "d64fada98adb42ca93c3f61ac5c35983"
+    },
+    {
+      "Start": "2d3e76b4a1ae4e10a75af39934299b40",
+      "End": "9dff98a0853141e79934485b8ad007ac",
+      "Id": "4ee704d18884488b8d14d3ac07db5fa7"
+    },
+    {
+      "Start": "74321d506bdb4605822fe73cb42f74a2",
+      "End": "1ad6989afcc947c9a5bfa566e45410e8",
+      "Id": "d8026ce2a74b46aa9d92d2f786751e75"
+    },
+    {
+      "Start": "835d022d4d7a4437a6e65d8dbab0b94f",
+      "End": "a6a9c50a187b421b9d3217aaab95c7d6",
+      "Id": "24a09330bc39488897af728650082d8e"
+    },
+    {
+      "Start": "8de5edd96ac64d449da7baf5b00092cc",
+      "End": "66e3823a9b4a4d03a24b289eb852458f",
+      "Id": "64b310194b4a41a8944fc37d6a35e812"
+    },
+    {
+      "Start": "454d11f3f3af44eb9c0216032fec654b",
+      "End": "0ffd4808f96149aeb457fcb05d20dde5",
+      "Id": "b2d66754606849639aa9ced4fc2af76c"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.5.0.7460",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "TimeStudy.Still",
+        "Id": "fd9caea5059140cc92870daafcf84b84",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 325.943042630188,
+        "Y": 707.284053452465
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Date Time",
+        "Id": "02743b1d1d9542c0bfb921a01bafa786",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 9.16848927504009,
+        "Y": 691.544980845121
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Boolean",
+        "Id": "f217756ecb2b4c578c6dade7d869513b",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 102.238717657624,
+        "Y": 761.067320118858
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "TimeStudy.EndDateTime",
+        "Id": "63a120384488484bbb1cd7238c16d9ea",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 645.152350034224,
+        "Y": 756.021343881248
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "TimeStudy.StartDateTime",
+        "Id": "f6dfaefaffb14c35bea010bba43b78d7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 645.152350034224,
+        "Y": 656.783811208252
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "636837587bb64fe0a5db7e3c7c29a49a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 894.610349159336,
+        "Y": 655.782284070577
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "9e29315e13024e8f9967c99793d149d4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 894.610349159336,
+        "Y": 756.701808822777
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "TimeStudy.IsStillStudy",
+        "Id": "74c74a929a7e406cb5e20d3d4a9df106",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 636.152350034224,
+        "Y": 869.577798134024
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "c984878f68974dfbbeba40e648dd2d49",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 894.610349159336,
+        "Y": 866.670772111369
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "TimeStudy.FromSunriseToSunset",
+        "Id": "d8f5659dfb6e4ec5b3034fc22ea366e8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 348.152748111318,
+        "Y": 1620.63915423983
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Date Time",
+        "Id": "2b83f29433064f9b9ff5366806f6dacb",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 30.9997824457962,
+        "Y": 1606.66433305016
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Boolean",
+        "Id": "ed32bf53e3474a22a94ac0853970fbe5",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 133.840479608039,
+        "Y": 1728.00323272563
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Date Time",
+        "Id": "933df936f5af4d41847d363be6a65f2e",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 30.8257240829973,
+        "Y": 1668.06884952336
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "300c40324642482997084a9e252d92b8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 936.61570069289,
+        "Y": 1687.63609482878
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "868696d287a74f7baf10013df6f2c9e9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 936.61570069289,
+        "Y": 1797.60505811737
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "TimeStudy.IsStillStudy",
+        "Id": "0fa4651910514b3ea44133b2d4db2e90",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 679.865179289375,
+        "Y": 1797.09712869683
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "b29198c3e60e473e9bf6143c4981cca1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 936.61570069289,
+        "Y": 1586.71657007658
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "TimeStudy.EndDateTime",
+        "Id": "6e9b322772754c9aaaeb3aaebf93b0e6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 687.157701567778,
+        "Y": 1686.95562988725
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "TimeStudy.StartDateTime",
+        "Id": "5e1d53d8fe104249a2ee619b3c2eead1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 687.157701567778,
+        "Y": 1587.71809721426
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "TimeStudy.FromStartTimeToEndTime",
+        "Id": "2f8241075473438bbb4d4ecaa2e01bf5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 310.514889540563,
+        "Y": 1141.58841527259
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Boolean",
+        "Id": "7b51be3f60b9427cbe4e88513162e366",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 87.5409448069527,
+        "Y": 1250.9028587614
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Date Time",
+        "Id": "98477d5f07274950a6e1ec8fd031f881",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -15.4738107180895,
+        "Y": 1190.96847555913
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Date Time",
+        "Id": "e84653db06ed49f5b562e3a6cd379385",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -15.2997523552906,
+        "Y": 1129.56395908593
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "e428b97bfae9471ab8e624ce375fa660",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 946.754923476851,
+        "Y": 1216.60041077222
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "1e92357f7a824e11b5fba20600b307d2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 946.754923476851,
+        "Y": 1326.56937406081
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "f6b07da8c1aa4779aa43507e194657a8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 946.754923476851,
+        "Y": 1115.68088602002
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "TimeStudy.IsStillStudy",
+        "Id": "b73cfe725b9d4d118335e4dfb0198ba0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 688.296924351739,
+        "Y": 1329.47640008347
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "TimeStudy.EndDateTime",
+        "Id": "43ecc0292a6a45ef936bd7e5ac20e8dd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 697.296924351739,
+        "Y": 1215.91994583069
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "TimeStudy.StartDateTime",
+        "Id": "8786cd6c52cb429fbc1c0671a36ae1c8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 697.296924351739,
+        "Y": 1116.6824131577
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "f80023531b884c3ca71283641fd52044",
+        "Title": "Note: The StartDateTime and EndDateTime returns the startDateTime and endDateTime that is input to the FromSunriseToSunset node. However the output time study has a flag for solar analysis to be performed from the sunrise of the startDateTime input to sunset of the endDateTime input. ",
+        "Nodes": [],
+        "Left": 688.03455272526,
+        "Top": 1472.71197738191,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -52.47933518507125,
+    "Y": -377.5820973000304,
+    "Zoom": 0.71599097739215278
+  }
+}
